@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国现当代文学史 · 思维导图</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+:root{
+  --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073;
+  --line:#e3dccd; --accent:#3b6b5e; --gold:#c8902a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);height:100%;
+  font-family:"LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;overflow:hidden;}
+#app{display:flex;flex-direction:column;height:100vh;}
+/* 顶栏 */
+#topbar{display:flex;align-items:center;gap:10px;padding:8px 14px;flex:none;
+  background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,.05);z-index:20;}
+#topbar .back{color:var(--sub);text-decoration:none;font-size:14px;padding:4px 8px;border-radius:6px;white-space:nowrap;}
+#topbar .back:hover{background:#f0e9da;color:var(--accent);}
+#topbar .book{font-weight:700;color:var(--accent);font-size:16px;white-space:nowrap;}
+#topbar .era{font-size:15px;color:var(--ink);border-left:1px solid var(--line);padding-left:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:30vw;}
+#topbar .spacer{flex:1;}
+#topbar .tool{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:2px;}
+#topbar .tool button{font-family:inherit;font-size:13px;border:0;background:transparent;color:var(--ink);
+  padding:4px 9px;border-radius:6px;cursor:pointer;white-space:nowrap;}
+#topbar .tool button:hover{background:#f0e9da;}
+#topbar .tool button.on{background:var(--accent);color:#fff;}
+#topbar .fit{font-family:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:5px 10px;cursor:pointer;color:var(--ink);}
+#topbar .fit:hover{background:#f0e9da;}
+#topbar .quiz{font-size:14px;font-weight:700;text-decoration:none;color:#fff;background:var(--accent);
+  border-radius:8px;padding:6px 14px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+#topbar .quiz:hover{filter:brightness(1.12);}
+/* 主体 */
+#layout{display:flex;flex:1;min-height:0;}
+#eraNav{width:236px;flex:none;overflow:auto;background:var(--card);border-right:1px solid var(--line);padding:10px 8px;}
+#eraNav .nav-head{font-size:13px;color:var(--sub);letter-spacing:2px;padding:2px 8px 8px;}
+#eraNav button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;font-family:inherit;
+  font-size:14.5px;border:0;background:transparent;color:var(--ink);padding:8px 9px;border-radius:8px;cursor:pointer;margin-bottom:2px;}
+#eraNav button:hover{background:#f0e9da;}
+#eraNav button.on{background:var(--accent);color:#fff;}
+#eraNav button.on .cnt{color:rgba(255,255,255,.75);}
+#eraNav .idx{flex:none;width:22px;height:22px;line-height:22px;text-align:center;border-radius:6px;
+  background:rgba(0,0,0,.06);font-size:12px;}
+#eraNav button.on .idx{background:rgba(255,255,255,.22);}
+#eraNav .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#eraNav .cnt{flex:none;font-size:11px;color:#b3a998;}
+#eraNav .footnote{margin-top:10px;padding:8px 9px;font-size:12.5px;color:var(--sub);line-height:1.6;
+  border-top:1px dashed var(--line);}
+#eraNav .footnote a{color:var(--accent);}
+/* 画布 */
+#mmWrap{flex:1;position:relative;min-width:0;}
+#mmSvg{width:100%;height:100%;display:block;cursor:grab;}
+#mmWrap .hint{position:absolute;left:12px;bottom:10px;font-size:12px;color:#b3a998;
+  background:rgba(255,253,248,.85);border:1px solid var(--line);border-radius:8px;padding:4px 10px;
+  pointer-events:none;letter-spacing:.5px;}
+#nodeCnt{position:absolute;right:12px;top:10px;font-size:12px;color:#b3a998;
+  background:rgba(255,253,248,.85);border:1px solid var(--line);border-radius:8px;padding:4px 10px;pointer-events:none;}
+.markmap{--markmap-font-size:15px;}
+.markmap-node text{fill:#2b2620;}
+.markmap-node text a{fill:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:700;}
+.markmap-link{stroke-width:1.6px;}
+/* 窄屏 */
+@media (max-width:760px){
+  #eraNav{position:absolute;left:0;top:0;bottom:0;z-index:15;transform:translateX(-100%);transition:.2s;box-shadow:4px 0 16px rgba(0,0,0,.08);}
+  #eraNav.show{transform:none;}
+  #topbar .book{display:none;}
+  #hamburger{display:inline-flex !important;}
+}
+#hamburger{display:none;font-family:inherit;border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:5px 10px;cursor:pointer;font-size:14px;}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="topbar">
+    <button id="hamburger">☰ 时代</button>
+    <a class="back" href="index.html">← 导图导航</a>
+    <div class="book">中国现当代文学史</div>
+    <div class="era" id="eraTitle">现代文学总览</div>
+    <div class="spacer"></div>
+    <div class="tool" id="depthTool">
+      <button data-d="1">一层</button><button data-d="2" class="on">两层</button><button data-d="3">三层</button><button data-d="99">全部</button>
+    </div>
+    <button class="fit" id="fitBtn">⟲ 适应画布</button>
+    <a class="quiz" id="quizLink" href="../李凡1000题_现当代文学史-OCR重建版.html#era=0">去刷题 →</a>
+  </div>
+  <div id="layout">
+    <nav id="eraNav"><div class="nav-head">时代 · 专题</div></nav>
+    <main id="mmWrap">
+      <svg id="mmSvg"></svg>
+      <div id="nodeCnt"></div>
+      <div class="hint">点击节点圆点折叠/展开 · 带<span style="text-decoration:underline;color:var(--accent)">下划线</span>的节点可跳转刷题 · ←/→ 切换时代</div>
+    </main>
+  </div>
+</div>
+<script src="_vendor/d3.min.js"></script>
+<script src="_vendor/markmap-lib.js"></script>
+<script src="_vendor/markmap-view.js"></script>
+<script>
+var BOOK = {"title": "中国现当代文学史", "accent": "#3b6b5e", "palette": ["#3b6b5e", "#9a3b2e", "#c8902a", "#6b5a8a", "#2f6f8f", "#8a6d3b", "#7a4f00"], "quizHome": "../李凡1000题_现当代文学史-OCR重建版.html", "footnote": "「文革」文学与新世纪文学两个时期可在李凡题库目录中单独筛选。", "eras": [{"name": "现代文学总览", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=0", "md": "# [现代文学总览](../李凡1000题_现当代文学史-OCR重建版.html#era=0)\n## 时间范围：1917年文学革命至1949年\n## 核心转型：文言文向白话文、传统文学向现代文学\n## 主要内容：个性解放、民族危机、社会革命、启蒙与救亡\n## 三大文学潮流：现实主义、浪漫主义、现代主义\n## 主要文体：新诗、现代小说、现代散文、现代戏剧", "nodes": 6}, {"name": "五四文学革命", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=0", "md": "# [五四文学革命](../李凡1000题_现当代文学史-OCR重建版.html#era=0)\n## 背景：新文化运动、民主与科学、反封建思想\n## 胡适：文学改良刍议、尝试集、白话诗实验\n## 陈独秀：文学革命论、反对文言与贵族文学\n## 周作人：人的文学、平民文学、个性解放\n## 文学观念：人的文学、白话文学、现实关怀、思想启蒙\n## 意义：确立白话文地位、建立现代文学制度与读者群", "nodes": 7}, {"name": "20年代新文学社团", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=0", "md": "# [20年代新文学社团](../李凡1000题_现当代文学史-OCR重建版.html#era=0)\n## 文学研究会\n### 成员：沈雁冰、郑振铎、叶绍钧、冰心、朱自清\n### 主张：为人生、现实主义、关注社会人生\n## 创造社\n### 成员：郭沫若、郁达夫、成仿吾、张资平\n### 主张：艺术至上、浪漫主义、自我表现\n## 新月社\n### 成员：徐志摩、闻一多、闻一多、梁实秋\n### 主张：新格律诗、理性节制、形式美\n## 语丝社\n### 成员：鲁迅、周作人、林语堂、孙伏园\n### 风格：语丝文体、幽默讽刺、社会批评\n## 莽原与未名社\n### 关注：现实批判、乡土文学、翻译文学", "nodes": 15}, {"name": "鲁迅", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=0", "md": "# [鲁迅](../李凡1000题_现当代文学史-OCR重建版.html#era=0)\n## 狂人日记\n### 中国现代白话小说开端\n### 狂人形象、吃人礼教、启蒙主题\n### 日记体、象征、反讽、双重话语\n## 阿Q正传\n### 阿Q：精神胜利法、国民劣根性\n### 主题：辛亥革命不彻底、启蒙困境、国民性批判\n### 艺术：喜剧外壳与悲剧内核、反讽、典型化\n## 孔乙己、药、祝福、故乡、在酒楼上\n### 小人物悲剧、封建压迫、知识者困境\n### 祥林嫂：礼教与女性悲剧\n## 野草\n### 散文诗、象征主义、梦境与自我搏斗\n## 朝花夕拾\n### 回忆性散文、童年记忆、社会批判、温情与反讽\n## 坟、热风、华盖集、且介亭杂文\n### 杂文：文明批评、社会批评、战斗精神\n## 地位：现代文学奠基人、思想启蒙与现代小说典范", "nodes": 19}, {"name": "20年代小说", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=0", "md": "# [20年代小说](../李凡1000题_现当代文学史-OCR重建版.html#era=0)\n## 叶绍钧\n### 倪焕之：教育知识分子、时代转型\n### 潘先生在难中：小市民、讽刺、灰色人生\n### 风格：冷静写实、客观平和\n## 冰心\n### 超人、斯人独憔悴、繁星、春水\n### 主题：母爱、童真、自然、爱的哲学\n### 风格：清丽婉约、哲理小诗\n## 郁达夫\n### 沉沦、故都的秋、春风沉醉的晚上\n### 主题：自我暴露、苦闷、性压抑、弱国子民悲哀\n### 风格：感伤抒情、浪漫主义、零余者形象\n## 庐隐\n### 海滨故人：女性情感、婚恋、个性解放\n## 冯文炳\n### 竹林的故事、桃园：乡土抒情、牧歌风格", "nodes": 17}, {"name": "20年代诗歌与散文", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=0", "md": "# [20年代诗歌与散文](../李凡1000题_现当代文学史-OCR重建版.html#era=0)\n## 郭沫若\n### 女神：五四时代精神、个性解放、泛神论\n### 天狗、凤凰涅槃、炉中煤\n### 艺术：想象奔放、自由诗体、浪漫主义\n## 闻一多\n### 红烛、死水\n### 三美理论：音乐美、绘画美、建筑美\n### 死水：象征黑暗现实、格律严整\n## 徐志摩\n### 志摩的诗、翡冷翠的一夜\n### 再别康桥：音乐性、绘画性、康桥意象\n### 风格：轻灵飘逸、爱情与自由\n## 朱自清\n### 背影、荷塘月色、桨声灯影里的秦淮河\n### 风格：细腻抒情、语言清丽、真挚克制\n## 许地山\n### 落花生、缀网劳蛛\n### 宗教意识、女性命运、异域色彩", "nodes": 19}, {"name": "30年代文学", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=1", "md": "# [30年代文学](../李凡1000题_现当代文学史-OCR重建版.html#era=1)\n## 左翼文学\n### 中国左翼作家联盟：1930年成立\n### 主张：文学与社会革命结合、阶级意识、现实批判\n### 代表：茅盾、柔石、丁玲、张天翼、沙汀、艾芜\n## 京派文学\n### 代表：沈从文、废名、萧乾、李健吾\n### 特点：乡土人性、审美独立、抒情写实、文化批判\n## 海派文学\n### 代表：施蛰存、穆时英、刘呐鸥、张爱玲\n### 特点：都市经验、现代消费、心理分析、形式实验\n## 东北作家群\n### 代表：萧军、萧红、端木蕻良、骆宾基\n### 主题：故土沦陷、民族苦难、战争记忆", "nodes": 14}, {"name": "茅盾", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=1", "md": "# [茅盾](../李凡1000题_现当代文学史-OCR重建版.html#era=1)\n## 子夜\n### 吴荪甫：民族资本家、现代企业家形象\n### 主题：30年代中国社会全景、民族工业困境\n### 艺术：社会剖析小说、宏大结构、人物与时代结合\n## 春蚕、秋收、残冬\n### 农村三部曲、农民破产、经济压迫\n## 林家铺子：民族商业危机、社会结构\n## 霜叶红似二月花：革命与知识者\n## 地位：社会剖析派代表、现实主义长篇典范", "nodes": 10}, {"name": "巴金", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=1", "md": "# [巴金](../李凡1000题_现当代文学史-OCR重建版.html#era=1)\n## 激流三部曲：家、春、秋\n### 高觉新：封建家庭中的长子形象\n### 觉慧：反抗青年、个性解放\n### 觉民、鸣凤、梅：爱情与家庭悲剧\n### 主题：封建大家庭崩溃、青年反抗、五四启蒙\n## 爱情三部曲：雾、雨、电\n## 寒夜：知识分子家庭悲剧、战争年代困境\n## 随想录：反思历史、忏悔意识、讲真话\n## 风格：热烈真挚、强烈抒情、反封建", "nodes": 10}, {"name": "老舍", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=1", "md": "# [老舍](../李凡1000题_现当代文学史-OCR重建版.html#era=1)\n## 骆驼祥子\n### 祥子：个人奋斗失败、城市底层悲剧\n### 主题：黑暗社会摧毁人的理想与尊严\n### 艺术：京味语言、喜剧外壳、悲剧内核\n## 四世同堂：北平市民、民族苦难、抗战生活\n## 月牙儿：贫困女性、母女悲剧\n## 茶馆\n### 三幕结构、人物群像、时代变迁\n### 王利发：茶馆掌柜与社会夹缝\n### 主题：旧中国社会缩影、历史兴亡\n## 风格：京味、幽默、讽刺、人道主义", "nodes": 12}, {"name": "沈从文", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=1", "md": "# [沈从文](../李凡1000题_现当代文学史-OCR重建版.html#era=1)\n## 边城\n### 翠翠：自然人性与纯真爱情\n### 茶峒：湘西世界、牧歌意境\n### 主题：现代文明冲击、理想人性、爱情悲剧\n### 艺术：诗化小说、象征、含蓄抒情\n## 长河：乡土社会变迁、抗战时代\n## 萧萧：童养媳命运、乡土伦理\n## 风格：人性美、自然美、抒情写实", "nodes": 9}, {"name": "张爱玲与钱钟书", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=2", "md": "# [张爱玲与钱钟书](../李凡1000题_现当代文学史-OCR重建版.html#era=2)\n## 张爱玲\n### 金锁记：曹七巧、金钱与人性异化\n### 倾城之恋：白流苏、乱世爱情、女性生存\n### 半生缘：都市爱情与人生错失\n### 艺术：苍凉意识、反传奇、精细心理、华丽冷峻\n## 钱钟书\n### 围城：方鸿渐、知识分子讽刺、婚姻围城\n### 艺术：讽刺、反讽、博喻、知识性语言\n### 地位：现代讽刺小说代表", "nodes": 10}, {"name": "40年代文学", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=2", "md": "# [40年代文学](../李凡1000题_现当代文学史-OCR重建版.html#era=2)\n## 抗战文学\n### 主题：民族救亡、战争苦难、人民生活\n### 区域：解放区、国统区、沦陷区、抗战大后方\n## 赵树理\n### 小二黑结婚：解放区农村、婚姻自主、群众语言\n### 李有才板话：农村斗争、民间形式\n### 李家庄的变迁：阶级关系、乡村变革\n### 山药蛋派：大众化、民族化、评书体、口语化\n## 丁玲\n### 太阳照在桑干河上：土改、农村阶级关系\n### 莎菲女士的日记：女性自我、知识者苦闷\n## 周立波暴风骤雨\n### 土改运动、东北农村、群众史诗\n## 孙犁\n### 荷花淀：抗战、女性、诗化小说、荷花淀派\n## 钱钟书围城\n### 知识分子讽刺、现代婚姻、精神困境\n## 艾青\n### 大堰河——我的保姆、我爱这土地、雪落在中国的土地上\n### 主题：土地、苦难、民族、光明\n### 艺术：自由诗体、土地意象、忧郁与希望\n## 九叶诗派\n### 代表：穆旦、辛笛、郑敏、杜运燮\n### 特点：现代意识、现实关怀、复杂意象、知性抒情", "nodes": 25}, {"name": "当代文学总览", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=3", "md": "# [当代文学总览](../李凡1000题_现当代文学史-OCR重建版.html#era=3)\n## 时间范围：1949年至今\n## 阶段：十七年文学、文革文学、新时期文学、90年代以来文学\n## 主题变化：革命叙事—伤痕反思—改革开放—市场与多元文化\n## 主要思潮：社会主义现实主义、伤痕文学、寻根文学、先锋文学、新写实文学", "nodes": 5}, {"name": "十七年文学", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=3", "md": "# [十七年文学](../李凡1000题_现当代文学史-OCR重建版.html#era=3)\n## 赵树理：三里湾，农村合作化、群众语言\n## 柳青创业史：农业合作化、梁生宝、农村社会结构\n## 周立波暴风骤雨：土改叙事、阶级斗争\n## 杨沫青春之歌：林道静、知识青年成长、革命启蒙\n## 梁斌红旗谱：农民革命、朱老忠、家族与时代\n## 罗广斌、杨益言红岩：革命英雄、牺牲精神\n## 贺敬之：白毛女、回延安、革命诗歌与民歌形式\n## 郭小川：将军三部曲、政治抒情诗\n## 特点：革命历史叙事、集体主义、典型人物、民族化形式", "nodes": 10}, {"name": "新时期文学", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=5", "md": "# [新时期文学](../李凡1000题_现当代文学史-OCR重建版.html#era=5)\n## 伤痕文学\n### 刘心武班主任：反思文革、教育问题\n### 卢新华伤痕：创伤记忆、文学转折\n### 主题：苦难、控诉、反思、个体尊严\n## 反思文学\n### 王蒙蝴蝶：干部命运、历史反思\n### 张贤亮绿化树：苦难与人性\n### 谌容人到中年：知识分子、医疗体制、社会责任\n### 张洁爱，是不能忘记的：女性情感、伦理困境\n## 改革文学\n### 蒋子龙乔厂长上任记：改革者、企业改革\n### 张洁沉重的翅膀：改革现实、知识分子\n### 柯云路新星：体制改革、政治小说\n## 寻根文学\n### 韩少功爸爸爸：楚文化、原始生命、文化反思\n### 阿城棋王：传统文化、民间智慧、生命境界\n### 贾平凹商州系列：地域文化、乡土中国\n### 王安忆小鲍庄：民间伦理、文化记忆\n### 莫言红高粱：高密东北乡、生命力、民间叙事\n### 特点：地域文化、民族心理、传统资源、现代反思\n## 先锋文学\n### 马原冈底斯的诱惑：叙事圈套、元叙事\n### 格非迷舟：时间、记忆、不确定叙事\n### 余华现实一种、活着、许三观卖血记\n### 苏童妻妾成群、米：欲望、家族、历史阴影\n### 特点：形式实验、叙事解构、语言自觉、历史不确定\n## 新写实文学\n### 刘震云单位、一地鸡毛：日常生活、琐碎现实\n### 池莉烦恼人生：普通人、城市生活、生活流\n### 方方风景：城市个体、冷静叙事\n### 特点：还原日常、去英雄化、零度叙事、生活压力", "nodes": 32}, {"name": "90年代以来文学", "link": "../李凡1000题_现当代文学史-OCR重建版.html#era=6", "md": "# [90年代以来文学](../李凡1000题_现当代文学史-OCR重建版.html#era=6)\n## 王朔：顽主、动物凶猛、痞子文学、反崇高\n## 王小波黄金时代、白银时代、沉默的大多数\n### 理性、自由、反权威、黑色幽默\n## 余华活着、许三观卖血记\n### 苦难、生存、家庭、民间伦理\n## 莫言\n### 红高粱家族：民间生命力、战争、暴力与欲望\n### 丰乳肥臀：家族史、民族苦难、母性\n### 蛙：生育政策、生命伦理、历史反思\n### 艺术：魔幻现实主义、感觉叙事、民间语言\n## 贾平凹废都、秦腔：城市与乡土、文化转型\n## 迟子建额尔古纳河右岸：边地民族、自然、人性\n## 严歌苓金陵十三钗：战争、女性、历史记忆\n## 女性文学\n### 铁凝哦，香雪：女性成长、乡村现代化\n### 王安忆长恨歌：上海都市、女性生命、城市记忆\n### 陈染私人生活：女性身体、自我意识\n### 林白一个人的战争：女性经验、个人叙事\n## 网络文学与类型文学\n### 传播方式：网络平台、读者互动、类型分化\n### 类型：玄幻、历史、言情、科幻、悬疑\n### 研究重点：大众文化、媒介变革、经典化问题", "nodes": 23}]};
+(function(){
+  var svg = document.getElementById('mmSvg');
+  var nav = document.getElementById('eraNav');
+  var quiz = document.getElementById('quizLink');
+  var eraTitle = document.getElementById('eraTitle');
+  var nodeCnt = document.getElementById('nodeCnt');
+  var T = new markmap.Transformer();
+  var color = d3.scaleOrdinal(BOOK.palette);
+  var mm = null, cur = 0, depth = 2;
+
+  function foldTo(root, d){
+    (function walk(n, lv){
+      if(n.children && n.children.length){
+        n.payload = n.payload || {};
+        n.payload.fold = (lv >= d) ? 1 : 0;
+        n.children.forEach(function(c){ walk(c, lv+1); });
+      }
+    })(root, 0);
+  }
+  function show(i, push){
+    cur = (i + BOOK.eras.length) % BOOK.eras.length;
+    var era = BOOK.eras[cur];
+    var root = T.transform(era.md).root;
+    foldTo(root, depth);
+    var opts = {duration:220, maxWidth:320, spacingVertical:12, spacingHorizontal:110, paddingX:16, color:color, initialExpandLevel:99};
+    if(!mm){ mm = markmap.Markmap.create(svg, opts, root); }
+    else { mm.setOptions(opts); mm.setData(root); }
+    setTimeout(function(){ try{ mm.fit(); }catch(e){} }, 80);
+    eraTitle.textContent = era.name;
+    nodeCnt.textContent = era.nodes + ' 个节点';
+    quiz.href = era.link;
+    Array.prototype.forEach.call(nav.querySelectorAll('button[data-i]'), function(b){
+      b.classList.toggle('on', parseInt(b.getAttribute('data-i'),10) === cur);
+    });
+    if(push !== false){ try{ history.replaceState(null,'','#e='+cur); }catch(e){} }
+    document.title = era.name + ' · ' + BOOK.title + ' 思维导图';
+  }
+
+  /* 侧栏 */
+  var head = nav.querySelector('.nav-head');
+  BOOK.eras.forEach(function(e, i){
+    var b = document.createElement('button');
+    b.setAttribute('data-i', i);
+    b.innerHTML = '<span class="idx">' + (i+1) + '</span><span class="nm">' + e.name + '</span><span class="cnt">' + e.nodes + '</span>';
+    b.onclick = function(){ show(i); if(window.innerWidth<=760) nav.classList.remove('show'); };
+    nav.appendChild(b);
+  });
+  if(BOOK.footnote){
+    var fn = document.createElement('div');
+    fn.className = 'footnote';
+    fn.innerHTML = BOOK.footnote;
+    nav.appendChild(fn);
+  }
+  var hm = document.getElementById('hamburger');
+  hm.onclick = function(){ nav.classList.toggle('show'); };
+
+  /* 层级按钮 */
+  document.getElementById('depthTool').addEventListener('click', function(ev){
+    var b = ev.target.closest('button'); if(!b) return;
+    depth = parseInt(b.getAttribute('data-d'),10) || 2;
+    Array.prototype.forEach.call(this.querySelectorAll('button'), function(x){ x.classList.toggle('on', x===b); });
+    show(cur);
+  });
+  document.getElementById('fitBtn').onclick = function(){ try{ mm.fit(); }catch(e){} };
+
+  /* 键盘切换 */
+  document.addEventListener('keydown', function(ev){
+    if(ev.target && /INPUT|TEXTAREA/.test(ev.target.tagName)) return;
+    if(ev.key === 'ArrowRight') show(cur+1);
+    else if(ev.key === 'ArrowLeft') show(cur-1);
+  });
+
+  /* 初始 hash */
+  var m = (location.hash||'').match(/e=(\d+)/);
+  show(m ? Math.min(parseInt(m[1],10), BOOK.eras.length-1) : 0, false);
+})();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

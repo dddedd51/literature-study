@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>62 天 · 每天 12 小时版</title>
+<style>
+@font-face{font-family:"霞鹜文楷";src:url("./_shared/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:swap}
+:root{
+  --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073; --line:#e3dccd;
+  --accent:#9a3b2e; --gold:#c8902a; --soft:#f3ede1;
+  --pol:#9a3b2e; --eng:#3a5a8a; --c647:#3b6b5e; --c853:#6b5a8a; --ok:#3b6b5e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);
+  font-family:"霞鹜文楷","LXGW WenKai",KaiTi,"楷体",STKaiti,serif;
+  background-image:radial-gradient(circle at 12% 6%,rgba(200,144,42,.08) 0,transparent 34%),
+                   radial-gradient(circle at 90% 18%,rgba(154,59,46,.06) 0,transparent 36%),
+                   radial-gradient(circle at 52% 94%,rgba(59,107,94,.05) 0,transparent 40%);
+  min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.78}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px 90px}
+
+.topbar{position:sticky;top:0;z-index:40;background:rgba(247,243,234,.95);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  padding:9px 18px;margin:0 -18px 18px}
+.topbar a{color:var(--accent);text-decoration:none;font-weight:700;font-size:13.5px;
+  border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 11px}
+.topbar a:hover{border-color:var(--accent)}
+.topbar .tt{font-weight:700;font-size:15px;letter-spacing:1.5px;margin-right:auto}
+.topbar .dday{font-size:13px;color:var(--sub);white-space:nowrap}
+.topbar .dday b{font-size:20px;color:var(--accent);font-variant-numeric:tabular-nums;margin:0 2px}
+.mini{height:6px;width:110px;background:var(--soft);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.mini i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--accent));transition:width .4s}
+
+.hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap;padding:18px 6px 4px}
+.ring{position:relative;width:138px;height:138px;flex:none}
+.ring svg{width:138px;height:138px;display:block}
+.ring .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .num b{font-size:36px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:800}
+.ring .num span{font-size:11px;color:var(--sub);letter-spacing:2px;margin-top:4px}
+.htxt{flex:1 1 380px;min-width:290px}
+.htxt h1{font-size:29px;letter-spacing:3px;font-weight:800;margin-bottom:4px}
+.htxt .sub{color:var(--sub);font-size:13.5px;letter-spacing:.4px}
+.htxt .where{margin-top:12px;font-size:13px;background:var(--card);
+  border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;padding:9px 13px}
+.htxt .where b{color:var(--accent)}
+
+.verdict{margin:16px 0 0;background:#fdf6f2;border:1px solid #ecd9cd;border-radius:11px;
+  padding:12px 16px;font-size:13.5px}
+.verdict b{color:var(--accent)}
+
+h2.sec{font-size:17px;letter-spacing:2px;margin:34px 0 12px;display:flex;align-items:center;gap:10px}
+h2.sec:before{content:"";width:5px;height:18px;background:var(--accent);border-radius:2px}
+h2.sec small{font-size:11.5px;color:var(--sub);letter-spacing:0;font-weight:400}
+
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+  border-radius:12px;overflow:hidden;font-size:12.8px}
+.tbl th{background:var(--soft);font-weight:700;font-size:12px;letter-spacing:1px;color:var(--sub);
+  text-align:left;padding:9px 11px;border-bottom:1px solid var(--line)}
+.tbl td{padding:10px 11px;border-bottom:1px solid #f0eade;vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .n{font-weight:700;white-space:nowrap}
+.tbl .hr{font-weight:800;font-variant-numeric:tabular-nums;color:var(--accent);white-space:nowrap;font-size:14px}
+.tbl .sm{color:var(--sub);font-size:12px}
+
+/* 换挡 */
+.gears{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gr{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 16px;position:relative}
+.gr:before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--c);border-radius:12px 12px 0 0}
+.gr h4{font-size:15px;letter-spacing:1px;margin:2px 0 1px;color:var(--c)}
+.gr .hh{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--c);line-height:1.3}
+.gr .hh s{text-decoration:none;font-size:12px;color:var(--sub);font-weight:400}
+.gr p{font-size:12.3px;color:#4a443b;margin-top:6px;line-height:1.7}
+.gr .trig{font-size:11.5px;color:var(--sub);margin-top:7px;border-top:1px dashed var(--line);padding-top:6px}
+
+/* 恢复清单 */
+.res{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+.rc h4{font-size:13.5px;letter-spacing:1px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px dashed var(--line)}
+.rc h4 span{font-size:11px;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.rc ul{list-style:none;font-size:12.8px}
+.rc li{position:relative;padding-left:15px;margin-bottom:5px}
+.rc li:before{content:"√";position:absolute;left:0;top:0;color:var(--ok);font-weight:700}
+.rc li b{color:var(--ok)}
+.rc.no li:before{content:"×";color:var(--accent)}
+.rc.no li b{color:var(--accent)}
+
+.phases{display:flex;flex-direction:column;gap:12px}
+.ph{background:var(--card);border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.ph .hd{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:13px 16px;cursor:pointer;
+  border-left:5px solid var(--c)}
+.ph .hd:hover{background:#fdfaf2}
+.ph .tag{font-size:11px;letter-spacing:1.5px;color:#fff;background:var(--c);border-radius:5px;padding:2px 7px;font-weight:700}
+.ph .nm{font-size:16px;font-weight:800;letter-spacing:1px}
+.ph .dt{font-size:12px;color:var(--sub);font-variant-numeric:tabular-nums}
+.ph .th{font-size:12.5px;color:var(--accent);margin-left:auto;text-align:right}
+.ph .bd{display:none;padding:0 16px 15px;border-top:1px dashed var(--line)}
+.ph.open .bd{display:block}
+.ph .budget{display:flex;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--sub);padding:9px 0 3px}
+.ph .budget span{background:#f5efe3;border-radius:5px;padding:2px 8px;font-variant-numeric:tabular-nums}
+.ph .row{display:flex;gap:10px;padding:9px 0;border-bottom:1px dotted #f0eade;font-size:12.8px}
+.ph .row:last-of-type{border-bottom:none}
+.ph .row .lb{flex:none;width:70px;font-size:11.5px;font-weight:700;color:#fff;background:var(--c);
+  border-radius:5px;height:20px;line-height:20px;text-align:center;margin-top:2px}
+.ph .row ul{list-style:none;flex:1}
+.ph .row li{position:relative;padding-left:12px;margin-bottom:3px}
+.ph .row li:before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:99px;background:var(--c);opacity:.55}
+.ph .ck{margin-top:9px;background:#fbf7ec;border:1px dashed var(--line);border-radius:8px;padding:8px 11px;font-size:12.5px}
+.ph .ck b{color:var(--ok)}
+
+.weeks{background:var(--card);border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.wk{display:grid;grid-template-columns:92px 1.4fr 1fr 1fr 0.85fr;border-bottom:1px solid #f0eade}
+.wk:last-child{border-bottom:none}
+.wk>div{padding:8px 10px;font-size:12.1px;line-height:1.55;border-right:1px solid #f4efe4}
+.wk>div:last-child{border-right:none}
+.wk.head{background:var(--soft);font-size:11.5px;letter-spacing:1px;color:var(--sub);font-weight:700}
+.wk .lab{font-variant-numeric:tabular-nums}
+.wk .lab b{display:block;font-size:13.5px;letter-spacing:.5px;line-height:1.4}
+.wk .lab span{font-size:10.5px;color:var(--sub);white-space:nowrap;display:block}
+.wk .lab i{font-style:normal;font-size:10px;background:#efe8d8;border-radius:4px;padding:1px 5px;
+  color:var(--accent);display:inline-block;margin-top:3px}
+.wk .cell{position:relative;cursor:pointer;padding-right:24px;color:#3a352d}
+.wk .cell:hover{background:#fdfaf2}
+.wk .cell.done{background:#f1f6f2;color:#71827a;text-decoration:line-through;text-decoration-color:#c2d0c7}
+.wk .cell:after{content:"";position:absolute;right:8px;top:10px;width:12px;height:12px;border-radius:4px;
+  border:1.5px solid #d8cfbc;background:#fff}
+.wk .cell.done:after{background:var(--ok);border-color:var(--ok)}
+.wk .cell.done:before{content:"";position:absolute;right:11.5px;top:13px;width:4px;height:7px;
+  border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(42deg);z-index:2}
+
+/* 日课 */
+.day{display:grid;grid-template-columns:1.25fr 1fr;gap:12px}
+.blk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+.blk h4{font-size:13.5px;letter-spacing:1.5px;margin-bottom:8px;color:var(--accent)}
+.blk table{width:100%;border-collapse:collapse;font-size:12.4px}
+.blk td{padding:5px 0;border-bottom:1px dotted #f0eade;vertical-align:top}
+.blk td:first-child{width:100px;color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
+.blk td:last-child{text-align:right;color:var(--sub);width:48px;font-variant-numeric:tabular-nums}
+.blk .sum{font-size:12px;color:var(--sub);margin-top:7px;text-align:right}
+
+.hb{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:9px;overflow:hidden}
+.hb summary{padding:11px 15px;cursor:pointer;font-size:14px;font-weight:700;letter-spacing:.5px;list-style:none;
+  display:flex;align-items:center;gap:9px}
+.hb summary::-webkit-details-marker{display:none}
+.hb summary:before{content:"+";width:18px;height:18px;line-height:16px;text-align:center;border-radius:5px;
+  border:1px solid var(--line);color:var(--sub);font-size:13px;flex:none}
+.hb[open] summary:before{content:"−";color:var(--accent);border-color:var(--accent)}
+.hb .in{padding:0 15px 14px 42px;font-size:12.8px;color:#3a352d}
+.hb .in p{margin-bottom:6px}
+.hb .in b{color:var(--accent)}
+
+.red{background:#fdf6f2;border:1px solid #ecd9cd;border-radius:12px;padding:13px 18px}
+.red li{font-size:12.8px;margin:5px 0 5px 18px}
+.red li b{color:var(--accent)}
+
+.mats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.mat{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:11px 13px;text-decoration:none;color:inherit;transition:.15s}
+.mat:hover{border-color:var(--accent);transform:translateY(-1px)}
+.mat .mn{font-size:13.4px;font-weight:700;margin-bottom:3px}
+.mat .md{font-size:11.5px;color:var(--sub);line-height:1.6}
+.mat .mq{font-size:11px;color:var(--accent);margin-top:5px}
+
+.foot{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--sub);line-height:1.9}
+@media (max-width:860px){
+  .res,.gears,.day{grid-template-columns:1fr}
+  .wk{grid-template-columns:82px 1fr 1fr}
+  .wk>div:nth-child(n+4){display:none}
+  .ph .th{margin-left:0;flex-basis:100%;text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <a href="index.html">← 返回导航</a>
+  <span class="tt">62 天 · 每天 12 小时</span>
+  <div class="mini"><i id="miniBar"></i></div>
+  <span class="dday">D-<b id="tbD">62</b></span>
+</div>
+
+<div class="hero">
+  <div class="ring">
+    <svg viewBox="0 0 138 138">
+      <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#c8902a"/><stop offset="1" stop-color="#9a3b2e"/></linearGradient></defs>
+      <circle cx="69" cy="69" r="60" fill="none" stroke="#e4dac4" stroke-width="9"/>
+      <circle id="ringArc" cx="69" cy="69" r="60" fill="none" stroke="url(#rg)" stroke-width="9"
+        stroke-linecap="round" transform="rotate(-90 69 69)" stroke-dasharray="377" stroke-dashoffset="377"/>
+    </svg>
+    <div class="num"><b id="ringD">62</b><span>天后开考</span></div>
+  </div>
+  <div class="htxt">
+    <h1>六十二天 · 十二小时</h1>
+    <div class="sub">101 政治 · 204 英语二 · 647 创意写作基础 · 853 文学评论与创作 ｜ 62 天 × 12 小时 = 744 小时</div>
+    <div class="where" id="where">正读取今天的落点…</div>
+  </div>
+</div>
+
+<div class="verdict">
+  744 小时是 4 小时版的<b>三倍</b>。这个量级下，之前为了装进 248 小时而砍掉的东西——李凡、分章 915 题、文学理论 298 题、英语 68 篇、853 的 24 篇输出——<b>全部恢复</b>。<br>
+  但李凡这一项要按真实形态重排：<b>1273 题全是简答与论述，答案中位数 1000–1150 字</b>，不是选择题。所以不按"每天 60 题"排，按题库自带星级分层：<b>★5 背三遍、★4 背两遍、★3 只读一遍、★★ 以下不看</b>。代价是：没有余量，一天塌了就要用掉两天的缓冲，所以下面三档换挡规则比任务表更重要。
+</div>
+
+<h2 class="sec">01 换挡规则<small>先看这张，再谈任务</small></h2>
+<div class="gears">
+  <div class="gr" style="--c:#3b6b5e">
+    <h4>十二小时 · 满档</h4>
+    <div class="hh">12 <s>小时／天</s></div>
+    <p>六段正课 + 两处碎片 + 复盘。任务表就是按这一档写的，744 小时全部用完。</p>
+    <div class="trig">连续三天做到，说明这个强度你真扛得住，按原表跑。</div>
+  </div>
+  <div class="gr" style="--c:#c8902a">
+    <h4>八小时 · 降档</h4>
+    <div class="hh">8 <s>小时／天</s></div>
+    <p>砍掉 853 的加练与 ★4 第三轮，只保李凡 ★4 以上、煜编名解、英语阅读、政治选择。总时长降到 496 小时。</p>
+    <div class="trig">连续三天不足 9 小时 → 自动切这一档，不是失败，是换挡。</div>
+  </div>
+  <div class="gr" style="--c:#9a3b2e">
+    <h4>六小时 · 保底</h4>
+    <div class="hh">6 <s>小时／天</s></div>
+    <p>只保四件事：单词、李凡 ★5 与 ★4、政治选择、煜编名解。写作只在周日写。</p>
+    <div class="trig">身体出问题、连续两天低于 5 小时 → 切这一档，先恢复作息。</div>
+  </div>
+</div>
+
+<h2 class="sec">02 时间账本<small>744 小时怎么分</small></h2>
+<table class="tbl" id="tbl"></table>
+
+<h2 class="sec">03 这一版恢复了什么<small>和 4 小时版的区别</small></h2>
+<div class="res">
+  <div class="rc">
+    <h4>全部恢复<span style="background:#3b6b5e">加量</span></h4>
+    <ul>
+      <li><b>李凡 541 道 ★4 以上</b>全背：★5 163 题背三遍、★4 378 题背两遍；★3 632 题只读一遍圈关键词。</li>
+      <li><b>文学理论 74 道 ★4 以上</b>两遍，创写理论 55 分的底子。</li>
+      <li><b>煜编 120 章名解</b>两遍 + 唐红梅 64 讲全做。</li>
+      <li><b>英语 2010–2026 全 68 篇</b>，一遍到底，错题二刷，60 小时。</li>
+      <li><b>853 评论 12 篇 + 创作 12 篇</b>，平均两天一篇，76 小时。</li>
+      <li><b>政治四科全刷</b>，肖1000 一轮 + 错题二刷，思修不专项但要过。</li>
+      <li><b>整套模考 8 套</b>（647 四套 + 853 四套），全部手写限时。</li>
+    </ul>
+  </div>
+  <div class="rc no">
+    <h4>仍然不碰<span style="background:#9a3b2e">省时</span></h4>
+    <ul>
+      <li><b>李凡 ★★ 及以下约 400 题</b>。低星题考到的概率不值那个时间。</li>
+      <li><b>李凡答案全文背诵</b>。背的是提纲和关键词，不是逐字原文。</li>
+      <li><b>精讲精练全书通读</b>。政治只走肖1000 与背诵手册。</li>
+      <li><b>思修法基专项</b>。过一遍即可，不单独刷题。</li>
+      <li><b>抄写式笔记</b>。只写关键词与结构，不做美化。</li>
+      <li><b>任何 12 月新出的资料</b>。不开新书。</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="sec">04 四段路线<small>点标题展开，每段有小时预算和验收线</small></h2>
+<div class="phases" id="phases"></div>
+
+<h2 class="sec">05 每日十二小时<small>以 10/19 为样板，每天同一结构</small></h2>
+<div class="day" id="day"></div>
+
+<h2 class="sec">06 九周任务<small>点格子打勾，只存本机</small></h2>
+<div class="weeks" id="weeks"></div>
+
+<h2 class="sec">07 战术手册<small>九条，直接照着答</small></h2>
+<div id="handbook"></div>
+
+<h2 class="sec">08 止损红线<small>崩了也不许破的底线</small></h2>
+<div class="red"><ul>
+  <li><b>单日塌了</b>：只做单词 30 分 + 李凡 20 题 + 政治 20 题，其余全砍，不补昨天的债。</li>
+  <li><b>连续三天不足 9 小时</b>：立刻切八小时档，不要用"明天补回来"骗自己，那是这套计划唯一会死的方式。</li>
+  <li><b>某一章背不下来</b>：只记一个定义 + 一个例子 + 一个可比对象，然后往前走。</li>
+  <li><b>853 创作不追文学性</b>：追完整、切题、有一个反转。考场 70 分钟，写完比写好重要。</li>
+  <li><b>11/30 之后</b>：英语不再做新完型与新题型，只保阅读错题与作文。</li>
+  <li><b>12/10 之后</b>：政治停选择题，只背肖四主观题与时政。</li>
+  <li><b>每天必须睡够 6.5 小时</b>。12 小时的账是用清醒换的，睡不够就是假账。</li>
+</ul></div>
+
+<h2 class="sec">09 资料直达<small>全部指向本站已有页面</small></h2>
+<div class="mats" id="mats"></div>
+
+<div class="foot">
+  口径：2026-10-18 起算至 2026-12-19 初试首日，共 62 天；按每天 12 小时、总计 744 小时倒推。<br>
+  煜编 6 卷为中国文学史（先秦至当代），外国文学线走唐红梅 64 讲与李凡外国册，两条线分开排。<br>
+  李凡四册共 1571 题（古代 483 / 现当代 458 / 外国 332 / 理论 298），星级分布：★5 163、★4 378、★3 632、★2 及以下约 398。<br>
+  647 各题型分值以西北大学当年招生简章与真题为准；国家线以当年官方发布为准。<br>
+  本页只做本地规划，不推送、不联网、不改动既有资料。「明天12小时.html」是这一版的第一天执行表。
+</div>
+
+</div>
+
+<script>
+(function(){
+'use strict';
+
+var EXAM = new Date(2026,11,19);
+
+var TBL = [
+ ['647 创意写作基础',150,'294 小时',
+  '李凡 ★5 163 题×3 遍 76 ＋ ★4 378 题×2 遍 101 ＋ ★3 632 题读一遍 26 ＋ 文学理论 74 题 15 ＋ 煜编 20 ＋ 唐红梅 10 ＋ 导图 12 ＋ 创写 14 ＋ 例证 8 ＋ 机动 12',
+  '按星级分层背诵，不刷全册'],
+ ['853 文学评论与创作',150,'162 小时',
+  '9 卡 20 ＋ 评论 12 篇 36 ＋ 创作 12 篇 40 ＋ 模板默写 22 ＋ 真题拆解 12 ＋ 理论练习 12 ＋ 机动 20',
+  '两天一篇，写到手熟'],
+ ['204 英语二',100,'140 小时',
+  '阅读 68 篇 45 ＋ 错题二轮 15 ＋ 作文 20 篇 27 ＋ 翻译 40 段 15 ＋ 完型 10 套 10 ＋ 新题型 12 篇 8 ＋ 单词 12 ＋ 机动 8',
+  '全年份一遍，作文定稿'],
+ ['101 政治',100,'124 小时',
+  '肖1000 1500 题 40 ＋ 背诵手册 15 ＋ 肖八 8 套×3 遍 15 ＋ 肖四 28 ＋ 框架 12 ＋ 时政 8 ＋ 机动 6',
+  '选择先到 40，再背大题'],
+ ['复盘与机动',0,'24 小时','每周日复盘、错题本整理、换挡判断','——'],
+ ['合计',500,'744 小时','62 天 × 12 小时，一天不空','——']
+];
+
+var PHASES = [
+ {no:'P1', name:'一轮全覆盖', from:'10/18', to:'11/08', dd:'D-62 → D-41', days:22, c:'#9a3b2e',
+  th:'★5 与 ★4 共 541 题，必须在 11/08 前背完第一遍',
+  budget:[['总 264h'],['647 132h'],['853 40h'],['英语 56h'],['政治 36h']],
+  acts:{
+   '647':['★★★★★ 每天 7 题（共 163 题）：读一遍 → 合页复述提纲 → 说不出的标红。',
+          '★★★★ 每天 17 题（共 378 题）：只背"三段结构 + 两个例证"，不背原文。',
+          '★★★ 每天 14 题（632 题里挑 300 题）：只读，圈关键词，不要求复述。',
+          '煜编每天 2 章（只挑 3–5 条）、导图每天 1.5 张，当框架补充。',
+          '晚上 19:15 那一段只做回背：当天背过的 ★5 与 ★4，白纸默提纲。'],
+   '853':['理论卡一周 2 张，22 天啃完 5 张：新批评／俄国形式主义／叙事学／精神分析／存在主义。',
+          '创作 1500 字 ×4，评论暂不写（模板还没搭）。',
+          '每晚 10 分钟口述当天那张卡，卡住就记下来。'],
+   '204':['阅读每天 3 篇（68 篇 ÷ 22 天），每篇 30 分钟：限时做 + 翻译定位句 + 错因编码。',
+          '单词两个碎片：起床 15 分、睡前 15 分，每天 10 个新错词进本子。',
+          '11/01 起每周一次把错因统计一遍，看哪类最多。'],
+   '101':['肖1000 马原 + 毛中特，每天 35 题。',
+          '错题标三类：概念混／时间线错／题干没读懂，第三类最多也最好补。',
+          '不背大题，这个阶段只建选择题正确率。']
+  },
+  ck:'★★★★★ 163 题第一遍完 · ★★★★ 378 题背完 · ★★★ 读掉 300 题 · 英语 68 篇一遍到底'
+ },
+ {no:'P2', name:'二轮与输出', from:'11/09', to:'11/30', dd:'D-40 → D-19', days:22, c:'#c8902a',
+  th:'题转成错题，知识转成文章',
+  budget:[['总 264h'],['647 100h'],['853 66h'],['英语 50h'],['政治 48h']],
+  acts:{
+   '647':['★★★★★ 第二轮，每天 7 题，8 分钟一遍，只背提纲不重读全文。',
+          '★★★★ 第二轮，每天 17 题，6 分钟一遍，只看第一轮标红处。',
+          '★★★ 剩余 332 题读完圈关键词；文学理论 298 题里 ★5 与 ★4（74 题）开背。',
+          '煜编每天 3 章（43–120 收尾），唐红梅每天 3 讲，把名解和论述串成一条线。'],
+   '853':['评论 800 字 ×6、创作 1500 字 ×6，两天一篇，全部手写限时。',
+          '9 大来源卡补全并默写，每张要能说出"谁提出 + 两个概念 + 怎么用"。',
+          '11/20 起把 2025 与 2026 真题示范各拆一遍，抄结构不抄句子。'],
+   '204':['真题二刷：只重做错过的题，再错的标双红。',
+          '完型每周 2 套、新题型每周 2 篇、翻译每天 2 段。',
+          '11/15 起作文模板：小作文 6 类、大作文 4 类图表，11 月底前定稿。'],
+   '101':['毛中特 + 史纲各一轮，每天 35 题。',
+          '11 月上旬肖八到手就开，25 分钟一套，分数记表看趋势。',
+          '史纲时间轴 + 毛中特会议文件表各默写一次。']
+  },
+  ck:'★5 与 ★4 第二轮完 · ★★★ 632 题全圈完 · 文论 74 题第一遍 · 853 共 12 篇 · 肖八均分 ≥32'
+ },
+ {no:'P3', name:'模考与压缩', from:'12/01', to:'12/12', dd:'D-18 → D-7', days:12, c:'#3b6b5e',
+  th:'整卷限时，把会的东西变成分数',
+  budget:[['总 144h'],['647 40h'],['853 40h'],['英语 26h'],['政治 38h']],
+  acts:{
+   '647':['整卷模考 4 套，全部手写 3 小时，模考后一天专门批改重写。',
+          '★★★★★ 第三轮：163 题再默一遍提纲，只看想不起来的。',
+          '★★★★ 第三轮只清红标；文学理论 74 题第二遍。',
+          '例证卡 54 张两遍，创写理论压成一页每天默。'],
+   '853':['整卷模考 4 套，严格分时：理论 20 分、评论 50 分、创作 70 分。',
+          '评论 2 篇、创作 2 篇作为模考内容，不另加。',
+          '9 卡默写 ×3，卡壳处标红重背。'],
+   '204':['作文 10 篇（5 小 5 大），全部手写限时。',
+          '错题三刷：一天 6 题，只看做错过的。',
+          '12/10 之后不再做完型与新题型。'],
+   '101':['肖八 8 套 ×2 遍 + 肖四选择 4 套，全部掐表。',
+          '肖四主观题背第 1–2 遍，每天 3 题，拆成"原理句 + 材料句 + 结论句"。',
+          '时政每天 15 分钟。']
+  },
+  ck:'647 与 853 各 4 套模考，双科 ≥105 · 作文 10 篇 · 肖四选择 ≥36'
+ },
+ {no:'P4', name:'最后六天', from:'12/13', to:'12/18', dd:'D-6 → D-1', days:6, c:'#8a8073',
+  th:'只做熟化，不学新东西',
+  budget:[['总 72h'],['647 24h'],['853 18h'],['英语 14h'],['政治 16h']],
+  acts:{
+   '647':['提纲速翻：541 道 ★4 以上只读标题与首句，一天 90 题。',
+          '导图速翻（34 图分两天），例证卡再过两遍。',
+          '12/18 只看自己标红的地方，不碰新内容。'],
+   '853':['9 卡默写 ×2；3 个创作结构各写 100 字提纲；2 个开头模板背到不用想。',
+          '不写完整篇，只写开头与结尾各一段。',
+          '把真题里出现过的理论再对一遍。'],
+   '204':['作文模板默写，每天 1 小 1 大。',
+          '错词本过 3 遍，只扫不背新词。',
+          '12/16 之后不做任何阅读题。'],
+   '101':['肖四主观题第 3–4 遍滚动背（当天／次日／第 4 天／第 7 天）。',
+          '12/17 起按考试时间作息：8:30 做政治选择题。',
+          '考场踩点、证件文具。']
+  },
+  ck:'作息与考试对齐 · 三个开头模板能默 · 证件文具齐'
+ }
+];
+
+var DAY = [
+ ['06:30–07:00','单词：复习 150 + 昨日错词','30′'],
+ ['08:00–10:00','李凡新背：★5 七题 + ★4 十题','120′'],
+ ['10:15–12:15','煜编 2 章 + 导图 2 张 + ★3 十四题','120′'],
+ ['12:15–13:20','午饭 + 午睡 30 分','—'],
+ ['13:20–15:10','英语 3 篇阅读精做','110′'],
+ ['15:25–16:55','政治 35 题 + 错题分类','90′'],
+ ['17:05–18:20','853 理论卡 / 评论 / 创作','75′'],
+ ['18:20–19:15','晚饭 + 散步','—'],
+ ['19:15–21:15','李凡回背：★4 七题 + 今日 ★5 默提纲','120′'],
+ ['21:25–22:05','853 写作或默写','40′'],
+ ['22:05–22:20','复盘：打勾 + 明日三件事','15′']
+];
+
+var WEEKS = [
+ {w:'W1', dt:'10/19–10/25', ph:'P1 一轮',
+  c647:'★5 50 题 ＋ ★4 120 题 ＋ ★3 95 题 ＋ 煜编 1–14 章',
+  c853:'理论卡 2 张 ＋ 创作 1500 字 ×2',
+  c204:'阅读 21 篇（2026→2024）',
+  c101:'马原 210 题'},
+ {w:'W2', dt:'10/26–11/01', ph:'P1 一轮',
+  c647:'★5 52 题 ＋ ★4 120 题 ＋ ★3 95 题 ＋ 煜编 15–28 章',
+  c853:'理论卡 2 张 ＋ 创作 1500 字 ×2',
+  c204:'阅读 21 篇（2023→2021）＋ 错因统计',
+  c101:'马原 210 题'},
+ {w:'W3', dt:'11/02–11/08', ph:'P1 一轮',
+  c647:'★5 61 题（一轮完）＋ ★4 138 题（一轮完）＋ ★3 110 题',
+  c853:'理论卡 1 张 ＋ 创作 1500 字 ×2',
+  c204:'阅读 26 篇（2020→2018 收尾）',
+  c101:'毛中特 210 题'},
+ {w:'W4', dt:'11/09–11/15', ph:'P2 二轮',
+  c647:'煜编 43–64 章 ＋ ★5 二轮 52 题 ＋ ★4 二轮 120 题 ＋ ★3 110 题',
+  c853:'评论 800 字 ×2 ＋ 创作 1500 字 ×1',
+  c204:'错题二刷 ＋ 完型 2 套 ＋ 新题型 2 篇',
+  c101:'毛中特 200 题 ＋ 史纲 100 题'},
+ {w:'W5', dt:'11/16–11/22', ph:'P2 二轮',
+  c647:'煜编 65–86 章 ＋ ★5 二轮 52 题 ＋ ★4 二轮 120 题 ＋ ★3 112 题',
+  c853:'评论 ×2 ＋ 创作 ×1 ＋ 9 卡补全',
+  c204:'错题二刷 ＋ 翻译 14 段 ＋ 作文模板搭骨架',
+  c101:'史纲 210 题 ＋ 肖八 4 套'},
+ {w:'W6', dt:'11/23–11/29', ph:'P2 二轮',
+  c647:'煜编 87–108 章 ＋ ★5 二轮完 ＋ ★4 二轮完 ＋ 文论 74 题开背',
+  c853:'评论 ×2 ＋ 创作 ×2 ＋ 真题示范拆解',
+  c204:'完型 4 套 ＋ 新题型 4 篇 ＋ 作文 2 篇（模板定稿）',
+  c101:'肖八 4 套 ＋ 错题二刷'},
+ {w:'W7', dt:'11/30–12/06', ph:'P2/P3 交界',
+  c647:'煜编 109–120 章 ＋ 唐红梅 1–32 讲 ＋ 文论 74 题第二遍',
+  c853:'评论 ×2 ＋ 创作 ×2',
+  c204:'作文 3 篇 ＋ 阅读错题回顾',
+  c101:'肖八错题 ＋ 肖四选择 4 套'},
+ {w:'W8', dt:'12/07–12/13', ph:'P3 模考',
+  c647:'唐红梅 33–64 讲 ＋ ★5 第三轮 163 题 ＋ ★4 清红标 ＋ 例证卡',
+  c853:'整卷模考 2 套 ＋ 9 卡默写',
+  c204:'作文 5 篇 ＋ 错题三刷',
+  c101:'肖四主观题第 1–2 遍'},
+ {w:'W9', dt:'12/14–12/18', ph:'P4 收尾',
+  c647:'提纲速翻 541 题 ＋ 例证卡两遍 ＋ 只过红标',
+  c853:'9 卡默写 ×2 ＋ 结构与开头模板',
+  c204:'作文默写 ＋ 错词本三遍',
+  c101:'肖四主观题第 3–4 遍'}
+];
+
+var HB = [
+ ['李凡 1000 题怎么背（按星级分层）',
+  ['<b>它是论述题库，不是选择题。</b>1273 题答案中位数 1000–1150 字，逐字背等于背一本书，62 天绝对背不完。',
+   '<b>★★★★★ 163 题</b>：读一遍 → 合页复述提纲 → 说不出的标红。三遍，12 / 8 / 8 分钟。',
+   '<b>★★★★ 378 题</b>：只背"三段结构 + 两个例证"，不背原文。两遍，10 / 6 分钟。',
+   '<b>★★★ 632 题</b>：只读一遍，圈关键词，不要求复述。',
+   '<b>★★ 及以下约 400 题</b>：不看。',
+   '背的是"这段答案分几层、每层的关键词是什么"，考场上自己扩成 500 字，不是默写原文。',
+   '题库页面顶端就有星级筛选，直接按星号过滤，不用翻全册。']],
+ ['名解怎么背（两条线，别混）',
+  ['<b>中国线</b>：煜编 6 卷 120 章。第一遍一天 2 章，第二遍一天 4 章，第三遍只过红标。',
+   '<b>外国线</b>：唐红梅 64 讲，11 月每天 2 讲，考前只回看 ★ 级。',
+   '一条名解背三层：一句话定义／两个特征／一个代表作或可比对象。',
+   '复述失败当场标红，第二次只背红标。不抄写，抄写是假勤奋。']],
+ ['导图怎么用（34 张，四遍）',
+  ['第一遍看：知道每章有几块，不求记住。',
+   '第二遍遮：遮住分支只看主干，说出三个子目。',
+   '第三遍写：白纸默主干，写不出的回资料库查。',
+   '第四遍翻：考前一天 12 张，只求眼熟。']],
+ ['647 论述题：三段式配例证',
+  ['第一段立论：一句话回答题干，不复述题干。',
+   '第二三段：每段一个分论点 + 一个具体文本（例证卡 54 张就是弹药）。',
+   '结尾回扣题干，加"这也解释了…"抬一层。',
+   '写不满的根本原因是没有例证可写，不是没有观点。']],
+ ['创写理论 55 分：三层答法',
+  ['4 份创写背诵版（定义与特征／方法论第三章／简史第二章／简史三题）压成一页 A4。',
+   '每题三层：<b>是什么</b>（定义 + 代表）／<b>不是什么</b>（与相邻概念辨析）／<b>为什么在中文语境里重要</b>。',
+   '材料题先抓材料里的"写作行为"，再往理论上靠。']],
+ ['853 理论 20 分：四句话',
+  ['谁提出 → 两个核心概念 → 一个操作步骤（看什么、怎么看）→ 一句局限。',
+   '拿分点全在"操作步骤"，只写概念不给用法最多给一半分。',
+   '9 张卡先保 5 张：新批评／俄国形式主义／叙事学／精神分析／存在主义。']],
+ ['853 评论 800 字：四段',
+  ['① 一句话判断：写的是什么、用什么方式写。',
+   '② 三层拆：结构／语言／细节，每层配一处原文。',
+   '③ 一处张力或不足：说清"本来可以更好在哪"。',
+   '④ 收束：回到第一段判断，换一种说法。',
+   '大忌：通篇复述情节，没有一个分析动作。']],
+ ['853 创作 80 分：三个结构 + 时间分配',
+  ['<b>物件线索</b>：一个东西贯穿，结尾变形或易主。',
+   '<b>双线交叉</b>：现在与过去交替，最后合流。',
+   '<b>闭环</b>：开头那句话结尾重说，主语义反转。',
+   '70 分钟：5 分钟定结构 → 55 分钟写 1400–1600 字 → 10 分钟只改结尾。']],
+ ['英语：68 篇怎么刷',
+  ['第一遍 30 分钟一篇：18 分钟限时做、7 分钟翻译定位句、5 分钟写错因一个字。',
+   '错因编码只用一个字：V 词汇／S 句子／L 定位／R 选项核对／T 主旨／O 观点／I 推断／M 态度。',
+   '你的历史失分集中在 R：题干先圈动词，再回原文核限定词，选项动词标 ↑↓ 比方向。',
+   '含原文词 ≠ 正确，干扰项最爱塞原文真词：undercut 削弱／undermine 削弱／underpin 支撑。']],
+ ['政治：选择先到 40',
+  ['肖1000 一轮全刷，错题二刷；每天 35 题，25 分钟。',
+   '错题标三类，第三类"题干没读懂"最多也最好补。',
+   '肖八肖四选择题掐表，分数记表看趋势不看单次。',
+   '主观题 12 月才开始，拆成"原理句 + 材料句 + 结论句"，每句 30 字内。']]
+];
+
+var MATS = [
+ ['明天 12 小时 · 执行表','这一版第一天的九段清单，到点会变红。','明天12小时.html','今天就用 →'],
+ ['思维导图 · 34 图','一天 1.5 到 12 张。','思维导图/index.html','看导图 →'],
+ ['李凡 1000 题 · 古代文学史','483 题，P1 前 8 天清完。','李凡1000题_古代文学史-OCR重建版.html','483 题 →'],
+ ['李凡 1000 题 · 现当代文学史','458 题。','李凡1000题_现当代文学史-OCR重建版.html','458 题 →'],
+ ['李凡 1000 题 · 外国文学史','332 题。','李凡1000题_外国文学史-OCR重建版.html','332 题 →'],
+ ['李凡 1000 题 · 文学理论','298 题，只背 ★4 以上的 74 题。','李凡1000题_文学理论-OCR重建版.html','298 题 →'],
+ ['中国文学史 · 分章刷题','备用加练，主线不用它。','中国文学史习题_分章刷题.html','633 题 →'],
+ ['外国文学史 · 分章刷题','备用加练，主线不用它。','外国文学史习题_分章刷题.html','282 题 →'],
+ ['煜编文学考研资料汇编','6 卷 120 章，中国线词典。','煜编文学考研资料.html','120 章 →'],
+ ['煜编 01 先秦秦汉','单卷直开。','煜编考研01先秦秦汉.html','进入 →'],
+ ['煜编 02 魏晋隋唐','同上。','煜编考研02魏晋隋唐.html','进入 →'],
+ ['煜编 03 宋元','同上。','煜编考研03宋元.html','进入 →'],
+ ['煜编 04 明清近代','同上。','煜编考研04明清近代.html','进入 →'],
+ ['煜编 05 现代','同上。','煜编考研05现代.html','进入 →'],
+ ['煜编 06 当代','同上。','煜编考研06当代.html','进入 →'],
+ ['唐红梅外国文学串讲','外国线，64 讲，11 月每天 2 讲。','唐红梅外国文学知识点串讲.html','64 讲 →'],
+ ['853 评论写作备考卡','9 大来源卡 + 模板 + 真题示范。','853评论写作备考卡.html','28 卡 →'],
+ ['答题例证卡','54 张论点→例证→分析。','答题例证卡.html','54 张 →'],
+ ['创意写作 · 定义与特征','创写理论标准答案库。','创意写作_定义与特征_背诵版.html','背诵 →'],
+ ['创意写作方法论 · 第三章','材料题常考部分。','创意写作方法论_第三章_背诵版.html','背诵 →'],
+ ['创写简史 · 第二章讲义','含三题完整答案。','创意写作简史_第二章讲义与三题答案.html','进入 →'],
+ ['647 答题评分标准','按什么给分，先看这个。','647创意写作基础_答题评分标准.html','查标准 →'],
+ ['每日一题','崩档日的保底动作。','每日一题.html','抽题 →'],
+ ['政治 · 马原政经真题讲义','库里唯一政治资料。','政治_马原政经_真题选择题讲义.html','19 题 →'],
+ ['2023 英语二阅读复盘卡','你错 7 题那年的完整复盘。','2023英语二阅读复盘卡.html','复盘 →'],
+ ['百日冲刺计划','原 100 天清单，可查题号。','百日冲刺计划.html','对照 →']
+];
+
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function today0(){ var n=new Date(); return new Date(n.getFullYear(),n.getMonth(),n.getDate()); }
+function pd(a,b){ return new Date(2026, a-1, b); }
+
+var store = {checks:{}};
+try{ var raw = localStorage.getItem('sprint62v4'); if(raw) store = JSON.parse(raw); }catch(e){}
+if(!store || !store.checks) store = {checks:{}};
+function save(){ try{ localStorage.setItem('sprint62v4', JSON.stringify(store)); }catch(e){} }
+
+$('tbl').innerHTML = '<thead><tr><th style="width:150px">科目</th><th style="width:54px;white-space:nowrap">满分</th>'+
+  '<th style="width:74px">分到</th><th>主要花在哪</th><th style="width:132px">策略</th></tr></thead><tbody>'+
+  TBL.map(function(r){
+    var sum = r[0]==='合计';
+    return '<tr'+(sum?' style="background:#fbf7ec"':'')+'><td class="n">'+esc(r[0])+'</td><td>'+esc(r[1])+'</td>'+
+      '<td class="hr">'+esc(r[2])+'</td><td class="sm">'+esc(r[3])+'</td><td class="sm">'+esc(r[4])+'</td></tr>';
+  }).join('')+'</tbody>';
+
+$('phases').innerHTML = PHASES.map(function(p,i){
+  var bud = p.budget.map(function(b){ return '<span>'+esc(b[0])+'</span>'; }).join('');
+  var rows = ['647','853','204','101'].map(function(k){
+    return '<div class="row"><span class="lb">'+k+'</span><ul>'+
+      p.acts[k].map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('')+'</ul></div>';
+  }).join('');
+  return '<div class="ph'+(i===0?' open':'')+'" style="--c:'+p.c+'">'+
+    '<div class="hd"><span class="tag">'+p.no+'</span><span class="nm">'+esc(p.name)+'</span>'+
+    '<span class="dt">'+p.from+' – '+p.to+' ｜ '+p.days+' 天 ｜ '+p.dd+'</span>'+
+    '<span class="th">'+esc(p.th)+'</span></div>'+
+    '<div class="bd"><div class="budget">'+bud+'</div>'+rows+
+    '<div class="ck"><b>验收线：</b>'+esc(p.ck)+'</div></div></div>';
+}).join('');
+$('phases').addEventListener('click', function(e){
+  var hd = e.target.closest('.hd'); if(!hd) return;
+  hd.parentNode.classList.toggle('open');
+});
+
+$('day').innerHTML =
+  '<div class="blk"><h4>每天固定结构（净学 12 小时）</h4>'+
+  '<table>'+DAY.map(function(r){ return '<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td></tr>'; }).join('')+'</table>'+
+  '<div class="sum">净学 720 分钟 = 12 小时</div></div>'+
+  '<div class="blk"><h4>三条硬规矩</h4>'+
+  '<div style="font-size:12.6px;line-height:1.9">'+
+  '<p><b style="color:#9a3b2e">一、午睡 30 分钟不许省</b><br>省了下午两段全废，账是负的。</p>'+
+  '<p><b style="color:#9a3b2e">二、每段之间必须离开桌子</b><br>10 分钟，站着，不看屏幕。</p>'+
+  '<p><b style="color:#9a3b2e">三、22:20 关机，睡够 6.5 小时</b><br>12 小时的账是用清醒换的，睡不够就是假账。</p>'+
+  '<div style="margin-top:9px;border-top:1px dashed var(--line);padding-top:8px;color:#8a8073;font-size:12px">'+
+  '单双日轮换：单日 853 写理论卡，双日 853 写创作或评论。647 上午与晚上各一段，不要连做四小时。</div>'+
+  '</div></div>';
+
+var KEYS = [['c647','647'],['c853','853'],['c204','英语'],['c101','政治']];
+$('weeks').innerHTML = '<div class="wk head"><div>周次</div><div>647 创意写作基础</div><div>853 评论与创作</div><div>英语二</div><div>政治</div></div>'+
+  WEEKS.map(function(w){
+    var lab = '<div class="lab"><b>'+w.w+'</b><span>'+w.dt+'</span><i>'+esc(w.ph)+'</i></div>';
+    var cells = KEYS.map(function(k){
+      var id = w.w+'-'+k[0];
+      return '<div class="cell'+(store.checks[id]?' done':'')+'" data-id="'+id+'">'+esc(w[k[0]])+'</div>';
+    }).join('');
+    return '<div class="wk">'+lab+cells+'</div>';
+  }).join('')+
+  '<div class="wk head" style="background:#fbf7ec;border-top:1px solid var(--line)">'+
+  '<div style="grid-column:1/6;font-size:11.5px;letter-spacing:0;font-weight:400">点格子＝这科本周达标 · 共 '+(WEEKS.length*4)+' 项 · 数据只存本机</div></div>';
+
+$('weeks').addEventListener('click', function(e){
+  var c = e.target.closest('.cell'); if(!c) return;
+  var id = c.getAttribute('data-id');
+  if(store.checks[id]) delete store.checks[id]; else store.checks[id]=1;
+  c.classList.toggle('done'); save(); stats();
+});
+
+$('handbook').innerHTML = HB.map(function(h,i){
+  return '<details class="hb"'+(i<2?' open':'')+'><summary>'+esc(h[0])+'</summary><div class="in">'+
+    h[1].map(function(x){ return '<p>'+x+'</p>'; }).join('')+'</div></details>';
+}).join('');
+
+$('mats').innerHTML = MATS.map(function(m){
+  return '<a class="mat" href="'+m[2]+'" target="_blank" rel="noopener">'+
+    '<div class="mn">'+esc(m[0])+'</div><div class="md">'+esc(m[1])+'</div>'+
+    '<div class="mq">'+esc(m[3])+'</div></a>';
+}).join('');
+
+var WHERE_BASE = '';
+function stats(){
+  var total = WEEKS.length*4, done = 0;
+  WEEKS.forEach(function(w){ KEYS.forEach(function(k){ if(store.checks[w.w+'-'+k[0]]) done++; }); });
+  var pct = total ? Math.round(done/total*100) : 0;
+  $('miniBar').style.width = pct+'%';
+  if(WHERE_BASE){
+    $('where').innerHTML = WHERE_BASE + (done
+      ? '<br><span style="color:#8a8073;font-size:12.3px">周任务已达标 '+done+'/'+total+'（'+pct+'%）</span>' : '');
+  }
+  return {done:done,total:total,pct:pct};
+}
+
+function init(){
+  var t = today0();
+  var dLeft = Math.max(0, Math.round((EXAM - t)/86400000));
+  var elapsed = Math.min(62, Math.max(0, 62 - dLeft));
+  $('tbD').textContent = dLeft;
+  $('ringD').textContent = dLeft;
+  $('ringArc').setAttribute('stroke-dashoffset', String(377*(1-elapsed/62)));
+
+  var cur=null, curW=null;
+  PHASES.forEach(function(p){
+    var a=p.from.split('/'), b=p.to.split('/');
+    if(t >= pd(+a[0],+a[1]) && t <= pd(+b[0],+b[1])) cur = p;
+  });
+  WEEKS.forEach(function(w){
+    var seg = w.dt.split('–'); if(seg.length<2) return;
+    var a=seg[0].split('/'), b=seg[1].split('/');
+    if(t >= pd(+a[0],+a[1]) && t <= pd(+b[0],+b[1])) curW = w;
+  });
+
+  var txt;
+  if(t > EXAM){ txt = '考试已过，这一页留作记录。'; }
+  else if(dLeft === 0){ txt = '今天考试。单词别看，名解别背，带好证件。'; }
+  else {
+    txt = '距初试首日 <b>D-'+dLeft+'</b>';
+    if(cur) txt += ' ｜ 当前阶段 <b>'+cur.no+' '+cur.name+'</b>：'+cur.th;
+    else txt += ' ｜ P1 明天开跑，今晚只做一件事：把执行表扫一遍，早点睡';
+    if(curW) txt += ' ｜ 本周 <b>'+curW.w+'</b>（'+curW.dt+'）';
+  }
+  WHERE_BASE = txt;
+  stats();
+}
+init();
+
+document.addEventListener('click', function(e){
+  if(e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  var a = e.target.closest && e.target.closest('a[target="_blank"]');
+  if(!a) return;
+  var url = a.getAttribute('href');
+  if(!url || /^(https?:|mailto:|#)/i.test(url)) return;
+  e.preventDefault();
+  var w=null;
+  try{ w = window.open(url,'_blank'); }catch(err){}
+  if(w){ try{ w.focus(); }catch(err){} } else { location.href = url; }
+}, true);
+
+})();
+</script>
+</body>
+</html>

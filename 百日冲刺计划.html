@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="vjhXrmHnQRKTU8WnqOuHZO">
+<head data-page-node-id="kSdThikRTCAm9VmAD1BboV">
+<meta charset="UTF-8" data-page-node-id="CALszjOztK4OJR2wCv1WT2">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="N0OefQ6u4dhRzWFH25YU7F">
+<title>百日冲刺计划 · 每日打卡</title>
+<style>
+@font-face{font-family:"霞鹜文楷";src:url("./_shared/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:swap}
+:root{
+  --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073; --line:#e3dccd;
+  --accent:#9a3b2e; --gold:#c8902a; --soft:#f3ede1;
+  --ok:#3b6b5e; --warn:#c8902a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);
+  font-family:"霞鹜文楷","LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;
+  background-image:radial-gradient(circle at 15% 8%,rgba(200,144,42,.07) 0,transparent 32%),
+                   radial-gradient(circle at 88% 20%,rgba(154,59,46,.06) 0,transparent 36%),
+                   radial-gradient(circle at 55% 92%,rgba(59,107,94,.05) 0,transparent 40%);
+  min-height:100vh;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px 80px;}
+
+/* 顶栏 */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(247,243,234,.94);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  padding:9px 18px;margin:0 -18px 16px;}
+.topbar a{color:var(--accent);text-decoration:none;font-weight:700;font-size:14px;
+  border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 11px;}
+.topbar a:hover{border-color:var(--accent)}
+.topbar .tt{font-weight:700;font-size:15px;letter-spacing:1px;margin-right:auto}
+.topbar .dday{font-size:14px;color:var(--sub)}
+.topbar .dday b{font-size:20px;color:var(--accent);font-variant-numeric:tabular-nums}
+.topbar button{font-family:inherit;font-size:13px;cursor:pointer;border:1px solid var(--line);
+  background:var(--card);color:var(--sub);border-radius:8px;padding:5px 10px}
+.topbar button:hover{border-color:var(--accent);color:var(--accent)}
+.mini{height:6px;width:120px;background:var(--soft);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.mini i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--accent));transition:width .4s}
+
+/* 头部 */
+.hero{display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;
+  padding:22px 8px 8px;text-align:center}
+.ring{position:relative;width:132px;height:132px;flex:none}
+.ring svg{width:132px;height:132px;display:block}
+.ring .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .num b{font-size:34px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:800}
+.ring .num span{font-size:11.5px;color:var(--sub);letter-spacing:2px;margin-top:3px}
+.htxt h1{font-size:29px;letter-spacing:4px;font-weight:800}
+.htxt .sub{color:var(--sub);font-size:13.5px;letter-spacing:1px;margin-top:7px}
+.htxt .exam{margin-top:10px;font-size:13px;color:var(--sub)}
+.htxt .exam b{color:var(--ink)}
+.htxt .exam button{font-family:inherit;font-size:12px;cursor:pointer;border:1px dashed var(--line);
+  background:transparent;color:var(--sub);border-radius:8px;padding:3px 9px;margin-left:6px}
+.htxt .exam button:hover{border-color:var(--gold);color:var(--gold)}
+
+/* 统计条 */
+.stats{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:18px 0 20px}
+.stat{flex:1 1 130px;max-width:200px;background:var(--card);border:1px solid var(--line);border-radius:13px;
+  padding:11px 14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stat b{display:block;font-size:23px;color:var(--accent);line-height:1.25;font-variant-numeric:tabular-nums}
+.stat b.ok{color:var(--ok)}
+.stat span{font-size:12px;color:var(--sub);letter-spacing:1px}
+
+/* 日期条 + 当日面板 */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 4px 18px rgba(0,0,0,.055);overflow:hidden}
+.daybar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  padding:12px 16px;background:linear-gradient(120deg,#fffdf8,#f7efe2);border-bottom:1px solid var(--line)}
+.daybar .dcol{display:flex;align-items:center;gap:8px}
+.daybar button{font-family:inherit;font-size:13.5px;cursor:pointer;color:var(--ink);border:1px solid var(--line);
+  background:#fff;border-radius:99px;padding:7px 13px;transition:all .13s}
+.daybar button:hover{border-color:var(--gold);transform:translateY(-1px)}
+.daybar .arw{border:none;background:transparent;color:var(--sub);font-size:18px;padding:6px 4px}
+.daybar .arw:hover{color:var(--accent);transform:none}
+#todayBtn{border-color:transparent;background:var(--gold);color:#fff;font-weight:700}
+#todayBtn:hover{background:#b87d1e}
+.dmid{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.15}
+.dmid .dtxt{font-size:19px;font-weight:800;letter-spacing:1px}
+.dmid .dtxt em{font-style:normal;color:var(--accent);font-size:23px;margin-left:6px;font-variant-numeric:tabular-nums}
+.dmid .dtag{font-size:11.5px;color:var(--sub);background:var(--bg);border:1px solid var(--line);
+  border-radius:99px;padding:2px 10px}
+.dmid .dtag.ph{background:#f6ecdc;color:#8a6a1e;border-color:#e8d8b8}
+.dsum{padding:11px 18px 4px;font-size:13px;color:var(--sub);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.dsum .hint{color:var(--accent);font-weight:700}
+
+/* 任务卡 */
+.tasks{padding:6px 14px 14px}
+.task{display:flex;gap:13px;align-items:flex-start;background:#fffefb;border:1px solid var(--line);
+  border-left:5px solid var(--sub);border-radius:13px;padding:13px 15px;margin:10px 0;
+  cursor:pointer;transition:all .16s ease;position:relative}
+.task:hover{box-shadow:0 4px 14px rgba(0,0,0,.07);transform:translateY(-1px)}
+.task.done{background:#f4f8f5;border-color:#cfe0d6}
+.task.done .tname{text-decoration:line-through;color:var(--sub)}
+.task.done .tdetail{opacity:.62}
+.chk{flex:none;width:23px;height:23px;border-radius:7px;border:2px solid var(--line);background:#fff;
+  display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .16s}
+.chk i{font-style:normal;font-size:14px;color:#fff;opacity:0;transform:scale(.5);transition:all .16s;line-height:1}
+.task.done .chk{background:var(--ok);border-color:var(--ok)}
+.task.done .chk i{opacity:1;transform:scale(1)}
+.tmain{flex:1;min-width:0}
+.trow{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.badge{width:24px;height:24px;border-radius:7px;color:#fff;font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex:none}
+.tname{font-weight:700;font-size:16px}
+.tmin{margin-left:auto;font-size:12px;color:var(--sub);background:var(--bg);border:1px solid var(--line);
+  border-radius:99px;padding:2px 9px;white-space:nowrap}
+.tdetail{font-size:13.5px;color:#5d564c;line-height:1.85;margin-top:7px;word-break:break-word}
+.tjump{margin-top:9px;display:flex;gap:8px;flex-wrap:wrap}
+.tjump a{font-size:12.5px;color:var(--accent);text-decoration:none;border:1px solid var(--line);
+  background:var(--card);border-radius:99px;padding:3px 11px;transition:all .13s}
+.tjump a:hover{border-color:var(--accent);background:#fdf6f4}
+.dayfoot{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:0 18px 18px}
+.dayfoot .prog{flex:1;min-width:150px}
+.dayfoot .bar{height:9px;background:var(--soft);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.dayfoot .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ok),#5f9c86);transition:width .35s}
+.dayfoot .lbl{font-size:12.5px;color:var(--sub);margin-bottom:5px}
+.dayfoot button{font-family:inherit;font-size:13px;cursor:pointer;border-radius:99px;padding:8px 16px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.dayfoot button:hover{border-color:var(--gold);color:#8a6a1e}
+#allDone{border-color:transparent;background:linear-gradient(120deg,var(--ok),#4c8a72);color:#fff;font-weight:700}
+#allDone:hover{color:#fff;opacity:.92}
+.dnote{margin:0 18px 16px;padding:9px 13px;font-size:12.5px;color:var(--sub);line-height:1.8;
+  background:var(--bg);border:1px dashed var(--line);border-radius:10px}
+
+/* 阶段路线图 */
+h2.sec{font-size:18px;letter-spacing:2px;margin:32px 0 14px;padding-left:12px;position:relative}
+h2.sec::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:5px;border-radius:3px;
+  background:linear-gradient(180deg,var(--gold),var(--accent))}
+h2.sec small{font-size:12px;color:var(--sub);letter-spacing:0;font-weight:400;margin-left:8px}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px}
+.phcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+  box-shadow:0 2px 9px rgba(0,0,0,.04);position:relative;overflow:hidden}
+.phcard .edge{position:absolute;left:0;top:0;bottom:0;width:5px}
+.phcard h3{font-size:15.5px;letter-spacing:.5px}
+.phcard .rng{font-size:12px;color:var(--sub);margin:5px 0 8px}
+.phcard .focus{font-size:12.5px;color:#5d564c;line-height:1.75;min-height:44px}
+.phcard .bar{height:7px;background:var(--soft);border-radius:99px;overflow:hidden;margin-top:10px;border:1px solid var(--line)}
+.phcard .bar i{display:block;height:100%;width:0;transition:width .4s}
+.phcard .pct{font-size:11.5px;color:var(--sub);margin-top:5px;text-align:right}
+
+/* 全部计划 */
+.allwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 3px 14px rgba(0,0,0,.045)}
+.allhead{display:flex;align-items:center;gap:10px;padding:13px 17px;cursor:pointer;
+  background:linear-gradient(120deg,#fffdf8,#f7efe2);border-bottom:1px solid var(--line)}
+.allhead .ttl{font-weight:700;font-size:15.5px}
+.allhead .cnt{font-size:12.5px;color:var(--sub);margin-left:auto}
+.allhead .car{color:var(--sub);transition:transform .2s}
+.allwrap.open .allhead .car{transform:rotate(90deg)}
+.allbody{display:none;max-height:620px;overflow:auto;padding:8px 10px 14px}
+.allwrap.open .allbody{display:block}
+.grp{font-size:12.5px;color:var(--gold);letter-spacing:1px;font-weight:700;
+  padding:11px 8px 5px;border-bottom:1px dashed var(--line);margin-bottom:4px}
+.row{display:flex;gap:9px;align-items:center;padding:6px 8px;border-radius:9px;font-size:13px;cursor:pointer}
+.row:hover{background:#fbf7ee}
+.row.cur{background:#f6ecdc}
+.row .dd{width:54px;flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;font-size:12.5px}
+.row .dt{width:96px;flex:none;color:var(--sub);font-size:12.5px}
+.row .st{width:16px;flex:none;text-align:center;font-size:13px}
+.row .sm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#4d473f}
+.row .ph{flex:none;font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:99px;padding:1px 8px}
+.row.full .st{color:var(--ok)}
+.row.part .st{color:var(--gold)}
+.row.none .st{color:#c9c0b1}
+
+/* 资料地图 */
+.mats{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:13px}
+.mat{display:block;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);
+  border-radius:13px;padding:13px 16px;text-decoration:none;color:inherit;transition:all .16s;
+  box-shadow:0 2px 9px rgba(0,0,0,.04)}
+.mat:hover{transform:translateY(-3px);box-shadow:0 9px 22px rgba(0,0,0,.09)}
+.mat .mn{font-weight:700;font-size:15px;margin-bottom:5px}
+.mat .md{font-size:12.5px;color:var(--sub);line-height:1.75}
+.mat .mq{font-size:12px;color:var(--accent);margin-top:7px;font-weight:700}
+
+/* 课程表（每日时间块） */
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 9px rgba(0,0,0,.04)}
+.tbl table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{background:var(--soft);font-weight:700;font-size:13px;text-align:left;padding:10px 14px;color:#5d564c}
+.tbl td{padding:9px 14px;border-top:1px solid var(--line);color:#4d473f}
+.tbl td b{color:var(--ink)}
+.tbl tr:hover td{background:#fdfaf3}
+.footnote{text-align:center;color:var(--sub);font-size:12.5px;margin-top:34px;line-height:2}
+@media (max-width:640px){
+  .htxt h1{font-size:22px;letter-spacing:2px}
+  .ring{width:104px;height:104px}.ring svg{width:104px;height:104px}
+  .ring .num b{font-size:27px}
+  .row .dt{width:74px;font-size:11.5px}
+  .hero{gap:16px}
+}
+</style>
+</head>
+<body data-page-node-id="PzT83dBD9C9gwuG9FRPW0J">
+<div class="wrap" data-page-node-id="GzBjBqSS1gCVgfBd6kOUal">
+
+<div class="topbar" data-page-node-id="d7fY2K7KiIzcXEW1Y7nkLu">
+  <a href="index.html" data-page-node-id="XksKB1JBvlcseK9YRWHWig">← 返回导航</a>
+  <span class="tt" data-page-node-id="KmsGP6EXL7Y0IpPuvYEhbo">百日冲刺 · 每日打卡</span>
+  <div class="mini" data-page-node-id="2zEG7VmY1hqgciSpDlYceo"><i id="miniBar" data-page-node-id="9DvR2fkytFxEJMi8TZJqIy"></i></div>
+  <span class="dday" data-page-node-id="5FDHTinP54kQLQB2xnvzFq">D-<b id="tbD" data-page-node-id="5VHpH69c4AovyfmeC5n1E1">--</b></span>
+</div>
+
+<div class="hero" data-page-node-id="zMFWfQrW7R56GW8seefAk0">
+  <div class="ring" data-page-node-id="jUZATdNFWgyzI6oiQba2Ys">
+    <svg viewBox="0 0 132 132" data-page-node-id="EuCzEa7Lh3Du2CTpb2AcHX">
+      <defs data-page-node-id="DV2Js4iJPLViPugNBp1rNG"><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1" data-page-node-id="HRPwAtf5eZHDYUfFmOZmcv">
+        <stop offset="0" stop-color="#c8902a" data-page-node-id="m3rjff0EkVcUWFIKKBJFzK"/><stop offset="1" stop-color="#9a3b2e" data-page-node-id="SZxvc4tDTG6lQwhwOXqcAQ"/></linearGradient></defs>
+      <circle cx="66" cy="66" r="57" fill="none" stroke="#ece4d5" stroke-width="9" data-page-node-id="zutEUyLruZIdFtMtFK3l4c"/>
+      <circle id="ringArc" cx="66" cy="66" r="57" fill="none" stroke="url(#rg)" stroke-width="9"
+        stroke-linecap="round" transform="rotate(-90 66 66)" stroke-dasharray="358" stroke-dashoffset="0" data-page-node-id="CeO0UgwT58E7GuVZM5VdBn"/>
+    </svg>
+    <div class="num" data-page-node-id="JtcPibT05VQpA14jGB2RdB"><b id="ringD" data-page-node-id="v18ZB0IvkGW7H3eHr3uM12">--</b><span data-page-node-id="yGseuiJKpN6H1TJmNtaEH3">天后开考</span></div>
+  </div>
+  <div class="htxt" data-page-node-id="rqweZXGhPdECKxzhh2rAfa">
+    <h1 data-page-node-id="RnMjCu6teQQPG5wTD8VJSX">百日冲刺计划</h1>
+    <div class="sub" data-page-node-id="fp58bQjxxSAYpXsXIbpfL5">西北大学创意写作 MFA · 101 政治 / 204 英语二 / 647 创意写作基础 / 853 文学评论与创作</div>
+    <div class="exam" data-page-node-id="U2kGN7LCSyn39EuKuQFBd7">考试日 <b id="examTxt" data-page-node-id="hgnLvxfpyCQyKuuHQR8cRL">—</b>
+      <button id="editExam" type="button" data-page-node-id="uGGBmzAaWDSCj6DU1SCDED">改考试日</button>
+      <button id="clrAll" type="button" data-page-node-id="vtnV5qnMVTdCqu3FLd2sXS">清空全部记录</button>
+    </div>
+  </div>
+</div>
+
+<div class="stats" data-page-node-id="CjVhGQIZuO0BDOHE2nMBwj">
+  <div class="stat" data-page-node-id="OFeNMICzLLNDP70nBVOsyG"><b id="sTotal" data-page-node-id="C3OUF7q4yncJ9eh7LbswcO">0%</b><span data-page-node-id="LK1KxVt4L3gWWgMSG1G6gU">总进度</span></div>
+  <div class="stat" data-page-node-id="651y57PgnKsbUvdFNJqJf9"><b id="sDays" class="ok" data-page-node-id="7CGEu41Wuw7jiSWe94VYXu">0</b><span data-page-node-id="OX4cmg1dzehC6uRQj3UQhU">全勤天数</span></div>
+  <div class="stat" data-page-node-id="EDhJ6cdPEcNuNbwEaZny8x"><b id="sStreak" class="ok" data-page-node-id="AywEk3H1hfWh02KA6RvWOG">0</b><span data-page-node-id="34zfdtjksh7Jq4qxQInt12">连续打卡</span></div>
+  <div class="stat" data-page-node-id="yqEZeh5BiCD3kYKq4GkBdH"><b id="sHours" data-page-node-id="991oBuwEZez9IUtH3zgTPP">0</b><span data-page-node-id="VEMJhjopbHksOPYMdCqXPr">已投入(小时)</span></div>
+  <div class="stat" data-page-node-id="SdYBEQcOKYhy7zYcnh3B7I"><b id="sLeft" data-page-node-id="oBReNQKu3i6A3H7kile9wH">0</b><span data-page-node-id="Bd5i5ZznNJDzOK4qC7BprE">剩余天数</span></div>
+</div>
+
+<h2 class="sec" data-page-node-id="EmdvB4MqjNTNBTqJu60T3m">今日清单<small data-page-node-id="29lp5kH5NtnXJcjMKVGY03">点一下方块＝完成，数据只存在本机浏览器</small></h2>
+<div class="panel" data-page-node-id="UAgF00GBTCO6DGLkFXmwyL">
+  <div class="daybar" data-page-node-id="fpza4WvgF39bCbXp7bEKnB">
+    <div class="dcol" data-page-node-id="56sYQap0QxO9pfVuhhYQKf">
+      <button class="arw" id="prevDay" type="button" data-page-node-id="HkhZU322mGFXoSB9NKYAai">◀</button>
+    </div>
+    <div class="dmid" data-page-node-id="jPDvfDEBiI0Grbu6TskR0m">
+      <span class="dtxt" data-page-node-id="zpUeJiy9NDa2cCDGfpMdwk">第 <em id="dNo" data-page-node-id="rXs1nghjwZccBK1gbbIPtT">--</em> 天</span>
+      <span class="dtag" id="dDate" data-page-node-id="oE0TCyyLIeABLZiDfLNGCV">—</span>
+    </div>
+    <div class="dcol" data-page-node-id="nvuykk9BwZmCLxjx4GUztU">
+      <button id="todayBtn" type="button" data-page-node-id="wcsEqmnbDPKWtnyCNVWRAg">回到今天</button>
+      <button class="arw" id="nextDay" type="button" data-page-node-id="LmwUf5L7n0sUNUZ4NIkMBy">▶</button>
+    </div>
+  </div>
+  <div class="dsum" id="dSum" data-page-node-id="yzANyJC3gVVwIJGBcWyW9d"></div>
+  <div class="tasks" id="tasks" data-page-node-id="1niTAn4gHgKdl1d7gFd2q9"></div>
+  <div class="dayfoot" data-page-node-id="wOwXps7YwaCqv4liI9pwm6">
+    <div class="prog" data-page-node-id="QUnAoigPd0JKtwfHBXjltg">
+      <div class="lbl" id="progLbl" data-page-node-id="VpBXB9XsIlC6UwdGFvZPS1">今日完成 0 / 0</div>
+      <div class="bar" data-page-node-id="T62ZtH00wSyIg3R0rusRqn"><i id="progBar" data-page-node-id="lvb5w0ou0RJPby11un6EcW"></i></div>
+    </div>
+    <button id="allDone" type="button" data-page-node-id="8CCjeJItCgoTua1YDLEhbc">今日全部完成 ✓</button>
+    <button id="clrDay" type="button" data-page-node-id="eG5lrBLuKuyNb5q0IDx6Ns">清空今日</button>
+  </div>
+  <div class="dnote" id="dNote" data-page-node-id="oyZDah6ZkRZPBG4dOy3yll"></div>
+</div>
+
+<h2 class="sec" data-page-node-id="gA0PXamDBQ0EbGCYQBYOPZ">四阶段路线<small data-page-node-id="mORyzBZDY3EDN7x405ojXE">按倒计时自动划分</small></h2>
+<div class="phases" id="phases" data-page-node-id="L9aKGHGjxNunqbY3PUdCfP"></div>
+
+<h2 class="sec" data-page-node-id="m595Izzyxk3eZcF9tqzGCj">每天学多久 · 怎么分配</h2>
+<div class="tbl" data-page-node-id="HJMWlG33vxJUSBtNNXOAux">
+<table data-page-node-id="t2bGpNSVbVxZlUsPWziNCp">
+<thead data-page-node-id="sdLN0KFGzs1tTSHUhmyAYz"><tr data-page-node-id="f9TAW5kFCDc75D8lqhDmJa"><th data-page-node-id="Y1sy9rKhm1LOUSnUfjMqCH">模块</th><th data-page-node-id="ssZMT0giRprucLH06DmQTp">强化期（D-100 ~ D-56）</th><th data-page-node-id="ypKHaRNCJFye9P8yYsXQ3Q">二轮期（D-55 ~ D-19）</th><th data-page-node-id="MTUMpC0rywdryViQpN5Hte">冲刺期（D-18 ~ D-1）</th></tr></thead>
+<tbody data-page-node-id="Htx27NwGKHStHxNSseDh1K">
+<tr data-page-node-id="oSLBcbtZ7Q8k0uvKOe3IsW"><td data-page-node-id="jGFZTLsEtMCkHpHCI9Rfta"><b data-page-node-id="Y4FqhXH94Lj0mqsKqe3CH2">背单词</b></td><td data-page-node-id="H3twNAyrd0oD2bL9jI3W8z">新词 40 + 复习 120 · 40min</td><td data-page-node-id="rp6SIv4yiDI2GqdjbU2XX0">新词 30 + 复习 150 · 40min</td><td data-page-node-id="kC3BWsGfokI4hbnXBW06ts">只复习 150 + 作文词 · 25min</td></tr>
+<tr data-page-node-id="stxWz2Vtxo1zQy6KPT8Tn3"><td data-page-node-id="VLhYZPmMkdoRQW08UkR489"><b data-page-node-id="M4PQRjcNT3kOeKMCPoGzDV">英语阅读 / 作文</b></td><td data-page-node-id="eKaUAVOCYIFayro9wqi50N">1 篇真题精做 · 60min</td><td data-page-node-id="rwg5cE6gd0zVorWuKxqH6k">2 篇（精做+限时）· 70min</td><td data-page-node-id="DX0RBBv9RGrPDAWZpZ63Rk">大小作文默写+仿写 · 60min</td></tr>
+<tr data-page-node-id="tja1X84boqCwG3wbAMVsel"><td data-page-node-id="Uig7wV76A8R07E51YdCl4U"><b data-page-node-id="KM6rKYaYXyjThS4BSHTCKZ">政治</b></td><td data-page-node-id="BavrikToL0k6j4OtXcW8j9">选择 30 道 · 45min</td><td data-page-node-id="mB1CNA3SSX6wZwMJmNFyAK">选择 40 道 + 错题 · 55min</td><td data-page-node-id="a8CKCmJsrapYQC9AZTcZN5">肖八肖四 50 道 · 60min</td></tr>
+<tr data-page-node-id="88SqLDmC8Xi71ryaTsdMvp"><td data-page-node-id="IflEXRB3cDaNNGvPulN6tL"><b data-page-node-id="x7NV5C8jOR0gHHZquXCSIt">647 文学史</b></td><td data-page-node-id="2AmWsl9D7PeLRtPKhRiGq5">李凡 28 题 + 煜编/唐红梅 · 195min</td><td data-page-node-id="bMELOBfjAEOXjt8yh3uv6j">分章刷题 24 题 + 高频回炉 · 150min</td><td data-page-node-id="rEN7AkI1bev8c0YajUrUA4">限时模考 / 高频速记 · 120–180min</td></tr>
+<tr data-page-node-id="7aEeyE52sUbyhqx454gjzy"><td data-page-node-id="W4QtqbaLCoOL1gYz2RWqT7"><b data-page-node-id="doOk9faTYOhHUCLDJzxAAZ">853 写作</b></td><td data-page-node-id="RuOJ9MKBK2Z2mmeE7nxkdg">理论卡 / 创写理论 / 评论 / 创作 轮换 · 45–60min</td><td data-page-node-id="ZO6ZHRGChCRrEanbO5IssP">评论 800 字 / 创作 1000 字 轮换 · 70min</td><td data-page-node-id="aaTEE2hWtyi96LMuzKXwgL">9 大理论来源卡 + 整篇模板默写 · 60min</td></tr>
+<tr data-page-node-id="WRdw9afaGCFOx8vMrxVdxA"><td data-page-node-id="vUstWur5bzTPZ5XqlyRqlu"><b data-page-node-id="PIijnCzWuC8iZIzyCNel9Z">合计</b></td><td data-page-node-id="UnDVoCmu9B1AjJKnwgp1Bl"><b data-page-node-id="wD39hRAgfZBaFZrRBzTU4D">约 6.7–7.5 小时</b></td><td data-page-node-id="IYUO2GCUuT5mOLTP9DNbIE"><b data-page-node-id="ZBNrsjcGsvArfgo2WyHFfR">约 6.3–7 小时</b></td><td data-page-node-id="ybfcK8nW7x5JjidX87P2wz"><b data-page-node-id="7s8I8xg1RQnUesBAWt1mIA">约 6–6.5 小时</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 class="sec" data-page-node-id="fWs43r1YjTOtGM2OxJ0THe">全部 100 天<small data-page-node-id="pICMTg2RQdzIDSrrWTqhM2">点任意一行跳到那天</small></h2>
+<div class="allwrap" id="allWrap" data-page-node-id="KDEFESxAi6YsVR7ClDsnrS">
+  <div class="allhead" id="allHead" data-page-node-id="zODvGT6jWCgcGERQDhmytc">
+    <span class="ttl" data-page-node-id="AHsDcbG6np4uNIjBLd64PU">展开 / 收起全部计划</span>
+    <span class="cnt" id="allCnt" data-page-node-id="MHxBmIcj5eX4M7IU1SVdOW"></span>
+    <span class="car" data-page-node-id="PGsn8rqTXX1LqVBfIHFcy2">▶</span>
+  </div>
+  <div class="allbody" id="allBody" data-page-node-id="YgkoQ6sX76pKOZyKVFaMP8"></div>
+</div>
+
+<h2 class="sec" data-page-node-id="V4S2SHruaI51GpCzUoUu8b">配套资料地图<small data-page-node-id="AN7CIqEwsJ7DdtNFO3A8MJ">点开即用，本页已和它们对齐</small></h2>
+<div class="mats" id="mats" data-page-node-id="zLOUvIaDDJxqhDxtR52gfS"></div>
+
+<div class="footnote" data-page-node-id="eFhxP5exRjGCqIl71Cef3H">
+  计划按 <b data-page-node-id="mKmKl2t5RvSioXmYi3dUKb">100 天</b> 设计（D-100 起算），每天的任务量已对应到具体题号与章节 · 勾选记录保存在本机浏览器<br data-page-node-id="4jxsfeVDxqfOhXLxxwCT5N">
+  考试日以教育部/西北大学研招官方公布为准，点「改考试日」即可整体平移计划
+</div>
+
+</div>
+
+<script>
+var PLAN = [{"d":100,"ph":1,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 先秦文学 #1–11 ／ 现当代 五四文学（第一个十年） #1–10 ／ 外国 古代文学 #1–7","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q1","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q1","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q1","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「总公式」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第1章 + 唐红梅 第1讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":99,"ph":1,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 先秦文学 #12–21 ／ 现当代 五四文学（第一个十年） #11–20 ／ 外国 古代文学 #8–15","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q12","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q11","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q8","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「答题速记卡（考前30秒）」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第2–3章 + 唐红梅 第2讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":98,"ph":1,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 先秦文学 #22–32 ／ 现当代 五四文学（第一个十年） #21–31 ／ 外国 古代文学 #16–22","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q22","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q21","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q16","外国"]]},{"k":"write","name":"853 创作 · 动手写","detail":"自由创作 800 字（小说/散文片段），只求写完不求好","min":60,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第4章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":97,"ph":1,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 先秦文学 #33–43 ／ 现当代 五四文学（第一个十年） #32–41 ／ 外国 中世纪文学 #23–30","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q33","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q32","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q23","外国"]]},{"k":"review","name":"周复盘（周日）","detail":"错题本整理 + 本周完成率回顾 + 下周补齐科目","min":40,"href":"每日一题.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第5–6章 + 唐红梅 第3讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":96,"ph":1,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 秦汉文学 #44–54 ／ 现当代 五四文学（第一个十年） #42–51 ／ 外国 中世纪文学 #31–31；文艺复兴时期文学 #32–37","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q44","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q42","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q31","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「分值意识」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第7章 + 唐红梅 第4讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":95,"ph":1,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"27 题 ｜ 古代 秦汉文学 #55–64 ／ 现当代 五四文学（第一个十年） #52–61 ／ 外国 文艺复兴时期文学 #38–44","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q55","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q52","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q38","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「概念辨析：什么不算创意写作」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第8–9章 + 唐红梅 第5讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":94,"ph":1,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 秦汉文学 #65–69；魏晋南北朝文学 #70–75 ／ 现当代 五四文学（第一个十年） #62–71 ／ 外国 文艺复兴时期文学 #45–52","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q65","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q62","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q45","外国"]]},{"k":"write","name":"853 评论 · 动手写","detail":"从李凡挑 1 题名解/简答扩写成 400 字评论段","min":60,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第10章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":93,"ph":1,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 魏晋南北朝文学 #76–86 ／ 现当代 五四文学（第一个十年） #72–79；三十年代文学（第二个十年） #80–81 ／ 外国 文艺复兴时期文学 #53–59","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q76","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q72","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q53","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「三段式理论说明」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第11–12章 + 唐红梅 第6讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":92,"ph":1,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 魏晋南北朝文学 #87–97 ／ 现当代 三十年代文学（第二个十年） #82–92 ／ 外国 文艺复兴时期文学 #60–61；17世纪文学 #62–66","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q87","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q82","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q60","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「译名之争与学科起点」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第13章 + 唐红梅 第7讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":91,"ph":1,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 魏晋南北朝文学 #98–107 ／ 现当代 三十年代文学（第二个十年） #93–102 ／ 外国 17世纪文学 #67–74","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q98","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q93","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q67","外国"]]},{"k":"write","name":"853 创作 · 动手写","detail":"自由创作 800 字（小说/散文片段），只求写完不求好","min":60,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第14–15章 + 唐红梅 第8讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":90,"ph":1,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 魏晋南北朝文学 #108–118 ／ 现当代 三十年代文学（第二个十年） #103–112 ／ 外国 18世纪启蒙主义文学 #75–81","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q108","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q103","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q75","外国"]]},{"k":"review","name":"周复盘（周日）","detail":"错题本整理 + 本周完成率回顾 + 下周补齐科目","min":40,"href":"每日一题.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第16章 + 唐红梅 第9讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":89,"ph":1,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 魏晋南北朝文学 #119–124；隋唐五代文学 #125–129 ／ 现当代 三十年代文学（第二个十年） #113–122 ／ 外国 18世纪启蒙主义文学 #82–89","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q119","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q113","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q82","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「英美新批评」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第17–18章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":88,"ph":1,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 隋唐五代文学 #130–140 ／ 现当代 三十年代文学（第二个十年） #123–132 ／ 外国 18世纪启蒙主义文学 #90–96","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q130","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q123","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q90","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「定义的几种代表性表述」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第19章 + 唐红梅 第10讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":87,"ph":1,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"27 题 ｜ 古代 隋唐五代文学 #141–150 ／ 现当代 三十年代文学（第二个十年） #133–142 ／ 外国 18世纪启蒙主义文学 #97–99；19世纪浪漫主义文学 #100–103","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q141","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q133","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q97","外国"]]},{"k":"write","name":"853 评论 · 动手写","detail":"从李凡挑 1 题名解/简答扩写成 400 字评论段","min":60,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第20章 + 唐红梅 第11讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":86,"ph":1,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"30 题 ｜ 古代 隋唐五代文学 #151–161 ／ 现当代 三十年代文学（第二个十年） #143–153 ／ 外国 19世纪浪漫主义文学 #104–111","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q151","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q143","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q104","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「俄国形式主义」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第21–22章 + 唐红梅 第12讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":85,"ph":1,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 隋唐五代文学 #162–172 ／ 现当代 三十年代文学（第二个十年） #154–163 ／ 外国 19世纪浪漫主义文学 #112–118","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q162","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q154","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q112","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「陈晓辉定义展开·四个要点」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第23章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":84,"ph":1,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"27 题 ｜ 古代 隋唐五代文学 #173–182 ／ 现当代 三十年代文学（第二个十年） #164–173 ／ 外国 19世纪浪漫主义文学 #119–125","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q173","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q164","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q119","外国"]]},{"k":"write","name":"853 创作 · 动手写","detail":"自由创作 800 字（小说/散文片段），只求写完不求好","min":60,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第24–25章 + 唐红梅 第13讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":83,"ph":1,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 隋唐五代文学 #183–193 ／ 现当代 三十年代文学（第二个十年） #174–183 ／ 外国 19世纪浪漫主义文学 #126–129；19世纪现实主义文学 #130–133","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q183","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q174","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q126","外国"]]},{"k":"review","name":"周复盘（周日）","detail":"错题本整理 + 本周完成率回顾 + 下周补齐科目","min":40,"href":"每日一题.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第26章 + 唐红梅 第14讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":82,"ph":1,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 隋唐五代文学 #194–204 ／ 现当代 三十年代文学（第二个十年） #184–193 ／ 外国 19世纪现实主义文学 #134–140","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q194","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q184","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q134","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「存在主义」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第27–28章 + 唐红梅 第15讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":81,"ph":1,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"30 题 ｜ 古代 隋唐五代文学 #205–215 ／ 现当代 三十年代文学（第二个十年） #194–201；四十年代文学（第三个十年） #202–204 ／ 外国 19世纪现实主义文学 #141–148","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q205","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q194","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q141","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「六项特征（上）」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第29章 + 唐红梅 第16讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":80,"ph":1,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"27 题 ｜ 古代 隋唐五代文学 #216–223；两宋辽金文学 #224–225 ／ 现当代 四十年代文学（第三个十年） #205–214 ／ 外国 19世纪现实主义文学 #149–155","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q216","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q205","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q149","外国"]]},{"k":"write","name":"853 评论 · 动手写","detail":"从李凡挑 1 题名解/简答扩写成 400 字评论段","min":60,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第30–31章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":79,"ph":1,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 两宋辽金文学 #226–236 ／ 现当代 四十年代文学（第三个十年） #215–224 ／ 外国 19世纪现实主义文学 #156–162","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q226","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q215","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q156","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「结构主义」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第32章 + 唐红梅 第17讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":78,"ph":1,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 两宋辽金文学 #237–247 ／ 现当代 四十年代文学（第三个十年） #225–234 ／ 外国 19世纪现实主义文学 #163–170","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q237","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q225","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q163","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「六项特征（下）」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第33–34章 + 唐红梅 第18讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":77,"ph":1,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 两宋辽金文学 #248–258 ／ 现当代 四十年代文学（第三个十年） #235–244 ／ 外国 19世纪现实主义文学 #171–177","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q248","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q235","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q171","外国"]]},{"k":"write","name":"853 创作 · 动手写","detail":"自由创作 800 字（小说/散文片段），只求写完不求好","min":60,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第35章 + 唐红梅 第19讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":76,"ph":1,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"27 题 ｜ 古代 两宋辽金文学 #259–268 ／ 现当代 四十年代文学（第三个十年） #245–254 ／ 外国 19世纪现实主义文学 #178–184","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q259","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q245","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q178","外国"]]},{"k":"review","name":"周复盘（周日）","detail":"错题本整理 + 本周完成率回顾 + 下周补齐科目","min":40,"href":"每日一题.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第36–37章 + 唐红梅 第20讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":75,"ph":1,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"30 题 ｜ 古代 两宋辽金文学 #269–279 ／ 现当代 四十年代文学（第三个十年） #255–265 ／ 外国 19世纪现实主义文学 #185–192","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q269","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q255","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q185","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「解构主义」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第38章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":74,"ph":1,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 两宋辽金文学 #280–290 ／ 现当代 四十年代文学（第三个十年） #266–273；十七年文学（1949—1966） #274–275 ／ 外国 19世纪现实主义文学 #193–199","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q280","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q266","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q193","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「学科边界与常见误答」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第39–40章 + 唐红梅 第21讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":73,"ph":1,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 两宋辽金文学 #291–300；元代文学 #301–301 ／ 现当代 十七年文学（1949—1966） #276–285 ／ 外国 19世纪现实主义文学 #200–202；19世纪自然主义及其他流派 #203–207","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q291","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q276","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q200","外国"]]},{"k":"write","name":"853 评论 · 动手写","detail":"从李凡挑 1 题名解/简答扩写成 400 字评论段","min":60,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第41章 + 唐红梅 第22讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":72,"ph":1,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"27 题 ｜ 古代 元代文学 #302–311 ／ 现当代 十七年文学（1949—1966） #286–295 ／ 外国 19世纪自然主义及其他流派 #208–214","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q302","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q286","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q208","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「叙事学」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第42章 + 唐红梅 第23讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":71,"ph":1,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 元代文学 #312–322 ／ 现当代 十七年文学（1949—1966） #296–305 ／ 外国 19世纪自然主义及其他流派 #215–219；20世纪欧美现实主义文学 #220–221","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q312","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q296","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q215","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「答题模板素材库」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第43–44章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":70,"ph":1,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"30 题 ｜ 古代 元代文学 #323–333 ／ 现当代 十七年文学（1949—1966） #306–316 ／ 外国 20世纪欧美现实主义文学 #222–229","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q323","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q306","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q222","外国"]]},{"k":"write","name":"853 创作 · 动手写","detail":"自由创作 800 字（小说/散文片段），只求写完不求好","min":60,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第45章 + 唐红梅 第24讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":69,"ph":1,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"27 题 ｜ 古代 元代文学 #334–335；明代文学 #336–343 ／ 现当代 十七年文学（1949—1966） #317–317；“文革”文学（1966—1976） #318–324；八十年代文学（新时期） #325–326 ／ 外国 20世纪欧美现实主义文学 #230–236","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q334","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q317","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q230","外国"]]},{"k":"review","name":"周复盘（周日）","detail":"错题本整理 + 本周完成率回顾 + 下周补齐科目","min":40,"href":"每日一题.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第46–47章 + 唐红梅 第25讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":68,"ph":1,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 明代文学 #344–354 ／ 现当代 八十年代文学（新时期） #327–336 ／ 外国 20世纪欧美现实主义文学 #237–243","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q344","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q327","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q237","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「接受美学」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第48章 + 唐红梅 第26讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":67,"ph":1,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 明代文学 #355–365 ／ 现当代 八十年代文学（新时期） #337–346 ／ 外国 20世纪欧美现实主义文学 #244–246；20世纪俄苏文学 #247–251","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q355","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q337","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q244","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「全章串联默写」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第49–50章 + 唐红梅 第27讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":66,"ph":1,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 明代文学 #366–376 ／ 现当代 八十年代文学（新时期） #347–356 ／ 外国 20世纪俄苏文学 #252–253；现代主义文学 #254–258","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q366","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q347","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q252","外国"]]},{"k":"write","name":"853 评论 · 动手写","detail":"从李凡挑 1 题名解/简答扩写成 400 字评论段","min":60,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第51章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":65,"ph":1,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 明代文学 #377–386 ／ 现当代 八十年代文学（新时期） #357–366 ／ 外国 现代主义文学 #259–266","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q377","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q357","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q259","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「精神分析批评」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第52–53章 + 唐红梅 第28讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":64,"ph":1,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 明代文学 #387–397 ／ 现当代 八十年代文学（新时期） #367–377 ／ 外国 现代主义文学 #267–273","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q387","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q367","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q267","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「答题速记卡（考前30秒）」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第54章 + 唐红梅 第29讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":63,"ph":1,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 明代文学 #398–404；清初至清中叶文学 #405–408 ／ 现当代 八十年代文学（新时期） #378–387 ／ 外国 现代主义文学 #274–280","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q398","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q378","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q274","外国"]]},{"k":"write","name":"853 创作 · 动手写","detail":"自由创作 800 字（小说/散文片段），只求写完不求好","min":60,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第55–56章 + 唐红梅 第30讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":62,"ph":1,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 清初至清中叶文学 #409–419 ／ 现当代 八十年代文学（新时期） #388–397 ／ 外国 现代主义文学 #281–283；后现代主义文学 #284–288","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q409","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q388","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q281","外国"]]},{"k":"review","name":"周复盘（周日）","detail":"错题本整理 + 本周完成率回顾 + 下周补齐科目","min":40,"href":"每日一题.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第57章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":61,"ph":1,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"27 题 ｜ 古代 清初至清中叶文学 #420–429 ／ 现当代 八十年代文学（新时期） #398–407 ／ 外国 后现代主义文学 #289–295","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q420","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q398","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q289","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「评论①理论说明默写」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第58–59章 + 唐红梅 第31讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":60,"ph":1,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 清初至清中叶文学 #430–440 ／ 现当代 八十年代文学（新时期） #408–417 ／ 外国 后现代主义文学 #296–302","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q430","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q408","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q296","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「概念辨析：什么不算创意写作」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第60章 + 唐红梅 第32讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":59,"ph":1,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 清初至清中叶文学 #441–451 ／ 现当代 八十年代文学（新时期） #418–418；九十年代文学 #419–427 ／ 外国 后现代主义文学 #303–308；亚非文学 #309–310","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q441","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q418","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q303","外国"]]},{"k":"write","name":"853 评论 · 动手写","detail":"从李凡挑 1 题名解/简答扩写成 400 字评论段","min":60,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第61章 + 唐红梅 第33讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":58,"ph":1,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"29 题 ｜ 古代 清初至清中叶文学 #452–456；近代文学 #457–462 ／ 现当代 九十年代文学 #428–438 ／ 外国 亚非文学 #311–317","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q452","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q428","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q311","外国"]]},{"k":"theory","name":"853 理论 · 备考卡","detail":"背「评论②文本拆解模板」，合上页口头复述一遍","min":45,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第62–63章 + 唐红梅 第34讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":57,"ph":1,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 近代文学 #463–472 ／ 现当代 九十年代文学 #439–448 ／ 外国 亚非文学 #318–325","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q463","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q439","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q318","外国"]]},{"k":"theory","name":"853 创写理论 · 背诵","detail":"背「译名之争与学科起点」，默写关键词","min":45,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第64章（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":56,"ph":1,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 40 + 滚动复习 120（不熟的进错词本）","min":40},{"k":"eng","name":"英语二阅读","detail":"1 篇真题精做：限时 18min → 逐句翻译 → 生词/长难句归档","min":60},{"k":"pol","name":"政治选择题","detail":"30 道（肖1000 对应章节）+ 背诵手册 1 节","min":45},{"k":"lit","name":"647 文学史一轮 · 李凡 1000 题","detail":"28 题 ｜ 古代 近代文学 #473–483 ／ 现当代 九十年代文学 #449–453；新世纪文学 #454–458 ／ 外国 亚非文学 #326–332","min":150,"href":"李凡1000题_古代文学史-OCR重建版.html","jumps":[["李凡1000题_古代文学史-OCR重建版.html","#q473","古代"],["李凡1000题_现当代文学史-OCR重建版.html","#q449","现当代"],["李凡1000题_外国文学史-OCR重建版.html","#q326","外国"]]},{"k":"write","name":"853 创作 · 动手写","detail":"自由创作 800 字（小说/散文片段），只求写完不求好","min":60,"href":"创意写作_定义与特征_背诵版.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第65–66章 + 唐红梅 第35讲（先看框架，再回填李凡对应题）","min":45,"href":"煜编文学考研资料.html"}]},{"d":55,"ph":2,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第1章 先秦文学 题1–17 ／ 外国 第1章 古代文学 题1–8","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d0","中国 第1章"],["外国文学史习题_分章刷题.html","#d0","外国 第1章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"review","name":"周复盘（周日）","detail":"本周错题重做 + 三科导图各过一遍","min":50,"href":"思维导图/index.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第67章 + 唐红梅 第36讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":54,"ph":2,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第1章 先秦文学 题18–34 ／ 外国 第1章 古代文学 题9–15","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d0","中国 第1章"],["外国文学史习题_分章刷题.html","#d0","外国 第1章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第68–69章 + 唐红梅 第37讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":53,"ph":2,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第1章 先秦文学 题35–51 ／ 外国 第1章 古代文学 题16–23","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d0","中国 第1章"],["外国文学史习题_分章刷题.html","#d0","外国 第1章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第70章（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":52,"ph":2,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第1章 先秦文学 题52–60；第2章 秦汉文学 题1–8 ／ 外国 第1章 古代文学 题24–30","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d0","中国 第1章"],["外国文学史习题_分章刷题.html","#d0","外国 第1章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第71–72章 + 唐红梅 第38讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":51,"ph":2,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"26 题 ｜ 中国 第2章 秦汉文学 题9–26 ／ 外国 第1章 古代文学 题31–35；第2章 中世纪文学 题1–3","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d1","中国 第2章"],["外国文学史习题_分章刷题.html","#d0","外国 第1章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第73章 + 唐红梅 第39讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":50,"ph":2,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第2章 秦汉文学 题27–43 ／ 外国 第2章 中世纪文学 题4–11","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d1","中国 第2章"],["外国文学史习题_分章刷题.html","#d1","外国 第2章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第74–75章 + 唐红梅 第40讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":49,"ph":2,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第2章 秦汉文学 题44–44；第3章 魏晋南北朝文学 题1–16 ／ 外国 第2章 中世纪文学 题12–16；第3章 文艺复兴时期文学 题1–2","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d1","中国 第2章"],["外国文学史习题_分章刷题.html","#d1","外国 第2章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第76章 + 唐红梅 第41讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":48,"ph":2,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第3章 魏晋南北朝文学 题17–33 ／ 外国 第3章 文艺复兴时期文学 题3–10","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d2","中国 第3章"],["外国文学史习题_分章刷题.html","#d2","外国 第3章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"review","name":"周复盘（周日）","detail":"本周错题重做 + 三科导图各过一遍","min":50,"href":"思维导图/index.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第77–78章（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":47,"ph":2,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第3章 魏晋南北朝文学 题34–50 ／ 外国 第3章 文艺复兴时期文学 题11–18","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d2","中国 第3章"],["外国文学史习题_分章刷题.html","#d2","外国 第3章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第79章 + 唐红梅 第42讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":46,"ph":2,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第3章 魏晋南北朝文学 题51–67 ／ 外国 第3章 文艺复兴时期文学 题19–25","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d2","中国 第3章"],["外国文学史习题_分章刷题.html","#d2","外国 第3章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第80章 + 唐红梅 第43讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":45,"ph":2,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第3章 魏晋南北朝文学 题68–68；第4章 隋唐五代文学 题1–16 ／ 外国 第3章 文艺复兴时期文学 题26–32；第4章 17世纪文学 题1–1","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d2","中国 第3章"],["外国文学史习题_分章刷题.html","#d2","外国 第3章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第81–82章 + 唐红梅 第44讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":44,"ph":2,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第4章 隋唐五代文学 题17–33 ／ 外国 第4章 17世纪文学 题2–8","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d3","中国 第4章"],["外国文学史习题_分章刷题.html","#d3","外国 第4章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第83章（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":43,"ph":2,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第4章 隋唐五代文学 题34–50 ／ 外国 第4章 17世纪文学 题9–16","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d3","中国 第4章"],["外国文学史习题_分章刷题.html","#d3","外国 第4章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第84–85章 + 唐红梅 第45讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":42,"ph":2,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"26 题 ｜ 中国 第4章 隋唐五代文学 题51–68 ／ 外国 第4章 17世纪文学 题17–18；第5章 18世纪文学 题1–6","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d3","中国 第4章"],["外国文学史习题_分章刷题.html","#d3","外国 第4章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第86章 + 唐红梅 第46讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":41,"ph":2,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第4章 隋唐五代文学 题69–85 ／ 外国 第5章 18世纪文学 题7–13","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d3","中国 第4章"],["外国文学史习题_分章刷题.html","#d4","外国 第5章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"review","name":"周复盘（周日）","detail":"本周错题重做 + 三科导图各过一遍","min":50,"href":"思维导图/index.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第87–88章 + 唐红梅 第47讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":40,"ph":2,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第4章 隋唐五代文学 题86–102 ／ 外国 第5章 18世纪文学 题14–21","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d3","中国 第4章"],["外国文学史习题_分章刷题.html","#d4","外国 第5章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第89章 + 唐红梅 第48讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":39,"ph":2,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第4章 隋唐五代文学 题103–104；第5章 两宋辽金文学 题1–15 ／ 外国 第5章 18世纪文学 题22–22；第6章 19世纪浪漫主义文学 题1–7","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d3","中国 第4章"],["外国文学史习题_分章刷题.html","#d4","外国 第5章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第90–91章（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":38,"ph":2,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第5章 两宋辽金文学 题16–32 ／ 外国 第6章 19世纪浪漫主义文学 题8–14","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d4","中国 第5章"],["外国文学史习题_分章刷题.html","#d5","外国 第6章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第92章 + 唐红梅 第49讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":37,"ph":2,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第5章 两宋辽金文学 题33–49 ／ 外国 第6章 19世纪浪漫主义文学 题15–22","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d4","中国 第5章"],["外国文学史习题_分章刷题.html","#d5","外国 第6章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第93–94章 + 唐红梅 第50讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":36,"ph":2,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第5章 两宋辽金文学 题50–66 ／ 外国 第6章 19世纪浪漫主义文学 题23–27；第7章 19世纪现实主义文学 题1–2","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d4","中国 第5章"],["外国文学史习题_分章刷题.html","#d5","外国 第6章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第95章 + 唐红梅 第51讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":35,"ph":2,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第5章 两宋辽金文学 题67–83 ／ 外国 第7章 19世纪现实主义文学 题3–10","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d4","中国 第5章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第96–97章 + 唐红梅 第52讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":34,"ph":2,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第5章 两宋辽金文学 题84–86；第6章 元代文学 题1–14 ／ 外国 第7章 19世纪现实主义文学 题11–18","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d4","中国 第5章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"review","name":"周复盘（周日）","detail":"本周错题重做 + 三科导图各过一遍","min":50,"href":"思维导图/index.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第98章（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":33,"ph":2,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第6章 元代文学 题15–31 ／ 外国 第7章 19世纪现实主义文学 题19–25","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d5","中国 第6章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第99–100章 + 唐红梅 第53讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":32,"ph":2,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"26 题 ｜ 中国 第6章 元代文学 题32–49 ／ 外国 第7章 19世纪现实主义文学 题26–33","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d5","中国 第6章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第101章 + 唐红梅 第54讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":31,"ph":2,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第6章 元代文学 题50–62；第7章 明代文学 题1–4 ／ 外国 第7章 19世纪现实主义文学 题34–41","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d5","中国 第6章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第102章 + 唐红梅 第55讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":30,"ph":2,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第7章 明代文学 题5–21 ／ 外国 第7章 19世纪现实主义文学 题42–48","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d6","中国 第7章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第103–104章（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":29,"ph":2,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第7章 明代文学 题22–38 ／ 外国 第7章 19世纪现实主义文学 题49–56","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d6","中国 第7章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第105章 + 唐红梅 第56讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":28,"ph":2,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第7章 明代文学 题39–55 ／ 外国 第7章 19世纪现实主义文学 题57–63","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d6","中国 第7章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第106–107章 + 唐红梅 第57讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":27,"ph":2,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第7章 明代文学 题56–72 ／ 外国 第7章 19世纪现实主义文学 题64–71","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d6","中国 第7章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"review","name":"周复盘（周日）","detail":"本周错题重做 + 三科导图各过一遍","min":50,"href":"思维导图/index.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第108章 + 唐红梅 第58讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":26,"ph":2,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第7章 明代文学 题73–81；第8章 清初至清中叶文学 题1–8 ／ 外国 第7章 19世纪现实主义文学 题72–72；第8章 19世纪自然主义及其他流派 题1–7","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d6","中国 第7章"],["外国文学史习题_分章刷题.html","#d6","外国 第7章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第109–110章 + 唐红梅 第59讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":25,"ph":2,"wd":2,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第8章 清初至清中叶文学 题9–25 ／ 外国 第8章 19世纪自然主义及其他流派 题8–13；第9章 20世纪欧美现实主义文学和俄苏文学 题1–1","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d7","中国 第8章"],["外国文学史习题_分章刷题.html","#d7","外国 第8章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第111章（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":24,"ph":2,"wd":3,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第8章 清初至清中叶文学 题26–42 ／ 外国 第9章 20世纪欧美现实主义文学和俄苏文学 题2–9","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d7","中国 第8章"],["外国文学史习题_分章刷题.html","#d8","外国 第9章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第112–113章 + 唐红梅 第60讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":23,"ph":2,"wd":4,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"26 题 ｜ 中国 第8章 清初至清中叶文学 题43–60 ／ 外国 第9章 20世纪欧美现实主义文学和俄苏文学 题10–15；第10章 现代主义和后现代主义文学 题1–2","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d7","中国 第8章"],["外国文学史习题_分章刷题.html","#d8","外国 第9章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第114章 + 唐红梅 第61讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":22,"ph":2,"wd":5,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第8章 清初至清中叶文学 题61–77 ／ 外国 第10章 现代主义和后现代主义文学 题3–9","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d7","中国 第8章"],["外国文学史习题_分章刷题.html","#d9","外国 第10章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第115–116章 + 唐红梅 第62讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":21,"ph":2,"wd":6,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第8章 清初至清中叶文学 题78–78；第9章 近代文学 题1–16 ／ 外国 第10章 现代主义和后现代主义文学 题10–14；第11章 亚非文学 题1–3","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d7","中国 第8章"],["外国文学史习题_分章刷题.html","#d9","外国 第10章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第117章（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":20,"ph":2,"wd":0,"sun":true,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"24 题 ｜ 中国 第9章 近代文学 题17–33 ／ 外国 第11章 亚非文学 题4–10","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d8","中国 第9章"],["外国文学史习题_分章刷题.html","#d10","外国 第11章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"review","name":"周复盘（周日）","detail":"本周错题重做 + 三科导图各过一遍","min":50,"href":"思维导图/index.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第118–119章 + 唐红梅 第63讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":19,"ph":2,"wd":1,"sun":false,"tasks":[{"k":"vocab","name":"背单词","detail":"新词 30 + 复习 150 + 真题生词本过一遍","min":40},{"k":"eng","name":"英语二真题","detail":"2 篇阅读（1 篇精做 + 1 篇限时）+ 错因归类","min":70},{"k":"pol","name":"政治选择题","detail":"40 道 + 昨日错题回看（肖1000 / 徐涛优题库）","min":55},{"k":"lit","name":"647 二轮 · 分章刷题","detail":"25 题 ｜ 中国 第9章 近代文学 题34–50 ／ 外国 第11章 亚非文学 题11–18","min":110,"href":"中国文学史习题_分章刷题.html","jumps":[["中国文学史习题_分章刷题.html","#d8","中国 第9章"],["外国文学史习题_分章刷题.html","#d10","外国 第11章"]]},{"k":"lit2","name":"647 高频回炉 · 每日一题","detail":"按日抽题（建议配额 古代2 / 现当代2 / 外国1）+ 只做错题本里★题","min":40,"href":"每日一题.html"},{"k":"theory","name":"853 输出训练","detail":"隔日轮换：评论 800 字全文 ／ 创作 1000 字 ／ 9 大理论来源卡默写","min":70,"href":"853评论写作备考卡.html"},{"k":"lit2","name":"647 讲义 · 煜编 / 唐红梅","detail":"煜编 第120章 + 唐红梅 第64讲（对照分章刷题，把名词解释串成线）","min":45,"href":"煜编文学考研资料.html"}]},{"d":18,"ph":3,"wd":2,"sun":false,"tasks":[{"k":"lit","name":"647 整套模考","detail":"限时 3h 做一套真题/模拟卷（647 或 853，隔次轮换）","min":180,"href":"每日一题.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 错题标注","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":17,"ph":3,"wd":3,"sun":false,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":16,"ph":3,"wd":4,"sun":false,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":15,"ph":3,"wd":5,"sun":false,"tasks":[{"k":"lit","name":"647 整套模考","detail":"限时 3h 做一套真题/模拟卷（647 或 853，隔次轮换）","min":180,"href":"每日一题.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 错题标注","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":14,"ph":3,"wd":6,"sun":false,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":13,"ph":3,"wd":0,"sun":true,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":12,"ph":3,"wd":1,"sun":false,"tasks":[{"k":"lit","name":"647 整套模考","detail":"限时 3h 做一套真题/模拟卷（647 或 853，隔次轮换）","min":180,"href":"每日一题.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 错题标注","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":11,"ph":3,"wd":2,"sun":false,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":10,"ph":3,"wd":3,"sun":false,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":9,"ph":3,"wd":4,"sun":false,"tasks":[{"k":"lit","name":"647 整套模考","detail":"限时 3h 做一套真题/模拟卷（647 或 853，隔次轮换）","min":180,"href":"每日一题.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 错题标注","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":8,"ph":3,"wd":5,"sun":false,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":7,"ph":3,"wd":6,"sun":false,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":6,"ph":3,"wd":0,"sun":true,"tasks":[{"k":"lit","name":"647 整套模考","detail":"限时 3h 做一套真题/模拟卷（647 或 853，隔次轮换）","min":180,"href":"每日一题.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 错题标注","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":5,"ph":3,"wd":1,"sun":false,"tasks":[{"k":"lit","name":"647 高频速记","detail":"名词解释 30 条 + 论述答题框架串联（对着导图说一遍）","min":120,"href":"思维导图/index.html"},{"k":"pol","name":"政治冲刺题","detail":"50 道（肖八 / 肖四）+ 昨日错题回看","min":60},{"k":"eng","name":"英语作文 + 回顾","detail":"大小作文模板默写 1 遍 + 1 篇仿写（限时 35min）","min":60},{"k":"vocab","name":"背单词","detail":"只滚动复习 150，不再背新词；背作文高频词","min":25},{"k":"theory","name":"853 理论来源卡 + 模板","detail":"9 大理论来源卡 + 整篇模板各默写 1 遍，卡壳处重点标红","min":60,"href":"853评论写作备考卡.html"}]},{"d":4,"ph":4,"wd":2,"sun":false,"tasks":[{"k":"pol","name":"政治押题","detail":"肖四主观题背诵 + 时政速览","min":120},{"k":"lit","name":"647 高频速记","detail":"高频名解 + 论述要点过最后一遍（导图速翻）","min":120,"href":"思维导图/index.html"},{"k":"theory","name":"853 模板巩固","detail":"9 大理论来源卡 + 评论模板 + 创作开头模板","min":60,"href":"853评论写作备考卡.html"},{"k":"eng","name":"英语收尾","detail":"作文模板默写 + 真题长难句回顾，不再做新阅读","min":50}]},{"d":3,"ph":4,"wd":3,"sun":false,"tasks":[{"k":"pol","name":"政治押题","detail":"肖四主观题背诵 + 时政速览","min":120},{"k":"lit","name":"647 高频速记","detail":"高频名解 + 论述要点过最后一遍（导图速翻）","min":120,"href":"思维导图/index.html"},{"k":"theory","name":"853 模板巩固","detail":"9 大理论来源卡 + 评论模板 + 创作开头模板","min":60,"href":"853评论写作备考卡.html"},{"k":"eng","name":"英语收尾","detail":"作文模板默写 + 真题长难句回顾，不再做新阅读","min":50}]},{"d":2,"ph":4,"wd":4,"sun":false,"tasks":[{"k":"pol","name":"政治押题","detail":"肖四主观题背诵 + 时政速览","min":120},{"k":"lit","name":"647 高频速记","detail":"高频名解 + 论述要点过最后一遍（导图速翻）","min":120,"href":"思维导图/index.html"},{"k":"theory","name":"853 模板巩固","detail":"9 大理论来源卡 + 评论模板 + 创作开头模板","min":60,"href":"853评论写作备考卡.html"},{"k":"eng","name":"英语收尾","detail":"作文模板默写 + 真题长难句回顾，不再做新阅读","min":50},{"k":"review","name":"考前事务","detail":"准考证/身份证/文具/考场踩点/作息调表","min":30,"href":""}]},{"d":1,"ph":4,"wd":5,"sun":false,"tasks":[{"k":"pol","name":"政治押题","detail":"肖四主观题背诵 + 时政速览","min":120},{"k":"lit","name":"647 高频速记","detail":"高频名解 + 论述要点过最后一遍（导图速翻）","min":120,"href":"思维导图/index.html"},{"k":"theory","name":"853 模板巩固","detail":"9 大理论来源卡 + 评论模板 + 创作开头模板","min":60,"href":"853评论写作备考卡.html"},{"k":"eng","name":"英语收尾","detail":"作文模板默写 + 真题长难句回顾，不再做新阅读","min":50},{"k":"review","name":"考前事务","detail":"准考证/身份证/文具/考场踩点/作息调表","min":30,"href":""}]}];
+var META = {"anchor":"2026-09-10","exam":"2026-12-19","days":100,"p1":45,"p2":37,"totals":{"lifan":1273,"cn":633,"wg":282,"cards":28,"cw":10,"yubian":120,"tang":64,"mind":34,"daily_ev":120,"pol":3000,"eng":120,"vocab":4000},"tmeta":{"vocab":["词","#3a5a8a"],"eng":["读","#3a5a8a"],"pol":["政","#9a3b2e"],"lit":["史","#3b6b5e"],"lit2":["史","#3b6b5e"],"theory":["评","#6b5a8a"],"write":["创","#b07a2a"],"review":["复","#8a8073"]},"phases":[{"hi":100,"lo":56,"no":1,"name":"强化 · 一轮收尾","focus":"把三册李凡 1273 题整体过完一遍，建立完整框架"},{"hi":55,"lo":19,"no":2,"name":"强化 · 二轮刷题","focus":"分章刷题二轮打通，重点转向输出与错题回炉"},{"hi":18,"lo":5,"no":3,"name":"冲刺 · 真题模考","focus":"限时整套模拟，锁定高频考点与答题模板"},{"hi":4,"lo":1,"no":4,"name":"最后冲刺","focus":"速记、默写模板、调状态，不做新题"}]};
+</script>
+<script>
+(function(){
+  var DAY_MS = 86400000;
+  var KEY = 'bairi100_v1';
+  var WD = ['周日','周一','周二','周三','周四','周五','周六'];
+  var PH_COLOR = {1:'#9a3b2e',2:'#3b6b5e',3:'#6b5a8a',4:'#b07a2a'};
+
+  var store = load();
+  var todayD = null, viewD = null;
+
+  function load(){
+    var s = {exam:META.exam, checks:{}};
+    try{ var raw = localStorage.getItem(KEY); if(raw){ var o=JSON.parse(raw);
+      if(o && o.checks) s.checks=o.checks; if(o && o.exam) s.exam=o.exam; } }catch(e){}
+    return s;
+  }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){} }
+
+  function midnight(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  function parseD(s){ var p=s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function fmtDate(d){ return (d.getMonth()+1)+'月'+d.getDate()+'日'; }
+
+  function dOfDay(n){ return new Date(parseD(store.exam).getTime() - n*DAY_MS); }
+  function dayOfDate(d){ return Math.round((parseD(store.exam).getTime() - midnight(d).getTime())/DAY_MS); }
+
+  var byD = {};
+  PLAN.forEach(function(p){ byD[p.d] = p; });
+
+  // ---------- 渲染当日 ----------
+  function taskHtml(t, done){
+    var m = META.tmeta[t.k] || ['·','#8a8073'];
+    var h = '<div class="task'+(done?' done':'')+'" data-k="'+t.k+'">'+
+      '<div class="chk"><i>✓</i></div><div class="tmain">'+
+      '<div class="trow"><span class="badge" style="background:'+m[1]+'">'+m[0]+'</span>'+
+      '<span class="tname">'+esc(t.name)+'</span>'+
+      '<span class="tmin">约 '+t.min+'min</span></div>'+
+      '<div class="tdetail">'+esc(t.detail)+'</div>';
+    var j = [];
+    // 带上来源天数，题库页据此显示「← 返回计划 D-xx」
+    var qs = '?from=plan&d=' + viewD;
+    if(t.jumps) t.jumps.forEach(function(x){ j.push('<a href="'+x[0]+qs+x[1]+'" target="_blank">↗ 直达 '+x[2]+'</a>'); });
+    if(t.href){ var hu = /[?]/.test(t.href) ? t.href+'&from=plan&d='+viewD : t.href+qs;
+      j.push('<a href="'+hu+'" target="_blank">↗ 打开资料</a>'); }
+    if(j.length) h += '<div class="tjump">'+j.join('')+'</div>';
+    return h + '</div></div>';
+  }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function renderDay(){
+    var p = byD[viewD]; if(!p) return;
+    var date = dOfDay(p.d);
+    document.getElementById('dNo').textContent = p.d;
+    document.getElementById('dDate').textContent =
+      date.getFullYear()+' 年 '+fmtDate(date)+' '+WD[date.getDay()] +
+      (viewD===todayD ? ' · 今天' : '');
+    var ph = META.phases.filter(function(x){ return x.no===p.ph; })[0];
+    var cks = store.checks[p.d] || {};
+    var doneN = 0;
+    p.tasks.forEach(function(t){ if(cks[t.k]) doneN++; });
+    var mins = p.tasks.reduce(function(a,t){ return a + t.min; }, 0);
+
+    document.getElementById('dSum').innerHTML =
+      '<span class="dtag ph">阶段 '+p.ph+' · '+ph.name+'</span>'+
+      '<span>共 '+p.tasks.length+' 项 · 约 '+(mins/60).toFixed(1)+' 小时</span>'+
+      '<span class="hint">完成 '+doneN+'/'+p.tasks.length+'</span>'+
+      (p.sun ? '<span>今天是复盘日，任务量偏轻</span>' : '');
+
+    document.getElementById('tasks').innerHTML =
+      p.tasks.map(function(t){ return taskHtml(t, !!cks[t.k]); }).join('');
+
+    var pct = p.tasks.length ? Math.round(doneN/p.tasks.length*100) : 0;
+    document.getElementById('progLbl').textContent = '今日完成 '+doneN+' / '+p.tasks.length+'（'+pct+'%，约 '+Math.round(mins*doneN/p.tasks.length)+'min）';
+    document.getElementById('progBar').style.width = pct+'%';
+    document.getElementById('dNote').innerHTML = noteOf(p);
+    renderAll(true);
+  }
+
+  function noteOf(p){
+    if(p.ph===1) return '一轮不求记住，只求「见过 + 划出关键词」。李凡每题点开看答案要点，能口头说出三点就过，卡住的画圈，二轮回来收拾。';
+    if(p.ph===2) return '二轮开始转向输出：分章刷题先自己答，再展开对答案。错题抄进错题本，只抄「角度」，不抄整段。';
+    if(p.ph===3) return '限时模考的卷子必须写满，宁可写得糙。写完当天不改、隔天再对答案，效果更接近真实考场。';
+    return '不做新内容。只默写模板、过导图、背押题，保证睡眠，把状态调到考试那两天。';
+  }
+
+  // ---------- 全部计划 ----------
+  var allOpen = false;
+  function summaryOf(p){
+    var out = [];
+    p.tasks.forEach(function(t){
+      if(t.k==='lit'){ var d=t.detail.split(' ／ ')[0]; out.push(d); }
+      else if(t.k==='lit2' && /煜编|唐红梅/.test(t.detail)) out.push(t.detail.split('（')[0]);
+    });
+    if(!out.length) out.push(p.tasks[0].name);
+    return out.join(' ｜ ');
+  }
+  function stateOf(p){
+    var cks = store.checks[p.d] || {}, n=0;
+    p.tasks.forEach(function(t){ if(cks[t.k]) n++; });
+    if(n===0) return ['none','·'];
+    if(n===p.tasks.length) return ['full','✓'];
+    return ['part','◐'];
+  }
+  function renderAll(keepOpen){
+    var b = document.getElementById('allBody');
+    if(allOpen || keepOpen){
+      var html = '', lastPh = 0;
+      PLAN.forEach(function(p){
+        var date = dOfDay(p.d);
+        var st = stateOf(p);
+        if(p.ph !== lastPh){
+          lastPh = p.ph;
+          var ph = META.phases.filter(function(x){ return x.no===p.ph; })[0];
+          html += '<div class="grp">阶段 '+p.ph+' · '+ph.name+'　（D-'+ph.hi+' ~ D-'+ph.lo+'）</div>';
+        }
+        html += '<div class="row '+st[0]+(p.d===viewD?' cur':'')+'" data-d="'+p.d+'">'+
+          '<span class="dd">D-'+p.d+'</span>'+
+          '<span class="dt">'+(date.getMonth()+1)+'/'+date.getDate()+' '+WD[date.getDay()]+'</span>'+
+          '<span class="st">'+st[1]+'</span>'+
+          '<span class="sm">'+esc(summaryOf(p))+'</span>'+
+          '<span class="ph">'+(p.ph===1?'一轮':p.ph===2?'二轮':p.ph===3?'冲刺':'收尾')+'</span></div>';
+      });
+      b.innerHTML = html;
+    }
+  }
+
+  // ---------- 统计 ----------
+  function fullOf(d){
+    var p = byD[d]; if(!p) return false;
+    var cks = store.checks[d] || {};
+    for(var i=0;i<p.tasks.length;i++){ if(!cks[p.tasks[i].k]) return false; }
+    return true;
+  }
+  function stats(){
+    var total=0, done=0, fullDay=0, partDay=0, mins=0;
+    PLAN.forEach(function(p){
+      var cks = store.checks[p.d] || {}, n=0;
+      p.tasks.forEach(function(t){ if(cks[t.k]) n++; });
+      total += p.tasks.length; done += n;
+      mins += p.tasks.reduce(function(a,t){ return a + (cks[t.k]? t.min : 0); },0);
+      if(n === p.tasks.length){ fullDay++; } else if(n>0){ partDay++; }
+    });
+    // 当前连续打卡：从最近一个“过去日”往回数
+    var cur = 0;
+    for(var d = todayD + 1; d <= 100; d++){ if(fullOf(d)) cur++; else break; }
+    if(todayD >= 1 && todayD <= 100 && fullOf(todayD)) cur++;
+
+    document.getElementById('sTotal').textContent = Math.round(done/total*100)+'%';
+    document.getElementById('sDays').textContent = fullDay;
+    document.getElementById('sStreak').textContent = cur;
+    document.getElementById('sHours').textContent = Math.round(mins/60);
+    document.getElementById('sLeft').textContent = Math.max(0, todayD);
+    document.getElementById('miniBar').style.width = Math.round(done/total*100)+'%';
+    document.getElementById('tbD').textContent = Math.max(0, todayD);
+    document.getElementById('ringD').textContent = Math.max(0, todayD);
+    document.getElementById('ringArc').setAttribute('stroke-dashoffset',
+      String(358 * (1 - Math.min(1, Math.max(0, todayD)/100))));
+    document.getElementById('allCnt').textContent = fullDay+' 天全勤 · '+partDay+' 天部分完成';
+
+    // 阶段进度
+    var html = META.phases.map(function(ph){
+      var ids = PLAN.filter(function(p){ return p.ph===ph.no; });
+      var t=0, dd=0;
+      ids.forEach(function(p){
+        var cks=store.checks[p.d]||{};
+        p.tasks.forEach(function(x){ t++; if(cks[x.k]) dd++; });
+      });
+      var pct = t? Math.round(dd/t*100):0;
+      var c = PH_COLOR[ph.no];
+      return '<div class="phcard"><div class="edge" style="background:'+c+'"></div>'+
+        '<h3>阶段 '+ph.no+' · '+ph.name+'</h3>'+
+        '<div class="rng">D-'+ph.hi+' ~ D-'+ph.lo+' ｜ '+ids.length+' 天</div>'+
+        '<div class="focus">'+esc(ph.focus)+'</div>'+
+        '<div class="bar"><i style="width:'+pct+'%;background:'+c+'"></i></div>'+
+        '<div class="pct">'+pct+'%</div></div>';
+    }).join('');
+    document.getElementById('phases').innerHTML = html;
+  }
+
+  // ---------- 资料地图 ----------
+  var MATS = [
+    ['李凡 1000 题 · 古代文学史','先秦→近代 9 编，483 题。一轮主战场，第 1–45 天按章推进。','李凡1000题_古代文学史-OCR重建版.html','483 题'],
+    ['李凡 1000 题 · 现当代文学史','五四→新世纪 8 段，458 题。','李凡1000题_现当代文学史-OCR重建版.html','458 题'],
+    ['李凡 1000 题 · 外国文学史','古代→亚非 13 章，332 题。','李凡1000题_外国文学史-OCR重建版.html','332 题'],
+    ['中国文学史 · 分章刷题','9 章 633 题，二轮主力，题号按章排列。','中国文学史习题_分章刷题.html','633 题'],
+    ['外国文学史 · 分章刷题','11 章 282 题，二轮主力。','外国文学史习题_分章刷题.html','282 题'],
+    ['每日一题 · 按日定量抽题','按天固定一组、默认只抽四星及以上，适合 D-55 之后的高频回炉。','每日一题.html','星级可调'],
+    ['煜编（落煜）文学考研资料汇编','6 卷 120 章名词解释条目，配套李凡逐章对读。','煜编文学考研资料.html','120 章'],
+    ['唐红梅《外国文学史》知识点串讲','11 章 64 讲，★高频 / ☆重点标注。','唐红梅外国文学知识点串讲.html','64 讲'],
+    ['853 评论写作 · 双问备考卡','9 大理论来源卡 + 整篇模板 + 2025/2026 真题示范。','853评论写作备考卡.html','28 张卡'],
+    ['创意写作 · 定义与特征背诵版','概念辨析、四要点、六项特征，853 理论题标准答案库。','创意写作_定义与特征_背诵版.html','10 部分'],
+    ['思维导图 · 知识框架全图','3 科 34 图，冲刺期限时速翻。','思维导图/index.html','34 图']
+  ];
+  document.getElementById('mats').innerHTML = MATS.map(function(m){
+    return '<a class="mat" href="'+m[2]+'" target="_blank" rel="noopener">'+
+      '<div class="mn">'+esc(m[0])+'</div><div class="md">'+esc(m[1])+'</div>'+
+      '<div class="mq">'+esc(m[3])+' →</div></a>';
+  }).join('');
+
+  // ---------- 交互 ----------
+  // 资料/题目一律用 window.open 打开：这样新标签由脚本创建，
+  // 「← 返回计划」才能把它关掉、直接回到本页原来那一天。
+  document.addEventListener('click', function(e){
+    if(e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[target="_blank"]');
+    if(!a) return;
+    var url = a.getAttribute('href');
+    if(!url || /^(https?:|mailto:|#)/i.test(url)) return;
+    e.preventDefault();
+    var w = null;
+    try{ w = window.open(url, '_blank'); }catch(err){}
+    if(w){ try{ w.focus(); }catch(err){} }
+    else{ location.href = url; }
+  }, true);
+
+  document.getElementById('tasks').addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if(a) return;                       // 点链接不勾选
+    var el = e.target.closest && e.target.closest('.task');
+    if(!el) return;
+    var k = el.getAttribute('data-k');
+    if(!store.checks[viewD]) store.checks[viewD] = {};
+    if(store.checks[viewD][k]) delete store.checks[viewD][k];
+    else store.checks[viewD][k] = 1;
+    save(); renderDay(); stats();
+  });
+  document.getElementById('allDone').onclick = function(){
+    var p = byD[viewD]; if(!p) return;
+    if(!store.checks[viewD]) store.checks[viewD] = {};
+    p.tasks.forEach(function(t){ store.checks[viewD][t.k] = 1; });
+    save(); renderDay(); stats();
+  };
+  document.getElementById('clrDay').onclick = function(){
+    delete store.checks[viewD]; save(); renderDay(); stats();
+  };
+  document.getElementById('clrAll').onclick = function(){
+    if(!confirm('确定清空全部打卡记录？此操作不可撤销。')) return;
+    store.checks = {}; save(); renderDay(); stats();
+  };
+  document.getElementById('prevDay').onclick = function(){ if(viewD<100){ viewD++; renderDay(); } };
+  document.getElementById('nextDay').onclick = function(){ if(viewD>1){ viewD--; renderDay(); } };
+  document.getElementById('todayBtn').onclick = function(){ viewD = todayD<1?1:(todayD>100?100:todayD); renderDay(); };
+  document.getElementById('allHead').onclick = function(){
+    allOpen = !allOpen;
+    document.getElementById('allWrap').classList.toggle('open', allOpen);
+    renderAll(false);
+  };
+  document.getElementById('allBody').addEventListener('click', function(e){
+    var r = e.target.closest && e.target.closest('.row'); if(!r) return;
+    viewD = parseInt(r.getAttribute('data-d'),10); renderDay();
+    document.querySelector('.panel').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+  document.getElementById('editExam').onclick = function(){
+    var v = prompt('输入考试首日日期（格式 2026-12-19）：', store.exam);
+    if(!v) return;
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(v)){ alert('格式不对，应为 2026-12-19 这样'); return; }
+    store.exam = v; save(); boot();
+  };
+
+  function boot(){
+    var dt = parseD(store.exam);
+    document.getElementById('examTxt').textContent =
+      dt.getFullYear()+' 年 '+(dt.getMonth()+1)+' 月 '+dt.getDate()+' 日';
+    todayD = dayOfDate(new Date());
+    viewD = todayD<1?1:(todayD>100?100:todayD);
+    // 从题库返回时按 ?d=55 定位回原来那天
+    var qm = (location.search||'').match(/[?&]d=(\d+)/);
+    var from = /[?&]from=plan/.test(location.search||'');
+    if(qm){ var n = parseInt(qm[1],10); if(byD[n]) viewD = n; }
+    renderDay(); stats();
+    if(qm && byD[viewD]){
+      var sec = document.querySelectorAll('h2.sec')[0];
+      if(sec) window.scrollTo(0, Math.max(0, sec.offsetTop - 58));
+    }
+  }
+  boot();
+})();
+</script>
+</body>
+</html>

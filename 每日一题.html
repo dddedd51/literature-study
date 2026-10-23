@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日一题 · 文学史复习</title>
+<style>
+:root{
+  --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073; --line:#e3dccd;
+  --gold:#c8902a; --accent:#9a3b2e;
+  --gu:#3b6b5e; --xd:#3a5a8a; --wg:#6b5a8a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);
+  font-family:"LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;
+  background-image:radial-gradient(circle at 18% 12%,rgba(200,144,42,.06) 0,transparent 34%),
+                   radial-gradient(circle at 85% 22%,rgba(154,59,46,.05) 0,transparent 38%),
+                   radial-gradient(circle at 60% 88%,rgba(59,107,94,.05) 0,transparent 40%);
+  min-height:100vh;}
+.wrap{max-width:900px;margin:0 auto;padding:6px 18px 70px;}
+
+/* 顶栏 */
+.bar{position:sticky;top:0;z-index:20;background:rgba(247,243,234,.95);backdrop-filter:blur(5px);
+  border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  padding:9px 0;margin:0 -10px 14px;padding-left:12px;padding-right:12px;}
+.bar a{color:var(--accent);text-decoration:none;font-weight:700;padding:5px 10px;border:1px solid var(--line);
+  border-radius:8px;background:var(--card);cursor:pointer;font-size:14px;
+  font-family:inherit;}
+.bar a:hover{border-color:var(--accent)}
+.bar .btitle{margin-right:auto;font-weight:700;color:var(--accent);font-size:15px;letter-spacing:1px}
+.bar button{font-family:inherit;font-size:13px;cursor:pointer;border:1px solid var(--line);background:var(--card);
+  color:var(--ink);border-radius:8px;padding:5px 10px;}
+.bar button:hover{border-color:var(--accent);color:var(--accent)}
+.bar input[type=date]{font-family:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:var(--card);color:var(--ink)}
+
+.hero{text-align:center;padding:14px 10px 6px}
+.hero h1{font-size:30px;letter-spacing:4px}
+.hero .sub{color:var(--sub);font-size:14px;margin-top:6px;letter-spacing:1px}
+.hero .rule{width:200px;height:2px;margin:12px auto 6px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* ===== 配额控制 ===== */
+.config{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:16px 0 10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);}
+.config .h{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px;letter-spacing:.5px;
+  margin:0 0 4px;color:var(--ink);}
+.config .h::before{content:'';width:5px;height:16px;border-radius:3px;background:linear-gradient(180deg,var(--gold),var(--accent));flex:none;}
+.qrow{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px;margin:14px 0 6px;}
+.qitem{display:inline-flex;align-items:center;gap:12px;background:#fdf9f0;border:1px solid var(--line);
+  border-radius:13px;padding:10px 14px;--sc:var(--accent);}
+.qitem .qb{display:flex;flex-direction:column;line-height:1.15;margin-left:2px;}
+.qitem .qb .qn{font-weight:700;font-size:16px;letter-spacing:.5px;color:var(--ink);}
+.qitem .qb .qs{font-size:11px;color:var(--sub);letter-spacing:.5px;white-space:nowrap;}
+.stepper{display:inline-flex;align-items:center;gap:10px;}
+.stepper button{width:27px;height:27px;border-radius:50%;border:1px solid var(--line);background:#fff;
+  color:var(--sub);cursor:pointer;font-size:17px;line-height:1;font-family:inherit;
+  display:flex;align-items:center;justify-content:center;transition:all .12s ease;}
+.stepper button:hover{border-color:var(--sc);background:var(--sc);color:#fff;}
+.stepper button:active{transform:scale(.92)}
+.stepper b{min-width:30px;text-align:center;font-size:19px;font-weight:700;font-variant-numeric:tabular-nums;
+  color:var(--ink);box-shadow:inset 0 -2px 0 var(--sc);padding-bottom:1px;}
+.qrow .go{margin-left:auto;align-self:center;}
+.btn-go{font-family:inherit;font-size:14.5px;font-weight:700;color:#fff;cursor:pointer;border:none;
+  background:linear-gradient(120deg,var(--accent),#b85a2f);
+  padding:10px 20px;border-radius:999px;box-shadow:0 4px 10px rgba(154,59,46,.22);
+  transition:transform .12s ease, box-shadow .12s ease;}
+.btn-go:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(154,59,46,.28)}
+.btn-go:active{transform:translateY(0)}
+.config .note{color:var(--sub);font-size:12.5px;margin:8px 0 2px;line-height:1.7;
+  background:var(--bg);border:1px dashed var(--line);border-radius:9px;padding:7px 12px;}
+
+/* ===== 星级偏好 ===== */
+.starrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin:12px 0 4px;padding:10px 14px;background:#fdf9f0;
+  border:1px solid var(--line);border-radius:13px;}
+.starrow .slabel{font-size:13px;color:var(--sub);letter-spacing:1px;flex:none}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.seg button{font-family:inherit;font-size:13.5px;cursor:pointer;border:none;background:transparent;
+  color:var(--sub);border-radius:999px;padding:6px 13px;transition:all .13s ease;white-space:nowrap;line-height:1.2}
+.seg button:hover{color:var(--accent)}
+.seg button.on{background:linear-gradient(120deg,var(--accent),#b85a2f);color:#fff;font-weight:700;
+  box-shadow:0 2px 6px rgba(154,59,46,.24);}
+.starrow .shint{font-size:12.5px;color:var(--sub);margin-left:auto;text-align:right;line-height:1.7}
+.starrow .shint b{color:var(--accent);font-weight:700}
+@media (max-width:640px){.starrow .shint{margin-left:0;text-align:left}}
+
+/* ===== 日期条 ===== */
+.date-wrap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 12px;
+  box-shadow:0 3px 12px rgba(0,0,0,.04);}
+.daybar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;row-gap:10px;}
+.dcol{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.daybar button{font-family:inherit;font-size:13.5px;cursor:pointer;color:var(--ink);
+  border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;
+  transition:all .13s ease;display:inline-flex;align-items:center;gap:4px;}
+.daybar button:hover{border-color:var(--gold);box-shadow:0 2px 6px rgba(0,0,0,.06);transform:translateY(-1px)}
+.daybar button:active{transform:translateY(0)}
+.day-arrow{border:none!important;background:transparent!important;color:var(--sub);font-size:18px;padding:8px 6px!important;}
+.day-arrow:hover{color:var(--accent)!important;box-shadow:none!important;transform:none!important}
+#goToday{border-color:transparent;background:var(--gold);color:#fff;font-weight:700;
+  box-shadow:0 3px 8px rgba(200,144,42,.28);}
+#goToday:hover{background:#b87d1e}
+#reshuffle{border-color:var(--gold);background:#fffdf6;color:#9a7626;}
+#reshuffle:hover{border-color:#b87d1e;color:#7d5f17}
+.date-sep{width:1px;height:24px;background:var(--line);margin:0 2px}
+/* 中间日期标题 */
+.d-title{display:flex;flex-direction:column;align-items:center;line-height:1.1;gap:3px;}
+#dateLabel{font-size:23px;font-weight:800;letter-spacing:1px;
+  background:linear-gradient(120deg,var(--accent),#c8902a);-webkit-background-clip:text;background-clip:text;color:transparent;}
+#weekLabel{font-size:12px;color:var(--sub);font-weight:400;
+  background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 10px;}
+/* 日期选择框 */
+#datePick{font-family:inherit;font-size:13px;border:1px solid var(--line);background:#fff;
+  color:var(--ink);border-radius:999px;padding:7px 12px;box-shadow:none;transition:border-color .13s ease;}
+#datePick:hover{border-color:var(--gold)}
+.date-label{font-size:12px;color:var(--sub);margin-right:0;}
+
+/* 题型统计点 */
+.summary{color:var(--sub);font-size:13px;margin:2px 0 16px;line-height:1.8}
+
+/* 题目分组 */
+.group{margin:20px 0}
+.group .ghead{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;margin-bottom:10px;
+  padding-bottom:6px;border-bottom:1.5px solid var(--line);}
+.group .ghead .no{width:26px;height:26px;border-radius:8px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex:none}
+.qcard{background:var(--card);border:1px solid var(--line);border-left-width:5px;border-radius:12px;
+  margin:10px 0;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.04);}
+.qcard .qhead{display:flex;gap:10px;align-items:flex-start;padding:13px 16px;cursor:pointer;
+  background:linear-gradient(90deg,rgba(0,0,0,.012),transparent 60%)}
+.qcard .qhead .num{flex:none;display:inline-block;min-width:22px;text-align:center;color:var(--sub);
+  border:1px solid var(--line);border-radius:6px;padding:0 3px;font-size:12px;margin-top:2px}
+.qcard .qhead .qt{font-weight:700;font-size:16px;line-height:1.6;flex:1}
+.qhead .star{color:var(--gold);font-size:13px;white-space:nowrap}
+.qhead .arrow{color:var(--sub);flex:none}
+.qbody{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.qcard.open .qhead .arrow{transform:rotate(90deg);display:inline-block}
+.qcard.open .qbody{max-height:18000px}
+.qinner{padding:2px 18px 16px;border-top:1px dashed var(--line);}
+.qinner .ans-title{color:var(--sub);font-size:13px;margin:12px 0 6px;letter-spacing:1px}
+.qinner .ans{line-height:2;font-size:16px;white-space:pre-wrap;word-break:break-word;color:#333}
+.qinner .back{display:inline-block;margin-top:14px;font-size:13px;color:var(--accent);cursor:pointer;text-decoration:underline}
+
+.empty{text-align:center;color:var(--sub);padding:40px 10px;}
+.footnote{color:var(--sub);font-size:12.5px;margin-top:28px;line-height:1.9;text-align:center}
+@media (max-width:640px){.wrap{padding:6px 12px 60px}.hero h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="bar">
+    <a href="index.html" class="backlink">← 返回导航</a>
+    <span class="btitle">每日一题 · 文学史&nbsp;按日定量抽题复习</span>
+  </div>
+
+  <div class="hero">
+    <h1>每日一题</h1>
+    <div class="sub">古代 · 现当代 · 外国 &nbsp;|&nbsp; 每天按科目配额抽一组，默认只从四星及以上题里取</div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="config">
+    <div class="h">每日科目配额</div>
+    <div class="qrow" id="qrow">
+      <!-- 由 JS 渲染三个科目配额 -->
+    </div>
+    <div class="starrow">
+      <span class="slabel">星级偏好</span>
+      <div class="seg" id="segStar">
+        <button type="button" data-min="5">★★★★★</button>
+        <button type="button" data-min="4">≥&nbsp;★★★★</button>
+        <button type="button" data-min="3">≥&nbsp;★★★</button>
+        <button type="button" data-min="0">不限</button>
+      </div>
+      <span class="shint" id="starHint"></span>
+    </div>
+    <div class="note">同一日期默认抽到相同的一组（便于按天复习与回看过去某天）；抽过可按「换一组」手动重抽当天。配额改为 0 表示该科当天不出题。<br>
+      星级取原书标注（★ 越多越是论述/简答大题）。默认「≥&nbsp;★★★★」= 只从四星、五星题里抽，整池打散后按天轮转，走完一整轮再从头循环；想连三星一起抽就选「≥&nbsp;★★★」，想全库均匀覆盖就选「不限」，「★★★★★」是只刷最高频大字题的冲刺模式。</div>
+  </div>
+
+  <div class="date-wrap" style="margin:6px 0 6px;">
+    <div class="daybar">
+      <div class="dcol">
+        <button id="prevDay" class="day-arrow" title="前一天" aria-label="前一天">◀</button>
+      </div>
+      <div class="d-title">
+        <span id="dateLabel">—</span>
+        <span id="weekLabel"></span>
+      </div>
+      <div class="dcol">
+        <button id="goToday" type="button">今天</button>
+        <button id="reshuffle" type="button">↻&nbsp;换一组</button>
+        <span class="date-sep"></span>
+        <input type="date" id="datePick" aria-label="选择日期">
+        <button id="nextDay" class="day-arrow" title="后一天" aria-label="后一天">▶</button>
+      </div>
+    </div>
+  </div>
+  <div class="summary" id="summary"></div>
+
+  <div id="content"><div class="empty">加载题库中…</div></div>
+
+  <div class="footnote">
+    题库来源：李凡 1000 题 OCR 重建版（古代 483 · 现当代 458 · 外国 332，共 1273 题）· 全部离线可用<br>
+    星级取原书标注 —— ★★★★★ 43/47/43 · ★★★★ 123/129/82 · ★★★ 190/173/164（古代/现当代/外国）<br>
+    按天定量抽取，走完当前星级池后自动循环重来
+  </div>
+</div>
+
+<script src="每日一题.data.js"></script>
+<script>
+(function(){
+  var BANK = window.__DAILYBANK || null;
+  var DAY_MS = 86400000;
+  // 科目显示配置
+  var SUBJECTS = [
+    { key:'gu', name:'古代', color:'var(--gu)' },
+    { key:'xd', name:'现当代', color:'var(--xd)' },
+    { key:'wg', name:'外国', color:'var(--wg)' }
+  ];
+  var DEFAULT_Q = { gu:2, xd:2, wg:1 };
+  var CUR_Q = Object.assign({}, DEFAULT_Q);
+  // 星级偏好：只看 >= STAR_MIN 星的题；0 = 不限（原版全库均匀覆盖）
+  var DEFAULT_STAR = 4;
+  var STAR_MIN = DEFAULT_STAR;
+  var POOL_CACHE = {};
+  var STAR_LABEL = { 5:'五星池', 4:'四星以上池', 3:'三星以上池', 0:'全库' };
+  function starPoolLabel(){ return STAR_LABEL[STAR_MIN] || '全库'; }
+  // 手动重抽计数：同一天内再次点击只换当天顺序；换天自动归零
+  var extra = 0;
+  var viewedDate = todayObj();     // 当前浏览的日期
+  var localStorageOK = (function(){ try{ localStorage.setItem('__dailytest','1'); localStorage.removeItem('__dailytest'); return true;}catch(e){return false;} })();
+
+  function pad(n){ return (n<10?'0':'')+n; }
+  function todayObj(){ var d=new Date(); return {y:d.getFullYear(),m:d.getMonth()+1,d:d.getDate()}; }
+  function dateOrd(o){ return Math.round(Date.UTC(o.y, o.m-1, o.d)/DAY_MS); } // 与本地日历偏移无关（UTC 保证按“天”稳定）
+  function fmtCn(o){
+    var wd = ['日','一','二','三','四','五','六'][new Date(o.y,o.m-1,o.d).getDay()];
+    return { line: o.y+' 年 '+o.m+' 月 '+o.d+' 日', week:'星期'+wd };
+  }
+
+  // ---------- 抽题池：按星级下限筛选，池内确定性打散 ----------
+  function starsOf(it){ return (it && it.s) ? String(it.s).length : 0; }
+  function hashStr(s){
+    var h = 2166136261 >>> 0; s = String(s);
+    for(var i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = Math.imul(h,16777619) >>> 0; }
+    // murmur3 终混：纯 FNV-1a 对“仅末位不同”的短串（题号 427/428/429…）雪崩不足，
+    // 会把相邻题号挤在相邻位置，导致同一章题目扎堆在同一天。
+    h ^= h >>> 16; h = Math.imul(h, 2246822507) >>> 0;
+    h ^= h >>> 13; h = Math.imul(h, 3266489909) >>> 0;
+    h ^= h >>> 16;
+    return h >>> 0;
+  }
+  // 抽题池 = 星级 >= STAR_MIN 的题；池内按「科目#题号」哈希做确定性打散。
+  // 不用「星级降序」而用打散，是为了让五星均匀铺满整个轮次：若严格按星级排序，
+  // 循环起点由日期决定，会出现连续几十天只抽到同一档星级、另一档迟迟不出现。
+  function poolOf(subjKey){
+    var ck = subjKey + '@' + STAR_MIN;
+    if(POOL_CACHE[ck]) return POOL_CACHE[ck];
+    var src = (BANK && BANK.items) ? BANK.items[subjKey] : null;
+    if(!src) src = [];
+    var tmp = [];
+    for(var i=0;i<src.length;i++){
+      var it = src[i], st = starsOf(it);
+      if(STAR_MIN > 0 && st < STAR_MIN) continue;
+      tmp.push({ it: it, jit: hashStr(subjKey + '#' + (it.id || i)) });
+    }
+    tmp.sort(function(a,b){ return a.jit - b.jit; });
+    POOL_CACHE[ck] = tmp.map(function(o){ return o.it; });
+    return POOL_CACHE[ck];
+  }
+
+  // ---------- 采样：按“日期线性推进 + 块式覆盖整池”，同一天固定同一组 ----------
+  // pickForDay(subject, q)：
+  //   - dateOrd 随自然日递增一个“天序号”；
+  //   - extra 是用户当天“换一组”的偏移（换天自动归零）；
+  //   - 把抽题池按 q 切块，第 (dayNo+extra) 天取第 (dayNo+extra) 块，
+  //     满一轮（ceil(S/q) 天）再整体平移，从而轮流覆盖整池且同一组内不重复。
+  function pickForDay(subjKey, q){
+    var arr = poolOf(subjKey);
+    if(!arr || !arr.length || !q || q<=0) return [];
+    var S = arr.length;
+    q = Math.min(q, S); // 若配额超过池容量，最多取全池
+    var numBlocks = Math.ceil(S / q);          // 覆盖整池所需天数
+    var block = ((dateOrd(viewedDate) + extra) % numBlocks + numBlocks) % numBlocks;
+    var start = (block * q) % S;
+    var picked = [];
+    var seen = {};
+    for(var n=0; n<q && picked.length<q; n++){
+      var idx=(start+n) % S;
+      if(seen[idx]) continue;   // 本块内强制去重
+      seen[idx]=1;
+      picked.push(arr[idx]);
+    }
+    return picked;
+  }
+
+  // 某科当前处于“第几轮 x / 共几轮”（按当前星级池计）
+  function coverageOf(subjKey, q){
+    var arr = poolOf(subjKey);
+    if(!arr || !arr.length || !q) return null;
+    var numBlocks = Math.ceil(arr.length / Math.max(1, Math.min(q, arr.length)));
+    var pos = ((dateOrd(viewedDate) + extra) % numBlocks + numBlocks) % numBlocks + 1;
+    return pos + ' / ' + numBlocks;
+  }
+
+  // ---------- 渲染 ----------
+  function renderConfigRow(){
+    var row=document.getElementById('qrow');
+    row.innerHTML='';
+    SUBJECTS.forEach(function(s){
+      var dl=document.createElement('div'); dl.className='qitem'; dl.style.setProperty('--sc', s.color);
+      dl.innerHTML=
+        '<span class="qb"><span class="qn">'+s.name+'</span><span class="qs">每日题量</span></span>'+
+        '<span class="stepper">'+
+          '<button type="button" data-act="dec" data-k="'+s.key+'" title="减">−</button>'+
+          '<b id="qv_'+s.key+'">'+CUR_Q[s.key]+'</b>'+
+          '<button type="button" data-act="inc" data-k="'+s.key+'" title="加">+</button>'+
+        '</span>';
+      row.appendChild(dl);
+    });
+    // 应用按钮
+    var go=document.createElement('button'); go.type='button'; go.className='btn-go go'; go.textContent='✓ 开始今日抽题';
+    row.appendChild(go);
+    renderStarRow();
+  }
+  // 星级分段控件 + 可用题量提示
+  function renderStarRow(){
+    var seg=document.getElementById('segStar');
+    if(seg){
+      Array.prototype.forEach.call(seg.querySelectorAll('button[data-min]'), function(b){
+        b.classList.toggle('on', (parseInt(b.getAttribute('data-min'),10)||0) === STAR_MIN);
+      });
+    }
+    var hint=document.getElementById('starHint');
+    if(!hint) return;
+    var parts=[], days=[];
+    SUBJECTS.forEach(function(s){
+      var n = (BANK && BANK.items) ? poolOf(s.key).length : 0;
+      parts.push(s.name+' <b>'+n+'</b>');
+      var q = CUR_Q[s.key]||0;
+      if(q>0 && n>0) days.push(Math.ceil(n/q));
+    });
+    hint.innerHTML = '可用题量：'+parts.join(' · ')+
+      (days.length ? ' ｜ 最慢一科一轮约 <b>'+Math.max.apply(null,days)+'</b> 天' : '');
+  }
+  function bindConfig(){
+    document.getElementById('qrow').addEventListener('click', function(ev){
+      var btn=ev.target.closest && ev.target.closest('button[data-act]');
+      if(btn){
+        var k=btn.getAttribute('data-k');
+        var dir=btn.getAttribute('data-act')==='inc'?1:-1;
+        CUR_Q[k]=Math.max(0,Math.min(30, (CUR_Q[k]||0)+dir));
+        document.getElementById('qv_'+k).textContent=CUR_Q[k];
+        saveQ(); renderStarRow();   // 题量变了，可用轮次提示跟着变
+        return;
+      }
+      if(ev.target.classList && ev.target.classList.contains('btn-go')){
+        extra=0; render(); // 用新配额重新抽
+      }
+    });
+    var seg=document.getElementById('segStar');
+    if(seg) seg.addEventListener('click', function(ev){
+      var btn=ev.target.closest && ev.target.closest('button[data-min]');
+      if(!btn) return;
+      var v=parseInt(btn.getAttribute('data-min'),10);
+      STAR_MIN = (v>=0 && v<=5) ? v : DEFAULT_STAR;
+      saveStar();
+      extra=0;            // 换池后回到当天第一组
+      renderConfigRow();  // 里面会重绘星级控件与提示
+      render();
+    });
+  }
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function starHtml(s){ if(!s) return ''; var L=(s||'').length; return '<span class="star">'+'★'.repeat(L)+'</span>'; }
+
+  function groupHtml(subj, picks){
+    if(!picks.length) return '';
+    var head='<div class="ghead"><span class="no" style="background:'+subj.color+'">'+subj.name+'</span>'+
+      '<span>'+subj.name+'文学 · '+picks.length+' 题</span>'+
+      '<span style="margin-left:auto;font-weight:400;color:var(--sub);font-size:13px">'+
+        starPoolLabel()+' '+coverageOf(subj.key, CUR_Q[subj.key])+'</span></div>';
+    var cards='';
+    picks.forEach(function(it){
+      var qid=esc(it.id||'-');
+      cards+='<div class="qcard">'+
+        '<div class="qhead" onclick="daily.toggle(this)">'+
+          '<span class="num">'+qid+'</span>'+
+          '<span class="qt">'+esc(it.t)+'</span>'+ starHtml(it.s)+
+          '<span class="arrow">▸</span>'+
+        '</div>'+
+        '<div class="qbody"><div class="qinner">'+
+          '<div class="ans-title">▍参考答案 · 解析</div>'+
+          '<div class="ans">'+esc(it.a)+'</div>'+
+          '<span class="back" onclick="daily.toggle(this,true)">▲ 收起</span>'+
+        '</div></div>'+
+      '</div>';
+    });
+    return head+cards;
+  }
+
+  function render(){
+    if(!BANK){ var c=document.getElementById('content'); c.innerHTML='<div class="empty">未找到题库（每日一题.data.js 缺失或尚未生成）。</div>'; return; }
+    // 日期标题
+    var f=fmtCn(viewedDate), t=todayObj();
+    var isToday = viewedDate.y===t.y&&viewedDate.m===t.m&&viewedDate.d===t.d;
+    document.getElementById('dateLabel').textContent=f.line;
+    var wk = isToday ? (f.week+' · 今天') : f.week;
+    if(!isToday){ wk += (extra? ' ｜ 已手动换组' : ' ｜ 固定顺序'); }
+    document.getElementById('weekLabel').textContent=wk;
+    var dp=document.getElementById('datePick');
+    dp.value=viewedDate.y+'-'+pad(viewedDate.m)+'-'+pad(viewedDate.d);
+
+    // 逐科抽题
+    var html=''; var total=0;
+    SUBJECTS.forEach(function(s){
+      var q=CUR_Q[s.key]||0;
+      var picks=pickForDay(s.key,q);
+      total+=picks.length;
+      html+=groupHtml(s,picks);
+    });
+    document.getElementById('summary').textContent=
+      '共 '+total+' 题（古代 '+CUR_Q.gu+' · 现当代 '+CUR_Q.xd+' · 外国 '+CUR_Q.wg+'）｜取题范围：'+starPoolLabel()+' ｜点击题目头部展开答案';
+    var c=document.getElementById('content');
+    c.innerHTML = total? html : '<div class="empty">当天未抽到任何题 —— 请把某一科配额调整为 1 或更多，或把「星级偏好」放宽到「不限」。</div>';
+  }
+
+  function shiftDay(delta){ viewedDate=shift(viewedDate,delta); extra=0; render(); }
+  function shift(o,delta){ var d=new Date(o.y,o.m-1,o.d); d.setDate(d.getDate()+delta); return {y:d.getFullYear(),m:d.getMonth()+1,d:d.getDate()}; }
+
+  // localStorage 持久化配额
+  function loadQ(){ 
+    var raw=null; if(localStorageOK) try{raw=localStorage.getItem('dailymeta_q');}catch(e){}
+    if(raw){ try{var o=JSON.parse(raw); if(o&&typeof o==='object'){ Object.keys(o).forEach(function(k){CUR_Q[k]=Math.max(0,Math.min(30,o[k]||0));}); }}catch(e){} }
+  }
+  function saveQ(){ if(localStorageOK) try{ localStorage.setItem('dailymeta_q', JSON.stringify(CUR_Q)); }catch(e){} }
+  function loadStar(){
+    var raw=null; if(localStorageOK) try{ raw=localStorage.getItem('dailymeta_starmin'); }catch(e){}
+    if(raw!==null && raw!=='' && typeof raw!=='undefined'){
+      var v=parseInt(raw,10);
+      if(!isNaN(v) && v>=0 && v<=5) STAR_MIN=v;
+    }
+  }
+  function saveStar(){ if(localStorageOK) try{ localStorage.setItem('dailymeta_starmin', String(STAR_MIN)); }catch(e){} }
+
+  function bind(){
+    document.getElementById('prevDay').onclick=function(){shiftDay(-1)};
+    document.getElementById('nextDay').onclick=function(){shiftDay(1)};
+    document.getElementById('goToday').onclick=function(){viewedDate=todayObj();extra=0;render();};
+    document.getElementById('reshuffle').onclick=function(){extra++;render();};
+    document.getElementById('datePick').addEventListener('change',function(e){
+      var v=e.target.value; if(!v)return; var p=v.split('-'); viewedDate={y:+p[0],m:+p[1],d:+p[2]}; extra=0; render();
+    });
+  }
+
+  // 供 <div class=qhead> 与“收起”行内 onclick 使用
+  window.daily = {
+    toggle:function(el, forceClose){
+      var card = el && el.closest ? el.closest('.qcard') : null;
+      if(!card) return;
+      if(forceClose){ card.classList.remove('open'); }
+      else { card.classList.toggle('open'); }
+    }
+  };
+
+  loadQ();
+  loadStar();
+  renderConfigRow();
+  bindConfig();
+  bind();
+  render();
+})();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

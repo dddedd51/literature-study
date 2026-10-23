@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外国文学带背 第20天 · 19世纪浪漫主义（下）</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css">
+<style>
+  :root{
+    --bg:#faf8f3; --panel:#fff; --ink:#2b2b2b; --ink-soft:#555;
+    --gold:#a8854a; --gold-deep:#7d5e2c; --gold-bg:#f4ecdb; --border:#e6dfcc;
+    --highlight:#fff8e6; --red:#a23b3b; --red-bg:#fbeeee; --red-border:#d8b8b8;
+    --blue:#2d4a6e; --blue-bg:#e8eff5; --green:#3d6b4a; --green-bg:#eaf3ec;
+    --fs-base:15px;
+  }
+  *{box-sizing:border-box}
+  html{font-size:var(--fs-base)}
+  body{margin:0;padding:0;font-family:"LXGW WenKai","LXGW WenKai TC","霞鹜文楷","Source Han Serif SC","Noto Serif CJK SC","PingFang SC","Microsoft YaHei",serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 18px 80px}
+
+  header.head{background:linear-gradient(135deg,#2b2b2b 0%,#4a3a20 100%);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  header.head .day{font-size:.87rem;letter-spacing:.4rem;opacity:.75;margin-bottom:.5rem}
+  header.head h1{font-size:1.87rem;margin:0 0 .67rem;font-weight:700;letter-spacing:.06em}
+  header.head .sub{font-size:1rem;opacity:.85;line-height:1.7}
+  .tags{display:flex;gap:.67rem;margin-top:1.07rem;flex-wrap:wrap}
+  .tag{padding:.27rem .93rem;border-radius:1.33rem;font-size:.8rem;background:rgba(244,236,219,.18);border:1px solid rgba(244,236,219,.35)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}
+  .card-head{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}
+  .num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+  .card-title{font-size:1.2rem;font-weight:700;color:var(--gold-deep);flex:1}
+  .exam-level{font-size:.78rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;white-space:nowrap}
+  .lv-ss{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .lv-s{background:var(--blue-bg);color:var(--blue);border:1px solid #b9cde0}
+  .lv-l{background:#f0f0ee;color:#777;border:1px solid #d5d5d0}
+  .card-body{padding:20px 26px}
+  .collapsed .card-body{display:none}
+  .ppt-src{font-size:.76rem;color:#8a7c60;background:#f6f2e7;border:1px solid var(--border);
+    border-radius:.27rem;padding:.05rem .45rem;margin-left:.5rem;font-weight:400;white-space:nowrap}
+
+  .sub-h{font-size:1.07rem;font-weight:700;color:var(--gold-deep);margin:1.4rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+  .sub-h::before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px}
+
+  .term{font-weight:700;color:var(--gold-deep)}
+  .hl{background:linear-gradient(transparent 60%,#fff3a8 60%);padding:0 .13rem}
+  p{margin:.53rem 0;font-size:.97rem}
+  ol,ul{margin:.53rem 0;padding-left:1.6rem}
+  ol li,ul li{margin:.3rem 0;font-size:.97rem}
+
+  .quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.6rem 0;font-size:.95rem;border-radius:0 .4rem .4rem 0}
+  .box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.87rem 1.1rem;margin:.7rem 0;background:#fffefa;font-size:.94rem}
+
+  .answer{background:var(--green-bg);border:1px solid #bcd6c2;border-left:4px solid var(--green);border-radius:0 .53rem .53rem 0;padding:.93rem 1.1rem;margin:.8rem 0}
+  .answer .a-t{font-weight:700;color:var(--green);margin-bottom:.45rem;font-size:.98rem}
+  .answer p,.answer li{font-size:.94rem}
+
+  .mnem{background:#fff4e0;border:1px dashed var(--gold);border-radius:.4rem;padding:.67rem .93rem;margin:.7rem 0;font-size:.93rem}
+  .mnem .m-t{font-weight:700;color:var(--gold-deep);margin-bottom:.3rem}
+
+  .warn{background:var(--red-bg);border:1px solid var(--red-border);border-left:4px solid var(--red);border-radius:0 .53rem .53rem 0;padding:.8rem 1rem;margin:.7rem 0;font-size:.93rem}
+  .warn .w-t{font-weight:700;color:var(--red);margin-bottom:.3rem}
+
+  .paper{background:#fffdf6;border:1px solid var(--border);border-radius:.5rem;padding:.87rem 1.1rem;margin:.8rem 0;font-size:.93rem}
+  .paper .p-t{font-weight:700;color:var(--red);margin-bottom:.45rem;font-size:.95rem}
+  .paper li{margin:.22rem 0}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0}
+  th{background:var(--gold-bg);padding:.5rem;border:1px solid var(--border);text-align:left}
+  td{padding:.5rem;border:1px solid var(--border);vertical-align:top}
+
+  .chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;font-size:.85rem;color:var(--ink-soft);transition:.2s;user-select:none}
+  .chk:hover{background:#e9dfc7}
+  .chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}
+  .study-bar{display:flex;gap:.6rem;margin:.87rem 0 .4rem;flex-wrap:wrap;align-items:center}
+
+  .ctrl-bar{display:flex;gap:.67rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--gold-deep);border-radius:1.2rem;cursor:pointer;font-size:.87rem;font-family:inherit;transition:.2s}
+  .ctrl-bar button:hover{background:var(--gold);color:#fff}
+
+  .font-ctrl{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}
+  .font-ctrl button{width:2rem;height:2rem;border:none;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:inherit}
+  .font-ctrl button:hover{background:var(--gold);color:#fff}
+  .font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}
+  .font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}
+
+  .prog{background:#fff9eb;border:1px solid var(--border);border-radius:8px;padding:.8rem 1.1rem;margin-bottom:20px;font-size:.9rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .prog .bar{flex:1;min-width:120px;height:8px;background:#eee6d2;border-radius:4px;overflow:hidden}
+  .prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));transition:width .4s}
+
+  footer.foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.4rem}
+  @media(max-width:720px){.card-body{padding:1.1rem}header.head h1{font-size:1.47rem}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day19-自然主义-浪漫主义上.html" title="外国文学带背 第19天 · 自然主义 ＋ 浪漫主义（上）">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day21-22-二十世纪现实主义.html" title="外国文学带背 第21-22天 · 20世纪现实主义与现代主义文学">下一天 →</a>
+</nav>
+
+
+<header class="head">
+  <div class="day">DAY 20 · 外国文学</div>
+  <h1>19世纪浪漫主义（下）</h1>
+  <div class="sub">撒旦派 · 华兹华斯诗歌理论 · 拜伦式英雄 · 雪莱 · 俄法浪漫主义 · 多余人 · 美国浪漫主义 · 雨果（重点）<br>内容取自带背 PPT 逐页识读（十七页）· 结合《巴黎圣母院》西大真题原答与串讲资料补全</div>
+  <div class="tags">
+    <span class="tag">西北大学 MFA</span><span class="tag">外国文学史</span>
+    <span class="tag">第20天</span><span class="tag">⭐⭐ 雨果为重中之重</span><span class="tag">含西大真题</span>
+  </div>
+</header>
+
+<div class="prog">
+  <span>今日进度</span>
+  <div class="bar"><i id="progBar"></i></div>
+  <span id="progTxt">0 / 0</span>
+</div>
+
+<div class="ctrl-bar">
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.remove('collapsed')})">📖 全部展开</button>
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.add('collapsed')})">📕 全部折叠</button>
+  <button onclick="window.print()">🖨️ 打印 / 导出 PDF</button>
+</div>
+
+<!-- 0 今日带背指令 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">★</div>
+    <div class="card-title">今日带背指令</div>
+    <span class="exam-level lv-ss">先看这个</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">群消息原文 · 条目版</div>
+    <p><span class="term">外国文学带背 第20天 浪漫主义（下）</span></p>
+    <ol>
+      <li>1️⃣ <span class="hl">撒旦派</span>，熟读简单背个名词解释</li>
+      <li>2️⃣ <span class="hl">华兹华斯诗歌理论</span>背简答</li>
+      <li>3️⃣ <span class="hl">拜伦式英雄</span>名词解释</li>
+      <li>4️⃣ <span class="hl">雪莱</span>，英国法国俄国的浪漫主义作家及代表作要知悉</li>
+      <li>5️⃣ <span class="hl">奥涅金、多余人、十二月党人、莱蒙托夫</span>名词解释（大家记名词解释踩点记 5 句话：定义、内容主题、代表作、艺术特点、影响等等，记完 5 句话就背下一个，不要记太多太多）</li>
+      <li>6️⃣ <span class="hl">美国浪漫主义</span>代表作家作品知悉，<span class="hl">白鲸</span>背名词解释（有时间背简答）</li>
+      <li>7️⃣ 重要❗️❗️<span class="hl">雨果</span>——主要人物形象背名解，主题简单背 3 句话，重点在艺术特色（<span class="hl">3 点都要仔细背</span>），包括美丑对照原则等等</li>
+    </ol>
+
+    <div class="sub-h">群消息原文 · 分块版</div>
+    <div class="box">
+      <p><span class="term">外国文学带背 第20天 浪漫主义（下</span></p>
+      <p>1️⃣撒旦派，熟读简单背个名词解释</p>
+      <p>2️⃣华兹华斯诗歌理论背简答</p>
+      <p>3️⃣拜伦式英雄名词解释</p>
+      <p>4️⃣雪莱，英国法国俄国的浪漫主义作家及代表作要知悉</p>
+      <p>5️⃣奥涅金、多余人、十二月党人、莱蒙托夫名词解释（大家记名词解释踩点记5句话：定义、内容主题、代表作、艺术特点、影响等等，记完5句话就背下一个，不要记太多太多）</p>
+      <p>6️⃣美国浪漫主义代表作家作品知悉，白鲸背名词解释（有时间背简答）</p>
+      <p>7️⃣重要❗️❗️雨果</p>
+      <p>主要人物形象背名解，主题简单背3句话，重点在艺术特色（3点都要仔细背），包括美丑对照原则等等</p>
+    </div>
+
+    <div class="box">
+      <div class="sub-h">本次批次说明</div>
+      <p>本次分享 <span class="term">17 张 PPT 全部到手</span>（无缺页），对应 PDF《十九世纪浪漫主义文学》，覆盖范围从「英国浪漫主义 · 撒旦派」一直到「雨果《悲惨世界》艺术特点 + 真题回顾」。</p>
+      <p>本页为<span class="term">下册</span>；上册（浪漫主义总论 · 德国 · 湖畔派 · 抒情歌谣集）见 <a href="day19-自然主义-浪漫主义上.html">第19天 · 自然主义＋浪漫主义（上）</a>。两页同编号「第19天」，实为群里重号，已按内容分存，未覆盖旧页。</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 本次待核清单（答题前先看一眼）</div>
+      <p>本批 PPT 文字与通行说法有 <b>4 处需要留意</b>，都在对应卡片里用红色块单独标注了：</p>
+      <ol>
+        <li>PPT 称拜伦「东方故事诗」共 6 部，实际通行说法为 <b>6 部</b>（与分章刷题参考答案一致）——但 PPT 所列篇名中《柯林斯之围》应为《柯林斯之围／柯林斯的围攻》，答题写 6 部即可，不必逐一列名。</li>
+        <li>PPT 把「多余人」段落放在「四、俄国浪漫主义文学」标题下，且同页出现两个「四、」——<b>属于 PPT 排版错位</b>，知识点本身无误。</li>
+        <li>PPT 称《草叶集》为「美国浪漫主义文学发展顶峰的产物」——通行说法多表述为「美国浪漫主义文学的顶峰／美国近代诗歌的里程碑」，两者皆可。</li>
+        <li>PPT 真题回顾页把《白鲸》与《巴黎圣母院》的比较写成「中国传媒大学 2009 年」，此为<b>外校真题</b>，非西大真题，别误记成西大考过。</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- 1 撒旦派 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">1</div>
+    <div class="card-title">撒旦派<span class="ppt-src">PPT 第 1 页</span></div>
+    <span class="exam-level lv-s">名词解释</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">🎯 标准答案（5 句话踩点版）</div>
+      <p><b>①定义：</b>「撒旦派」是同时代保守派诗人对拜伦、雪莱的批判和攻击时的称呼，名字来源于骚塞抨击拜伦和雪莱的文章中，称他们写作了一种「恐怖、夸张、令人作呕」的诗歌。</p>
+      <p><b>②内容主题：</b>撒旦派诗人反抗现实，具有强烈斗争精神。诗人是极端的叛逆与反抗，是与世界为敌的孤独叛逆者；塑造「拜伦式英雄」；公开质疑传统宗教、基督教上帝；反抗带有浓厚悲观与绝望色彩。</p>
+      <p><b>③代表作家：</b>代表人物是拜伦和雪莱。</p>
+      <p><b>④文学史影响：</b>他们是英国最激进最富战斗精神的一支，将英国的浪漫主义文学推向高峰。</p>
+    </div>
+    <div class="mnem">
+      <div class="m-t">🧠 一句话记牢</div>
+      <p>「撒旦派 = 骚塞骂出来的名号 + 拜伦雪莱的反抗姿态」。<span class="hl">注意：这是别人给的贬称，不是什么正式流派名</span>，答题要点出「命名来源」这一层才拿分。</p>
+    </div>
+    <div class="box">
+      <p><b>与「湖畔派」的对照记忆：</b>湖畔派（华兹华斯、柯勒律治、骚塞）属消极浪漫主义，依附王权、歌颂自然与田园；撒旦派（拜伦、雪莱）属积极浪漫主义，反抗现实、批判宗教。<span class="term">骚塞从湖畔派转向维护王权，又反过来攻击拜伦雪莱</span>，这个因果关系一记就串起两个知识点。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 2 华兹华斯诗歌理论 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">2</div>
+    <div class="card-title">华兹华斯诗歌理论<span class="ppt-src">PPT 第 1—3 页</span></div>
+    <span class="exam-level lv-ss">简答 · 重点</span>
+  </div>
+  <div class="card-body">
+    <div class="box">
+      <p><b>人物背景（简答第一段铺垫用）：</b>华兹华斯（1770—1850）是湖畔派成就最高者，《&lt;抒情歌谣集&gt;序言》<span class="hl">成为英国浪漫主义划时代的宣言</span>。他对自然有着「虔诚的爱」，将自然看成是自己的精神家园。曾向往法国大革命，后因局势变，对法国大革命感到失望。1795 年，和柯勒律治居住在北部的湖区，并在此消磨了一生。</p>
+      <p class="ppt-src">《抒情歌谣集》1798 年初版、1800 年序言（美学宣言）——PPT 未标年份，答题建议写全。</p>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">🎯 华兹华斯诗歌理论四点（答题主干）</div>
+      <p><b>（1）诗歌题材：</b>要求突破古典主义的「规范」，把审美对象从宫廷转向民间，从城市转向山乡湖畔。他主张「选择日常生活的事件和情节」，而在这种选择中他又「通常都选择微贱的田园生活作题材」，因为「在这种生活里，我们的各种基本情感共同存在于一种更为单纯的状态之下」「人们的热情是与自然的美和永久的形式合而为一的」。</p>
+      <p><b>（2）诗歌语言：</b>主张诗歌语言应该采用与真正的人们所使用的语言。即采用农村下层民众或者是过着「微贱的田园生活」的人，因为他们的语言是从「最好的外界东西得来的」，是与美妙的大自然息息相通的。</p>
+      <p><b>（3）诗的本质：</b>即诗是<span class="hl">强烈情感的自然流露</span>，以真与善为目的，但却是通过美来达到这一目的。华兹华斯将诗与知识即人的理性联系在一起（「诗是一切知识的精华，它是整个科学面部的强烈表情」），同时又与人的情感联系在一起，而且更强调后者。</p>
+      <p>从理性和快感两方面来论述诗的目的：他认为「诗的目的在于真理……普遍的和有效的真理」；同时又认为诗「必须直接给人以愉快」，要「带有一种愉快的热情」，把真理「传达给读者」。</p>
+      <p><b>（4）诗人的特殊才能：</b>即诗人比一般人更具想象力和语言表达能力。华兹华斯认为诗人与一般人之所不同，关键在于「没有外界直接的刺激，他也能比别人更敏捷地思考和感受，并且比别人更有能力把内心产生的思想和感情表现出来」。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 四字口诀</div>
+      <p><span class="term">题 · 语 · 质 · 才</span>（题材 → 语言 → 本质 → 诗才）。四个小标题背住，每点补一句 PPT 原文引语，简答就稳了。</p>
+    </div>
+
+    <div class="box">
+      <p><b>多版本对照 · 串讲资料（朱版 19 世纪初期文学第 3 题）的表述：</b></p>
+      <ol>
+        <li><b>诗歌题材：</b>主张从宫廷转向民间，从城市转向乡村湖畔，写普通人民的日常生活。</li>
+        <li><b>诗歌语言：</b>主张采用人民大众的语言，做到通俗易懂，节奏上应与口语音调一致。</li>
+        <li><b>诗的本质：</b>提出「诗是强烈感情的自然流露」，强调诗人的真情实感。</li>
+      </ol>
+      <p>与 PPT 基本一致，<span class="hl">第三点表述完全同源</span>（「诗是强烈感情的自然流露」是必写原句）。差别只在串讲未列第四点「诗人的特殊才能」，PPT 更全，<b>按 PPT 四点答更占优</b>。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 3 拜伦式英雄 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">3</div>
+    <div class="card-title">拜伦式英雄<span class="ppt-src">PPT 第 4 页</span></div>
+    <span class="exam-level lv-ss">名词解释 · 高频</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">🎯 标准答案（5 句话踩点版）</div>
+      <p><b>①定义：</b>是拜伦笔下的一类人物形象，最早萌芽于《恰尔德·哈洛尔德》，在《东方叙事诗》中重点塑造了这类形象。</p>
+      <p><b>②内容主题：</b>主要由海盗、异教徒、被放逐者组成，大都是高傲孤独的叛逆者。如《海盗》中的康拉德、《异教徒》中的威尼斯人等。他们高傲倔强，与社会格格不入，单枪匹马，孤军奋战，有崇高的道德观和侠义心肠，但最终总是以失败告终。</p>
+      <p><b>③特征：</b>这些叛逆英雄烙烫着拜伦自身的思想气质的深刻印记，故称之为「拜伦式英雄」。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 四个关键词</div>
+      <p><span class="term">高傲 · 孤独 · 叛逆 · 失败</span>——四词记住，再加两部代表作（《恰尔德·哈洛尔德》《东方叙事诗》），名词解释满分。</p>
+    </div>
+
+    <div class="sub-h">拜伦生平与创作（PPT 第 4—5 页）</div>
+    <ul>
+      <li>1813—1816「东方故事诗」共 6 部：《异教徒》《阿比道斯的新娘》《海盗》《莱拉》《柯林斯之围》《巴里西纳》</li>
+      <li>1824.4.19，希腊，病逝。诗体小说《堂璜》未完成。</li>
+    </ul>
+    <div class="box">
+      <p><b>堂璜（PPT 补充）：</b>18 世纪末的天真、热情、善良的贵族青年，无视清规戒律，绝不虚伪做作。（<span class="hl">不属于「拜伦式英雄」</span>，既不忧郁孤独，也不愤世嫉俗。）</p>
+      <p class="ppt-src">此点常作辨析题：问「堂璜是否属于拜伦式英雄」→ 答「不属于」，理由即上句。</p>
+    </div>
+    <div class="warn">
+      <div class="w-t">📌 补充对照 · 分章刷题「东方叙事诗」参考答案</div>
+      <p>是指拜伦写的一组浪漫主义叙事诗，它们取材于东欧地中海沿岸各国和远东土耳其等，总题为《东方叙事诗》。其包括互相独立的 6 部诗篇：《异教徒》《阿比道斯的新娘》《海盗》《莱拉》《巴里西纳》等。<b>与 PPT 所述一致</b>，可放心记 6 部。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 4 雪莱 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">4</div>
+    <div class="card-title">雪莱 · 预言的云雀<span class="ppt-src">PPT 第 5 页</span></div>
+    <span class="exam-level lv-s">代表作家作品知悉</span>
+  </div>
+  <div class="card-body">
+    <div class="box">
+      <p><b>作家概况：</b>波西·比希·雪莱（1792—1822），英国 19 世纪 20 年代与拜伦齐名的浪漫主义诗人，<span class="hl">被恩格斯誉为「天才的预言家」</span>。</p>
+    </div>
+    <div class="sub-h">代表作两点必记</div>
+    <ol>
+      <li><b>《西风颂》</b>——用象征的手法歌颂自然界的西风，意境幽远，寓意深刻：「<span class="term">如果冬天来了，春天还会远吗？</span>」</li>
+      <li><b>诗剧《解放了的普罗米修斯》</b>——塑造了一个不屈不挠的斗士，通过神话描写被压迫人民的苦难和暴君的必然下场，预言革命一定会到来。</li>
+    </ol>
+    <div class="mnem">
+      <div class="m-t">🧠 一句话区分拜伦与雪莱</div>
+      <p>拜伦写「<span class="term">孤独叛逆的失败者</span>」（拜伦式英雄，悲观），雪莱写「<span class="term">乐观的预言家</span>」（西风颂 + 解放了的普罗米修斯，相信革命必来）。同属撒旦派，一个悲壮一个昂扬，答比较题就抓这个对照。</p>
+    </div>
+    <div class="sub-h">英国浪漫主义文学补充：济慈 · 司各特</div>
+    <ul>
+      <li><b>济慈：</b>抒情诗《夜莺颂》。</li>
+      <li><b>司各特：</b>欧洲历史小说的创始人，其代表作《艾凡赫》。<span class="hl">司各特的去世标志着英国浪漫主义的结束。</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 5 法国浪漫主义 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">5</div>
+    <div class="card-title">法国浪漫主义文学<span class="ppt-src">PPT 第 5—6 页</span></div>
+    <span class="exam-level lv-s">作家作品知悉</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">（一）法国浪漫主义的早期代表</div>
+    <ol>
+      <li><b>夏多布里昂：</b>带有贵族倾向，代表作品有中篇小说《阿达拉》、《勒内》（<span class="hl">塑造了欧洲文学史上第一个「世纪病」形象勒内</span>）。</li>
+      <li><b>斯塔尔夫人「浪漫之母」：</b>文艺批评专著《论文学》《德意志论》是法国浪漫主义最早的理论著作。具有民主倾向。</li>
+    </ol>
+
+    <div class="answer">
+      <div class="a-t">📝 附：世纪病（西大真题名解原答 · 2023 年名词解释第三题）</div>
+      <p>世纪病是出现在法国浪漫主义文学中的一种文学现象。它概括了这一时期一些法国文学作品中年轻主人公的精神特征。这些贵族青年富有才华，但在现实生活里找不到自己的位置，从而产生了悲观失望的情绪，阴暗的心理和郁郁寡欢的情怀。这种情绪和心理实际上对应着因为急剧的社会变革或动荡而产生的不适应感和失落感，即一种「无可名状的苦恼的感觉」。法国早期浪漫主义作家夏多布里昂的中篇小说《勒内》的主人公勒内是文学史上的第一个「世纪病」患者的形象。「世纪病」代表了一代青年人的精神状态，也反映了作者本人的迷惘与思考。</p>
+      <p class="ppt-src">西大已考过 → 这个名解务必背熟</p>
+    </div>
+
+    <div class="sub-h">（二）新一代法国浪漫主义的代表</div>
+    <ul>
+      <li>雨果是新一代浪漫派的领袖，<span class="hl">1830 年《欧那尼》的上演，标志着浪漫主义战胜古典主义</span>。</li>
+      <li>雨果、乔治·桑、大仲马、缪塞、凡尔纳。</li>
+    </ul>
+
+    <div class="box">
+      <div class="sub-h">总论补充 · 积极／消极浪漫主义的划分（串讲资料）</div>
+      <p>这一区分对应的是浪漫主义作家在思想倾向上的差异，以及浪漫主义文学在情感趋向上的不同。浪漫主义作家在思想倾向上分为贵族倾向和资产阶级倾向两种，浪漫主义所包含的情感倾向也存在着积极和消极之分。一般用<b>积极浪漫主义</b>指称具有民主主义思想倾向的作家，如<span class="term">拜伦、雪莱、普希金、雨果和惠特曼</span>等人；<b>消极浪漫主义</b>指称依附王权、思想妥协的浪漫主义作家，如<span class="term">英国的华兹华斯、法国的夏多布里昂与缪塞和俄国的茹科夫斯基</span>等人，作品具有颓废、灰暗的情感基调。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 6 俄国浪漫主义 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">6</div>
+    <div class="card-title">俄国浪漫主义文学<span class="ppt-src">PPT 第 6—8 页</span></div>
+    <span class="exam-level lv-ss">名词解释 · 多余人</span>
+  </div>
+  <div class="card-body">
+    <div class="box">
+      <p><b>发展背景：</b>俄国浪漫主义文学是在西欧浪漫主义文学影响下，随着 1812 年反拿破仑侵略战争和十二月党人掀起的爱国热潮而迅速发展起来的。它以诗歌为主，富有鲜明的战斗精神，充满了对自由、民主的强烈渴望，为俄国民族文学在 19 世纪中后期的繁荣打下了牢固基础。</p>
+    </div>
+    <div class="sub-h">四位代表</div>
+    <ol>
+      <li><b>茹科夫斯基：</b>被誉为第一位俄国抒情诗人，作品有《俄国军营的歌手》等。</li>
+      <li><b>普希金：</b>俄国浪漫主义文学的代表，俄国批判现实主义文学的奠基人。</li>
+      <li><b>十二月党人</b></li>
+      <li><b>莱蒙托夫</b></li>
+    </ol>
+
+    <div class="answer">
+      <div class="a-t">🎯 十二月党人（PPT 原答）</div>
+      <p>1825 年 12 月 14 日，俄国进步的贵族青年军官举行起义，试图推翻沙皇专制制度，史称「十二月党人起义」。这些革命者的政治活动跟文学活动密切相关，他们将文学作为宣传政治思想的武器，创办刊物，组织文学协会，撰写评论，创作传播自由主义思想的诗歌，被称为「十二月党诗人」。</p>
+      <p>在文学观念上，他们反对古典主义以及感伤主义，主张文学表现诗人的主观世界，即爱国主义的革命情感，并且重视民族文学，追求文学的人民性、民族性与浪漫精神的结合。他们的创作充满对专制政体和农奴制的憎恨，表达了对人民的热爱，传播了民主主义思想，对 19 世纪俄国文学产生了重要影响，代表诗人有雷列耶夫、拉耶夫斯基和丘赫尔别凯等。</p>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">🎯 奥涅金人物形象（PPT 原答 · 试背名解）</div>
+      <p>普希金的诗体小说《叶甫盖尼·奥涅金》中的奥涅金是俄国贵族革命时期开始觉醒又找不到出路的贵族知识分子的典型形象。</p>
+      <ol>
+        <li>他受到西欧民主思想的启蒙，<b>具有人道主义和民主主义的思想</b>，品格和气质都高于周围的贵族子弟。</li>
+        <li>他没有明确的政治主张和社会理想，在现实社会中看不到出路和希望，所以苦闷、彷徨、忧郁、痛苦，对生活极端的冷漠。</li>
+        <li>他希望改变现状，但又不可能与社会决裂，所以他不与社会反抗，对生活态度是消极的逃避。<span class="hl">是俄国文学史上第一个「多余人」典型。</span></li>
+      </ol>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">🎯 多余人（PPT 原答 + 分章刷题参考答案补全）</div>
+      <p><b>PPT 版：</b>多余人形象指的是俄国 19 世纪前半期文学中的一组贵族青年形象，他们不满现实，却又不能挺身反抗社会，想干一番事业，却又没有实际行动，想得多，做得少，最终一事无成，成了整个社会多余的人。「多余人」的弱点是脱离人民群众。</p>
+      <p><b>「多余人」系列形象：</b>赫尔岑《谁之罪》别尔托夫；屠格涅夫《罗亭》罗亭；《贵族之家》拉夫列茨基；冈察洛夫《奥勃洛摩夫》奥勃洛摩夫；普希金《叶甫盖尼·奥涅金》奥涅金是俄国文学史上第一个「多余人」。</p>
+      <div class="box" style="margin-bottom:0">
+        <p><b>分章刷题参考答案（更完整，答名解建议用这版）：</b></p>
+        <p>多余人是俄国文学中贵族知识分子的典型形象。「多余人」这个专有名词在<span class="hl">屠格涅夫《多余人日记》发表后广为流传</span>。他们是俄国贵族革命时期的产物，受到过西欧进步思想的影响，大都富有才华，试图有所作为，但缺乏社会理想和坚定信念，找不到社会出路，于是苦闷、彷徨、忧郁、痛苦。他们不满现状，自命清高，不愿与上流社会同流合污，同时又不愿意放弃优越的生活，走跟人民大众相结合的道路，性格脆弱，无力改变现状，最终无所作为。著名的多余人形象有普希金笔下的奥涅金、莱蒙托夫的毕巧林、屠格涅夫的罗亭、赫尔岑的别尔托夫、冈察洛夫的奥勃洛摩夫等。「多余人」形象系列是俄国文学的独有成就。</p>
+      </div>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">🎯 莱蒙托夫（PPT 原答）</div>
+      <p>长篇叙事诗《童僧》和《恶魔》塑造了具有叛逆性格的英雄形象，表达人民反抗专制暴政的正义心声。《波罗金诺》被托尔斯泰称为《战争与和平》的核心。</p>
+      <p><b>《当代英雄》：</b>作家以爱情、友谊、人生为小说的主题题材，以其特有的苍凉经验传达出 19 世纪 30 年代俄国优秀贵族青年毕巧林的人生悲剧。<span class="hl">被誉为「俄国第一部社会心理小说」。</span></p>
+      <p><b>毕巧林：</b>第二个「多余人」——精神空虚，道德式微，玩世不恭。</p>
+      <p class="ppt-src">PPT 提问：第一个多余人形象是？→ 奥涅金</p>
+    </div>
+  </div>
+</div>
+
+<!-- 7 普希金 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">7</div>
+    <div class="card-title">普希金 · 现实主义作品<span class="ppt-src">PPT 第 6—7 页</span></div>
+    <span class="exam-level lv-s">作品知悉</span>
+  </div>
+  <div class="card-body">
+    <table>
+      <tr><th style="width:32%">作品</th><th>要点</th></tr>
+      <tr><td>《驿站长》</td><td>最优秀的短篇，<span class="hl">开了俄国文学抒写小人物命运之先河</span>。</td></tr>
+      <tr><td>《上尉的女儿》</td><td>「俄罗斯生活的百科全书」；农民题材的长篇小说，是一部反映普加乔夫起义的作品。</td></tr>
+      <tr><td>《叶甫盖尼·奥涅金》</td><td>诗体小说，<span class="hl">俄国现实主义的奠基作</span>；作者「幻想的宠儿」；采用四音步扬格十四行诗节，称为「奥涅金诗体」。</td></tr>
+    </table>
+    <div class="box">
+      <p><b>分章刷题参考答案补充（《叶甫盖尼·奥涅金》的评价）：</b>它是采用四音步扬格十四行诗节写成的一部大型的叙事作品，在俄罗斯文学上<span class="hl">第一次将诗歌的抒情性和散文的叙事性有机地结合在一起</span>。这部作品反映了普希金创作由浪漫主义向现实主义的转变，成为俄罗斯现实主义文学的奠基之作，也被公认为俄罗斯文学的典范之作。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 8 美国浪漫主义 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">8</div>
+    <div class="card-title">美国浪漫主义文学<span class="ppt-src">PPT 第 8—10 页</span></div>
+    <span class="exam-level lv-s">作家作品知悉</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">1、前期浪漫主义</div>
+    <ul>
+      <li><b>欧文：</b>美国文学之父，其代表作是散文小说集《见闻札记》。</li>
+      <li><b>库柏：</b>开创了以《皮袜子故事集》为代表的边疆传奇小说。<span class="hl">美国民族文学奠基人之一。</span></li>
+      <li><b>爱伦·坡：</b>创作了最早的推理小说。诗歌《乌鸦》。</li>
+    </ul>
+
+    <div class="sub-h">2、后期浪漫主义代表</div>
+    <ul>
+      <li><b>霍桑：</b>其代表作《红字》表现了宗教对人性的摧残，揭露了宗教的虚伪性，被称为是一部「心理罗曼史」。</li>
+      <li><b>惠特曼：</b>《草叶集》是美国浪漫主义文学发展顶峰的产物。</li>
+      <li><b>麦尔维尔：</b>《白鲸》。</li>
+    </ul>
+
+    <div class="box">
+      <div class="sub-h">串讲资料补充（更细，答「知悉类」题可用）</div>
+      <p><b>欧文：</b>美国文学的奠基人之一，开创了美国短篇小说的传统，被称为「美国文学之父」。代表作《瑞普·凡·温克尔》和《睡谷的传说》。</p>
+      <p><b>库柏：</b>第一个在小说领域里采用民族题材的美国作家，开辟了航海题材、边疆题材和历史题材小说，代表作《开拓者》和《最后的莫希干人》。</p>
+      <p><b>爱伦·坡：</b>现代主义文学的鼻祖，西方侦探小说之父。提倡「纯艺术」「纯诗歌」，主张诗歌的音乐美，认为诗歌要表现美妇人的死亡，小说创作的目的在于「效果」。代表诗作《乌鸦》，短篇《毛格街凶杀案》。</p>
+      <p><b>惠特曼：</b>美国现代诗歌之父。1855 年第一次出版《草叶集》收诗 12 首，1892 年最后一版近 400 首。《草叶集》三大主题：注重表现自我、歌咏劳动和创造的伟大价值、赞美自由和民主。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 9 白鲸 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">9</div>
+    <div class="card-title">麦尔维尔《白鲸》<span class="ppt-src">PPT 第 9—10 页</span></div>
+    <span class="exam-level lv-ss">名词解释（有余力背简答）</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">🎯 名解踩点版（PPT 三大块：故事内容／人物形象／思想内容）</div>
+      <p><b>①定义与地位：</b>《白鲸》是 19 世纪美国浪漫主义作家麦尔维尔的代表作，麦尔维尔被称为「<span class="hl">美国的莎士比亚</span>」。小说讲述「披谷德号」捕鲸船船长埃哈伯为报被白鲸咬断一条腿之仇，率领全船追捕白鲸莫比·迪克，最终船毁人亡的故事。</p>
+      <p><b>②人物形象（亚哈船长）：</b>悲剧性又神秘莫测的人物。外貌：身材高大，脸上有疤痕，一条假腿用鲸骨制成。</p>
+      <ol>
+        <li><b>上升时期美国民族朝气蓬勃的奋斗冒险和战胜一切困难的大无畏精神</b>；也揭示了 19 世纪末 20 世纪初浪漫主义运动的追求，寻求并表现一种理想和理想的人物，即具有美国民族精神的深层内涵，应体现整个美利坚民族的顽强而一往无前的意识。</li>
+        <li><b>根植于美国民族精神土壤的英雄</b>，显露了 20 世纪美国「硬汉性格」人物形象的端倪。</li>
+      </ol>
+      <p>亚哈的宿命论是另一个主题，捕鲸船「披谷德号」也悲剧性地沉没了。但英雄「身死」神在，亚哈及其他船员的壮举，激励着后世的美国民族为理想、为正义不畏艰险，不怕困难，前仆后继，拼搏奋斗。</p>
+      <p><b>③思想内容（三层）：</b></p>
+      <ol>
+        <li><b>一般的社会意义：</b>小说以「披谷德号」捕鲸的故事，揭示资本主义社会财富的血腥来源，抨击了资本主义制度的残酷和黑暗，反映了捕鲸工人危险而又艰苦的生活，歌颂了工人们机智、勇敢、互相支持的高贵品德。</li>
+        <li><b>宗教背景下：</b>白鲸代表着宗教的「恶」和「原罪」。「披谷德号」寓意人生的漫长旅途，带有加尔文教宿命论的思想。</li>
+        <li><b>复杂的象征意义：</b>体现在白鲸「莫比·迪克」、「披谷德号」和船长埃哈伯形象上。有人把白鲸看作「善」的象征，有人认为它是「恶」的体现以及资本主义制度的本身，还有人说它是不善不恶的永恒的大自然的代表。「披谷德号」这艘船的名字本身就象征着灭亡。船长的象征意义也非常复杂，有人认为是人类反抗的化身，还有人认为他是为了使自己成为主宰而徒劳地与宇宙力量抗争的狂徒。</li>
+      </ol>
+    </div>
+    <div class="box">
+      <p><b>如考简答 · 补《白鲸》艺术特色（串讲资料）：</b>①广泛运用各种象征手法（烟斗、白鲸、海洋、陆地等均有深刻象征性）；②卓越的自然景物描写，尤其对大海的描写给人印象极深，饱含浓厚诗情画意；③巧妙地运用大量的引证和议论，插入大量捕鲸知识，使小说具有百科全书性质，增强了小说的真实性和趣味性。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 10 雨果 巴黎圣母院 人物 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">10</div>
+    <div class="card-title">雨果《巴黎圣母院》· 主要人物形象❗️<span class="ppt-src">PPT 第 11 页</span></div>
+    <span class="exam-level lv-ss">名解 · 西大已考两次</span>
+  </div>
+  <div class="card-body">
+    <div class="box">
+      <p><b>圆心结构（人物关系图，PPT 原图）：</b>以<span class="term">爱斯梅拉达</span>为中心，环绕<span class="term">克罗德·孚罗洛</span>、<span class="term">伽西莫多</span>、<span class="term">甘果瓦</span>、<span class="term">隐修女</span>、<span class="term">菲比斯</span>、<span class="term">乞丐王国</span>。情节主线：克罗德觊觎爱斯梅拉达 → 刺杀菲比斯 → 爱斯梅拉达蒙冤 → 伽西莫多法场救人（圣殿避难）→ 乞丐王国攻打圣母院 → 隐修女认女 → 母女同死 → 伽西莫多殉情。</p>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">🎯（1）爱斯梅拉达：真、善、美的化身</div>
+      <p>她美丽善良，无论是内心还是外表都表现出淳朴的美。</p>
+      <p>作家对这一理想形象的塑造是通过一系列对照完成的：</p>
+      <ul>
+        <li>首先，她的善良跟克罗德的邪恶形成对照，表达了作家对宗教势力的憎恨，以及对不幸者的深切同情。</li>
+        <li>其次，她的美丽与加西莫多的丑陋形成巨大反差，反衬了两人内心的一致，表达了作家对仁爱的歌颂。</li>
+        <li>再次，她对待爱情的真诚态度跟浪荡子菲比斯的欺骗形成对照，突出了她内心的纯洁美好，谴责了轻浮、自私的不道德行为。</li>
+      </ul>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">🎯（2）加西莫多：人道主义思想的体现，正义的化身</div>
+      <p>长相丑陋：长着四面体的鼻子，马蹄形的嘴，独眼，驼背，跛子，身体的高度和宽度差不多。下部是方方的，两腿从前面看，好像是两把镰刀，刀柄同刀柄相连起来。</p>
+      <p>种种畸形里，却有一种不容怀疑的坚定、严肃、勇敢的态度。</p>
+      <p>他可怜又可悲，在爱情里专一且无私，不会占有，当他认定「保护爱斯梅拉达」是他生命的意义的时候，周围所有的人情世故都不再重要了，他绝不会同情克洛德，因此也是一个单纯冷酷的复仇者。</p>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">🎯（3）克罗德：外表清苦、刻板、严肃；实际内心渴求世俗的享乐生活。</div>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">📝 附：卡西莫多（钟楼怪人）人物形象 · <b>西大 2020 年简答题第三题真题原答</b></div>
+      <p><b>（1）外表丑陋。</b>《巴黎圣母院》中的卡西莫多可谓奇丑无比，有着丑到极点的相貌：几何形的脸，四面体的鼻子，马蹄形的嘴，参差不齐的牙齿，独眼，耳聋，驼背······似乎上帝将所有的不幸都降临在了他的身上，受尽嘲弄。雨果用极其夸张的手法把一个世界文学中外貌最丑的人物形象生动地展现在了读者的面前。</p>
+      <p><b>（2）内心崇高。</b>卡西莫多外丑内美，他外表奇丑，内心奇美。他勇敢地从封建教会的「虎口」中救出了爱丝梅拉达，用「圣殿避难」的方法保住了姑娘的性命。在圣母院中，他无微不至地照顾爱丝梅拉达，这种无私的奉献和副主教膨胀的私欲恰好形成品质上鲜明的对比。但是，其天性也是善恶并存的：善表现为对爱丝梅拉达的保护，恶表现为对克罗德的愚忠。这种「恶」又包含着「善」因——对克罗德的感恩。这个简单的「丑八怪」，被雨果赋予了丰富深刻的美学意义。</p>
+      <p><b>（3）美丑对照原则。</b>美丑对照原则是雨果在《&lt;克伦威尔&gt;序言》中提出的，他认为「丑就在美的旁边，畸形靠着优美，丑怪藏在崇高的背后，善与恶并存，光明与黑暗相共」。雨果把这种原则贯穿在《巴黎圣母院》创作的全过程。卡西莫多是《巴黎圣母院》中的核心人物，这部小说的思想主题正是通过他丑陋的外貌、独特的性格、举动、悲惨的经历而呈现。作家通过他的丑揭示十五世纪封建制度下的罪恶根源，表现错综复杂的社会矛盾，体现人道主义思想。通过他与克罗德的对比，批判教会的邪恶和伪善，禁欲主义对人性的摧残和扭曲；通过他与爱丝梅拉达的悲剧，表现了作者对善良无辜者的赞美和同情；通过他和乞丐王国的故事，歌颂下层人民反抗黑暗势力的斗争。总之，在更深层次上表现社会生活的两面性、完整性，表现人性中灵与肉、善与恶的较量，美与丑的辩证统一。</p>
+      <p class="ppt-src">西大 2020 年简答第三题 · 已考过，必背</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">📌 人名译名提示</div>
+      <p>PPT 作「<b>伽西莫多</b>／<b>克罗德·孚罗洛</b>／<b>爱斯梅拉达</b>」，西大真题原答作「<b>卡西莫多</b>／<b>克罗德</b>／<b>爱丝梅拉达</b>」，分章刷题参考答案作「<b>加西莫多</b>／<b>克洛德</b>／<b>爱丝梅哈达</b>」。<span class="hl">三种译名都对，用哪套都得分</span>，但<b>同一份答卷里要统一</b>，不要混用。建议按 PPT 写（老师认这套）。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 11 主题 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">11</div>
+    <div class="card-title">《巴黎圣母院》主题<span class="ppt-src">PPT 第 12 页</span></div>
+    <span class="exam-level lv-s">简单背 3 句话</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">🎯 反封建反教会（PPT 原答 · 就这一段）</div>
+      <p>《巴黎圣母院》描写了吉普赛舞女爱丝梅哈达的爱情和不幸命运，反映了作者对封建专制、中世纪邪恶宗教势力以及封建贵族的憎恨，揭示了在禁欲主义的压抑下人性的扭曲和堕落的过程，赞美了高尚纯洁的品质，宣扬了善良、仁慈的精神力量，表达了对受压迫的下层人民的同情，体现了作家的民主精神和人道主义思想。</p>
+    </div>
+    <div class="mnem">
+      <div class="m-t">🧠 三句话记忆法（群指令要求）</div>
+      <ol>
+        <li><b>反封建专制 + 反教会</b>（憎恨的对象）</li>
+        <li><b>揭示禁欲主义压抑下人性的扭曲与堕落</b>（批判的机制）</li>
+        <li><b>赞美善良仁慈 + 同情下层人民，体现民主精神与人道主义</b>（歌颂的方向）</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- 12 艺术特色 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">12</div>
+    <div class="card-title">《巴黎圣母院》浪漫主义艺术特色❗️❗️<span class="ppt-src">PPT 第 12 页</span></div>
+    <span class="exam-level lv-ss">三点全背 · 重中之重</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">🎯 三点主干（PPT：①非凡人物 ②奇幻情节 ③对照艺术）</div>
+      <p><b>①非凡人物</b> —— 塑造超乎寻常的人物（爱斯梅拉达的理想之美、加西莫多的极端之丑、克罗德的极端伪善）。</p>
+      <p><b>②奇幻情节</b> —— 情节离奇曲折，充满巧合、误会与戏剧性逆转。</p>
+      <p><b>③对照艺术</b> —— 美丑对照原则贯穿全书，是雨果浪漫主义手法的核心。</p>
+    </div>
+
+    <div class="box">
+      <div class="sub-h">PPT 补充：雨果是浪漫主义手法的集大成者（四点）</div>
+      <ol>
+        <li>第一，雨果是运用对照手法的大师。</li>
+        <li>第二，雨果善于塑造下层人物的形象。</li>
+        <li>第三，雨果力图以史诗的气魄和规模去再现社会和历史的真实。</li>
+        <li>第四，情节的传奇性。</li>
+      </ol>
+      <p class="ppt-src">与上面三点可合并答：三点是「作品层面」，这四点是「作家层面」，简答／论述可两层都写</p>
+    </div>
+
+    <div class="box">
+      <div class="sub-h">多版本对照 · 分章刷题参考答案（题 5：简述《巴黎圣母院》的浪漫主义特点 · 南京师范大学 2002 年）</div>
+      <p><b>（1）情节曲折紧张，富于戏剧性。</b>小说以中世纪的巴黎为时空背景，展示了美丽善良的吉普赛舞女爱丝梅哈达的不幸命运。以爱丝梅哈达为中心，小说穿插描写了冷酷伪善的巴黎圣母院副主教克洛德、丑陋善良的圣母院敲钟人加西莫多、潇洒自私的弓箭队队长弗比斯与爱丝梅哈达之间的情感故事，交织着阴谋、审判、谋杀和偶然性的巧合，增加了故事的戏剧性和传奇性。例如，加西莫多与克洛德是半仆人半养子的关系，他们都爱上了爱丝梅哈达，爱丝梅哈达与加西莫多在婴儿时期就被调换等。</p>
+      <p><b>（2）全方面地运用了美丑对照方法。</b>首先，小说在人物塑造上广泛运用美丑对照的方法，让人物自身外表与内在心灵、人物与人物之间形成对照，使得人物形象鲜明，性格突出。其次，小说在结构上也运用对照。以爱丝梅哈达为中心，让不同人物对她的态度形成对照，达到揭示主题的目的。此外，小说还描写了两个社会、两个王朝、两个国王、两个法庭和两种审判，让巴黎下层社会的生活与上流社会统治阶级的生活构成鲜明对照，表达了作者强烈的爱憎态度。</p>
+      <p><b>（3）大胆的想象和浓厚的抒情色彩。</b>通过大胆的想象，作者塑造了一个外表和内心完美无瑕的理想人物爱丝梅哈达，体现了作家真善美合一的理想。此外，对巴黎圣母院进行的拟人化描写也倾注了作家的强烈感情。雨果认为，法国文化的独特性与哥特式建筑有着密切联系，而巴黎圣母院的地位更是独特。有感于巴黎圣母院在 1789 年法国大革命中遭受的破坏，雨果不仅将这部小说以其名字命名，而且还将其作为一个人物来塑造，浓墨重彩地描写了它的外貌和精神特征，寄托了他对民族文化的真挚感情和民族文化复兴的强烈期盼。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 13 对照手法 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">13</div>
+    <div class="card-title">《巴黎圣母院》的对照手法<span class="ppt-src">PPT 第 13—15 页</span></div>
+    <span class="exam-level lv-ss">西大 2017 年论述题原题</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">📝 西大 2017 年论述题第三题真题原答 ·《巴黎圣母院》的美丑对照原则</div>
+      <p>雨果在《&lt;克伦威尔&gt;序言》中提出一条新的美学原则：「丑就在美的旁边，畸形靠近优美，丑怪藏在崇高的背后，美与恶并存，黑暗与光明相共。」雨果的对照原则首先在创作上打破了传统悲剧表现崇高、喜剧表现滑稽的不可逾越的界限，悲中有喜，喜中有悲，从而增强了戏剧表现力，其次更利于表现戏剧冲突，再次使人物形象鲜明。对照主要表现在：</p>
+
+      <p><b>（一）情节对照</b></p>
+      <p>把悲剧因素结合运用，使情节大起大落，这既符合生活现实，又符合浪漫主义的要求。故事开始是群众性的闹剧场面，副主教突然出现，使狂欢气氛骤然消失，悲剧从而展开。菲比斯与爱丝梅拉达幽会，正沉醉在幸福亲吻中时，副主教从背后向菲比斯深刺一刀，爱丝梅拉达从欢乐顶峰霎时坠入痛苦深渊。结尾处爱丝梅拉达在绝望中找到失散多年的生母，女修士重见唯一可寄托生命的亲女儿，天伦之乐，何等幸运，但转瞬间爱丝梅拉达就被送上绞架，母亲也撞石而死。情节安排悲喜相生，跌宕起伏，使小说布局紧凑匀称，增强了艺术画面立体感，极富浪漫色彩，感染力强烈。</p>
+
+      <p><b>（二）环境对照</b></p>
+      <p>小说翔实描写了当时整个巴黎城区、市区和大学区面貌，但人物活动的中心场所是格雷沃广场和巴赫维广场，围绕这两个中心活动点，形成了各个人物赖以立足活动的圆心场所，两圆相切，切点上建筑就是圣母院，从而构成两个圆心场所的基本态势。这种环境上的圆心场所构成了人物活动表层结构。</p>
+
+      <p><b>（三）人物形象对照</b></p>
+      <p>书中涉及数以百计的各阶层人物，国王、僧侣、法官、商人、学士、乞丐、妓女，但在众多人物中，雨果安排主要人物有卡西莫多、克洛德、菲比斯、甘果瓦、女修士和乞丐王国，并让他们围绕爱丝梅拉达的悲惨遭遇，形成了以爱丝梅拉达为中心的行星环绕恒星之势，即呈圆心结构型。</p>
+      <p>（1）首先这种圆心结构是在围观中形成的。爱丝梅拉达美丽善良，能歌善舞，流浪四方，以卖艺为生，其特殊身份决定了这种圆心结构是在她优美舞姿的旋转中形成的。卡西莫多「那样深深专心看着」；众多乞丐都「目不转睛，大张着嘴」；克洛德「比其余的人更注意那女子」；菲比斯「招手叫她去」。这种形式上的围观圈子是圆心结构的小表层结构。</p>
+      <p>（2）其次，人物圆心结构具有内在联系性。各个人物与中心人物都有着不可分割的情感联系。女修士母女之爱，乞丐王国父兄之爱，卡西莫多纯真爱情，甘果瓦柏拉图式的爱，菲比斯玩弄式的爱，克洛德充满淫欲式的爱，这一系列情感，与爱丝梅拉达命运紧密联系，这是圆心结构深层结构。</p>
+      <p>（3）最后，在人物形象的圆心结构中，形成了多种多样的人物对照。<b>径向对照</b>——中心人物与各个人物对照，表现了各个人物对爱丝梅拉达的不同感性态度；<b>弧向对照</b>——圆周线上各个人物之间的对照，揭示了各个人物心灵间的差距；<b>自我对照</b>——每个人物自身的对照，表现了人物性格的丰富特征，三者归一，其实都是真善美与假丑恶对照的反映。</p>
+      <p class="ppt-src">西大 2017 年论述题第三题 · 已考过，此答可直接背</p>
+    </div>
+
+    <div class="sub-h">PPT 原页对照要点（与真题原答互为补充）</div>
+
+    <div class="box">
+      <p><b>1、情节对照（PPT 版）：</b>把悲剧因素结合运用，使情节大起大落，这既符合生活现实，更符合浪漫主义的要求。</p>
+      <p>故事开始是群众性的闹剧场面，副主教突然出现，使狂欢气氛骤然消失，悲剧从而展开。菲比斯与女郎幽会，正沉醉在幸福亲吻时，副主教从背后向菲比斯深刺一刀，女郎从欢乐顶峰霎时坠入痛苦深渊。结尾处女郎绝望中找到失散多年的生母，女修士重见唯一可寄托生命的亲女儿，但转瞬间她就被送上绞架，母亲也撞石而死。</p>
+      <p>情节安排悲喜相生，不仅使之跌宕起伏，动感强，使小说布局紧凑匀称，氛围意境空分明，增强了艺术画面立体感，而且极富浪漫色彩，感染力强烈。</p>
+    </div>
+
+    <div class="box">
+      <p><b>2、环境对照（PPT 版）：</b>小说描写了当时整个巴黎城区、市区和大学区面貌，从教堂到监狱，从卢浮宫到小客栈，从法庭到绞架，从塞纳河到广场。</p>
+      <p>但人物活动的中心场所是格雷沃广场和巴赫维广场，围绕这两个中心活动点，形成了各个人物赖以立足活动的圆心场所。围绕格雷沃广场的荷兰塔、乞丐广场、圣母院形成一个不规则的圆心场所，围绕巴赫维广场、哥特建筑上的贵族露台、圣母院形成了另一个不规则圆心场所，两圆相切，切点上建筑就是圣母院，从而构成两个圆心场所的基本态势。这种环境上的圆心场所构成了人物活动表层结构。</p>
+    </div>
+
+    <div class="box">
+      <p><b>3、人物形象对照（PPT 版，三层）</b></p>
+      <p><b>（1）爱丝梅拉达和加西莫多的形体与情感上的对照。</b>爱丝梅拉达和加西莫多同为心灵美的正面人物，他们有形体上和情感上的美丑对照，爱丝梅拉达美若天仙，加西莫多是丑人之王，除了畸形眼睛上还长了个瘤。而情感上爱丝梅拉达的爱情是盲目的，不能分辨美丑，几乎只会重复一句：「哦！我的菲比斯！」加西莫多却爱情分明。</p>
+      <p><b>（2）爱丝梅拉达与反面人物克洛德和菲比斯分别有着心灵美丑对照。</b>克洛德奸诈狠毒，不能满足私欲就要置于对方死地，与爱丝梅拉达有纯洁和淫欲的矛盾；菲比斯风流快活，看重钱财，关心利益，与爱丝梅拉达是纯真与虚假的矛盾。</p>
+      <p><b>（3）加西莫多与克洛德和菲比斯也分别有着不同美丑对照。</b>加西莫多和克洛德是一仆一主，一个看似头脑简单、只知道服从，另一个表面威严、一味的发号施令。事实上一个善良，富有同情心，在紧要关头敢作敢为，另一个恶毒，暗地里制造阴谋诡计。</p>
+      <p>加西莫多和菲比斯在形体上是一丑一美，但在心灵上却反过来。</p>
+      <p>克洛德外表严峻冷漢，内心凶残歹毒，嘴上标榜禁欲主义，心里却欲火炎炎。菲比斯仪表堂堂，像太阳神一样但行为轻浮，灵魂空虚，是愚蠢的美。</p>
+      <p>人物的美丑对照突出了心灵美的价值，内在美与外在美统一固然最好，但最重要的是内在美。</p>
+    </div>
+
+    <div class="box">
+      <div class="sub-h">PPT 第 15 页：人物形象的圆心结构（三点）</div>
+      <p>以 15 世纪巴黎社会生活为背景，书中涉及数以百计的各阶层人物，国王、僧侣、法官、商人、学士、乞丐、妓女，但在众多人物中，雨果安排主要人物有卡西莫多、克洛德、菲比斯、甘果瓦、女修士和乞丐王国，并让他们围绕爱丝梅拉达的悲惨遭遇，形成了以爱丝梅拉达为中心的行星环绕恒星之势即呈圆心结构型。</p>
+      <ol>
+        <li><b>这种圆心结构是在围观中形成的，其中充满了对照。</b>爱丝梅拉达美丽善良，能歌善舞，流浪四方，以卖艺为生，这种圆心结构是在她优美舞姿的旋转中形成的。甘果瓦「被灿烂的景象迷住了，不能一下子肯定地看清楚这个女郎究竟是人，是仙，还是天使」；卡西莫多「那样深深专心看着」；众多乞丐都「目不转睛，大张着嘴」；克洛德「比其余的人更注意那女子」；女修士对她发出「一种虚诚的，憎恶的声音」；菲比斯「招手叫她去」。这种形式上的围观圈子是圆心结构的小表层结构。</li>
+        <li><b>人物圆心结构具有内在联系性。</b>这是在有吸引力的情感氛围中形成的，各个人物与中心人物有着不可分割的情感联系（恒星与行星）。女修士母女之爱，乞丐王国父兄之爱，卡西莫多纯真爱情，甘果瓦柏拉图式的爱，菲比斯玩弄式的爱，克洛德充满淫欲式的爱。这一系列男女之情，与爱丝梅拉达命运紧密联系，这是圆心结构深层结构。它不仅具有整体性，而且具有运动性，这种运动性表现为情节的发展。人物圆心结构不断反复再现，情节也不断向前发展。</li>
+        <li><b>在人物形象的圆心结构中，形成了多种多样的人物对照。</b>径向对照——中心人物与各个人物对照，表现了各个人物对爱丝梅拉达的不同感情态度；弧向对照——圆周线上各个人物之间的对照，揭示了各个人物心灵间的差距（父义与父子对照：人性的异化与人性的复归）；自我对照——每个人物自身的对照，表现了人物性格的丰富特征。三者归一，其实都是真善美与假丑恶对照的反映，这体现了作者的美学思想即「滑稽丑怪作为崇高优美的配角和对照，要算是大自然给予艺术的最丰富的源泉」。</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- 14 悲惨世界 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">14</div>
+    <div class="card-title">《悲惨世界》人物形象 · 思想内容<span class="ppt-src">PPT 第 16 页</span></div>
+    <span class="exam-level lv-ss">人物形象背名解</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">🎯 冉·阿让：善良、叛逆而充满博爱精神</div>
+      <p>受苦受难的劳动者，越来越成为人道主义的化身，理想的道德家。三个阶段：</p>
+      <ol>
+        <li><b>苦役犯：</b>心灵向生，不得不堕落的矛盾阶段。</li>
+        <li><b>慈善家：</b>受米里哀主教感化后，人性复苏阶段。</li>
+        <li><b>圣徒：</b>舍己为人、道德升华阶段——救割风、自首（商马第）、抚养珂赛特、放掉沙威、向马吕斯坦承苦役犯身份、安详死去。</li>
+      </ol>
+    </div>
+
+    <div class="sub-h">其他人物（背名解/要点）</div>
+    <ul>
+      <li><b>芳汀：</b>资本主义社会受侮辱被压迫命运悲惨的妇女形象，浪漫主义文学中伟大的母亲形象。</li>
+      <li><b>沙威：</b>冷酷的资产阶级法律的化身，维护现存秩序的鹰犬。</li>
+      <li><b>米里哀主教：</b>仁爱精神的化身。</li>
+    </ul>
+
+    <div class="box">
+      <p><b>雨果认为世间存在着两种法律：</b>一种是低级的，其代表就是沙威；一种是高级的，其代表是米里哀主教。<span class="hl">这个「两种法律」的对照是《悲惨世界》的核心命题</span>，答论述时能拔高。</p>
+    </div>
+
+    <div class="answer">
+      <div class="a-t">🎯 3、小说主要思想内容（PPT 原答 · 两个版本合观）</div>
+      <p><b>版本一（PPT 第一页）：</b>基本主题：宽恕、仁慈、博爱的人道主义思想。</p>
+      <p><b>版本二（PPT 第二页，更完整，答论述用这版）：</b></p>
+      <ol>
+        <li>立足于人道主义，反映下层人民悲惨处境；</li>
+        <li>揭露资产阶级法律的不公正；</li>
+        <li>歌颂劳动人民和共和党人的英勇献身精神，表现作者共和、民主的政治思想；</li>
+        <li>宣扬以仁爱精神对抗恶，人道主义的感化（米里哀对冉阿让、冉阿让对沙威）。</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- 15 悲惨世界艺术特点 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">15</div>
+    <div class="card-title">《悲惨世界》艺术特点<span class="ppt-src">PPT 第 17 页</span></div>
+    <span class="exam-level lv-ss">三点仔细背</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">🎯 4、艺术特点（PPT 原答 · 三点）</div>
+      <p><b>①现实主义与浪漫主义相结合。</b></p>
+      <p><b>②人物形象塑造上的夸张手法：</b></p>
+      <ul>
+        <li><b>冉阿让：</b>集中了卓越的体能智能、博爱善良、大起大落的经历和命运。</li>
+        <li><b>米里哀：</b>集中了人类的博爱精神，如基督再生。</li>
+        <li><b>芳汀：</b>集中了人类的苦难。</li>
+        <li><b>沙威：</b>集中了人类由制度造成的机械和刻板。</li>
+        <li><b>德纳第夫妇：</b>集中了人类的卑鄙无耻。</li>
+      </ul>
+      <p><b>③对照艺术亦有所体现。</b></p>
+    </div>
+    <div class="mnem">
+      <div class="m-t">🧠 记法</div>
+      <p>「<span class="term">一结两法</span>」——现实与浪漫<b>结合</b>、人物<b>夸张法</b>、<b>对照法</b>。第②点务必背全五个人物各「集中」了什么，这是最容易出的采分点。</p>
+    </div>
+    <div class="warn">
+      <div class="w-t">📌 PPT 页首残留题干</div>
+      <p>PPT 这一页最上方有一行残缺文字：「____中把____与____相结合，把____融入____，是____创作的最高成就（2021）」。这是<b>前一份资料页脚串进来的杂项文字，与本题无关</b>，不要当成《悲惨世界》的考点去记。如实标注，避免误背。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 16 真题回顾 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">16</div>
+    <div class="card-title">真题回顾<span class="ppt-src">PPT 第 17 页</span></div>
+    <span class="exam-level lv-ss">必看</span>
+  </div>
+  <div class="card-body">
+    <div class="paper">
+      <div class="p-t">📜 PPT 真题回顾页原文</div>
+      <p><b>填空题：</b></p>
+      <ol>
+        <li>____，是法国浪漫主义文学宣言。（2008 学硕）</li>
+        <li>华兹华斯和柯勒律治合写出共同的诗集是____。（2021）</li>
+        <li>《抒情歌谣集序言》是美国浪漫主义诗歌的____。（2012 学硕）</li>
+        <li>英国浪漫主义文学在诗歌领域的宣言是____。（2016 学硕）</li>
+      </ol>
+      <p><b>名词解释：</b>十二月党人</p>
+      <p><b>简答题：</b></p>
+      <ol>
+        <li>简述 19 世纪欧美浪漫主义文学的主要艺术手法（2017 学硕）</li>
+        <li>《巴黎圣母院》中的钟楼怪人形象（2020）</li>
+        <li>简述 19 世纪俄罗斯文学中「多余人」形象的发展变化（2011 学硕）</li>
+        <li>列出《德伯家的苔丝》的主要内容及主题（2017）</li>
+        <li>比较分析高老头的父爱形象（2025 学硕）</li>
+        <li>试论《巴黎圣母院》中「美丑对照」原则的具体体现。（2025 学硕）</li>
+        <li>结合具体作品，分析 19 世纪浪漫主义文学特点（2025 学硕）</li>
+        <li>《巴黎圣母院》中的钟楼怪人形象（2020 学硕）</li>
+        <li>简析雨果《悲惨世界》的艺术特色。（2025 学硕）</li>
+      </ol>
+      <p><b>本章重点：</b>浪漫主义 · 雨果（《巴黎圣母院》）</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">📌 关于这页真题标注</div>
+      <p>PPT 真题回顾页文字被截图裁切，部分题干有缺字、且第 3 条「《抒情歌谣集序言》是<b>美国</b>浪漫主义诗歌」显系笔误（应为<b>英国</b>）。<span class="hl">年份／题型标注以库内真题资料为准</span>，本页只作「哪些题反复考」的线索。</p>
+    </div>
+
+    <div class="paper">
+      <div class="p-t">📜 西大真题实证（库内《文学史考研笔记整理》原答可查）</div>
+      <p>本批次涉及的<b>浪漫主义板块</b>，西大近年实证真题有：</p>
+      <ol>
+        <li><b>2017 年 · 论述题第三题</b>：《巴黎圣母院》的美丑对照原则 <span class="ppt-src">本页第 13 卡已附完整原答</span></li>
+        <li><b>2020 年 · 简答题第三题</b>：《巴黎圣母院》的钟楼怪人形象（卡西莫多的人物形象）<span class="ppt-src">本页第 10 卡已附完整原答</span></li>
+        <li><b>2023 年 · 名词解释第三题</b>：世纪病 <span class="ppt-src">本页第 5 卡已附完整原答</span></li>
+        <li><b>2017 年 · 简答题第四题</b>：海涅《德国，一个冬天的童话》内容的主要方面</li>
+      </ol>
+      <p><b>命题规律（重要）：</b><span class="hl">雨果的《巴黎圣母院》在西大已经考过美丑对照原则、卡西莫多形象两次</span>，且 2025 学硕又出现「美丑对照原则的具体体现」。这一块是本模块<b>回报率最高的复习点</b>，务必把第 12、13 两张卡背到能默写。</p>
+    </div>
+
+    <div class="box">
+      <p><b>注意区分：</b>PPT 真题页把「《巴黎圣母院》和《白鲸》比较（说明法国浪漫派和美国浪漫派的异同）」列为 <b>中国传媒大学 2009 年</b>真题——见库内分章刷题「考研精粹 题 3」。<span class="hl">这是外校题，不是西大考过</span>，可作为拓宽思路的练习，但不必按「必考」对待。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 17 自测 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">17</div>
+    <div class="card-title">自测 · 今日必过清单</div>
+    <span class="exam-level lv-ss">闭卷自测</span>
+  </div>
+  <div class="card-body">
+    <div class="study-bar">
+      <span class="chk" data-k="d20t1">1 撒旦派（名解）</span>
+      <span class="chk" data-k="d20t2">2 华兹华斯诗歌理论（简答四点）</span>
+      <span class="chk" data-k="d20t3">3 拜伦式英雄（名解）</span>
+      <span class="chk" data-k="d20t4">4 雪莱两大代表作</span>
+      <span class="chk" data-k="d20t5">5 奥涅金／多余人（名解）</span>
+      <span class="chk" data-k="d20t6">6 十二月党人（名解）</span>
+      <span class="chk" data-k="d20t7">7 莱蒙托夫（名解）</span>
+      <span class="chk" data-k="d20t8">8 美国浪漫主义作家作品</span>
+      <span class="chk" data-k="d20t9">9 白鲸（名解）</span>
+      <span class="chk" data-k="d20t10">10 雨果·三个人物形象</span>
+      <span class="chk" data-k="d20t11">11 圣母院主题三句话</span>
+      <span class="chk" data-k="d20t12">12 圣母院艺术特色三点</span>
+      <span class="chk" data-k="d20t13">13 美丑对照原则（西大 2017）</span>
+      <span class="chk" data-k="d20t14">14 悲惨世界思想内容</span>
+      <span class="chk" data-k="d20t15">15 悲惨世界艺术特点三点</span>
+      <span class="chk" data-k="d20t16">16 世纪病（西大 2023）</span>
+      <span class="chk" data-k="d20t17">17 卡西莫多形象（西大 2020）</span>
+    </div>
+
+    <div class="sub-h">闭卷五问（先答完再翻上面）</div>
+    <ol>
+      <li>「撒旦派」这名字是谁骂出来的？被骂的是谁？为什么说他们是「最激进最富战斗精神」的一支？</li>
+      <li>华兹华斯诗歌理论四点，第三点的原句是什么？</li>
+      <li>「多余人」和「世纪病」有什么区别？（一个是俄国贵族青年、一个是法国贵族青年；都找不到位置，但成因与文学传统不同——这题考过对比就赚了）</li>
+      <li>《巴黎圣母院》的美丑对照分哪三个层面？人物形象对照里那三种「对照」分别叫什么？</li>
+      <li>《悲惨世界》艺术特点第②点，五个人物各自「集中」了什么？</li>
+    </ol>
+  </div>
+</div>
+
+<!-- 18 直达 -->
+<div class="card collapsed">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">🔗</div>
+    <div class="card-title">直达原资料</div>
+    <span class="exam-level lv-l">库内互链</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">分章刷题（现成参考答案）</div>
+    <ul>
+      <li><a href="../外国文学史习题_分章刷题.html#d5">19 世纪浪漫主义文学 · 共 27 题</a> —— 湖畔派诗人、东方叙事诗、多余人、美丑对照原则、欧那尼之战、《巴黎圣母院》浪漫主义特点、《巴黎圣母院》与《白鲸》比较</li>
+    </ul>
+    <div class="sub-h">串讲资料（成段论述）</div>
+    <ul>
+      <li><a href="../唐红梅外国文学知识点串讲.html">唐红梅外国文学知识点串讲</a> —— 「英国浪漫主义文学」「俄国浪漫主义文学」「美国浪漫主义文学」条目，含华兹华斯《抒情歌谣集·序言》三点理论主张、《白鲸》意义与艺术特色</li>
+    </ul>
+    <div class="sub-h">西大真题原答（命题规律）</div>
+    <ul>
+      <li><a href="../文学史考研笔记整理_纯文字版.html">文学史考研笔记整理 · 纯文字版</a> —— 查 043《巴黎圣母院》的美丑对照原则（2017 论述）、044 卡西莫多形象（2020 简答）、067 世纪病（2023 名解）</li>
+    </ul>
+    <div class="sub-h">上册与题库</div>
+    <ul>
+      <li><a href="day19-自然主义-浪漫主义上.html">第 19 天 · 自然主义＋浪漫主义（上）</a></li>
+      <li><a href="day19-现实主义下.html">第 19 天 · 19 世纪现实主义（下）</a></li>
+      <li><a href="../李凡1000题_外国文学史-OCR重建版.html">李凡 1000 题 · 外国文学史</a></li>
+      <li><a href="../思维导图/外国文学史导图.html">外国文学史思维导图</a></li>
+    </ul>
+    <div class="box">
+      <p><b>返回资料库：</b><a href="../index.html">index.html</a>（带背目录暂无首页入口，需 URL 直达或用左侧导航）</p>
+    </div>
+  </div>
+</div>
+
+<footer class="foot">
+  <p>外国文学带背 第 20 天 · 19 世纪浪漫主义（下）</p>
+  <p>内容主干取自群分享 PPT 十七页逐页识读 · 补充来源：分章刷题#d5 / 唐红梅串讲 / 西大真题原答三源交叉</p>
+  <p>待核项已在页内以红色块标注（4 处）· 生成于 2026-09-18</p>
+</footer>
+
+</div>
+
+<div class="font-ctrl">
+  <button onclick="fsStep(-1)">−</button>
+  <span class="fs-label" id="fsLabel">15px</span>
+  <button onclick="fsStep(1)">＋</button>
+  <button class="fs-reset" onclick="fsReset()">复位</button>
+</div>
+
+<script>
+(function(){
+  var FS_KEY='day20rom_fs', CHK_KEY='day20rom_checks';
+  var base=15, cur=base;
+  try{ var s=localStorage.getItem(FS_KEY); if(s){ cur=parseFloat(s);} }catch(e){}
+  function apply(){ document.documentElement.style.setProperty('--fs-base',cur+'px');
+    var el=document.getElementById('fsLabel'); if(el){el.textContent=Math.round(cur)+'px';} }
+  window.fsStep=function(d){ cur=Math.min(22,Math.max(12,cur+d)); apply();
+    try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  window.fsReset=function(){ cur=base; apply(); try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  apply();
+
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(CHK_KEY)||'{}'); }catch(e){ saved={}; }
+  var chks=document.querySelectorAll('.chk');
+  chks.forEach(function(c){
+    var k=c.getAttribute('data-k');
+    if(saved[k]) c.classList.add('done');
+    c.addEventListener('click',function(ev){
+      ev.stopPropagation();
+      c.classList.toggle('done');
+      saved[k]=c.classList.contains('done');
+      try{ localStorage.setItem(CHK_KEY,JSON.stringify(saved)); }catch(e){}
+      upd();
+    });
+  });
+  function upd(){
+    var all=document.querySelectorAll('.chk').length;
+    var done=document.querySelectorAll('.chk.done').length;
+    var bar=document.getElementById('progBar'), txt=document.getElementById('progTxt');
+    if(bar) bar.style.width=(all?Math.round(done/all*100):0)+'%';
+    if(txt) txt.textContent=done+' / '+all;
+  }
+  upd();
+})();
+</script>
+
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

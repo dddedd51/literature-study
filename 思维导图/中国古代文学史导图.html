@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国古代文学史 · 思维导图</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+:root{
+  --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073;
+  --line:#e3dccd; --accent:#9a3b2e; --gold:#c8902a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);height:100%;
+  font-family:"LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;overflow:hidden;}
+#app{display:flex;flex-direction:column;height:100vh;}
+/* 顶栏 */
+#topbar{display:flex;align-items:center;gap:10px;padding:8px 14px;flex:none;
+  background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,.05);z-index:20;}
+#topbar .back{color:var(--sub);text-decoration:none;font-size:14px;padding:4px 8px;border-radius:6px;white-space:nowrap;}
+#topbar .back:hover{background:#f0e9da;color:var(--accent);}
+#topbar .book{font-weight:700;color:var(--accent);font-size:16px;white-space:nowrap;}
+#topbar .era{font-size:15px;color:var(--ink);border-left:1px solid var(--line);padding-left:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:30vw;}
+#topbar .spacer{flex:1;}
+#topbar .tool{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:2px;}
+#topbar .tool button{font-family:inherit;font-size:13px;border:0;background:transparent;color:var(--ink);
+  padding:4px 9px;border-radius:6px;cursor:pointer;white-space:nowrap;}
+#topbar .tool button:hover{background:#f0e9da;}
+#topbar .tool button.on{background:var(--accent);color:#fff;}
+#topbar .fit{font-family:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:5px 10px;cursor:pointer;color:var(--ink);}
+#topbar .fit:hover{background:#f0e9da;}
+#topbar .quiz{font-size:14px;font-weight:700;text-decoration:none;color:#fff;background:var(--accent);
+  border-radius:8px;padding:6px 14px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+#topbar .quiz:hover{filter:brightness(1.12);}
+/* 主体 */
+#layout{display:flex;flex:1;min-height:0;}
+#eraNav{width:236px;flex:none;overflow:auto;background:var(--card);border-right:1px solid var(--line);padding:10px 8px;}
+#eraNav .nav-head{font-size:13px;color:var(--sub);letter-spacing:2px;padding:2px 8px 8px;}
+#eraNav button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;font-family:inherit;
+  font-size:14.5px;border:0;background:transparent;color:var(--ink);padding:8px 9px;border-radius:8px;cursor:pointer;margin-bottom:2px;}
+#eraNav button:hover{background:#f0e9da;}
+#eraNav button.on{background:var(--accent);color:#fff;}
+#eraNav button.on .cnt{color:rgba(255,255,255,.75);}
+#eraNav .idx{flex:none;width:22px;height:22px;line-height:22px;text-align:center;border-radius:6px;
+  background:rgba(0,0,0,.06);font-size:12px;}
+#eraNav button.on .idx{background:rgba(255,255,255,.22);}
+#eraNav .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#eraNav .cnt{flex:none;font-size:11px;color:#b3a998;}
+#eraNav .footnote{margin-top:10px;padding:8px 9px;font-size:12.5px;color:var(--sub);line-height:1.6;
+  border-top:1px dashed var(--line);}
+#eraNav .footnote a{color:var(--accent);}
+/* 画布 */
+#mmWrap{flex:1;position:relative;min-width:0;}
+#mmSvg{width:100%;height:100%;display:block;cursor:grab;}
+#mmWrap .hint{position:absolute;left:12px;bottom:10px;font-size:12px;color:#b3a998;
+  background:rgba(255,253,248,.85);border:1px solid var(--line);border-radius:8px;padding:4px 10px;
+  pointer-events:none;letter-spacing:.5px;}
+#nodeCnt{position:absolute;right:12px;top:10px;font-size:12px;color:#b3a998;
+  background:rgba(255,253,248,.85);border:1px solid var(--line);border-radius:8px;padding:4px 10px;pointer-events:none;}
+.markmap{--markmap-font-size:15px;}
+.markmap-node text{fill:#2b2620;}
+.markmap-node text a{fill:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:700;}
+.markmap-link{stroke-width:1.6px;}
+/* 窄屏 */
+@media (max-width:760px){
+  #eraNav{position:absolute;left:0;top:0;bottom:0;z-index:15;transform:translateX(-100%);transition:.2s;box-shadow:4px 0 16px rgba(0,0,0,.08);}
+  #eraNav.show{transform:none;}
+  #topbar .book{display:none;}
+  #hamburger{display:inline-flex !important;}
+}
+#hamburger{display:none;font-family:inherit;border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:5px 10px;cursor:pointer;font-size:14px;}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="topbar">
+    <button id="hamburger">☰ 时代</button>
+    <a class="back" href="index.html">← 导图导航</a>
+    <div class="book">中国古代文学史</div>
+    <div class="era" id="eraTitle">先秦文学</div>
+    <div class="spacer"></div>
+    <div class="tool" id="depthTool">
+      <button data-d="1">一层</button><button data-d="2" class="on">两层</button><button data-d="3">三层</button><button data-d="99">全部</button>
+    </div>
+    <button class="fit" id="fitBtn">⟲ 适应画布</button>
+    <a class="quiz" id="quizLink" href="../中国文学史习题_分章刷题.html#d0">去刷题 →</a>
+  </div>
+  <div id="layout">
+    <nav id="eraNav"><div class="nav-head">时代 · 专题</div></nav>
+    <main id="mmWrap">
+      <svg id="mmSvg"></svg>
+      <div id="nodeCnt"></div>
+      <div class="hint">点击节点圆点折叠/展开 · 带<span style="text-decoration:underline;color:var(--accent)">下划线</span>的节点可跳转刷题 · ←/→ 切换时代</div>
+    </main>
+  </div>
+</div>
+<script src="_vendor/d3.min.js"></script>
+<script src="_vendor/markmap-lib.js"></script>
+<script src="_vendor/markmap-view.js"></script>
+<script>
+var BOOK = {"title": "中国古代文学史", "accent": "#9a3b2e", "palette": ["#9a3b2e", "#c8902a", "#3b6b5e", "#6b5a8a", "#2f6f8f", "#8a6d3b", "#7a4f00"], "quizHome": "../中国文学史习题_分章刷题.html", "footnote": "", "eras": [{"name": "先秦文学", "link": "../中国文学史习题_分章刷题.html#d0", "md": "# [先秦文学](../中国文学史习题_分章刷题.html#d0)\n## 文学概况\n### 上古歌谣与神话\n### 诗歌、历史散文、诸子散文形成\n### 宗法政治、礼乐文化与百家争鸣\n### 现实主义与浪漫主义两大源头\n## 上古神话\n### 创世神话：盘古、女娲\n### 洪水神话：鲧禹治水\n### 英雄神话：后羿、夸父、精卫\n### 神话精神：抗争自然、追求光明、肯定人的力量\n## 诗经\n### 第一部诗歌总集\n### 内容：爱情婚姻、农事生活、战争徭役、政治讽谏、祭祀宴饮\n### 六义：风、雅、颂、赋、比、兴\n### 艺术：重章复沓、赋比兴、语言质朴、节奏鲜明\n### 名篇：关雎、蒹葭、氓、七月、硕鼠、伐檀、采薇\n### 地位：风雅精神与现实主义诗歌传统的源头\n## 楚辞\n### 代表作家：屈原、宋玉\n### 代表作品：离骚、九歌、九章、天问、招魂、九辩\n### 离骚：政治理想、身世感慨、上下求索、远游幻想\n### 艺术：香草美人、象征手法、宏阔想象、铺陈夸饰\n### 屈原形象：爱国、忠贞、独立人格、求索精神\n### 地位：浪漫主义传统与骚体赋的源头\n## 历史散文\n### 尚书：记言体源头、诰命文体\n### 春秋：编年体、春秋笔法、微言大义\n### 左传：编年体、善叙战争、外交辞令、人物形象\n### 国语：国别体、重在记言\n### 战国策：策士游说、寓言、铺张辩丽\n### 地位：历史叙事与古代散文传统的奠基\n## 诸子散文\n### 论语：语录体、仁、礼、君子人格\n### 孟子：对话论辩、浩然之气、比喻排比\n### 荀子：专题论文、论证严密、礼法教化\n### 老子：格言哲理、辩证思维、语言简约\n### 庄子：寓言、想象、精神自由、浪漫风格\n### 墨子：兼爱、非攻、尚贤、节用\n### 韩非子：法术势、寓言、政论\n### 地位：说理文、寓言和论辩传统的形成\n## 文学史意义\n### 诗言志与抒情传统\n### 风雅精神与现实关怀\n### 神话想象与浪漫主义传统\n### 历史意识与以史为鉴\n### 诸子论辩与文章表达", "nodes": 47}, {"name": "秦汉文学", "link": "../中国文学史习题_分章刷题.html#d1", "md": "# [秦汉文学](../中国文学史习题_分章刷题.html#d1)\n## 文学概况\n### 大一统帝国与经学制度\n### 宫廷文学、史官文学、民间乐府并存\n### 文体：政论、辞赋、史传、乐府、五言诗\n### 风格：帝国气象与个体抒情并行\n## 秦及西汉政论\n### 李斯谏逐客书：铺陈排比、论证严密\n### 贾谊过秦论：总结秦亡、气势充沛\n### 贾谊吊屈原赋：骚体抒情、身世感慨\n### 晁错论贵粟疏：重农思想、现实政论\n## 汉赋\n### 骚体赋：承接楚辞、抒情性强\n### 散体大赋：主客问答、铺陈夸饰、体物写志\n### 抒情小赋：个人身世、游观和精神苦闷\n### 枚乘七发：汉大赋形成标志\n### 司马相如子虚赋、上林赋：汉大赋高峰\n### 扬雄甘泉赋、羽猎赋：模拟与创新\n### 班固两都赋：京都大赋、体制严整\n### 张衡二京赋、归田赋：由大赋转向抒情小赋\n## 司马迁与史记\n### 体例：本纪、表、书、世家、列传\n### 宗旨：究天人之际、通古今之变、成一家之言\n### 叙事：以人物为中心、关键场景、戏剧冲突\n### 写人：行动、语言、细节、对比、侧面烘托\n### 互见法：不同篇章相互补充人物形象\n### 风格：雄浑悲壮、简洁传神、饱含感情\n### 人物：项羽、刘邦、李广、荆轲、屈原、陈涉\n### 地位：纪传体通史与史传文学典范\n## 班固与汉书\n### 第一部纪传体断代史\n### 体例严整、语言典雅、叙事谨严\n### 苏武传：民族气节与人物刻画\n### 与史记比较：断代与通史、规范与个性\n## 两汉乐府\n### 内容：战争徭役、婚姻爱情、劳动生活、社会苦难\n### 艺术：叙事性、对话、铺陈、口语化\n### 战城南：战争灾难\n### 十五从军征：兵役悲剧\n### 陌上桑：女性机智与尊严\n### 孔雀东南飞：婚姻悲剧、焦仲卿与刘兰芝\n### 地位：五言诗与叙事诗传统的重要源头\n## 古诗十九首\n### 时代：东汉末年\n### 内容：游子思妇、人生无常、功名失意、及时行乐\n### 艺术：浅近自然、情景交融、含蓄蕴藉\n### 名篇：行行重行行、迢迢牵牛星、涉江采芙蓉\n### 地位：文人五言诗成熟标志\n## 文学史意义\n### 汉赋建立帝国文学范式\n### 史记奠定史传叙事传统\n### 乐府强化现实主义和民间叙事\n### 古诗十九首推动个体生命意识与五言诗成熟", "nodes": 53}, {"name": "魏晋南北朝文学", "link": "../中国文学史习题_分章刷题.html#d2", "md": "# [魏晋南北朝文学](../中国文学史习题_分章刷题.html#d2)\n## 文学概况\n### 社会动荡、门阀政治、玄学与佛教传播\n### 文学自觉与作家主体增强\n### 生命意识、隐逸精神、山水审美\n### 文体：五言诗、山水诗、田园诗、骈文、志怪志人小说\n## 建安文学\n### 时代精神：慷慨悲凉、忧患意识、建功理想\n### 三曹\n#### 曹操：古直悲凉、蒿里行、短歌行、观沧海\n#### 曹丕：清丽婉约、燕歌行、典论论文\n#### 曹植：骨气奇高、辞采华茂、白马篇、赠白马王彪\n### 建安七子：孔融、陈琳、王粲、徐干、阮瑀、应玚、刘桢\n### 建安风骨：充实内容、刚健气质、时代精神\n## 正始文学\n### 政治高压与玄学兴起\n### 阮籍咏怀诗：忧生之嗟、曲折寄托\n### 嵇康：人格抗争、自然之性、与山巨源绝交书\n### 风格：深沉曲折、象征寄托、精神自由\n## 两晋文学\n### 太康文学：陆机、潘岳、辞藻声律\n### 左思咏史诗：寒士不平、批判门阀\n### 玄言诗：老庄玄理、淡乎寡味\n### 游仙诗：神仙想象、现实寄托\n## 陶渊明\n### 人生选择：仕与隐、人格独立、归隐田园\n### 田园诗：劳动、饮酒、乡村日常、自然人生\n### 作品：归园田居、饮酒、桃花源记、归去来兮辞\n### 艺术：平淡自然、质朴醇厚、情景交融、意境高远\n### 地位：田园诗派开创者、士人精神典型\n## 南北朝民歌\n### 南朝民歌：爱情、清新缠绵、语言明快\n### 西洲曲：南朝民歌代表\n### 北朝民歌：战争、游牧、家庭、质朴刚健\n### 木兰诗：代父从军、英雄女性、叙事与抒情结合\n## 山水诗与永明体\n### 谢灵运：山水诗开创、精细写景、玄言尾巴\n### 鲍照：俊逸豪放、寒士不平、拟行路难\n### 谢朓：清新秀美、情景交融、唐诗先声\n### 永明体：沈约、四声八病、声律规范\n### 宫体诗：宫廷艳情、形式精巧、内容狭窄\n## 骈文与小说\n### 骈文：对偶、用典、声律、藻饰\n### 庾信：南北文风融合、哀江南赋\n### 世说新语：志人小说、魏晋名士、简洁传神\n### 搜神记：志怪小说、神话传说、民间故事\n## 文学理论\n### 曹丕典论论文：文以气为主\n### 陆机文赋：创作构思与语言表达\n### 刘勰文心雕龙：文学理论体系\n### 钟嵘诗品：五言诗批评、滋味说\n## 文学史意义\n### 文学由政教附庸走向审美自觉\n### 个体生命和人格精神进入文学中心\n### 山水、田园、宫体等诗歌题材分化\n### 声律理论推动唐代近体诗成熟", "nodes": 56}, {"name": "隋唐五代文学", "link": "../中国文学史习题_分章刷题.html#d3", "md": "# [隋唐五代文学](../中国文学史习题_分章刷题.html#d3)\n## 文学概况\n### 政治统一、经济繁荣、科举制度\n### 中外文化交流、士人群体扩大\n### 文体：诗、古文、传奇、变文、词\n### 唐诗分期：初唐、盛唐、中唐、晚唐\n## 初唐诗歌\n### 上官体：宫廷诗风、形式精巧\n### 沈佺期、宋之问：律诗定型\n### 初唐四杰：王勃、杨炯、卢照邻、骆宾王\n### 贡献：拓展题材、反对宫廷绮靡\n### 陈子昂：感遇、登幽州台歌\n### 主张：汉魏风骨、兴寄、复古革新\n## 盛唐山水田园诗\n### 王维\n#### 作品：山居秋暝、终南山、鹿柴\n#### 艺术：诗中有画、空灵清幽、禅意\n### 孟浩然\n#### 作品：过故人庄、春晓、宿建德江\n#### 艺术：自然清淡、隐逸情怀\n## 盛唐边塞诗\n### 高适：雄浑悲壮、关注战争现实\n### 岑参：边地奇景、想象瑰丽、语言奇崛\n### 王昌龄：七绝圣手、征人思妇、边塞豪情\n### 王之涣：凉州词、气象开阔\n## 李白\n### 思想：儒家建功、道家自由、游侠精神\n### 作品：蜀道难、将进酒、梦游天姥吟留别、行路难\n### 艺术：夸张、想象、跳跃、气势、清新语言\n### 诗体：歌行、绝句、乐府\n### 风格：豪放飘逸\n### 地位：古代浪漫主义诗歌高峰\n## 杜甫\n### 思想：忧国忧民、仁爱精神、历史意识\n### 作品：三吏、三别、兵车行、春望、登高、秋兴八首\n### 艺术：沉郁顿挫、格律严整、炼字精严\n### 诗史：记录安史之乱和人民生活\n### 地位：现实主义诗歌集大成者、诗圣\n## 中唐诗歌\n### 元白诗派\n#### 元稹、白居易\n#### 新乐府运动、文章合为时而著\n#### 白居易：卖炭翁、观刈麦、琵琶行、长恨歌\n#### 特点：通俗、叙事、社会批判\n### 韩孟诗派\n#### 韩愈、孟郊、李贺、贾岛\n#### 特点：奇险、苦吟、险怪、独创\n### 刘禹锡：怀古、民歌体、明朗刚健\n### 柳宗元：贬谪、山水、冷峭深沉\n## 古文运动\n### 代表：韩愈、柳宗元\n### 主张：文以明道、恢复古文、反对骈文\n### 韩愈：师说、原道、祭十二郎文\n### 柳宗元：捕蛇者说、永州八记、寓言\n### 地位：确立散文表达和批判功能\n## 晚唐诗歌\n### 杜牧：咏史、七绝、俊爽明丽\n### 李商隐：爱情、政治寄托、朦胧多义\n### 温庭筠：诗词兼长、绮艳精工\n### 晚唐风格：感伤、咏史、绮艳、衰飒\n## 唐传奇与变文\n### 唐传奇：有意为小说、情节曲折、人物鲜明\n### 作品：莺莺传、李娃传、霍小玉传、枕中记、南柯太守传\n### 变文：敦煌文学、佛教俗讲、讲唱结合\n### 地位：影响宋元话本、戏曲和白话小说\n## 晚唐五代词\n### 温庭筠：花间派、浓艳精巧\n### 韦庄：疏朗真切、乱世漂泊\n### 李煜：前期宫廷、后期故国之思\n### 地位：词由歌筵娱乐走向个体生命抒情", "nodes": 70}, {"name": "宋代文学", "link": "../中国文学史习题_分章刷题.html#d4", "md": "# [宋代文学](../中国文学史习题_分章刷题.html#d4)\n## 文学概况\n### 城市经济、科举制度、士大夫政治\n### 理学、禅宗与市民文化并存\n### 诗、词、散文、话本全面发展\n### 审美：理趣、议论、学问、日常生活\n## 北宋诗文革新\n### 西昆体：杨亿、刘筠、钱惟演，形式典雅、内容狭窄\n### 欧阳修：古文革新、平易自然、关注现实\n### 王安石：政治改革、社会责任、晚年精工含蓄\n### 苏洵：纵横家气、论辩雄健\n### 曾巩：平正周详、叙事严谨\n### 苏辙：议论平实、气势沉着\n## 北宋词\n### 晏殊：珠圆玉润、雍容典雅\n### 晏几道：深情婉约、追忆感伤\n### 柳永\n#### 大量创制慢词\n#### 都市生活、羁旅行役、男女情爱\n#### 语言通俗、铺叙委婉\n### 苏轼\n#### 以诗为词、扩大词境\n#### 题材：怀古、田园、政治、人生、爱情\n#### 作品：念奴娇赤壁怀古、水调歌头、江城子、定风波\n#### 风格：豪放旷达、刚柔相济、哲理入词\n### 周邦彦\n#### 格律词派、章法严密、音律精工\n#### 词体规范化、艺术技巧成熟\n## 宋诗\n### 宋诗特点：重理趣、议论、学问与个人体验\n### 江西诗派：黄庭坚、陈师道、陈与义\n### 理论：点铁成金、夺胎换骨\n### 杨万里：诚斋体、自然日常、活泼灵动\n### 范成大：田园诗、使金诗、民生关怀\n### 陆游：爱国诗、闲适诗、悲凉身世\n## 南宋词\n### 李清照\n#### 前期：清丽明快、闺情与生活\n#### 后期：沉郁悲凉、国破家亡与身世\n#### 艺术：女性生命经验、白描、婉约深情\n### 辛弃疾\n#### 抗金报国、政治失意、农村生活、闲适退居\n#### 作品：水龙吟、永遇乐、破阵子、青玉案\n#### 艺术：用典、比兴、气势、刚柔相济\n#### 地位：豪放词集大成者\n### 姜夔\n#### 清空骚雅、重视音律、意境清峭\n#### 扬州慢、暗香、疏影\n### 吴文英\n#### 密丽深曲、意象跳跃、结构复杂\n## 宋代散文与赋\n### 欧阳修醉翁亭记：寄情山水、平易自然\n### 苏轼前赤壁赋：主客问答、哲理与写景结合\n### 王安石游褒禅山记：议论、叙事、说理结合\n### 宋代古文：议论性增强、语言平易、理趣鲜明\n## 宋代话本\n### 小说话本：爱情、婚姻、商人、公案、神怪\n### 讲史话本：历史演义、英雄叙事\n### 艺术：口语、悬念、行动、场面、叙事节奏\n### 地位：白话小说和章回小说的直接源头\n## 文学史意义\n### 词由歌筵娱乐走向独立抒情\n### 宋诗形成重理趣的独特传统\n### 古文与政论结合\n### 市民文学和白话叙事成熟", "nodes": 65}, {"name": "元代文学", "link": "../中国文学史习题_分章刷题.html#d5", "md": "# [元代文学](../中国文学史习题_分章刷题.html#d5)\n## 文学概况\n### 多民族文化交流\n### 士人地位变化与文人失意\n### 市民文化和艺人文学兴盛\n### 叙事性、通俗性、舞台性增强\n## 元杂剧体制\n### 一本四折\n### 楔子：交代人物、背景、情节\n### 曲牌联套：构成唱腔结构\n### 一人主唱：旦本或末本\n### 角色：末、旦、净、杂\n### 宾白与唱词结合\n### 类型：爱情、公案、历史、神仙道化、文人失意\n## 关汉卿\n### 窦娥冤\n#### 主题：社会黑暗、司法不公、妇女悲剧\n#### 人物：窦娥、蔡婆婆、赛卢医\n#### 艺术：悲剧冲突集中、现实批判尖锐\n### 救风尘：赵盼儿、宋引章、女性互助\n### 望江亭：谭记儿、机智抗争\n### 单刀会：关羽、英雄气概、历史意识\n### 地位：元杂剧奠基者、底层人物书写代表\n## 王实甫西厢记\n### 主题：爱情自主、反对封建婚姻\n### 人物：张生、崔莺莺、红娘、老夫人\n### 红娘：机智热情、行动推动者、民间智慧\n### 艺术：长篇多折、情节曲折、语言优美\n### 地位：爱情戏曲经典、元杂剧艺术高峰\n## 白朴与马致远\n### 白朴梧桐雨：历史爱情、兴亡感慨\n### 白朴墙头马上：婚姻自主、喜剧风格\n### 马致远汉宫秋：昭君故事、历史悲凉\n### 马致远天净沙秋思：羁旅愁思、意境凝练\n## 元散曲\n### 小令：单支曲牌、短小自由\n### 套数：同宫调曲牌联套\n### 特点：口语化、俗语入曲、抒情自由\n### 内容：文人失意、山水隐逸、市民生活、男女情爱\n## 南戏\n### 体制：篇幅较长、曲牌灵活、角色自由\n### 高明琵琶记：忠孝伦理、家庭悲剧\n### 董解元西厢记诸宫调：说唱文学、王实甫西厢记前身\n### 地位：明清传奇重要源头\n## 元代诗文\n### 元好问：金元之际文学集大成者\n### 诗歌：沉郁、现实感、历史兴亡\n## 文学史意义\n### 戏曲成为时代文学中心\n### 市民审美和通俗语言进入文学\n### 女性、底层和失意文人获得更多表现", "nodes": 51}, {"name": "明清近代文学", "link": "../中国文学史习题_分章刷题.html#d6", "md": "# [明清近代文学](../中国文学史习题_分章刷题.html#d6)\n## [明代文学概况](../中国文学史习题_分章刷题.html#d6)\n### 商业城市发展、印刷传播扩大\n### 市民阶层壮大、通俗文学繁荣\n### 理学正统与个性解放并存\n### 重心：章回小说、传奇戏曲、晚明小品\n## [明代诗文流派](../中国文学史习题_分章刷题.html#d6)\n### 台阁体：宫廷文学、歌功颂德\n### 前后七子：文必秦汉、诗必盛唐\n### 唐宋派：唐宋散文、真情实感\n### 归有光：项脊轩志、家庭琐事、以小见大\n### 公安派：独抒性灵、不拘格套\n### 竟陵派：幽深孤峭、审美冷峭\n### 李贽：童心说、反对虚假道学\n## [三国演义](../中国文学史习题_分章刷题.html#d6)\n### 历史演义、三国故事与民间传说\n### 主题：忠义、名分、英雄、历史兴亡\n### 人物：曹操、刘备、关羽、诸葛亮、周瑜\n### 艺术：战争叙事、人物类型化与个性化结合\n### 曹操：奸雄、政治家、军事家、文学家\n## [水浒传](../中国文学史习题_分章刷题.html#d6)\n### 主题：官逼民反、忠义、招安矛盾\n### 人物：鲁智深、林冲、武松、宋江、李逵、吴用\n### 艺术：白话叙事、行动塑造、人物群像\n### 地位：英雄传奇和章回小说高峰\n## [西游记](../中国文学史习题_分章刷题.html#d6)\n### 主题：取经理想、反抗精神、个人成长、社会讽刺\n### 人物：孙悟空、猪八戒、唐僧、沙僧\n### 艺术：神魔想象、幽默讽刺、寓庄于谐\n## [金瓶梅](../中国文学史习题_分章刷题.html#d6)\n### 世情小说、家庭日常、市民社会\n### 人物：西门庆、潘金莲、李瓶儿、吴月娘\n### 艺术：细密写实、人物复杂、语言口语化\n### 地位：由英雄神魔转向世情人生\n## [汤显祖与牡丹亭](../中国文学史习题_分章刷题.html#d6)\n### 临川四梦：牡丹亭、紫钗记、南柯记、邯郸记\n### 主题：情至、情理冲突、女性主体\n### 人物：杜丽娘、柳梦梅、春香\n### 艺术：梦境现实交织、浪漫主义、曲辞优美\n## [清代文学概况](../中国文学史习题_分章刷题.html#d7)\n### 遗民之思、考据学术、专制文化和市民世情\n### 小说、戏曲、诗词、批评集大成\n## [清初诗文词](../中国文学史习题_分章刷题.html#d7)\n### 顾炎武、黄宗羲、王夫之：遗民精神、现实关怀\n### 吴伟业：梅村体、历史兴亡、个人身世\n### 纳兰性德：清丽哀婉、爱情、身世、边塞\n### 浙西词派：醇雅、姜夔传统\n### 常州词派：比兴寄托、词史意识\n## [聊斋志异](../中国文学史习题_分章刷题.html#d7)\n### 作者：蒲松龄\n### 形式：文言短篇、志怪写人\n### 主题：科举、官场、婚姻、女性、狐鬼人情\n### 艺术：幻化现实、情节曲折、语言传神\n## [儒林外史](../中国文学史习题_分章刷题.html#d7)\n### 作者：吴敬梓\n### 主题：科举批判、士人异化、功名讽刺\n### 人物：范进、严监生、周进、匡超人、杜少卿\n### 艺术：讽刺群像、冷峻含蓄、悲悯底色\n## [红楼梦](../中国文学史习题_分章刷题.html#d7)\n### 作者：曹雪芹\n### 主题：宝黛爱情、女性悲剧、家族衰亡、社会批判\n### 人物：贾宝玉、林黛玉、薛宝钗、王熙凤、晴雯\n### 艺术：网状结构、多重视角、人物复杂、日常生活细密\n### 地位：中国古代长篇小说艺术高峰\n## [清代戏曲](../中国文学史习题_分章刷题.html#d7)\n### 洪昇长生殿：爱情、政治、历史兴亡\n### 孔尚任桃花扇：南明兴亡、文人气节、爱情与历史\n### 李渔：闲情偶寄、戏曲结构、舞台艺术\n## [近代文学转型](../中国文学史习题_分章刷题.html#d8)\n### 背景：西学东渐、民族危机、报刊传播、文化转型\n### 龚自珍：己亥杂诗、社会批判、变革意识\n### 黄遵宪：诗界革命、我手写我口、表现新知\n### 梁启超：新文体、思想启蒙、国民塑造\n### 小说：政治小说、谴责小说、社会小说\n### 文体：古典诗文向白话小说、报刊文学、现代戏剧转型\n## 文学史贯通\n### 小说：志怪—传奇—话本—章回—世情—近代社会小说\n### 戏曲：南戏—杂剧—传奇—近代戏曲改良\n### 主体：士大夫—文人—市民—女性—现代知识者\n### 传统：现实关怀、个性解放、历史意识、雅俗互动", "nodes": 80}]};
+(function(){
+  var svg = document.getElementById('mmSvg');
+  var nav = document.getElementById('eraNav');
+  var quiz = document.getElementById('quizLink');
+  var eraTitle = document.getElementById('eraTitle');
+  var nodeCnt = document.getElementById('nodeCnt');
+  var T = new markmap.Transformer();
+  var color = d3.scaleOrdinal(BOOK.palette);
+  var mm = null, cur = 0, depth = 2;
+
+  function foldTo(root, d){
+    (function walk(n, lv){
+      if(n.children && n.children.length){
+        n.payload = n.payload || {};
+        n.payload.fold = (lv >= d) ? 1 : 0;
+        n.children.forEach(function(c){ walk(c, lv+1); });
+      }
+    })(root, 0);
+  }
+  function show(i, push){
+    cur = (i + BOOK.eras.length) % BOOK.eras.length;
+    var era = BOOK.eras[cur];
+    var root = T.transform(era.md).root;
+    foldTo(root, depth);
+    var opts = {duration:220, maxWidth:320, spacingVertical:12, spacingHorizontal:110, paddingX:16, color:color, initialExpandLevel:99};
+    if(!mm){ mm = markmap.Markmap.create(svg, opts, root); }
+    else { mm.setOptions(opts); mm.setData(root); }
+    setTimeout(function(){ try{ mm.fit(); }catch(e){} }, 80);
+    eraTitle.textContent = era.name;
+    nodeCnt.textContent = era.nodes + ' 个节点';
+    quiz.href = era.link;
+    Array.prototype.forEach.call(nav.querySelectorAll('button[data-i]'), function(b){
+      b.classList.toggle('on', parseInt(b.getAttribute('data-i'),10) === cur);
+    });
+    if(push !== false){ try{ history.replaceState(null,'','#e='+cur); }catch(e){} }
+    document.title = era.name + ' · ' + BOOK.title + ' 思维导图';
+  }
+
+  /* 侧栏 */
+  var head = nav.querySelector('.nav-head');
+  BOOK.eras.forEach(function(e, i){
+    var b = document.createElement('button');
+    b.setAttribute('data-i', i);
+    b.innerHTML = '<span class="idx">' + (i+1) + '</span><span class="nm">' + e.name + '</span><span class="cnt">' + e.nodes + '</span>';
+    b.onclick = function(){ show(i); if(window.innerWidth<=760) nav.classList.remove('show'); };
+    nav.appendChild(b);
+  });
+  if(BOOK.footnote){
+    var fn = document.createElement('div');
+    fn.className = 'footnote';
+    fn.innerHTML = BOOK.footnote;
+    nav.appendChild(fn);
+  }
+  var hm = document.getElementById('hamburger');
+  hm.onclick = function(){ nav.classList.toggle('show'); };
+
+  /* 层级按钮 */
+  document.getElementById('depthTool').addEventListener('click', function(ev){
+    var b = ev.target.closest('button'); if(!b) return;
+    depth = parseInt(b.getAttribute('data-d'),10) || 2;
+    Array.prototype.forEach.call(this.querySelectorAll('button'), function(x){ x.classList.toggle('on', x===b); });
+    show(cur);
+  });
+  document.getElementById('fitBtn').onclick = function(){ try{ mm.fit(); }catch(e){} };
+
+  /* 键盘切换 */
+  document.addEventListener('keydown', function(ev){
+    if(ev.target && /INPUT|TEXTAREA/.test(ev.target.tagName)) return;
+    if(ev.key === 'ArrowRight') show(cur+1);
+    else if(ev.key === 'ArrowLeft') show(cur-1);
+  });
+
+  /* 初始 hash */
+  var m = (location.hash||'').match(/e=(\d+)/);
+  show(m ? Math.min(parseInt(m[1],10), BOOK.eras.length-1) : 0, false);
+})();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

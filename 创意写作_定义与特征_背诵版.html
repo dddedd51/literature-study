@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>创意写作的定义与特征｜讲义整合背诵版</title>
+<style>
+:root{
+  --bg:#faf8f4; --card:#ffffff; --ink:#2c2a26; --ink-soft:#5f5b53;
+  --line:#e6e0d4; --accent:#8a5a2b; --accent-soft:#f4ece0; --mark:#fdf3e0;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:0 16px 80px;
+  background:var(--bg); color:var(--ink);
+  font-family:"LXGW WenKai","LXGW WenKai Lite","霞鹜文楷",-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+  font-size:var(--fs,17px); line-height:1.9;
+}
+.wrap{max-width:860px;margin:0 auto}
+.toolbar{
+  position:sticky; top:0; z-index:20; margin:0 -16px 24px; padding:10px 16px;
+  background:rgba(250,248,244,.94); border-bottom:1px solid var(--line);
+  display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+  backdrop-filter:saturate(160%) blur(6px);
+}
+.toolbar .title{font-weight:600;margin-right:auto;color:var(--accent);font-size:.95em}
+.btn{
+  border:1px solid var(--line); background:var(--card); color:var(--ink);
+  border-radius:8px; padding:4px 12px; cursor:pointer; font:inherit; font-size:.9em;
+}
+.btn:hover{border-color:var(--accent); color:var(--accent)}
+h1{font-size:1.7em; text-align:center; margin:32px 0 8px; letter-spacing:.02em}
+h2{
+  font-size:1.3em; margin:44px 0 14px; padding:10px 14px;
+  background:var(--accent-soft); border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+}
+h3{font-size:1.13em; margin:28px 0 10px; color:var(--accent)}
+h4{font-size:1.02em; margin:20px 0 8px; color:var(--ink)}
+p{margin:.7em 0}
+blockquote{
+  margin:14px 0; padding:12px 16px; background:var(--mark);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--ink-soft);
+}
+blockquote p{margin:.3em 0}
+ul,ol{padding-left:1.35em}
+li{margin:.35em 0}
+strong{color:var(--accent); font-weight:600}
+table{border-collapse:collapse; width:100%; margin:16px 0; font-size:.94em; table-layout:fixed}
+table th:nth-child(1),table td:nth-child(1){width:80px}
+th,td{border:1px solid var(--line); padding:8px 11px; text-align:left; vertical-align:top; word-break:break-word}
+th{background:var(--accent-soft); font-weight:600}
+tr:nth-child(even) td{background:#fdfcfa}
+code{background:var(--mark); padding:1px 5px; border-radius:4px; font-size:.9em}
+hr{border:none;border-top:1px dashed var(--line);margin:32px 0}
+.toc{
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:14px 20px; margin:24px 0 8px;
+}
+.toc .toc-title{font-weight:600;color:var(--accent);margin-bottom:6px}
+.toc ul{list-style:none;padding-left:.4em;margin:.2em 0}
+.toc ul ul{padding-left:1.1em}
+.toc a{color:var(--ink-soft);text-decoration:none}
+.toc a:hover{color:var(--accent);text-decoration:underline}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 22px;margin:18px 0}
+@media print{.toolbar{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a class="btn back" href="index.html" style="text-decoration:none;">← 返回导航</a>
+  <span class="title">创意写作的定义与特征 · 背诵版</span>
+  <button class="btn" id="zo">A+</button>
+  <button class="btn" id="zi">A-</button>
+  <button class="btn" id="tw">目录</button>
+  <button class="btn" onclick="window.print()">打印 / 存 PDF</button>
+</div>
+<div class="wrap">
+<div class="toc" id="tocbox"><div class="toc-title">目录</div><div class="toc">
+<ul>
+<li><a href="#_1">创意写作的定义与特征｜讲义整合背诵版</a><ul>
+<li><a href="#0-30">0. 答题速记卡（考前 30 秒）</a></li>
+<li><a href="#_2">一、先做概念辨析：什么不算创意写作</a><ul>
+<li><a href="#1">1. 译名之争：创意写作 / 创造性写作 / 文学创作</a></li>
+<li><a href="#2">2. 与古人无关（高频陷阱）</a></li>
+<li><a href="#3">3. 学科起点</a></li>
+<li><a href="#4">4. 学科兴起背景（讲义补充，答「为什么会产生」）</a></li>
+</ul>
+</li>
+<li><a href="#_3">二、定义的几种代表性表述（可分层引用，显功底）</a></li>
+<li><a href="#_4">三、陈晓辉定义展开：四个要点（核心背诵段）</a><ul>
+<li><a href="#_5">第一，创造性</a></li>
+<li><a href="#_6">第二，思维训练（上游）</a></li>
+<li><a href="#_7">第三，分体写作（下游／外化）</a></li>
+<li><a href="#_8">第四，批评实践</a></li>
+</ul>
+</li>
+<li><a href="#_9">四、创意写作的六项特征（答题主干，逐条展开）</a><ul>
+<li><a href="#1_1">1. 实践性（根砥 / 根本）</a></li>
+<li><a href="#2_1">2. 创意性（命脉）</a></li>
+<li><a href="#3_1">3. 商业性</a></li>
+<li><a href="#4_1">4. 理论性</a></li>
+<li><a href="#5">5. 跨学科性</a></li>
+<li><a href="#6">6. 开放性 / 生长性</a></li>
+</ul>
+</li>
+<li><a href="#_10">五、中国化创意写作的版图（三板块）</a><ul>
+<li><a href="#1-1">图1-1 中国化创意写作的版图（按讲义图结构还原）</a></li>
+</ul>
+</li>
+<li><a href="#_11">六、学科边界：与四者的关系（论述题高频）</a><ul>
+<li><a href="#1_2">1. 与文艺学</a></li>
+<li><a href="#2_2">2. 与中国现当代文学（姊妹学科）</a></li>
+<li><a href="#3_2">3. 与传统写作学（最常考）</a></li>
+<li><a href="#4_2">4. 与现实的关系</a></li>
+</ul>
+</li>
+<li><a href="#_12">七、讲义补充：答题模板与必背素材</a><ul>
+<li><a href="#1_3">1. 「工坊制教学」是什么？优缺点？</a></li>
+<li><a href="#2_3">2. 「驻校作家制度」是什么？</a></li>
+<li><a href="#3-2021-20">3. 「对创意写作中的思维规律的认识」答题要点（2021 年真题，20 分）</a></li>
+<li><a href="#4_3">4. 论述题常用「名言」（答题加分点）</a></li>
+<li><a href="#5_1">5. 当前创意写作面临的困难（讲义）</a></li>
+</ul>
+</li>
+<li><a href="#647-20202025">八、真题清单（647 创写理论，2020—2025）</a></li>
+<li><a href="#ai">九、延伸：AI 时代与非虚构（讲义三，与定义特征呼应）</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h1 id="_1">创意写作的定义与特征｜讲义整合背诵版</h1>
+<blockquote>
+<p>材料来源：①陈晓辉《创意写作基本理论》第一章（docx，主源）②菜菜创写《创写理论（一）》③《创写理论（二）2025》④《创写理论（三）ai、非虚构25》</p>
+</blockquote>
+<hr />
+<h2 id="0-30">0. 答题速记卡（考前 30 秒）</h2>
+<p><strong>一句话定义</strong>：创意写作是<strong>一切创造性思维训练、分体写作和批评实践的总称</strong>。（陈晓辉）</p>
+<p><strong>六字特征口诀</strong>：<strong>实（实践性）· 创（创意性）· 商（商业性）· 理（理论性）· 跨（跨学科性）· 开（开放性/生长性）</strong></p>
+<p><strong>定义展开四要点</strong>：创造性 → 思维训练（上游）→ 分体写作（下游）→ 批评实践</p>
+<hr />
+<h2 id="_2">一、先做概念辨析：什么不算创意写作</h2>
+<h3 id="1">1. 译名之争：创意写作 / 创造性写作 / 文学创作</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>实质</th>
+<th>概括对象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创造</td>
+<td>有意识地对世界进行探索的劳动行为，重具体行动与动态过程</td>
+<td>创作活动的<strong>中下游</strong></td>
+</tr>
+<tr>
+<td>创意</td>
+<td>创造（创新）意识的简称；对现实存在物的理解与认知所衍生的<strong>新的抽象思维和行为潜能</strong>，重开发与训练</td>
+<td>创作活动的<strong>上游</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>分歧实质：「重实践」与「重思维」两种思路之争。</li>
+<li>作者主张译作「<strong>创意写作</strong>」：写作教育中既重实操环节，<strong>更重创意思维训练与创意潜能激发，后者才是重中之重</strong>。</li>
+<li>把 Creative Writing 等同于「文学创作」，一是因为国外高校创意写作专业多以纯文学创作为主，二是因为引入初期学界尚在探索。</li>
+</ul>
+<h3 id="2">2. 与古人无关（高频陷阱）</h3>
+<ul>
+<li>古代文学创作、任何艺术创作中都包含创意成分，无人否认。</li>
+<li>但「<strong>写作中蕴含创意</strong>」≠「<strong>创意写作</strong>」。创意写作是不可拆分讨论的学科概念，源自西方，是特殊的、具体的、成熟的学科。</li>
+<li>不能把古籍中「创意」二字并列出现当作学科诞生，也不能以「艺术创作中有创意」否定该学科成立。</li>
+</ul>
+<h3 id="3">3. 学科起点</h3>
+<ul>
+<li>仅指 <strong>19 世纪出现在西方</strong>的概念，最早由美国作家<strong>爱默生（Ralph Emerson）于 1837 年 8 月 31 日</strong>在麻省剑桥城美国大学生联谊会上以《美国学者》为题的演讲中，作为<strong>与学术研究相对</strong>的概念明确提出。</li>
+<li>现已形成本、硕、博完整体系。据大卫·迈尔斯统计，截至 2006 年，仅美国每年授出近 1000 个创意写作学位、创建超过 300 个创意写作科系。</li>
+</ul>
+<h3 id="4">4. 学科兴起背景（讲义补充，答「为什么会产生」）</h3>
+<ul>
+<li><strong>中文系自身改革的需要</strong>：传统中文系重理论批评、轻创作实践，培养了大批批评者和研究者；传统观念「<strong>中文系不培养作家</strong>」。</li>
+<li><strong>文化创意产业发展的需要</strong>：文创产业已发展成占比第一的支柱产业，市场对具有创意能力和产业思维的高级写作人才需求增加。</li>
+<li><strong>新媒体发展的需要</strong>：互联网媒体写作时代转型。</li>
+<li><strong>美国经验的示范</strong>：有效的创造性写作学训练可以培养作家、繁荣创作（普利策、白先勇、严歌苓）。</li>
+</ul>
+<hr />
+<h2 id="_3">二、定义的几种代表性表述（可分层引用，显功底）</h2>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>定义要点</th>
+<th>侧重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>《牛津英语词典》</td>
+<td>特指文学与艺术，指作家、艺术家的创造才能与想象力；与批评、学术、新闻、职业、技术性写作相区别，而表现在文学或艺术产品中</td>
+<td>想象力＝个人开创性思维＋写作能力的渗入运用；<strong>思维创新优先于具体实践</strong></td>
+</tr>
+<tr>
+<td>汪正龙</td>
+<td>原指英美大学语文系开设的与文学创作有关的写作课程及其写作形式；真正的创意写作是<strong>挑战写作自身、挑战作者自身经验极限、挑战语言表达极限</strong>的写作</td>
+<td>①含文学教育教学课程改革特征；②不以撰写经典、培养精英作家为核心，而以<strong>探索创作边界、寻求内心真实的自我表达</strong>为目标，从精英主义桎梏中解放出来</td>
+</tr>
+<tr>
+<td>葛红兵</td>
+<td>以写作为样式、以作品为最终成果的一切<strong>创作性写作活动</strong>；历史地看，最初仅指文学写作，后泛指文学写作与一切面向现代文化创意产业、适应文学民主化、文化多元化、传媒技术更新的写作形式</td>
+<td>有意把概念<strong>宽泛化</strong>，以含括文学产业化诉求，拓展学科空间</td>
+</tr>
+<tr>
+<td><strong>陈晓辉（主用）</strong></td>
+<td><strong>创意写作是一切创造性思维训练、分体写作和批评实践的总称</strong></td>
+<td>兼顾西方传统与中国现实，四要点展开</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>作者评价前三种：只代表创意写作发生过程中的个别意见，既未完全延续西方传统，又未兼顾中国文艺界现实与发展需求，未能厘清作为学科的创意写作概念。</p>
+</blockquote>
+<hr />
+<h2 id="_4">三、陈晓辉定义展开：四个要点（核心背诵段）</h2>
+<h3 id="_5">第一，创造性</h3>
+<ul>
+<li>「内容为王，创意制胜」。创造性（creativity）是创意写作<strong>最突出的品性</strong>。</li>
+<li><strong>破除两种曲解</strong>：①把创造性当成上帝／伟人的专利 → 扼杀了创造性最广泛的群众基础；②把「无中生有」的原创性（originality）当成创造的根本 → 使创造变成无法企及、缺乏判断标准的幻想。</li>
+<li><strong>伯格森论断</strong>：<strong>创造性是人的一种生命本能</strong>，生命本是创造性的。人人具有创造性；<strong>创造性并非原创性</strong>，其本质是「<strong>有中生有</strong>」的智慧与能力——普通人立足现有基础、为解决实际问题而推陈出新。</li>
+<li>落地路径：让创造性回归普通人的日常生活；培养创造意念、提升专注力、累积整合既有知识的生命智慧，兑现投射于生活的创造愿望。</li>
+</ul>
+<h3 id="_6">第二，思维训练（上游）</h3>
+<ul>
+<li>创意源自人的思维意识。创意写作<strong>不仅重下游的写作训练，更重上游的思维训练</strong>；只有具备创意思维，才可能写出有创造力的作品。</li>
+<li>创意思维训练是教学的<strong>第一要务</strong>，是践履创造性、体现上游训练特质的核心环节。</li>
+<li>内容包括：克服写作障碍、深挖自我潜力、思维意识培养（把创新当成思考重点）、思维习惯训练（创新成为惯例）、创造性思维培养方法。</li>
+<li>要求融入生理学、心理学、教育学等前沿知识，<strong>跨学科综合养成</strong>。</li>
+<li>常见训练法：<strong>自由联想法、思维导图法、逆向思考法、发散裂变法、类比创新法</strong>。（讲义版另列：头脑风暴法、思维导图法、逆向思维法、强制关联法）</li>
+</ul>
+<h3 id="_7">第三，分体写作（下游／外化）</h3>
+<blockquote>
+<p>思维训练储备内在动力，分体写作是内在动力的<strong>文字外化</strong>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>路径</th>
+<th>定位</th>
+<th>文类</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>审美性写作</strong>（艺术创作）</td>
+<td>作为艺术的文学 / 作为商品的文学</td>
+<td>小说、诗歌、剧本、散文</td>
+<td>前者致力文学精品，重思想深刻性与技法先锋性；后者致力文化产品生产，兼顾品质与商业效益。二者都需彰显<strong>文学性与可读性</strong></td>
+</tr>
+<tr>
+<td><strong>生产性写作</strong>（策划脚本）</td>
+<td>阶段性成果，服务于进一步的艺术创作</td>
+<td>策划与文案写作、影视剧分镜头脚本、VR 场景搭建、游戏故事情节设计</td>
+<td>不是创作的终极结果（如分镜头剧本服务于影像的可排可演性，而非作为可读性文本存在）</td>
+</tr>
+<tr>
+<td><strong>工具性写作</strong>（实用写作）</td>
+<td>解决现实工作中的具体事务</td>
+<td>党政公文、事务文书、新闻文体、财经文书、法律文书</td>
+<td><strong>同样存在思维技法与审美追求，难度不亚于前两者，却常被漠视与曲解</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>各校侧重不同：新西兰惠灵顿维多利亚大学、复旦大学以纯文学创作训练为主；<strong>西北大学三类并重，全面培养，效果良好</strong>（答本校题必写这句）。</li>
+</ul>
+<h3 id="_8">第四，批评实践</h3>
+<ul>
+<li>因主要栖身高校，既要寻求合法学科身份又要承担教学，故赓续文学研究的知识性传统，形成自身的批评实践。</li>
+<li>以创意写作基本理论、问题探讨、基于创作论的文学批评、特别是<strong>教育教学法</strong>讨论为核心，三个题域（互文同存）：</li>
+<li>以创意写作发展史和学科体系建构为核心的<strong>史论研究</strong>；</li>
+<li>以「<strong>工坊制</strong>」为核心的教学观念、技巧与方法探索；</li>
+<li>立足创作论和作品鉴赏为核心的<strong>创意写作文学批评</strong>。</li>
+</ul>
+<hr />
+<h2 id="_9">四、创意写作的六项特征（答题主干，逐条展开）</h2>
+<h3 id="1_1">1. 实践性（根砥 / 根本）</h3>
+<ul>
+<li><strong>源起语境</strong>：麦克格尔《创意写作的兴起》指出，美国创意写作真正兴起于二战后——老兵失去家庭、家园、肉体受创，既要表达人生际遇，又要宣泄情绪、疗治内心创伤，<strong>回忆录、传记、家族史等非虚构写作</strong>承担了这一重任。可见创意写作是在<strong>功利性、现实化的具体目的</strong>中诞生的。</li>
+<li><strong>内涵</strong>：文艺创作、自我表达、情感宣泄、叙事疗愈……一直在解决人们日常生活中的实际问题；即便不为解决实际问题、只想体验创作过程、圆成创作梦想，也必须通过持续的书写活动才能实现。</li>
+<li><strong>要求</strong>：把重心放在不同文体、不同类型、不同媒介的写作实践上，培养实操能力。</li>
+<li><strong>最能彰显实践性的文类</strong>：非虚构写作——日记、书信、传记、家族史等。</li>
+</ul>
+<h3 id="2_1">2. 创意性（命脉）</h3>
+<ul>
+<li>指<strong>上游训练</strong>，即思维的开发与拓展。任何创作实践都是创意思维指导下的产物；创意激发为写作提供新的<strong>创作方式、写作角度、运行原则和表达格调</strong>，以保证创作的独特性和深刻性。</li>
+<li>创意性是创意写作<strong>有别于传统写作学的主要表征之一</strong>。</li>
+<li><strong>史例</strong>：20 世纪早期纽约与巴黎的文学「咖啡沙龙」，通过随意讨论激活作者思维与观念，促成创造性创作。</li>
+</ul>
+<h3 id="3_1">3. 商业性</h3>
+<ul>
+<li>发展中后期，学科成熟并培养出大量专业作家（聂华苓、石黑一雄、哈金等），作品成为畅销书或经典并被改编为电影、电视剧、游戏（严歌苓《少女小渔》《梅兰芳》《金陵十三钗》）；甚至以畅销文艺作品为基础建构文娱场所与文化行业（迪士尼乐园、好莱坞电影），实现<strong>创意写作与文化产业（经济）的联姻</strong>。</li>
+<li>大量写作活动本身即为商业服务：商业活动策划文案、影视剧与舞台剧脚本等。</li>
+<li><strong>对创作者的要求</strong>：关注市场运行原则、读者群体特征、受众阅读与欣赏心理，在保持个体写作特性的前提下熟练运用文学成规，获得更多读者认同与市场份额。</li>
+</ul>
+<h3 id="4_1">4. 理论性</h3>
+<ul>
+<li>中西方共同缺陷：理论总结与深化研究薄弱。但创意写作自诞生起就伴随理论性追问。</li>
+<li><strong>本尼特与罗伊尔</strong>：创意写作 20 世纪中叶在美国的出现及其体制性扩张，是伴随着「<strong>什么是文学</strong>」「<strong>什么是文学性</strong>」成为文学本身及文学批评与理论中心议题的过程而产生的——它本来就是<strong>文学理论主动思考与探索的结果</strong>。</li>
+<li><strong>现实必要性</strong>：寄身高校、受管理体制与考评机制制约，理论研究是学科存在的必备条件与专业教师安身立命之本；且理论深化能反哺创作实践。</li>
+</ul>
+<h3 id="5">5. 跨学科性</h3>
+<ul>
+<li>思维激发本身涉及精神分析、脑科学、神经学；三类分体写作要求样式纷繁的跨学科知识；课程设置涉及历史学、生理学、经济学、文学、哲学、社会学、计算机科学等姊妹学科。</li>
+<li><strong>AI 技术成熟与自媒体写作勃兴</strong>后，任何写作都需跨越媒介、整合多学科知识，<strong>数字文学</strong>的迅猛发展即为明证。</li>
+</ul>
+<h3 id="6">6. 开放性 / 生长性</h3>
+<ul>
+<li>虽有核心对象，但对象本身随社会现实变化而变化；技术发展与新的理论成果都会催生新的创作形式与成果。</li>
+<li><strong>传统写作学视域</strong>：文学＝经典作品或以审美为表征的文艺作品。</li>
+<li><strong>创意写作视域</strong>：除纯文学作品外，<strong>微信公众号写作、策划文案写作、游戏脚本创作也都是文学</strong>。</li>
+<li><strong>例证</strong>：网络游戏对影视剧剧本创作的影响、电子技术对影视剧的影响、VR 技术对游戏脚本创作与故事架构的影响，都在解构或修改原有创作图式。要求紧盯时代变化，以不断修正的创意写作服务社会经济文化需求。</li>
+</ul>
+<hr />
+<h2 id="_10">五、中国化创意写作的版图（三板块）</h2>
+<table>
+<thead>
+<tr>
+<th>板块</th>
+<th>构成</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>知识探索</strong></td>
+<td>创意写作理论、创意写作简史、创意写作教学法、文学鉴赏与批评</td>
+<td>理论厘清核心概念并研究具体问题（如非虚构写作的「真实性」悖论、创意写作中的「体验经济」）；简史梳理西方脉络并探索中国道路；教学法探索工坊制内部组织与思维训练方法</td>
+</tr>
+<tr>
+<td><strong>文体写作</strong></td>
+<td>审美性 / 生产性 / 工具性三条路径</td>
+<td>见上文「分体写作」表</td>
+</tr>
+<tr>
+<td><strong>社会实践</strong></td>
+<td>商业性实践、教改性实践、公益性实践</td>
+<td>商业性：创意街区、创意阶层、文化产业规划、文创产品深加工；教改性：教师中心→学生中心、「讲授式」→「互构式」；公益性：写作技能培训、公共图书馆与公益讲座、线上线下公共社区、文学进社区／工厂／田间，帮助群众写回忆录、家族史、口述史，开发文学的<strong>社会治愈与自我疗治</strong>功能</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-1">图1-1 中国化创意写作的版图（按讲义图结构还原）</h3>
+<p><svg viewBox="0 0 680 462" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>中国化创意写作的版图</title>
+<rect x="272" y="16" width="136" height="34" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/>
+<text x="298" y="33" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="500" fill="#0C447C">创</text>
+<text x="326" y="33" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="500" fill="#0C447C">意</text>
+<text x="354" y="33" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="500" fill="#0C447C">写</text>
+<text x="382" y="33" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="500" fill="#0C447C">作</text>
+<path d="M340 50 L340 66 L130 66 L130 76" fill="none" stroke="#AFA9EC" stroke-width="0.6"/>
+<path d="M340 50 L340 76" fill="none" stroke="#AFA9EC" stroke-width="0.6"/>
+<path d="M340 50 L340 66 L550 66 L550 76" fill="none" stroke="#AFA9EC" stroke-width="0.6"/>
+<rect x="25" y="76" width="190" height="292" rx="8" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.8"/>
+<rect x="25" y="76" width="190" height="30" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="0.8"/>
+<rect x="25" y="98" width="190" height="8" fill="#F7C1C1"/>
+<text x="120.0" y="91" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#791F1F">知识探索</text>
+<text x="41" y="124" dominant-baseline="central" font-size="13" font-weight="500" fill="#791F1F">创意写作理论</text>
+<circle cx="47" cy="145" r="1.6" fill="#A32D2D"/>
+<text x="55" y="145" dominant-baseline="central" font-size="11" fill="#444441">核心概念界定</text>
+<circle cx="47" cy="162" r="1.6" fill="#A32D2D"/>
+<text x="55" y="162" dominant-baseline="central" font-size="11" fill="#444441">具体理论问题</text>
+<text x="41" y="189" dominant-baseline="central" font-size="13" font-weight="500" fill="#791F1F">创意写作简史</text>
+<circle cx="47" cy="210" r="1.6" fill="#A32D2D"/>
+<text x="55" y="210" dominant-baseline="central" font-size="11" fill="#444441">创写西方发展史</text>
+<circle cx="47" cy="227" r="1.6" fill="#A32D2D"/>
+<text x="55" y="227" dominant-baseline="central" font-size="11" fill="#444441">创写中国发展史</text>
+<text x="41" y="254" dominant-baseline="central" font-size="13" font-weight="500" fill="#791F1F">创意写作教学法</text>
+<circle cx="47" cy="275" r="1.6" fill="#A32D2D"/>
+<text x="55" y="275" dominant-baseline="central" font-size="11" fill="#444441">思维训练</text>
+<circle cx="47" cy="292" r="1.6" fill="#A32D2D"/>
+<text x="55" y="292" dominant-baseline="central" font-size="11" fill="#444441">工坊制教学</text>
+<text x="41" y="319" dominant-baseline="central" font-size="13" font-weight="500" fill="#791F1F">鉴赏与批评</text>
+<circle cx="47" cy="340" r="1.6" fill="#A32D2D"/>
+<text x="55" y="340" dominant-baseline="central" font-size="11" fill="#444441">基于创作论的批评</text>
+<circle cx="47" cy="357" r="1.6" fill="#A32D2D"/>
+<text x="55" y="357" dominant-baseline="central" font-size="11" fill="#444441">基于创作的鉴赏</text>
+<rect x="245" y="76" width="190" height="292" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.8"/>
+<rect x="245" y="76" width="190" height="30" rx="8" fill="#FAC775" stroke="#BA7517" stroke-width="0.8"/>
+<rect x="245" y="98" width="190" height="8" fill="#FAC775"/>
+<text x="340.0" y="91" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">文体写作</text>
+<text x="261" y="124" dominant-baseline="central" font-size="13" font-weight="500" fill="#633806">审美性写作</text>
+<circle cx="267" cy="145" r="1.6" fill="#BA7517"/>
+<text x="275" y="145" dominant-baseline="central" font-size="11" fill="#444441">作为艺术的文学</text>
+<circle cx="267" cy="162" r="1.6" fill="#BA7517"/>
+<text x="275" y="162" dominant-baseline="central" font-size="11" fill="#444441">作为商品的文学</text>
+<text x="261" y="189" dominant-baseline="central" font-size="13" font-weight="500" fill="#633806">生产性写作</text>
+<circle cx="267" cy="210" r="1.6" fill="#BA7517"/>
+<text x="275" y="210" dominant-baseline="central" font-size="11" fill="#444441">策划与文案（游戏、VR）</text>
+<circle cx="267" cy="227" r="1.6" fill="#BA7517"/>
+<text x="275" y="227" dominant-baseline="central" font-size="11" fill="#444441">分镜头（角色）</text>
+<circle cx="267" cy="244" r="1.6" fill="#BA7517"/>
+<text x="275" y="244" dominant-baseline="central" font-size="11" fill="#444441">脚本（舞台、影视剧）</text>
+<text x="261" y="271" dominant-baseline="central" font-size="13" font-weight="500" fill="#633806">工具性写作</text>
+<circle cx="267" cy="292" r="1.6" fill="#BA7517"/>
+<text x="275" y="292" dominant-baseline="central" font-size="11" fill="#444441">党政公文</text>
+<circle cx="267" cy="309" r="1.6" fill="#BA7517"/>
+<text x="275" y="309" dominant-baseline="central" font-size="11" fill="#444441">事务文书</text>
+<circle cx="267" cy="326" r="1.6" fill="#BA7517"/>
+<text x="275" y="326" dominant-baseline="central" font-size="11" fill="#444441">日常文书</text>
+<rect x="465" y="76" width="190" height="292" rx="8" fill="#EAF3DE" stroke="#639922" stroke-width="0.8"/>
+<rect x="465" y="76" width="190" height="30" rx="8" fill="#C0DD97" stroke="#639922" stroke-width="0.8"/>
+<rect x="465" y="98" width="190" height="8" fill="#C0DD97"/>
+<text x="560.0" y="91" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#27500A">社会实践</text>
+<text x="481" y="124" dominant-baseline="central" font-size="13" font-weight="500" fill="#27500A">商业性实践</text>
+<circle cx="487" cy="145" r="1.6" fill="#639922"/>
+<text x="495" y="145" dominant-baseline="central" font-size="11" fill="#444441">文旅产品</text>
+<circle cx="487" cy="162" r="1.6" fill="#639922"/>
+<text x="495" y="162" dominant-baseline="central" font-size="11" fill="#444441">影视剧脚本</text>
+<circle cx="487" cy="179" r="1.6" fill="#639922"/>
+<text x="495" y="179" dominant-baseline="central" font-size="11" fill="#444441">文化产业规划</text>
+<text x="481" y="206" dominant-baseline="central" font-size="13" font-weight="500" fill="#27500A">教改性实践</text>
+<circle cx="487" cy="227" r="1.6" fill="#639922"/>
+<text x="495" y="227" dominant-baseline="central" font-size="11" fill="#444441">创意街区设计</text>
+<circle cx="487" cy="244" r="1.6" fill="#639922"/>
+<text x="495" y="244" dominant-baseline="central" font-size="11" fill="#444441">以教师／学生为中心</text>
+<circle cx="487" cy="261" r="1.6" fill="#639922"/>
+<text x="495" y="261" dominant-baseline="central" font-size="11" fill="#444441">讲授式／建构式</text>
+<text x="481" y="288" dominant-baseline="central" font-size="13" font-weight="500" fill="#27500A">公益性实践</text>
+<circle cx="487" cy="309" r="1.6" fill="#639922"/>
+<text x="495" y="309" dominant-baseline="central" font-size="11" fill="#444441">技能培训</text>
+<circle cx="487" cy="326" r="1.6" fill="#639922"/>
+<text x="495" y="326" dominant-baseline="central" font-size="11" fill="#444441">情感倾诉（反精神贫困）</text>
+<circle cx="487" cy="343" r="1.6" fill="#639922"/>
+<text x="495" y="343" dominant-baseline="central" font-size="11" fill="#444441">自我疗治</text>
+<circle cx="487" cy="360" r="1.6" fill="#639922"/>
+<text x="495" y="360" dominant-baseline="central" font-size="11" fill="#444441">图书馆</text>
+<circle cx="487" cy="377" r="1.6" fill="#639922"/>
+<text x="495" y="377" dominant-baseline="central" font-size="11" fill="#444441">文艺演出</text>
+<line x1="120" y1="368" x2="120" y2="394" stroke="#B4B2A9" stroke-width="0.6" stroke-dasharray="3 3"/>
+<line x1="340" y1="368" x2="340" y2="394" stroke="#B4B2A9" stroke-width="0.6" stroke-dasharray="3 3"/>
+<line x1="560" y1="368" x2="560" y2="394" stroke="#B4B2A9" stroke-width="0.6" stroke-dasharray="3 3"/>
+<rect x="25" y="398" width="630" height="44" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/>
+<text x="340" y="420" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="500" fill="#0C447C">研究、教学、创作、服务</text>
+</svg></p>
+<blockquote>
+<p>「版图」一词的用意：①暗含创作主体的主动性，展现学人积极探求学科疆域与边界的努力；②以中国化版图表明我国创意写作与西方的<strong>关联性与区分度</strong>。</p>
+</blockquote>
+<hr />
+<h2 id="_11">六、学科边界：与四者的关系（论述题高频）</h2>
+<h3 id="1_2">1. 与文艺学</h3>
+<ul>
+<li><strong>同</strong>：都高度关注社会文艺现象、重视理论研究。</li>
+<li><strong>异一，研究对象不同</strong>：文艺学以文学为对象，揭示文学基本规律，由文学理论、文学史、文学批评构成有机整体（艾布拉姆斯四要素：作家、作品、读者、世界）。创意写作则①奉行<strong>作者中心论</strong>，以<strong>创作论</strong>为核心；②非常重视<strong>教育教学法</strong>研究；③着力讨论创意写作与文化创意产业的关系、创意的产业化开发、管理与运营等商业性、经济性问题。</li>
+<li><strong>异二，发展阶段不同</strong>：文艺学古老而成熟；西方创意写作创生于 <strong>20 世纪 30 年代末的爱荷华大学</strong>，含近 20 个子类、本硕博层次，不过百十余年；国内自 <strong>2009 年复旦招收创意写作 MFA</strong> 起仅十余年，尚处追赶与深耕阶段。</li>
+</ul>
+<h3 id="2_2">2. 与中国现当代文学（姊妹学科）</h3>
+<ul>
+<li><strong>取向与侧重点不同</strong>：现当代文学研究重要作家作品经验、创作历史、思潮、现象与规律，侧重历史梳理与经典批评，以客观知识传授与学术能力培养为主。创意写作横跨心理学、教育学、创意学、脑科学，重在重建积极认知与反应模式、激发思维以促进艺术创作、强化写作实践能力。</li>
+<li><strong>关键命题</strong>：<strong>现当代文学研究结束的地方，恰是创意写作开始创作的地方</strong>——对创意写作者而言，鉴赏与批评的目的是建构自己的文学知识框架与创作指导原则，最终助益自己的创作实践。</li>
+<li><strong>核心理念不同</strong>：现当代文学专注普适性、人文性、精神性诉求的精英作家与经典批评；创意写作不仅关注作家，更为整个文化产业培养核心从业人才，重视文学集体化、程序化、模式化的艺术生产，也重视文学在文化创意、影视制作、出版发行、印刷复制、广告、演艺娱乐、文化会展、数字内容和动漫等<strong>所有文化产业中的创造性作用</strong>（兼具商业前景与国家意识形态背景）。</li>
+<li><strong>对照句</strong>：现当代文学重在<strong>文学批评</strong>，创意写作重在<strong>艺术创意与文学创作</strong>；现当代文学重<strong>经典性</strong>，创意写作在经典性之外还重<strong>商业性与社会性价值</strong>。</li>
+</ul>
+<h3 id="3_2">3. 与传统写作学（最常考）</h3>
+<p><strong>传统写作学四期</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>时期</th>
+<th>核心框架</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>继承期</td>
+<td>文章「八大块」：题材、主题、结构、表达、语言、修改、文风、绪论</td>
+<td>只研究静态的文章构成（成型文章），不涉及动态写作过程与心理、思维规律</td>
+</tr>
+<tr>
+<td>发展期</td>
+<td>写作总论＋写作过程论（准备—行文—完善）</td>
+<td>走向科学化；由文学写作转向实用／应用写作；由静态向动态转变；与哲学、社会学、思维科学、心理学渗透</td>
+</tr>
+<tr>
+<td>综合期</td>
+<td>本质论—过程论—技巧论—文体写作论；采集、运思、表述、修改四环节</td>
+<td>走「现代科学宏观综合之路」，考察主体素养、客体存在、读者心理、文体规范四因素</td>
+</tr>
+<tr>
+<td>锤炼期</td>
+<td>纵向（物—感—思—文）× 横向（外物—作者—成品—读者）交叉融汇</td>
+<td>高层次原理与写作技术操作结合</td>
+</tr>
+</tbody>
+</table>
+<p><strong>创意写作与之区别</strong>：</p>
+<ul>
+<li>传统写作学每个时期只侧重某一方面，且<strong>只注重写作的理论研究</strong>；创意写作<strong>理论研究与实践并重</strong>，同时包含审美性、工具性、生产性三方面实践，并更重思维训练与创造性养成。</li>
+<li><strong>根本分歧</strong>：传统写作学信奉「<strong>作家无法培养</strong>」「<strong>写作无法教授</strong>」；创意写作以「<strong>作家可以培养</strong>」「<strong>写作可以教学</strong>」为理念，以「<strong>驻校作家制度</strong>」「<strong>工坊式教学</strong>」为方法标志，是新型的「写作教育」与「创意教育」。</li>
+<li><strong>教学模式对照</strong>：</li>
+<li>传统写作学：精英主义教育观＋华生行为主义刺激—反应理论；<strong>教师中心论</strong>；大班教学（超 30 人）；学生是「被动的容器」；写作是个人思考与独立体验，最好单人创作（天赋、灵感、个人体验最重要）。</li>
+<li>创意写作：杜威「实用性」教育观（社会改革与教育改革共生）＋斯金纳行为主义学生中心论＋皮亚杰建构主义；<strong>以学生为中心</strong>，教师组织引导，学生互动激发；以<strong>工作坊（workshop）</strong>为核心教学模式，通过<strong>过程教学法</strong>分步骤、分模块完成训练；认为灵感可以相互激发，创作既个人化也可集体共同激发完成，<strong>步骤与灵感同样重要</strong>。</li>
+<li><strong>三重区分（好记）</strong>：以注重<strong>写作实践练习</strong>而与中文学科学术研究培养模式相区分；以注重<strong>创意思维训练</strong>而与专注文体训练的传统写作学相区分；以<strong>小规模工坊制</strong>而与常规大班教学相区分。</li>
+<li><strong>收束</strong>：创意写作<strong>以思维激发为先导，以工坊制模式为基础，注重文体写作实践</strong>；认同「写作是一种生活态度，也是一种生活方式，更是一次精神旅行」。</li>
+</ul>
+<h3 id="4_2">4. 与现实的关系</h3>
+<ul>
+<li>传统观念：文学＝经典作品，作家＝以创作经典为职业的精英作家，创作＝精英作家生产经典的活动。后果是把文学塑造成「阳春白雪」，高置于普通民众可望不可即的顶端，远离日常生活。</li>
+<li>但若把创意写作仅理解为精英作家培养与经典创作教学，它几乎没有存在必要。就其缘起而言，创意写作本身是<strong>提升民众文学修养的素质教育</strong>，力图在文学、民众与社会之间建立流畅、交互式的社会交流渠道。</li>
+<li>文学被分为「<strong>作为艺术的文学</strong>」与「<strong>作为商品的文学</strong>」：前者对人审美感召，后者深度参与文创产业、服务更多受众。创作能力培养与传统学术训练同存并在，可建构「学术研究与文学创作」「精英化培养与产业化教育」相结合的<strong>文学育人双引擎</strong>。</li>
+<li><strong>总括</strong>：创意写作以<strong>创作论批评、实操性旨归、建构式教学、多元化功能</strong>，把自己与文艺学、现当代文学、传统写作学区分开来，并重构了与现实世界的多重紧密关系。</li>
+</ul>
+<hr />
+<h2 id="_12">七、讲义补充：答题模板与必背素材</h2>
+<h3 id="1_3">1. 「工坊制教学」是什么？优缺点？</h3>
+<ul>
+<li><strong>起源与形式</strong>：最初来自<strong>美国爱荷华大学的写作工坊</strong>（最早的工坊是诗歌工坊），是美国第一个授予创意写作学位课程的教研单位，树立了现代写作程式典范。一般以一名富有经验的主讲人为核心，配一至二名助教，以 <strong>10—20 人</strong>小团体在其指导下通过活动、讨论共同探讨某话题；可按文类细分为小说工坊、诗歌工坊、戏剧工坊。</li>
+<li><strong>活动形式</strong>：①课程（小说入门、故事工作坊）②大赛（未来作家、风城科幻小说大赛）③民间培训组织（纽约哥谭作家工作坊）④社区活动组织（创意生活书坊）⑤基金会（阿尔文基金会）⑥创意写作系统（爱荷华创意写作系统）。</li>
+<li><strong>运行</strong>：1. 集体创意；2. 集体研讨。</li>
+<li><strong>目标三层</strong>：①<strong>人的目标</strong>：发现自我、成为自我、反思自我、超越自我；②<strong>程序的目标</strong>：从创造力入手，通过脑力激荡、头脑风暴、思维训练、专项技能训练、作品研讨、集体创意，培养创造能力与创意能力；③<strong>物的目标</strong>：作品、文案、著作、丛书、刊物、光盘、网页网站、录音等。</li>
+<li><strong>五条工作坊原则</strong>：保密原则（真诚敞开，彼此保密）、合作原则（师生都是合作者）、激励原则（给同伴作品至少提三条优点或特点）、不抗辩原则（接受批评时只做记录）、建设性原则（提出替代性方案，如「如果是王安忆，会怎么写」）。</li>
+<li><strong>优点</strong>：充分调动每个人的创作积极性，提高创作效率，互相批改。<strong>缺点</strong>：人数较多时有时无法落实完成。</li>
+<li><strong>四种教学模式</strong>：团体教学模式、<strong>过程教学模式</strong>（选题—草稿—校订—发表）、<strong>创意激发教学模式</strong>（克服障碍、经验发掘、激发潜能、思维拓展）、<strong>市场对接教学模式</strong>。</li>
+</ul>
+<h3 id="2_3">2. 「驻校作家制度」是什么？</h3>
+<ul>
+<li><strong>由来</strong>：为适应国家和区域文化产业（尤其文创产业）快速发展，解决产业发展与高水平创意写作人才不足的矛盾，从 <strong>2005 年</strong>开始发挥「驻校作家」优势，面向汉语言文学、传播学专业及全校爱好写作的本科生开展创意写作「特色教育」。</li>
+<li><strong>国内两类形式</strong>：①人事编制进入高校（复旦、人大、浙理工等）；②聘请专业作家任兼职教授或兼职指导教师（南大、北师大等）。<strong>具有中国特色的驻校作家制度尚未真正建立起来。</strong></li>
+<li><strong>四个待解问题</strong>：①制度建立问题（沟通文学界与高教界联合培养人才）；②长效机制问题（作家退休后是否续聘、学历门槛与人事制度改革、文学作品能否算科研成果、如何考核）；③师资问题（作家与其他写作课教师的对话与承接）；④学制问题（本科阶段培养尚少、如何从第二课堂上升为第一课堂）。</li>
+<li><strong>意义</strong>：学科建设、中国当代文学、当代中国文坛、学生、大学教育、作家自身。</li>
+</ul>
+<h3 id="3-2021-20">3. 「对创意写作中的思维规律的认识」答题要点（2021 年真题，20 分）</h3>
+<blockquote>
+<p><strong>模板＝创意写作定义总述 ＋ 作家障碍与思维训练法 ＋ 工作坊法</strong></p>
+</blockquote>
+<ol>
+<li>创意写作是一切……的总称；其特点有理论性、实践性、商业性、创意性、跨学科性、生长性。</li>
+<li>创意写作强调<strong>自我挖掘论</strong>：创意是自我的投射，是<strong>发现自我、反思自我、开发自我并超越自我</strong>的活动。</li>
+<li>写作分为三类（审美性／生产性／工具性）。</li>
+<li>写作中要有<strong>对象化意识思维与读者意识</strong>，在接受对象可理解的基础上展开写作，符合读者的期待视野。</li>
+<li>引葛红兵：「<strong>没有创意的写作训练是陈词滥调，脱离创意思维训练的写作教学也是不科学的行为。</strong>」综合运用思维规律方法培养学生思维，常见方法有头脑风暴法、思维导图法、逆向思维法、强制关联法。</li>
+<li>创意写作采用<strong>工坊制</strong>进行（源于爱荷华写作工坊），四种模式（团体／过程／创意激发／市场对接），关注写作过程，分为预习作（开题）、打草稿、修改、校订、发表等环节；注重创意激发，采用克服障碍、经验发掘、激发潜能、思维拓展等方式。</li>
+</ol>
+<h3 id="4_3">4. 论述题常用「名言」（答题加分点）</h3>
+<ul>
+<li>创意写作强调「<strong>人人都是作家</strong>」，通过「教授」，我们可以用人为的方式激活人性中的创作智慧；要克服<strong>天才论、灵感论</strong>等认知障碍与技术障碍。</li>
+<li>「<strong>创意第一，写作第二</strong>」；「<strong>创意是人的本能</strong>」（伯格森）→ 要激发潜能；「<strong>写作是对创意的文字表达</strong>」；「<strong>内容为王，创意制胜</strong>」。</li>
+<li>「创意第一，写作第二」要求以<strong>创意心理培养、创意思维训练、创意智慧激发</strong>为重点，直接探照人类的精神指向，符合解除精神贫困的现实要求。</li>
+<li>创意写作的主要任务之一是：<strong>培养学生的各种文体创作能力</strong>。</li>
+<li>学会跟读者「<strong>谈恋爱</strong>」：养成随时随地创作的习惯，把写作转化成谈话；学会模仿，敢于模仿，敢于啰嗦，跟读者吵架。</li>
+</ul>
+<h3 id="5_1">5. 当前创意写作面临的困难（讲义）</h3>
+<ol>
+<li>科研、教学力量的薄弱；2. 创意写作工坊制难以推行；3. 现有的写作教学体系、方法；4. 学科建设。</li>
+</ol>
+<hr />
+<h2 id="647-20202025">八、真题清单（647 创写理论，2020—2025）</h2>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>题型</th>
+<th>题目</th>
+<th>分值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020</td>
+<td>简答</td>
+<td>非虚构写作中真实和虚构的关系</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>论述</td>
+<td>创意写作思维规律的认识</td>
+<td>20</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>材料分析</td>
+<td>作家入住高校创写教学的意义</td>
+<td>40</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>简答</td>
+<td>创意写作的特点</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>名解</td>
+<td>非虚构写作</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>材料分析</td>
+<td>创意写作中言和意的关系</td>
+<td>40</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>材料分析</td>
+<td>分析创意写作工坊制教学的特点</td>
+<td>40</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>名解</td>
+<td>创意写作思维</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>简答</td>
+<td>美国创写发展史</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>材料分析</td>
+<td>非虚构真实性悖论</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>可见：<strong>「创意写作的特点」（10 分）、「创意写作思维／思维规律」、「工坊制」是近三年反复命中的核心，本笔记第一至第四部分＋第七部分即为这三道题的标准答案库。</strong></p>
+</blockquote>
+<hr />
+<h2 id="ai">九、延伸：AI 时代与非虚构（讲义三，与定义特征呼应）</h2>
+<ul>
+<li><strong>创意写作的开放性/生长性在当下的最直接证据</strong>：雷勇《数字化交互式新媒体平台与创意写作的新形态》（2024）提出，数字平台分三种，衍生三种创意写作新形态——新媒体平台 → <strong>多模态文本</strong>（闪小说、广播剧、视觉诗歌与表演性诗歌）；交互化平台 → <strong>交互式文本</strong>（Inform 7、橙光、易次元等，分「总览全局式」与「合作完成式」）；人工智能平台 → <strong>智能化文本</strong>（自动生成故事框架、人物小传、情节大纲，模拟特定作家风格，编校环节语义分析与自动纠错）。</li>
+<li><strong>AI 不能取代人类写作的三条理由（白亮）</strong>：①<strong>情感</strong>——电脑不可能生产情感，其作品只是符号的选取与组合；②<strong>意识</strong>——人有潜意识与无意识，灵感无法被科学阐释，电脑写不出神来之笔；③<strong>精神实践</strong>——人的精神世界是技术突破无法取代的。艺术的本质属性是创造，<strong>个性化是人类创造的生命</strong>。</li>
+<li>「<strong>文学性</strong>」指的是使文学成为文学的东西，但并非所有具有文学性的都是文学。以「创意」为第一属性的创意写作，不以完整形制的文学作品为一元性追求，更适应数字时代多元表达需求。</li>
+</ul>
+</div>
+<script>
+var b=document.body,s=17;
+function set(v){s=Math.min(26,Math.max(13,v));b.style.setProperty('--fs',s+'px')}
+document.getElementById('zo').onclick=function(){set(s+1)};
+document.getElementById('zi').onclick=function(){set(s-1)};
+document.getElementById('tw').onclick=function(){
+  var t=document.getElementById('tocbox');
+  t.style.display=(t.style.display==='none')?'block':'none';
+};
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body></html>

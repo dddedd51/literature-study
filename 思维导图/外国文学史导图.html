@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外国文学史 · 思维导图</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+:root{
+  --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073;
+  --line:#e3dccd; --accent:#6b5a8a; --gold:#c8902a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);height:100%;
+  font-family:"LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;overflow:hidden;}
+#app{display:flex;flex-direction:column;height:100vh;}
+/* 顶栏 */
+#topbar{display:flex;align-items:center;gap:10px;padding:8px 14px;flex:none;
+  background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,.05);z-index:20;}
+#topbar .back{color:var(--sub);text-decoration:none;font-size:14px;padding:4px 8px;border-radius:6px;white-space:nowrap;}
+#topbar .back:hover{background:#f0e9da;color:var(--accent);}
+#topbar .book{font-weight:700;color:var(--accent);font-size:16px;white-space:nowrap;}
+#topbar .era{font-size:15px;color:var(--ink);border-left:1px solid var(--line);padding-left:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:30vw;}
+#topbar .spacer{flex:1;}
+#topbar .tool{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:2px;}
+#topbar .tool button{font-family:inherit;font-size:13px;border:0;background:transparent;color:var(--ink);
+  padding:4px 9px;border-radius:6px;cursor:pointer;white-space:nowrap;}
+#topbar .tool button:hover{background:#f0e9da;}
+#topbar .tool button.on{background:var(--accent);color:#fff;}
+#topbar .fit{font-family:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:5px 10px;cursor:pointer;color:var(--ink);}
+#topbar .fit:hover{background:#f0e9da;}
+#topbar .quiz{font-size:14px;font-weight:700;text-decoration:none;color:#fff;background:var(--accent);
+  border-radius:8px;padding:6px 14px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+#topbar .quiz:hover{filter:brightness(1.12);}
+/* 主体 */
+#layout{display:flex;flex:1;min-height:0;}
+#eraNav{width:236px;flex:none;overflow:auto;background:var(--card);border-right:1px solid var(--line);padding:10px 8px;}
+#eraNav .nav-head{font-size:13px;color:var(--sub);letter-spacing:2px;padding:2px 8px 8px;}
+#eraNav button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;font-family:inherit;
+  font-size:14.5px;border:0;background:transparent;color:var(--ink);padding:8px 9px;border-radius:8px;cursor:pointer;margin-bottom:2px;}
+#eraNav button:hover{background:#f0e9da;}
+#eraNav button.on{background:var(--accent);color:#fff;}
+#eraNav button.on .cnt{color:rgba(255,255,255,.75);}
+#eraNav .idx{flex:none;width:22px;height:22px;line-height:22px;text-align:center;border-radius:6px;
+  background:rgba(0,0,0,.06);font-size:12px;}
+#eraNav button.on .idx{background:rgba(255,255,255,.22);}
+#eraNav .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#eraNav .cnt{flex:none;font-size:11px;color:#b3a998;}
+#eraNav .footnote{margin-top:10px;padding:8px 9px;font-size:12.5px;color:var(--sub);line-height:1.6;
+  border-top:1px dashed var(--line);}
+#eraNav .footnote a{color:var(--accent);}
+/* 画布 */
+#mmWrap{flex:1;position:relative;min-width:0;}
+#mmSvg{width:100%;height:100%;display:block;cursor:grab;}
+#mmWrap .hint{position:absolute;left:12px;bottom:10px;font-size:12px;color:#b3a998;
+  background:rgba(255,253,248,.85);border:1px solid var(--line);border-radius:8px;padding:4px 10px;
+  pointer-events:none;letter-spacing:.5px;}
+#nodeCnt{position:absolute;right:12px;top:10px;font-size:12px;color:#b3a998;
+  background:rgba(255,253,248,.85);border:1px solid var(--line);border-radius:8px;padding:4px 10px;pointer-events:none;}
+.markmap{--markmap-font-size:15px;}
+.markmap-node text{fill:#2b2620;}
+.markmap-node text a{fill:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:700;}
+.markmap-link{stroke-width:1.6px;}
+/* 窄屏 */
+@media (max-width:760px){
+  #eraNav{position:absolute;left:0;top:0;bottom:0;z-index:15;transform:translateX(-100%);transition:.2s;box-shadow:4px 0 16px rgba(0,0,0,.08);}
+  #eraNav.show{transform:none;}
+  #topbar .book{display:none;}
+  #hamburger{display:inline-flex !important;}
+}
+#hamburger{display:none;font-family:inherit;border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:5px 10px;cursor:pointer;font-size:14px;}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="topbar">
+    <button id="hamburger">☰ 时代</button>
+    <a class="back" href="index.html">← 导图导航</a>
+    <div class="book">外国文学史</div>
+    <div class="era" id="eraTitle">古代文学</div>
+    <div class="spacer"></div>
+    <div class="tool" id="depthTool">
+      <button data-d="1">一层</button><button data-d="2" class="on">两层</button><button data-d="3">三层</button><button data-d="99">全部</button>
+    </div>
+    <button class="fit" id="fitBtn">⟲ 适应画布</button>
+    <a class="quiz" id="quizLink" href="../外国文学史习题_分章刷题.html#d0">去刷题 →</a>
+  </div>
+  <div id="layout">
+    <nav id="eraNav"><div class="nav-head">时代 · 专题</div></nav>
+    <main id="mmWrap">
+      <svg id="mmSvg"></svg>
+      <div id="nodeCnt"></div>
+      <div class="hint">点击节点圆点折叠/展开 · 带<span style="text-decoration:underline;color:var(--accent)">下划线</span>的节点可跳转刷题 · ←/→ 切换时代</div>
+    </main>
+  </div>
+</div>
+<script src="_vendor/d3.min.js"></script>
+<script src="_vendor/markmap-lib.js"></script>
+<script src="_vendor/markmap-view.js"></script>
+<script>
+var BOOK = {"title": "外国文学史", "accent": "#6b5a8a", "palette": ["#6b5a8a", "#9a3b2e", "#c8902a", "#3b6b5e", "#2f6f8f", "#8a6d3b", "#7a4f00"], "quizHome": "../外国文学史习题_分章刷题.html", "footnote": "亚非文学章节暂无导图，<a href='../外国文学史习题_分章刷题.html#d10'>直接去刷题 →</a>", "eras": [{"name": "古代文学", "link": "../外国文学史习题_分章刷题.html#d0", "md": "# [古代文学](../外国文学史习题_分章刷题.html#d0)\n## 古希腊文学\n### 神话与史诗：荷马史诗、神谱、英雄传说\n### 伊利亚特：特洛伊战争、阿喀琉斯、英雄荣誉与命运\n### 奥德赛：漂泊归乡、奥德修斯、智慧与家庭\n### 古希腊悲剧：埃斯库罗斯、索福克勒斯、欧里庇得斯\n### 埃斯库罗斯：被缚的普罗米修斯、俄瑞斯忒亚\n### 索福克勒斯：俄狄浦斯王、安提戈涅\n### 欧里庇得斯：美狄亚、妇女问题、人性冲突\n### 喜剧：阿里斯托芬、鸟、蛙\n### 特点：命运意识、英雄精神、理想人格、人与神冲突\n## 古罗马文学\n### 维吉尔：埃涅阿斯纪、民族史诗、罗马国家意识\n### 贺拉斯：诗艺、寓教于乐、古典主义理论\n### 奥维德：变形记、神话改写、想象丰富\n### 西塞罗：演说与散文、拉丁文学典范\n### 地位：继承希腊传统并影响欧洲古典主义", "nodes": 17}, {"name": "中世纪文学", "link": "../外国文学史习题_分章刷题.html#d1", "md": "# [中世纪文学](../外国文学史习题_分章刷题.html#d1)\n## 社会背景\n### 基督教文化占主导\n### 封建等级制度与骑士制度\n### 宗教文学与世俗文学并存\n## 英雄史诗\n### 法国：罗兰之歌、封建忠诚、宗教信仰\n### 西班牙：熙德之歌、民族英雄\n### 德国：尼伯龙根之歌、英雄悲剧\n### 俄罗斯：伊戈尔远征记、民族意识\n## 骑士文学\n### 骑士传奇、骑士抒情诗\n### 主题：冒险、荣誉、爱情、忠诚\n## 城市文学\n### 法国列那狐传奇：动物寓言、社会讽刺\n### 英国乔叟坎特伯雷故事集：市民阶层、现实生活、框架结构\n## 宗教文学\n### 但丁神曲\n#### 地狱、炼狱、天堂三部\n#### 主题：从黑暗走向光明、现实批判、人文理想\n#### 艺术：象征体系、百科全书式结构、民族语言\n#### 地位：中世纪文学高峰与文艺复兴先声", "nodes": 22}, {"name": "文艺复兴文学", "link": "../外国文学史习题_分章刷题.html#d2", "md": "# [文艺复兴文学](../外国文学史习题_分章刷题.html#d2)\n## 时代精神\n### 人文主义\n### 肯定人的价值与现世生活\n### 反对禁欲主义和封建神学\n## 意大利\n### 薄伽丘十日谈：反教会、爱情婚姻、市民智慧、框架结构\n### 彼特拉克：抒情诗、人文主义之父\n### 阿里奥斯托疯狂的奥兰多：骑士传奇与人文精神\n## 法国\n### 拉伯雷巨人传：反禁欲、崇尚知识、夸张讽刺\n### 蒙田随笔：怀疑精神、个体经验、随笔体\n## 西班牙\n### 塞万提斯堂吉诃德\n#### 骑士小说的讽刺\n#### 堂吉诃德与桑丘：理想与现实、崇高与滑稽\n#### 艺术：复调、戏拟、元小说、人物发展\n#### 地位：现代小说奠基作\n### 流浪汉小说：小癞子、反映底层生活\n## 英国\n### 莎士比亚\n#### 历史剧：亨利四世、理查三世\n#### 喜剧：仲夏夜之梦、威尼斯商人、皆大欢喜\n#### 悲剧：哈姆雷特、奥赛罗、李尔王、麦克白\n#### 罗密欧与朱丽叶：爱情悲剧与封建冲突\n#### 哈姆雷特：延宕、复仇、思想者形象、人文主义危机\n#### 艺术：个性化人物、悲喜交融、诗性语言、多线结构\n#### 地位：欧洲文艺复兴文学最高成就", "nodes": 28}, {"name": "17世纪古典主义", "link": "../外国文学史习题_分章刷题.html#d3", "md": "# [17世纪古典主义](../外国文学史习题_分章刷题.html#d3)\n## 法国古典主义\n### 背景：君主专制、理性主义、宫廷文化\n### 古典主义原则：理性、规范、三一律、崇尚古典\n### 高乃依熙德：责任与爱情、荣誉冲突\n### 拉辛安德洛玛克：宫廷悲剧、心理冲突\n### 莫里哀伪君子、悭吝人、贵人迷：喜剧讽刺、揭露虚伪\n### 拉封丹寓言：动物寓言、社会智慧\n## 英国文学\n### 弥尔顿失乐园：宗教史诗、反抗精神、撒旦形象\n### 班扬天路历程：寓言小说、宗教救赎\n## 西班牙\n### 维加：民族戏剧、人民性、羊泉村", "nodes": 13}, {"name": "18世纪启蒙文学", "link": "../外国文学史习题_分章刷题.html#d4", "md": "# [18世纪启蒙文学](../外国文学史习题_分章刷题.html#d4)\n## 时代精神\n### 理性主义、自由平等、反封建\n### 文学服务社会教化与思想启蒙\n## 英国\n### 笛福鲁滨逊漂流记：个人奋斗、资产阶级进取精神\n### 斯威夫特格列佛游记：政治讽刺、理性反思、人性批判\n### 菲尔丁汤姆·琼斯：现实主义小说、完整情节\n### 理查逊帕米拉：书信体、感伤主义先声\n## 法国\n### 孟德斯鸠波斯人信札：东方视角、社会批判\n### 伏尔泰：哲理小说、老实人、理性批判\n### 狄德罗修女、宿命论者雅克：百科全书派、对话体\n### 卢梭新爱洛伊丝、忏悔录：自然、情感、个性解放\n### 博马舍费加罗的婚礼：反贵族、喜剧讽刺\n## 德国\n### 莱辛：汉堡剧评、拉奥孔、民族戏剧\n### 歌德少年维特之烦恼：感伤主义、个性解放、爱情悲剧\n### 歌德浮士德\n#### 浮士德与靡非斯特\n#### 主题：追求、实践、劳动、人类进步\n#### 艺术：诗剧、象征、时空跨越、文体融合\n#### 地位：欧洲文学经典与人类精神史诗", "nodes": 23}, {"name": "19世纪浪漫主义", "link": "../外国文学史习题_分章刷题.html#d5", "md": "# [19世纪浪漫主义](../外国文学史习题_分章刷题.html#d5)\n## 时代特征\n### 个性解放、想象、情感、自然\n### 反对古典主义规范和资本主义现实\n### 民族意识与民主理想\n## 德国浪漫主义\n### 诺瓦利斯：夜的颂歌、蓝花、神秘主义\n### 霍夫曼：怪诞幻想、现实与梦境\n### 海涅：抒情诗、政治讽刺、浪漫主义与现实主义过渡\n## 英国浪漫主义\n### 湖畔派：华兹华斯、柯勒律治、骚塞\n### 华兹华斯：抒情歌谣集序言、自然诗、平民语言\n### 拜伦：恰尔德·哈洛尔德游记、唐璜、拜伦式英雄\n### 雪莱：解放了的普罗米修斯、西风颂、理想主义\n### 济慈：夜莺颂、希腊古瓮颂、唯美与感官\n## 法国浪漫主义\n### 夏多布里昂：基督教真谛、浪漫主义先声\n### 雨果巴黎圣母院、悲惨世界、九三年\n### 雨果主张：美丑对照、浪漫主义戏剧、人民立场\n### 大仲马：历史小说、三个火枪手、基督山伯爵\n## 俄国浪漫主义\n### 普希金：叶甫盖尼·奥涅金、自由颂、驿站长\n### 奥涅金：多余人形象、贵族知识分子、现实与理想\n### 莱蒙托夫当代英雄：多余人、心理分析", "nodes": 24}, {"name": "19世纪现实主义", "link": "../外国文学史习题_分章刷题.html#d6", "md": "# [19世纪现实主义](../外国文学史习题_分章刷题.html#d6)\n## 现实主义特征\n### 真实再现社会生活\n### 典型环境中的典型人物\n### 批判现实、揭露矛盾\n### 细节真实、心理深入、叙事客观\n## 法国\n### 斯丹达尔红与黑：于连、个人奋斗、复辟时代\n### 巴尔扎克人间喜剧\n#### 资产阶级社会全景\n#### 高老头：金钱、父爱、社会冷酷\n#### 欧也妮·葛朗台：金钱婚姻、吝啬形象\n#### 艺术：典型化、人物再现、细节与环境\n### 福楼拜包法利夫人：爱玛、庸俗生活、客观冷峻\n### 左拉：自然主义、实验小说、萌芽\n### 莫泊桑：羊脂球、漂亮朋友、短篇小说艺术\n## 英国\n### 狄更斯\n#### 雾都孤儿、双城记、远大前程、艰难时世\n#### 主题：贫困、童年、阶级、社会改革\n#### 艺术：夸张讽刺、人物类型、温情人道主义\n### 萨克雷名利场：浮士德夫人、金钱社会、反英雄叙事\n### 夏洛蒂·勃朗特简爱：女性独立、爱情尊严、成长\n### 哈代德伯家的苔丝：宿命悲剧、乡土社会、女性压迫\n## 俄国\n### 果戈理：外套、死魂灵、小人物、官僚制度讽刺\n### 屠格涅夫：罗亭、父与子、贵族知识分子\n### 陀思妥耶夫斯基：罪与罚、卡拉马佐夫兄弟、心理复调\n### 托尔斯泰：战争与和平、安娜·卡列尼娜、复活\n### 契诃夫：套中人、变色龙、樱桃园、日常生活悲剧\n### 车尔尼雪夫斯基怎么办：革命民主主义、理想新人\n## 北欧与美国\n### 易卜生玩偶之家：娜拉、女性解放、社会问题剧\n### 安徒生：童话、人道主义、悲悯意识\n### 马克·吐温哈克贝利·费恩历险记：反种族主义、成长与自由", "nodes": 35}, {"name": "19世纪后期文学", "link": "../外国文学史习题_分章刷题.html#d7", "md": "# [19世纪后期文学](../外国文学史习题_分章刷题.html#d7)\n## 象征主义\n### 波德莱尔恶之花：通感、城市忧郁、审美转化\n### 魏尔伦、马拉美、兰波：音乐性、暗示、象征\n## 唯美主义\n### 王尔德道林·格雷的画像：艺术与道德、唯美主义\n## 自然主义\n### 左拉萌芽：环境决定、工人生活、社会批判\n## 现代主义先声\n### 尼采、叔本华、柏格森、弗洛伊德\n### 非理性、心理深层、时间意识进入文学", "nodes": 11}, {"name": "20世纪现代主义", "link": "../外国文学史习题_分章刷题.html#d9", "md": "# [20世纪现代主义](../外国文学史习题_分章刷题.html#d9)\n## 共同特征\n### 反传统、反理性、表现异化\n### 内心独白、意识流、象征、荒诞、神话模式\n### 时空碎片化、多视角、开放结局\n## 卡夫卡\n### 变形记：异化、孤独、家庭压迫\n### 审判：荒诞权力、无罪受审\n### 城堡：不可抵达、现代困境\n## 普鲁斯特追忆逝水年华\n### 非自愿记忆、意识流、时间与记忆\n## 乔伊斯尤利西斯\n### 意识流、神话原型、都柏林日常\n### 奥德赛结构对应现代生活\n## 伍尔夫到灯塔去、墙上的斑点\n### 女性经验、意识流、瞬间感受\n## 福克纳喧哗与骚动\n### 多视角、意识流、家族衰败、时间碎片\n## 艾略特荒原\n### 现代文明危机、神话方法、互文\n## 奥尼尔：琼斯皇、毛猿、悲剧现代化", "nodes": 21}, {"name": "20世纪现实主义与后现代文学", "link": "../外国文学史习题_分章刷题.html#d8", "md": "# [20世纪现实主义与后现代文学](../外国文学史习题_分章刷题.html#d8)\n## 海明威老人与海、永别了武器、太阳照常升起\n### 冰山原则、硬汉形象、简洁叙事\n## 马尔克斯百年孤独\n### 魔幻现实主义、家族循环、历史遗忘\n## 加缪局外人、鼠疫\n### 荒诞、反抗、存在处境\n## 萨特恶心、禁闭\n### 存在主义、自由选择、他人即地狱\n## 贝克特等待戈多\n### 荒诞戏剧、等待、语言失效、存在虚无\n## 马尔库塞、德里达、福柯\n### 后现代思想、解构、权力话语", "nodes": 13}]};
+(function(){
+  var svg = document.getElementById('mmSvg');
+  var nav = document.getElementById('eraNav');
+  var quiz = document.getElementById('quizLink');
+  var eraTitle = document.getElementById('eraTitle');
+  var nodeCnt = document.getElementById('nodeCnt');
+  var T = new markmap.Transformer();
+  var color = d3.scaleOrdinal(BOOK.palette);
+  var mm = null, cur = 0, depth = 2;
+
+  function foldTo(root, d){
+    (function walk(n, lv){
+      if(n.children && n.children.length){
+        n.payload = n.payload || {};
+        n.payload.fold = (lv >= d) ? 1 : 0;
+        n.children.forEach(function(c){ walk(c, lv+1); });
+      }
+    })(root, 0);
+  }
+  function show(i, push){
+    cur = (i + BOOK.eras.length) % BOOK.eras.length;
+    var era = BOOK.eras[cur];
+    var root = T.transform(era.md).root;
+    foldTo(root, depth);
+    var opts = {duration:220, maxWidth:320, spacingVertical:12, spacingHorizontal:110, paddingX:16, color:color, initialExpandLevel:99};
+    if(!mm){ mm = markmap.Markmap.create(svg, opts, root); }
+    else { mm.setOptions(opts); mm.setData(root); }
+    setTimeout(function(){ try{ mm.fit(); }catch(e){} }, 80);
+    eraTitle.textContent = era.name;
+    nodeCnt.textContent = era.nodes + ' 个节点';
+    quiz.href = era.link;
+    Array.prototype.forEach.call(nav.querySelectorAll('button[data-i]'), function(b){
+      b.classList.toggle('on', parseInt(b.getAttribute('data-i'),10) === cur);
+    });
+    if(push !== false){ try{ history.replaceState(null,'','#e='+cur); }catch(e){} }
+    document.title = era.name + ' · ' + BOOK.title + ' 思维导图';
+  }
+
+  /* 侧栏 */
+  var head = nav.querySelector('.nav-head');
+  BOOK.eras.forEach(function(e, i){
+    var b = document.createElement('button');
+    b.setAttribute('data-i', i);
+    b.innerHTML = '<span class="idx">' + (i+1) + '</span><span class="nm">' + e.name + '</span><span class="cnt">' + e.nodes + '</span>';
+    b.onclick = function(){ show(i); if(window.innerWidth<=760) nav.classList.remove('show'); };
+    nav.appendChild(b);
+  });
+  if(BOOK.footnote){
+    var fn = document.createElement('div');
+    fn.className = 'footnote';
+    fn.innerHTML = BOOK.footnote;
+    nav.appendChild(fn);
+  }
+  var hm = document.getElementById('hamburger');
+  hm.onclick = function(){ nav.classList.toggle('show'); };
+
+  /* 层级按钮 */
+  document.getElementById('depthTool').addEventListener('click', function(ev){
+    var b = ev.target.closest('button'); if(!b) return;
+    depth = parseInt(b.getAttribute('data-d'),10) || 2;
+    Array.prototype.forEach.call(this.querySelectorAll('button'), function(x){ x.classList.toggle('on', x===b); });
+    show(cur);
+  });
+  document.getElementById('fitBtn').onclick = function(){ try{ mm.fit(); }catch(e){} };
+
+  /* 键盘切换 */
+  document.addEventListener('keydown', function(ev){
+    if(ev.target && /INPUT|TEXTAREA/.test(ev.target.tagName)) return;
+    if(ev.key === 'ArrowRight') show(cur+1);
+    else if(ev.key === 'ArrowLeft') show(cur-1);
+  });
+
+  /* 初始 hash */
+  var m = (location.hash||'').match(/e=(\d+)/);
+  show(m ? Math.min(parseInt(m[1],10), BOOK.eras.length-1) : 0, false);
+})();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

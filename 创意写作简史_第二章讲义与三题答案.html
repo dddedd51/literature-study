@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>创意写作简史 · 第二章讲义与三题答案（英语国家·中国）</title>
+<style>
+@font-face{font-family:"霞鹜文楷";src:url("./_shared/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:swap}
+:root{--bg:#f4f1ea;--bg2:#fffdf8;--ink:#252525;--muted:#6f6a60;--rule:#d8d0c3;--accent:#9d3f2f;--accent2:#1d5b5b;--soft:#eee5d7;--gold:#c8902a;--shadow:0 10px 28px rgba(50,35,20,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"霞鹜文楷","LXGW WenKai","Noto Sans CJK SC","WenQuanYi Micro Hei",sans-serif;line-height:1.78;font-size:var(--fs,16px);
+  background-image:radial-gradient(circle at 16% 8%,rgba(200,144,42,.07) 0,transparent 32%),radial-gradient(circle at 88% 18%,rgba(157,63,47,.06) 0,transparent 36%)}
+main{max-width:1080px;margin:auto;padding:28px 22px 80px}
+
+.toolbar{position:sticky;top:0;z-index:30;margin:0 -22px 22px;padding:9px 22px;background:rgba(244,241,234,.95);border-bottom:1px solid var(--rule);
+  display:flex;gap:8px;align-items:center;flex-wrap:wrap;backdrop-filter:saturate(160%) blur(6px)}
+.toolbar .tt{font-weight:700;color:var(--accent);font-size:13.5px;margin-right:auto;letter-spacing:1px}
+.btn{border:1px solid var(--rule);background:var(--bg2);color:var(--ink);border-radius:20px;padding:4px 14px;cursor:pointer;font:inherit;font-size:13px;transition:.15s}
+.btn:hover{border-color:var(--accent2);color:var(--accent2);background:#fff}
+
+.masthead{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:24px}
+.eyebrow{font-size:13px;letter-spacing:3px;color:var(--accent);font-weight:700;margin-bottom:8px}
+.masthead h1{margin:0;font-size:30px;letter-spacing:1.5px;line-height:1.4}
+.masthead .sub{margin-top:10px;color:var(--muted);font-size:14px;letter-spacing:.5px}
+.srcbox{background:var(--bg2);border:1px solid var(--rule);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:var(--muted);line-height:1.85;margin-top:16px}
+.srcbox b{color:var(--ink)}
+
+.section{margin:0 0 30px}
+h2.st{font-size:19px;margin:0 0 14px;padding-left:13px;border-left:5px solid var(--accent);letter-spacing:1px}
+h3.sh{font-size:16px;margin:20px 0 10px;color:var(--accent2);letter-spacing:.6px}
+h4.ssh{font-size:15px;margin:16px 0 8px;color:var(--accent);letter-spacing:.5px;font-weight:700}
+.panel{background:var(--bg2);border:1px solid var(--rule);border-radius:10px;padding:18px 22px;box-shadow:var(--shadow)}
+.panel+.panel{margin-top:14px}
+
+.tbl{width:100%;border-collapse:collapse;background:var(--bg2);border:1px solid var(--rule);border-radius:10px;overflow:hidden;font-size:14px}
+.tbl th{background:var(--ink);color:#fffdf8;font-weight:700;font-size:13px;letter-spacing:1px;padding:10px 13px;text-align:left;white-space:nowrap}
+.tbl td{padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.72}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tr:nth-child(even) td{background:#fdfbf6}
+.tbl .nm{font-weight:700;color:var(--accent);white-space:nowrap}
+.tbl .k{font-weight:700;color:var(--accent2)}
+.tbl .y{font-weight:800;color:var(--accent);white-space:nowrap}
+
+.qbox{background:#fdf6e9;border:1px solid #e4d3b2;border-left:5px solid var(--gold);border-radius:0 10px 10px 0;padding:15px 20px;margin:0 0 16px}
+.qbox .qn{font-size:12.5px;font-weight:700;color:#8a6a1e;letter-spacing:2px;margin-bottom:6px}
+.qbox .qt{font-size:17px;font-weight:700;letter-spacing:.6px;line-height:1.65}
+.qbox .qm{margin-top:7px;font-size:13px;color:var(--muted)}
+
+.answer{background:var(--bg2);border:1px solid var(--rule);border-radius:10px;padding:22px 26px;box-shadow:var(--shadow)}
+.answer h4.t{text-align:center;font-size:18.5px;letter-spacing:1px;margin:0 0 4px;line-height:1.6}
+.answer .sub-t{text-align:center;font-size:14.5px;color:var(--muted);margin:0 0 16px;letter-spacing:.5px}
+.answer h5{font-size:15.5px;margin:18px 0 7px;color:var(--accent);letter-spacing:.5px;font-weight:700}
+.answer p{margin:9px 0;text-indent:2em;line-height:1.95;font-size:15px}
+mark{background:linear-gradient(transparent 58%,#fff3a8 58%);padding:0 2px;color:inherit}
+.answer .tail{border-top:1px dashed var(--rule);margin-top:16px;padding-top:12px;font-size:12.8px;color:var(--muted);line-height:1.8;text-align:right}
+.wc{display:inline-block;background:var(--soft);border:1px solid var(--rule);border-radius:3px;padding:0 6px;font-weight:700;color:#7a5a16;font-size:12.5px}
+
+.note{background:#fbf8f0;border:1px solid var(--rule);border-left:3px solid var(--accent2);border-radius:0 7px 7px 0;padding:11px 15px;margin:12px 0;font-size:13.5px;color:#5c5445;line-height:1.85}
+.note b{color:var(--accent2)}
+.warn{background:#fdf1ee;border:1px solid #eccdc3;border-left:3px solid var(--accent);border-radius:0 7px 7px 0;padding:11px 15px;margin:12px 0;font-size:13.5px;color:#7a3a2c;line-height:1.85}
+.warn b{color:var(--accent)}
+.fix{background:#f2f7f4;border:1px solid #cfe0d6;border-left:3px solid #2e7d5b;border-radius:0 7px 7px 0;padding:10px 14px;margin:10px 0;font-size:13px;color:#2f5c48;line-height:1.8}
+.fix b{color:#1f5c40}
+.fix code{background:#e6efe9;border-radius:3px;padding:0 4px;font-size:12.5px}
+
+.tl{position:relative;margin:18px 0 6px;padding-left:8px}
+.tl .row{display:flex;gap:14px;padding:9px 0;border-bottom:1px dashed var(--rule);align-items:flex-start}
+.tl .row:last-child{border-bottom:0}
+.tl .y{flex:0 0 92px;font-weight:800;color:var(--accent);font-size:14.5px;letter-spacing:.5px;padding-top:2px}
+.tl .e{font-size:14px;line-height:1.7}
+.tl .e b{color:var(--accent2)}
+.tlseg{display:flex;align-items:center;gap:9px;margin:16px 0 4px;font-size:12.5px;font-weight:800;letter-spacing:1.8px;color:var(--accent)}
+.tlseg:first-child{margin-top:4px}
+.tlseg i{flex:0 0 7px;height:7px;border-radius:50%;background:var(--accent2);font-style:normal}
+.tlseg i.r{background:var(--accent)}
+.tlseg u{flex:1;height:1px;background:linear-gradient(90deg,var(--rule),transparent);text-decoration:none}
+.tl .row.dim .y{color:#a89a82}
+.tl .row.dim .e{color:#6f6759}
+.tl .row.key{background:linear-gradient(90deg,rgba(157,63,47,.11),transparent);border-left:3px solid var(--accent);padding-left:13px;margin-left:-13px;border-bottom-color:#e2cac3;border-radius:0 8px 8px 0}
+.tl .row.key .y{color:#8f2f1f;font-size:15px}
+.note.red{background:#fdf6f3;border-left-color:var(--accent)}
+.note.red b{color:var(--accent)}
+.note.red .qt{display:block;margin:7px 0 4px;padding-left:11px;border-left:2px solid #e0c9c1;color:#7c5a50;font-size:13px}
+.tbl .grp{background:var(--soft);font-weight:800;color:var(--accent);font-size:12.5px;letter-spacing:1px;text-align:center;padding:7px 10px}
+
+.chk{display:inline-flex;align-items:center;gap:7px;cursor:pointer;user-select:none;font-size:13px;color:var(--muted);background:var(--bg2);border:1px solid var(--rule);border-radius:20px;padding:3px 13px;margin-top:14px;transition:.15s}
+.chk .bx{width:15px;height:15px;border:1.5px solid var(--rule);border-radius:4px;display:grid;place-items:center;font-size:11px;color:transparent;background:#fff}
+.chk.on{border-color:var(--accent2);color:var(--accent2);background:#f1f7f6}
+.chk.on .bx{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.prog{display:flex;align-items:center;gap:11px;margin-top:14px;font-size:13px;color:var(--muted)}
+.prog .bar{flex:1;height:7px;background:var(--soft);border-radius:6px;overflow:hidden;max-width:260px}
+.prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--accent));transition:.3s}
+
+a{color:var(--accent2)}
+.links{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.links a{display:inline-block;background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:7px 14px;font-size:13.5px;text-decoration:none;transition:.15s}
+.links a:hover{background:var(--accent2);color:#fffdf8;border-color:var(--accent2)}
+@media print{.toolbar,.chk{display:none}body{background:#fff;font-size:13px}main{padding:0}}
+@media(max-width:760px){.answer{padding:16px 15px}.masthead h1{font-size:23px}main{padding:20px 12px 60px}.toolbar{margin:0 -12px 18px;padding:9px 12px}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a class="btn" href="index.html" style="text-decoration:none">← 返回导航</a>
+  <span class="tt">创意写作简史 · 第二章讲义</span>
+  <button class="btn" id="zi">A-</button>
+  <button class="btn" id="zo">A+</button>
+  <button class="btn" onclick="window.print()">打印 / 存 PDF</button>
+</div>
+<main>
+
+<div class="masthead">
+  <div class="eyebrow">6 4 7 创 意 写 作 基 础 · 教 材 第 二 章</div>
+  <h1>创意写作简史 · 第二章讲义</h1>
+  <div class="sub">英语国家创意写作发展概略 ｜ 总体特征与启示 ｜ 中国创意写作发展 ｜ 章末练习题三题作答</div>
+  <div class="srcbox">
+    <b>素材来源</b>：《第二章 创意写作简史》（PDF，20 页扫描件，无文本层）——经 xparse OCR 全文提取，并<b>逐页调出内嵌扫描原图校对</b>，补回 4 处被页面水印遮挡而 OCR 漏掉的行（详见文末〈OCR 校对说明〉）。<br>
+    <b>章末练习题</b>：本章末尾原有三题，正是「① 美国创意写作发展特征 ② 创意写作引入我国的时代背景 ③ 谈谈对我国创意写作发展现状的认识」——本页三题答案<b>一律按本章口径</b>作答。<br>
+    <b>配套</b>：<a href="创意写作简史三题_材料题完整答案.html">创意写作简史三题 · 材料题完整答案</a>（跨文档综合版，含 2023 联盟／2024 二级学科等章外补充证据）｜<a href="材料题答题方式_AI写作与创意写作.html">材料题答题方式</a>（卷面规范）。
+  </div>
+</div>
+
+<!-- ============ 本章骨架 ============ -->
+<div class="section">
+  <h2 class="st">本章骨架（先记这三层）</h2>
+  <div class="panel">
+    <table class="tbl">
+      <thead><tr><th style="width:110px">位置</th><th style="width:300px">标题</th><th>要拿分的东西</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">本章提要</td><td>① 英语国家创意写作历史形态<br>② 英语国家创意写作发展的特征与启示<br>③ 中国创意写作发展情况</td><td>提要三句就是全章的三节标题，背下它等于背下目录</td></tr>
+        <tr><td class="nm">学习目标</td><td>① 熟悉英语国家创意写作发展概貌<br>② 理解历史演变中创意写作内涵的丰富发展<br>③ 认识中国创意写作发展路径</td><td>「概貌—内涵—路径」三个动词，正对应名词解释／简答／论述三种题型的落点</td></tr>
+        <tr><td class="nm">章节框架</td><td>第一节 英语国家创意写作发展概略<br>第二节 英语国家创意写作发展总体特征与启示<br>第三节 中国创意写作发展描述</td><td><b>第二节四条特征、第三节一四条语境、第三节二现状四条</b>，是三题的直接答案</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>读法提醒</b>：本章最容易失分的地方不是史实记得少，而是<b>把「特征」答成「编年史」</b>。教材第二节已经把史实提炼成四条特征，时间点只是挂在特征下面的证据。先立论点，再挂年份。</div>
+    <div class="chk" data-k="ch2_frame"><span class="bx">✓</span>本章骨架已背完</div>
+  </div>
+</div>
+
+<!-- ============ 第一节 ============ -->
+<div class="section">
+  <h2 class="st">第一节 英语国家创意写作发展概略</h2>
+
+  <h3 class="sh">一、成长而繁荣（美国线）</h3>
+  <div class="panel">
+    <div class="note red">
+      <b>先分清三个「起点」，别答错</b>——教材对这条线分了三个层次，用词很讲究：
+      <span class="qt">「创意写作（creative writing）一词的使用可以<b>溯源至</b>爱默生那里」→ <b>1837</b> 只是<b>词源</b></span>
+      <span class="qt">「英语写作现在被视为创意写作的<b>先声</b>」→ <b>1880s</b> 哈佛英语写作只是<b>前史</b></span>
+      <span class="qt">「在二十世纪三十年代初期，已经有不少的高校开设了与创意写作密切相关的课程，<b>而没有正式的创意写作项目</b>。到了 1936 年，爱荷华大学提供创意写作艺术硕士学位，正规的创意写作项目得以创建，这被学界视为创意写作历史的<b>真正发端</b>」</span>
+      所以两种问法要分开答：<b>问「发展历程／发展特征」</b>——从 <b>1880s 高校英语写作课</b>写起（这是教材史实叙述的时间起点，且被明确称为「先声」）；<b>问「起点／发端／学科创建」</b>——只答 <mark>1936 年爱荷华大学 MFA（承 1922 皮珀倡议、1931 博士学位）</mark>。若问「创意写作概念从何而来」，才答 1837 爱默生。三者各安其位，<b>把「先声」说成「发端」是这题最容易踩的坑</b>。
+    </div>
+    <div class="tl">
+      <div class="tlseg"><i></i>前史 · 词源与先声<u></u></div>
+      <div class="row dim"><div class="y">1815</div><div class="e">（另一说）保罗·道森《创意写作与新人文主义》主张从<b>文学意义</b>而非学术意义溯源：华兹华斯 1815 年致 B.R.Haydon 的一首未命名十四行诗用过 <b>Creative Art</b></div></div>
+      <div class="row dim"><div class="y">1837</div><div class="e">爱默生 8 月在美国大学优等生协会发言《论美国学者》，提出「创意阅读」与「<b>创意写作</b>」；<b>原稿重点是创意阅读</b>。学界引述较多的词源起点，但<b>只是词源</b></div></div>
+      <div class="row dim"><div class="y">1880s</div><div class="e"><b>英语写作</b>（English composition）在高校兴起。三条背景：英语语言文学学科确立、英语写作取代拉丁语写作；语文学方法不利于创造性理解文学；高校科目细化、传统修辞学教学衰落。D.G.迈尔斯称「英语写作现在被视为<b>创意写作的先声</b>」</div></div>
+      <div class="row dim"><div class="y">1880s</div><div class="e">哈佛英语写作课程引人注目：蔡尔德、亚当斯·谢尔曼·希尔、巴雷特·温德尔；开设新生写作课与高级写作课（以诗歌、短篇小说练习激发自我表达）。「<b>在哈佛，创意写作第一次在美国高校中获得了学术声誉</b>」</div></div>
+      <div class="row dim"><div class="y">1920s</div><div class="e">创意写作在<b>中学教育</b>领域「真正做到了名实相符」；休斯·莫恩斯（Hughes Mearns）早期著作使该词扩散。此时中学与高校创意写作<b>并无直接关联</b></div></div>
+      <div class="tlseg"><i class="r"></i>发端与展开 · 从爱荷华出发<u></u></div>
+      <div class="row"><div class="y">1922</div><div class="e">皮珀（Piper）说服爱荷华大学教师为<b>创造性工作提供学位</b>——酝酿期的起点</div></div>
+      <div class="row"><div class="y">1931</div><div class="e">爱荷华大学提供相关<b>博士学位</b>，允许提交创造性论文获得</div></div>
+      <div class="row key"><div class="y">1936</div><div class="e">瓦尔特·施拉姆（Walter Schramm）主持下，爱荷华大学写作项目提供 <b>MFA 学位</b>——正规创意写作项目由此创建，学界视为 <b>「创意写作历史的真正发端」</b>（▲ 分界线：此前只有课程、无正式项目）</div></div>
+      <div class="row"><div class="y">1945 后</div><div class="e">第一波高峰。约翰·霍普金斯、斯坦福、丹佛、康奈尔等相继创建创意写作系统。两大契机：<b>战后老兵安置</b>＋<b>「文化冷战」</b>背景下政府与社会组织支持（洛克菲勒基金等提供经费）</div></div>
+      <div class="row"><div class="y">1967</div><div class="e">R.V.卡西尔联合 13 个写作项目成立<b>联合写作项目（AWP）</b>，后改名<b>全美作家和写作计划协会</b></div></div>
+      <div class="row"><div class="y">1970</div><div class="e">美国已有 <b>44 所</b>学院提供创意写作硕士学位或与创意有关的英语学位</div></div>
+      <div class="row"><div class="y">1975→2012</div><div class="e">AWP 官站统计：项目总数 <b>79 → 880</b>（学士 24→362；文学硕士 32→113；艺术硕士 15→191；博士 5→38；副学士 0→13）</div></div>
+      <div class="row"><div class="y">2016</div><div class="e">创意写作研究组织 <b>CWSO</b> 成立，所属期刊《创意写作研究期刊》</div></div>
+    </div>
+    <div class="note"><b>五个必辨年份</b>：<b>1837</b> 爱默生提出「创意写作」（<b>词源，不是起点</b>）｜<b>1880s</b> 哈佛英语写作（<b>先声，不是起点</b>）｜<b>1936</b> 爱荷华设 MFA（<b>真正发端——问「起步」只答这个</b>）｜<b>1967</b> 卡西尔牵头成立 AWP｜<b>1970</b> 全美 44 所。这几个是本章最常被拿来出题的年份。</div>
+    <div class="chk" data-k="ch2_s1a"><span class="bx">✓</span>美国线已背完</div>
+  </div>
+
+  <h3 class="sh">二、创意写作在英、澳等其它英语国家</h3>
+  <div class="panel">
+    <table class="tbl">
+      <thead><tr><th style="width:88px">国家</th><th>起点与建制</th><th style="width:280px">特色与数据</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">英国</td><td>1960s 受美国影响（文学批评界仍有质疑）；<b>1970 东安格利亚大学</b>创第一个创意写作硕士；1987 该校建立全英第一个创意与批判性写作博士；1980s 成立 <b>NAWE</b></td><td>哈珀总结 1970s 四类型：传统大学的非正式教育／新型大学的技能型教育／理工学院的实用课程／「平板玻璃」大学创新教育。<b>实用主义教育观</b>为特色。2003：超 140 个本科课程、70 多个硕士、约 20 个博士；NAWE 新近：83 所机构开本科、近 200 个硕士、超 50 所开博士。刊物《写作实践》</td></tr>
+        <tr><td class="nm">澳大利亚</td><td>受英美双重影响；1950s 末—60s 初文学界开始讨论；60—70 年代多校开展；<b>麦克里大学</b>全澳第一个运营创意写作班；1981 华勒斯·克莱伯在墨尔本大学创立创意写作班；80 年代中期诗人罗恩·普雷蒂为伍伦贡大学建立创意写作专业；1996 成立 <b>AAWP</b></td><td>注重文化产业需求，拓展跨学科，与产业实践性强的部门结合；借鉴美国经验同时回避其问题。1999 年共 <b>142 个</b>项目（非学位 13／本科 50／荣誉 18／研究生 61，8 所大学提供博士）。刊物《文本》(TEXT)</td></tr>
+        <tr><td class="nm">新西兰</td><td>起步于 20 世纪七八十年代；<b>维多利亚大学</b>最古老，1975 年起即作为本科毕业论文提供学位学分；奥克兰大学本科约建于 1980s；90 年代后惠灵顿维多利亚、奥克兰、奥克兰理工引入硕士课程</td><td>规模小、起步晚，90 年代后才丰富学位层次</td></tr>
+        <tr><td class="nm">加拿大</td><td>1965 年诗人兼小说家<b>厄尔·伯尼</b>在英属哥伦比亚大学创建第一家高校创意写作系；1995 该系与戏剧影视系合并；2010 成立 <b>CCWWP</b></td><td>覆盖文学写作、新媒体写作、儿童写作、编剧；以强大的<b>银幕写作与诗歌写作</b>、并将儿童写作与非虚构写作纳入课程系统闻名；近 30 所大学提供项目，总体规模偏小</td></tr>
+        <tr><td class="nm">扩散</td><td colspan="2">美国创意写作对很多英语国家和非英语国家都产生了影响，创意写作逐渐传播到世界各地，<b>爱尔兰、巴西、日本、菲律宾</b>等国的高校也受此世界潮流影响创设了创意写作系统</td></tr>
+      </tbody>
+    </table>
+    <div class="chk" data-k="ch2_s1b"><span class="bx">✓</span>国别线已背完</div>
+  </div>
+</div>
+
+<!-- ============ 第二节 ============ -->
+<div class="section">
+  <h2 class="st">第二节 英语国家创意写作发展总体特征与启示</h2>
+
+  <div class="warn"><b>本节是「题一」的答案所在</b>，而且教材给的是<b>四条</b>特征（不是三条）。第四条「确立了核心命题」在扫描件页面底部被水印盖住，OCR 漏掉了——容易漏背，务必记住。</div>
+
+  <h3 class="sh">一、总体特征（四条）</h3>
+  <div class="panel">
+    <table class="tbl">
+      <thead><tr><th style="width:150px">特征</th><th>核心论点</th><th style="width:260px">硬证据</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">其一　逐渐创立了完整的体系</td><td>历经创生、成长而成熟，形成相互咬合的完整体系：学科门类丰富；学术研究系统开展；人才培养体系完善（含发展动态监测与质量评估）；招生与资助体系成熟；教学与社会文化产业对接体系优化</td><td>MFA 招生自由度高，<b>考核文学写作潜质</b>被视为至关重要；学生来源多样（律师、医生、自由职业者等成人常见）；英美招生具国际面向；美国优秀项目提供不同额度奖助学金</td></tr>
+        <tr><td class="nm">其二　成就突出</td><td>向文坛输送大量创意作家（小说家／诗人／编剧）；向社会文化产业贡献记者、翻译家、出版人、编辑、创意策划人；为学界贡献批评家与文学学者</td><td>弗兰纳里·奥康纳、雷蒙德·卡佛出自<b>爱荷华</b>；英国<b>东安格利亚大学</b>毕业生石黑一雄获 2017 年诺贝尔文学奖，同校麦克尤恩亦为世界知名小说家</td></tr>
+        <tr><td class="nm">其三　互动性强</td><td>起于美国，初步成熟后即影响其它英语国家；由文化背景决定，在英语母语国家更容易「穿行」；英语国家在政治、经济、文化、教育上本就交往密切</td><td>格雷姆·哈珀在英国与澳大利亚各获学位，又任美国密歇根州奥克兰大学教授，主持的《新写作》影响广泛；大洋洲澳新密切沟通；欧洲成立 <b>EACWP</b>（缘起于 2005 年德国莱比锡文学研究所国际创意写作计划大会，前身网络 ENCWP，2010 年重新整合为协会）</td></tr>
+        <tr><td class="nm">其四　确立了核心命题</td><td>「如何有效指导学习者进行文学写作」一直困扰创意写作发展；围绕该问题形成一系列核心经验、确立核心命题：<b>作家入驻高校从事创意写作教学</b>，<b>工作坊是创意写作主导性的教学方法</b></td><td>西方大学系统中作家、作家型学者、学者型作家从事教学是常见现象，有些项目教师完全由作家构成；形成<b>良性文学生态</b>：作家校园教学 → 教学影响创作 → 批评关注近在咫尺的作家作品 → 作家向文坛推介新一代 → 培养出的作家返回高校教学 → 作家·文坛·批评·高校·出版商被联系起来</td></tr>
+      </tbody>
+    </table>
+
+    <h4 class="ssh">▎工作坊（工坊制）沿革——第四条特征的证据链</h4>
+    <table class="tbl">
+      <thead><tr><th style="width:150px">时间</th><th>事件</th></tr></thead>
+      <tbody>
+        <tr><td class="y">一战前</td><td>早期学院派工坊开始被安排进<b>哈佛大学的高级创作课程</b></td></tr>
+        <tr><td class="y">1897</td><td>爱荷华大学开设<b>诗歌创作课程</b></td></tr>
+        <tr><td class="y">1906—1925</td><td>哈佛大学开设<b>戏剧研究生工坊</b>课程</td></tr>
+        <tr><td class="y">1936</td><td>在威廉·施拉姆指导下「工坊」启动，并提供创意写作 MFA</td></tr>
+        <tr><td class="y">1940s—50s</td><td><b>保罗·恩格尔</b>放弃创意写作研究的文学批评部分，转而专注以作家工作室为基础的工坊模式——<b>该模式后来成为创意写作课程的原型</b></td></tr>
+        <tr><td class="y">1949</td><td>第一个<b>本科</b>工坊创意写作项目进入英语文学专业（因工坊教学法本为研究生设计，导入本科后教师颇不适应）</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>工坊制的三个要点</b>：① 工坊活动本近似于作家们的交流沙龙，<b>平等而民主的交流气氛</b>为讨论作品、获取灵感提供益处；② 教学中<b>作品讨论是主要环节</b>，学生地位凸显，教师角色需在<b>读者、作者、批评者之间切换</b>；③ 因而对工坊主导者提出了更高要求。</div>
+
+    <h4 class="ssh">▎本章也点名了英语国家创意写作的三重困境（答「启示/反思」类题可用）</h4>
+    <p style="margin:6px 0;font-size:14px;line-height:1.85">① 创意写作<b>学科地位之确立</b>仍遭受一定质疑；② <b>工作坊教学法</b>显示出一定局限性；③ 创意写作<b>研究如何作为学术贡献新知识</b>、如何深化，仍需深思。</p>
+    <div class="chk" data-k="ch2_s2a"><span class="bx">✓</span>四条特征已背完</div>
+  </div>
+
+  <h3 class="sh">二、英语国家创意写作发展史的启示（四条）</h3>
+  <div class="panel">
+    <table class="tbl">
+      <thead><tr><th style="width:150px">启示</th><th>核心论点</th><th style="width:250px">证据</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">其一　创意写作有多个维度面向</td><td>驱动创意写作兴起的因素并非单一，历史发展中不断有新因素加入</td><td>1880s 英语写作兴起的内在驱动是<b>英语教育的创新变革</b>；1920s 中学创意写作富有<b>进步主义教育革新</b>理念；英、澳等引入是为<b>改善人文教育危机</b>；1970s 以后<b>商业</b>在项目扩张中作用很大，转向为文化创意产业培养人才；此外还有心理疗愈、二语学习等功能，美国更以之应对战后老兵安置、承担多元文化主义的社会文化功能</td></tr>
+        <tr><td class="nm">其二　教育维度是基本维度</td><td>创意写作基本上在教育的框架下运行（中小学／大学，正规／非正规，学位／非学位，文学／非文学）</td><td>中学创意写作往往具有「<b>先声性</b>」——因灵活性而先于大学创意写作出现；保罗·道森指出，美国 20 世纪 20 年代高中的创意写作同样刺激了 1960 年代英国和澳大利亚学校的创意写作运动；中国中小学创意写作实践可进入大学研究视野，大学亦可反哺中小学</td></tr>
+        <tr><td class="nm">其三　突出实践性</td><td>实践维度是基本维度，脱离实践性创意写作就失去光彩</td><td>狭义指<b>文学创作实践</b>，后泛指一切带创造性的<b>写作实践</b>，而后才有教育实践、创意实践、文化实践等形态；创意写作常被视为与音乐、绘画相似的艺术学科，教授一门「技艺」；更高学位被授予<b>艺术硕士（MFA）</b>；课程设置突出实操训练</td></tr>
+        <tr><td class="nm">其四　创意写作的跨领域增长</td><td>1970s 以后跨学科增长能力凸显：最初很大程度上存在于语言文学学科框架内，至今很多西方大学创意写作仍是英语系的构成部分，但也有的项目独立于英语文学系之外</td><td>创意写作分散在艺术、教育等别的机构，成功拓展发展空间；「<b>它也可以被部署在别的学科</b>」；系统扩张的触角伸向出版、传媒、影视等文化产业深处，艺术教育也采纳创意写作方法</td></tr>
+      </tbody>
+    </table>
+    <div class="chk" data-k="ch2_s2b"><span class="bx">✓</span>四条启示已背完</div>
+  </div>
+</div>
+
+<!-- ============ 第三节 ============ -->
+<div class="section">
+  <h2 class="st">第三节 中国创意写作发展描述</h2>
+
+  <h3 class="sh">一、创意写作引入中国的时代语境（四条）· 即「为什么要中国化」</h3>
+  <div class="panel">
+    <table class="tbl">
+      <thead><tr><th style="width:160px">语境</th><th>核心论点</th><th style="width:250px">细节与追问</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">其一　传统写作学已有相当的积淀</td><td>创意写作是新生事物、已成学界共识，但在创意写作视域下如何审视传统写作学成为新问题</td><td>上世纪八十年代以来中国写作学科建设成就很大；<b>很多高校创意写作项目的创生是建立在传统写作学科发展的基础上</b>，传统写作学在理论建设与教学实践上的方法也仍在影响当下创意写作教育——既是家底，也是须辨析的对象</td></tr>
+        <tr><td class="nm">其二　中国已有作协等多元作家培养系统</td><td>西方靠大学培养作家，中国主要靠中国作协与各地作协的培训系统</td><td>鲁迅文学院处于<b>全国作家培训的中心地位</b>，办学六十余年；上世纪八十年代末九十年代初高校曾有「作家班热」，后销声匿迹；很长时期内高校文学系声称「不以培养作家为己任」；文化企业与作家自身也有自我养成的可能</td></tr>
+        <tr><td class="nm">其三　推动文化与文艺创新成为时代使命</td><td>二十世纪末以来文化产业在国民经济中占比越来越大，有些国家已成支柱产业；创意写作也承担国家文化战略使命</td><td>四问：文学写作如何重构自身以服务大众精神诉求？网络文学兴盛下如何促进<b>网络写手</b>成批量、高质量养成？文学如何服务<b>传统文化创造性转化</b>？文学书写如何彰显世界性价值？</td></tr>
+        <tr><td class="nm">其四　文学教育革新的内在驱动</td><td>创意写作自创生起就承担教育革新使命，其发展主要依附于高校</td><td>十九世纪末美国英语写作课即为对抗语文学文学教学传统；我国写作课程长期以<b>边缘形态</b>存在于文学系框架内；专注学术化文学教学已不能满足新型产业人才培养需要；国家提出「<b>新文科</b>」理念，明确<b>学科导向向需求导向转变</b></td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>「其二」的三个待答问题</b>（很可能是简答的追问点）：① 已有成就的作家是否意愿和能力进入高校从事文学写作教学？② 年轻作者是否认可高校技术化的写作教学方法与培养实力？③ 高校创意写作系统「孵化」作家的优势到底在哪里？</div>
+    <div class="chk" data-k="ch2_s3a"><span class="bx">✓</span>四条语境已背完</div>
+  </div>
+
+  <h3 class="sh">二、中国创意写作发展历程与现状</h3>
+  <div class="panel">
+    <h4 class="ssh">▎三地前史</h4>
+    <table class="tbl">
+      <thead><tr><th style="width:110px">地区</th><th>要点</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">中国台湾</td><td>上世纪五十年代末以来，台湾一些作家赴美学习创意写作，「<b>从 1959 年起，台湾的作家已经接受了美国 Creative Writing 的学科训练</b>」</td></tr>
+        <tr><td class="nm">中国香港</td><td>引入较早，上世纪八十年代早期<b>香港浸会大学</b>已开设创意写作专业；真正繁荣是近三十年的事；特点是<b>注重在地化</b>，结合影视、媒体、出版等产业人才需求，常提供与影视产业关联的创意写作学位</td></tr>
+        <tr><td class="nm">中国内地</td><td>三条前史：① 上世纪八十年代「<b>写作热</b>」时国内翻译引进美国写作指导书，多为美国创意写作系统下的产物；② 八十年代起内地作家通过爱荷华「<b>国际写作计划</b>」接触美国作家生成的新方式，逐渐意识到其背后有强大的写作培养系统；③ 国内一些高校系科或多或少关注创意写作的重要性。但总体上认识未曾深化，项目创设无从谈起</td></tr>
+      </tbody>
+    </table>
+
+    <h4 class="ssh">▎中国内地年表（2009 年称为「元年」）</h4>
+    <div class="tl">
+      <div class="row"><div class="y">2009</div><div class="e"><b>元年</b>：复旦大学设立创意写作艺术硕士点；上海大学文学与创意写作研究中心成立</div></div>
+      <div class="row"><div class="y">2012</div><div class="e"><b>西北大学设置创意写作本科专业</b>；广东外语外贸大学开设创意写作本科方向；中国人民大学出版社「创意写作」书系推出</div></div>
+      <div class="row"><div class="y">2014</div><div class="e">我国首个创意写作<b>博士点</b>（计划外二级学科）落户上海大学；北京大学开始招收创意写作专业硕士；北京师范大学开始招收「文学创作」硕士；中山大学成立中国内地首个英语创意写作研究中心；三亚学院成立创意写作研究中心</div></div>
+      <div class="row"><div class="y">2015</div><div class="e">中国人民大学「创造性写作研究生班」招生；同济大学推出创意写作艺术硕士；玉林师范学院引进创意写作教育；山东大学文学与创意写作研究中心揭牌；温州大学建立创意中文实验班</div></div>
+      <div class="row"><div class="y">2016</div><div class="e">东北师范大学文学院成立创意写作中心</div></div>
+      <div class="row"><div class="y">2017</div><div class="e">江苏师范大学开始招收创意写作研究生</div></div>
+      <div class="row"><div class="y">2018</div><div class="e">华东师范大学成立中国创意写作研究院；<b>清华大学</b>面向全校本科生开设「写作与沟通」课程；华中科技大学开设「创意写作研究」研究生公选课；创意写作作为中文专业选修课程被列入《<b>普通高等学校本科专业类教学质量国家标准</b>》；南京大学与江苏省作协共建江苏文学院；北京出版集团下属十月文学院启动「十月文学高校计划·青年创意写作营」</div></div>
+      <div class="row"><div class="y">至今</div><div class="e">据不完全统计，全国有 <b>200 多家</b>高校开设了创意写作本科课程（杨庆祥，2020）</div></div>
+    </div>
+
+    <h4 class="ssh">▎三次标志性会议</h4>
+    <table class="tbl">
+      <thead><tr><th style="width:120px">时间</th><th>会议</th><th style="width:240px">主办与规模</th></tr></thead>
+      <tbody>
+        <tr><td class="y">2014.7</td><td>创意写作国际论坛</td><td>中国人民大学文学院、外语学院与中国人民大学出版社主办，100 余名专家学者和作家参会</td></tr>
+        <tr><td class="y">2015.6</td><td>世界华文创意写作大会</td><td>中华文学基金会与世界华文创意写作协会主办，在上海大学召开，100 多名参会人员</td></tr>
+        <tr><td class="y">2016</td><td>全国创意写作大会</td><td>中国作家出版集团、文艺报社与上海大学中国创意写作中心主办，在北京召开，50 余名专家学者和作家参会</td></tr>
+      </tbody>
+    </table>
+
+    <h4 class="ssh">▎发展现状：四条特征（教材原话）</h4>
+    <table class="tbl">
+      <thead><tr><th style="width:170px">特征</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">其一　规模体量逐渐扩大</td><td>在复旦大学、上海大学、北京师范大学、中国人民大学、<b>西北大学</b>、广东外语外贸大学等高校引领之下，更多高校意识到创意写作教育的时代性意义，开展创意写作教学，学科形态日臻成型。「从一到多」，英语国家用了较漫长历史，而创意写作后发国家和地区因文学教育变革与文化产业人才需求，扩散极为迅速</td></tr>
+        <tr><td class="nm">其二　多元定位、特色发展、形态多样</td><td>拥有作家培养传统的高校更擅长<b>精英作家培养</b>（中国人民大学 2015 年开办创造性写作作家班，每年招收具创作基础的青年作家）；更多高校希望在<b>作家培养与文化产业人才培养之间取得平衡</b>——以西北大学为例，已形成<b>作家班、博士方向、学硕、专硕、本科「五位一体」</b>有机统一的发展体系；也有高校注意到创意写作<b>通识教育</b>的重要性</td></tr>
+        <tr><td class="nm">其三　创意写作组织活动与学术研究日渐活跃</td><td>全国性创意写作组织出现并发挥作用，世界华文创意写作协会连续多年组织大会。与美国的差异在于：<b>我国创意写作学术研究伴随着教育兴起而兴起</b>；美国创意写作教学起步较早，但真正意义上的学术研究却是近三十多年的事情</td></tr>
+        <tr><td class="nm">其四　文坛与高校写作教育出现更加明显的互动</td><td>作家进校园引发<b>现象级讨论</b>：当代作家如<b>王安忆、阎连科、毕飞宇</b>等全职被聘进入高校从事写作（尤指创意写作）教学、指导硕士生，同时从事创作或文学批评，多相兼容；2018 年南京大学与江苏省作协共建江苏文学院；同年十月文学院启动青年创意写作营；一些文学期刊也主动推广创意写作理念、与高校合作搭建青年作家成长平台</td></tr>
+      </tbody>
+    </table>
+    <div class="warn"><b>教材对现状的总判断（答题可作结尾）</b>：创意写作学科的发展仍在路上。中国创意写作引入时间虽然不长，但很快进入状态并积极拓展本土化发展空间；由于高校创意写作发展的带动，<b>中小学语文教育、社会写作教育</b>等领域也受到影响。<b>但同时，也应该充分意识到，中国创意写作事业起步晚，仍然存在着一定的不足。</b>在文化创意产业强势支撑和创意写作领域学人的共同努力下，中国创意写作事业美好愿景值得期待。</div>
+    <div class="chk" data-k="ch2_s3b"><span class="bx">✓</span>历程与现状已背完</div>
+  </div>
+</div>
+
+<!-- ============ 练习题三题 ============ -->
+<div class="section">
+  <h2 class="st">章末练习题 · 三题标准作答（按本章口径）</h2>
+  <div class="note"><b>提示</b>：这三题就是本章末尾「练习题：1．美国创意写作发展特征有哪些？2．创意写作引入我国的时代背景有哪些？3．谈谈你对我国创意写作发展现状的认识。」——三题答案直接对应本章<b>第二节四条特征、第三节一四条语境、第三节二现状四条</b>。答题时按「先立论点、后挂证据」写，不要写成编年史。</div>
+  <div class="warn"><b>关于篇幅，先说清楚</b>：三篇成文实测为 <b>1458／1498／1510 字</b>（含标点，只计正文、不含主副标题），<b>都超过了 800—1000 字的上限</b>。这是为了把教材证据铺全，我没有偷偷超、也没有临时删证据。<br>
+  <b>考场压缩办法</b>（每题删到 1000 字内）：题一把开头交代分期的两句压成一句「起于 1880s 高校英语写作课，1936 年爱荷华设 MFA 后才有正规项目」，并删「工坊沿革」六个年份只留施拉姆 1936 一条；题二删「作协」段的三个追问与「语境三」的四个追问；题三删年表中的 2014／2015／2016／2017 四行，只留 1959／1980s 香港／2009／2012／2018／200 家，删「现状四条」的第二条细节（人大作家班）。骨架表里的论点一条都不要删——论点才是分。</div>
+
+  <h3 class="sh">题一：美国创意写作发展特征有哪些</h3>
+  <div class="qbox">
+    <div class="qn">练 习 题 · 第 一 题</div>
+    <div class="qt">美国创意写作发展特征有哪些？</div>
+    <div class="qm">本章出处：第二节「英语国家创意写作发展的总体特征」｜ 建议作答 800—1000 字</div>
+  </div>
+  <table class="tbl" style="margin-bottom:14px">
+    <thead><tr><th style="width:150px">特征</th><th>核心论点</th><th style="width:220px">硬证据</th></tr></thead>
+    <tbody>
+      <tr><td class="nm">体系：完整体系</td><td>门类／研究／培养／招生资助／产业对接五环齐备</td><td>MFA 招生考核写作潜质；学生来源多样、国际面向；奖助学金</td></tr>
+      <tr><td class="nm">成效：成就突出</td><td>作家＋文化产业人才＋学界人才三向输出</td><td>奥康纳、卡佛（爱荷华）；石黑一雄 2017 诺奖、麦克尤恩（东安格利亚）</td></tr>
+      <tr><td class="nm">关系：互动性强</td><td>向其它英语国家与非英语国家扩散</td><td>格雷姆·哈珀跨国背景；EACWP；爱尔兰、巴西、日本、菲律宾</td></tr>
+      <tr><td class="nm">内核：核心命题</td><td>作家入驻高校教学＋工作坊为主导教学法</td><td>施拉姆 1936 工坊＋MFA；恩格尔确立工坊模式为课程原型；良性文学生态</td></tr>
+    </tbody>
+  </table>
+  <div class="answer">
+    <h4 class="t">从校园课程到完整学科</h4>
+    <p class="sub-t">——美国创意写作发展的四项总体特征</p>
+
+    <p>美国创意写作起于十九世纪八十年代的高校英语写作课，教材称这一阶段为创意写作的「<b>先声</b>」——此时是<b>有课程而无正式创意写作项目</b>；直到 1936 年爱荷华大学提供创意写作 MFA、正规的创意写作项目得以创建，才被学界视为「<b>创意写作历史的真正发端</b>」。用一百余年时间，它完成了从课程、学位到学科的演进。概括其发展的总体特征，可归纳为四点：体系完整、成效突出、互动性强、命题明确。</p>
+
+    <h5>一、体系上：逐渐创立了完整的体系</h5>
+    <p>美国创意写作历经创生、成长而成熟，形成了一套相互咬合的完整体系：学科门类丰富，学术研究系统开展，一批学者活跃在教学与研究一线并产出系统性成果；以创意写作项目为依托的人才培养体系完善，形成了发展动态监测体系与质量评估体系；招生与资助体系成熟，教学与社会文化产业的对接体系也不断优化。以招生为例，创意写作 MFA 招生自由度较高，<mark>考核学生的文学写作潜质被视为至关重要的事情</mark>，学生来源多样化，律师、医生、自由职业者等成人进入课堂十分常见，且具有国际面向；美国许多优秀项目还提供不同额度的奖助学金。</p>
+
+    <h5>二、成效上：人才培养成就突出</h5>
+    <p>在成熟的体系之下，创意写作系统向文坛输送了大量创意作家，包括小说家、诗人、编剧；向社会文化产业贡献了大量记者、翻译家、出版人、编辑与创意策划人；也为学界贡献了批评家与文学学者。弗兰纳里·奥康纳、雷蒙德·卡佛都出自爱荷华大学创意写作系统；英国东安格利亚大学的毕业生石黑一雄获 2017 年诺贝尔文学奖，同校毕业的麦克尤恩也是世界有名的小说家。</p>
+
+    <h5>三、关系上：互动性强并向外扩散</h5>
+    <p>美国创意写作在经历初步成熟之后，便开始对其它英语国家产生影响，这是由文化背景所决定的——创意写作起于英语文化背景，在英语为母语的国家中更容易「穿行」。学者的学术背景也横跨多国，格雷姆·哈珀在英国和澳大利亚分别获得过两个学位，又担任美国密歇根州奥克兰大学教授，其主持的《新写作》杂志影响广泛。在欧洲，欧洲创意写作计划协会及其前身网络相继成立，其缘起是 2005 年德国莱比锡文学研究所举办的国际创意写作计划大会，西方国家重要的创意写作组织也都具有国际性。美国创意写作还传播到世界各地，爱尔兰、巴西、日本、菲律宾等国的高校都受这种世界潮流影响，创设了创意写作系统。</p>
+
+    <h5>四、内核上：确立了核心命题</h5>
+    <p>如何有效指导学习者进行文学写作，一直困扰着创意写作的发展。围绕这一问题，西方创意写作形成了一系列核心经验，确立了核心命题：<mark>作家入驻高校从事创意写作教学，工作坊是创意写作主导性的教学方法</mark>。在西方大学创意写作系统中，作家、作家型学者或学者型作家从事教学是常见现象，有些项目的教师完全由作家构成。这形成了一种良性的文学生态：作家在校园从事文学创作教学，其教学对创作也有影响，文学批评密切关注近在咫尺的作家作品，作家又借优势向文坛推介新一代作家，创意写作系统培养出的作家再返回高校教学，作家、文坛、文学批评、高校教师、出版商等要素由此被联系在一起。以工作坊为线索：一战前哈佛高级创作课程已安排早期学院派工坊，1897 年爱荷华开设诗歌创作课程，1906 至 1925 年哈佛开设戏剧研究生工坊课程；在威廉·施拉姆指导下，工坊于 1936 年启动并提供 MFA；二十世纪四五十年代，保罗·恩格尔放弃创意写作研究的文学批评部分，转而专注以作家工作室为基础的工坊模式，这一模式后来成为创意写作课程的原型。</p>
+
+    <h5>小结</h5>
+    <p>四点之中，体系与成就是结果，互动性是空间形态，核心命题则是学科得以自立的内在规定。美国创意写作给我们的启示在于：它的生命力并不在文学内部的自我循环，而在于不断回应外部社会的真实需求。</p>
+
+    <div class="tail">实测 <span class="wc">1458 字</span>（含标点，汉字 1292） ｜ 四条并列 ｜ 落笔顺序：先分期 → 体系 → 成效 → 关系 → 内核</div>
+    <div class="chk" data-k="ch2_q1"><span class="bx">✓</span>题一已背完</div>
+  </div>
+</div>
+
+<div class="section">
+  <h3 class="sh">题二：创意写作引入我国的时代背景有哪些</h3>
+  <div class="qbox">
+    <div class="qn">练 习 题 · 第 二 题</div>
+    <div class="qt">创意写作引入我国的时代背景有哪些？</div>
+    <div class="qm">本章出处：第三节一「创意写作引入中国的时代语境」｜ 建议作答 800—1000 字</div>
+  </div>
+  <table class="tbl" style="margin-bottom:14px">
+    <thead><tr><th style="width:150px">语境</th><th>核心论点</th><th style="width:220px">硬证据</th></tr></thead>
+    <tbody>
+      <tr><td class="nm">一、传统写作学有积淀</td><td>有家底，且当下创意写作仍建在传统写作学科基础上</td><td>八十年代以来写作学科成就；创意写作仍处中国化阶段</td></tr>
+      <tr><td class="nm">二、作协等多元培养系统</td><td>中国有另一套作家培养机制，高校反而弱势</td><td>鲁迅文学院（全国培训中心，办学六十余年）；八十年代末「作家班热」后消失</td></tr>
+      <tr><td class="nm">三、文化与文艺创新使命</td><td>文化产业占比上升，国家文化战略需要原创人才</td><td>四个追问：服务大众／网络写手养成／传统文化转化／世界性价值</td></tr>
+      <tr><td class="nm">四、文学教育革新驱动</td><td>学术化文学教学不能满足产业人才培养，「新文科」转向</td><td>写作课程长期边缘；新文科＝学科导向转需求导向</td></tr>
+    </tbody>
+  </table>
+  <div class="answer">
+    <h4 class="t">学科的自救与时代的召唤</h4>
+    <p class="sub-t">——创意写作引入我国的四重时代语境</p>
+
+    <p>创意写作在新世纪之交被正式引入中国内地，并非一次偶然的学科移植，而是四重现实语境叠加推动的结果。</p>
+
+    <h5>一、传统写作学已有相当的积淀</h5>
+    <p>创意写作是新生事物，这一点学界已有共识；但在创意写作视域下如何审视传统写作学，又成为新的问题。上世纪八十年代以来，中国写作学科建设取得了很大成就，新世纪以后不久，创意写作成为新的发展趋势。二者区别明显：创意写作拥有一套成熟的学位体系与一系列行之有效的教学方法，课程适用性很广，承担的社会功能也较为强大，能够积极投身于创意国家建设，并致力于激发学生的创造性能力，让学生学会通过写作面向自我。目前创意写作仍处在中国化的阶段，其要做的事情就是结合中国的文学、文化和教育语境，吸收西方先进的教育经验，探索本土化的发展路径。<mark>值得注意的是，中国很多高校创意写作项目的创生又是建立在传统写作学科发展的基础上的</mark>，传统写作学在理论建设和教学实践上的方法也或多或少影响着当前的教育——这既是可继承的家底，也是必须辨析的对象。</p>
+
+    <h5>二、中国已有作协等多元作家培养系统</h5>
+    <p>从西方创意写作发展史可以看出，优秀的创意写作系统致力于培养作家，爱荷华大学、斯坦福大学、东安格利亚大学等都培养了一批优秀作家，甚至有毕业生获得诺贝尔文学奖。而在中国，作家的培养主要靠中国作协和各地作协的作家培训系统，鲁迅文学院长期处于全国作家培训的中心地位，办学六十多年来探索的道路极具启示意义。相较之下，高校在培养作家方面处于弱势：上世纪八十年代末、九十年代初曾一度出现作家班热，后因各种原因销声匿迹，很长一段时期内高校文学系甚至声称不以培养作家为己任。这意味着新生的高校创意写作系统必须重新回答几个问题：已有成就的作家是否意愿和能力进入高校从事文学写作教学？年轻作者是否认可高校技术化的写作教学方法和培养实力？高校创意写作系统「孵化」作家的优势究竟在哪里？</p>
+
+    <h5>三、推动文化与文艺创新成为时代使命</h5>
+    <p>纵观英语国家创意写作发展史，创意写作也承担着国家文化战略使命。二十世纪末以来，文化产业在国民经济中所占比例越来越大，在一些国家更成为支柱型产业，文化创新人才需求旺盛。在当今中国，推动文化与文艺创新成为时代使命：它有助于提供高质量文化消费品以满足大众精神需求，有助于讲好中国故事、促进中华文化的世界传播。培养高质量的文化与文艺创新人才势在必行，而创意写作系统正培养着原创能力强的文化人才，为文化与文艺创新提供源动力。这也带来一组追问：文学写作如何更好地在书写内容和书写方式上重构自身以服务于大众精神诉求？网络文学兴盛的背景下，如何促进网络写手成批量、高质量地养成？文学如何更好地服务于传统文化的创造性转化？文学书写如何彰显世界性价值？</p>
+
+    <h5>四、文学教育革新的内在驱动</h5>
+    <p>自创意写作创生起，它就承担着教育革新的使命，其发展主要依附于高校，这表明创意写作的基本理想与高校教育的某种需要达成了契合。十九世纪末美国英语写作课的存在，就是为了对抗语文学的文学教学传统。而我国高校文学系在很长时期内声称不培养作家，写作课程在文学系框架内以某种边缘的形态存在；随着时代发展，专注于学术化文学教学的模式已不能满足新型产业人才培养的需要，国家因此提出「新文科」理念，倡导创新人才培养，明确提出<mark>学科导向向需求导向的转变</mark>。创意写作教育的兴起符合这一理念，它以交叉融合的方式培养创意作者和文化创意人才，承载了文学教育以及文学教育之外的新内容。</p>
+
+    <h5>小结</h5>
+    <p>综上，创意写作的引入，是「学科有家底、作家有系统、国家有战略、教育要革新」四重语境的汇流。也正因如此，中国创意写作不可能照搬西方，而必须在发掘中国文化资源与借鉴西方成功经验的基础上创构中国化模式，在世界创意写作教育中发出中国声音。</p>
+
+    <div class="tail">实测 <span class="wc">1498 字</span>（含标点，汉字 1392） ｜ 四条并列 ｜ 每段末句都收在「所以必须中国化」上</div>
+    <div class="chk" data-k="ch2_q2"><span class="bx">✓</span>题二已背完</div>
+  </div>
+</div>
+
+<div class="section">
+  <h3 class="sh">题三：谈谈你对我国创意写作发展现状的认识</h3>
+  <div class="qbox">
+    <div class="qn">练 习 题 · 第 三 题</div>
+    <div class="qt">谈谈你对我国创意写作发展现状的认识。</div>
+    <div class="qm">本章出处：第三节二「中国创意写作发展历程与现状」｜ 开放型论述，<b>必须亮立场</b></div>
+  </div>
+  <table class="tbl" style="margin-bottom:14px">
+    <thead><tr><th style="width:150px">层次</th><th>核心论点</th><th style="width:220px">硬证据</th></tr></thead>
+    <tbody>
+      <tr><td class="nm">一、历程</td><td>三地前史 → 2009 元年 → 迅速铺展</td><td>1959 台湾赴美；1980s 初香港浸会；2009 复旦／上大；2012 西大／广外</td></tr>
+      <tr><td class="nm">二、现状四条</td><td>规模扩大／多元定位／组织与学术活跃／文坛互动</td><td>200 多家高校；西大「五位一体」；世界华文创意写作协会；王安忆、阎连科、毕飞宇</td></tr>
+      <tr><td class="nm">三、不足</td><td>起步晚，仍存在一定不足</td><td>教材原话；高校带动了中小学语文教育与社会写作教育</td></tr>
+      <tr><td class="nm">四、判断</td><td>从「引进来」到「长出来」</td><td>中国化不是复制，而是重新锻造学科内核</td></tr>
+    </tbody>
+  </table>
+  <div class="answer">
+    <h4 class="t">从「引进来」到「长出来」</h4>
+    <p class="sub-t">——对我国创意写作发展现状的几点认识</p>
+
+    <p>我国创意写作自 2009 年起步，十余年间完成了西方近百年的部分路程。对它的现状，我的认识可以概括为三句话：路走对了，问题明显，判断要清。</p>
+
+    <h5>一、历程：从引介到铺展</h5>
+    <p>在中国台湾，从 1959 年起，台湾的作家已经接受了美国 Creative Writing 的学科训练；在中国香港，上世纪八十年代早期香港浸会大学就已经开设了创意写作专业，真正意义上的繁荣发展则是近三十年的事情。中国内地则有三条前史：八十年代「写作热」时翻译引进过美国写作指导书，一些作家通过爱荷华「国际写作计划」接触到美国作家生成的新方式，国内一些高校系科也或多或少关注过创意写作的重要性，但总体上认识未曾深化。2009 年往往被业内认为大陆创意写作「<mark>元年</mark>」：复旦大学设立创意写作艺术硕士点，上海大学文学与创意写作研究中心成立。2012 年，西北大学设置创意写作本科专业、广东外语外贸大学开设创意写作本科方向，创意写作走出少数名校。2014 年，我国首个创意写作博士点（计划外二级学科）落户上海大学。2018 年，清华大学面向全校本科生开设「写作与沟通」，华东师范大学成立中国创意写作研究院，创意写作作为中文专业选修课程被列入《普通高等学校本科专业类教学质量国家标准》。至今，据不完全统计，全国已有 200 多家高校开设了创意写作本科课程。</p>
+
+    <h5>二、现状：四条特征同时展开</h5>
+    <p>其一，<b>规模体量逐渐扩大</b>。在复旦大学、上海大学、北京师范大学、中国人民大学、西北大学、广东外语外贸大学等高校引领之下，更多高校意识到创意写作教育的时代性意义，创意写作的学科形态日臻成型。其二，<b>多元定位、特色发展、形态多样</b>。拥有作家培养传统的高校更擅长精英作家培养，如中国人民大学 2015 年开办创造性写作作家班，每年招收具创作基础的青年作家；更多高校则希望在作家培养与文化产业人才培养之间取得平衡，以西北大学为例，已形成作家班、博士方向、学硕、专硕、本科「五位一体」有机统一的发展体系；也有高校注意到创意写作通识教育的重要性。其三，<b>创意写作组织活动与学术研究日渐活跃</b>。全国性创意写作组织得以出现并发挥作用，世界华文创意写作协会连续多年组织大会推广教育教学；与美国的差异在于，我国创意写作学术研究伴随着教育兴起而兴起，而美国创意写作教学起步较早，真正意义上的学术研究却是近三十多年的事情。其四，<b>文坛与高校写作教育出现更加明显的互动</b>。作家进校园从事写作教学引发现象级讨论，当代作家如王安忆、阎连科、毕飞宇等全职被聘进入高校从事创意写作教学、指导硕士生；2018 年南京大学与江苏省作协共建江苏文学院，同年十月文学院启动「十月文学高校计划·青年创意写作营」，一些文学期刊也主动与高校合作，搭建青年作家成长平台。</p>
+
+    <h5>三、隐忧：起步晚，不足仍存</h5>
+    <p>创意写作学科的发展仍在路上。中国创意写作引入时间虽然不长，但很快进入状态并积极拓展本土化发展空间；由于高校创意写作发展的带动，中小学语文教育、社会写作教育等领域也受到影响。但同时也应充分意识到，中国创意写作事业起步晚，仍然存在着一定的不足——学科形态虽已成型，原创理论、训练体系与课程系统的建设仍在摸索之中，区域发展也不平衡。</p>
+
+    <h5>四、我的判断：从「引进来」到「长出来」</h5>
+    <p>在我看来，我国创意写作正处在从引进到再造的关键节点。中国化并不是简单复制西方经验，而是在中国现实土壤上重新锻造学科内核的过程：创意写作之所以被引入中国，恰恰因为中国有自己的写作学传统、有自己的作家培养系统、有自己的文化战略与教育革新诉求。只有以中国问题为出发点完成这一锻造，创意写作才能真正在中国「长出来」，而不是被悬置成一门移植来的课程。在文化创意产业强势支撑和创意写作领域学人的共同努力下，中国创意写作事业的美好愿景值得期待。</p>
+
+    <div class="tail">实测 <span class="wc">1510 字</span>（含标点，汉字 1323） ｜ 四层：历程 → 现状 → 隐忧 → 判断</div>
+    <div class="chk" data-k="ch2_q3"><span class="bx">✓</span>题三已背完</div>
+  </div>
+</div>
+
+<!-- ============ 速记表 ============ -->
+<div class="section">
+  <h2 class="st">附一：关键数字速记（错年份比论点平淡更致命）</h2>
+  <div class="panel">
+    <h3 class="sh">美国线</h3>
+    <table class="tbl">
+      <thead><tr><th style="width:110px">年份</th><th>事件</th></tr></thead>
+      <tbody>
+        <tr><td class="grp" colspan="2">前史 —— 有课程、无正式项目（问「词源／先声」答这里）</td></tr>
+        <tr><td class="y">1815</td><td>（道森说）华兹华斯致 B.R.Haydon 十四行诗用 Creative Art</td></tr>
+        <tr><td class="y">1837</td><td>爱默生《论美国学者》提出「创意阅读／创意写作」（原稿重点是创意阅读）—— <b>【词源】</b></td></tr>
+        <tr><td class="y">1880s</td><td>英语写作在高校兴起 → 被视为创意写作的先声；哈佛开设新生与高级写作课 —— <b>【先声】</b></td></tr>
+        <tr><td class="y">1897</td><td>爱荷华大学开设诗歌创作课程</td></tr>
+        <tr><td class="y">1906—1925</td><td>哈佛开设戏剧研究生工坊课程</td></tr>
+        <tr><td class="y">1920s</td><td>创意写作在中学教育领域真正名实相符（休斯·莫恩斯）</td></tr>
+        <tr><td class="grp" colspan="2">发端 —— 正规创意写作项目创建（★ 问「起步／发端」只答 1936）</td></tr>
+        <tr><td class="y">1922</td><td>皮珀说服爱荷华大学教师为创造性工作提供学位</td></tr>
+        <tr><td class="y">1931</td><td>爱荷华大学提供相关博士学位，允许提交创造性论文</td></tr>
+        <tr><td class="y">1936</td><td><b>爱荷华提供 MFA（施拉姆主持）＝ 学界视为「真正发端」</b></td></tr>
+        <tr><td class="y">1945 后</td><td>第一波高峰：霍普金斯／斯坦福／丹佛／康奈尔</td></tr>
+        <tr><td class="y">1949</td><td>第一个本科工坊创意写作项目进入英语文学专业</td></tr>
+        <tr><td class="y">1967</td><td>卡西尔联合 13 个项目成立 AWP</td></tr>
+        <tr><td class="y">1970</td><td>44 所学院提供创意写作硕士或相关英语学位</td></tr>
+        <tr><td class="y">1975→2012</td><td>项目总数 79 → 880</td></tr>
+        <tr><td class="y">2016</td><td>CWSO 成立</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sh">其它英语国家线</h3>
+    <table class="tbl">
+      <thead><tr><th style="width:110px">年份</th><th>事件</th></tr></thead>
+      <tbody>
+        <tr><td class="y">1965</td><td>厄尔·伯尼在英属哥伦比亚大学创建加拿大第一家高校创意写作系（1995 与戏剧影视系合并）</td></tr>
+        <tr><td class="y">1970</td><td>英国东安格利亚大学创立第一个创意写作硕士项目</td></tr>
+        <tr><td class="y">1975</td><td>新西兰维多利亚大学创意写作课程作为本科毕业论文提供学位学分</td></tr>
+        <tr><td class="y">1981</td><td>华勒斯·克莱伯在墨尔本大学创立创意写作班</td></tr>
+        <tr><td class="y">1987</td><td>东安格利亚大学建立全英第一个创意与批判性写作博士</td></tr>
+        <tr><td class="y">1980s</td><td>英国成立 NAWE</td></tr>
+        <tr><td class="y">1996</td><td>澳大利亚成立 AAWP</td></tr>
+        <tr><td class="y">1999</td><td>澳大利亚共 142 个创意写作项目</td></tr>
+        <tr><td class="y">2003</td><td>英国超 140 个本科课程、70 多个硕士、约 20 个博士</td></tr>
+        <tr><td class="y">2005 / 2010</td><td>莱比锡国际创意写作计划大会（EACWP 缘起）／ENCWP 重新整合为 EACWP</td></tr>
+        <tr><td class="y">2010</td><td>加拿大成立 CCWWP（近 30 所大学提供项目）</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sh">中国线</h3>
+    <table class="tbl">
+      <thead><tr><th style="width:110px">年份</th><th>事件</th></tr></thead>
+      <tbody>
+        <tr><td class="y">1959</td><td>起，台湾作家赴美接受 Creative Writing 学科训练</td></tr>
+        <tr><td class="y">1980s 初</td><td>香港浸会大学开设创意写作专业</td></tr>
+        <tr><td class="y">2009</td><td><b>元年</b>：复旦设创意写作艺术硕士点；上海大学文学与创意写作研究中心成立</td></tr>
+        <tr><td class="y">2012</td><td><b>西北大学设创意写作本科专业</b>；广外开本科方向；人大社「创意写作」书系推出</td></tr>
+        <tr><td class="y">2014</td><td>首个创意写作博士点（计划外二级学科）落户上海大学；北大招专业硕士；北师大招「文学创作」硕士；中山大学成立内地首个英语创意写作研究中心</td></tr>
+        <tr><td class="y">2015</td><td>人大「创造性写作研究生班」招生；同济推出创意写作艺术硕士；山东大学创意写作研究中心揭牌；温州大学创意中文实验班</td></tr>
+        <tr><td class="y">2016</td><td>东北师范大学文学院成立创意写作中心</td></tr>
+        <tr><td class="y">2017</td><td>江苏师范大学开始招收创意写作研究生</td></tr>
+        <tr><td class="y">2018</td><td>华东师大成立中国创意写作研究院；清华开设「写作与沟通」；创意写作列入《普通高等学校本科专业类教学质量国家标准》；南大与江苏省作协共建江苏文学院</td></tr>
+        <tr><td class="y">2020</td><td>据不完全统计，全国 200 多家高校开设创意写作本科课程（杨庆祥）</td></tr>
+      </tbody>
+    </table>
+    <div class="chk" data-k="ch2_kv"><span class="bx">✓</span>数字表已过一遍</div>
+  </div>
+</div>
+
+<!-- ============ OCR 校对说明 ============ -->
+<div class="section">
+  <h2 class="st">附二：OCR 校对说明（哪些地方我动过手）</h2>
+  <div class="panel">
+    <p style="font-size:14px;line-height:1.9;margin:0 0 10px">这份 PDF 是 20 页<b>扫描件、无文本层</b>，正文由 OCR 识别。页面底部反复盖有「菜菜创意写作」水印，OCR 因此<b>漏掉 4 处页底文字</b>。我把这几页的内嵌扫描原图抠出来逐页比对，补回如下——这些内容在纯 OCR 文本里是<b>缺失的</b>，背的时候别照 OCR 版背：</p>
+    <div class="fix"><b>① 第 7 页末（世界扩散）</b>：OCR 原文残缺为「……对多语多和审说试金部“生了能响，创传播到世界各地」。<br>原图实为：<b>「美国创意写作对很多英语国家和非英语国家都产生了影响，创意写作也逐渐传播到世界各地，爱尔兰、巴西、日本、菲律宾等国家的高校也都受到这种世界潮流的影响创设了创意写作系统。」</b></div>
+    <div class="fix"><b>② 第 9 页末（总体特征第四条）</b>：OCR 把整段第四点吞掉，直接从「核心经验」接起，导致「总体特征」看起来只有三条。<br>原图实为：<b>「……欧洲创意写作计划网络（the European Network of Creative Writing Programmes，简称 ENCWP）成立。2010 年，它被重新整合为欧洲创意写作计划协会。西方国家重要的创意写作组织也都具有国际性，除了英语国家之外，还有更多国家从业人才参与。」</b> 其后另起一段：<b>「第四，确立了核心命题。」</b></div>
+    <div class="fix"><b>③ 第 16 页末（内地三条前史）</b>：OCR 缺「一、」序号与「写作热」等字样。<br>原图实为：<b>「一、上个世纪八十年代『写作热』之时，国内翻译引进了美国一些写作指导书……」</b>「二、从上个世纪八十年代开始，内地一些作家通过爱荷华『国际写作计划』……」</div>
+    <div class="fix"><b>④ 第 18—19 页（现状四个小标题）</b>：OCR 丢了「其一」小标题，并把「其三」断在半句。<br>原图实为：<b>「目前中国创意写作发展态势呈现如下特征：其一，规模体量逐渐扩大。……其三，创意写作组织活动与学术研究日渐活跃。……美国创意写作教学起步较早，但真正意义上的学术研究却是近三十多年的事情。」</b></div>
+    <div class="note"><b>另有一类小瑕疵（未逐一修补）</b>：水印压在句中时，OCR 会吞掉 1—3 个字，例如第 9 页「在<b>西方大学创意</b>写作系统中」被识别成「在意写作系统中」。这类断字不影响文意与考点，本页凡引用处均已按原图与上下文校正；如需逐字复核，可随时按页调图再核。</div>
+  </div>
+</div>
+
+<!-- ============ 互链 ============ -->
+<div class="section">
+  <h2 class="st">相关页面</h2>
+  <div class="panel">
+    <div class="links">
+      <a href="创意写作简史三题_材料题完整答案.html">创意写作简史三题 · 材料题完整答案（跨文档综合版）</a>
+      <a href="材料题答题方式_AI写作与创意写作.html">材料题答题方式 · AI 写作与创意写作</a>
+      <a href="创意写作_定义与特征_背诵版.html">创意写作的定义与特征 · 背诵版</a>
+      <a href="647创意写作基础_答题评分标准.html">647 创意写作基础 · 答题评分标准</a>
+      <a href="index.html">返回资料库导航</a>
+    </div>
+    <div class="prog">
+      <span>本章打卡</span>
+      <span class="bar"><i id="progBar"></i></span>
+      <span id="progTxt">0 / 11</span>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:28px;line-height:1.9">
+  全部内容取自教材第二章原文，OCR 漏文已按扫描原图逐页补回；<br>
+  凡原章未提及的内容（如 2023 创意写作联盟、2024 二级学科）不在本页作答中，另见综合版页面。
+</div>
+
+</main>
+
+<script>
+var FS = 16;
+function applyFS(){ document.documentElement.style.setProperty('--fs', FS + 'px'); }
+try{ var s = localStorage.getItem('ch2_fs'); if(s) FS = parseInt(s,10) || 16; }catch(e){}
+applyFS();
+document.getElementById('zo').onclick = function(){ FS = Math.min(22, FS + 1); applyFS(); try{localStorage.setItem('ch2_fs', FS);}catch(e){} };
+document.getElementById('zi').onclick = function(){ FS = Math.max(13, FS - 1); applyFS(); try{localStorage.setItem('ch2_fs', FS);}catch(e){} };
+
+var KEY = 'ch2_checks';
+function loadChecks(){
+  var d = {};
+  try{ d = JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ d = {}; }
+  var n = 0, total = 0;
+  document.querySelectorAll('.chk').forEach(function(el){
+    total++;
+    if(d[el.getAttribute('data-k')]){ el.classList.add('on'); n++; }
+    el.onclick = function(){
+      el.classList.toggle('on');
+      var dd = {};
+      try{ dd = JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ dd = {}; }
+      dd[el.getAttribute('data-k')] = el.classList.contains('on');
+      try{ localStorage.setItem(KEY, JSON.stringify(dd)); }catch(e){}
+      count();
+    };
+  });
+  function count(){
+    var c = 0;
+    document.querySelectorAll('.chk.on').forEach(function(){ c++; });
+    document.getElementById('progBar').style.width = (total ? (c / total * 100) : 0) + '%';
+    document.getElementById('progTxt').textContent = c + ' / ' + total;
+  }
+  count();
+}
+loadChecks();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

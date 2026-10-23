@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文学史带背 · 逐日索引</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+  :root{
+    --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073;
+    --line:#e3dccd; --accent:#9a3b2e; --gold:#c8902a; --green:#3b6b5e;
+    --fs-base:15px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:var(--fs-base)}
+  html,body{background:var(--bg);color:var(--ink);
+    font-family:"LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;
+    background-image:radial-gradient(circle at 18% 12%,rgba(200,144,42,.07) 0,transparent 34%),
+                     radial-gradient(circle at 85% 22%,rgba(154,59,46,.06) 0,transparent 38%),
+                     radial-gradient(circle at 60% 88%,rgba(59,107,94,.06) 0,transparent 40%);
+    min-height:100vh;line-height:1.8;}
+  .wrap{max-width:1060px;margin:0 auto;padding:36px 20px 80px;}
+
+  .hero{text-align:center;padding:34px 20px 26px;}
+  .hero .seal{display:inline-block;width:52px;height:52px;line-height:52px;text-align:center;
+    border:2.5px solid var(--accent);color:var(--accent);border-radius:10px;
+    font-size:20px;font-weight:700;transform:rotate(-6deg);margin-bottom:14px;
+    box-shadow:inset 0 0 0 3px rgba(154,59,46,.12);user-select:none;}
+  .hero h1{font-size:34px;letter-spacing:4px;font-weight:700;}
+  .hero .sub{margin-top:10px;color:var(--sub);font-size:15px;letter-spacing:2px;}
+  .hero .rule{width:220px;height:2px;margin:18px auto 0;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+
+  .backlink{text-align:center;margin-bottom:26px;}
+  .backlink a{display:inline-block;padding:7px 18px;border:1px solid var(--line);border-radius:99px;
+    background:var(--card);color:var(--sub);text-decoration:none;font-size:14px;transition:.2s;margin:0 4px;}
+  .backlink a:hover{border-color:var(--gold);color:var(--accent);}
+
+  .stats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:8px 0 26px;}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:10px 22px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+  .stat b{display:block;font-size:22px;color:var(--accent);line-height:1.3;}
+  .stat span{font-size:13px;color:var(--sub);letter-spacing:1px;}
+
+  .sect{font-size:17px;font-weight:700;letter-spacing:2px;color:var(--ink);
+    margin:32px 0 6px;padding-left:12px;border-left:4px solid var(--gold);}
+  .sect-hint{font-size:13px;color:var(--sub);margin:0 0 14px 16px;letter-spacing:.5px;}
+  .sect:first-of-type{margin-top:10px;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+  .day{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    overflow:hidden;text-decoration:none;color:inherit;display:block;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .18s ease,box-shadow .18s ease;}
+  .day:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.10);}
+  .day .edge{position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--green);}
+  .day .body{padding:16px 20px 14px 24px;}
+  .day .top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .day .no{min-width:36px;height:36px;padding:0 7px;border-radius:9px;display:flex;align-items:center;
+    justify-content:center;font-size:13px;font-weight:700;color:#fff;flex:none;background:var(--green);letter-spacing:0;}
+  .day .name{font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.4;flex:1;}
+  .day .tags{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 8px;}
+  .day .tag{font-size:12px;padding:2px 9px;border-radius:99px;
+    background:#e9f1ed;color:#2c5a4d;}
+  .day .tag.hot{background:#f7e6e2;color:#9a3b2e;}
+  .day .desc{font-size:13.5px;color:var(--sub);line-height:1.7;}
+  .day .foot{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);
+    display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--sub);}
+  .day .go{color:var(--green);font-weight:700;}
+
+  .note{margin-top:30px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 20px;font-size:14px;color:var(--sub);}
+  .note b{color:var(--ink);}
+  .note ul{margin:6px 0 0 18px;}
+  .note li{margin:3px 0;}
+
+  .footnote{text-align:center;margin-top:34px;font-size:13px;color:var(--sub);letter-spacing:1px;}
+
+  .font-ctrl{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;align-items:center;gap:.4rem;
+    background:rgba(43,38,32,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}
+  .font-ctrl button{width:2rem;height:2rem;border:none;border-radius:50%;background:rgba(244,236,219,.18);
+    color:#f4ecdb;cursor:pointer;font-size:1.1rem;font-weight:700;display:flex;align-items:center;
+    justify-content:center;font-family:inherit}
+  .font-ctrl button:hover{background:var(--gold);color:#fff}
+  .font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}
+  .font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}
+  @media(max-width:720px){.hero h1{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="seal">带<br>背</div>
+    <h1>文学史带背 · 逐日索引</h1>
+    <div class="sub">古代文学 第 1—34 天 · 外国文学 第 1—29 天 · 现当代文学 第 1—23 天（现代）＋ 第 1—11 天（当代）</div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="backlink"><a href="../index.html">← 返回学习导航</a><a href="../百日冲刺计划.html">百日冲刺计划</a></div>
+
+  <div class="stats">
+    <div class="stat"><b>95</b><span>份带背页</span></div>
+    <div class="stat"><b>4180</b><span>个打卡点</span></div>
+    <div class="stat"><b>古代 31（＋复盘＋问答）· 外国 28 · 现当代 34</b><span>覆盖范围</span></div>
+  </div>
+
+  <div class="sect">古代文学 · 先秦（新）</div>
+  <div class="sect-hint">第 1—9 天 · 中国古代文学概述与上古神话 → 《诗经》专题 → 先秦散文 → 楚辞 → 秦及西汉散文 → 两汉辞赋 → 《史记》→《汉书》与汉代诗歌 → 秦汉文学概述（总纲）→ Day 10 魏晋文学（文学自觉／魏晋风流／建安风骨）→ Day 11·12 魏晋作家专题（三曹／建安七子／正始之音／左思风力／陶渊明）→ Day 13 南北朝诗歌（元嘉三大家／永明体／宫体诗／木兰诗／谢灵运／鲍照）→ Day 15 南北朝散文与小说（哀江南赋／洛阳伽蓝记／水经注／搜神记／世说新语）→ Day 16-17 唐代诗歌（唐诗流变／初唐四杰／盛唐气象／王孟／高岑）→ Day 18 中唐诗文（韩孟诗派／元白／古文运动）→ Day 18 李白与杜甫（诗史／集大成／沉郁顿挫／律诗） → Day 19 中唐诗文（韩愈／白居易／柳宗元／苦吟诗／刘禹锡） → Day 20 中晚唐诗文（元稹／李贺／杜牧／李商隐） → Day 21 唐传奇与唐五代词（唐传奇／变文／花间词派／李煜） → Day 22 宋·概述（宋文／宋诗／宋词＋宋初三体） → Day 23 宋·词与诗文革新（晏殊／张先／范仲淹／欧阳修／苏梅／江西诗派／柳永） → Day 24 宋·苏轼与南宋文坛（苏门／南渡词人／李清照／陆游／范杨） → Day 25 宋末元上（辛弃疾／姜吴／宋代话本／元好问／关汉卿） → Day 26 元中（西厢记／元曲四大家／话本平话／四大传奇） → Day 27 元下（南戏／琵琶记／四大南戏／元散曲／元诗） → Day 28 明代上（总论·文体三线·章回·传奇·三国·水浒） → <b>复盘 01（第 1—9 天）</b> → <b>问答 01（第 1—9 天 · 题目＋答案＋复盘）</b></div>
+  <div class="grid">
+
+    <a class="day" href="day01-古代文学-先秦.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D1</div>
+          <div class="name">先秦（一）· 概述与上古神话</div>
+        </div>
+        <div class="tags">
+          <span class="tag">三古七段</span><span class="tag">中国文学特色</span>
+          <span class="tag hot">❗兴观群怨·考过</span>
+          <span class="tag">上古歌谣</span><span class="tag">弹歌</span>
+          <span class="tag hot">❗神话思维特征·考过简答</span>
+        </div>
+        <div class="desc">影响文学发展的因素 · 三古七段名解（三古＋七段＋对照表）· 中古近古分期 · 题材体裁分类 · 中国文学特色 · 先秦总特点 · 兴观群怨名解（考过）· 上古歌谣名解＋五类＋艺术特色四点＋《弹歌》· 神话名解＋产生原因＋内容六大类 · 神话特征与形象（❗思维特征考过简答·含2023真题）· 与传说/文学创作之别 · 影响三点。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 张 PPT · <b>8</b> 卡 · <b>33</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day02-古代文学-诗经.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D2</div>
+          <div class="name">《诗经》专题</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗❗❗艺术特色整页背</span>
+          <span class="tag">诗经概述</span><span class="tag">风雅颂</span><span class="tag">赋比兴</span>
+          <span class="tag">六义</span><span class="tag">四家诗</span>
+          <span class="tag hot">❗兴的三种情况·考过简答</span>
+        </div>
+        <div class="desc">《诗经》概述名解（第一部诗歌总集·305篇）· 风雅颂＋赋比兴＝六义（六个名解）· 四家诗名解＋四始说＋毛传郑笺＋收集整编＋四大公案 · 内容六类与代表作（祭祖史诗／农事／燕飨／怨刺／战争徭役／婚恋）· 艺术特色六条（❗❗❗整页背）＋影响四点（风雅精神）· 兴的三种情况（考过简答·课本66页）。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 张 PPT · <b>8</b> 卡 · <b>30</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day03-古代文学-先秦历史散文与诸子散文.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D3</div>
+          <div class="name">先秦散文 · 历史散文与诸子散文</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗《左传》《战国策》论述</span>
+          <span class="tag hot">❗❗❗《庄子》论述·非常重要</span>
+          <span class="tag">尚书·春秋·国语</span><span class="tag">诸子发展阶段与影响</span>
+          <span class="tag">老子·论语·墨子·孟子</span><span class="tag">荀子·韩非子</span>
+        </div>
+        <div class="desc">先秦历史散文概述与发展（四阶段·背景·四特点）· 历史散文影响【简答】·《尚书》《春秋》《国语》三名解＋艺术特点（三个「第一」别混）·《左传》论述【重点】（叙事六点·君子曰·尤善叙战事）·《战国策》论述【重点】（辩丽横肆·辞赋化倾向·寓言）· 诸子散文发展阶段＋影响【简答】· 老子·论语·墨子·孟子四子名解与文学特色＋横向对照表 ·《庄子》论述【最重要】（轮辐式结构·寓言·三言·汪洋恣肆）· 附荀子·韩非子 · 关联记忆锦囊。</div>
+        <div class="foot">
+          <div class="cnt"><b>10</b> 卡 · <b>68</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day04-古代文学-楚辞.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D4</div>
+          <div class="name">楚辞 · 屈原</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗《离骚》思想内容＋艺术特色</span>
+          <span class="tag hot">❗❗香草美人象征系统</span>
+          <span class="tag">荀子韩非子艺术特色</span><span class="tag">楚辞文体特点</span>
+          <span class="tag">屈原的文学地位</span><span class="tag">九歌·招魂·九辩</span>
+        </div>
+        <div class="desc">荀子·韩非子艺术特色（承接第 3 天）· 楚辞概述：文化政治背景四点 · 文体特点三点（兮字·些字·六五言）· 屈宋（前 339—前 278 · 25 篇／24 篇）· 屈原的文学地位/影响【简答·五点】·《离骚》思想内容【重点‼️】四点 ·《离骚》艺术特色【重点‼️】（浪漫想象·曦和望舒·抒情主人公·香草美人象征系统·新诗体五点）·《九章》（橘颂＝咏物之祖）《天问》（172 问·千古奇文）《九歌》（十一篇·神性与人性统一）《招魂》（招楚怀王·结构精密＋长于铺排）·《九辩》与《离骚》的异同（思想境界不及·悲秋发端·铺排刻画造语）· 句摘 · 课件四道简答论述题。</div>
+        <div class="foot">
+          <div class="cnt"><b>10</b> 卡 · <b>68</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day05-古代文学-秦及西汉散文.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D5</div>
+          <div class="name">秦及西汉散文</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗吕氏春秋 名解＋特色</span>
+          <span class="tag hot">❗李斯艺术特色（骈体之祖／碑铭之祖）</span>
+          <span class="tag">贾谊艺术特色</span><span class="tag">过秦论</span>
+          <span class="tag">淮南子艺术特色</span><span class="tag">西汉辞赋真题</span>
+        </div>
+        <div class="desc">《吕氏春秋》名解＋艺术特色（吕不韦集门客·杂家·八览六论十二纪；取材广泛／类比论证／多用寓言——亡斧疑邻·刻舟求剑）· 李斯艺术特色【小简答】（《谏逐客书》立论高度＋结构严密三点＋辞采华美排比铺张＝骈体之祖；刻石文四字韵文·颂功明法·碑铭之祖）· 贾谊艺术特色（散文 58 篇·新书；骚体赋抒情述志·议论多于形象·吊屈原赋＝汉代最早抒情赋；政论文＝西汉鸿文三点；《过秦论》内容＋章法／语言／风格）·《淮南子》名解＋艺术特色（刘安与门客·内书 21 篇＝淮南鸿烈·道家为主·汉初黄老之继续；多用神话传说／行文铺张开骈文之先河）· 附：西汉辞赋真题（七发／子虚乌有／七体／天子游猎赋 2012·616）· 四篇横向对照表。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>40</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day06-古代文学-两汉辞赋.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D6</div>
+          <div class="name">两汉辞赋</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗《七发》艺术特色</span>
+          <span class="tag hot">❗司马相如 · 艺术特色与地位</span>
+          <span class="tag">扬雄艺术特色</span><span class="tag">《两都赋》</span>
+          <span class="tag">《二京赋》《归田赋》</span><span class="tag">二京·两都异同</span>
+        </div>
+        <div class="desc">枚乘《七发》艺术特色【可能考简答】（七体之祖·铺陈／结构／讽喻三点）· 司马相如艺术特色与汉赋史上的地位（《子虚赋》《上林赋》＝《天子游猎赋》·劝百讽一·赋家之心；集大成＋定型＋影响）· 扬雄艺术特色【简单背】（四大赋·模拟相如而更趋理性·《法言》《太玄》）· 班固《两都赋》艺术特色（东都为主·征实·典雅·以颂为主）· 张衡《二京赋》《归田赋》艺术特色（长篇之极轨·抒情小赋之祖=归田）·《二京赋》与《两都赋》的异同 ＋ 思考题 · 两汉辞赋谱系速记表。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 卡 · <b>53</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day07-古代文学-史记.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D7</div>
+          <div class="name">《史记》</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗主要组成（名解）</span>
+          <span class="tag hot">❗❗艺术成就·人物刻画</span>
+          <span class="tag hot">❗叙事艺术</span><span class="tag hot">❗风格特征</span>
+          <span class="tag">语言特色</span><span class="tag">地位和影响</span>
+          <span class="tag">《史记》《汉书》异同</span>
+        </div>
+        <div class="desc">《史记》概述与主要组成【名解】（第一部纪传体通史·黄帝至汉武帝太初约三千年·本纪书表世家列传五体·互见法）；产生的必然性四点 · 创作目的 · 思想内容六点 · 史学成就三点 · 相关研究（三家注）· 艺术成就（一）人物刻画❗（个性化六点／互见法＝人物再现法／对比·细节·心理）· 艺术成就（二）叙事艺术❗（布局谋篇／追根溯源·详略得当／情节场面／风格多样化）· 艺术成就（三）风格特征❗（宏廓画面·雄深雅健／浓郁悲剧气氛·完美型缺失型／强烈传奇色彩）· 语言特色三点 · 地位和影响五点 · 真题：〈史记〉〈汉书〉文学成就异同 · 记忆锦囊。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>61</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day08-古代文学-汉书与汉代诗歌.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D8</div>
+          <div class="name">《汉书》· 汉代诗歌</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗汉书与史记比较</span>
+          <span class="tag hot">❗乐府、乐府诗（名解）</span>
+          <span class="tag hot">❗孔雀东南飞艺术特色</span>
+          <span class="tag hot">❗古诗十九首（名解＋艺术特色）</span>
+          <span class="tag">苏武传</span><span class="tag">五言之冠冕</span>
+        </div>
+        <div class="desc">《汉书》与《史记》比较（六项对照表）·《汉书》概述【名解】（第一部纪传体断代史·一百篇·班彪班固班昭马续）·《汉书》艺术特色（叙事四点／写人三点／语言）·《苏武传》艺术特色（剪裁严谨＋三组对比）· 乐府与乐府诗【名解】＋汉代乐府诗特点＋体制沿革（太乐乐府·武帝昌盛期·东汉太子乐署黄门鼓吹·郭茂倩乐府诗集）·《陌上桑》·《孔雀东南飞》（梗概／思想内容五点／艺术特色六点／影响三点）· 东汉文人诗发展过程（长城之歌→班固咏史→古诗十九首）·《古诗十九首》【名解·题材内容·思想内容】·《古诗十九首》艺术特色（长于抒情·质朴自然·情景交融·言浅意深）· 记忆锦囊。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 卡 · <b>71</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day09-古代文学-秦汉文学概述.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D9</div>
+          <div class="name">秦汉文学概述</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗文体的嬗变</span>
+          <span class="tag hot">❗四个时期</span>
+          <span class="tag hot">❗总特点·多元化</span>
+          <span class="tag hot">❗东汉变化</span>
+          <span class="tag">散文代表</span>
+          <span class="tag hot">❗辞赋分类＋汉大赋艺术特色</span>
+        </div>
+        <div class="desc">秦汉文学总纲页。文体的嬗变（赋／楚辞体／叙事散文／五言诗四种）· 汉代文学发展的四个时期（初创《七发》→ 全盛《史记》→ 中兴《汉书》→ 由盛转衰《古诗十九首》）· 总特点——多元化（宫廷文士／以大为美／凝重板滞／人史合一）· 东汉的变化（现实化／个性化抒情化／典雅化／骈俪化；杜笃《论都赋》＝标志）· 散文代表（西汉政论三期＋四篇书信奇花；东汉三大家：王充《论衡》／王符《潜夫论》／仲长统《昌言》）· 辞赋分类（骚体赋／散体大赋／抒情小赋；汉赋四大家）· 抒情小赋【名解】（纪行赋·述志赋）· 汉大赋成因·特点五点·意义四点［提纲点名：抒情小赋背名解、汉大赋背艺术特色］· 记忆锦囊＋真题（淮南子作者）。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>64</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- gd10-card -->
+    <a class="day" href="day10-古代文学-魏晋文学.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D10</div>
+          <div class="name">魏晋文学 · 文学自觉 · 建安风骨</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗文学自觉的标志·2012 考过简答</span>
+          <span class="tag hot">❗魏晋风流 名解</span>
+          <span class="tag hot">❗建安风骨 名解＋特征</span>
+          <span class="tag hot">❗文学风格＋总特点 简答论述</span>
+          <span class="tag">文学形式九体</span>
+          <span class="tag">主题 生死·游仙·隐逸</span>
+          <span class="tag">建安·正始·太康 三名解</span>
+          <span class="tag">南北朝文学概况</span>
+        </div>
+        <div class="desc">魏晋南北朝文学总纲页。文学形式——诗歌九体（建安三曹七子／正始竹林七贤／太康三张二陆两潘一左／玄言孙绰许询／田园陶渊明／乐府鲍照／山水谢灵运／永明体谢朓／梁陈宫体）＋乐府民歌（南朝吴声西曲·北朝梁鼓角横吹曲）＋文章（骈文·散文·史传）＋小说（《世说新语》《搜神记》）＋文论四家（《典论·论文》《文赋》《文心雕龙》《诗品》）· 文学主题——乱世文学（生死／游仙／隐逸，并与药和酒相连）· 文学自觉的标志【2012 年 618 考过简答】（独立门类／体裁细分／审美自觉／新文学思潮）· 魏晋风流【名解】（玄心·洞见·妙赏·深情 ＋ 颖悟·旷达·真率）· 分期与总特点（建安·正始·太康 三名解＋南北朝文学概况七步；附门阀制度、佛经翻译对文学的五点影响）· 文学风格 4 点＋总特点 5 点（合起来一个简答论述）· 建安风骨【名解＋时代特征四点·重点】· 记忆锦囊＋部分真题六题（曹操专题按提纲留至次日）。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>110</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd10-card -->
+
+    <!-- gd11-card -->
+    <a class="day" href="day11-12-古代文学-魏晋文学作家专题.html">
+      <div class="edge" style="background:#3f6b4a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D11-12</div>
+          <div class="name">魏晋文学 · 作家专题</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗❗❗陶渊明 分类＋艺术特色</span>
+          <span class="tag hot">❗三曹艺术特色（曹植重点）</span>
+          <span class="tag hot">❗正始文学 名解＋阮籍嵇康</span>
+          <span class="tag hot">❗左思风力 名解·2010前考过</span>
+          <span class="tag">七子 · 蔡琰 名解</span>
+          <span class="tag">玄言诗 名解＋特色</span>
+          <span class="tag">郭璞游仙诗</span>
+          <span class="tag">部分真题</span>
+        </div>
+        <div class="desc">魏晋文学作家专题页。三曹——曹操【古直悲凉】／曹丕【便娟婉约】／曹植【文采气骨·提纲点名重点】（分期、思想内容、艺术特色、影响）· 建安七子【名解】（孔陈王徐阮应刘；王粲「七子之冠冕」·刘桢「壮而不密」）＋ 蔡琰【名解】（五言《悲愤诗》＝中国文学史上第一篇自传体的叙事诗）· 正始文学【名解】（240—249·玄学·竹林七贤）＋ 阮籍（阮旨遥深·《咏怀诗》·比兴象征／意蕴深沉／哲理情意）＋ 嵇康（嵇志清峻·越名教而任自然·四言顶峰）· 玄言诗【名解】（东晋孙绰许询·「理过其辞，淡乎寡味」）· 左思风力【名解】（钟嵘《诗品》·《咏史》八首·承建安风骨）兼太康诗坛定位（三张二陆两潘一左·刘琨）· 郭璞游仙诗【艺术特色】（山林隐士／抒情浓厚／辞采清丽·名游仙实咏怀）· 陶渊明【诗歌分类＋艺术特色·重中之重】（田园／咏怀咏史／行役／赠答 ＋ 平淡自然等六点；文学成就四点；萧统「白璧微瑕」）· 记忆锦囊＋部分真题。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>96</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd11-card -->
+
+    <!-- gd13-card -->
+    <a class="day" href="day13-古代文学-南北朝诗歌.html">
+      <div class="edge" style="background:#2f5f7a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D13</div>
+          <div class="name">南北朝诗歌 · 三变 · 民歌 · 谢鲍</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗《玉台新咏》名解·2024 西大真题</span>
+          <span class="tag hot">❗元嘉三大家／山水诗／永明体／宫体诗 四名解</span>
+          <span class="tag hot">❗谢灵运 艺术特色＋陶谢对比</span>
+          <span class="tag hot">❗鲍照 艺术特色（影响李白）</span>
+          <span class="tag">北朝民歌 艺术特点</span>
+          <span class="tag">南朝民歌 吴歌·西曲</span>
+          <span class="tag">《木兰诗》艺术成就四点</span>
+          <span class="tag">《西洲曲》《敕勒歌》</span>
+        </div>
+        <div class="desc">南朝诗歌与南北朝民歌。概述——南朝诗歌三变（<b>元嘉山水／永明声律／梁陈宫体</b>）＋分期三段（元嘉颜延之·谢灵运·鲍照／永明谢朓·沈约＋梁前期江淹吴均何逊／梁陈萧纲·陈后主·徐陵·庾信·江总）· 名词解释四则——元嘉三大家（谢富艳精工·颜华美典雅·鲍雄恣奔放＝「宋初三体」＋元嘉新特点四点）／山水诗（脉络：曹操《观沧海》＝第一首完整山水诗→谢灵运＝第一位有成就的山水诗人）／永明体（谢朓沈约·讲究声律对偶·又称新体诗／为律诗成熟与唐诗繁荣奠基）／宫体诗（梁陈·以女性为审美观照·伤于轻艳·徐陵编《玉台新咏》）· 《玉台新咏》【2024 西大真题】（徐陵编·成书梁代·收汉至梁·十卷·撰录艳歌·继《诗经》《楚辞》后第三部重要诗歌总集）· 北朝民歌艺术特点（抒情／意象／诗体／语言，与《诗经》对比）· 南朝民歌艺术特点（出处《清商曲辞》·吴歌＝建业存 326 首／西曲＝江陵）· 《木兰诗》艺术成就四点＋《西洲曲》（南朝最长抒情诗）＋《敕勒歌》· 谢灵运艺术特色六点＋【陶谢对比表】· 鲍照艺术特色五点（歌行体开创者·影响李白）。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>81</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd13-card -->
+
+    <!-- gd15-card -->
+    <a class="day" href="day15-古代文学-南北朝散文与小说.html">
+      <div class="edge" style="background:#5a4a7a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D15</div>
+          <div class="name">南北朝散文与小说 · 谢庾 · 伽蓝 · 志怪志人</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗谢朓 艺术特色·2022 西大真题＋大小谢对比</span>
+          <span class="tag hot">❗庾信 艺术特色与《哀江南赋》</span>
+          <span class="tag hot">❗《哀江南赋》《洛阳伽蓝记》《水经注》三名解</span>
+          <span class="tag hot">❗志怪小说／志人小说 艺术特点及影响</span>
+          <span class="tag hot">❗《搜神记》《世说新语》名解＋艺术特色</span>
+          <span class="tag">魏晋南北朝散文与辞赋 整体特色</span>
+          <span class="tag">左思《三都赋》洛阳纸贵</span>
+          <span class="tag">志怪志人 对比表</span>
+        </div>
+        <div class="desc">南北朝散文、辞赋与小说。谢朓（<b>小谢</b>·永明体代表·「余霞散成绮」·清新流丽）艺术特色＋【大小谢对比表】· 庾信（由南入北·<b>集南北之大成</b>）艺术特色与《哀江南赋》（乡关之思·史诗式自传赋）· 魏晋南北朝散文与辞赋整体特色（<b>建安赋</b>抒情化六点／南朝文坛五条／<b>骈文</b>四特征＋五家）· 左思《三都赋》「洛阳纸贵」＋赋一条线串讲 · 《洛阳伽蓝记》（杨衒之·追述北魏洛阳佛寺）·《水经注》（郦道元·地理散文名著）两则名解 · 志怪小说（概述／兴起三因／内容三类／思想五点／艺术三点）· 志人小说特点＋影响（与唐传奇对比）＋【志怪志人对比表】·《搜神记》（干宝·志怪代表）·《世说新语》（刘义庆·志人代表·记言记行）两则名解＋艺术特色。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>79</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd15-card -->
+
+    <!-- gd16-card -->
+    <a class="day" href="day16-17-古代文学-唐代诗歌.html">
+      <div class="edge" style="background:#7a5a2f;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D16-17</div>
+          <div class="name">唐代诗歌 · 初唐与盛唐 · 流变·四杰·盛唐气象</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗唐诗流变六段（关键词）</span>
+          <span class="tag hot">❗初唐四杰 艺术特色及影响·简答·2010论述</span>
+          <span class="tag hot">❗盛唐气象 名解·论述曾考</span>
+          <span class="tag hot">❗王维·孟浩然 艺术特色·简答</span>
+          <span class="tag hot">❗高适·岑参 简答＋高岑不同五点·曾考</span>
+          <span class="tag">上官体 名解</span>
+          <span class="tag">陈子昂 兴寄说·风骨说</span>
+          <span class="tag">张若虚《春江花月夜》</span>
+          <span class="tag">王昌龄 小简答</span>
+        </div>
+        <div class="desc">唐代诗歌（初唐＋盛唐）。①<b>唐诗流变六段</b>：初90年准备阶段（律诗定型）→ 开元天宝全面繁荣 → 安史之乱755由盛转衰（杜甫）→ 大历气骨顿衰 → 贞元元和韩孟／元白 → 长庆后苦吟（杜牧李商隐）；附<b>唐诗高度成就七因</b>。②<b>初唐诗歌分期三段</b>：太宗君臣＋王绩（山水田园先驱）→ 初唐四杰（沈宋促律诗定型）→ 陈子昂（汉魏风骨·风雅兴寄）；附隋代诗歌与<b>上官体名解</b>（六对八对）。③<b>初唐四杰</b>（《旧唐书·杨炯传》：王勃·杨炯·卢照邻·骆宾王）＝共同特点3＋<b>艺术特色6</b>＋影响；补文章四友·沈宋律诗定型·吴中四士·歌行体。④<b>陈子昂</b>（《感遇》38首·主题2·艺术特色2·兴寄说·风骨说·影响）＋<b>张若虚《春江花月夜》</b>四点＋刘希夷《代悲白头翁》。⑤<b>盛唐气象</b>名解（严羽《沧浪诗话》：精神内涵·风格特征·唯一性）＋山水田园四因＋边塞诗派四因＋阳刚诗人（王翰·崔颢·李颀）。⑥<b>王维·孟浩然</b>艺术特色（王维诗中有画／以禅入诗／以动衬静／辋川集；孟浩然白描清淡／细致入世／隐士形象）＋<b>王孟不同四点</b>。⑦<b>王昌龄</b>分类2＋艺术特色2。⑧<b>高适·岑参</b>（高适深刻悲壮·燕歌行；岑参瑰丽雄奇·四奇一佳）＋<b>高岑不同五点</b>（内容·风格·抒情方式·语言·体裁）。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>99</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd16-card -->
+
+    <!-- gd18-card -->
+    <a class="day" href="day18-古代文学-李白与杜甫.html">
+      <div class="edge" style="background:#8a3a2e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D18</div>
+          <div class="name">李白与杜甫 · 诗史 · 集大成 · 沉郁顿挫</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗杜甫「诗史」·考过真题</span>
+          <span class="tag hot">❗沉郁顿挫·考过简答·近两年曾考</span>
+          <span class="tag hot">❗杜甫如何集大成</span>
+          <span class="tag hot">❗杜甫律诗艺术特色五点</span>
+          <span class="tag hot">❗李白艺术特色五点＋分体特色</span>
+          <span class="tag">李白 乐府·歌行·绝句七点</span>
+          <span class="tag">杜甫 文学影响与谱系</span>
+          <span class="tag">现实主义创作手法五点</span>
+          <span class="tag">《登高》古今七言律第一</span>
+        </div>
+        <div class="desc">李白与杜甫（第 18 天，杜甫为重点中的重点）。<b>李白</b>：①文化人格四点（道教／蜀中任侠／儒家用世／神仙道教信仰）＋思想内容三点；②<b>艺术特色五点</b>（略去细节从大处落笔／情感基调高远壮大／擅长夸张＋想象跳跃／歌行与绝句／壮美与优美意象＋语言明快）＋影响两点；③<b>乐府</b>（借古题写现事·写己怀，个性气质融入，完成汉魏古体到唐体的转变）与<b>歌行</b>（成就更高，主观情感为轴心，打破固有格式）；④<b>绝句七点</b>（明快格调／含蓄隽永／清新飘逸／自然流贯／自然人性／以古入韵／民歌影响）＋律诗。<b>杜甫</b>：⑤概述（儒家影响四点·思想内容四点）＋<b>何谓诗史</b>（反映历史／补史之缺／生活画面／叙事写诗，真题）＋<b>集大成四点</b>（开拓题材／虚心学习／兼备众体／融会贯通）；⑥<b>文学影响四点</b>（新乐府／七律政治内涵／日常琐细／承先启后的影响谱系）＋集古今诗体之大成；⑦<b>沉郁顿挫</b>（出自《进雕赋表》：沉郁＝内容感情题材，顿挫＝表情方式语言音韵；考过简答）＋<b>现实主义创作手法五点</b>（典型／主观融入／个性化语言／细节／议论入诗）；⑧<b>律诗艺术五点</b>（扩大题材·纵横恣肆·浑融流转·声律精致·炼字炼句）＋《登高》（古今七言律第一）·《秋兴八首》·《兵车行》。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>81</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd18-card -->
+
+    <!-- gd18b-card -->
+    <a class="day" href="day18-古代文学-中唐诗文.html">
+      <div class="edge" style="background:#7a3a6e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D18</div>
+          <div class="name">中唐诗文 · 韩孟诗派 · 古文运动</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗❗古文运动 起因·主张·开拓·评述（论述）</span>
+          <span class="tag hot">❗韩孟诗派主张＋艺术特色（简答）</span>
+          <span class="tag hot">主张段课件标「21 年原题 简答」</span>
+          <span class="tag">大历诗风 · 大历十才子</span>
+          <span class="tag">元白诗派 · 张王乐府</span>
+          <span class="tag">新乐府运动 · 元和体</span>
+          <span class="tag">卢仝 马异 刘叉（险怪例证）</span>
+          <span class="tag">散文概述（骈衰散长一条线）</span>
+          <span class="tag">盛唐到中唐五个记忆点</span>
+        </div>
+        <div class="desc">中唐诗文（第 18 天）。①<b>五个记忆点</b>：盛世不在／生活化／字锤句炼／韩孟元白两派并起／大历过渡；②<b>大历诗风</b>（不逢时事·意气消沉·凄清冷寂意象，象征性与描述性两类；代表刘长卿·韦应物·戴叔伦）＋<b>大历十才子</b>（出姚合《极玄集》，卢纶·钱起·司空曙·韩翃·李端等十人，唱和·流连光景·工于整炼）；③<b>韩孟诗派</b>（「孟诗韩笔」）<b>主张三点</b>：不平则鸣（《送孟东野序》）·笔补造化（创造性诗思＋对物象主观裁夺）·雄奇怪异（突破温柔敦厚诗教，转向抒情特质与主体内心）<b>＋艺术特色四点</b>：大胆驭诗／尚险求奇／以文入诗／以丑为美；④诗人举例：卢仝（《月蚀诗》）·马异·刘叉（《冰柱》《雪车》）；⑤<b>元白诗派</b>（重写实尚通俗，渊源《诗经》「风」＋汉魏乐府＋杜甫自拟新题）＋<b>张王乐府</b>（张籍·王建，元白新乐府的先导）；⑥<b>新乐府运动</b>（李绅 20 首→元稹和诗 12 首→白居易 50 首正式标举）＋<b>元和体</b>（长篇排律·小碎篇章·艳体诗）；⑦<b>散文概述</b>：骈文新变（四杰→张说苏颋→陆贽）／散体发展（唐初→陈子昂→诗人之文→元结李华）／韩柳之前的理论批评；⑧<b>古文运动</b>：<b>起因三点</b>（复兴儒学·政治改革·文章内部规律）<b>主张四点</b>（文以明道·文道合一·自树立不因循·养气与不平之鸣）<b>开拓六点</b>（文笔不分·重技巧·吸收骈文·助字文势·构思·情感）<b>评述两点</b>（文以明道之利弊·重文逾道受杂文学影响）。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>77</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd18b-card -->
+
+    <!-- gd19-card -->
+    <a class="day" href="day19-古代文学-中唐诗文.html">
+      <div class="edge" style="background:#7a3a6e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D19</div>
+          <div class="name">中唐诗文 · 韩愈 · 白居易 · 柳宗元</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗韩愈 诗歌艺术特色＋散文分类＋古文特色</span>
+          <span class="tag hot">❗白居易 诗论＋诗歌分类＋新乐府特点</span>
+          <span class="tag hot">❗柳宗元 诗歌特色＋散文分类＋永州八记</span>
+          <span class="tag">苦吟诗 · 郊岛 名解</span>
+          <span class="tag">刘禹锡四特色 · 刘柳四对</span>
+          <span class="tag">大历诗人四家（韦刘顾李）</span>
+          <span class="tag">韩愈 以文为诗 · 以赋作诗</span>
+          <span class="tag">柳与陶韦之别</span>
+          <span class="tag">《新乐府》五十首的四个缺憾</span>
+        </div>
+        <div class="desc">中唐诗文（第 19 天，人物专题：韩愈／白居易／柳宗元）。①<b>大历诗人</b>：韦应物（前盛唐余韵→后效陶渊明）· 刘长卿（<b>自诩「五言长城」·真题填空</b>）· 顾况（俗中有奇，俗影响张王元白、奇影响韩孟）· 李益（边塞七绝）；②<b>韩愈诗歌</b>：分类三类（反映时政／景物／抒情）＋<b>艺术特色四点</b>（怪奇特征／以丑为美／<b>以赋作诗</b>／<b>以文为诗</b>）；③<b>韩愈散文</b>：五类（论说文·杂文·序文·传记碑志·抒情文）＋<b>古文八点</b>（雄深雅健猖狂恣睢／谋篇布局／情感丰沛／讲究语言／文体创新·碑志·赠序·杂说），总评「<b>无体不善</b>」；④<b>孟郊</b>：内容两点＋艺术特色四点（造语炼字／幽僻意象／以丑为美／抒写贫困）；⑤<b>苦吟诗</b>名解（孟郊→贾岛·姚合）＋<b>郊岛</b>（苏轼「郊寒岛瘦」）＋<b>刘禹锡</b>四特色（感慨却昂扬／简洁明快／咏史怀古／民歌情调）＋<b>刘柳四对</b>（昂扬·沉重／外扩·内敛／气雄·骨峭／风情朗丽·淡泊简古）；⑥<b>白居易诗论</b>：「文章合为时而著，歌诗合为事而作」＋「根情、苗言、华声、实义」＋三性＋评述（正面与三条局限）；⑦<b>白居易诗歌分类</b>（讽谕／闲适／感伤／杂律唱和）＋<b>《新乐府》五十首</b>（系统化讽喻诗·三个艺术特点·《卖炭翁》·四个缺憾）；⑧<b>柳宗元</b>：诗歌四特色（凄冷意象／冷色调／尖利词语／清新淡雅，总纲「简淡幽深」）＋散文四类（哲学论文／杂文／寓言文／传记抒情）＋<b>山水游记与永州八记名解</b>。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>86</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd19-card -->
+
+    <!-- gd20-card -->
+    <a class="day" href="day20-古代文学-中晚唐诗文.html">
+      <div class="edge" style="background:#7a3a6e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D20</div>
+          <div class="name">中晚唐诗文 · 元稹 · 李贺 · 杜牧 · 李商隐</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">‼李商隐 除思想内容外全重点（分类·无题·比较·成就）</span>
+          <span class="tag hot">❗李贺 艺术特色（意象·情感·通感）＋评述</span>
+          <span class="tag hot">❗杜牧 分类三类＋艺术四特色</span>
+          <span class="tag hot">元稹 艺术特色＋《连昌宫词》名解</span>
+          <span class="tag">元白异同（相同三条·不同五条）</span>
+          <span class="tag">晚唐诗风 · 苦吟诗人贾岛姚合</span>
+          <span class="tag">晚唐小品＋三十六体</span>
+          <span class="tag">爱情·隐士·乱离三大专题（大论述骨架）</span>
+          <span class="tag">李商隐四比：齐梁／阮籍／李贺／杜甫</span>
+        </div>
+        <div class="desc">中晚唐诗文（第 20 天）。①<b>元稹</b>：分类三类（艳情／悼亡／唱和）＋艺术特色两点（<b>时语时事</b>／情景兼融）＋推动新乐府（《乐府古题序》·以杜甫为榜样）＋<b>《连昌宫词》名解四层</b>（叙事长诗·今荒昔盛问乱因归题旨·以叙含议非讽谕诗·史实糅传闻）；②<b>元白异同</b>（同：主张·题材·通俗；异：诗境·手法·主张·内容·诗体）＋<b>晚唐诗风</b>（怀古咏史·伤悼，初盛中晚三代对比）＋<b>苦吟诗人贾岛姚合</b>（内容·风格比较＋艺术五点：阅历狭窄／刻意搜寻／推敲锤炼／多佳句／<b>有句无篇</b>）；③<b>李贺</b>（长吉体·诗鬼）：内容四点＋<b>艺术特色</b>（意象与意境：神鬼幽幻·冷艳凄迷·锐利狞恶·想象幻想；情感愤怒激越；<b>通感</b>）＋评述（真正的诗人之诗／影响晚唐／缺陷三点）；④<b>晚唐散文</b>：古文衰落（李翱皇甫湜）／<b>晚唐小品三特点</b>（皮日休·陆龟蒙《笠泽丛书》·罗隐）／骈文回潮与<b>「三十六体」</b>（李商隐·温庭筠·段成式，四六文）；⑤<b>三大专题</b>：爱情艳丽（温庭筠·韩偓《香奁集》·吴融·唐彦谦）／隐士淡泊（<b>皮陆《松陵唱和集》</b>·司空图「韵外之致·味外之旨」）／乱离讽谕（杜荀鹤·郑谷·韦庄《秦妇吟》·罗隐）；⑥<b>杜牧</b>：<b>第一个大量用七绝写咏史诗</b>＋理论主张三点＋分类三类（忧时感事／怀古咏史／其他）＋<b>艺术四特色</b>（七律七绝／<b>以古讽今·二十八字史论</b>／俊爽风格／情景交融）；⑦<b>李商隐</b>：分类（政治诗·抒情诗四点）＋<b>无题诗多义性五层</b>（复义／意象非现实／用典传情不传事／跳跃组合／写整个心境）＋诗风渊源四条走向＋<b>艺术四特色</b>（比兴寄托／意境蕴藉／用典精深／语言清丽）；⑧李商隐<b>风格比较</b>（齐梁·阮籍·李贺·杜甫）＋<b>成就四项</b>＋散文归于<b>西昆体之祖</b>。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>128</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd20-card -->
+
+    <!-- gd21-card -->
+    <a class="day" href="day21-古代文学-唐传奇与唐五代词.html">
+      <div class="edge" style="background:#7a3a6e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D21</div>
+          <div class="name">唐传奇 · 变文俗讲 · 唐五代词</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">‼唐传奇 名解＋三期分期＋艺术七点＋影响</span>
+          <span class="tag hot">花间词派 名解（温庭筠·赵崇祚《花间集》）</span>
+          <span class="tag hot">李煜 分期＋本色艺术四点＋影响</span>
+          <span class="tag">俗讲·变文 名解与四类</span>
+          <span class="tag">敦煌词曲 名解（《云谣集》）</span>
+          <span class="tag">词的产生·以辞配乐·燕乐</span>
+          <span class="tag">温庭筠艺术五点 · 韦庄白描</span>
+          <span class="tag">温韦比较（客观/直抒·绵密/疏朗）</span>
+          <span class="tag">唐传奇与志怪三区别</span>
+        </div>
+        <div class="desc">唐传奇·变文·唐五代词（第 21 天）。①<b>唐传奇名解</b>（唐代文言短篇小说；六朝志怪＋历史传记＋辞赋诗歌＋民间说唱；名起晚唐裴铏《传奇》·宋代始作统称；存《太平广记》）＋<b>与志怪三区别</b>（现实/超现实·有意识虚构/收集·曲折长/粗陈梗概）＋产生三原因；②<b>三期分期</b>：初盛唐发轫（<b>王度《古镜记》最早</b>·《补江总白猿传》·张鷟《游仙窟》字数最多）／<b>中唐黄金时代</b>（爱情小说最突出：《离魂记》《枕中记》《任氏传》《南柯太守传》《柳毅传》《霍小玉传》《李娃传》《莺莺传》《长恨歌传》＋兴盛四原因）／晚唐衰退（专集多·<b>豪侠传奇</b>：红线·聂隐娘·昆仑奴·<b>《虬髯客传》</b>）；③<b>艺术七点</b>（<b>始有意为小说</b>·虚构与想象·<b>真与幻浑然一体</b>·细节化·完整简洁·<b>文备众体</b>·语言雅俗兼采）；④影响三条（小说/戏曲/散文）＋<b>俗讲名解</b>（僧讲与俗讲·转读唱导）＋<b>变文名解</b>（说唱底本·变场·散韵结合）＋变文四类与艺术七点；⑤词的产生（经济诗繁荣·酒令著辞·<b>以辞配乐</b>·燕乐选诗填辞）＋诗乐结合（乐府先辞后乐配清商／词先乐后辞配燕乐）；⑥<b>敦煌词曲名解</b>（《云谣集杂曲子》30首·体制粗备·咏调名）＋<b>花间词派名解</b>（奉温庭筠为鼻祖·赵崇祚《花间集》·十八家五百首·最早文人词总集）＋<b>温庭筠</b>五特色（浓丽繁缛·含蓄委婉·意象跳跃）＋<b>韦庄</b>白描清丽＋<b>温韦三对</b>（客观/直抒·多层/一事·绵密雕饰/疏朗自然）；⑦南唐：冯延巳（词数五代之首）·李璟＋<b>李煜</b>分期（前期享乐／后期亡国）＋本色四特色（血泪亡国·本色不雕琢·悲哀泛化·语言精炼）＋影响两点（「变伶工之词而为士大夫之词」·为人为己）。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 卡 · <b>115</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd21-card -->
+
+    <!-- gd22-card -->
+    <a class="day" href="day22-古代文学-宋代文学概述与宋初三体.html">
+      <div class="edge" style="background:#2f6b7a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D22</div>
+          <div class="name">宋代文学概述 · 宋初三体</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">‼宋文 平易畅达＋议论叙事抒情三合一</span>
+          <span class="tag hot">‼宋诗「唐宋异体」四点（2022 真题：唐宋诗之别）</span>
+          <span class="tag hot">‼宋词 繁荣原因＋发展四期＋成就三化</span>
+          <span class="tag hot">宋初三体 白体／晚唐体／西昆体（一句对照）</span>
+          <span class="tag">文人生态 社会文化七因＋以俗为雅</span>
+          <span class="tag">宋文学四总特色（补「短于叙事」短板）</span>
+          <span class="tag">白体：李昉徐铉馆阁酬唱</span>
+          <span class="tag">王禹偁 三转向＋独开宋风</span>
+          <span class="tag">晚唐体：九僧＋林逋魏野寇准</span>
+          <span class="tag">西昆体 名解（考过·雕章丽句）</span>
+        </div>
+        <div class="desc">宋代文学概述与宋初三体（第 22 天）。①<b>文人生态</b>（简单了解）：社会文化七因（<b>崇文抑武</b>／关注政治「严瘐有馀灵动不足」／内忧外患「先天下之忧而忧」·辛陆／<b>理学卫道</b>／<b>文以载道</b>「尚文讲学」／印刷教育·<b>宋四大书</b>《文苑英华》《太平御览》《太平广记》《册府元龟》／议论加强·王咏史苏哲理）＋文化性格（三教融合／新型生活态度／<b>以平淡为极境</b>／禅宗随缘任运／雅俗之辨·注重大节而非小节→<b>以俗为雅</b>）＋城市繁荣与词；②<b>‼宋文</b>：承韩柳方向·欧苏完成·散文成正体＋三特点（<b>平易畅达</b>／议论叙事抒情<b>三合一</b>·记体发议论／实用与文采并重）；③<b>‼宋诗「唐宋异体」四点</b>（题材通俗化／多议论以文为诗／模仿而后创新·点铁成金夺胎换骨／<b>2022 真题唐宋诗之别</b>：<b>重象 vs 重意</b>·热烈外扬 vs 理性内敛·丰腴 vs 平淡瘦劲·长于抒情 vs 长于思理）；④<b>‼宋词</b>：繁荣四因＋<b>发展四期</b>（北宋前期小令与柳永慢词／北宋后期<b>词的诗化</b>苏轼·秦观·周邦彦·贺铸／南渡前期李清照「别是一家」／南渡后期辛派 vs 姜吴格律派）；⑤<b>宋词成就四点＋三化</b>（议论化·才学化·散文化）＋题材五点；⑥<b>宋文学四总特色</b>（古文革新完成／诗歌另辟一路／词达巅峰／戏剧说话兴盛·<b>改变「长于抒情短于叙事」格局</b>·为元明清开先路）；⑦<b>宋初三体</b>：对照表（<b>浅·狭·丽</b>）＋<b>白体</b>名解（李昉徐铉·馆阁酬唱·浅切清雅·与五代一脉）＋<b>王禹偁</b>（重视讽谕《感流亡》／早年闲适后自省／之后学杜《村行》／平易简雅·叙事简直·<b>开宋诗散文化议论化</b>·吴之振「元之独开有宋风气」）＋<b>晚唐体</b>（贾姚派<b>九僧</b>·惠崇·五律中二联·意境不完整／隐逸诗派林逋魏野寇准·《山园小梅》·突破藩篱）＋<b>西昆体</b>（《西昆酬唱集》·真宗朝·杨亿刘筠钱惟演·刘攽《中山诗话》·宗李商隐·雕润密丽·内容三类·<b>雕章丽句</b>·缺点徒具外貌·昆体功夫）。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 卡 · <b>176</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd22-card -->
+
+    <!-- gd23-card -->
+    <a class="day" href="day23-古代文学-北宋前期词与诗文革新.html">
+      <div class="edge" style="background:#5a6b3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D23</div>
+          <div class="name">北宋前期词 · 诗文革新 · 柳永</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">‼柳永 变雅为俗七特色＋影响三路</span>
+          <span class="tag hot">‼‼黄庭坚诗论七条＋江西诗派（一祖三宗）</span>
+          <span class="tag hot">❗晏殊 富贵气象＋情中有思</span>
+          <span class="tag hot">❗欧阳修 词的四条革新＋六一风神</span>
+          <span class="tag">张先 三影＋词境开拓三事</span>
+          <span class="tag">范仲淹《渔家傲》豪放滥觞</span>
+          <span class="tag">对五代词风的因革（因与革）</span>
+          <span class="tag">梅尧臣 意新语工＋苏舜钦</span>
+          <span class="tag">陈师道 宁拙毋巧／陈与义／曾几</span>
+          <span class="tag">山谷体：生新·峭拔·兀拗</span>
+        </div>
+        <div class="desc">北宋前期词与诗文革新（第 23 天）。①<b>对五代词风的因革</b>：承<b>小令体式／柔情题材／柔软婉丽</b>之美，入宋<b>在继承中革新求变</b>，两路——<b>晏欧着眼于词艺的提高与深化</b>、<b>范张着眼于词境开拓</b>；②<b>晏殊</b>（207）：「<b>北宋倚声家初祖</b>」·《珠玉词》＋艺术五层（<b>纯净雅致</b>滤去花间轻佻／<b>雍容和缓</b>／<b>清丽淡雅</b>／<b>曲折精巧</b>／<b>情中有思</b>·与冯延巳比较·浓情中渗透理性沉思）；③<b>张先</b>（210）：听歌看舞与乐音形象化／<b>「张三影」</b>（云破月来花弄影·帘压卷花影·堕轻絮无影）／<b>改变发展方向三事</b>（大量赠别酬唱·扩大实用功能／<b>率先用题序</b>·日常生活入词／<b>长调</b>·与柳永近）＋<b>范仲淹</b>：军旅开拓视野、《渔家傲》「塞下秋来风景异」、<b>沉郁苍凉成为豪放词滥觞</b>；④<b>欧阳修文</b>（180）：文道观四点（道不离生活／文道并重·文有独立性质／矫正西昆太学体·与柳开不同／<b>以韩柳为典範而取「文从字顺」</b>）＋散文分类（议论文·政治《朋党论》·史论《五代史》／记叙文《醉翁亭记》《丰乐亭记》《泷冈阡表》）＋<b>六一风神</b>（强烈感情色彩·叙议抒有机融合／改造骈赋创<b>文赋《秋声赋》</b>·革新四六／<b>语言简洁流畅·纡徐委婉·平易自然</b>）；⑤欧阳修<b>诗</b>（183）：社会现实《食糟民》《边户》／个人情怀《戏答元珍》／<b>散文手法与议论入诗</b>·叙议抒融合·转折递进虚词／<b>学李白</b>清新流畅→<b>流丽宛转</b>；<b>词</b>（206）：题材三类（典雅艳情／俚俗恋情《生查子》／清丽风景《采桑子》）＋<b>扩大抒情功能</b>（抒自我人生感受·承李煜范仲淹／朝通俗化写真景化·与柳永呼应／山水社会百态）＋<b>通俗化三面</b>（艳词见刚正／<b>定格联章十二节气《渔家傲》</b>·<b>主动向民歌学习第一人</b>／白描细腻）；⑥<b>诗歌革新</b>（182）：多写古体·拉近诗与政治社会·以文为诗以议论为诗·扭转西昆＋<b>梅尧臣</b>「<b>意新语工</b>」「状难写之景如在目前，含不尽之意见于言外」·时政民生《汝坟贫女》《田家语》·<b>日常琐事《食荠》《食河豚鱼》</b>＋<b>苏舜钦</b>（雄奇阔大《大风》／<b>直率自然意境开阔</b>·长篇古诗／<b>推敲剪裁不足</b>·宋诗伤直露已见端倪）＋曾巩（平正周详《墨池记》）＋王令（《梦蝗》《暑旱苦热》）；⑦<b>黄庭坚诗论七条</b>（有所寄托／文以载道／反对讪谤／<b>循序渐进</b>·不烦绳削而自合／<b>确立杜甫典范</b>·重晚期杜诗·精光内敛的老成境界／<b>点铁成金</b>／以俗为雅）＋<b>江西诗派名解</b>（<b>吕本中《江西诗社宗派图》</b>·尊黄为祖／<b>重视句法·喜用拗句·以故为新·变俗为雅·生新瘦硬兼浏亮芊绵</b>／靖康之变→忧国伤时／入南宋吕本中倡<b>「活法」</b>／宋末<b>方回「一祖三宗」</b>：祖杜甫·宗黄庭坚陈师道陈与义）＋<b>陈师道</b>（闭门觅句·「黄陈」·<b>宁拙毋巧宁朴毋华</b>·朴拙）＋<b>陈与义</b>（陈简斋体·《伤春》·雄浑深沉《登岳阳楼》）＋<b>曾几</b>（《三衢道中》·开杨万里先声）＋<b>山谷体</b>（《沧浪诗话》·诗境生新美／诗语峭拔美／诗韵兀拗美·夺胎换骨·拗句·结构奇变）＋<b>黄庭坚词</b>（抒情自我化·题序贴近日常）；⑧<b>柳永</b>（203）：「柳屯田」·《乐章集》·<b>七特色</b>（<b>变雅为俗</b>／<b>迎合市民</b>／<b>扩大容量</b>·《戚氏》212 字／<b>133 种词调·100 余首创</b>／<b>口语俚语</b>／<b>铺叙白描</b>《雨霖铃》／<b>自我抒情</b>）＋<b>第一位对宋词作全面革新的词人</b>·影响三路（启示苏轼／秦观一脉／周邦彦脱胎·夏敬观「慢词始盛于耆卿，大成于清真」）。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>171</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd23-card -->
+
+    <!-- gd24-card -->
+    <a class="day" href="day24-古代文学-苏轼与南宋文坛.html">
+      <div class="edge" style="background:#8a5a2e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D24</div>
+          <div class="name">苏轼 · 苏门 · 南渡词人 · 李清照 · 陆游 · 范杨</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">‼苏轼「以诗为词」＋词史革命</span>
+          <span class="tag hot">‼李清照「别是一家」＋易安体</span>
+          <span class="tag hot">‼陆游 三类题材＋诗艺四点</span>
+          <span class="tag hot">❗杨万里 诚斋体（2021 真题）</span>
+          <span class="tag hot">❗南渡词人 两阶段与词史意义</span>
+          <span class="tag">苏文：文道并重＋自然畅达</span>
+          <span class="tag">苏诗：理趣·议论为诗·旷达</span>
+          <span class="tag">张元干／叶梦得／南宋四名臣／朱敦儒</span>
+          <span class="tag">「中兴」辛派：张孝祥·陈亮·刘过</span>
+          <span class="tag">范成大：田园诗的集大成</span>
+        </div>
+        <div class="desc">苏轼与南宋文坛（第 24 天）。①<b>苏轼</b>（213）：<b>儒释道互补</b>的心态·乌台诗案与三州贬谪·<b>苏门四学士六君子</b>；<b>词体革命「破」</b>——破艳科、开诗化之途，<b>以诗为词</b>（用题序·大量用典故·诗词同源为理论依据）／<b>扩大内容四路</b>（爱国·人生进退·亲友夫妻·农村）／风格<b>豪放＋婉约清旷幽美</b>／<b>富于理趣</b>；两条成就：<b>破艳科</b>、<b>改变词史方向并开辛派</b>；②<b>苏文</b>：议论文（史论政论·杂说书札）／叙事记游／辞赋四六（《赤壁赋》）／<b>文道并重</b>·自然畅达，<b>小品开公安派渊源</b>；<b>苏诗</b>（220）：政治·抒怀·写景最多·题画四类，<b>长于想象与比喻·以议论为诗·旷达·理趣</b>；③<b>南渡词人</b>：构成与<b>两阶段</b>（靖康之变后→建炎南渡后）＋<b>词史意义</b>（词风由柔婉转向悲壮，为辛派先声）；<b>张元干</b>（前期花间→投笔从戎·《贺新郎·送胡邦衡待制》）／<b>叶梦得</b>（《八声甘州·寿阳楼八公山作》）／<b>南宋四名臣</b>（李纲《苏武令》·咏史词<b>直开辛弃疾「以文为词」先河</b>·赵鼎李光胡铨）／<b>朱敦儒</b>（自传性·三段人生·<b>风格三变</b>·诗词功能初步合一，给辛派直接影响）；④<b>「中兴」辛派</b>：辛词定位「<b>内容博大精深，风格雄深雅健</b>」·辛派限度「<b>将词体表现功能发挥到最大限度</b>」·手法两级（<b>以诗为词→以文为词</b>）·<b>姜夔史达祖另成一派</b>；<b>张孝祥</b>（辛派先驱·学苏之豪《六州歌头》·学苏之放《念奴娇·过洞庭》）／<b>陈亮</b>（以词为文·议论性·<b>过分外露</b>）／<b>刘过</b>（江湖狂士·效稼轩·粗豪开后劲之弊）；⑤<b>李清照</b>（1084—1155）：<b>「别是一家」</b>从本体论确立词体独立（<b>分五音·分五声·分六律·分清浊轻重</b>）／以<b>南渡为界</b>前后期／<b>易安体</b>（白描口语·日常写心·<b>浅显自然</b>·淡雅清疏）；⑥<b>陆游</b>（九千三百首·南宋四大家）：诗家三昧（曾几→吕本中<b>「活法」</b>）·渊源<b>屈原杜甫李白岑参陶潜</b>·题材三类（<b>爱国为主</b>·日常生活·不幸爱情）·风格多样·<b>雄浑豪健靠幻境梦境</b>·语言晓畅章法整饬·七律对仗工·缺点<b>浅近滑易</b>；词境「<b>将理想化成梦境，与现实的悲凉构成强烈对比</b>」·<b>《秋波媚》有稼轩所无的边塞境界</b>；⑦<b>范成大</b>（1126—1193）：民生疾苦《后催租行》反讽冷峻／<b>使金七十二绝句</b>《州桥》／<b>《四时田园杂兴》田园诗集大成</b>——把隐逸田园与农村生活合一，写劳动与苦难；<b>杨万里</b>（2021 真题·《初入淮河四绝句》·《过松源晨炊漆公店》）：诗学三段路＋<b>诚斋体「活泼自然，饶有谐趣」</b>——<b>捕捉瞬间＋浅近语言</b>（《小池》《晓行望云山》）／主观投射物我一体（《桂源铺》）／想象奇特近口语；缺点粗率滑易。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>132</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd24-card -->
+
+    <!-- gd25-card -->
+    <a class="day" href="day25-古代文学-辛弃疾与元代文学上.html">
+      <div class="edge" style="background:#3d5a6b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D25</div>
+          <div class="name">辛弃疾 · 姜吴 · 宋代话本 · 元好问 · 关汉卿</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗️❗️❗️辛弃疾 以文为词＋稼轩体</span>
+          <span class="tag hot">❗️❗️❗️关汉卿 创作三类＋艺术五点</span>
+          <span class="tag hot">❗️❗️宋代话本 说话四家＋体制</span>
+          <span class="tag hot">❗️窦娥冤 悲剧性四层</span>
+          <span class="tag">姜夔「清空骚雅」／吴文英「七宝楼台」</span>
+          <span class="tag">元好问 丧乱诗＋《论诗三十首》</span>
+          <span class="tag">元代文学总论＋杂剧体制</span>
+          <span class="tag">南北戏剧圈＋元散曲</span>
+          <span class="tag">《西厢记诸宫调》（董西厢）</span>
+        </div>
+        <div class="desc">宋末至元（上）（第 25 天）。①<b>辛弃疾</b>（三个感叹号）：<b>以文为词</b>（散文句法·章法·议论·经史语汇入词，「用经用史·散文化句法·议论入词」），<b>代价是「掉书袋」之讥</b>；内容三线（<b>英雄失路</b>《水龙吟·登建康赏心亭》／<b>抗战复国</b>《破阵子》《南乡子》／<b>农村闲适</b>《清平乐·村居》《西江月》）；<b>词史地位：词体至此而极</b>；②<b>姜夔</b>：<b>清空骚雅</b>（张炎《词源》「野云孤飞，去留无迹」）＋<b>自度曲</b>＋<b>词序</b>，《扬州慢》「二十四桥仍在，波心荡，冷月无声」；<b>吴文英</b>：<b>「七宝楼台，眩人眼目，碎拆下来，不成片段」</b>·密丽质实·《莺啼序》；③<b>宋代话本</b>（两个感叹号）：<b>说话四家</b>（<b>小说·银字儿／讲史·平话／说经／合生</b>）；<b>结构三件套：入话（得胜头回）—正话—篇尾</b>；<b>中国白话小说的真正起点</b>；④<b>元好问</b>：<b>丧乱诗</b>（《岐阳三首》·「国家不幸诗家幸，赋到沧桑句便工」）＋<b>《论诗三十首》</b>（「一语天然万古新，豪华落尽见真淳」·「眼处心生句自神」·「论诗宁下涪翁拜，未作江西社里人」）；⑤<b>元代文学总论</b>：<b>叙事文学成为主流</b>（市民经济·科举停废·思想松弛·说唱积累）＋<b>元曲广义狭义</b>；<b>杂剧体制</b>（<b>一本四折＋楔子·一宫到底·一人主唱（末本／旦本）·曲白科·题目正名</b>）＋<b>代言体 vs 叙事体</b>；⑥<b>南北戏剧圈</b>（北大都六大将·南杭州四家·南移原因）＋<b>元散曲前期</b>（本色豪辣·马致远·张养浩·<b>衬字</b>）＋<b>平话</b>（不加弹唱·全相平话五种）＋<b>诸宫调</b>（<b>孔三传首创</b>·《董西厢》<b>现存唯一完整</b>·王实甫受其影响）；⑦<b>关汉卿</b>（三个感叹号）：今存 18 种·<b>《一枝花·不伏老》</b>「一粒铜豌豆」·创作三类（<b>历史剧《单刀会》《西蜀梦》／爱情风月剧《救风尘》《谢天香》《望江亭》／社会公案剧《窦娥冤》《鲁斋郎》《蝴蝶梦》</b>）；⑧<b>《窦娥冤》悲剧性四层</b>（身世不幸／<b>性格悲剧</b>·为婆婆认罪／<b>官府昏聩</b>·桃杌／<b>清官理想虚幻</b>）＋悲剧主旨（<b>情绪从悲愤走向悲壮，剧情从恶势力暂时得逞转为人间正义最终胜利</b>）；⑨<b>艺术成就五点</b>（<b>风格汪洋恣肆／题材揭腐颂反／人物个性复杂／剧场性·尽快入戏·冷热调剂·设置悬念／语言本色当行</b>）。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>89</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd25-card -->
+
+    <!-- gd26-card -->
+    <a class="day" href="day26-古代文学-西厢记与元代中.html">
+      <div class="edge" style="background:#6b3a2e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D26</div>
+          <div class="name">西厢记 · 元曲四大家 · 元中戏曲圈 · 话本平话</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗️❗️❗️西厢记 体制四条＋题旨改造</span>
+          <span class="tag hot">❗️❗️❗️西厢记 冲突五回合＋成就六点</span>
+          <span class="tag hot">❗️话本小说 意义三条＋特点三条</span>
+          <span class="tag hot">❗️《录鬼簿》三条价值</span>
+          <span class="tag">董西厢 vs 王西厢 人物·情节·体例</span>
+          <span class="tag">元曲四大家 关白马郑（或王）</span>
+          <span class="tag">白朴双璧／马致远汉宫秋</span>
+          <span class="tag">《赵氏孤儿》＋北方四大作家群</span>
+          <span class="tag">《倩女离魂》／讲史话本／四大传奇</span>
+        </div>
+        <div class="desc">元代（中）（第 26 天）。本日<b>唯一「三个❗️」是《西厢记》</b>，且给了<b>四个切入角度</b>——<b>大题必考</b>。①<b>西厢记·体制创新</b>：底本三变（<b>元稹《莺莺传》「始乱终弃」→ 董解元诸宫调改成团圆 → 王实甫定型</b>）；<b>五本二十折</b>「像是几个杂剧连接起来的一个故事的<b>连台本</b>」；<b>每本第四折末既有「题目正名」（标志情节到转折性段落），又有〔络丝娘煞尾〕一曲（上联下启、沟通前后两本）</b>；<b>有些折段突破一人主唱，由末与旦轮番主唱</b>；<b>题旨改造：对真挚爱情给予充分肯定，认为它纯洁无邪，不必涂上「合礼」「报恩」之类保护色</b>；②<b>董西厢 vs 王西厢</b>：<b>人物</b>——莺莺「<b>既想爱又不敢爱，不敢爱却又由不得爱</b>」／张生从「手无寸铁、性格懦弱」变为「<b>善良、聪慧、痴情</b>」／红娘「增加戏份，<b>热情、大胆、机智勇敢、是非分明</b>」；<b>情节</b>——王西厢增设<b>拷红</b>、<b>十里长亭送张生上京</b>、<b>郑恒骗婚</b>、<b>张生蟾宫折桂</b>大团圆；董西厢以<b>出走＋白马将军主婚</b>为结局，<b>前者以消极逃避妥协、后者正面反抗使礼教势力妥协</b>；<b>体例</b>——董为<b>叙事体诸宫调</b>，王为<b>元杂剧剧本</b>；③<b>西厢记·冲突与成就</b>：两组矛盾<b>一主一辅两条线索</b>（赖婚→赖简→拷红→当面折证→郑恒撞死）；<b>艺术成就六点＝思想（惊世骇俗）·体制（创新）·结构（两条线索）·冲突（环环相扣·新人胜旧人败被嘲弄）·人物（莺莺热情而冷静·张生鲁莽痴迂·红娘泼辣机智）·语言（文采与本色相生·当行·个性化）</b>，总评<b>「达到了元代戏曲创作的最高水平」</b>；④<b>元曲四大家</b>：关（窦娥·古代悲剧杰作）／白（梧桐）·马（汉宫）<b>「为当时历史剧的双璧」</b>／郑（倩女·爱情剧传奇）／王（西厢·才子佳人典范），<b>「把元代叙事文学推向了高峰」</b>；<b>白朴</b>《梧桐雨》第四折<b>「窗儿外梧桐上雨潇潇」「一点点滴人心碎」</b>；《墙头马上》源于白居易《井底引银瓶》，<b>李千金把婚姻自主看成人生权益、更看重人格尊严</b>；⑤<b>马致远《汉宫秋》</b>：<b>家国衰败之痛＋无法主宰命运</b>，末以<b>「秋天」意境</b>作结撰背景；<b>神仙道化剧《黄粱梦》</b>用<b>梦境叙事</b>把神道题材转为<b>知识分子命运的寓言</b>，「虚中有实」冲淡神道色彩而具批判现实意义；⑥<b>纪君祥《赵氏孤儿》</b>：依《史记》敷演，<b>五折一楔子</b>，程婴＋公孙杵臼定计，<b>公主·韩厥·公孙杵臼三条命</b>，二十年后赵武复仇；<b>北方四大作家群＝大都（关马王）·真定（白朴）·东平（水浒戏最多最好）·平阳</b>；⑦<b>郑光祖《倩女离魂》</b>（本事出<b>陈玄祐《离魂记》</b>，<b>魂身两写，启迪汤显祖《牡丹亭》</b>）＋<b>《录鬼簿》</b>：<b>分「前辈已死名公才人」与「方今才人」两类</b>，已死再分三类，<b>「前辈—方今」即前后两期，前期大都、后期古杭</b>，<b>中国历史上第一部专门为剧作家树碑立传的戏曲史著作</b>；⑧<b>话本小说</b>：意义三（<b>白话短篇与长篇通俗演义的滥觞／我国最早的白话小说，标志小说进入崭新阶段／初步形成民族形式与民族风格</b>）＋特点三（<b>六部件：题目·篇首·入话·头回·正话·篇尾／连贯叙述「无巧不成书」／生活化语言代替书面语</b>）；⑨<b>讲史话本</b>：《五代史平话》<b>现存最早</b>、《宣和遗事》含<b>「梁山泊聚义本末」为《水浒传》原始雏形</b>、<b>现存七种</b>（「平话」＝平常口语＋评论）＋<b>四大传奇「荆、刘、拜、杀」</b>与「传奇」概念演变。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>78</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd26-card -->
+
+    <!-- gd27-card -->
+    <a class="day" href="day27-古代文学-南戏与元代诗文.html">
+      <div class="edge" style="background:#4a5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D27</div>
+          <div class="name">南戏 · 琵琶记 · 四大南戏 · 元散曲 · 元诗</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗️❗️❗️琵琶记 三不从＋悲剧意蕴</span>
+          <span class="tag hot">❗️❗️❗️琵琶记 成就四点＋词曲之祖</span>
+          <span class="tag hot">❗️南戏 概念＋五特点（对北杂剧）</span>
+          <span class="tag hot">❗️铁崖体 杨维桢＋萨都剌</span>
+          <span class="tag">四大南戏 荆刘拜杀</span>
+          <span class="tag">元散曲 后期三变＋前期两家</span>
+          <span class="tag">元代诗文 元初三家＋雅正思潮</span>
+          <span class="tag">元诗四大家＋虞集四喻</span>
+          <span class="tag">元好问《论诗绝句三十首》四首</span>
+        </div>
+        <div class="desc">元代（下）（第 27 天）。①<b>南戏</b>：宋元流行于南方的戏剧样式，最早出现于<b>浙江温州（旧名永嘉）</b>，又称<b>「温州杂剧」「永嘉戏曲」</b>，亦称南词，以南曲为唱腔；民间艺人<b>「以宋人词而益以里巷歌谣」构成的曲牌连缀体制</b>，<b>用代言体搬演长篇故事</b>，<b>出数与宫调没有规定</b>；<b>高明《琵琶记》堪为南戏的最高代表，标志着南戏的规范化，是明清传奇的开山之祖</b>；五特点（<b>爱情婚姻家庭题材／南方方音分平上去入四声用韵较宽／管乐为主轻柔婉转／任何角色都能唱且有多种合唱／以「出」为单位长短自由</b>），逐条与北杂剧对照；②<b>《琵琶记》</b>（三个感叹号）：前身是宋代戏文<b>《赵贞女蔡二郎》</b>，高明<b>保留赵贞女「有贞有烈」，使蔡伯喈成为「全忠全孝」的书生</b>；核心机关是<b>「三不从」——辞试不从、辞官不从、辞婚不从</b>，落得<b>「可惜二亲饥寒死，博换得孩儿名利归」</b>；故事六步（逼试／招婿／荒年／葬亲寻夫／认画／团圆）；<b>悲剧意蕴三句：从正面肯定了封建伦理，但通篇展示的却是「全忠全孝」与「有贞有烈」的悲剧命运，从而引发对封建伦理合理性的怀疑，具有深刻性和普遍性，更具社会价值</b>；③<b>艺术成就四点</b>：<b>思想（悲剧意蕴）／人物（心理刻画——伯喈软弱复杂·五娘苦难无奈）／双线结构（两条线索交叉，贫富悬殊场景对比衔接成强烈反差）／语言（赵五娘一线本色、蔡伯喈一线词藻华丽＋富于动作性成潜台词）</b>；<b>地位：元代剧坛之殿军、明代戏曲之先声，被后世奉为「词曲之祖」</b>，双线结构成传奇固定范式，曲律成曲谱选录对象，表演成演剧典范与入门戏本，新声腔多从改编《琵琶记》开端，具世界影响；④<b>四大南戏「荆、刘、拜、杀」</b>：出于民间艺人之手经戏班修订，<b>反映南戏特有的对家庭伦理的关注</b>；<b>荆钗记</b>以荆钗贯全剧「以情节关目胜」「以真切之调写真切之情」；<b>白兔记（刘知远）</b>「贫者休要轻相弃，否极终有泰时」·文字质朴通俗·存古代农村风俗（报社·祭赛·保禳）；<b>拜月亭记成就最高</b>（广阔社会风貌／悲剧中插巧合误会带喜剧色彩／王瑞兰心理细致入微／语言天然本色）；<b>杀狗记</b>颂扬孝悌的社会伦理剧·曲文俚俗明白如话而艺术粗率；⑤<b>元散曲</b>：后期三变（<b>题材开拓使诗坛成诗·词·曲鼎足而立／哀婉蕴藉的感伤成主流风格清丽／追求形式美——韵律典丽对仗用典</b>）；<b>张可久</b>「清而且丽、华而不艳」《人月圆》《春晚次韵》；<b>乔吉</b>「曲中李杜」·雅俗并用《满庭芳·渔父词》；前期<b>关汉卿</b>本色真露·市井情趣（《一枝花·不伏老》「我是个普天下郎君领袖，盖世界浪子班头」）；<b>白朴</b>「看破」世情（「盖世功名总是空」）；⑥<b>元代诗文</b>：<b>耶律楚材</b>写奇瑰壮丽的西域风光·七律风骨遒健·失之率易；<b>刘因</b>（理学家）七古似韩愈·七律似元好问·<b>开创元代理学家诗文创作先河</b>；<b>「雅正」思潮</b>以温柔敦厚为皈依、歌咏升平为主导，<b>消解了批判功能、削弱了抒情功能（双重负面）</b>；⑦<b>元诗四大家</b>（虞集·杨载·范梈·揭傒斯）皆馆阁文臣、多歌功颂德赠答酬唱、<b>「其实其创作成就并不高」</b>；<b>虞集「四喻」：杨「如百战健儿」、范「如唐临晋帖」、揭「如美女簪花」、己「如汉廷老吏」</b>（悍而苍／近而肖／鲜而丽／刻而深）；⑧<b>铁崖体</b>：元末<b>杨维桢</b>的独特诗风，多咏史拟古，<b>融汇汉魏乐府与李杜李贺</b>，奇思雄健、石破天惊，<b>突破元代中期甜熟平稳的畦径</b>，但一味求奇不免诡异晦涩；三门（<b>宫词香奁艳／竹枝歌清新浅近／古乐府瑰丽奇崛</b>）；<b>动机是矫正元后期委琐纤弱的诗风，却矫枉过正失之怪诞</b>；<b>萨都剌</b>（回族）宫词乐府秾艳中含清新，《满江红·金陵怀古》《念奴娇·石头城》；⑨<b>元好问《论诗绝句三十首》</b>四首：<b>第四（陶渊明·「一语天然万古新，豪华落尽见真淳」）／第五（阮籍·「老阮不狂谁会得」）／第六（潘岳·《闲居赋》·「争信安仁拜路尘」）／第十二（李商隐·「诗家总爱西昆好，独恨无人作郑笺」）</b>。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>92</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd27-card -->
+
+    <!-- gd28-card -->
+    <a class="day" href="day28-古代文学-明代文学与三国上.html">
+      <div class="edge" style="background:#6b3a2e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D28</div>
+          <div class="name">明代文学（上）· 三国演义 · 水浒传</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗️❗️❗️❗️三国 七实三虚（章学诚）+ 五种技法</span>
+          <span class="tag hot">❗️❗️❗️❗️三国 艺术成就四块（叙事·战争·写人·语言）</span>
+          <span class="tag hot">❗️❗️❗️❗️水浒 思想三大点（忠义悲歌·歌颂英雄·展示起义）</span>
+          <span class="tag hot">❗️❗️❗️❗️水浒 艺术特色＋招安悲剧＋四大人物</span>
+          <span class="tag hot">❗️❗️❗️三国 思想内容（仁政·忠义·智勇）+ 拥刘反曹</span>
+          <span class="tag hot">❗️❗️❗️三国 版本四阶段（嘉靖·李评·志传·毛本）</span>
+          <span class="tag">明代总论四期＋文体三条线</span>
+          <span class="tag">变革标志四条·俗文学·章回小说三期</span>
+          <span class="tag">明传奇昆弋两腔·文学特性四点·雅俗交融</span>
+          <span class="tag">文学论争五点＋英雄传奇与历史演义区别</span>
+          <span class="tag">英雄传奇小说渊源与兴起（说唐·说岳·说杨）</span>
+        </div>
+        <div class="desc">明代（上）（第 28 天）。①<b>明代文学总论四期</b>：<b>初期</b>朱元璋严刑峻法·专制独裁·<b>科举取士·规定「八股」程式</b>，宋濂在明初写了许多修润润色之文·<b>高启取径汉魏之外，还有表现归隐之志的作品</b>，产生了<b>《三国演义》和《水浒传》两部作品</b>；<b>前期</b>永乐时期加强专制·设立东厂·思想钳制更甚于前，文网严任，<b>仁宣时期出现「仁宣之治」，台阁体出现</b>，李东阳时期文风转变，<b>反对刘瑾模拟之风，丘濬《五伦全备记》教化之用</b>；<b>中期</b>王振擅权到刘瑾擅权·宦官专政·作威作福·朝政腐败·思想「异端」出现，如王守仁「致良知」之学，<b>文学方面前「七子」反对「台阁」诗文，后七子提倡复古、反对专制</b>，<b>唐宋派主张道术，标举「宋元」，三大传奇和《西游记》成书，反映着新的思想情绪</b>；<b>后期</b>神宗年间，张居正起衰振弊·万历中期朝政腐败达到极点，<b>程朱理学开始受世人攻击，徐渭、汤显祖、公安派、竟陵派，《金瓶梅》均突破了前人的格套，显示着时代的新变</b>；<b>末期</b>农民起义·市民暴动·魏忠贤独擅皇权·专政酷烈，有人退居林下放浪山水，<b>有人依然在坚持党社运动，张岱等写小品文章「不全是的咏风弄月」</b>，小说冯梦龙、凌濛初的创作有救世之意；②<b>文体三条线</b>：<b>诗歌</b>（明初<b>吴中四杰＝高启·杨基·张羽·徐贲</b>／明前期台阁体·茶陵派／明中期前七子·后七子·唐宋派／晚明诗歌发展<b>李贽—公安派—竟陵派（性灵）</b>／明末晚明小品文）；<b>小说</b>（初期《三国志通俗演义》《水浒传》刊刻风行／中期《西游记》／后期《金瓶梅词话》·「三言」「二拍」白话短篇小说）；<b>戏剧</b>（传奇《宝剑记》《浣纱记》《鸣凤记》三大传奇／杂剧临川四梦）；③<b>近代化变革标志四条</b>：<b>①商业性质的城市繁荣，市民阶层扩大→文学走出贵族圈子走向市场化，白话小说等俗文学成为文学主流之一；②反对理学，从「心学」到「王学左派」——王守仁「心即理」「致良知」「知行合一」，李贽「童心说」「化工」「天下无一人不生知」彻底反道学、肯定人的私欲，推动文学面向现实；③印刷术发达传播方式革命；④戏曲、小说在批判地继承传统中创新，审美趣味世俗化—人的主体地位提高</b>；④<b>俗文学地位提高</b>：洪楩《六十家小说》等；诗文「俗」是化俗为雅，而民歌时调、戏曲、小说以「俗」为标志，<b>明中后期俗文学压倒雅文学</b>；⑤<b>章回小说</b>：<b>成熟三阶段</b>——①说话阶段，宋元「说话」中「讲史」是章回小说的母体，说话人有底本（话本）；②章回化阶段，<b>元末明初出现《三国演义》《水浒传》，标志「章回」小说的诞生</b>，特点<b>讲史、分卷分则、标目单句、散韵结合</b>；③成熟阶段，章回小说在自身发展中走向成熟；<b>文体特征</b>（章回体＝散文描写为主，排比整齐的回目、固定的套语、悬念与伏笔等程序化体制）；<b>四大奇书</b>（《三国》《水浒》《西游》《金瓶梅》）；⑥<b>明传奇</b>：<b>传奇是南戏的继承和发展，「传奇」由唐代小说名演变为明清时期南戏剧本的专名</b>；<b>昆山腔</b>经魏良辅改造后「出乎三腔之上」成为城市霸主，<b>弋阳腔</b>则活跃于民间「只沿土俗」；⑦<b>文学特性认识四点</b>＋<b>雅俗交融</b>（作者群有雅俗兼顾的倾向）；⑧<b>文学论争五点</b>（<b>主·革·浅·偏·党</b>：有明确主张／有革新意识／缺乏系统／走极端／称古人以立门户）；⑨<b>英雄传奇与历史演义的区别</b>（源头／重心／虚实：讲史有史可依只能依傍，说铁骑儿本就是说书人的英雄，只能虚构）；⑩<b>《三国志演义》</b>：<b>我国第一部长篇章回小说，也是历史演义小说的开山之作</b>；<b>版本四阶段：嘉靖壬午本（1522）24 卷 240 则·七言一句小目·现存最早 → 李卓吾评本（并为 120 回·回目单句变双句）→ 志传系统（多出关索／花关索故事）→ 毛纶毛宗岗本（正统道德色彩更浓·艺术提高·今通行，「三国演义」是近人对毛本的简称）</b>；⑪<b>三国思想内容</b>：<b>主旨＝描写自黄巾起义至西晋统一近百年的历史，以儒家政治道德观念为核心，糅合民众心理，表现对于导致天下大乱的昏君贼臣的痛恨和对创造清平世界的明君良臣的渴慕</b>；<b>明君良臣三标志：政治上「行仁政」、人格上「重道德」、才能上「尚智勇」</b>；拥刘反曹（刘备「帝室胃裔」＋儒家政治道德观念，把刘备诸葛亮作为理想的寄托）；⑫<b>三国艺术成就四块</b>：<b>「七分事实，三分虚构」（清章学诚《丙辰札记》），重塑历史，历史艺术化</b>·<b>五种技法：巧于构思（空城计插在失街亭与斩马谡之间）／采用传说（桃园结义·借东风·孔明吊丧）／改变史实（关羽单刀赴会）／张冠李戴（怒鞭督邮本属刘备改给张飞，护刘备仁君形象并突出张飞爽直鲁莽）／善于铺叙（三顾茅庐）</b>；<b>陈叙百年，该括万事</b>（高儒《百川书志》）：五条线以汉亡为引线·晋统一为终局，<b>魏蜀矛盾为主干→蜀汉为重点→诸葛亮为中心→隆中决策为关键，「隆中决策」是全书主脑</b>，兼用顺叙倒叙插叙补叙；<b>全景性军事文学</b>：四十多次战役·上百个战斗场面·<b>官渡赤壁彝陵突出智斗</b>·不惨烈而洋溢诗情画意；<b>长于写人</b>（真题 2011 与《水浒》比较）：类型化·性格单一稳定·<b>出场定型·反复皴染·传奇故事细节·对比烘托</b>，局限见<b>鲁迅「欲显刘备之长厚而似伪，状诸葛之多智而近妖」</b>；<b>语言「文不甚深，言不甚俗」·粗笔勾勒·个性化但比《水浒》有差距</b>；⑬<b>《水浒传》</b>：<b>我国历史上第一部用古白话文写成的歌颂农民起义的长篇章回体版块结构小说</b>；影响（社会：明清起义打「替天行道」旗帜·李贽以忠义思想批判社会黑暗；文学：小说地位确立·奠定民族形式风格·更贴近市井·英雄传奇体式典范·旁及戏剧曲艺绘画）；<b>思想三大点</b>：<b>①忠义的悲歌</b>（宋江是「忠义之烈」·高俅「乱自上作」·揭示「奸逼民反」·「忠」中含「为君」·「义」反映社会道德规范由「孝」向「义」的变化）；<b>②歌颂英雄、智慧、真诚</b>（力与勇·市民意识·疏财成义士·一世快活）；<b>③客观展示农民起义</b>（官逼下造反·造反有理·再现全过程总结规律）；<b>艺术特色</b>：<b>娴熟运用白话写景叙事传神</b>（标志我国古代白话语体创作小说已经成熟）；<b>超伦绝群而又神态各异的英雄形象</b>（同而不同·犯中求避·<b>林冲最见性格的流动性与层次性</b>·「超人」气息三条）；<b>情节结构「珠串式线性结构」</b>——上半部以人为单元、下半部以事为顺序，连环勾锁层层推进，<b>71 回前环环相扣、71 回后以时间为序</b>，前半连环列传体利于集中笔墨，<b>后半情节松散拖沓、多有雷同失真</b>；<b>招安悲剧</b>：①作家无法摆脱传统思想体系束缚②没探索社会原因而企图从领导者个人品质中寻找解答、夸大宋江的动摇妥协；<b>与其说宣扬投降，不如说是控诉投降——「替天行道」包含了对「大宋朝廷」的批判</b>；人物：<b>李逵</b>（反抗最彻底最强烈·普通农民形象的典型悲剧）／<b>鲁智深</b>（舍身救人义不顾己·一层阴郁色彩）／<b>武松</b>（「矫矫虎臣」·从封建道德理想成长为觉醒的人）／<b>林冲</b>（形象占特殊地位·最典型说明「逼上梁山」·忍辱退让的结果）／<b>宋江</b>（把性格中一切矛盾带到起义队伍中来·既符合起义军领袖的性格成长史，又成为梁山事业兴衰成败的原因）；⑭<b>英雄传奇小说渊源与兴起</b>（类比 22 年考到的「才子佳人小说」）：<b>多以反映民族战争为题材</b>·宋代话本「说铁骑儿」为基础·<b>《水浒传》的问世为英雄传奇小说在艺术经验和类型属性上提供了极为成功的经验</b>；重要作品<b>说唐</b>（《大唐秦王词话》《隋唐两朝志传》，艺术上比较粗糙）·<b>说岳</b>（《大宋中兴通俗演义》《岳武穆精忠传》，采用按鉴演义和尊重历史的精神，兼容野史遗文，较好刻画岳飞的儒将形象）·<b>说杨</b>（《北宋志传》《杨家府世代忠勇通俗演义》，前半部分大抵相同，《杨家府演义》以杨家在太行山结束，体现了对皇权用人政策的质疑）。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>146</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /gd28-card -->
+<!-- gd29-34-cards -->
+<a class="day" href="day29-古代文学-明代诗文与文学复古.html"><div class="edge" style="background:#1f4f4a"></div><div class="body"><div class="top"><div class="no">D29</div><div class="name">明代前期诗文与文学复古</div></div><div class="tags"><span class="tag hot">按群提纲重点带背</span><span class="tag">名解＋艺术＋自测</span><span class="tag">打卡笔记保存</span></div><div class="desc">先搭框架：明初—明前期—明中期 · 吴中四杰与高启、杨基 · 宋濂散文：文以明道与叙事传记 · 刘基诗文：寓言讽世与情绪转变 · 台阁体：三杨与粉饰太平 · 茶陵派与李东阳：从台阁体走向复古 · 八股文：体制顺序与评价 · 前七子与李梦阳：复古也是文学变革 · 后七子与文学复古的得失 · 唐宋派与归有光：平常琐事中的深情</div><div class="foot"><div class="cnt"><b>10</b> 卡 · <b>34</b> 打卡点</div><div class="go">进入带背 →</div></div></div></a>
+<a class="day" href="day30-古代文学-明代戏曲与汤显祖.html"><div class="edge" style="background:#1f4f4a"></div><div class="body"><div class="top"><div class="no">D30</div><div class="name">明代戏曲与汤显祖</div></div><div class="tags"><span class="tag hot">按群提纲重点带背</span><span class="tag">名解＋艺术＋自测</span><span class="tag">打卡笔记保存</span></div><div class="desc">明传奇名解与南戏、元杂剧的区别 · 明代杂剧流变：宫廷颂圣到文人讽世 · 《四声猿》：四部短戏与徐渭的艺术特色 · 四大声腔与明代戏剧发展阶段 · 三大传奇与明后期传奇的转变 · 汤沈之争与吴江派、临川派 · 临川四梦与至情论 · 四梦故事复述：一篇一条情节链 · 《牡丹亭》艺术成就与杜丽娘形象 · 汤显祖的成就与影响</div><div class="foot"><div class="cnt"><b>10</b> 卡 · <b>39</b> 打卡点</div><div class="go">进入带背 →</div></div></div></a>
+<a class="day" href="day31-32-古代文学-西游记金瓶梅三言二拍.html"><div class="edge" style="background:#1f4f4a"></div><div class="body"><div class="top"><div class="no">D31—32</div><div class="name">西游记·金瓶梅·三言二拍</div></div><div class="tags"><span class="tag hot">按群提纲重点带背</span><span class="tag">名解＋艺术＋自测</span><span class="tag">打卡笔记保存</span></div><div class="desc">六部内容先分两天：第31天长篇，第32天短篇 · 《西游记》与神怪小说：开头和结尾怎样写 · 《西游记》结构与《水浒传》比较 · 《西游记》思想内容：只背大点，也要解释一句 · 《西游记》艺术特色：极幻极真、三性统一、喜剧笔墨 · 取经四人形象与《封神演义》 · 《金瓶梅》与世情小说：定义、地位、影响 · 《金瓶梅》思想与悲剧意义：为什么是“一部哀书” · 《金瓶梅》艺术特色：五点整段背 · 《金瓶梅》六项转变与小说史贡献 · 三言二拍与清平山堂话本：作者书名记准 · 三言二拍思想：市民社会的风情画 · 三个故事复述：珍珠衫、百宝箱、卖油郎 · 无奇之所以为奇：艺术追求与写心 · 三言艺术与二拍体制：简答收尾</div><div class="foot"><div class="cnt"><b>15</b> 卡 · <b>56</b> 打卡点</div><div class="go">进入带背 →</div></div></div></a>
+<a class="day" href="day33-古代文学-晚明诗文与清初诗词.html"><div class="edge" style="background:#1f4f4a"></div><div class="body"><div class="top"><div class="no">D33</div><div class="name">晚明诗文与清初诗词</div></div><div class="tags"><span class="tag hot">按群提纲重点带背</span><span class="tag">名解＋艺术＋自测</span><span class="tag">打卡笔记保存</span></div><div class="desc">晚明到清初：一条诗文思想线 · 童心说与性灵说：理论名解 · 公安派与竟陵派：同重性灵，风格不同 · 晚明小品文：短小、生活、真情 · 明末文坛、复社几社与山歌 · 清代文学总特征：三大点展开背 · 遗民诗人：家国之悲与民生 · 钱谦益与虞山诗派：性情、世运、学养 · 梅村体与吴伟业《圆圆曲》 · 王士禛与康熙诗坛：神韵说与风格 · 清词中兴：阳羡与浙西两派比较</div><div class="foot"><div class="cnt"><b>11</b> 卡 · <b>37</b> 打卡点</div><div class="go">进入带背 →</div></div></div></a>
+<a class="day" href="day34-古代文学-清初戏曲与白话小说.html"><div class="edge" style="background:#1f4f4a"></div><div class="body"><div class="top"><div class="no">D34</div><div class="name">清初戏曲与白话小说</div></div><div class="tags"><span class="tag hot">按群提纲重点带背</span><span class="tag">名解＋艺术＋自测</span><span class="tag">打卡笔记保存</span></div><div class="desc">清初文体地图：词—戏—小说 · 浙西词派复习与纳兰性德艺术特色 · 李玉与清初戏曲：四部早期剧与清忠谱 · 李渔《风筝误》：误会与舞台喜剧 · 《长生殿》：爱情与军国双线，写实与写幻相接 · 《桃花扇》：借离合之情，写兴亡之感 · 《长生殿》与《桃花扇》横向比较 · 清初小说四类型与续书写法 · 《醒世姻缘传》：因果外壳与世态内蕴 · 李渔短篇小说：无声戏与十二楼 · 才子佳人小说：类型、体制与局限 · 预习入口：聊斋志异留到下一次</div><div class="foot"><div class="cnt"><b>12</b> 卡 · <b>40</b> 打卡点</div><div class="go">进入带背 →</div></div></div></a>
+<!-- /gd29-34-cards -->
+
+
+    <a class="day" href="复盘01-古代文学-第1至9天.html">
+      <div class="edge" style="background:#7a1f5f;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">复盘</div>
+          <div class="name">先秦 → 秦汉 · 第 1—9 天复盘</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗一条文学史主线</span>
+          <span class="tag hot">❗名词解释总清单</span>
+          <span class="tag hot">❗简答＋论述总清单</span>
+          <span class="tag hot">❗五组横向比较</span>
+          <span class="tag hot">❗之最／之祖／标志</span>
+          <span class="tag">作家作品对照</span><span class="tag">自测清单</span>
+        </div>
+        <div class="desc">第 1—9 天总复盘（不背新内容）。★复盘总纲＋9 天全景表 · ①一条主线：先秦（神话→诗经→历史散文→诸子散文→楚辞）＋秦汉（秦·李斯→西汉散文→西汉辞赋→史记汉书→东汉辞赋→汉代诗歌），四期口诀 · ②名词解释总清单（按天分组＋三类名解抓手）· ③简答（5 题）／论述（9 题）总清单＋万能五段式 · ④五组横向比较（史记vs汉书六项／二京vs两都／九辩vs离骚／辞赋三类／风雅颂vs赋比兴）· ⑤易混：之祖系列（骈体之祖／碑铭之祖／咏物之祖／七体之祖）＋第一最早系列＋标志成熟系列＋三个「开先河」区分 · ⑥作家—作品—一句话对照表（先秦四＋秦汉九）· ⑦自测清单（按天逐条自问）· 💡一页速记·九天九句。</div>
+        <div class="foot">
+          <div class="cnt"><b>9</b> 卡 · <b>47</b> 打卡点</div>
+          <div class="go">进入复盘 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="问答01-古代文学-第1至9天.html">
+      <div class="edge" style="background:#1f5d4a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">问答</div>
+          <div class="name">第 1—9 天 · 题目 ＋ 答案 ＋ 复盘</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗群里原提纲当题目</span>
+          <span class="tag hot">❗日页答案接在题下</span>
+          <span class="tag hot">❗9 天综合默写自测</span>
+          <span class="tag">48 题</span><span class="tag">一键隐藏／显示答案</span>
+        </div>
+        <div class="desc">把第 1—9 天群里发的原提纲逐条抄下来当题目（D1 8 题 · D2 6 题 · D3 6 题 · D4 4 题 · D5 4 题 · D6 5 题 · D7 2 题 · D8 5 题 · D9 8 问，共 48 题），每题下面接对应日页的答案要点，做成可直接自测的问答页。★怎么用＋9 天原题总表 · 卡 1—8 逐日题目答案（D5／D6 合卡）· 💡复盘自测（9 天一天一句必答 ＋ 之最／之祖／标志速查 ＋ 一天一句贯通）。答色块分「题 X／答」两色，工具栏可一键隐藏或显示全部答案，方便先自测后对答案。</div>
+        <div class="foot">
+          <div class="cnt"><b>10</b> 卡 · <b>70</b> 打卡点</div>
+          <div class="go">进入问答 →</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+    <div class="sect">外国文学 · 第 1—29 天（按 Day 顺序）</div>
+  <div class="sect-hint">第 1—29 天 · 古希腊罗马 → 中世纪 → 文艺复兴 → 古典主义 → 启蒙运动 → 现实主义与浪漫主义 → 20 世纪现代主义与后现代 → 亚非文学（第 28—29 天）</div>
+  <div class="grid">
+
+    <a class="day" href="day01-外国文学-古希腊罗马.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D1</div>
+          <div class="name">古希腊罗马文学 · 神话与荷马史诗</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗❗❗荷马史诗艺术特色</span>
+          <span class="tag">古希腊文学总述</span><span class="tag">伊索寓言</span><span class="tag">新喜剧</span>
+          <span class="tag">古希腊神话</span><span class="tag hot">❗荷马问题</span><span class="tag">伊利亚特·奥德赛</span>
+        </div>
+        <div class="desc">古希腊文学概述名解 ·《伊索寓言》名解 · 新喜剧名解 · 古希腊神话名解／主要内容／特征／价值影响 · 荷马史诗名解（含「荷马问题」）·《伊利亚特》《奥德赛》情节梗概 · 荷马史诗艺术成就（❗❗最重点）／思想价值／后世影响。</div>
+        <div class="foot">
+          <div class="cnt"><b>14</b> 张 PPT · <b>15</b> 卡 · <b>15</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day02-外国文学-古希腊戏剧.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D2</div>
+          <div class="name">古希腊戏剧 · 悲剧三大家</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗❗❗俄狄浦斯王（形象＋结构）</span>
+          <span class="tag">戏剧起源与发展</span><span class="tag">基本艺术形式</span>
+          <span class="tag">埃斯库罗斯</span><span class="tag">索福克勒斯</span><span class="tag">美狄亚</span><span class="tag">三大悲剧家对照</span>
+        </div>
+        <div class="desc">戏剧起源与发展（酒神颂歌·山羊之歌）· 基本艺术形式四要点（剧场／面具服装／结构／歌队）· 埃斯库罗斯名解与戏剧贡献三条 · 索福克勒斯与《俄狄浦斯王》（名解＋梗概＋人物形象＋倒叙式结构与「发现·突转」）·《安提戈涅》· 欧里庇得斯与《美狄亚》· 三大悲剧家命运观与艺术特点对照。</div>
+        <div class="foot">
+          <div class="cnt"><b>17</b> 张 PPT · <b>12</b> 卡 · <b>44</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day03-外国文学-古罗马与中世纪概述.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D3</div>
+          <div class="name">古罗马文学 + 中世纪概述</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗古罗马文学概述（简答）</span>
+          <span class="tag">普劳图斯</span><span class="tag">维吉尔</span>
+          <span class="tag hot">❗埃涅阿斯纪</span><span class="tag">贺拉斯·诗艺</span>
+          <span class="tag">奥维德·变形记</span><span class="tag">阿普列尤斯</span><span class="tag">中世纪特征与类型</span>
+        </div>
+        <div class="desc">古罗马文学概述简答（继承希腊→桥梁·两种特点·三个分期·神名对照）· 普劳图斯 · 维吉尔名解 ·《埃涅阿斯纪》名解＋内容＋主题＋人物＋艺术手法＋与荷马史诗比较 · 贺拉斯与《诗艺》· 奥维德与《变形记》· 白银时代塞内加与阿普列尤斯《金驴记》· 中世纪文学时间界定／文化背景／思想与艺术特征／四大类型 · 古希腊罗马文学对后世的影响（简答）。</div>
+        <div class="foot">
+          <div class="cnt"><b>22</b> 张 PPT · <b>12</b> 卡 · <b>38</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day04-外国文学-中世纪文学四大类型.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D4</div>
+          <div class="name">中世纪文学四大类型</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗❗史诗与谣曲流变</span>
+          <span class="tag">教会文学</span><span class="tag">忏悔录</span>
+          <span class="tag hot">❗骑士文学＋骑士抒情诗</span><span class="tag">罗兰之歌</span>
+          <span class="tag">市民文学</span><span class="tag">列那狐</span>
+        </div>
+        <div class="desc">教会（僧侣）文学名解＋奥古斯丁《忏悔录》名解 · 史诗与谣曲总体流变（早期《贝奥武甫》→ 中期《罗兰之歌》《熙德之歌》《尼伯龙根之歌》《伊戈尔远征记》→ 后期「罗宾汉谣曲」）· 骑士文学名解＋思想＋艺术特色＋骑士精神三组 · 骑士抒情诗（普罗旺斯·破晓歌）与骑士传奇（亚瑟王与圆桌骑士）· 市民（城市）文学名解＋特色＋《列那狐传奇》＋维庸＋《巴特兰律师》· 学硕补充：中世纪文学总特点论述。</div>
+        <div class="foot">
+          <div class="cnt"><b>32</b> 张 PPT · <b>8</b> 卡 · <b>28</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day05-外国文学-但丁与神曲.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D5</div>
+          <div class="name">但丁与《神曲》专题</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗❗❗神曲双重性·艺术特点</span>
+          <span class="tag">温柔的新体诗</span><span class="tag">神曲名解</span>
+          <span class="tag">地狱·炼狱·天堂</span><span class="tag">神曲主题</span>
+        </div>
+        <div class="desc">但丁生平与创作（「中世纪的最后一位诗人，新时代的最初一位诗人」）· 温柔的新体诗名解 ·《神曲》名解 · 主要内容梗概（地狱讲了……炼狱讲了……天堂讲了……）·《神曲》主题 ·《神曲》的双重性（非常重要❗）·《神曲》艺术特点（非常重要❗）· 小结（可作结尾）。</div>
+        <div class="foot">
+          <div class="cnt"><b>11</b> 张 PPT · <b>7</b> 卡 · <b>26</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day06-文艺复兴一.html">
+      <div class="edge" style="background:#1f5f5b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D6</div>
+          <div class="name">文艺复兴（一）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">思维导图流脉</span><span class="tag">兴起背景</span><span class="tag">人文主义</span>
+          <span class="tag">彼特拉克 ·《歌集》</span><span class="tag hot">❗薄伽丘《十日谈》</span>
+        </div>
+        <div class="desc">文艺复兴文学思维导图（流脉梳理）· 文艺复兴名解＋兴起背景（原因）· 人文主义名解／特征／发展阶段 · 彼特拉克《歌集》名解＋内容＋艺术特色 · 薄伽丘《十日谈》名解／主题／艺术特色／后世影响 ❗· 意大利后期作家＋记忆锦囊。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>22</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day07-外国文学-法国人文主义与流浪汉小说.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D7</div>
+          <div class="name">七星诗社·《巨人传》·流浪汉小说</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗❗❗巨人传艺术特色</span>
+          <span class="tag">十日谈补背</span><span class="tag">七星诗社</span>
+          <span class="tag">拉伯雷</span><span class="tag">巨人传思想内容</span>
+          <span class="tag hot">❗流浪汉小说叙事特点</span><span class="tag">小癞子</span><span class="tag">各国成就总览</span>
+        </div>
+        <div class="desc">《十日谈》补背 · 七星诗社名解（16 世纪中叶·七人·龙沙杜贝莱·贵族倾向·《保卫和发扬法兰西语言》）· 拉伯雷与《巨人传》（名解＋成书出版顺序＋故事梗概）· 思想内容四条 · <b>艺术特色三条（重点背：夸张／荒诞与真实结合／民间语言）</b> · 流浪汉小说名解＋四大特征＋叙事特点（一线穿珠·缀段式结构·长篇小说叙事框架）·《小癞子》· 文艺复兴各国文学成就总览。</div>
+        <div class="foot">
+          <div class="cnt"><b>29</b> 张 PPT · <b>9</b> 卡 · <b>32</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day08-塞万提斯与堂吉诃德.html">
+      <div class="edge" style="background:#1f5f5b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D8</div>
+          <div class="name">塞万提斯与《堂吉诃德》</div>
+        </div>
+        <div class="tags">
+          <span class="tag">戏仿／戏拟</span><span class="tag">堂吉诃德</span><span class="tag">桑丘</span>
+          <span class="tag hot">❗艺术特点</span><span class="tag">现代小说特性 · 元小说</span>
+        </div>
+        <div class="desc">《堂吉诃德》名解与故事梗概 · 堂吉诃德与桑丘人物形象 · 思想意义（简单背）· 艺术特点（❗重点背诵）· 现代小说特性（元小说、世俗人本／宗教人本）。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>21</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day09-10-莎士比亚.html">
+      <div class="edge" style="background:#1f5f5b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D9-10</div>
+          <div class="name">莎士比亚</div>
+        </div>
+        <div class="tags">
+          <span class="tag">创作三阶段</span><span class="tag">福斯塔夫式背景</span>
+          <span class="tag">四大喜剧</span><span class="tag">性格悲剧</span>
+          <span class="tag hot">❗《哈姆雷特》大论述</span>
+        </div>
+        <div class="desc">莎士比亚创作分期（三阶段）· 诗歌／历史剧／《亨利四世》与福斯塔夫式背景 · 喜剧与四大喜剧名解 · 悲剧整体艺术特点（奥赛罗／李尔王／麦克白）·《哈姆雷特》大论述 · 说不尽的莎士比亚。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>27</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day10-十七世纪古典主义.html">
+      <div class="edge" style="background:var(--accent);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D10</div>
+          <div class="name">十七世纪欧洲文学（古典主义）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">巴洛克文学</span><span class="tag">清教文学</span>
+          <span class="tag">《失乐园》</span><span class="tag hot">❗古典主义艺术特征</span>
+          <span class="tag">三一律</span><span class="tag">高乃依</span><span class="tag">拉辛</span>
+        </div>
+        <div class="desc">名词解释：巴洛克文学 · 清教文学 ·《失乐园》· 古典主义大论述（名称与产生原因／历史文化背景／思想特征／艺术特征 ❗）· 古典主义创作概况与高乃依、拉辛。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>22</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day11-莫里哀专题.html">
+      <div class="edge" style="background:var(--accent);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D11</div>
+          <div class="name">莫里哀专题</div>
+        </div>
+        <div class="tags">
+          <span class="tag">阿巴贡 · 悭吝人</span><span class="tag">达尔杜夫</span>
+          <span class="tag">桃丽娜</span><span class="tag hot">❗《伪君子》艺术特色</span>
+        </div>
+        <div class="desc">莫里哀生平概要与创作分期 · 《悭吝人》阿巴贡人物形象 · 《伪君子》达尔杜夫（答丢夫）人物形象 · 《伪君子》桃丽娜人物形象 · 《伪君子》艺术特色（重点）。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>24</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day12-十八世纪启蒙运动.html">
+      <div class="edge" style="background:#3a5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D12</div>
+          <div class="name">十八世纪欧洲文学（启蒙运动）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">启蒙运动总论</span><span class="tag">英国小说四大家</span>
+          <span class="tag">感伤主义</span><span class="tag">哥特式小说</span>
+          <span class="tag">法国哲理小说四大家</span><span class="tag">洛可可</span><span class="tag">巴洛克</span>
+        </div>
+        <div class="desc">启蒙运动文学总论：背景·思想·文学特征·英法德异同 · 英国（温和）：启蒙现实主义小说四大家（鲁滨逊／格列佛／汤姆·琼斯／帕米拉）· 感伤主义＋哥特式小说两个名解 · 法国（革命性）：启蒙哲理小说四大家（波斯人信札／老实人／拉摩的侄儿／新爱洛漪丝·忏悔录）· 洛可可文学与艺术 · 巴洛克艺术名解。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>24</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day13-十八世纪德国文学.html">
+      <div class="edge" style="background:#3a5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D13</div>
+          <div class="name">十八世纪德国文学（分裂民族的文学）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">狂飙突进运动</span><span class="tag">莱辛</span>
+          <span class="tag">少年维特之烦恼</span><span class="tag hot">❗《浮士德》</span>
+          <span class="tag">席勒</span><span class="tag">魏玛古典主义</span>
+        </div>
+        <div class="desc">德国篇总纲：分裂民族的文化独立 ＋ 狂飙突进运动名解 · 莱辛：理论与市民悲剧 · 歌德生平与《少年维特之烦恼》· 诗剧《浮士德》内容（五个悲剧）／人物形象／思想／艺术 · 席勒《强盗》《阴谋与爱情》＋ 魏玛古典主义名解。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>28</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day14-十九世纪现实主义上.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D14</div>
+          <div class="name">十九世纪现实主义（上）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">现实主义总论</span><span class="tag hot">❗艺术特征</span>
+          <span class="tag">司汤达 · 红与黑</span><span class="tag">于连</span>
+          <span class="tag">人间喜剧</span><span class="tag">人物再现法</span>
+        </div>
+        <div class="desc">现实主义文学总论：背景·思想特征·艺术特征（重点背）· 发展脉络 · 法国司汤达：《红与黑》题名原因／于连形象／艺术特色 · 巴尔扎克《人间喜剧》两大名词解释：人间喜剧 · 人物再现法。</div>
+        <div class="foot">
+          <div class="cnt"><b>4</b> 卡 · <b>14</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day15-16-十九世纪现实主义上续.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D15-16</div>
+          <div class="name">十九世纪现实主义（上·续）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">高老头</span><span class="tag">包法利夫人</span><span class="tag">茶花女</span>
+          <span class="tag">双城记</span><span class="tag">名利场</span><span class="tag">勃朗特三姐妹</span><span class="tag">苔丝</span>
+        </div>
+        <div class="desc">法国续：《人间喜剧》思想内容＋《高老头》情节／思想／艺术 · 福楼拜《包法利夫人》＋小仲马《茶花女》＋都德《小东西》名解 · 英国：狄更斯《双城记》＋萨克雷《名利场》＋勃朗特三姐妹＋盖斯凯尔夫人 · 哈代：威塞克斯小说名解＋《德伯家的苔丝》（考过真题）。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>21</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day17-复盘与论述题答题方法.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D17</div>
+          <div class="name">复盘第 12—16 天 ＋ 论述题答题方法</div>
+        </div>
+        <div class="tags">
+          <span class="tag">知识串网</span><span class="tag">高频考点分级</span>
+          <span class="tag hot">❗论述题五步法</span><span class="tag">9 道实战演练</span>
+        </div>
+        <div class="desc">一张网串起启蒙运动＋十九世纪现实主义全部内容 · 名词解释／简答／论述三档高频考点盘点 · 论述题答题方法总纲（五步法＋三种题型模板）· 9 道典型论述题完整考场答案（对标《李凡 1000 题》）。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>23</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day18-十九世纪现实主义下.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D18</div>
+          <div class="name">十九世纪现实主义（下）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">社会问题剧</span><span class="tag">易卜生 · 玩偶之家</span>
+          <span class="tag">普希金</span><span class="tag">多余人</span><span class="tag">小人物</span>
+          <span class="tag hot">❗《罪与罚》· 复调结构</span>
+        </div>
+        <div class="desc">北欧易卜生「社会问题剧」名解＋《玩偶之家》梗概／娜拉形象／艺术手法 · 俄国现实主义：普希金与「多余人」「小人物」形象系列 · 果戈理／屠格涅夫／新人系列 · 陀思妥耶夫斯基《罪与罚》梗概／人物／主题／艺术 ＋ 复调结构名解。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>28</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day19-现实主义下.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D19</div>
+          <div class="name">19 世纪现实主义（下）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">现实主义（下）</span><span class="tag">代表作家作品</span>
+        </div>
+        <div class="desc">十九世纪现实主义文学（下）：各国现实主义作家作品与艺术特征。</div>
+        <div class="foot">
+          <div class="cnt"><b>11</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day19-自然主义-浪漫主义上.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D19</div>
+          <div class="name">自然主义 ＋ 浪漫主义（上）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">自然主义</span><span class="tag">浪漫主义（上）</span>
+          <span class="tag">两日合页</span><span class="tag">打卡点最多</span>
+        </div>
+        <div class="desc">自然主义与浪漫主义（上）合页：自然主义定义／核心主张／艺术特点／代表作，自然主义与现实主义之别，莫泊桑艺术特色，唯美主义名解等。</div>
+        <div class="foot">
+          <div class="cnt"><b>32</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day20-浪漫主义下.html">
+      <div class="edge" style="background:var(--gold);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D20</div>
+          <div class="name">19 世纪浪漫主义（下）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">浪漫主义</span><span class="tag">各国浪漫派</span><span class="tag">代表作家作品</span>
+        </div>
+        <div class="desc">十九世纪浪漫主义文学（下）：各国浪漫派名解、代表作家与艺术特征。</div>
+        <div class="foot">
+          <div class="cnt"><b>17</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day21-22-二十世纪现实主义.html">
+      <div class="edge" style="background:var(--accent);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D21-22</div>
+          <div class="name">20 世纪现实主义与现代主义</div>
+        </div>
+        <div class="tags">
+          <span class="tag">20 世纪现实主义</span><span class="tag">现代主义</span>
+          <span class="tag">两日合页</span>
+        </div>
+        <div class="desc">第 21—22 两天合页：二十世纪现实主义文学与现代主义文学的名解、作家与艺术特征。</div>
+        <div class="foot">
+          <div class="cnt"><b>29</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day23-俄苏与现代主义.html">
+      <div class="edge" style="background:var(--accent);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D23</div>
+          <div class="name">俄苏文学与现代主义</div>
+        </div>
+        <div class="tags">
+          <span class="tag">俄苏文学</span><span class="tag">现代主义</span>
+          <span class="tag">象征主义</span><span class="tag">未来主义</span>
+        </div>
+        <div class="desc">俄苏文学与二十世纪现代主义文学诸流派名解、代表作家与艺术特征。</div>
+        <div class="foot">
+          <div class="cnt"><b>36</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day24-意识流小说.html">
+      <div class="edge" style="background:#6b5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D24</div>
+          <div class="name">意识流小说</div>
+        </div>
+        <div class="tags">
+          <span class="tag">意识流</span><span class="tag">普鲁斯特</span>
+          <span class="tag">乔伊斯</span><span class="tag">伍尔夫</span><span class="tag">福克纳</span>
+        </div>
+        <div class="desc">意识流小说名解与艺术手法 · 四大代表作家作品逐条带背。</div>
+        <div class="foot">
+          <div class="cnt"><b>13</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day25-表现主义与后现代-上.html">
+      <div class="edge" style="background:#6b5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D25</div>
+          <div class="name">表现主义与后现代（上）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">表现主义</span><span class="tag">卡夫卡式</span>
+          <span class="tag">《变形记》</span><span class="tag">《诉讼》</span><span class="tag">《城堡》</span>
+          <span class="tag">存在主义</span><span class="tag">境遇剧 ·《禁闭》</span>
+        </div>
+        <div class="desc">表现主义名解 · 卡夫卡创作与「卡夫卡式」·《变形记》梗概／主题／艺术特征 ·《诉讼》名解与思想内涵 ·《城堡》主题与叙事特色 · 卡夫卡艺术特色现代性 · 后现代主义名解与基本特征 · 元小说／零度写作 · 存在主义与境遇剧 ·《禁闭》梗概。</div>
+        <div class="foot">
+          <div class="cnt"><b>18</b> 张 PPT · <b>20</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day26-后现代-中.html">
+      <div class="edge" style="background:#6b5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D26</div>
+          <div class="name">后现代（中）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">后现代主义</span><span class="tag">荒诞派</span>
+          <span class="tag">新小说</span><span class="tag">黑色幽默</span>
+        </div>
+        <div class="desc">二十世纪后现代主义文学（中）逐张带背：流派名解、代表作家作品与艺术特征。</div>
+        <div class="foot">
+          <div class="cnt"><b>15</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day27-后现代下.html">
+      <div class="edge" style="background:#6b5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D27</div>
+          <div class="name">后现代（下）</div>
+        </div>
+        <div class="tags">
+          <span class="tag">魔幻现实主义 ❗</span><span class="tag">《百年孤独》</span>
+          <span class="tag">艺术特色四条</span><span class="tag hot">❗真题命中</span>
+        </div>
+        <div class="desc">魔幻现实主义名解＋基本特点＋形成背景 ·《百年孤独》名解＋故事梗概＋思想内容 ·《百年孤独》艺术特色（四大条）· 学硕真题「百年为什么叫百年」答题思路。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 张 PPT · <b>15</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day28-古代中古亚非文学.html">
+      <div class="edge" style="background:var(--green);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D28</div>
+          <div class="name">古代与中古亚非文学</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗圣经文学特征 · 真题逐字命中</span>
+          <span class="tag">亡灵书</span><span class="tag">两大史诗</span>
+          <span class="tag">沙恭达罗 ❗❗</span><span class="tag">一千零一夜 ❗❗</span><span class="tag">悬诗</span>
+        </div>
+        <div class="desc">古埃及《亡灵书》· 巴比伦《吉尔伽美什》· 印度两大史诗名解与地位名号 · 《沙恭达罗》名解＋艺术特征 · 《旧约》名解 · 圣经文学三特征 · 《一千零一夜》名解＋艺术特色 · 悬诗名解 · 阿拉伯文学四分期。</div>
+        <div class="foot">
+          <div class="cnt"><b>11</b> 张 PPT · <b>13</b> 卡 · <b>18</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="day" href="day29-亚非文学.html">
+      <div class="edge" style="background:var(--green);"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D29</div>
+          <div class="name">亚非文学（下）· 近现代</div>
+        </div>
+        <div class="tags">
+          <span class="tag hot">❗源氏物语 2024真题 · 雪国 2016真题</span>
+          <span class="tag">源氏物语 ❗</span><span class="tag">俳句</span>
+          <span class="tag">泰戈尔·吉檀迦利</span><span class="tag">我是猫</span>
+          <span class="tag">私小说 ❗</span><span class="tag">雪国</span>
+        </div>
+        <div class="desc">中古日本：《源氏物语》名解＋人物形象＋主题四层 · 俳句名解 · 浮世草子 · 亚非近现代文学三特征 · 泰戈尔《吉檀迦利》思想内容＋艺术特色 · 夏目漱石《我是猫》名解＋苦沙弥典型意义 · 私小说名解 · 大正五流派 · 川端康成《雪国》内容＋艺术特色＋美学特征。<b>外国文学史全部结束 🎉</b></div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>29</b> 打卡点 · 亚非整章收尾</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+<div class="sect">现当代文学 · 现代（第一至第三个十年）</div>
+  <div class="sect-hint">现当代 Day 1—23 · 文学革命 → 左翼思潮 → 京派海派 → 张爱玲赵树理 → 第三个十年散文戏剧</div>
+  <div class="grid">
+    <a class="day" href="现当代/day01-文学革命与社团.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D1</div>
+          <div class="name">文学革命与第一个十年社团</div>
+        </div>
+        <div class="tags">
+<span class="tag">文学革命</span><span class="tag">《新青年》</span><span class="tag hot">文学研究会</span><span class="tag hot">创造社</span><span class="tag">语丝社</span><span class="tag">新月社</span>
+        </div>
+        <div class="desc">文学革命的发生与发展 · 三大主义 · 与守旧派的论争（林纾／学衡派／甲寅派）· 第一个十年社团蜂起：文学研究会、创造社、语丝社、新月社、莽原社、未名社、浅草—沉钟社、湖畔诗社 · 各社团代表作家与刊物一览 · 五四文学革命的实绩与局限。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 卡 · <b>34</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day02-问题小说与乡土小说.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D2</div>
+          <div class="name">问题小说 · 人生派 · 乡土小说</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">人的文学</span><span class="tag hot">问题小说</span><span class="tag hot">郁达夫</span><span class="tag">乡土小说</span><span class="tag">自叙传抒情小说</span>
+        </div>
+        <div class="desc">周作人「人的文学」名解 · 问题小说名解＋兴起原因＋代表作家（冰心／叶绍钧／王统照／庐隐／许地山）· 人生派写实小说 · 乡土小说名解＋代表作家（王鲁彦／许杰／彭家煌／台静农／蹇先艾）· 郁达夫自叙传抒情小说与《沉沦》· 艺术特色与文学史意义。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>21</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day03-第一个十年诗歌.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D3</div>
+          <div class="name">新诗的诞生 · 胡适 · 新月 · 象征</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">胡适《尝试集》</span><span class="tag hot">新月诗派</span><span class="tag hot">闻一多「三美」</span><span class="tag">象征诗派</span>
+        </div>
+        <div class="desc">新诗的诞生与胡适《尝试集》· 初期白话诗的成就与不足 · 湖畔诗社与冯至 · 新月诗派名解＋闻一多「三美」主张＋徐志摩 · 早期象征诗派与李金发 · 各流派代表作品与艺术特色对照。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>25</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day04-郭沫若女神.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D4</div>
+          <div class="name">郭沫若《女神》</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">《女神》</span><span class="tag hot">自我抒情主人公</span><span class="tag hot">泛神论</span><span class="tag hot">艺术成就</span>
+        </div>
+        <div class="desc">郭沫若生平与创作 · 《女神》名解 · 思想内容（反抗与创造／爱国与眷念／泛神论）· 自我抒情主人公形象 · 《女神》艺术成就（重点背：浪漫主义／想象与夸张／诗体解放／火山爆发式情感）· 《凤凰涅槃》《天狗》《地球，我的母亲》逐篇。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>25</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day05-散文与戏剧.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D5</div>
+          <div class="name">第一个十年散文与戏剧</div>
+        </div>
+        <div class="tags">
+<span class="tag">随感录作家群</span><span class="tag">言志派</span><span class="tag hot">冰心体</span><span class="tag">语丝派</span><span class="tag">戏剧诸社团</span>
+        </div>
+        <div class="desc">随感录作家群名解（《新青年》杂感）· 言志派散文（周作人／俞平伯／钟敬文）· 冰心体名解＋艺术特色 · 语丝派与「语丝体」· 现代评论派 · 五四戏剧运动：民众戏剧社、上海戏剧协社、南国社 · 各散文体式对照。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>18</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day06-丁西林与田汉.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D6</div>
+          <div class="name">丁西林与田汉戏剧</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">丁西林喜剧</span><span class="tag hot">田汉</span><span class="tag">美文</span><span class="tag">五四文学趋向</span>
+        </div>
+        <div class="desc">丁西林戏剧艺术特色（重点背：独幕剧／轻松喜剧／机智对话／欺骗与误会）· 《一只马蜂》《压迫》· 田汉戏剧艺术特色（浪漫主义抒情／感伤情调／《获虎之夜》《名优之死》）· 美文名解 · 五四文学发展趋向总结。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>22</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day07-鲁迅人物与呐喊彷徨.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D7</div>
+          <div class="name">鲁迅专题（一）：经典人物</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">经典人物形象</span><span class="tag hot">《呐喊》《彷徨》</span><span class="tag hot">艺术特点</span>
+        </div>
+        <div class="desc">鲁迅笔下经典人物形象（狂人／阿Q／孔乙己／闰土／祥林嫂／子君与涓生）· 《呐喊》《彷徨》的创新之处 · 《呐喊》艺术特点（重点背）· 人物形象分类与典型意义。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>22</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day08-狂人阿Q故事新编野草.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D8</div>
+          <div class="name">鲁迅专题（二）：四部作品</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">《狂人日记》</span><span class="tag hot">《阿Q正传》</span><span class="tag">《故事新编》</span><span class="tag hot">《野草》</span>
+        </div>
+        <div class="desc">《狂人日记》名解＋艺术特色 · 《阿Q正传》名解＋阿Q形象＋精神胜利法＋艺术特色 · 《故事新编》名解＋艺术特色（古今杂糅／油滑）· 《野草》名解＋思想内容＋艺术特色（2011/2013 真题）· 四部作品对照记忆。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>28</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day09-鲁迅杂文与知识分子.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D9</div>
+          <div class="name">鲁迅杂文与知识分子形象</div>
+        </div>
+        <div class="tags">
+<span class="tag">杂文的意义</span><span class="tag hot">杂文艺术特点</span><span class="tag hot">知识分子形象</span>
+        </div>
+        <div class="desc">鲁迅杂文的意义与艺术特点（重点背）· 杂文的分期与代表篇目 · 鲁迅笔下的知识分子形象（四类）· 与《呐喊》《彷徨》中知识分子形象的联系 · 杂文艺术手法（讽刺／夸张／比喻／反语）。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>22</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day10-左翼文学思潮.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D10</div>
+          <div class="name">第二个十年思潮（左翼）</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">太阳社</span><span class="tag hot">左联</span><span class="tag hot">左翼与新月派论争</span><span class="tag">社会主义现实主义</span>
+        </div>
+        <div class="desc">太阳社名解 · 「左联」（中国左翼作家联盟）名解＋成立＋纲领＋活动＋功绩与缺失 · 左翼与新月派的论争（人性论争）· 与「自由人」「第三种人」的论争 · 「社会主义现实主义」的传入 · 左翼文学思潮导图。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>27</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day11-三大派别茅盾老舍.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D11</div>
+          <div class="name">三大派别 · 茅盾 · 老舍</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">三大文学派别</span><span class="tag hot">茅盾小说艺术</span><span class="tag hot">老舍「京味」</span>
+        </div>
+        <div class="desc">三大文学派别（左翼／京派／海派）· 茅盾小说艺术特点（重点背：社会剖析／宏大结构／时代女性／心理描写）· 《子夜》名解＋艺术成就 · 老舍小说艺术特点与「京味」（重点背：市民世界／幽默／北京口语／文化批判）· 《骆驼祥子》名解＋祥子形象。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>31</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day12-家寒夜左翼文学.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D12</div>
+          <div class="name">巴金《家》《寒夜》与左翼文学</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">《家》</span><span class="tag hot">《寒夜》</span><span class="tag">左翼文学思潮</span>
+        </div>
+        <div class="desc">巴金《家》名解＋觉慧／觉新形象＋艺术特色 · 《寒夜》名解＋汪文宣／曾树生形象＋艺术特色（现实主义深化）· 巴金创作道路 · 左翼文学思潮导图串讲。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>19</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day13-普罗小说与左翼小说.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D13</div>
+          <div class="name">普罗小说与左翼小说</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">普罗小说</span><span class="tag hot">革命＋恋爱</span><span class="tag hot">社会剖析小说</span><span class="tag hot">丁玲</span><span class="tag hot">东北作家群</span>
+        </div>
+        <div class="desc">普罗小说名解 · 「革命＋恋爱」创作模式名解＋公式化弊端 · 蒋光慈《冲出云围的月亮》· 社会剖析小说名解＋《子夜》 · 张天翼讽刺小说艺术特色 · 丁玲创作道路（莎菲／《韦护》／《太阳照在桑干河上》）· 李劼人「大河小说」· 东北作家群与萧红萧军。</div>
+        <div class="foot">
+          <div class="cnt"><b>10</b> 卡 · <b>40</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day14-京派海派与京海之争.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D14</div>
+          <div class="name">京派 · 海派 · 京海之争</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">京派</span><span class="tag hot">沈从文</span><span class="tag hot">海派</span><span class="tag hot">新感觉派</span><span class="tag">京海之争</span>
+        </div>
+        <div class="desc">京派名解＋文学主张＋代表作家（沈从文／废名／萧乾／林徽因／卞之琳）· 沈从文《边城》＋艺术特色 · 海派名解＋新感觉派（刘呐鸥／穆时英／施蛰存）· 京海之争名解＋论争过程＋文学史意义。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 卡 · <b>35</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day15-现代派诗歌与散文.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D15</div>
+          <div class="name">现代派诗歌 · 三十年代散文</div>
+        </div>
+        <div class="tags">
+<span class="tag">中国诗歌会</span><span class="tag">后期新月派</span><span class="tag hot">现代派诗歌</span><span class="tag hot">林语堂</span><span class="tag hot">何其芳《画梦录》</span>
+        </div>
+        <div class="desc">中国诗歌会名解 · 后期新月派 · 现代诗派（现代派）名解＋艺术特色（2016 真题）· 汉园三诗人 · 戴望舒（2017 真题）· 三十年代散文三大方向 · 鲁迅《鲁迅风》杂文 · 林语堂小品文与林派刊物 · 开明派 · 何其芳《画梦录》思想情绪与艺术特色（2015 真题）。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>25</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day16-曹禺与夏衍戏剧.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D16</div>
+          <div class="name">曹禺《雷雨》· 夏衍</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">《雷雨》艺术成就</span><span class="tag hot">繁漪</span><span class="tag hot">夏衍艺术特色</span><span class="tag hot">曹禺艺术特色</span>
+        </div>
+        <div class="desc">曹禺《雷雨》名解＋艺术成就（重点背：锁闭式结构／冲突／语言／悲剧性）· 繁漪人物形象 · 曹禺戏剧艺术特色总论 · 夏衍戏剧艺术特色（重点背：现实主义／小人物／日常化）· 《上海屋檐下》· 与田汉、丁西林对照。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>36</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day17-三个地区文学.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D17</div>
+          <div class="name">第三个十年三个地区文学</div>
+        </div>
+        <div class="tags">
+<span class="tag">国统区</span><span class="tag hot">解放区</span><span class="tag hot">沦陷区</span><span class="tag">孤岛文学</span>
+        </div>
+        <div class="desc">国统区文学（暴露与讽刺／七月诗派／后期浪漫派）· 解放区文学（《讲话》后新气象／赵树理方向／新歌剧）· 沦陷区与孤岛文学（张爱玲／苏青／钱钟书）· 三区文学对照表 · 各地区代表作家作品。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>28</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day18-讲话与文学论争.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D18</div>
+          <div class="name">延安《讲话》与文学论争</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">《讲话》</span><span class="tag hot">文学论争</span><span class="tag">文艺整风</span>
+        </div>
+        <div class="desc">延安文艺座谈会《讲话》名解＋背景＋内容＋意义 · 「文艺为工农兵服务」· 文艺整风 · 相关文学论争（民族形式／主观战斗精神／现实主义）· 《讲话》对解放区文学的影响。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>23</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day19-张天翼沙汀钱钟书.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D19</div>
+          <div class="name">张天翼 · 沙汀 · 钱钟书</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">张天翼艺术特色</span><span class="tag hot">沙汀「三记」</span><span class="tag hot">《围城》</span>
+        </div>
+        <div class="desc">第三个十年小说思维导图 · 张天翼讽刺小说艺术特色（重点背）· 沙汀「三记」（《淘金记》《困兽记》《还乡记》）＋讽刺艺术 · 钱钟书《围城》名解＋方鸿渐形象＋艺术特色＋「围城」寓意。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>25</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day20-张爱玲.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D20</div>
+          <div class="name">张爱玲小说艺术成就</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">艺术成就</span><span class="tag hot">参差对照</span><span class="tag">《倾城之恋》</span><span class="tag hot">《金锁记》</span>
+        </div>
+        <div class="desc">张爱玲小说艺术成就（五大点：华美语言与缤纷意象／心理描写与通感／参差对照／中西合璧／市民意识与女性命运）· 「参差对照」名解＋思考真题 · 《倾城之恋》《金锁记》· 同期作家：苏青《结婚十年》· 梅娘《蚌》《鱼》《蟹》· 徐訏《鬼恋》· 无名氏雅俗手法。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>17</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day21-赵树理与山药蛋派.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D21</div>
+          <div class="name">赵树理与山药蛋派</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">赵树理贡献</span><span class="tag hot">山药蛋派</span><span class="tag hot">孙犁与荷花淀派</span><span class="tag">评书体</span>
+        </div>
+        <div class="desc">赵树理贡献三点（艺术性与大众化结合／开拓新主题题材／各类农民形象）· 艺术成就五点（三类农民形象对照表／评书体四要点／现实性与史诗性／明快简约／地域民俗色彩）· 「山药蛋派」名解（西李马胡孙）· 孙犁与荷花淀派＋两派对照表。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>21</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day22-七月派九叶派与艾青.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D22</div>
+          <div class="name">七月派 · 九叶派 · 艾青</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">七月诗派</span><span class="tag hot">九叶诗派</span><span class="tag hot">穆旦</span><span class="tag hot">艾青</span><span class="tag">新诗歌谣化</span>
+        </div>
+        <div class="desc">「七月诗派」名解（胡风／《七月》／鲁藜绿原冀汸阿垅牛汉）· 「中国新诗派＝九叶诗派」名解＋「新诗现代化」＝综合 · 穆旦诗歌四点 · 艾青诗歌艺术成就（土地与太阳意象／忧郁诗绪／散文美／《我爱这土地》）· 抗战与根据地诗歌（田间／新诗歌谣化／李季《王贵与李香香》／阮章竞《漳河水》）。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>26</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day23-三十年代散文与历史剧.html">
+      <div class="edge" style="background:#2f5d3a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D23</div>
+          <div class="name">第三个十年散文与戏剧</div>
+        </div>
+        <div class="tags">
+<span class="tag">报告文学与杂文</span><span class="tag">小品散文</span><span class="tag hot">广场戏剧</span><span class="tag hot">郭沫若《屈原》</span><span class="tag">讽刺喜剧</span>
+        </div>
+        <div class="desc">报告文学与杂文（孤岛《鲁迅风》／桂林《野草》／聂绀弩／冯雪峰）· 小品散文多样风格对照表（何其芳／巴金／李广田／梁实秋／钱钟书／沈从文／张爱玲）· 「广场戏剧」三次高潮（抗战初期／敌后秧歌剧→《白毛女》／40 年代末活报剧）· 大后方孤岛历史剧 · 郭沫若《屈原》与历史剧艺术特色【真题】· 知识分子剧作四点（夏衍／田汉／陈白尘／袁俊）· 讽刺喜剧（《升官图》／老舍《残雾》／丁西林）。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>27</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="sect">现当代文学 · 当代（十七年至新时代）</div>
+  <div class="sect-hint">现当代 Day 1—11（当代序列）· 文代会 → 白鹿原 → 路遥创业史 → 莫言 → 当代诗歌散文戏剧</div>
+  <div class="grid">
+    <a class="day" href="现当代/day01-文代会与双百方针.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D1</div>
+          <div class="name">文代会 · 双百方针 · 样板戏</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">第一次文代会</span><span class="tag hot">双百方针</span><span class="tag hot">革命样板戏</span><span class="tag">三次批判运动</span>
+        </div>
+        <div class="desc">第一次文代会（1949.7.2–19 · 三大报告郭沫若／茅盾／周扬 · 大会内容与新组织 · 意义三点 · 局限两点）· 第二次文代会（1953.9.23–10.6 · 四项内容 · 影响）· 「双百方针」名解（1956 · 学术民主＋艺术民主）· 「革命样板戏」名解（八大样板戏）· 三次运动与批判运动（《武训传》／《红楼梦研究》批俞平伯／批胡风文艺思想）· 十七年文学总特点（学硕）。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 卡 · <b>25</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day02-当代文学思维导图.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D2</div>
+          <div class="name">当代文学思维导图与小说流变</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">四阶段框架</span><span class="tag hot">乡土流变五段</span><span class="tag hot">六大思潮</span>
+        </div>
+        <div class="desc">当代文学四阶段总框架表（十七年／文革／新时期／90 年代）＋乡土流变五段 · 五十、六十年代小说（农村题材／革命历史／干预生活对照表＋标志性作品）· 新时期文学节点（1977 起点＋六大思潮表：伤痕／反思／改革／寻根／先锋／新写实）· 当代文学导图（体裁×时期四格表）。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>18</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day03-白鹿原与新历史小说.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D3</div>
+          <div class="name">陈忠实《白鹿原》与新历史小说</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">新历史小说</span><span class="tag hot">史诗品格</span><span class="tag hot">白嘉轩</span><span class="tag">魔幻现实主义</span>
+        </div>
+        <div class="desc">《白鹿原》故事简介（50 万字 · 1997 第四届茅盾文学奖 · 四段脉络）· 「新历史小说」名解＋与新历史小说区别（五点区别表）· 史诗品格【重点论述】（题材与时间跨度／双线结构／人物画廊／文化挽歌）· 人物形象（白嘉轩／鹿子霖／田小娥／白灵／鹿兆鹏／黑娃／白孝文／鹿三）· 艺术特色（宏大严整结构／丰满复杂人物／地域文化／魔幻现实主义／文化批判）。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>28</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day04-反思改革文学与人生.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D4</div>
+          <div class="name">反思文学 · 改革文学 · 路遥《人生》</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">反思文学</span><span class="tag hot">改革文学</span><span class="tag hot">高加林</span><span class="tag">《平凡的世界》</span>
+        </div>
+        <div class="desc">「反思文学」「改革文学」名解＋伤痕→反思→改革链 · 《人生》梗概（离开土地—回到土地三段）· 高加林人物形象【重点】（五组性格＋三层复杂性＋与梁生宝对比表）· 《人生》艺术特色（四条＋深层主题）· 《平凡的世界》梗概（三部）与孙少安孙少平。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>23</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day05-农村题材与创业史.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D5</div>
+          <div class="name">农村题材小说与《创业史》</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">《创业史》</span><span class="tag hot">史诗特点</span><span class="tag hot">梁三老汉</span><span class="tag hot">梁生宝</span>
+        </div>
+        <div class="desc">农村题材小说清单表（10 部）· 「创业史」名解＋创作意图＋故事情节＋三股力量（郭世富／姚士杰／郭振山）· 史诗特点四点 · 艺术特色四点（回答现实问题／社会主义新人／中间人物梁三老汉／叙事丰富性）· 梁三老汉与梁生宝人物形象。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>24</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day06-寻根文学与贾平凹.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D6</div>
+          <div class="name">寻根文学 · 贾平凹</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">寻根文学</span><span class="tag hot">贾平凹万能段</span><span class="tag hot">《废都》</span><span class="tag hot">《秦腔》</span>
+        </div>
+        <div class="desc">「寻根文学」名解＋创作特点三点＋艺术特征四点＋文学史意义 · 贾平凹创作阶段四段表 · 贾平凹总体艺术特点（万能段落：散文化写法三层／商州小说四条／散文观／文体贡献）· 《废都》（基本信息／思想内容四点／艺术特点四点／缺陷／评价）· 《秦腔》【考过真题】（思想内容三点／艺术特点三点／人物与情节表／老一代坚守与新一代出走／90 年代四部长篇与文化立场）。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>28</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day07-莫言专题上.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D7</div>
+          <div class="name">莫言专题（上）·《红高粱》</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">新历史小说</span><span class="tag hot">魔幻现实主义</span><span class="tag hot">《红高粱家族》</span><span class="tag hot">余占鳌</span>
+        </div>
+        <div class="desc">「新历史小说」名解＋五点区别（主题野化→观念家族化→叙事虚构化→人物灰色化→语言俗化）· 「魔幻现实主义」名解（基本特征四点＋艺术手法三点）· 《红高粱家族》故事梗概（五部 · 1939 古历八月初九）· 余占鳌（土匪式英雄）＋红高粱精神 · 《红高粱》创作特征【重点论述】（生命意识五点／反思复杂意味／现代派技巧／陌生化四点）。</div>
+        <div class="foot">
+          <div class="cnt"><b>7</b> 卡 · <b>24</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day08-莫言专题下与王小波.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D8</div>
+          <div class="name">莫言专题（下）· 王小波</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">《丰乳肥臀》</span><span class="tag hot">《檀香刑》</span><span class="tag hot">《生死疲劳》</span><span class="tag hot">《蛙》</span><span class="tag hot">王小波</span>
+        </div>
+        <div class="desc">《丰乳肥臀》名解＋梗概（八女一子 · 上官金童恋乳症）＋主题 · 《檀香刑》名解＋梗概＋叙事特色四点（多线交叉视角／狂欢化语言／凤头猪肚豹尾／猫腔）· 《生死疲劳》名解＋艺术特色（轮回叙事／多重视角／人物形象／动物拟人化）· 《蛙》名解＋叙事特点（五封书信 · 蛙娃娲谐音）· 莫言魔幻现实主义与总艺术特色【真题 南开 2021/2022】· 王小波小说艺术特色（三部曲／荒诞书写／黑色幽默／反讽戏仿）。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 卡 · <b>30</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day09-当代诗歌专题.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D9</div>
+          <div class="name">当代诗歌流变 · 朦胧诗 · 第三代诗</div>
+        </div>
+        <div class="tags">
+<span class="tag">政治抒情诗</span><span class="tag hot">朦胧诗</span><span class="tag hot">北岛顾城舒婷</span><span class="tag hot">第三代诗</span><span class="tag hot">新女性小说</span>
+        </div>
+        <div class="desc">十七年与新时期诗歌时间链（政治抒情诗五点／归来的歌／朦胧诗名解）· 北岛（六点）· 顾城（童话诗人）· 舒婷（七点＋女性思考）· 「第三代诗」名解＋与朦胧诗差异三点＋韩东（诗到语言为止）· 于坚（拒绝隐喻）· 海子（麦地）· 朦胧诗论争 · 新女性小说名解＋王安忆（四特色 ·《长恨歌》）＋迟子建（四特征）。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>25</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day10-当代散文专题.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D10</div>
+          <div class="name">十七年散文与新时期散文</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">杨朔秦牧刘白羽</span><span class="tag hot">学者散文</span><span class="tag hot">余秋雨</span><span class="tag hot">《随想录》</span>
+        </div>
+        <div class="desc">十七年散文总特点（杨朔五点＋局限／秦牧四点＋局限／刘白羽三点＋三大家速记表）· 新时期散文（学者散文名解＋余秋雨六点＋杨绛《干校六记》四点＋史铁生《我与地坛》五点）· 巴金《随想录》思想主题（反思与忏悔／说真话）＋艺术特点四点＋答题提示。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 卡 · <b>19</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+    <a class="day" href="现当代/day11-当代戏剧专题.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no">D11</div>
+          <div class="name">十七年戏剧 ·《关汉卿》·《茶馆》</div>
+        </div>
+        <div class="tags">
+<span class="tag hot">历史翻案剧</span><span class="tag hot">《关汉卿》</span><span class="tag hot">《茶馆》</span><span class="tag hot">探索戏剧</span>
+        </div>
+        <div class="desc">「历史翻案剧」名解（田汉《关汉卿》《文成公主》／郭沫若《蔡文姬》《武则天》／曹禺《胆剑篇》）· 田汉《关汉卿》艺术成就（四点＋关汉卿人物形象五点＋借史自述）· 老舍《茶馆》主题（葬送三个时代）＋三幕内容＋艺术表现六点（王利发／常四爷／秦仲义）· 探索戏剧（高行健五点）。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卡 · <b>20</b> 打卡点</div>
+          <div class="go">进入带背 →</div>
+        </div>
+      </div>
+    </a>
+  </div>
+<!-- /xiandangdai-block -->
+
+  <div class="note">
+    <p><b>古代文学第29—34天</b>：按所给群提纲与OCR整理为5页，31—32天合并；包含答案自测、持久打卡和随手记。缺图及补充资料均在对应卡片注明。</p>
+    <p><b>这批页从哪来</b>：两套体系合到一处。</p>
+    <ul>
+      <li><b>第 6—18 天</b>（文艺复兴 → 古典主义 → 启蒙 → 现实主义上／下）：原在 <b>D:\dsh</b>，按群内提纲＋库内题库与西大真题原答重写，自成一页；本次已搬入本目录、统一编号、加了返回条。</li>
+      <li><b>第 19—28 天</b>（19 世纪末 → 现代主义 → 后现代 → 亚非）：以群里老师发的 <b>PPT 截图为骨架</b>逐张识读，再补库内三源。</li>
+    </ul>
+    <p style="margin-top:8px;">两套编号天然接续（6—18 接 19—28），内容不重叠。老师的 ❗／❗❗ 已转成卡片等级或标签；真题命中的地方单列「真题回顾／真题原答」区块。</p>
+    <p style="margin-top:8px;"><b>关于打卡</b>：第 6—18 天那批用页内「⭕ 打卡 + 随手记（可编辑便签）」，状态<b>不落盘</b>，刷新即清；第 19—28 天这批的打卡存本机浏览器、可跨次保留。两套互不干扰。</p>
+    <p style="margin-top:8px;"><b>群里重号提示</b>：出现过两个「第 19 天」、两个「第 10 天」（分属不同批次），本索引一律按内容分列，不覆盖旧页。</p>
+  </div>
+
+  <div class="footnote">
+    点击卡片进入对应带背页 · 每页左上角有「← 带背索引」· 第 19—28 天页右下角另有「← 返回计划」<br>
+    索引更新于 2026-10-22
+  </div>
+
+</div>
+
+<div class="font-ctrl">
+  <button onclick="fsStep(-1)">−</button>
+  <span class="fs-label" id="fsLabel">15px</span>
+  <button onclick="fsStep(1)">＋</button>
+  <button class="fs-reset" onclick="fsReset()">复位</button>
+</div>
+
+<script>
+(function(){
+  var FS_KEY='daibei_index_fs';
+  var base=15, cur=base;
+  try{ var s=localStorage.getItem(FS_KEY); if(s){ cur=parseFloat(s);} }catch(e){}
+  function apply(){ document.documentElement.style.setProperty('--fs-base',cur+'px');
+    var el=document.getElementById('fsLabel'); if(el){el.textContent=Math.round(cur)+'px';} }
+  window.fsStep=function(d){ cur=Math.min(22,Math.max(12,cur+d)); apply();
+    try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  window.fsReset=function(){ cur=base; apply(); try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  apply();
+})();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8天带背 · 塞万提斯与《堂吉诃德》</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+:root{--bg:#faf8f3;--panel:#fff;--ink:#2b2b2b;--soft:#5b574f;--gold:#a8854a;--deep:#7d5e2c;--gold-bg:#f4ecdb;--border:#e6dfcc;--highlight:#fff8e6;--zhuan:#2d4a6e;--zhuan-bg:#e8eff5;--red:#1c6ea4;--red-bg:#e8f1f7;--fs-base:15px}
+*{box-sizing:border-box}html{font-size:var(--fs-base);scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em;font-family:"LXGW WenKai","霞鹜文楷","STKaiti","KaiTi","Microsoft YaHei",serif}.wrap{max-width:1080px;margin:auto;padding:24px 18px 80px}.head{background:linear-gradient(135deg,#2b2b2b,#1c6ea4);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:28px;box-shadow:0 6px 18px rgba(0,0,0,.15)}.day{font-size:.87rem;letter-spacing:.35rem;opacity:.75}.head h1{font-size:1.9rem;margin:.35rem 0 .6rem}.sub{font-size:1rem;opacity:.88}.tags{display:flex;gap:.67rem;flex-wrap:wrap;margin-top:1rem}.tag{padding:.25rem .9rem;border-radius:1.3rem;font-size:.8rem;background:rgba(244,236,219,.15);border:1px solid rgba(244,236,219,.32)}.ctrl-bar{display:flex;gap:.67rem;flex-wrap:wrap;margin-bottom:1.2rem}.ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--deep);border-radius:1.2rem;cursor:pointer;font:inherit;font-size:.87rem}.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:26px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}.card.priority{border:2px solid var(--gold)}.card-head{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}.priority .card-head{background:linear-gradient(90deg,#f1dfb5,#f8edcf)}.num{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--deep));color:#fff;font-weight:700;font-size:1.33rem;display:flex;align-items:center;justify-content:center}.card-title{font-size:1.27rem;font-weight:700;color:var(--deep);flex:1}.exam-level{font-size:.8rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;background:var(--zhuan-bg);color:var(--zhuan);border:1px solid #b8d0e0}.exam-level.hot{background:var(--red-bg);color:var(--red);border-color:#b6d4e8}.toggle-hint{font-size:.8rem;color:var(--soft);margin-left:auto}.card-body{padding:22px 26px}.collapsed .card-body{display:none}.note-bar{padding:.67rem .93rem;border-radius:.4rem;font-size:.87rem;margin-bottom:1.2rem;border-left:4px solid var(--zhuan);background:#eef3f8;color:#1f3a5c}.sub-h{font-size:1.07rem;font-weight:700;color:var(--deep);margin:1.47rem 0 .67rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border)}.sub-h:before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px;margin-right:8px;vertical-align:-2px}.def{background:#fff;border:1px solid var(--border);border-radius:.53rem;padding:.93rem 1.07rem;margin:.67rem 0}.def-title{font-weight:700;color:var(--deep);font-size:1rem}.def p{font-size:.93rem;margin:.4rem 0}.box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.93rem 1.2rem;margin:.8rem 0;background:#fffefa;font-size:.93rem}.quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.7rem 0;border-radius:0 .4rem .4rem 0}.story p{margin:.7rem 0}.study-bar{display:flex;gap:.67rem;flex-wrap:wrap;margin:.93rem 0 .4rem;font-size:.87rem}.chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;user-select:none}.chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}.notes{margin-top:.93rem;padding:.93rem;background:#fff9eb;border:1px dashed var(--gold);border-radius:.4rem;min-height:4.67rem;font-size:.87rem;color:#8a7758}.notes:before{content:"📝 背诵笔记";display:block;font-weight:700;color:var(--deep);margin-bottom:.4rem}.notes:empty:after{content:attr(data-placeholder);color:#b5a98e;font-style:italic}.notes:focus{outline:none;box-shadow:0 0 0 2px rgba(168,133,74,.3)}
+.hl{color:var(--red);font-weight:700}.hl-b{background:var(--highlight);padding:0 .2em;border-radius:3px;font-weight:700;color:var(--deep)}.quo{display:block;margin:.45em 0;padding:.3em .9em;border-left:3px solid #d8cbb0;background:#f7f2e6;border-radius:0 .35rem .35rem 0;font-size:.9em;color:#4a4034}
+.font-ctrl{position:fixed;right:18px;bottom:18px;z-index:9;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}.font-ctrl button{width:2rem;height:2rem;border:0;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font:700 1.1rem inherit}.font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}.font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}.foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.67rem}@media(max-width:720px){.card-head{flex-wrap:wrap}.card-title{font-size:1.13rem}.card-body{padding:1.2rem 1.07rem}.head h1{font-size:1.47rem}.font-ctrl{right:10px;bottom:10px}}@media print{.ctrl-bar,.font-ctrl,.notes,.study-bar{display:none}.card{break-inside:avoid;box-shadow:none}.card-body{display:block!important}.wrap{padding:0}.head{color:#000;background:#eee}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body><div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day07-外国文学-法国人文主义与流浪汉小说.html" title="外国文学带背 第7天 · 七星诗社·《巨人传》·流浪汉小说">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day09-10-莎士比亚.html" title="第9、10天带背 · 莎士比亚">下一天 →</a>
+</nav>
+
+<header class="head"><div class="day">Day 8 · 外国文学 · 重点带背</div><h1>学硕 · 专硕 · 第 8 天带背 · 塞万提斯与《堂吉诃德》</h1><div class="sub">名解与梗概 · 堂吉诃德与桑丘形象 · 思想意义 · 艺术特点（重点） · 现代小说特性</div><div class="tags"><span class="tag">戏仿/戏拟</span><span class="tag">堂吉诃德</span><span class="tag">桑丘</span><span class="tag">世俗人本/宗教人本</span><span class="tag">思想意义</span><span class="tag">现代小说特性</span><span class="tag">元小说</span></div></header>
+<div class="ctrl-bar"><button onclick="document.querySelectorAll('.card').forEach(c=>c.classList.remove('collapsed'))">📖 全部展开</button><button onclick="document.querySelectorAll('.card').forEach(c=>c.classList.add('collapsed'))">📕 全部折叠</button><button onclick="window.print()">🖨️ 打印 / 导出 PDF</button></div>
+<div class="font-ctrl"><button onclick="adjustFont(-1)">−</button><span class="fs-label" id="fsLabel">15px</span><button onclick="adjustFont(1)">＋</button><button class="fs-reset" onclick="resetFont()">复位</button></div>
+
+<!-- 1 名解 与 故事梗概 -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">1</div><div class="card-title">《堂吉诃德》名词解释与故事梗概</div><div class="exam-level hot">名解 · 简答</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="def"><div class="def-title">【名词解释】《堂吉诃德》</div><p>原名《奇情异想的绅士堂吉诃德·德·拉·曼却》，是西班牙作家<span class="hl-b">塞万提斯</span>创作的长篇小说，<span class="hl-b">分上下两卷</span>。主人公堂吉诃德是西班牙拉·曼却地方的一位穷绅士，年近五十，"身材瘦削，面貌清癯"，虔诚的天主教徒，却因爱读骑士小说而满脑子荒诞念头，想入非非要做游侠骑士，"消灭一切暴行，承担种种艰险，将来功成业就，名传千古"。他擦亮祖传破盔甲，给瘦马取名"驽骍难得"，把邻村农家姑娘阿尔东沙幻想为贵妇"杜尔西内妮"，三次出门行侠，处处闹出风车当巨人、羊群当军队等笑话，屡遭失败，最终被打败回家，临死方悟骑士小说之害。</p><p>作品以主仆游历为线索，广泛反映 16—17 世纪西班牙社会现实，辛辣讽刺骑士小说，寄托人文主义理想，是<span class="hl-b">欧洲近代长篇小说真正的奠基作品</span>，被狄更斯、福楼拜、陀思妥耶夫斯基誉为<span class="hl-b">"现代小说之父"</span>的代表作。</p></div>
+<div class="sub-h">故事梗概（按上下卷背）</div>
+<div class="box story"><p><strong>上卷五十二章：前两次出游。</strong>堂吉诃德第一次出门单枪匹马，为时两天，把客店当城堡、商队当兵马，被骡夫打下马来。此后朋友神甫、理发师在其外甥女和女管家协助下，搜查他的藏书室，把骑士书丢进院子烧掉。</p><p>第二次出游（十五天之后），他劝桑丘·潘沙做仆从，从此主仆同行。途中把风车当巨人、修士当强盗，大战比斯盖人，夜宿客栈把客栈女仆当城堡公主；把羊群看成左右两支军队，冲散送葬行列；把理发师铜面盆当头盔；把苦役犯当落难骑士，释放囚犯（"对坏人行好事，就是往海里倒水"）；进深山遇卡迪纽，决定为意中人修炼。理发师化装成落难贵妇人、神甫化装成家丁，把他骗出山后连夜捆绑，装进木笼用牛车押送回家。</p><p><strong>下卷七十四章：第三次出游。</strong>女管家用六百个鸡蛋养好他身体，他得知萨拉戈萨有比武大会，瞒着家人和桑丘再次出游。邻居参孙化装"镜子骑士"拦截反被冲倒；与狮子挑战成"狮子骑士"；帮穷小伙巴西琉夺回美人季德丽亚；遇公爵夫妇被隆重迎进城堡，被捉弄，桑丘被假意封作"海岛总督"。后遇"白月骑士"（实为参孙所扮）决战败北，被罚回家一年不准外出。回家途中桑丘偿清三千三百鞭，为杜尔西内妮"脱离魔法"。堂吉诃德回家后发高烧躺了六天，奄奄一息之际幡然醒悟，痛斥骑士小说胡说八道，叮嘱外甥女"嫁个从未读过骑士小说的人"，然后死去。</p></div>
+<div class="quote"><strong>梗概记忆链：</strong>上卷＝前两次出游（第一次单骑、第二次带桑丘）＋藏书室焚书；下卷＝第三次出游（镜子骑士/狮子骑士/公爵捉弄/白月骑士战败）＋病中醒悟＋遗言。三出游、风车羊群客栈、屡败、醒悟。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 名解</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 上卷梗概</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 下卷梗概</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 记忆链</span></div>
+<div class="notes" contenteditable="true" data-placeholder="《堂吉诃德》名解 + 上下卷故事梗概…"></div></div></section>
+
+<!-- 2 人物形象 -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">2</div><div class="card-title">（二）人物形象：堂吉诃德与桑丘</div><div class="exam-level hot">重点 · 简答</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="note-bar">🎯 <strong>人物总纲：</strong>堂吉诃德＝<span class="hl">喜剧特征＋悲剧色彩</span>；桑丘＝<span class="hl">西班牙农民典型</span>，与堂吉诃德既对立又互补。另有"世俗人本＋宗教人本"的融对照。</div>
+<div class="sub-h">1、堂吉诃德：喜剧特征＋悲剧色彩</div>
+<div class="box"><p><strong>形象悖谬错乱：</strong>穷绅士，五十来岁，拥有一个葡萄园、一座主人房、两公顷耕地；"身材瘦削，面貌清癯"，两条腿特别长且瘦、长满毛，鹰嘴鼻、凹陷双眼、稀落门牙、浓黑胡须；穿着错乱（紧身羚羊皮上衣、短得遮不住屁股的衬衣、锈迹纽扣、褐色马裤黄补丁、绿色长丝袜、海枣色鞋）。胯下是瘦马，却当作"马中的花朵和镜子"。</p></div>
+<div class="box"><p><strong>① 过时的游侠骑士——可笑、可爱、可悲兼有。</strong></p>
+<p>· <b>可笑</b>：沉醉于幻想、行动盲目的疯子，把风车当巨人、羊群当军队。<br>
+· <b>可爱</b>：有英雄气概，为理想粉身碎骨在所不惜的崇高精神境界。<br>
+· <b>可悲</b>：理想与现实的脱离（把放猪女杜尔西内妮当作"眼睛是太阳、脸蛋是玫瑰、嘴唇是珊瑚、牙齿是珍珠"的天使，为其冷遇而山野痛哭）。</p>
+<span class="quo">鲁迅："堂吉诃德去打抱不平不能说他错误，不自量力也并非错误，错误是在他的打法，因为糊涂的思想引出了错误的打法。"（荒诞可笑的原因）</span>
+<p><b>实质：为了理想而忘记现实的疯子——既是喜剧的根源，也是悲剧的根源。</b></p></div>
+<div class="box"><p><strong>② 人文主义的代言人——可敬。</strong>清醒时是一位有崇高理想、渊博知识的学者：热爱自由，提倡平等、反对封建等级观念，学识渊博、见解深刻（"血统是从上代传袭的，美德是自己培养的，美德有本身的价值，血统却没有"）。</p></div>
+<div class="box"><p><strong>③ （据文段）在丑陋残酷的现实面前，重建了人类永恒的美好品质。</strong>但堂吉诃德以一己之力无法改变新旧交替时期西班牙社会混乱不堪的状况；作者借这一形象展现了美好的理想、崇高的精神与英雄主义的情怀如何被残酷现实所泯灭，在丑恶现实面前重建人类永恒的美好品质。</p></div>
+<div class="quote"><strong>堂吉诃德形象：</strong>一个"喜剧特征＋悲剧色彩"的矛盾体——荒诞可笑（过时的游侠骑士）＋可敬可爱（人文主义的代言人/崇高精神）＋可悲（理想与现实的脱离）；为了理想而忘记现实，既是一切喜剧的根源，也是一切悲剧的根源。</div>
+
+<div class="sub-h">（承上）人文主义代言人的具体表现（清醒时的"高论"）</div>
+<div class="box"><p>· <b>戏剧观</b>："戏剧是人生的镜子，我们自己的面貌和模范人物的形象，只有在戏里表现得最生动逼真……"（P.83）<br>
+· <b>教育与人品</b>："凡是没有知识的，尽管是王公贵人，都称为凡夫俗子……"（P.116）<br>
+· 对婚姻问题（P.140）、家庭问题（P.159—161）也发表深刻见解。</p></div>
+
+<div class="sub-h">2、桑丘·潘沙：西班牙农民的典型</div>
+<div class="box"><p><b>形象：</b>"猪猡肚子、白鹤腿"，身材矮小、肚子极大、两腿特长，满脸杂乱胡子、西红柿似的塌鼻，骑着灰不溜秋的驴。是<span class="hl-b">西班牙农民的典型</span>。</p>
+<p><b>出身与动机：</b>社会地位低下、赤贫，因而目光短浅、狭隘愚笨——出游是为了升官发财：让驼背老婆坐上华丽马车，自己做海岛总督，享尽荣华富贵。</p>
+<p><b>性格的双重性：</b>既有<span class="hl-b">淳朴善良的美德</span>（真心在意堂吉诃德），又有小生产者<span class="hl-b">狭隘功利、胆小怕事的弱点</span>（每次打仗先躲起来，打完上前夺钱袋、扒衣服抢行囊）。</p>
+<p><b>与堂吉诃德既对立又互补：</b>堂吉诃德"愁容满面"，桑丘幽默俏皮；堂吉诃德耽于幻想，桑丘讲求实际；堂吉诃德屡败屡战，桑丘吃过苦头就绝不重蹈覆辙。</p>
+<p><b>发展变化：</b>随着情节发展，桑丘的性格境界也是发展变化的（由贪财世故逐渐被理想感化，担任"总督"时真正为民做主）。</p></div>
+
+<div class="sub-h">〔对照〕"世俗人本＋宗教人本"的融</div>
+<div class="box"><p><b>世俗人本（桑丘）：</b>关注现实生活中的物质利益、自身的生存与发展，行为思考基于世俗实际需求，如渴望通过当总督获得财富地位，期待具体可感的世俗幸福。</p>
+<p><b>宗教人本（堂吉诃德）：</b>行为受骑士小说影响，追求超越世俗的、带宗教式理想主义的价值，如行侠仗义、捍卫"正义"与"荣誉"，类似宗教中对神圣目标的执着。</p>
+<p><b>二者融合：</b>桑丘的世俗务实映照出堂吉诃德宗教式理想的虚幻；堂吉诃德的理想主义又为桑丘的世俗生活增添精神追求的维度。二者相互对照、补充，展现文艺复兴人文主义思想中对<b>世俗生活与精神理想双重关注</b>的特点。</p></div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 堂吉诃德（可笑/可爱/可悲）</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 人文主义代言人</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 桑丘典型</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 世俗/宗教人本</span></div>
+<div class="notes" contenteditable="true" data-placeholder="堂吉诃德（喜剧+悲剧/人文代言）与桑丘（农民典型/对立互补）…"></div></div></section>
+
+<!-- 3 思想意义 -->
+<section class="card"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">3</div><div class="card-title">（三）思想意义（简单背）</div><div class="exam-level">简答</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="box"><p><strong>1、辛辣讽刺粗制滥造的骑士小说。</strong>堂吉诃德大战风车、把客栈当城堡、妓女当贵妇、羊群当军队等情节，活现骑士小说的荒唐，收到扫荡骑士文学之效。</p>
+<p><strong>2、真实反映 16 世纪末至 17 世纪初西班牙广阔的社会现实。</strong></p>
+<p>· <b>（1）乡村的封闭愚昧</b>：两个村子的人因"学驴叫"这种荒谬起因械斗，展现非理性如何轻易引发暴力与灾难，反映西班牙农村封闭、愚昧、好面子的心态。<br>
+· <b>（2）统治阶级空虚无聊</b>：公爵夫妇富有有权势，精神却极度空虚，出于找乐子假意欢迎堂吉诃德，设计"海岛总督"、假扮落难少女等恶作剧，揭露上层贵族精神萎靡、生活腐化、道德虚伪。<br>
+· <b>（3）贫富悬殊，百姓铤而走险</b>：书中充满贫困现象——被押解做苦役的囚犯因饥饿贫困而犯罪，牧民、苦役犯、落难者几乎都在为生存挣扎。<br>
+· <b>（4）宗教冲突，驱逐摩尔人</b>：借里科特（桑丘老邻居，正直善良）因腓力三世驱逐令背井离乡、偷回寻宝、父女被迫流亡的遭遇，映射现实。</p>
+<p><strong>3、人文主义者的自由思想。</strong>人文主义者主张个性解放和个人自由，反对封建君权和神权。堂吉诃德放走苦役犯（"打倒暴君、拯救苦难，这是我应尽的天职"）；支持少女玛赛拉摆脱封建束缚、到田野放羊寻找自由生活（"所有的好人都应敬重她"）；桑丘由为发财出发到被理想感化，任"总督"期间真正为民做主，体现人文主义对"人"的价值与潜能的肯定。</p></div>
+<div class="quote"><strong>思想速记：</strong>①讽刺骑士小说＋②反映西班牙广阔社会现实（乡村封闭愚昧/贵族空虚/贫富悬殊/驱逐摩尔人）＋③人文主义者的自由思想（自由平等、个性解放、民本）。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 讽刺骑士小说</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 社会现实4点</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 人文自由思想</span></div>
+<div class="notes" contenteditable="true" data-placeholder="《堂吉诃德》思想意义三大点…"></div></div></section>
+
+<!-- 4 艺术特点 -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">4</div><div class="card-title">（四）艺术特点 ‼️ 重点背诵</div><div class="exam-level hot">论述（重点）</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="note-bar">🔥 <strong>最重点</strong>，按笔记四点背：<b>①戏仿/戏拟 ②对比塑造人物 ③大故事套小故事 ④民间俗语谚语歌谣</b>。答题顺序按此排列。</div>
+<div class="sub-h">1、"戏拟"（戏仿；滑稽模仿）</div>
+<div class="box"><p><b>定义：</b>戏仿古已有之（前 4 世纪古希腊已出现），被后人视为一种"依赖源文本才能生存"的文学类型。加拿大学者琳达·哈琴认为戏仿有两大要素——"同"与"异"：<span class="hl-b">"同"是戏仿的前提和基础，"异"远比"同"重要</span>，它是戏仿的根本和目的，也是小说张力和魅力的源泉。</p>
+<p><b>塞万提斯以"仿"来达到"戏"：</b></p>
+<p><b>A. 人物形象设计：</b>堂吉诃德的出身、形貌、装备，侍从与"女恩主"等要素拼合，构成滑稽尴尬的讽刺效果，消解骑士惯有的高贵光环——一切被贬低化、平凡化、常态化，把曾经的崇高骑士喜剧化。如上卷第25章通过桑丘之口写杜尔西妮亚真面目："她可是个货真价实的铁姑娘，胸口还长毛呢……"颠覆"英雄救美／男强女弱"的骑士套式。</p>
+<p><b>B. 情节设计方面：</b>模仿骑士小说的主体情节，但"形似而质异"——骑士被命名受封、拥有灵丹妙药；骑士与贵妇两情相悦，堂吉诃德却是"单相思"（模仿多情骑士忧伤憔悴甚至发疯）；骑士战无不胜，堂吉诃德屡战屡败。40 个冲突场景胜负场次 20:20，其胜利总很侥幸、失败却付出惨重代价，在胜利数量与质量上都不符合骑士标准，"威严"的骑士身份消解于"戏"的意味中。</p>
+<p><b>C. 语言表达方面：</b>骑士小说包容性强、多诗歌民谣，塞万提斯的语言表达也抓住这一特点营造骑士小说氛围；主人公堂吉诃德的语言带有强烈的骑士小说色彩。</p></div>
+<div class="box"><p><b>〔戏仿的"破"与"立"〕戏仿解构的同时也在重构：</b>塞万提斯所否定的是被塑造得失去真实可信性的、矫揉造作的骑士"英雄"和这类作品；而堂吉诃德所奉行的骑士精神中具有普适性的美好品质——锄强扶弱、追求正义、制止罪恶、维护自由，为理想屡败屡战、百折不挠——具有永恒的积极意义。</p>
+<span class="quo">堂吉诃德面对指责："我干这一行不为钱财，只重声名。我一贯扶弱除暴，伸张正义，制服巨人，镇压妖魔……作为情人，我并不贪恋色欲，只追求精神上的心心相印。"</span></div>
+
+<div class="sub-h">2、对比手法塑造人物</div>
+<div class="box"><p>桑丘与堂吉诃德处处对比：</p>
+<p>· <b>身形</b>：身躯瘦长 VS 矮小粗胖<br>
+· <b>坐骑</b>：手持长矛、身披破甲、骑瘦马 VS 头戴草笠、身披褡裢、骑胖驴<br>
+· <b>性格</b>：耽于幻想、满脸愁容 VS 注重实际、满脸堆笑<br>
+· <b>语言</b>：有时主人疯癫、仆人清醒；有时主人充满智慧、仆人浑身愚笨；有时主人呆钝、仆人狡黠</p>
+<p>并由此引出"<b>世俗人本＋宗教人本</b>"的深层对照（桑丘＝世俗人本，堂吉诃德＝宗教人本，见卡二）。</p></div>
+
+<div class="sub-h">3、以主人公游历为线索组织情节，大故事套小故事</div>
+<div class="box"><p>把首尾完整、相对独立的穿插故事，通过主仆的见闻和参与描写出来。如下卷穿插：设计桑丘骗主人、声称魔术师把杜尔西内娅变成村妇、公爵夫妇捉弄主仆、桑丘作海岛总督后如何治理；以及死神在板车上开会、与狮子狭路相逢、蒙德西诺斯洞奇遇、干涉驴叫纠纷、出席富翁卡马乔婚礼、"悲戚夫人"奇遇等惊险遭遇。</p>
+<p>出现人物之多（上上下下包括贵族、教士、地主、士兵、农夫、囚徒、强盗、妓女），故事涉及地域之广（从贵族城堡到偏僻小店，乡村到城镇，平原到深山，陆地到海岛，大路到林间小道），全面展现 16—17 世纪西班牙社会真实面貌。</p>
+<p>虽有少数故事（如"卡迪纽的爱情遭遇"）在主线之外有"节外生枝"之嫌，但总体上，小说既突破了骑士小说的离奇怪诞，也冲破了流浪汉小说的单调情节，从而<span class="hl-b">建立了崭新的叙事文体</span>。</p></div>
+
+<div class="sub-h">4、民间俗语谚语歌谣的运用</div>
+<div class="box"><p>例："害你哭的人爱你深""对坏人行好事，就是往海里倒水""在绞死犯家里，不该提到绳子""天空的老鹰，不如手里的麻雀""别人的痛苦，一根头发丝都挂得住""无论瓦罐碰了石头，或者石头碰了瓦罐，遭殃的总是瓦罐"。</p>
+<p><b>作用：</b>富有生活气息、塑造人物形象、传递思想、深化主题、增加语言生动性与趣味性。</p></div>
+<div class="quote"><strong>艺术特点总括：</strong>以"戏仿"立讽刺之骨（破骑士小说、立永恒品质），以"对比"传人物之神（桑丘/堂吉诃德、世俗/宗教人本），以"大故事套小故事"展社会全貌（人物多、地域广、新文体），以"民间谚语歌谣"增生活之趣——喜剧性与悲剧性、理想与现实、求详与写实的统一，标志欧洲近代长篇小说走向成熟。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 戏仿(ABC)</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 对比塑造</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 大故事套小故事</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 民间语言</span></div>
+<div class="notes" contenteditable="true" data-placeholder="《堂吉诃德》艺术特点四点（戏仿/对比/结构/语言）…"></div></div></section>
+
+<!-- 5 现代小说特性 -->
+<section class="card"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">5</div><div class="card-title">三、《堂吉诃德》的现代小说特性（简单背）</div><div class="exam-level">简答 · 了解</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="note-bar">🎯 <strong>总纲：</strong>塞万提斯被狄更斯、福楼拜、陀思妥耶夫斯基等人誉为<span class="hl">"现代小说之父"</span>。其现代性体现在四方面。</div>
+<div class="box"><p><strong>1、不仅仅停留在讲故事层面，塑造典型人物、人物平民化。</strong>《堂吉诃德》是欧洲近代<span class="hl-b">真正着力塑造人物典型的第一部小说</span>；主人公从英雄骑士变成普通城市平民，诗体韵文变成市井散文，欧洲小说进入崭新阶段。</p>
+<p><strong>2、虚构化情节展示客观真实的人生。</strong>借鉴骑士传奇的虚构手法，把其丰富想象、离奇情节与流浪汉小说对人生的客观性展示相结合，创造出新的小说艺术模式。</p>
+<p><strong>3、思想现实化。</strong>从反映社会现实看，作者在堂吉诃德形象中逐渐注入新时代的理想：他多次宣称要在"黑铁的世纪"恢复原始"黄金时代"，使人间重归公正和谐；蔑视权贵、讥讽君主、诅咒教会的"神圣友爱团"；热情传播自由、平等思想，倡导人道主义的社会改革——使他的形象成为<span class="hl-b">一代人文主义者的艺术写照</span>。</p>
+<p><strong>4、元小说性。</strong>所谓元小说，就是以小说为对象的小说——作者一方面创作小说，一方面又对这一行为进行展示和评价；作品不仅拥有故事，还有关于小说写作相关问题的理论探讨。《堂吉诃德》在小说中对作品自身的写作、阅读、批评等方面进行了积极探讨与揭示，使其具有"元小说"特点，塞万提斯的这种写作使他成为现代小说的源头之一。</p></div>
+<div class="sub-h">〔补充〕多角度叙事、多层叙事与不确定性（元小说具体体现·了解）</div>
+<div class="box"><p>塞万提斯之前，小说叙述者一般是无所不知的作者；《堂吉诃德》却引入"拉曼却地区的文献资料和当地人回忆""阿拉伯历史学家贝纳赫利、摩尔人翻译""老医生保留的羊皮纸手稿（据说是哥特人所写）"等多重来源。</p>
+<p>小说以第三人称开始（第1—8章），至第8章却说"堂吉诃德生平事迹的记载只有这么一点"，叙述中断；第9章转由叙述者讲述发现手稿经过（第一人称），继而转述"摩尔人翻译的阿拉伯历史学家贝南黑利写的堂吉诃德的故事"——自曝叙述者身份、加入作者观点，<span class="hl-b">作者、叙述者、原书作者、译者、民间传说、地方文献与假冒作品之间的不确定性</span>，使作者几乎成了故事参与者，读者也进入"文本创作的迷宫"。</p>
+<p>这种多叙述层次拉开作者与人物距离，模糊虚构与真实的界限，为作者自由发表对敏感问题的看法提供"免责屏障"；并造成情节的不确定性（如堂吉诃德的姓氏——吉哈达/吉沙达/吉哈那的记载不一；蒙德西诺斯洞经历的真假），削弱叙述者权威、激发读者参与，使文本成为开放、可写的文本，形成与读者的互动交流。</p></div>
+<div class="quote"><strong>现代特性速记（四加一）：</strong>①塑造典型/人物平民化（欧洲第一部着力塑造人物典型的小说）＋②虚构展示客观真实人生＋③思想现实化（人文主义者的艺术写照）＋④元小说性（元叙事/自曝叙述者）＋〔多角度叙事/多层叙事/不确定性〕。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 人物平民化</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 虚构+真实</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 思想现实化</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 元小说性</span></div>
+<div class="notes" contenteditable="true" data-placeholder="《堂吉诃德》现代小说特性四点…"></div></div></section>
+
+<!-- 6 记忆锦囊 -->
+<section class="card"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">6</div><div class="card-title">今日记忆锦囊 · 贯通收尾</div><div class="exam-level">收尾</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="box"><p><strong>一条线串起全部考点：</strong></p><p>· <b>定位</b>：塞万提斯＝"现代小说之父"，代表作《堂吉诃德》（上下两卷）。<br>
+· <b>梗概</b>：穷绅士读骑士小说入迷→堂吉诃德＋桑丘三次出游→风车/羊群/客栈闹剧→屡败→白月骑士战败→病中醒悟→遗言。<br>
+· <b>人物</b>：堂吉诃德＝喜剧＋悲剧（过时游侠/人文代言/理想脱离现实）；桑丘＝西班牙农民典型（淳朴善良＋狭隘功利），二人对立互补、世俗人本vs宗教人本。<br>
+· <b>思想</b>：讽刺骑士小说＋反映西班牙社会（乡村愚昧/贵族空虚/贫富悬殊/驱逐摩尔人）＋人文主义自由思想。<br>
+· <b>艺术（重点）</b>：戏仿(ABC)＋对比塑造＋大故事套小故事＋民间谚语歌谣。<br>
+· <b>现代特性</b>：人物平民化／虚构+客观真实／思想现实化／元小说性＋多角度叙事。</p></div>
+<div class="quote"><strong>贯通一句：</strong>《堂吉诃德》以"戏仿"消解骑士神话而重建永恒价值，以堂吉诃德与桑丘的对照写理想与现实的矛盾，以"大故事套小故事"展开西班牙社会的全景，已在"人物平民化、思想现实化、元叙事"上预示了现代小说，是欧洲近代长篇小说的真正奠基之作。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 一条线</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 贯通一句</span></div>
+<div class="notes" contenteditable="true" data-placeholder="今日复盘与个人补充…"></div></div></section>
+
+<footer class="foot">第8天 · 塞万提斯与《堂吉诃德》<br>建议顺序：名解与梗概 → 人物形象 → 思想意义 → 艺术特点（重点）→ 现代小说特性 → 收尾锦囊</footer>
+</div><script>(function(){var base=15;window.adjustFont=function(step){base=Math.max(13,Math.min(32,base+step));document.documentElement.style.setProperty('--fs-base',base+'px');document.getElementById('fsLabel').textContent=base+'px'};window.resetFont=function(){base=15;document.documentElement.style.setProperty('--fs-base','15px');document.getElementById('fsLabel').textContent='15px'}})();</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body></html>

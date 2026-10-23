@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>外国文学带背 第27天 · 后现代（下）</title>
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#faf8f3; --panel:#fff; --ink:#2b2b2b; --ink-soft:#555;
+    --gold:#a8854a; --gold-deep:#7d5e2c; --gold-bg:#f4ecdb; --border:#e6dfcc;
+    --highlight:#fff8e6; --red:#a23b3b; --red-bg:#fbeeee; --red-border:#d8b8b8;
+    --blue:#2d4a6e; --blue-bg:#e8eff5; --green:#3d6b4a; --green-bg:#eaf3ec;
+    --fs-base:15px;
+  }
+  *{box-sizing:border-box}
+  html{font-size:var(--fs-base)}
+  body{margin:0;padding:0;font-family:"LXGW WenKai","LXGW WenKai TC","霞鹜文楷","Source Han Serif SC","Noto Serif CJK SC","PingFang SC","Microsoft YaHei",serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 18px 80px}
+
+  header.head{background:linear-gradient(135deg,#2b2b2b 0%,#4a3a20 100%);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  header.head .day{font-size:.87rem;letter-spacing:.4rem;opacity:.75;margin-bottom:.5rem}
+  header.head h1{font-size:1.87rem;margin:0 0 .67rem;font-weight:700;letter-spacing:.06em}
+  header.head .sub{font-size:1rem;opacity:.85;line-height:1.7}
+  .tags{display:flex;gap:.67rem;margin-top:1.07rem;flex-wrap:wrap}
+  .tag{padding:.27rem .93rem;border-radius:1.33rem;font-size:.8rem;background:rgba(244,236,219,.18);border:1px solid rgba(244,236,219,.35)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}
+  .card-head{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}
+  .num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+  .card-title{font-size:1.2rem;font-weight:700;color:var(--gold-deep);flex:1}
+  .exam-level{font-size:.78rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;white-space:nowrap}
+  .lv-ss{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .lv-s{background:var(--blue-bg);color:var(--blue);border:1px solid #b9cde0}
+  .lv-l{background:#f0f0ee;color:#777;border:1px solid #d5d5d0}
+  .card-body{padding:20px 26px}
+  .collapsed .card-body{display:none}
+  .ppt-src{font-size:.76rem;color:#8a7c60;background:#f6f2e7;border:1px solid var(--border);
+    border-radius:.27rem;padding:.05rem .45rem;margin-left:.5rem;font-weight:400;white-space:nowrap}
+
+  .sub-h{font-size:1.07rem;font-weight:700;color:var(--gold-deep);margin:1.4rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+  .sub-h::before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px}
+  .sub-h:first-child{margin-top:0}
+
+  .term{font-weight:700;color:var(--gold-deep)}
+  .hl{background:linear-gradient(transparent 60%,#fff3a8 60%);padding:0 .13rem}
+  .hl-b{background:linear-gradient(transparent 60%,#ffd9d9 60%);padding:0 .13rem;font-weight:700}
+  p{margin:.53rem 0;font-size:.97rem}
+  ol,ul{margin:.53rem 0;padding-left:1.6rem}
+  ol li,ul li{margin:.3rem 0;font-size:.97rem}
+
+  .quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.6rem 0;font-size:.95rem;border-radius:0 .4rem .4rem 0}
+  .box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.87rem 1.1rem;margin:.7rem 0;background:#fffefa;font-size:.94rem}
+  .note-bar{background:#eef4fa;border:1px solid #c9dcee;border-left:4px solid var(--blue);border-radius:0 .53rem .53rem 0;padding:.6rem .93rem;margin:.5rem 0 .9rem;font-size:.92rem;color:var(--blue)}
+  .tablebox{overflow-x:auto}
+
+  .answer{background:var(--green-bg);border:1px solid #bcd6c2;border-left:4px solid var(--green);border-radius:0 .53rem .53rem 0;padding:.93rem 1.1rem;margin:.8rem 0}
+  .answer .a-t{font-weight:700;color:var(--green);margin-bottom:.45rem;font-size:.98rem}
+  .answer p,.answer li{font-size:.94rem}
+
+  .mnem{background:#fff4e0;border:1px dashed var(--gold);border-radius:.4rem;padding:.67rem .93rem;margin:.7rem 0;font-size:.93rem}
+  .mnem .m-t{font-weight:700;color:var(--gold-deep);margin-bottom:.3rem}
+
+  .warn{background:var(--red-bg);border:1px solid var(--red-border);border-left:4px solid var(--red);border-radius:0 .53rem .53rem 0;padding:.8rem 1rem;margin:.7rem 0;font-size:.93rem}
+  .warn .w-t{font-weight:700;color:var(--red);margin-bottom:.3rem}
+
+  .paper{background:#fffdf6;border:1px solid var(--border);border-radius:.5rem;padding:.87rem 1.1rem;margin:.8rem 0;font-size:.93rem}
+  .paper .p-t{font-weight:700;color:var(--red);margin-bottom:.45rem;font-size:.95rem}
+  .paper li{margin:.22rem 0}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0}
+  th{background:var(--gold-bg);padding:.5rem;border:1px solid var(--border);text-align:left}
+  td{padding:.5rem;border:1px solid var(--border);vertical-align:top}
+
+  .chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;font-size:.85rem;color:var(--ink-soft);transition:.2s;user-select:none}
+  .chk:hover{background:#e9dfc7}
+  .chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}
+  .study-bar{display:flex;gap:.6rem;margin:.87rem 0 .4rem;flex-wrap:wrap;align-items:center}
+
+  .ctrl-bar{display:flex;gap:.67rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--gold-deep);border-radius:1.2rem;cursor:pointer;font-size:.87rem;font-family:inherit;transition:.2s}
+  .ctrl-bar button:hover{background:var(--gold);color:#fff}
+
+  .font-ctrl{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}
+  .font-ctrl button{width:2rem;height:2rem;border:none;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:inherit}
+  .font-ctrl button:hover{background:var(--gold);color:#fff}
+  .font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}
+  .font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}
+
+  .prog{background:#fff9eb;border:1px solid var(--border);border-radius:8px;padding:.8rem 1.1rem;margin-bottom:20px;font-size:.9rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .prog .bar{flex:1;min-width:120px;height:8px;background:#eee6d2;border-radius:4px;overflow:hidden}
+  .prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));transition:width .4s}
+
+  .foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.4rem}
+  @media(max-width:720px){.card-body{padding:1.1rem}header.head h1{font-size:1.47rem}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body>
+
+<div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day26-后现代-中.html" title="外国文学带背 第26天 · 后现代（中）">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day28-古代中古亚非文学.html" title="外国文学带背 第28天 · 古代与中古亚非文学">下一天 →</a>
+</nav>
+<header class="head">
+  <div class="day">DAY 27 · 外国文学 · 重点带背</div>
+  <h1>后现代（下）</h1>
+  <div class="sub">魔幻现实主义名解＋基本特点＋形成背景 ·《百年孤独》名解＋故事梗概＋思想内容 ·《百年孤独》艺术特色（四大条）· 学硕真题「百年为什么叫百年」答题思路<br>内容取自「二十世纪后现代主义文学」带背 PPT 逐张识读（7 张）· 结合库内题库原答与西大真题补全（真题命中 1 题：2024 论述第三题）</div>
+  <div class="tags"><span class="tag">西北大学 MFA</span><span class="tag">外国文学史</span><span class="tag">第27天</span><span class="tag">后现代主义</span><span class="tag">魔幻现实主义 · 拉美文学</span></div>
+</header>
+
+<div class="prog">
+  <span>今日进度</span>
+  <div class="bar"><i id="progBar"></i></div>
+  <span id="progTxt">0 / 0</span>
+</div>
+
+<div class="ctrl-bar">
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.remove('collapsed')})">📖 全部展开</button>
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.add('collapsed')})">📕 全部折叠</button>
+  <button onclick="window.print()">🖨️ 打印 / 导出 PDF</button>
+</div>
+
+<!-- ===== 卡片 0 · 今日带背指令 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">★</div>
+    <div class="card-title">今日带背指令</div>
+    <span class="exam-level lv-ss">先看这个</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">群消息原文</div>
+    <p><span class="term">外国文学带背 第27天 后现代（下）</span></p>
+    <ol>
+      <li>1️⃣❗️<span class="hl-b">魔幻现实主义名词解释、基本特点</span><br>
+        形成背景熟读了解，有时间把每条第一句话背下来就行</li>
+      <li>2️⃣<span class="hl-b">《百年孤独》名词解释 ➕ 故事梗概</span>，思想内容简要记忆</li>
+      <li>3️⃣非常重要❗️<span class="hl-b">《百年孤独》艺术特色</span>，以及举例的这个学硕真题如何回答要注意题目的答题思考</li>
+    </ol>
+
+    <div class="sub-h">本页结构 · 按老师给的优先级排</div>
+    <div class="tablebox">
+      <table>
+        <tr><th style="width:4.5rem">块</th><th>内容</th><th style="width:6rem">优先级</th></tr>
+        <tr><td>一</td><td>魔幻现实主义名词解释（标准背法）</td><td><span class="exam-level lv-ss">❗️必背</span></td></tr>
+        <tr><td>二</td><td>魔幻现实主义基本特点（四条）</td><td><span class="exam-level lv-ss">❗️必背</span></td></tr>
+        <tr><td>三</td><td>魔幻现实主义形成背景（四条，每条首句要能背）</td><td><span class="exam-level lv-s">熟读</span></td></tr>
+        <tr><td>四</td><td>代表作家作品（拉美五人＋一张序列图）</td><td><span class="exam-level lv-s">背诵</span></td></tr>
+        <tr><td>五</td><td>《百年孤独》名词解释 ＋ 故事梗概（六代人家族图）</td><td><span class="exam-level lv-ss">必背</span></td></tr>
+        <tr><td>六</td><td>《百年孤独》思想内容（三条）</td><td><span class="exam-level lv-s">简要记忆</span></td></tr>
+        <tr><td>七</td><td>《百年孤独》艺术特色 · 总纲（四条）</td><td><span class="exam-level lv-ss">非常重要❗️</span></td></tr>
+        <tr><td>八</td><td>艺术特色拆解 ①②：魔幻而不失其真 / 叙事结构的魔幻化</td><td><span class="exam-level lv-ss">非常重要❗️</span></td></tr>
+        <tr><td>九</td><td>艺术特色拆解 ③④：循环的时态 / 象征与意识流手法</td><td><span class="exam-level lv-ss">非常重要❗️</span></td></tr>
+        <tr><td>十</td><td>学硕真题「百年为什么叫百年」· 答题思路拆解</td><td><span class="exam-level lv-ss">❗️答题思考</span></td></tr>
+        <tr><td>十一</td><td>开篇名句「多年以后」为什么不同凡响</td><td><span class="exam-level lv-s">背诵</span></td></tr>
+        <tr><td>十二</td><td>西大真题命中对照 · 待核清单 · 直达资料</td><td><span class="exam-level lv-s">对答案</span></td></tr>
+      </table>
+    </div>
+
+    <div class="note-bar">
+      📌 老师原话提醒：<b>第 3 项是重点中的重点</b>。学硕那道题给的不是「标准答案」，是两层示范文本 ＋ 一句「（结合剧情和创作时代背景作答，作品呈现人性的孤独，和现实中人在时代洪流的孤独）」的批语。做题思路在「卡片 10」逐句拆。
+    </div>
+    <div class="note-bar">
+      ✅ <b>西大真题直接命中</b>：2024 年创意写作考研文学史<b>论述题第三题</b>＝「马尔克斯《百年孤独》的艺术特点」（科目标注：外国文学史 20 世纪魔幻现实主义文学）。这就是「艺术特色」那一块，务必按论述题体量背。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 1 · 魔幻现实主义名词解释 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">1</div>
+    <div class="card-title">魔幻现实主义 · 名词解释</div>
+    <span class="exam-level lv-ss">❗️必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 1 张「形成背景」引言段</div>
+
+    <div class="sub-h">PPT 原文（可作名解开头）</div>
+    <p><span class="term">魔幻现实主义</span>是「<span class="hl-b">魔幻</span>」与「<span class="hl-b">寻根</span>」相结合的成功范例，它既是对现实的深刻开掘，又是对历史的严肃反思。</p>
+
+    <div class="sub-h">库内可加写的完整名解</div>
+    <div class="answer">
+      <div class="a-t">按名解体量（约 150–200 字）</div>
+      <p>魔幻现实主义是 20 世纪 50 至 60 年代在拉丁美洲兴起并达到顶峰的后现代主义文学流派，也是拉美「文学爆炸」的核心力量。它以印第安古老神话传说、民间信仰与拉美现实生活相融合，在现实主义的基础上加入魔幻、荒诞、超自然的描写，以「<b>变现实为幻想而不失其真</b>」为创作原则，通过荒诞离奇的情节、神话性的结构与象征、夸张手法，揭示拉美大陆的苦难历史与现实。因其植根于拉美的社会历史与多元文化传统，被称为「魔幻」而又可信的现实主义。代表作家作品有哥伦比亚马尔克斯《百年孤独》、危地马拉阿斯图里亚斯《总统先生》、墨西哥鲁尔福《佩德罗·巴拉莫》等。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">背诵骨架（四段式）</div>
+      <b>①定位</b> 20 世纪 50–60 年代 · 拉美 · 后现代主义流派 → <b>②原则</b> 变现实为幻想而不失其真 → <b>③手法</b> 神话传说入现实 ＋ 荒诞离奇 ＋ 象征夸张 → <b>④代表</b> 马尔克斯《百年孤独》／阿斯图里亚斯／鲁尔福。
+    </div>
+
+    <div class="note-bar">
+      📌 老师要求：<b>形成背景熟读了解</b>。所以名解里「背景」部分只需一两句带过，把字数留给「原则 ＋ 手法」。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 2 · 魔幻现实主义基本特点 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">2</div>
+    <div class="card-title">魔幻现实主义 · 基本特点（四条）</div>
+    <span class="exam-level lv-ss">❗️必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 1 张末 ＋ 第 2 张「基本特征」</div>
+
+    <div class="sub-h">PPT 原文</div>
+    <ol>
+      <li><span class="hl-b">现实与幻象结合</span>。</li>
+      <li><span class="hl-b">结构上的革新</span>，常见的结构形式是：<span class="hl">套匣式、跳跃式、平行蒙太奇式</span>；</li>
+      <li>运用<span class="hl-b">象征、寓意、荒诞和意识流</span>等西方现代派常用的手法；</li>
+      <li><span class="hl-b">语言丰富，色彩浓烈</span>。</li>
+    </ol>
+
+    <div class="answer">
+      <div class="a-t">库内补充 · 把每条展开一句（答题时才够厚）</div>
+      <ol>
+        <li><b>现实与幻象结合</b>——把神话、传说、预兆、鬼魂等魔幻成分当作现实生活本身来叙述，魔幻与现实之间没有分界线。</li>
+        <li><b>结构上的革新</b>——打破线性叙事，采用套匣式（故事套故事）、跳跃式、平行蒙太奇式等结构，时间主观化、空间自由化。</li>
+        <li><b>象征、寓意、荒诞与意识流</b>——借用西方现代派手法，让细节既具体又充满隐喻（黄蝴蝶、黄花雨、羊皮书……）。</li>
+        <li><b>语言丰富，色彩浓烈</b>——大量使用拉美民间口语、夸张的形容与浓重的色彩感，形成独特的语言质地。</li>
+      </ol>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">四字速记</div>
+      <b>真幻结合 · 结构革新 · 手法现代 · 语言浓烈</b>（前两条是 PPT 标红的，必须一字不差写出来）
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 答题顺序提醒</div>
+      PPT 第 1 张最后一行被截图边缘截断，只露出「3、运用象征、寓意、荒诞和意识流等西方现派常用的手法」——与第 2 张「基本特征」的<b>第 3 条完全对应</b>，可确认是同一段内容重复出现，<b>不是两条</b>。答题按上面四条写即可。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 3 · 形成背景 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">3</div>
+    <div class="card-title">魔幻现实主义 · 形成背景（四条）</div>
+    <span class="exam-level lv-s">熟读 · 首句要能背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 1–2 张「形成背景」1–4</div>
+
+    <div class="note-bar">
+      📌 老师原话：「形成背景熟读了解，<b>有时间把每条第一句话背下来就行</b>。」所以这张卡的重点是每条的第一个句子——下面用 <span class="hl-b">红底</span> 标出。
+    </div>
+
+    <div class="sub-h">1、拉美本土魔幻现实</div>
+    <p><span class="hl-b">印第安原住民文明、西班牙和葡萄牙殖民者、非洲裔，三种血统与文化的激烈碰撞与艰难融合，创造了一个信仰交织、光怪陆离的社会。</span></p>
+    <p>独立后，这片大陆陷入了考迪罗主义（军事独裁）的循环，充斥着比小说更离奇的暴君：如阿根廷的贝隆夫人、多米尼加的特鲁希略、智利的皮诺切特，暗杀、败政、大屠杀是家常便饭。这种现实本身就充满了非理性。</p>
+    <p>作为「香蕉共和国」，它们长期遭受欧美发达国家的经济掠夺，这种被扭曲的、依附性的发展模式，使得社会结构充满矛盾。</p>
+    <p>正如魔幻现实主义先哲、古巴作家卡彭铁尔所说：拉美大陆的全部历史本身就是一部神奇现实的编年史。作家们无需「创造」魔幻，只需「发现」并「记录」它。</p>
+
+    <div class="sub-h">2、拉美文化传统与反思</div>
+    <p><span class="hl-b">在二战的全球背景下，拉丁美洲知识分子迫切希望摆脱欧洲中心主义的影响，找到属于自己的声音。</span></p>
+    <p>他们寻找自我的「身份焦虑」迫使他们追问：「我们是谁？」答案不在巴黎或伦敦，而在本土的印第安神话、非洲黑人的巫术信仰，以及民间传说之中。魔幻现实主义正是这种文化寻根的产物。</p>
+    <p>同时又对「理性主义」产生怀疑：源自欧洲的理性主义和线性历史观，无法解释拉丁美洲循环、停滞、荒诞的现实。作家们转而拥抱非理性、神秘主义和神话思维，认为这是理解自身现实的钥匙。</p>
+    <p>以及拉美文化当中的「大地小说」和「土著主义」印第安文学，都为拉美文学的民族化做出过贡献，对「魔幻现实主义」的形成也起过较大的影响。</p>
+
+    <div class="sub-h">3、欧洲先锋派的「本土化」</div>
+    <p><span class="hl-b">魔幻现实主义并非与世界绝缘，它深受欧洲现代主义文学技巧的启发，并将其完美地应用于拉丁美洲的题材。</span></p>
+    <p>上世纪二三十年代，许多拉美作家如卡彭铁尔、阿斯图里亚斯旅居巴黎，深受超现实主义影响，学会了如何挖掘潜意识、打破理性枷锁。</p>
+    <p>他们娴熟地运用了欧洲现代主义小说如福克纳、普鲁斯特的叙事技巧，如内心独白、时空交错、多视角叙事，来构建他们复杂的魔幻世界。</p>
+
+    <div class="sub-h">4、呼应时代与政治背景</div>
+    <p><span class="hl-b">魔幻现实主义在 60、70 年代达到顶峰，这并非偶然。</span></p>
+    <p>是受古巴革命的影响，以及拉美文学登上国际舞台，作为拉美文学名片的一个必然标杆象征选择。</p>
+
+    <div class="answer">
+      <div class="a-t">库内原答 · 朱版教材（若考简答／论述，用这份更厚）</div>
+      <p><b>（1）从社会历史来看</b>，多年的殖民压迫催生了拉丁美洲人民的反抗意识，民族意识的自觉体现为「拉美意识」的兴起。从 16 世纪以来，拉丁美洲沦为西班牙、葡萄牙的殖民地，一直饱受西方的殖民掠夺，形成其多灾多难的历史。进入 20 世纪以后，拉美仍然面临发展落后的局面，遭受欧美资本主义的经济垄断与政治压迫。但是，20 世纪发生了两次世界大战、十月革命以及世界性经济危机等重大社会历史事件，瓦解了西方殖民主义和帝国主义的统治体系，在世界范围内催生了风起云涌的民族、民主解放运动。在这样的形势下，拉丁美洲的人民不断觉醒，并在共同的历史背景和利益下形成了越来越强烈的「拉美意识」，将 18 世纪以来为了抵抗殖民而形成的拉美民族主义思潮推向了一个更高的发展阶段。因此，反对外来压迫和剥削、维护民族权益成为拉美各国人民的愿望。这种思潮也反映在文学领域，并且极大激发了拉美作家的创作热情。</p>
+      <p><b>（2）从民族文化传统来看</b>，拉丁美洲具有多元民族文化共生且融合的复杂传统。拉丁美洲是一个多民族杂居的区域，长期以来，不同文化形成了一种并存与融合的文化结构，欧洲基督教文化、非洲黑人文化以及当地印第安人文化多年来同时并存、相互渗透，形成了独特的文化景观。外来与本土、现代与原始、现实与神话，来自不同文化体系的生活习惯、道德规范、宗教信仰的并存与融合，构成了拉丁美洲魔幻文化与现实的多样性、复杂性，并在拉美各国的文学中反映了出来，使得文学呈现出奇异神秘的色彩。</p>
+      <p><b>总之</b>，拉丁美洲地区独特的社会历史背景和民族文化传统，为拉美魔幻现实主义文学的兴起奠定了现实的基础，提供了丰富的文化土壤。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">四条首句速记</div>
+      <b>①本土</b> 三种血统文化碰撞融合 → <b>②反思</b> 二战背景下摆脱欧洲中心、寻找自我声音 → <b>③欧洲</b> 深受现代主义启发并应用于拉美题材 → <b>④时代</b> 60、70 年代达到顶峰并非偶然。
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 待核</div>
+      PPT 写作「暗杀、<b>败政</b>、大屠杀」，通行说法应为「暗杀、<b>暴政</b>、大屠杀」——按语义判断是 PPT 输入时的笔误。答题写「暴政」。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 4 · 代表作家作品 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">4</div>
+    <div class="card-title">魔幻现实主义 · 代表作家作品</div>
+    <span class="exam-level lv-s">背诵</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 2 张「代表作家、作品」</div>
+
+    <div class="sub-h">PPT 原文</div>
+    <ul>
+      <li>[委内瑞拉] <span class="term">彼特里</span><br>
+        <b>短篇小说《雨》（1928）</b>被认为是魔幻现实主义文学的先河之作。</li>
+      <li>[危地马拉] <span class="term">阿斯图里亚斯</span><br>
+        <b>《总统先生》</b>、<b>《玉米人》</b>——魔幻现实主义中第一个获诺贝尔文学奖（1967）的作家。</li>
+      <li>[墨西哥] <span class="term">鲁尔福</span><br>
+        <b>中篇小说《佩德罗·帕拉莫》（1955）</b>宣告了魔幻现实主义流派的正式形成。</li>
+      <li>[哥伦比亚] <span class="term">马尔克斯</span><br>
+        <b>《百年孤独》（1967）</b>——魔幻现实主义的集大成之作，也是「拉美文学爆炸」的代表作。</li>
+      <li>[秘鲁] <span class="term">略萨</span><br>
+        结构现实主义代表，<b>《绿房子》《城市与狗》</b>。</li>
+    </ul>
+
+    <div class="answer">
+      <div class="a-t">库内补充 · 一句话记住每个人「为什么重要」</div>
+      <table>
+        <tr><th style="width:6.5rem">作家</th><th style="width:5rem">国别</th><th>关键定位（答题直接用）</th></tr>
+        <tr><td>彼特里</td><td>委内瑞拉</td><td>《雨》（1928）——<b>先河之作</b>，最早的魔幻现实主义尝试</td></tr>
+        <tr><td>阿斯图里亚斯</td><td>危地马拉</td><td>《总统先生》《玉米人》——<b>拉美第一位获诺奖（1967）的魔幻现实主义作家</b></td></tr>
+        <tr><td>鲁尔福</td><td>墨西哥</td><td>《佩德罗·帕拉莫》（1955）——<b>宣告流派正式形成</b>，直接影响马尔克斯</td></tr>
+        <tr><td>马尔克斯</td><td>哥伦比亚</td><td>《百年孤独》（1967）——<b>集大成之作</b>，1982 年诺奖</td></tr>
+        <tr><td>略萨</td><td>秘鲁</td><td>结构现实主义，《绿房子》《城市与狗》，2010 年诺奖</td></tr>
+      </table>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">时间线速记</div>
+      <b>1928 彼特里《雨》（先河）→ 1955 鲁尔福《佩德罗·帕拉莫》（成形）→ 1967 马尔克斯《百年孤独》（登顶）</b>。<br>
+      三位诺奖：阿斯图里亚斯 1967 · 马尔克斯 1982 · 略萨 2010。
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 待核 · 译名</div>
+      PPT 写作「<b>鲁尔福</b>」，通行译名多作「<b>胡安·鲁尔福</b>」（Juan Rulfo），也有译本作「鲁尔弗」。答题建议写「胡安·鲁尔福（Juan Rulfo）」，两个中译名都能认。<br>
+      另：PPT 用「<b>彼特里</b>」，通行多作「<b>乌斯拉尔·彼特里</b>」（Arturo Uslar Pietri）。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 5 · 《百年孤独》名词解释 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">5</div>
+    <div class="card-title">《百年孤独》名词解释</div>
+    <span class="exam-level lv-ss">必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 3–6 张（情节／多代人）＋ 库内补全</div>
+
+    <div class="answer">
+      <div class="a-t">按名解体量（约 200 字）</div>
+      <p><b>《百年孤独》</b>是哥伦比亚作家加西亚·马尔克斯的长篇小说，发表于 1967 年，是魔幻现实主义的<b>集大成之作</b>，也是拉丁美洲「文学爆炸」的代表作。</p>
+      <p>小说以虚构小镇<b>马孔多</b>为背景，描写<b>布恩迪亚家族七代人</b>的兴衰史，由家族第一代何塞·阿尔卡蒂奥·布恩迪亚与表妹乌尔苏拉近亲结婚、因害怕生出长猪尾巴的孩子而迁居开创马孔多写起，历经内战、香蕉公司经济掠夺、大罢工与「死亡列车」屠杀，最终奥雷里亚诺·布恩迪亚破译吉卜赛人梅尔加德斯留下的羊皮书预言，发现家族与马孔多的全部历史早已写定，随即被飓风从大地上抹去。</p>
+      <p>小说通过家族一百年的孤独，<b>象征性地再现了拉丁美洲百年沧桑的历史</b>，揭示了封闭、愚昧、停滞带来的必然毁灭，表现了作家对民族命运的深切忧虑。</p>
+    </div>
+
+    <div class="sub-h">关键信息速记</div>
+    <table>
+      <tr><th style="width:7rem">项</th><th>内容</th></tr>
+      <tr><td>作者</td><td>加西亚·马尔克斯（哥伦比亚），1982 年诺贝尔文学奖得主</td></tr>
+      <tr><td>发表</td><td>1967 年</td></tr>
+      <tr><td>流派</td><td>魔幻现实主义 · 集大成之作</td></tr>
+      <tr><td>地点</td><td>虚构小镇「马孔多」（原型为作家故乡阿拉卡塔卡）</td></tr>
+      <tr><td>时间跨度</td><td>布恩迪亚家族七代人，约一百年（从创建马孔多到被飓风抹去）</td></tr>
+      <tr><td>核心意象</td><td>羊皮书预言 · 长猪尾巴的孩子 · 黄蝴蝶 · 黄花雨 · 香蕉公司</td></tr>
+      <tr><td>结构核心</td><td>「百年」＝历史循环，「孤独」＝精神枷锁</td></tr>
+    </table>
+
+    <div class="mnem">
+      <div class="m-t">一句话名解</div>
+      <b>「一镇 · 一家 · 七代 · 百年 · 一场飓风」</b>——马孔多一个镇，布恩迪亚一个家族，七代人，一百年，最后被飓风抹去。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 6 · 故事梗概（六代人） ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">6</div>
+    <div class="card-title">《百年孤独》故事梗概 · 家族六代人</div>
+    <span class="exam-level lv-ss">必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 3–4 张「情节 · 同名的多代人」</div>
+
+    <div class="note-bar">
+      📌 <b>先记住一个大前提</b>：家族里男性反复取名「<b>何塞·阿尔卡蒂奥</b>」和「<b>奥雷里亚诺</b>」——名字相同、命运相似，这正是「<b>循环</b>」主题的直接体现。<b>同名＝同命运＝时间在打圈圈</b>。答题时这句话是加分点。
+    </div>
+
+    <div class="sub-h">家族第一代</div>
+    <p><span class="term">何塞·阿尔卡蒂奥·布恩迪亚</span>是西班牙人的后裔，住在远离海滨的一个印第安人的村庄。他与表妹<span class="term">乌尔苏拉</span>新婚时，由于害怕像姨母与叔父结婚那样生出长尾巴的孩子，乌尔苏拉每晚都穿上特制的紧身衣，拒绝与丈夫同房。因此她遭到丈夫的<span class="hl-b">鄙俗</span>（注：PPT 此处原为错字，通行作「鄙夷／羞辱」义）以及邻居的嘲笑，还遭到村里人的非议。有一次，何塞·阿尔卡蒂奥·布恩迪亚在一次斗鸡比赛胜利后杀死了讥笑他的普鲁邓希奥·阿基拉尔。从此，死者的鬼魂经常出现在他眼前，使他自己不得安宁。于是何塞·阿尔卡蒂奥·布恩迪亚一家带着朋友及其家人离开村子，外出寻找安身之所。经过了两年多的跋涉，来到一片滩地上，由于受到梦的启示决定定居下来，建立村镇，这就是马孔多。布恩迪亚家族在乌苏拉历史从此开始的。何塞·阿尔卡蒂奥·布恩迪亚是一位富有创造力和勇敢精神的长者，但晚年被捆在栗树下度过余生。乌尔苏拉则是家族的支柱，见证了整个世纪的兴衰。</p>
+
+    <div class="sub-h">家族第二代</div>
+    <p>布恩迪亚家族的第二代有两男一女：老大<span class="term">何塞·阿尔卡蒂奥</span>是在来马孔多的路上出生的，他在路上长大。像他父亲一样固执，但没有他父亲那样的想象力；老二<span class="term">奥雷里亚诺</span>生于马孔多。</p>
+    <p>奥雷里亚诺曾爱上了镇长的女儿、未成年少女蕾梅黛丝，并发动了<span class="hl-b">三十二场失败的武装起义</span>，目睹了战争的虚无，最终在抚模中反复炼制小金鱼，炼成又销毁，以此度日。（注：「抚模」疑为「孤独」之误，通行说法为「在孤独中反复炼制小金鱼」。）</p>
+
+    <div class="sub-h">家族第三代</div>
+    <p>主要围绕上校在战争中的私生子们，他们最终都被政府军杀害。</p>
+
+    <div class="sub-h">家族第四代</div>
+    <p>女儿<span class="term">蕾梅黛丝</span>纯真而美丽，最后抓着雪白的床单升天消失；她的双胞胎兄弟则是在香蕉公司的大罢工中被杀，尸体被扔进大海。</p>
+
+    <div class="sub-h">家族第五代</div>
+    <p>完全被外界的现代商业和腐化文化所侵蚀，与家族创始人艰苦奋斗的精神已毫无关联，是家族衰败的最后的闪光。</p>
+
+    <div class="sub-h">家族第六代</div>
+    <p>布恩迪亚家族的第六代是梅梅送回的私生子<span class="term">奥雷里亚诺·布恩迪亚</span>。他出生后一直在孤独中长大。他唯一的嗜好是躲在吉卜赛人梅尔加德斯的房间里研究各种神秘的书籍和手稿。</p>
+    <p>他和姨妈阿玛兰妲·乌尔苏拉（第五代）产生了乱伦关系，并有了孩子。那个长着尾巴的男孩就是布恩迪亚家族的第七代继承人。他出生就被一群蚂蚁吃掉。当奥雷里亚诺·布恩迪亚看到被蚂蚁吃掉的只剩下一小块皮的儿子时，他终于破译了梅尔加德斯的手稿，手稿卷首的题辞是：家族的第一个人被捆在榕树上，最后一个人正在被蚂蚁吃掉。原来，这羊皮书封上写的是布恩迪亚家族的历史。他在破译完最后一章的瞬间，一场突如其来的飓风把整个马孔多镇从地球上刮走，从此这个村镇就永远地消失了。</p>
+
+    <div class="answer">
+      <div class="a-t">梗概骨架 · 一句话一代人</div>
+      <table>
+        <tr><th style="width:5rem">代</th><th>核心事件</th></tr>
+        <tr><td>第一代</td><td>近亲结婚恐惧 → 杀普鲁邓希奥 → 迁居创建马孔多 → 晚年被捆栗树下</td></tr>
+        <tr><td>第二代</td><td>何塞·阿尔卡蒂奥（固执）；奥雷里亚诺上校 → 三十二场起义 → 孤独炼小金鱼</td></tr>
+        <tr><td>第三代</td><td>上校的私生子们 → 全被政府军杀害</td></tr>
+        <tr><td>第四代</td><td>蕾梅黛丝抓床单升天；双胞胎兄弟死于香蕉公司罢工，尸体扔进大海</td></tr>
+        <tr><td>第五代</td><td>被现代商业与腐化文化侵蚀，家族衰败的最后闪光</td></tr>
+        <tr><td>第六代</td><td>私生子奥雷里亚诺研究羊皮书 → 与姨妈乱伦生子（长猪尾巴）</td></tr>
+        <tr><td>第七代</td><td>长猪尾巴的婴儿被蚂蚁吃掉 → 破译羊皮书 → 飓风抹去马孔多</td></tr>
+      </table>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ PPT 原文有两处明显错字，答题时别照抄</div>
+      <ol>
+        <li>「因此她遭到丈夫的<b>脚后</b>」——原图放大后确认为「<b>鄙俗</b>」，语义仍不通；通行说法是乌尔苏拉因拒同房而<b>遭到丈夫的埋怨和邻里的嘲笑</b>。答题写「遭到丈夫的埋怨与邻里的非议」。</li>
+        <li>「最终在<b>抚模</b>中反复炼制小金鱼」——应为「<b>孤独</b>中」。这是本页最容易照抄出错的一处。</li>
+        <li>另「布恩迪亚家族在乌苏拉<b>历史</b>从此开始的」一句 PPT 表述残缺，答题不必引用，用「家族的历史由此开始」即可。</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 7 · 思想内容 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">7</div>
+    <div class="card-title">《百年孤独》思想内容（三条）</div>
+    <span class="exam-level lv-s">简要记忆</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 4 张「思想内容」</div>
+
+    <div class="note-bar">📌 老师要求：<b>思想内容简要记忆</b>。三条都要记，但不用展开成段——能说出「三条是什么 ＋ 每条一句话」即可。</div>
+
+    <ol>
+      <li><span class="hl-b">史诗性地「再现拉丁美洲历史社会图景」</span></li>
+      <li><span class="hl-b">深刻揭露了哥伦比亚封建专制与军事独裁统治的罪恶</span></li>
+      <li><span class="hl-b">塑造了一系列栩栩如生的人物形象</span>，并通过对他们共同的性格特征——「<span class="hl-b">孤独</span>」的描写，传达出作者对人民的深切同情和对拉美历史现实的深层思索。</li>
+    </ol>
+
+    <div class="answer">
+      <div class="a-t">库内补全 · 第三条的人物群像举例（答题时举例才生动）</div>
+      <ul>
+        <li><b>何塞·阿尔卡蒂奥·布恩迪亚</b>——探索者的孤独，被困于自己的想象力，晚年被捆在栗树下。</li>
+        <li><b>奥雷里亚诺上校</b>——战争英雄的孤独，三十二场起义皆败，晚年反复炼制又销毁小金鱼。</li>
+        <li><b>乌尔苏拉</b>——家族支柱的孤独，活过百年、见证盛衰，最后陷入对过去的沉湎。</li>
+        <li><b>蕾梅黛丝</b>——纯净者的孤独，抓床单升天。</li>
+        <li><b>奥雷里亚诺·布恩迪亚（第六代）</b>——求知者的孤独，终其一生研究羊皮书。</li>
+      </ul>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">三条速记</div>
+      <b>史诗图景 · 揭露罪恶 · 群像孤独</b>——第三条里的「孤独」是全书之眼，也是那道真题的抓手。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 8 · 艺术特色总纲 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">8</div>
+    <div class="card-title">《百年孤独》艺术特色 · 总纲（四条）</div>
+    <span class="exam-level lv-ss">非常重要❗️</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 4–5 张「艺术特色」</div>
+
+    <div class="paper">
+      <div class="p-t">🎯 西大真题原题 · 2024 年创意写作考研文学史论述题第三题</div>
+      <p><b>马尔克斯《百年孤独》的艺术特点</b>（科目标注：外国文学史 20 世纪魔幻现实主义文学）</p>
+      <p>——本题 PPT 与真题完全重合，务必按<b>论述题体量</b>背。</p>
+    </div>
+
+    <div class="sub-h">总纲 · 四条（先记住这四条骨架）</div>
+    <table>
+      <tr><th style="width:3.5rem">序</th><th style="width:9rem">PPT 标题</th><th>一句话内核</th></tr>
+      <tr><td>（一）</td><td><b>「变现实为幻想而不失其真」</b></td><td>魔幻现实主义创作原则——把魔幻当作现实本身来写</td></tr>
+      <tr><td>（二）</td><td><b>叙事结构的魔幻化</b></td><td>神话性结构 ＋ 循环往复的叙事方式</td></tr>
+      <tr><td>（三）</td><td><b>循环的时态</b></td><td>开篇即把将来、过去、现在三个时间层叠加</td></tr>
+      <tr><td>（四）</td><td><b>象征、意识流等西方现代手法</b></td><td>羊皮书／黄蝴蝶／香蕉公司／猪尾巴四大象征 ＋ 意识流</td></tr>
+    </table>
+
+    <div class="note-bar">
+      📌 【必须吃透的答题思考】这条批语是老师给的提示语：<b>「（结合剧情和创作时代背景作答，作品呈现人性的孤独，和现实中人在时代洪流的孤独）」</b><br>
+      → 意思是：<b>艺术特色不能只罗列技巧，每一条都要落到「孤独」这个主题上，并勾连创作时代背景（拉美百年苦难史）。</b>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 9 · 艺术特色拆解 ①② ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">9</div>
+    <div class="card-title">艺术特色拆解 ①②·魔幻而不失其真 / 叙事结构魔幻化</div>
+    <span class="exam-level lv-ss">非常重要❗️</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 4–5 张</div>
+
+    <div class="sub-h">（一）「变现实为幻想而不失其真」 · 魔幻现实主义创作原则</div>
+    <p>作者以<span class="hl-b">冷静、客观的写实口吻叙述离奇事件</span>，如升天、亡灵归来等，将魔幻视为<span class="hl-b">现实本身固有的组成部分</span>，从而创造出一个既光怪陆离又真实可信的马孔多世界，并且隐喻整个拉美大陆的命运与孤独。</p>
+    <div class="mnem">
+      <div class="m-t">关键理解</div>
+      「不失其真」的关键在于<b>叙述语气</b>——作者不惊讶、不解释、不煽情，像报告天气一样报告升天。正是这种<b>语气的平常</b>，让魔幻获得了真实感。<b>答题时这一句必须点出来</b>。
+    </div>
+
+    <div class="sub-h">（二）叙事结构的魔幻化 · 1、神话性结构</div>
+    <p>小说从马孔多的建立（<span class="hl-b">创世</span>）开始，历经繁荣与动荡（<span class="hl-b">神的斗争与人的苦难</span>），最终在一场毁灭性的飓风（<span class="hl-b">末世洪水</span>）中被彻底抹去。整个布恩迪亚家族的命运被一份羊皮书预言，如同希腊神话中无法逃脱的神谕。</p>
+    <div class="answer">
+      <div class="a-t">可加写 · 神话性结构的三个层次</div>
+      <ol>
+        <li><b>创世</b>——马孔多从无到有，如同《创世记》，是「世界之初」。</li>
+        <li><b>苦难与斗争</b>——内战、独裁、香蕉公司掠夺、大罢工与屠杀，对应「人类堕落与受苦」。</li>
+        <li><b>末世</b>——飓风抹去马孔多，如同大洪水，是「世界末日」。</li>
+        <li>再加一层：<b>预言无法逃脱</b>——羊皮书早已写定一切，对应希腊悲剧中的「神谕／命运」。<b>创世—受苦—末世＋不可逃的命运</b>，就是完整的「神话性结构」。</li>
+      </ol>
+    </div>
+
+    <div class="sub-h">（二）· 2、循环往复的叙事方式</div>
+    <p>打破线性时间，采用<span class="hl-b">预叙</span>（把未来的事提前说出）与<span class="hl-b">倒叙</span>，让时间主观化、循环化，形成时空交错的叙事方式。开篇名句「多年以后，面对行刑队，奥雷里亚诺·布恩迪亚上校将会回想起父亲带他去见识冰块的那个遥远的下午」——一句话里同时装下<b>未来（多年以后）＋ 现在（面对行刑队）＋ 过去（那个遥远的下午）</b>。</p>
+    <div class="answer">
+      <div class="a-t">循环重复的三层证据（背下来就是论述题的肉）</div>
+      <ol>
+        <li><b>时间循环</b>——开篇句 + 后续反复出现的「若干年之后，当……的时候，某某一定会记得……」句式，每一个都在过去、现在、将来之间打圈。叙事者站在「虚拟的现在」，才能把握历史的沧桑感、纵深感和绵延感。</li>
+        <li><b>事件的重复</b>——第二代奥雷里亚诺后半生在小屋做小金鱼，日复一日；第二代阿玛兰妲晚年不停地缝制裹尸布；第四代奥雷里亚诺第二反复修理门窗。每人处在过去、现在与将来的重复之中，各自的行为互成对照、互成循环，构成一系列大大小小的<b>循环怪圈</b>。</li>
+        <li><b>姓名与秉性的循环</b>——家族男性始终是「阿卡迪亚」与「奥雷里亚诺」的重复或相加，秉性依次延续。吉卜赛人几次到马孔多，村民每次都像最初一样被磁铁、放大镜耍得团团转。尽管时间在推移，马孔多人的价值观与思维方式却一百年如故。</li>
+      </ol>
+      <p>活得最久的<b>乌尔苏拉</b>阅尽家族盛衰，在她眼里一切都无非是过去的重复，她惊呼「<b>时间在打圈圈</b>」，从此永远沉湎于对过去的回忆。</p>
+    </div>
+    <div class="quote">「时间在倒转！」「时间像是在打圈圈，我们又回到了开始的那个时候。」</div>
+  </div>
+</div>
+
+<!-- ===== 卡片 10 · 艺术特色拆解 ③④ ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">10</div>
+    <div class="card-title">艺术特色拆解 ③④·循环时态 / 象征与意识流</div>
+    <span class="exam-level lv-ss">非常重要❗️</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 5 张末 ＋ 第 6 张（注：编号依 PPT 原序，「循环的时态」一页 PPT 实际在第 5 张末与第 6 张衔接处）</div>
+
+    <div class="sub-h">（三）循环的时态</div>
+    <p>开篇即把<b>将来、过去和现在三个时间层面进行了融合</b>。这种独特的叙事手法在文章开头就为读者树立了阅读悬念，引起了读者的阅读兴趣。也通过这种手法在全文中进行了时间线的连接，保证了文章的连续性，不唯发现这种倒叙的叙事手法在《百年孤独》中多次被引用，悬念丛生是马尔克斯《百年孤独》巨著的主要原因。</p>
+    <div class="note-bar">
+      📌 这一段与卡片 9 的「循环往复的叙事方式」是<b>同一件事的两个说法</b>：PPT（二）从「结构」讲，（三）从「时态／时间」讲。答题时可合并写成一条，也可分列两条——<b>分列更显层次，建议合并成一段但把「时态融合」单独点出</b>。
+    </div>
+
+    <div class="sub-h">（四）熟练使用象征、意识流等西方现代手法</div>
+    <p>广泛运用象征来深化主题，如：</p>
+    <table>
+      <tr><th style="width:8.5rem">意象</th><th>象征义</th></tr>
+      <tr><td><b>羊皮书稿</b></td><td>象征被遗忘和加密的历史——历史早已写定，却无人能读</td></tr>
+      <tr><td><b>香蕉公司</b></td><td>象征外来经济殖民</td></tr>
+      <tr><td><b>猪尾巴孩子</b></td><td>象征因封闭与乱伦导致的终极毁灭</td></tr>
+      <tr><td><b>黄色</b>（黄花雨、黄蝴蝶）</td><td>象征不幸与死亡</td></tr>
+      <tr><td><b>健忘症</b></td><td>象征生活在闭塞孤独中的拉美人民若不反思现实，就会忘记历史</td></tr>
+      <tr><td><b>罢工者列车</b></td><td>被写成 200 节车厢——象征大屠杀的规模与官方对历史的掩盖</td></tr>
+    </table>
+    <p>娴熟运用<span class="hl-b">意识流、夸张、荒诞</span>等现代主义文学技巧来刻画人物内心世界的孤独与迷惘，并揭示现实的非理性。</p>
+
+    <div class="quote">
+      「窗外下起了细微的黄花雨。整整一夜，黄色的花朵像无声的暴雨，在市镇上空纷纷飘落……翌日早晨，整个马孔多仿佛铺上了一层密实的地毯，所以不得不用铲子和耙子为送葬队伍清理道路。」——何塞·阿尔卡蒂奥·布恩迪亚之死
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">四大象征速记</div>
+      <b>羊皮书＝被加密的历史 · 香蕉公司＝经济殖民 · 猪尾巴＝封闭的毁灭 · 黄色＝不幸与死亡</b>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 11 · 学硕真题答题思路 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">11</div>
+    <div class="card-title">学硕真题｜百年为什么叫百年 · 答题思路拆解</div>
+    <span class="exam-level lv-ss">❗️答题思考</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 5–6 张「学硕真题」</div>
+
+    <div class="paper">
+      <div class="p-t">🎯 题目原文</div>
+      <p><b>谈谈你对马尔克斯《百年孤独》中「百年」和「孤独」的理解。</b></p>
+      <p>（结合剧情和创作时代背景作答，作品呈现人性的孤独，和现实中人在时代洪流的孤独）</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 先看清楚：PPT 给的不是一份答案，是两份 ＋ 一条批语</div>
+      群里说「以及举例的这个学硕真题如何回答要注意题目的<b>答题思考</b>」——意思是这道题的示范价值在<b>怎么组织</b>，而不是背下那段文字。<br>
+      对照第 7 张图可见：<b>第 1 段（斜体那段）＝ 提纲／要点版</b>（PPT 斜体排版，用于示范「分点讲清楚」）；<b>第 2 段 ＝ 成文版</b>（正文排版，用于示范「展开成段落」）。最后那句括号里的话是<b>老师批语</b>，不是答案内容。
+    </div>
+
+    <div class="sub-h">示范 ① · 提纲／要点版（斜体那段）</div>
+    <div class="quote">
+      提示：《百年孤独》的故事发生在虚构的马孔多镇，描述了布恩迪亚家族百年七代的兴衰、荣辱、悲欢、离合，和文化与人性中根深蒂固的孤独。在这个家族中，夫妻之间、父子之间、母女之间、兄弟姐妹之间，都有感情沟通，缺乏信任和了解。尽管很多人为打破孤独进行过种种艰苦的探索，但由于无法找到一种有效的办法把分散的力量统一起来，最后均以失败告终。这种孤独不仅弥漫在布恩迪亚家族和马孔多镇，而且渗入了狭隘思想，成为阻碍民族向上、国家进步的一大包袱。
+    </div>
+
+    <div class="sub-h">示范 ② · 成文版（正文那段）</div>
+    <div class="answer">
+      <div class="a-t">PPT 正文原文</div>
+      <p>作者以《百年孤独》为题，意在引起读者思考：造成马贡多——实际上是拉丁美洲的缩影——一百年孤独的原因，以及打破这种状态的根本途径。「百年」表示年代长久，「孤独」的反义是团结，而这就是作者写作小说的目的所在。作者希望拉丁美洲民众团结起来，共同努力摆脱孤独。所以，《百年孤独》中浸淫着的孤独感，其主要内涵应该是对整个苦难的拉丁美洲被排斥现代文明世界的进程之外的愤懑和抗议，是作者在对拉丁美洲近百年的历史、以及这块大陆上人民独特的生命力、生存状态、想象力进行独特的研究之后形成的倔强的自信。</p>
+    </div>
+
+    <div class="sub-h">批语怎么用 · 这是本题真正的考点</div>
+    <table>
+      <tr><th style="width:11rem">批语要求</th><th>作答动作</th></tr>
+      <tr><td><b>结合剧情</b></td><td>「百年」要落到布恩迪亚家族七代人的具体情节（近亲结婚的恐惧、三十二场起义、炼小金鱼、缝裹尸布、香蕉公司与 200 节车厢的列车、长猪尾巴的婴儿被蚂蚁吃掉、飓风抹去马孔多）。<b>不能只讲道理不举情节。</b></td></tr>
+      <tr><td><b>结合创作时代背景</b></td><td>要勾连拉美百年苦难史：16 世纪起的殖民掠夺 → 考迪罗式军事独裁 → 作为「香蕉共和国」被欧美经济垄断 → 内战与大屠杀。写作年代（1967）正是拉美「文学爆炸」与古巴革命影响下的自觉期。</td></tr>
+      <tr><td><b>人性的孤独</b></td><td>从家族内部讲：夫妻、父子、母女、兄弟姐妹之间缺乏信任与了解，每个人在自己的世界里挣扎，都不懂得爱情。孤独是<b>人性层面</b>的问题。</td></tr>
+      <tr><td><b>时代洪流中人的孤独</b></td><td>从拉美民族层面讲：马孔多的孤独是整个拉美被排斥在现代文明进程之外的缩影。孤独是<b>民族／历史层面</b>的问题。<b>两个层面都要写，这正是本题的量分点。</b></td></tr>
+    </table>
+
+    <div class="mnem">
+      <div class="m-t">答题骨架（四段式，直接套）</div>
+      <b>①释义</b>「百年」＝时间长度＋历史循环；「孤独」＝精神上的封闭与不团结 →<br>
+      <b>②「百年」怎么理解</b>：结合家族七代情节，讲历史循环（同名、重复行为、羊皮书预言）→<br>
+      <b>③「孤独」怎么理解</b>：两层——家族内部人性的孤独 ＋ 拉美民族在时代洪流中的孤独 →<br>
+      <b>④升华</b>：作者的用意是希望拉美民众团结起来摆脱孤独，浸淫全书的孤独感是对拉美被排斥于现代文明进程之外的愤懑与抗议，也是研究拉美百年历史之后形成的「倔强的自信」。
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 待核 · 专名写法</div>
+      PPT 成文版用「<b>马贡多</b>」，PPT 其他地方及通行译法多用「<b>马孔多</b>」。同一份 PPT 两种写法，<b>答题建议统一写「马孔多」</b>（当前通行译名）。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 12 · 开篇名句 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">12</div>
+    <div class="card-title">开篇名句「多年以后」为什么不同凡响</div>
+    <span class="exam-level lv-s">背诵 · 万能引用</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 7 张</div>
+
+    <div class="sub-h">题目</div>
+    <p><b>「多年之后，面对行刑队，奥雷里亚诺·布恩迪亚上校将会回想起，他父亲带他去见识冰块的那个遥远的下午。」为什么这句话不同凡响？</b></p>
+
+    <div class="answer">
+      <div class="a-t">PPT 答案原文</div>
+      <p>马尔克斯在《百年孤独》文章的开头中引用的倒叙叙事手法，将<b>未来、过去和现在三个时间层面进行了融合</b>，这种独特的叙事手法既在文章开头为读者树立了阅读悬念，引起了读者的阅读兴趣，也通过这种手法在全文中进行了时间线的连接，保证了文章的连续性。不难发现这种倒叙的叙事手法在《百年孤独》中多次被引用，悬念丛生是马尔克斯《百年孤独》巨著的主要特点。</p>
+    </div>
+
+    <div class="sub-h">拆句理解（自己看懂，不用背）</div>
+    <table>
+      <tr><th style="width:8rem">句中的词</th><th style="width:5rem">时间层</th><th>说明</th></tr>
+      <tr><td>「多年之后」</td><td>未来</td><td>上校将来的某个时刻，是叙事的「现在时」</td></tr>
+      <tr><td>「面对行刑队」</td><td>将来中的现在</td><td>上校生命的终点场景，也是故事后段的悬念</td></tr>
+      <tr><td>「那个遥远的下午」</td><td>过去</td><td>他童年的记忆，是全书叙事的起点之一</td></tr>
+      <tr><td>「将会回想起」</td><td>时态连接词</td><td>一个将来时态动词，把过去和未来缝在一起</td></tr>
+    </table>
+    <p>—— 一句话里同时装进三个时间层，这就是「循环的时态」最经典的示范。<b>答任何关于时间／叙事结构的题，都可以引这一句。</b></p>
+
+    <div class="mnem">
+      <div class="m-t">速记</div>
+      <b>未来 ＋ 现在 ＋ 过去</b>三时态一句话融合 → 悬念 ＋ 全文时间线连接 → 多次复现 → 成为全书主要特点。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 13 · 真题命中 + 待核 + 直达 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">13</div>
+    <div class="card-title">真题命中对照 · 待核清单 · 直达资料</div>
+    <span class="exam-level lv-s">对答案</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">本页内容与西大历年真题的对应关系</div>
+    <div class="tablebox">
+      <table>
+        <tr><th style="width:9rem">考点</th><th style="width:9rem">真题出处</th><th>对照要点</th></tr>
+        <tr>
+          <td><b>《百年孤独》艺术特点</b></td>
+          <td><b>2024 年创意写作<br>论述题第三题</b></td>
+          <td><b>原题命中</b>。真题答案的四条（神话性的结构模式／故事情节的魔幻性／「魔幻」式的象征和夸张手法／循环性的叙事方式）与本页卡片 8–10 高度重合。<b>背本页即可覆盖。</b>注意真题答案第一条是「神话性结构模式」，比 PPT 更细，本页已在卡片 9 里全部吸收。</td>
+        </tr>
+        <tr>
+          <td><b>《百年孤独》名解 · 思想内容</b></td>
+          <td>西大暂未见原题</td>
+          <td>但 2024 论述题已考艺术特点，说明马尔克斯是重点作家。<b>建议名解与思想内容按名解体量熟背</b>，并准备「魔幻现实主义与拉美现实的关系」这一论述角度。</td>
+        </tr>
+        <tr>
+          <td><b>魔幻现实主义</b></td>
+          <td>西大暂未见名词解释原题</td>
+          <td>2024 论述题的「科目」栏直接标了「外国文学史 20 世纪魔幻现实主义文学」，说明该流派是命题范围。<b>名解＋基本特点按必背处理。</b></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="sub-h">本页「待核」清单（共 6 处）</div>
+    <div class="warn">
+      <div class="w-t">⚠️ PPT 与通行说法不一致／疑似错字处，已在各卡分散标注，此处汇总</div>
+      <ol>
+        <li><b>「暗杀、败政、大屠杀」</b>——应为「暗杀、<b>暴政</b>、大屠杀」。（卡片 3）</li>
+        <li><b>「因此她遭到丈夫的脚后」</b>——PPT 原文，语义不通；按通行说法写「遭到丈夫的埋怨与邻里的非议」。（卡片 6）</li>
+        <li><b>「最终在抚模中反复炼制小金鱼」</b>——应为「在<b>孤独</b>中」。<b>最易照抄出错的一处。</b>（卡片 6）</li>
+        <li><b>「布恩迪亚家族在乌苏拉历史从此开始的」</b>——PPT 表述残缺，答题不引用。（卡片 6）</li>
+        <li><b>「马贡多」／「马孔多」</b>——同一份 PPT 两种写法，答题统一写「<b>马孔多</b>」。（卡片 11）</li>
+        <li><b>译名</b>——「鲁尔福」（通行多作胡安·鲁尔福）、「彼特里」（通行多作乌斯拉尔·彼特里）。（卡片 4）</li>
+      </ol>
+    </div>
+
+    <div class="note-bar">
+      ✅ <b>另核对无误处</b>：魔幻现实主义四大特征（现实与幻象结合／结构革新／象征荒诞意识流手法／语言丰富色彩浓烈）与通行说法一致；阿斯图里亚斯 1967 年诺奖、鲁尔福《佩德罗·帕拉莫》1955 年、马尔克斯《百年孤独》1967 年、彼特里《雨》1928 年，均与通行说法一致；「变现实为幻想而不失其真」为魔幻现实主义公认创作原则，PPT 无误。
+    </div>
+
+    <div class="sub-h">直达资料 · 相关页面</div>
+    <ul>
+      <li><a href="../外国文学史习题_分章刷题.html#d9">外国文学史习题 · 分章刷题（#d9 现代主义和后现代主义文学）</a></li>
+      <li><a href="../文学史考研笔记整理_纯文字版.html">文学史考研笔记整理（西大真题原答全文 · 2024 论述第三题就在其中）</a></li>
+      <li><a href="../唐红梅外国文学知识点串讲.html">唐红梅 · 外国文学知识点串讲</a></li>
+      <li><a href="../李凡1000题_外国文学史-OCR重建版.html">李凡 1000 题 · 外国文学史</a></li>
+      <li><a href="day26-后现代-中.html">← 第 26 天：后现代（中）</a></li>
+      <li><a href="../百日冲刺计划.html">百日冲刺计划</a></li>
+    </ul>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d27t01">01 魔幻现实主义名解背下</span>
+      <span class="chk" data-k="d27t02">02 魔幻现实主义四条基本特点背下</span>
+      <span class="chk" data-k="d27t03">03 形成背景四条首句背下</span>
+      <span class="chk" data-k="d27t04">04 代表作家作品时间线记牢</span>
+      <span class="chk" data-k="d27t05">05《百年孤独》名解背下</span>
+      <span class="chk" data-k="d27t06">06 家族六代梗概捋顺</span>
+      <span class="chk" data-k="d27t07">07 思想内容三条记牢</span>
+      <span class="chk" data-k="d27t08">08 艺术特色四条骨架背下</span>
+      <span class="chk" data-k="d27t09">09 魔幻而不失其真（含「叙述语气」点）</span>
+      <span class="chk" data-k="d27t10">10 神话性结构＋循环叙事背下</span>
+      <span class="chk" data-k="d27t11">11 四大象征记牢</span>
+      <span class="chk" data-k="d27t12">12 学硕真题四段式骨架能默写</span>
+      <span class="chk" data-k="d27t13">13 开篇名句拆解背下</span>
+      <span class="chk" data-k="d27t14">14 六处待核已确认</span>
+      <span class="chk" data-k="d27t15">15 2024 真题原答对过一遍</span>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <p>第 27 天带背 · 后现代（下）· 魔幻现实主义与《百年孤独》</p>
+  <p>内容来源：带背 PPT 截图（7 张逐张识读）＋ 库内题库（外国文学史分章刷题 · 朱版课后习题详解、文学史考研笔记整理纯文字版）＋ 西大历年真题原答（2024 论述题第三题）</p>
+  <p>有 6 处「待核」已在对应卡片中标出 · 打卡进度保存在本机浏览器</p>
+</div>
+</div>
+
+<div class="font-ctrl">
+  <button onclick="fsStep(-1)">−</button>
+  <span class="fs-label" id="fsLabel">15px</span>
+  <button onclick="fsStep(1)">＋</button>
+  <button class="fs-reset" onclick="fsReset()">复位</button>
+</div>
+
+<script>
+(function(){
+  var FS_KEY='day27pm_fs', CHK_KEY='day27pm_checks';
+  var base=15, cur=base;
+  try{ var s=localStorage.getItem(FS_KEY); if(s){ cur=parseFloat(s);} }catch(e){}
+  function apply(){ document.documentElement.style.setProperty('--fs-base',cur+'px');
+    var el=document.getElementById('fsLabel'); if(el){el.textContent=Math.round(cur)+'px';} }
+  window.fsStep=function(d){ cur=Math.min(22,Math.max(12,cur+d)); apply();
+    try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  window.fsReset=function(){ cur=base; apply(); try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  apply();
+
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(CHK_KEY)||'{}'); }catch(e){ saved={}; }
+  var chks=document.querySelectorAll('.chk');
+  chks.forEach(function(c){
+    var k=c.getAttribute('data-k');
+    if(saved[k]) c.classList.add('done');
+    c.addEventListener('click',function(ev){
+      ev.stopPropagation();
+      c.classList.toggle('done');
+      saved[k]=c.classList.contains('done');
+      try{ localStorage.setItem(CHK_KEY,JSON.stringify(saved)); }catch(e){}
+      upd();
+    });
+  });
+  function upd(){
+    var all=document.querySelectorAll('.chk').length;
+    var done=document.querySelectorAll('.chk.done').length;
+    var bar=document.getElementById('progBar'), txt=document.getElementById('progTxt');
+    if(bar) bar.style.width=(all?Math.round(done/all*100):0)+'%';
+    if(txt) txt.textContent=done+' / '+all;
+  }
+  upd();
+})();
+</script>
+
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

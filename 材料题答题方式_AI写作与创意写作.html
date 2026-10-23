@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>材料题答题方式 · AI 写作与创意写作（直播听记整理）</title>
+<style>
+@font-face{font-family:"霞鹜文楷";src:url("./_shared/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:swap}
+:root{--bg:#f4f1ea;--bg2:#fffdf8;--ink:#252525;--muted:#6f6a60;--rule:#d8d0c3;--accent:#9d3f2f;--accent2:#1d5b5b;--soft:#eee5d7;--gold:#c8902a;--shadow:0 10px 28px rgba(50,35,20,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"霞鹜文楷","LXGW WenKai","Noto Sans CJK SC","WenQuanYi Micro Hei",sans-serif;line-height:1.7;
+  background-image:radial-gradient(circle at 16% 8%,rgba(200,144,42,.07) 0,transparent 32%),radial-gradient(circle at 88% 18%,rgba(157,63,47,.06) 0,transparent 36%)}
+main{max-width:1120px;margin:auto;padding:34px 22px 70px}
+
+.backbar{margin:0 0 16px}
+.backbar a{display:inline-block;background:var(--bg2);border:1px solid var(--rule);border-radius:20px;padding:5px 16px;
+  font-size:13px;color:var(--accent2);text-decoration:none;font-weight:700;transition:.15s}
+.backbar a:hover{background:var(--accent2);color:#fffdf8;border-color:var(--accent2)}
+
+.masthead{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:26px;flex-wrap:wrap}
+.eyebrow{font-size:13px;letter-spacing:3px;color:var(--accent);font-weight:700;margin-bottom:8px}
+.masthead h1{margin:0;font-size:31px;letter-spacing:2px}
+.masthead .sub{margin-top:9px;color:var(--muted);font-size:14.5px;letter-spacing:.6px;line-height:1.75}
+.srcbox{background:var(--bg2);border:1px solid var(--rule);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:11px 15px;font-size:12.5px;color:var(--muted);max-width:345px;line-height:1.7}
+.srcbox b{color:var(--ink)}
+
+.section{margin:0 0 30px}
+h2.st{font-size:19px;margin:0 0 14px;padding-left:13px;border-left:5px solid var(--accent);letter-spacing:1px}
+h3.sh{font-size:16px;margin:20px 0 10px;color:var(--accent2);letter-spacing:.6px}
+.panel{background:var(--bg2);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;box-shadow:var(--shadow)}
+.panel+.panel{margin-top:14px}
+
+.tbl{width:100%;border-collapse:collapse;background:var(--bg2);border:1px solid var(--rule);border-radius:10px;overflow:hidden;font-size:14.5px}
+.tbl th{background:var(--ink);color:#fffdf8;font-weight:700;font-size:13.5px;letter-spacing:1px;padding:11px 13px;text-align:left;white-space:nowrap}
+.tbl td{padding:12px 13px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.72}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tr:nth-child(even) td{background:#fdfbf6}
+.tbl .nm{font-weight:700;font-size:15px;color:var(--accent)}
+.tbl .big{font-weight:700;font-size:15.5px}
+.tbl .pt{display:inline-block;background:#f6e6c8;color:#7a5a16;border-radius:3px;padding:0 5px;font-weight:700;margin:0 1px}
+
+/* 时间轴骨架 */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.step{position:relative;background:var(--bg2);border:1px solid var(--rule);border-radius:10px;padding:16px 20px 16px 62px;margin:0 0 13px;box-shadow:var(--shadow)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:16px;width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),#7d2f22);color:#fffdf8;display:grid;place-items:center;font-weight:800;font-size:14px}
+.step h4{margin:0 0 6px;font-size:16px;letter-spacing:.5px;color:var(--ink);display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.step h4 .ts{font-size:12px;font-weight:700;color:#8a7c60;background:#f6f2e7;border:1px solid var(--rule);border-radius:3px;padding:0 6px;letter-spacing:0}
+.step p{margin:5px 0;font-size:14.5px}
+.step ul{margin:6px 0;padding-left:20px}
+.step li{font-size:14.5px;margin:4px 0}
+.step .why{background:#fbf8f0;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:8px 13px;margin:9px 0 3px;font-size:13.5px;color:#5c5445}
+
+/* 模板句 */
+.tpl{background:#fbf8f0;border:1px dashed var(--gold);border-radius:8px;padding:12px 15px;margin:9px 0;font-size:14.5px;line-height:1.95}
+.tpl b{color:#7a5a16}
+.tpl em{font-style:normal;color:var(--muted);font-size:13px;display:block;margin-top:5px}
+mark{background:linear-gradient(transparent 58%,#fff3a8 58%);padding:0 2px;color:inherit}
+
+/* 三段式 */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pcard{background:var(--bg2);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.pcard .tag{display:inline-block;align-self:flex-start;background:var(--accent2);color:#fffdf8;font-size:12px;font-weight:700;padding:2px 9px;border-radius:3px;letter-spacing:1px;margin-bottom:9px}
+.pcard h4{margin:0 0 9px;font-size:15.5px;letter-spacing:.5px}
+.pcard ul{margin:0;padding-left:19px}
+.pcard li{font-size:14px;margin:5px 0}
+.pcard .core{margin-top:auto;padding-top:11px;border-top:1px dashed var(--rule);font-size:13.5px;color:#7a3a2c}
+.pcard .core b{color:var(--accent)}
+
+/* 引用块 */
+.quote{background:#fbf8f0;border-left:4px solid var(--accent2);border-radius:0 7px 7px 0;padding:11px 16px;margin:10px 0;font-size:14.5px;color:#3a4a4a}
+.quote b{color:var(--accent2)}
+
+.warn{background:#fbf0eb;border:1px solid #e2c4ba;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:13px 17px;font-size:14px;color:#6f3226;margin:12px 0}
+.warn b{color:var(--accent)}
+.good{background:#eaf1ea;border:1px solid #c3d8c5;border-left:4px solid #2f6b3a;border-radius:0 8px 8px 0;padding:13px 17px;font-size:14px;color:#2b5233;margin:12px 0}
+.good b{color:#255c30}
+
+/* 全文范例 */
+.demo{background:var(--bg2);border:1px solid var(--rule);border-radius:10px;padding:24px 28px;box-shadow:var(--shadow);font-size:14.6px;line-height:2.05}
+.demo .dt{text-align:center;font-weight:700;font-size:18px;letter-spacing:1px;margin:0 0 4px}
+.demo .ds{text-align:center;font-size:14px;color:var(--muted);margin:0 0 18px;letter-spacing:.5px}
+.demo h5{margin:19px 0 7px;font-size:15.5px;color:var(--accent);letter-spacing:.5px}
+.demo p{margin:8px 0;text-indent:2em}
+.demo .mark-note{text-align:right;font-size:12.5px;color:#8a7c60;text-indent:0;margin-top:16px;padding-top:11px;border-top:1px dashed var(--rule)}
+
+/* 条目表 */
+.sk{background:#fbf8f0;border:1px solid var(--rule);border-radius:7px;padding:13px 15px;margin:0 0 13px}
+.sk .li{display:flex;gap:11px;padding:7px 0;border-bottom:1px dashed var(--rule);font-size:14px}
+.sk .li:last-child{border-bottom:0}
+.sk .li .w{flex:0 0 84px;color:var(--gold);font-weight:700;font-size:13px;padding-top:2px}
+.sk .li .c{flex:1}
+.sk .li .c em{font-style:normal;color:var(--muted);font-size:13px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chk{display:inline-flex;align-items:center;gap:6px;cursor:pointer;padding:5px 13px;border-radius:20px;background:#f3eee0;font-size:13.5px;
+  color:var(--muted);transition:.15s;user-select:none;border:1px solid var(--rule);margin:3px 6px 3px 0}
+.chk:hover{background:#e9dfc7}
+.chk.done{background:#c9d8b6;color:#3a4d24;border-color:#a8bd92;text-decoration:line-through}
+
+.footnote{margin-top:30px;padding-top:16px;border-top:1px dashed var(--rule);color:var(--muted);font-size:12.5px;line-height:1.85}
+@media(max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.masthead h1{font-size:25px}.demo{padding:18px 18px;font-size:14.2px}}
+</style>
+</head>
+<body>
+<main>
+
+<div class="backbar"><a href="index.html">← 返回导航</a></div>
+
+<header class="masthead">
+  <div>
+    <div class="eyebrow">647 / 853 · 材料题专项</div>
+    <h1>材料题答题方式</h1>
+    <div class="sub">以「AI 写作与创意写作」为例：标题规范 → 开头写法 → 三段式正文 → 结尾升华 → 注意事项<br>从直播听记逐条提取，每个动作都绑定讲者原话的时间戳</div>
+  </div>
+  <div class="srcbox"><b>资料依据：</b>考研直播「AI 听记」转写稿中关于材料题答题方式的口述。<br><b>性质：</b>讲者的答题经验与操作细节，非官方评分标准。<br>官方字数／分值口径见 <a href="647创意写作基础_答题评分标准.html" style="color:var(--accent2)">647 四题型评分标准</a>。</div>
+</header>
+
+<!-- ========== 总览 ========== -->
+<section class="section">
+  <h2 class="st">一、五步落笔法总览</h2>
+  <table class="tbl">
+    <thead><tr><th>步骤</th><th>要做什么</th><th>硬指标</th><th>听记时间戳</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nm">① 标题</td>
+        <td>主标题概括核心观点 ＋ 副标题进一步阐释</td>
+        <td class="big">必须两者都有</td>
+        <td>08:07</td>
+      </tr>
+      <tr>
+        <td class="nm">② 开头</td>
+        <td>直接回应材料核心问题，抛出总论点</td>
+        <td class="big">…之问与…之问</td>
+        <td>24:07 ／ 53:47 ／ 01:09:49</td>
+      </tr>
+      <tr>
+        <td class="nm">③ 正文</td>
+        <td>小标题「一、二、三」，每段一个核心论点</td>
+        <td class="big">「冒号＋解释」式小标题</td>
+        <td>47:42</td>
+      </tr>
+      <tr>
+        <td class="nm">④ 结尾</td>
+        <td>重申 AI 是助手不是对立面，展望新生态</td>
+        <td class="big">升华 ＋ 展望</td>
+        <td>01:10:04 ／ 01:10:12</td>
+      </tr>
+      <tr>
+        <td class="nm">⑤ 篇幅</td>
+        <td>相当于一篇小论文，写满两页答题纸</td>
+        <td class="big">800—1000 字</td>
+        <td>52:10</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="panel" style="margin-top:14px;border-left:4px solid var(--gold)">
+    <b>一句话抓住材料题的本质：</b>老师讲得很直白 —— 材料题<b>相当于写一篇小论文</b>。所以它不是「多写几个要点的简答题」，
+    而是一个有标题、有开头、有小标题、有结尾的<b>完整文章结构</b>。缺了标题或小标题，就已经不像论文了。
+  </div>
+</section>
+
+<!-- ========== 标题 ========== -->
+<section class="section">
+  <h2 class="st">二、标题与结构规范</h2>
+
+  <ol class="steps">
+    <li class="step">
+      <h4>标题必须写成「主标题 ＋ 副标题」<span class="ts">08:07</span></h4>
+      <p>主标题<b>概括核心观点</b>，副标题<b>进一步阐释</b>。两个都要有，只有一行标题不合规范。</p>
+      <div class="tpl">
+        <b>主标题示例：</b>「<mark>AI 写作与创意写作互惠共生</mark>」<br>
+        <b>搭配副标题：</b>「——从技术冲击到学科重构的路径思考」
+        <em>主标题给判断，副标题给角度。判断句最好带一个关系词（互惠共生／重构／倒逼／共生），别写成「AI 写作与创意写作」这种没观点的题目。</em>
+      </div>
+      <div class="why">为什么强调主副标题？材料题是小论文，标题就是论文的题眼。阅卷第一眼看到的是结构像不像一篇文章，主副标题是最便宜的「像」。</div>
+    </li>
+
+    <li class="step">
+      <h4>正文用小标题分层，形式推荐「冒号 ＋ 解释」<span class="ts">47:42</span></h4>
+      <p>用清晰的「<b>一、……</b>」「<b>二、……</b>」分节，每个小标题<b>概括该段核心内容</b>。关键是<b>避免过于抽象</b> —— 推荐<b>「冒号＋解释」</b>的形式，让标题本身就说明这一节写什么。</p>
+      <div class="tpl">
+        <b>抽象写法（不推荐）：</b>一、AI 与文学<br>
+        <b>冒号＋解释（推荐）：</b>一、<mark>AI 写作的兴起</mark>：技术浪潮如何改写文学业态
+        <em>冒号前面是概念名（阅卷要踩的点），冒号后面是一句解释（说明你这节要论什么）。两边都给足了信息。</em>
+      </div>
+    </li>
+
+    <li class="step">
+      <h4>篇幅：800—1000 字，写满两页答题纸<span class="ts">52:10</span></h4>
+      <p>材料题相当于一篇小论文，字数建议 <b>800—1000 字</b>，<b>通常需要写满两页答题纸</b>。这是全卷字数要求最高的题型。</p>
+      <div class="why">把这个字数折到纸上就是「两页」，落笔前先把页数算好 —— 写到第二页收尾，节奏最稳。</div>
+    </li>
+  </ol>
+</section>
+
+<!-- ========== 开头 ========== -->
+<section class="section">
+  <h2 class="st">三、开头段落怎么写</h2>
+
+  <ol class="steps">
+    <li class="step">
+      <h4>第一件事：直接回应材料中的核心问题<span class="ts">24:07</span></h4>
+      <p>开头<b>不能绕</b>，要正面接住材料给的追问。老师举的原话是这两问：</p>
+      <div class="quote">
+        「<b>AI 时代创意写作是否还吃香</b>」<br>
+        「<b>文学教育如何进化迭代</b>」
+      </div>
+      <p>这两问就是开头的「接话点」—— 先承认问题成立，再给出你的判断。切忌一上来就堆理论、绕开材料。</p>
+    </li>
+
+    <li class="step">
+      <h4>第二件事：提出总论点<span class="ts">01:09:49</span></h4>
+      <p>总论点要落在这一句判断上：<b>AI 写作并非创意写作的终结，而是重构的契机，二者应相互成就。</b></p>
+      <div class="tpl">
+        <b>总论点可直接写：</b>AI 写作并非创意写作的终结，而是<mark>重构的契机</mark>；二者不是取代关系，而应<mark>相互成就</mark>。
+        <em>「并非……而是……」是这个总论点的原生句式，照用即可。</em>
+      </div>
+    </li>
+
+    <li class="step">
+      <h4>第三件事：用固定句式把开头撑起来<span class="ts">53:47</span></h4>
+      <p>老师给了一个可直接套用的句式模板，用来引出下文：</p>
+      <div class="tpl">
+        <b>模板：</b>「<mark>……之问与……之问，倒逼创意写作学科重构</mark>」
+        <em>把材料里的两问填进两个空，后面直接接「倒逼创意写作学科重构」，开头就完成了「回应材料 ＋ 亮总论点」两个动作。</em>
+      </div>
+      <div class="good">
+        <b>开头成品示例：</b>AI 时代创意写作是否还吃香之问与文学教育如何进化迭代之问，倒逼创意写作学科重构。
+        在笔者看来，AI 写作并非创意写作的终结，而是重构的契机；二者不是取代关系，而应相互成就。
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ========== 三段式 ========== -->
+<section class="section">
+  <h2 class="st">四、正文论点构建 · 三段式</h2>
+  <p style="margin:0 0 15px;color:var(--muted);font-size:14.5px">正文按「现状与挑战 → 倒逼机制 → 未来趋势」推进，三个小标题对应三节，每节承担一个明确任务。</p>
+
+  <div class="three">
+    <article class="pcard">
+      <span class="tag">第一部分</span>
+      <h4>AI 写作的兴起与挑战</h4>
+      <ul>
+        <li>描述 AI 写作现状及其对文学业态的改变 <span style="color:#8a7c60;font-size:12.5px">56:53</span></li>
+        <li>指出 AI 在<b>类型化文学</b>和<b>新闻报道</b>中的侵入 <span style="color:#8a7c60;font-size:12.5px">58:56</span></li>
+        <li>点出写作主体、版权、伦理等方面带来的挑战 <span style="color:#8a7c60;font-size:12.5px">58:56</span></li>
+        <li>强调 AI 无法完全取代人类写作，因为缺乏<b>情感、生命体验和规律经验</b> <span style="color:#8a7c60;font-size:12.5px">01:01:11</span></li>
+      </ul>
+      <div class="core"><b>收口句：</b>所以 AI 的侵入有边界 —— 边界就在情感与生命体验上。</div>
+    </article>
+
+    <article class="pcard">
+      <span class="tag">第二部分</span>
+      <h4>新节点与倒逼机制</h4>
+      <ul>
+        <li>论述 AI 如何<b>倒逼作家生产更优质的作品</b>，避免单纯模仿 <span style="color:#8a7c60;font-size:12.5px">01:02:42</span></li>
+        <li>分析 AI 对<b>创意写作教学</b>的推动：学科定位调整、教学方法升级 <span style="color:#8a7c60;font-size:12.5px">01:05:54</span></li>
+        <li>教学方法要结合<b>工作坊制、驻校作家制度</b>来讲 <span style="color:#8a7c60;font-size:12.5px">01:05:54</span></li>
+      </ul>
+      <div class="core"><b>收口句：</b>AI 不是替代者，而是把创作与教学推向更高标准的倒逼力量。</div>
+    </article>
+
+    <article class="pcard">
+      <span class="tag">第三部分</span>
+      <h4>未来趋势与人机共创</h4>
+      <ul>
+        <li>提出未来方向是「<b>人机共创</b>」或「<b>互惠互利</b>」 <span style="color:#8a7c60;font-size:12.5px">51:46</span></li>
+        <li>指出创意写作研究者应成为 <b>AI 规则的开发者</b> <span style="color:#8a7c60;font-size:12.5px">01:09:18</span></li>
+        <li>实现<b>技术主义与人文主义的双翼齐飞</b> <span style="color:#8a7c60;font-size:12.5px">01:09:18</span></li>
+      </ul>
+      <div class="core"><b>收口句：</b>从「被 AI 影响」转为「参与定义 AI」，这才是创意写作的主动权。</div>
+    </article>
+  </div>
+
+  <div class="panel" style="margin-top:15px">
+    <h3 class="sh" style="margin-top:0">三部分的小标题怎么起（照「冒号＋解释」写）</h3>
+    <div class="tpl" style="margin-top:0">
+      一、<mark>AI 写作的兴起</mark>：从工具革新到文学业态的改写<br>
+      二、<mark>倒逼与重构</mark>：AI 如何推动创作与教学升级<br>
+      三、<mark>人机共创</mark>：技术主义与人文主义的双翼齐飞
+      <em>三个小标题连起来读，本身就是一条完整的论证链：现状 → 机制 → 出路。</em>
+    </div>
+    <div class="warn" style="margin-bottom:0">
+      <b>三部分的内在逻辑别写散：</b>第一部分解决「AI 是什么、冲击到哪」，第二部分解决「为什么它反而是机会」，
+      第三部分解决「那我们该往哪走」。如果三节都在讲 AI 有多强，就是重复，拿不到三段的分数。
+    </div>
+  </div>
+</section>
+
+<!-- ========== 结尾 ========== -->
+<section class="section">
+  <h2 class="st">五、结尾怎么写</h2>
+
+  <div class="two">
+    <div class="panel">
+      <h4 style="margin:0 0 10px;font-size:15.5px;color:var(--accent)">升华主题 <span style="font-size:12.5px;color:#8a7c60;font-weight:400">01:10:04</span></h4>
+      <p style="margin:0;font-size:14.5px">重申 <b>AI 是创意写作的助手而非对立面，二者应互相成就。</b></p>
+      <div class="tpl" style="margin-bottom:0">
+        归根结底，AI 是创意写作的<b>助手</b>而非<b>对立面</b>，二者应当在相互成就中共同生长。
+      </div>
+    </div>
+    <div class="panel">
+      <h4 style="margin:0 0 10px;font-size:15.5px;color:var(--accent)">展望愿景 <span style="font-size:12.5px;color:#8a7c60;font-weight:400">01:10:12</span></h4>
+      <p style="margin:0;font-size:14.5px">强调 AI 时代，<b>创意写作教育者和创作者需共同构建新的生态</b>，为写作配置技术与人文的双重支持。</p>
+      <div class="tpl" style="margin-bottom:0">
+        面向未来，创意写作教育者与创作者需共同构建新的生态，为写作配置<b>技术与人文的双重支持</b>。
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:14px">
+    <b>结尾的两个动作，顺序不要反：</b>先「升华」——把整篇的判断收成一句（助手而非对立面）；
+    再「展望」——把视角从一场争论推向一种生态。升华是对内的收束，展望是对外的打开。
+  </div>
+</section>
+
+<!-- ========== 注意事项 ========== -->
+<section class="section">
+  <h2 class="st">六、必须守住的两条</h2>
+
+  <div class="two">
+    <div class="panel">
+      <h4 style="margin:0 0 10px;font-size:15.5px;color:var(--accent2)">① 必须利用材料 <span style="font-size:12.5px;color:#8a7c60;font-weight:400">21:54</span></h4>
+      <p style="margin:0 0 9px;font-size:14.5px">要引用材料中的<b>关键语句</b>（专家观点、数据案例）来支撑论点，<b>避免脱离材料空谈</b>。</p>
+      <div class="sk" style="margin:0">
+        <div class="li"><span class="w">引专家</span><span class="c">把材料里专家的判断句直接引出来，作为你的论据。<em>「正如材料中某学者所指出的……」，一句就能把论点锚在材料上。</em></span></div>
+        <div class="li"><span class="w">用数据</span><span class="c">材料给的数据、案例要落地使用，别只当背景。<em>数据是材料题最好用的硬论据。</em></span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h4 style="margin:0 0 10px;font-size:15.5px;color:var(--accent2)">② 必须结合专业知识 <span style="font-size:12.5px;color:#8a7c60;font-weight:400">31:50</span></h4>
+      <p style="margin:0 0 9px;font-size:14.5px">把<b>创意写作理论</b>融入对 AI 影响的分析中，体现专业深度。老师点名两个：</p>
+      <div class="sk" style="margin:0">
+        <div class="li"><span class="w">驻校作家制度</span><span class="c">讲 AI 对教学冲击时用它作论据 —— 写作能力中无法被算法化的部分，正靠这套制度传承。</span></div>
+        <div class="li"><span class="w">工作坊制</span><span class="c">讲方法升级时用它 —— 工作坊的即时反馈、同伴互评是 AI 目前给不了的教学机制。</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <b>这两条是本页最容易被忽略、也最贵的两条。</b>材料题与其他题型的分水岭就在于：
+    <b>材料要真用、理论要真上</b>。整篇如果既不引材料、又不带创写理论术语，即使结构完整、字数写足，也只是「一篇通顺的议论文」，而不是「材料题」。
+  </div>
+</section>
+
+<!-- ========== 全文范例 ========== -->
+<section class="section">
+  <h2 class="st">七、按此写法的参考全文（约 950 字）</h2>
+  <p style="margin:0 0 14px;color:var(--muted);font-size:14.5px">下面是严格按上面五步落笔法写成的示例，可直接作为考场框架记忆。<b>其中标注的部分是本页各步模板的落点。</b></p>
+
+  <article class="demo">
+    <p class="dt">AI 写作与创意写作互惠共生</p>
+    <p class="ds">——从技术冲击到学科重构的路径思考</p>
+
+    <p>AI 时代创意写作是否还吃香之问，与文学教育如何进化迭代之问，倒逼创意写作学科重构。在笔者看来，<mark>AI 写作并非创意写作的终结，而是重构的契机</mark>；二者不是取代关系，而应相互成就。技术浪潮既冲击了既有的文学业态，也把创意写作推到了重新确认自身价值的位置上。</p>
+
+    <h5>一、AI 写作的兴起：从工具革新到文学业态的改写</h5>
+    <p>近年 AI 写作能力的跃升，正在改变文学生产的基本面貌。从生成速度、文本规模到成本结构，AI 都已构成对既有写作方式的实际冲击。<mark>最明显的侵入发生在类型化文学与新闻报道领域</mark>：这两类写作对格式与信息密度的依赖高于对个体经验的要求，恰恰落在 AI 的能力区间内，因而最先被替代。</p>
+    <p>与此同时，挑战远不止于效率。写作主体的归属、版权的界定、内容的伦理风险，都随之浮现。然而，<mark>AI 无法完全取代人类写作，因为它缺少情感、生命体验和规律经验</mark> —— 它可以重组已有的表达，却无法生成一个真实活过的瞬间。情感的不可替代性，正是人类写作最后的、也是最稳固的边界。</p>
+
+    <h5>二、倒逼与重构：AI 如何推动创作与教学升级</h5>
+    <p>换个角度看，AI 的侵入反而构成了倒逼机制。<mark>当模仿性写作可以被轻易生成，作家的价值就回到了不可复制的部分</mark>——独特的生活经验、对时代情绪的捕捉、对形式的原创性探索。这意味着 AI 在客观上倒逼作家生产更优质的作品，而不是停留在单纯模仿的层面。</p>
+    <p>这一倒逼同样作用于创意写作教学。一方面，学科定位需要重新调整，从培养「能写」的人转向培养「不可被替代地写」的人；另一方面，教学方法必须升级。<mark>工作坊制</mark>所提供的即时反馈与同伴互评，<mark>驻校作家制度</mark>所传递的默会经验，都是当前 AI 难以替代的教学机制。把这些机制用足，本身就是对 AI 冲击的回应。</p>
+
+    <h5>三、人机共创：技术主义与人文主义的双翼齐飞</h5>
+    <p>面向未来，更值得争取的方向不是对抗，而是<mark>人机共创</mark>与互惠互利：让 AI 承担资料整理、结构推演、语言润色等重复性劳动，让创作者把精力集中在立意、情感与形式上。</p>
+    <p>更深一层的转变在于话语权。<mark>创意写作研究者应当成为 AI 规则的开发者</mark>，而不是被规则塑造的对象。当文学的价值判断能够进入算法与评价体系的设计，技术主义与人文主义才有可能双翼齐飞 —— 这既是学科的自我保护，也是它对技术的反向贡献。</p>
+
+    <p>归根结底，<mark>AI 是创意写作的助手而非对立面</mark>，二者应当在相互成就中共同生长。面向未来，创意写作教育者与创作者需共同构建新的生态，<mark>为写作配置技术与人文的双重支持</mark>。唯有如此，创意写作才能在技术的浪潮中守住人的温度，也接住技术的势能。</p>
+
+    <p class="mark-note">全文约 950 字 ｜ 主标题＋副标题 ✓ ｜ 三个冒号式小标题 ✓ ｜ 引材料＋创写理论术语 ✓</p>
+  </article>
+</section>
+
+<!-- ========== 自查 ========== -->
+<section class="section">
+  <h2 class="st">八、考场自查清单</h2>
+  <div class="panel">
+    <p style="margin:0 0 6px;font-size:14.5px">落笔前后逐条点一遍（点击可打卡，进度存在本机）：</p>
+    <div id="chks">
+      <span class="chk" data-k="t1">主标题有核心观点</span>
+      <span class="chk" data-k="t2">副标题进一步阐释</span>
+      <span class="chk" data-k="t3">开头直接回应材料两问</span>
+      <span class="chk" data-k="t4">用了「……之问与……之问」句式</span>
+      <span class="chk" data-k="t5">总论点写明「重构契机／相互成就」</span>
+      <span class="chk" data-k="t6">小标题用「冒号＋解释」</span>
+      <span class="chk" data-k="t7">三段式：现状挑战 → 倒逼机制 → 人机共创</span>
+      <span class="chk" data-k="t8">第一部分点到类型化文学与新闻</span>
+      <span class="chk" data-k="t9">第一部分点到主体／版权／伦理</span>
+      <span class="chk" data-k="t10">写明 AI 缺情感、生命体验、规律经验</span>
+      <span class="chk" data-k="t11">第二部分用上工作坊制／驻校作家制度</span>
+      <span class="chk" data-k="t12">第三部分写「AI 规则开发者」</span>
+      <span class="chk" data-k="t13">第三部分写「技术主义与人文主义」</span>
+      <span class="chk" data-k="t14">结尾升华：助手而非对立面</span>
+      <span class="chk" data-k="t15">结尾展望：技术与人文双重支持</span>
+      <span class="chk" data-k="t16">引用了材料关键语句或数据</span>
+      <span class="chk" data-k="t17">字数 800—1000，写满两页</span>
+    </div>
+    <div style="margin-top:13px;padding-top:12px;border-top:1px dashed var(--rule);display:flex;align-items:center;gap:13px;flex-wrap:wrap">
+      <span style="font-size:13.5px;color:var(--muted)">自查进度</span>
+      <div style="flex:1;min-width:130px;height:8px;background:var(--soft);border-radius:4px;overflow:hidden">
+        <i id="bri" style="display:block;height:100%;width:0;background:var(--gold);transition:width .3s"></i>
+      </div>
+      <span id="ptxt" style="font-size:13.5px;font-weight:700;color:var(--accent2)">0 / 17</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="footnote">
+    <b>本页性质说明：</b>内容依据考研直播「AI 听记」转写稿中讲者对材料题答题方式的口述整理，
+    每条要点后括号内的时间戳为听记原稿时间点，便于回溯核对。
+    讲者所述为答题经验与操作细节，<b>非官方评分标准原文</b>；官方字数与分值口径请对照
+    <a href="647创意写作基础_答题评分标准.html" style="color:var(--accent2)">647 创意写作基础 · 答题评分标准</a>
+    （材料题 800—1000 字、大分论点 3—4 个、每点 8—10 分、要求「创写理论准确」）。
+    「参考全文」为按模板生成的示范答案，供框架记忆，考场请依具体材料改写，勿直接套用。<br>
+    考试以最新简章与考场要求为准。
+  </div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  var KEY = 'matq_ai_checks';
+  var all = document.querySelectorAll('.chk');
+  var st = {};
+  try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { st = {}; }
+
+  function update() {
+    var done = 0;
+    all.forEach(function (el) { if (el.classList.contains('done')) done++; });
+    document.getElementById('bri').style.width = (all.length ? done / all.length * 100 : 0) + '%';
+    document.getElementById('ptxt').textContent = done + ' / ' + all.length;
+  }
+
+  all.forEach(function (el) {
+    if (st[el.getAttribute('data-k')]) el.classList.add('done');
+    el.addEventListener('click', function () {
+      el.classList.toggle('done');
+      var s = {};
+      all.forEach(function (x) { if (x.classList.contains('done')) s[x.getAttribute('data-k')] = 1; });
+      try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {}
+      update();
+    });
+  });
+  update();
+})();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

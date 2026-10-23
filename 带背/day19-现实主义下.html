@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外国文学带背 第19天 · 19世纪现实主义（下）</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css">
+<style>
+  :root{
+    --bg:#faf8f3; --panel:#fff; --ink:#2b2b2b; --ink-soft:#555;
+    --gold:#a8854a; --gold-deep:#7d5e2c; --gold-bg:#f4ecdb; --border:#e6dfcc;
+    --highlight:#fff8e6; --red:#a23b3b; --red-bg:#fbeeee; --red-border:#d8b8b8;
+    --blue:#2d4a6e; --blue-bg:#e8eff5; --green:#3d6b4a; --green-bg:#eaf3ec;
+    --fs-base:15px;
+  }
+  *{box-sizing:border-box}
+  html{font-size:var(--fs-base)}
+  body{margin:0;padding:0;font-family:"LXGW WenKai","LXGW WenKai TC","霞鹜文楷","Source Han Serif SC","Noto Serif CJK SC","PingFang SC","Microsoft YaHei",serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 18px 80px}
+
+  header.head{background:linear-gradient(135deg,#2b2b2b 0%,#4a3a20 100%);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  header.head .day{font-size:.87rem;letter-spacing:.4rem;opacity:.75;margin-bottom:.5rem}
+  header.head h1{font-size:1.87rem;margin:0 0 .67rem;font-weight:700;letter-spacing:.06em}
+  header.head .sub{font-size:1rem;opacity:.85;line-height:1.7}
+  .tags{display:flex;gap:.67rem;margin-top:1.07rem;flex-wrap:wrap}
+  .tag{padding:.27rem .93rem;border-radius:1.33rem;font-size:.8rem;background:rgba(244,236,219,.18);border:1px solid rgba(244,236,219,.35)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}
+  .card-head{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}
+  .num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+  .card-title{font-size:1.2rem;font-weight:700;color:var(--gold-deep);flex:1}
+  .exam-level{font-size:.78rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;white-space:nowrap}
+  .lv-ss{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .lv-s{background:var(--blue-bg);color:var(--blue);border:1px solid #b9cde0}
+  .lv-l{background:#f0f0ee;color:#777;border:1px solid #d5d5d0}
+  .card-body{padding:20px 26px}
+  .collapsed .card-body{display:none}
+
+  .sub-h{font-size:1.07rem;font-weight:700;color:var(--gold-deep);margin:1.4rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+  .sub-h::before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px}
+
+  .term{font-weight:700;color:var(--gold-deep)}
+  .hl{background:linear-gradient(transparent 60%,#fff3a8 60%);padding:0 .13rem}
+  p{margin:.53rem 0;font-size:.97rem}
+  ol,ul{margin:.53rem 0;padding-left:1.6rem}
+  ol li,ul li{margin:.3rem 0;font-size:.97rem}
+
+  .quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.6rem 0;font-size:.95rem;border-radius:0 .4rem .4rem 0}
+  .box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.87rem 1.1rem;margin:.7rem 0;background:#fffefa;font-size:.94rem}
+
+  .answer{background:var(--green-bg);border:1px solid #bcd6c2;border-left:4px solid var(--green);border-radius:0 .53rem .53rem 0;padding:.93rem 1.1rem;margin:.8rem 0}
+  .answer .a-t{font-weight:700;color:var(--green);margin-bottom:.45rem;font-size:.98rem}
+  .answer p,.answer li{font-size:.94rem}
+
+  .mnem{background:#fff4e0;border:1px dashed var(--gold);border-radius:.4rem;padding:.67rem .93rem;margin:.7rem 0;font-size:.93rem}
+  .mnem .m-t{font-weight:700;color:var(--gold-deep);margin-bottom:.3rem}
+
+  .warn{background:var(--red-bg);border:1px solid var(--red-border);border-left:4px solid var(--red);border-radius:0 .53rem .53rem 0;padding:.8rem 1rem;margin:.7rem 0;font-size:.93rem}
+  .warn .w-t{font-weight:700;color:var(--red);margin-bottom:.3rem}
+
+  .paper{background:#fffdf6;border:1px solid var(--border);border-radius:.5rem;padding:.87rem 1.1rem;margin:.8rem 0;font-size:.93rem}
+  .paper .p-t{font-weight:700;color:var(--red);margin-bottom:.45rem;font-size:.95rem}
+  .paper li{margin:.22rem 0}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0}
+  th{background:var(--gold-bg);padding:.5rem;border:1px solid var(--border);text-align:left}
+  td{padding:.5rem;border:1px solid var(--border);vertical-align:top}
+
+  .chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;font-size:.85rem;color:var(--ink-soft);transition:.2s;user-select:none}
+  .chk:hover{background:#e9dfc7}
+  .chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}
+  .study-bar{display:flex;gap:.6rem;margin:.87rem 0 .4rem;flex-wrap:wrap;align-items:center}
+
+  .ctrl-bar{display:flex;gap:.67rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--gold-deep);border-radius:1.2rem;cursor:pointer;font-size:.87rem;font-family:inherit;transition:.2s}
+  .ctrl-bar button:hover{background:var(--gold);color:#fff}
+
+  .font-ctrl{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}
+  .font-ctrl button{width:2rem;height:2rem;border:none;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:inherit}
+  .font-ctrl button:hover{background:var(--gold);color:#fff}
+  .font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}
+  .font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}
+
+  .prog{background:#fff9eb;border:1px solid var(--border);border-radius:8px;padding:.8rem 1.1rem;margin-bottom:20px;font-size:.9rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .prog .bar{flex:1;min-width:120px;height:8px;background:#eee6d2;border-radius:4px;overflow:hidden}
+  .prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));transition:width .4s}
+
+  footer.foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.4rem}
+  @media(max-width:720px){.card-body{padding:1.1rem}header.head h1{font-size:1.47rem}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day18-十九世纪现实主义下.html" title="第18天带背 · 十九世纪现实主义文学（下）">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day19-自然主义-浪漫主义上.html" title="外国文学带背 第19天 · 自然主义 ＋ 浪漫主义（上）">下一天 →</a>
+</nav>
+
+
+<header class="head">
+  <div class="day">DAY 19 · 外国文学</div>
+  <h1>19世纪现实主义（下）</h1>
+  <div class="sub">心灵辩证法 · 《安娜·卡列尼娜》 · 契诃夫 · 美国现实主义 · 英法俄三国比较 · 真题回顾<br>内容取自带背 PPT 逐页识读 · 结合串讲资料补全</div>
+  <div class="tags">
+    <span class="tag">西北大学 MFA</span><span class="tag">外国文学史</span>
+    <span class="tag">第19天</span><span class="tag">⭐ 四星重点</span><span class="tag">含真题</span>
+  </div>
+</header>
+
+<div class="prog">
+  <span>今日进度</span>
+  <div class="bar"><i id="progBar"></i></div>
+  <span id="progTxt">0 / 0</span>
+</div>
+
+<div class="ctrl-bar">
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.remove('collapsed')})">📖 全部展开</button>
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.add('collapsed')})">📕 全部折叠</button>
+  <button onclick="window.print()">🖨️ 打印 / 导出 PDF</button>
+</div>
+
+<!-- 0 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">★</div>
+    <div class="card-title">今日带背指令 · 重点标注</div>
+    <span class="exam-level lv-ss">先看这个</span>
+  </div>
+  <div class="card-body">
+    <p>1️⃣ <span class="hl">心灵辩证法</span>名词解释</p>
+    <p>2️⃣ 重要‼️ <span class="hl">安娜形象、卡列宁形象</span>主要背；<span class="hl">列文形象</span>简单点背；<span class="hl">悲剧原因</span>简单背；<span class="hl">艺术特点</span>重点背；<span class="hl">安娜和娜拉的影响比较</span>重点背</p>
+    <p>3️⃣ <span class="hl">契诃夫</span>了解创作前后期，和<span class="hl">美国现实主义</span>了解作家作品</p>
+    <p>4️⃣ 重要‼️ <span class="hl">英法俄三国现实主义比较</span></p>
+  </div>
+</div>
+
+<!-- 1 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">1</div>
+    <div class="card-title">心灵辩证法（名词解释 · 必背）</div>
+    <span class="exam-level lv-ss">★★★ 名词解释</span>
+  </div>
+  <div class="card-body">
+    <div class="answer">
+      <div class="a-t">✅ 标准答案（背这段就够）</div>
+      <p>“心灵辩证法”是<span class="term">车尔尼雪夫斯基</span>对<span class="term">托尔斯泰</span>创作中独特心理描写的概括，即作者善于<span class="hl">“描绘心理过程本身，这一过程的形态和规律”</span>。</p>
+      <p>托尔斯泰从不静止地描写人物心理，而是始终细致地描写心理在<span class="hl">外界影响下的变化过程</span>。他特别注意描写人物各种复杂情感的交织和更替、思想情绪的瞬息变化，通过人物复杂的矛盾心理过程来<span class="hl">反映人的变化和社会冲突</span>。</p>
+    </div>
+    <div class="mnem">
+      <div class="m-t">🧠 三句速记</div>
+      谁提出（车尔尼雪夫斯基）· 是什么（描绘心理过程本身）· 怎么写（写"变"不写"静"，写交织更替，以心理变化映社会冲突）
+    </div>
+    <div class="warn">
+      <div class="w-t">⚠️ 易错点</div>
+      是"<b>心灵</b>辩证法"，不是"心理辩证法"；提出者是<b>车尔尼雪夫斯基</b>（评论者），对象是<b>托尔斯泰</b>（被评论者），别搞反。
+    </div>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">2</div>
+    <div class="card-title">《安娜·卡列尼娜》· 安娜形象（主要背）</div>
+    <span class="exam-level lv-ss">★★★ 人物形象</span>
+  </div>
+  <div class="card-body">
+    <div class="box">总判定：一个追求<b>个性解放</b>的贵妇形象，一个被虚伪道德所束缚和扼杀的悲剧人物。</div>
+    <p><span class="term">（1）光彩照人、充满生命力却被压抑的贵族女性。</span>小说里一登场，安娜就以其优雅、高贵和脸上那股"<span class="hl">被压抑的生气</span>"吸引了所有人的目光。她的美丽不仅是外表，更是一种内在的生命活力。她的追求以悲剧告终，但托尔斯泰借此批判了贵族上流社会的虚伪与堕落，同时也反映出其思想的局限以及坚持现实主义创作原则的胜利。</p>
+    <p><span class="term">（2）感情强烈而真挚，并敢于反叛的少女。</span>当她还是少女时，就由姑母作主，嫁给她大20岁的省长卡列宁。卡列宁枯燥乏味，感情贫乏。牢狱般的生活窒息了她生命中隐伏的爱情。和渥伦斯基的相遇，唤起了她长期受压抑的处于沉睡状态的爱的激情。她无法忍受虚伪，对爱情自由的执著追求，体现了贵族妇女个性解放的要求，具有<b>反封建性质</b>。</p>
+    <p><span class="term">（3）她对渥伦斯基的爱认真执著到疯狂和神经质的地步。</span>当渥伦斯基明显表现出对安娜的冷淡时：失去一切的安娜绝望地想找回渥伦斯基最初的激情，找回那种不顾一切的爱，而渥伦斯基对安娜的"反常"越来越反感。安娜的感情受到极为惨重的打击，这使她对渥伦斯基的爱更加炽热真诚，发狂到了极点。她的独特个性是<b>把爱当作生命</b>，她想以死唤回爱的生。</p>
+    <p><span class="term">（4）分裂又融合的矛盾综合体。</span>她勇敢又脆弱：敢于对抗整个社会，却无法战胜内心的罪恶感和孤独。她真诚又自私：追求真实的自我和爱情，却在这个过程中深深伤害了儿子和丈夫。她是受害者也是反抗者：既是沙俄上流社会虚伪道德的牺牲品，也是用生命向其发出最强烈抗议的反抗者。</p>
+    <div class="sub-h">必背引文</div>
+    <div class="quote">“他们不知道八年来他是怎样摧残了我的生命，摧残了活在我身体内的一切的东西——他甚至一次都没有想过我是一个需要爱情、活的女人。”<br>
+    “我爱他，我是他的情妇……我恨您……”<br>
+    卧轨自杀前内心独白（全书高潮）：“……那里，就在车轮中间，我要惩罚他……”</div>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">3</div>
+    <div class="card-title">《安娜·卡列尼娜》· 卡列宁形象（主要背）</div>
+    <span class="exam-level lv-ss">★★★ 人物形象</span>
+  </div>
+  <div class="card-body">
+    <div class="box">总判定：一个被沙皇官僚体制<span class="hl">异化</span>的官僚，体制内的成功者、情感上的低能儿。</div>
+    <p><span class="term">（1）被异化者。</span>沙皇官僚体制制度的化身：刻板、虚伪、重秩序。他的生活、思维和言谈举止都像一部精确运转的机器。对他而言，维持体面、遵守规范和保持仕途顺利高于一切。在得知安娜出轨后，他的第一反应不是痛苦，而是思考"如何找到一种最得体、最方便、因而也是最合理的途径来摆脱这种尴尬处境"。<span class="hl">情感问题被他自动处理成了一个需要解决的"行政事务"。</span></p>
+    <p><span class="term">（2）情感压抑者。</span>缺乏爱的能力，用理性冰封感性。他并非没有情感，而是极度恐惧和压抑自己的情感。因从小是孤儿，从未体验过正常的家庭温暖，于是将全部精力投入仕途，用冰冷的理性筑起一道高墙。他比安娜大二十岁，娶她更多是因为社会地位的匹配。他从未真正理解过安娜的情感需求。他认为作为一个丈夫，他提供了物质保障和社会地位，这就尽到了责任，而爱情是多余甚至危险的。当痛苦袭来时，他拒绝感受它，而是告诉自己"我不应该感到不幸"。</p>
+    <p><span class="term">（3）宗教与道德的伪善者。</span>以"宽恕"为名的精神折磨安娜。在安娜生下与渥伦斯基的女儿后生命垂危时，卡列宁在情感的冲击下展现了真正的基督精神，选择了"宽恕"，甚至与渥伦斯基握手言和。然而，这种宽恕很快变质，他发现自己沉浸于一种"道德上的自满"中，享受自己作为"受害者"和"圣人"的角色。他不但不离婚，而且用这种"<span class="hl">宽恕</span>"作为道德枷锁，将安娜捆绑在身边。安娜感到，这种宽恕"把她压得抬不起头来"，比惩罚更令人窒息。这暴露了其道德姿态下的深层虚伪和控制欲。</p>
+    <p><span class="term">（4）可怜的失败者。</span>体制内的成功者，情感上的低能儿。在公众面前，他是成功的、受人尊敬的部长。但在私人情感领域，他是一个彻底的失败者。他无法赢得妻子的爱，甚至不知道如何与儿子谢辽沙建立亲密的父子关系。他检查儿子的功课，像上司考核下属一样冰冷、程式化。谢辽沙对他只有敬畏和恐惧，没有爱。安娜死后，卡列宁收养了安娜与渥伦斯基的女儿。这个举动看似高尚，但更像一种机械的责任感驱使。他最终完全活在了自己的壳里，被充满算计的莉季娅伯爵夫人所包围和操控，更加孤独和可悲。</p>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">4</div>
+    <div class="card-title">《安娜·卡列尼娜》· 列文形象（简单背）</div>
+    <span class="exam-level lv-s">★ 了解</span>
+  </div>
+  <div class="card-body">
+    <div class="box">一句话定位：<span class="hl">"忏悔贵族"的典型</span>，具有自传性色彩的主人公；与安娜追求自身幸福不同，列文探索的是俄国社会的发展道路。</div>
+    <ul>
+      <li>对农奴制度改革后社会现实的不满，使列文力图避开资本主义发展模式，找到普遍富裕的道路。</li>
+      <li>有感于自己的富足和农民的贫困之间的巨大差距，他主张与人民接近、合作经营、均分红利。</li>
+      <li>他以这种"<span class="hl">不流血的革命</span>"，来抵制资本主义的侵蚀。但这种社会主张不过是美丽的幻想，改革以失败告终，列文精神濒临崩溃，最后在宗教中获得灵魂的安宁。</li>
+      <li>通过这一精神探索者的形象，托尔斯泰表达了自己的社会思想。<b>列文的矛盾与痛苦，正是作家这一时期精神危机的反映。</b></li>
+    </ul>
+    <div class="mnem"><div class="m-t">🧠 对比记忆</div>安娜线＝家庭悲剧/爱情/城市贵族；列文线＝农事改革/社会/农村。两条平行主线，构成"<b>拱形结构</b>"。</div>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">5</div>
+    <div class="card-title">安娜悲剧原因（简单背）</div>
+    <span class="exam-level lv-s">★★ 简答</span>
+  </div>
+  <div class="card-body">
+    <p><span class="term">1. 社会原因：</span>封建社会和虚伪上流社会的道德习俗造成了安娜的不幸。安娜之所以不能见容于上流社会，不是她爱上丈夫以外的男子，而是由于她竟然<b>敢于公开承认这种爱情</b>。这种行为本身就是对上述社会的一种挑战。上流社会不能容忍安娜公开与丈夫决裂和不"体面"的行为，对她进行了严厉的惩罚。卡列宁为了折磨她，拒绝离婚，并且剥夺了她心爱的儿子。在失去一切之后安娜生活中唯一的安慰便是渥伦斯基的爱情了。爱情的破裂使安娜失去了生存的精神依据，上流社会通过渥伦斯基的手杀死了她。</p>
+    <p><span class="term">2. 人物性格原因：</span>安娜自我意识未能彻底解放（矛盾综合体）。生命力被压抑，却又羞耻于自己的情欲，出于情欲出轨却又受内心宗教道德观念（认为通奸是罪孽）禁锢，这一切使她陷入了极度的痛苦、猜疑和不安全感中。她越来越怀疑渥伦斯基对她的爱会消退，会为了前途和社会地位离开她。她变得喜怒无常，用情绪化和争吵来索取爱的保证。例如，她会因为渥伦斯基外出参加社交活动而歇斯底里，认为这是他不爱她的证据。</p>
+    <p><span class="term">3. 作者态度：</span>托尔斯泰对安娜追求个性解放的矛盾态度，他不赞成西方个人主义，反对女性抛弃家庭的责任，主张传统的女性观。因此他给予安娜的命运结局是悲剧性的。</p>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">6</div>
+    <div class="card-title">《安娜·卡列尼娜》艺术特征（重点背）</div>
+    <span class="exam-level lv-ss">★★★ 艺术特色</span>
+  </div>
+  <div class="card-body">
+    <p><span class="term">1. 出色的心理描写（心灵辩证法）。</span>人物的心理描写生动地展现了人物内心世界的丰富和辩证的过程。</p>
+    <ul>
+      <li><b>（1）两位主人公列文和安娜的心理描写侧重不同：</b>列文——注重对其精神探索过程的追逐描写，有层次地展开其心理运动；安娜——突出其内心情感与心理矛盾的多重性与复杂性。在具体情节展开过程中，小说则善于捕捉人物<b>瞬间心理的变化过程</b>。<br><i>eg. 安娜和渥伦斯基相遇后，当卡列宁再次去车站接她时，安娜觉得他很丑恶。</i></li>
+      <li><b>（2）小说善于通过描写人物的外部特征来揭示内心世界</b>，一个笑靥，一个眼神和动作，都成了传达心灵世界的媒介。作者常常利用<b>眼神</b>和<b>动作</b>来传达内心情感，揭示"<span class="hl">被压抑的生气</span>"。<br><i>eg. 当渥伦斯基再次见到安娜时，他注意到"有一股被压抑的生气在她的脸上流露，在她那亮晶晶的眼睛和把她朱唇弄弯曲了的轻微的笑容之间掠过"。</i></li>
+      <li><b>（3）小说通过内心话语的描写直接展示人物的内心世界。</b>其内心话语常表现出<b>随机和跳跃</b>的特征，使得其揭示的心理过程更加真实、复杂。<br><i>eg1. 安娜在马车驶向火车站途中的思绪跳跃毫无逻辑，从爱情思考到沃伦斯基到商店招牌。<br>eg2. 列文躺在星空下对于生命、自我思考。</i></li>
+    </ul>
+    <p><span class="term">2. 肖像描写富有独创性。</span>如安娜第一次在舞会上出现时，作者通过对她的穿着、佩带的首饰、外貌等的描写来揭示她内心被压抑的情感。<br><i>（举例：她那穿着简朴的黑衣裳的姿态是迷人的，她那戴着手镯的圆圆的手臂是迷人的，她那挂着一串珍珠的结实的颈项是迷人的，她的松乱的卷发是迷人的，她的小脚小手的优雅轻快的动作是迷人的，她那生气勃勃的、美丽的脸蛋是迷人的，但是在她的迷人中有些可怕和残酷的东西。——吉提自言自语道："她身上是有些异样的、恶魔般的、迷人的地方。"）</i></p>
+    <p><span class="term">3. 结构完整，拱形结构。</span>拱形衔接天衣无缝两条线索互相呼应，具有深刻的内在联系。<b>两条线索：安娜的家庭悲剧、列文的农事改革。</b></p>
+    <ul>
+      <li>严肃地对待人生，按照自己的理想选择生活道路，这是安娜与列文的共同之处，也是小说中两条主要情节线的一个内在联系点。</li>
+      <li>安娜的人生追求以实现个人的爱、幸福为目标，列文的生活道路则以普通的人生理想和社会理想为目的。在这种深层意义的对照上，列文的情节线可以说是安娜情节线的继续和延伸。</li>
+    </ul>
+    <div class="mnem"><div class="m-t">🧠 三点速记</div>心理描写（心灵辩证法：过程/外部特征/内心话语）· 肖像描写（独创性，以貌显情）· 拱形结构（双线呼应，列文线是安娜线的继续和延伸）</div>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">7</div>
+    <div class="card-title">安娜和娜拉的形象比较（重点背）</div>
+    <span class="exam-level lv-ss">★★★ 跨作品比较</span>
+  </div>
+  <div class="card-body">
+    <div class="box">《安娜·卡列尼娜》是19世纪俄国批判现实主义作家托尔斯泰的作品，当时的俄国是封建农奴专制的社会；《玩偶之家》是19世纪挪威作家易卜生创作的社会问题剧，当时的社会已受"个性解放思想"的影响。</div>
+
+    <div class="sub-h">相同处</div>
+    <ol>
+      <li>都是<b>反抗社会的典型，但都局限于个人解放</b>。</li>
+      <li>都要求妇女<b>人格独立，追求个性解放</b>。
+        <div style="margin-left:1rem">安娜：公开非婚姻的爱情，反对虚伪。</div>
+        <div style="margin-left:1rem">娜拉：独立借款、还款，独立承认冒名签字（伪造签名救丈夫）的责任，不愿作丈夫的玩偶。</div>
+      </li>
+    </ol>
+
+    <div class="sub-h">不同处</div>
+    <p><span class="term">1. 反抗社会所达到的高度不一样。</span></p>
+    <div style="margin-left:1rem">
+      <p>安娜：局限于<b>道德、婚姻</b>。和渥伦斯基的相遇后，付出了代价（如遭社会的谴责，失去了孩子），但体验了爱情的欢乐。安娜对社会的总结是"<span class="hl">全是虚伪，全是谎话，全是欺骗，全是罪恶</span>"。</p>
+      <p>娜拉：对资本主义社会中的<b>法律、道德、宗教</b>全面的批判。（如娜拉说："对于法律我要想想是不是正确，难道法律不允许女儿爱父亲，妻子救丈夫。"）</p>
+    </div>
+    <p><span class="term">2. 两人所接受的思潮不同。</span></p>
+    <div style="margin-left:1rem">
+      <p>安娜：接受的是<b>爱情至上</b>的思潮。所以渥伦斯基对她冷淡后，她表现出悲观绝望的情绪。</p>
+      <p>娜拉：接受的是<b>个人解放</b>思想的影响。所以她要离开"玩偶之家"，娜拉的出走给人留下了深刻的思考。</p>
+    </div>
+    <p><span class="term">3. 结局不同。</span></p>
+    <div style="margin-left:1rem">
+      <p>安娜：最后死亡。原因是封建社会不能容忍安娜公开与丈夫决裂和不"体面"的行为。另一原因是因为安娜自身性格的矛盾，和渥伦斯基的相遇使她有一种负罪感，时时处于孤独、无助的境地，因此只能以死来结束生命。</p>
+      <p>娜拉：出走。她不会走向死亡。在个性解放的呼吁越来越强烈的社会里，娜拉的结局受到更多人的同情。</p>
+    </div>
+
+    <div class="mnem"><div class="m-t">🧠 一句话对比</div>安娜为<b>爱</b>而死，死在旧道德的轨道上；娜拉为<b>我</b>而走，走向尚未写明的远方。<br>
+    比较四刀：<b>性质</b>（道德婚姻 vs 法律道德宗教）· <b>思潮</b>（爱情至上 vs 个人解放）· <b>结局</b>（死亡 vs 出走）· <b>高度</b>（都局限个人解放）。</div>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">8</div>
+    <div class="card-title">契诃夫（了解创作前后期）</div>
+    <span class="exam-level lv-s">★★ 了解＋可考</span>
+  </div>
+  <div class="card-body">
+    <div class="box">19世纪俄国批判现实主义文学的最后一位伟大作家，<span class="hl">短篇小说艺术大师</span>，出色的戏剧家。</div>
+
+    <div class="sub-h">早期创作（分两类）</div>
+    <ol>
+      <li><b>讽刺当时社会的奴性心理、庸俗作风、揭露畸形社会。</b><br>《小公务员之死》：小公务员切尔维亚科夫。《变色龙》：奥楚蔑洛夫"走狗"典型，是沙皇警察制度的产物。</li>
+      <li><b>描写下层人民的悲惨生活。</b><br>《苦恼》《万卡》《哀伤》。</li>
+    </ol>
+
+    <div class="sub-h">中后期创作</div>
+    <ul>
+      <li><b>中期：</b>批判错误的社会思潮——《第六病室》（中篇小说）。</li>
+      <li><b>后期：</b>继续批判错误社会思潮，并涉及沙皇时代知识分子的生活——《套中人》。</li>
+      <li><b>最后一部剧作：</b>《樱桃园》。</li>
+    </ul>
+
+    <div class="mnem"><div class="m-t">🧠 一句话串线</div>早期"笑中带刺"（奴性心理＋下层悲惨）→ 中期《第六病室》批思潮 → 后期《套中人》写知识分子 → 收于《樱桃园》。</div>
+
+    <div class="sub-h">补充：短篇小说艺术特点（简答可加）</div>
+    <ol>
+      <li>善于选取日常生活中习以为常的人和事，尖锐地提出社会问题，鞭挞庸俗习气。</li>
+      <li><b>高度的简洁性。</b>短小精悍、结构精巧，擅长开门见山，结尾具有<b>开放性</b>；情节单一，写人重心理与性格刻画，具"<span class="hl">心理抒情小说</span>"特点。</li>
+      <li><b>幽默笔调，悲剧性与喜剧性结合</b>，善用"<span class="hl">含泪的笑</span>"的讽刺。</li>
+    </ol>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">9</div>
+    <div class="card-title">美国现实主义（了解作家作品）</div>
+    <span class="exam-level lv-s">★ 了解</span>
+  </div>
+  <div class="card-body">
+    <ul>
+      <li>美国的现实主义文学在19世纪中期的<b>民主运动和黑奴解放运动</b>中发展起来，<span class="hl">19世纪80年代才真正形成</span>。</li>
+      <li><b>1、50年代的废奴文学：</b>代表作家及作品——希尔德列斯的《白奴》、斯托夫人的《汤姆大伯的小屋》。</li>
+      <li><b>2、60年代：</b>出现了"乡土小说"，……（如《咆哮营的幸运儿》）。</li>
+    </ul>
+    <div class="box">补充（串讲）：主要作家还有马克·吐温、亨利·詹姆斯、弗兰克·诺里斯、斯蒂芬·克莱恩、欧·亨利、杰克·伦敦。特点：常从民主主义理想出发批判资本主义罪恶，<b>揭穿"美国梦"的虚幻色彩</b>，反映劳动人民的不幸，具有较强的民主性和人民性。<br>
+    <b>马克·吐温：</b>美国后期现实主义文学卓越代表，<span class="hl">美国文学史上第一位用美国口语写作的作家</span>，标志美国民族文学的成熟。1870年前：《竞选州长》《傻子出国记》；70—90年代（鼎盛）：《镀金时代》《汤姆·索亚历险记》《败坏了赫德莱堡的人》。</div>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">10</div>
+    <div class="card-title">19世纪英法俄现实主义的比较（重要‼️）</div>
+    <span class="exam-level lv-ss">★★★ 大综合</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">相同点（四点 · 开篇必写）</div>
+    <ol>
+      <li>19世纪英、法、俄三国文学主流是<b>批判现实主义</b>文学。</li>
+      <li>都注重反映现实生活的<b>整体的、本质的、真实的</b>东西，同时更注重<b>细节描写</b>的真实性。</li>
+      <li>他们都特别注意社会<b>底层生活及"小人物"</b>的悲剧命运的描写；注重表达广大人民对资本主义制度的不满和抗议。对社会的批判，是从<b>改良主义制度</b>出发的，<b>思想武器是人道主义，政治主张是改良主义</b>。</li>
+      <li>都注意<b>塑造典型环境中的典型人物</b>。</li>
+    </ol>
+
+    <div class="sub-h">不同点（三国特征）</div>
+    <table>
+      <tr><th style="width:14%">国别</th><th>特征</th></tr>
+      <tr>
+        <td><b>（一）法国</b></td>
+        <td>1、反映<b>资产阶级与贵族阶级</b>的矛盾。<br>2、揭露了<b>金钱的罪恶</b>。<br>3、描写了<b>个人反抗者</b>形象。</td>
+      </tr>
+      <tr>
+        <td><b>（二）英国</b></td>
+        <td>1、最先描写<b>劳资矛盾</b>题材。<br>2、善于描写<b>小人物的矛盾</b>。<br>3、具有<b>人道主义和改良主义</b>的倾向。<br>4、<b>女性文学异军突起</b>：经过女权主义洗礼的英国妇女开始觉醒，她们用文学来实现自身的价值。（玛丽·雪莉、苏珊·弗里娅、乔治·艾略特、勃朗特姐妹）</td>
+      </tr>
+      <tr>
+        <td><b>（三）俄国</b></td>
+        <td>1、文学与<b>人民解放运动</b>紧密相连，以批判沙皇专制制度和农奴制为主要内容。<br>2、具有<b>悲怆的情调</b>，反映时代的苦难，表达了知识分子忧愤、焦虑及基督教人道主义思想。<br>3、独特的形象系列：<b>多余人、小人物形象</b>。<br>4、有系统的进步<b>理论作指导</b>：别林斯基、车尔尼雪夫斯基、杜勃罗留波夫的美学。</td>
+      </tr>
+    </table>
+
+    <div class="mnem">
+      <div class="m-t">🧠 三国一句抓</div>
+      <b>法</b>——资贵矛盾＋金钱罪恶＋个人反抗者；<br>
+      <b>英</b>——劳资题材＋小人物矛盾＋人道改良＋女性文学异军突起；<br>
+      <b>俄</b>——人民解放＋悲怆情调＋多余人/小人物＋进步理论指导。
+    </div>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">11</div>
+    <div class="card-title">真题回顾（自测）</div>
+    <span class="exam-level lv-ss">真题</span>
+  </div>
+  <div class="card-body">
+    <div class="paper">
+      <div class="p-t">填空题</div>
+      <ul>
+        <li>欧洲现实主义文学的创作方法和艺术精神在古希腊文学中就存在，即亚里士多德总结的＿＿＿。（2012学硕）</li>
+        <li>《红与黑》又名＿＿＿。（2020学硕）</li>
+        <li>《包法利夫人》的作者是＿＿＿。（2022）</li>
+        <li>夏洛蒂·勃朗特的代表作是＿＿＿。（2022）</li>
+        <li>《万尼亚舅舅》的作者是＿＿＿。（2016）</li>
+        <li>普希金的短篇小说＿＿＿开了俄国文学中"小人物"形象的先河。（2017）</li>
+      </ul>
+    </div>
+    <div class="paper">
+      <div class="p-t">简答题</div>
+      <ul>
+        <li>司汤达的《红与黑》的叙事手法（2013学硕）</li>
+        <li>简析于连的人物形象（2023）</li>
+        <li>简述"悬念"与"象征"手法在《双城记》中的运用（2008学硕）</li>
+      </ul>
+    </div>
+    <div class="mnem"><div class="m-t">🧠 参考答案（自查用）</div>
+      模仿说（"摹仿说"）｜《于连》/《红与黑》原名《于连》｜福楼拜｜《简·爱》｜契诃夫｜《驿站长》</div>
+    <div class="study-bar"><span class="chk" onclick="tog(this)">✔ 已背熟</span></div>
+  </div>
+</div>
+
+<footer class="foot">
+  外国文学带背 · 第19天 ｜ 19世纪现实主义（下）｜ 西北大学 MFA 创意写作备考<br>
+  资料来源：带背 PPT（14页）逐页识读 ＋ 唐红梅外国文学知识点串讲 ｜ 打卡进度保存在本机浏览器
+</footer>
+</div>
+
+<div class="font-ctrl">
+  <button onclick="adjustFont(-1)">−</button>
+  <span class="fs-label" id="fsLabel">15px</span>
+  <button onclick="adjustFont(1)">＋</button>
+  <button class="fs-reset" onclick="resetFont()">复位</button>
+</div>
+
+<script>
+var FS = 15;
+function adjustFont(d){
+  FS = Math.min(24, Math.max(12, FS + d));
+  document.documentElement.style.setProperty('--fs-base', FS + 'px');
+  document.getElementById('fsLabel').textContent = FS + 'px';
+  try{ localStorage.setItem('day19_fs', FS); }catch(e){}
+}
+function resetFont(){
+  FS = 15;
+  document.documentElement.style.setProperty('--fs-base','15px');
+  document.getElementById('fsLabel').textContent='15px';
+  try{ localStorage.setItem('day19_fs',15); }catch(e){}
+}
+(function(){
+  try{
+    var v = parseInt(localStorage.getItem('day19_fs')||'15',10);
+    if(v && v!==15){ FS=v; document.documentElement.style.setProperty('--fs-base',v+'px'); document.getElementById('fsLabel').textContent=v+'px'; }
+  }catch(e){}
+})();
+
+var KEY = 'day19_checks';
+function updateProg(){
+  var all = document.querySelectorAll('.chk');
+  var done = document.querySelectorAll('.chk.done').length;
+  var pct = all.length ? Math.round(done*100/all.length) : 0;
+  document.getElementById('progBar').style.width = pct + '%';
+  document.getElementById('progTxt').textContent = done + ' / ' + all.length;
+}
+function tog(el){
+  var all = Array.prototype.slice.call(document.querySelectorAll('.chk'));
+  el.classList.toggle('done');
+  var st = {};
+  all.forEach(function(e,j){ if(e.classList.contains('done')) st[j]=1; });
+  try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){}
+  updateProg();
+}
+function loadChecks(){
+  var st = {};
+  try{ st = JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  document.querySelectorAll('.chk').forEach(function(el,i){ if(st[i]) el.classList.add('done'); });
+  updateProg();
+}
+document.querySelectorAll('.card-head').forEach(function(h){ h.parentNode.classList.add('collapsed'); });
+document.querySelectorAll('.card')[0].classList.remove('collapsed');
+loadChecks();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

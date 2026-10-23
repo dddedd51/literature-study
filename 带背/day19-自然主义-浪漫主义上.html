@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外国文学带背 第19天 · 自然主义 ＋ 浪漫主义（上）</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css">
+<style>
+  :root{
+    --bg:#faf8f3; --panel:#fff; --ink:#2b2b2b; --ink-soft:#555;
+    --gold:#a8854a; --gold-deep:#7d5e2c; --gold-bg:#f4ecdb; --border:#e6dfcc;
+    --highlight:#fff8e6; --red:#a23b3b; --red-bg:#fbeeee; --red-border:#d8b8b8;
+    --blue:#2d4a6e; --blue-bg:#e8eff5; --green:#3d6b4a; --green-bg:#eaf3ec;
+    --fs-base:15px;
+  }
+  *{box-sizing:border-box}
+  html{font-size:var(--fs-base)}
+  body{margin:0;padding:0;font-family:"LXGW WenKai","LXGW WenKai TC","霞鹜文楷","Source Han Serif SC","Noto Serif CJK SC","PingFang SC","Microsoft YaHei",serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 18px 80px}
+
+  header.head{background:linear-gradient(135deg,#2b2b2b 0%,#4a3a20 100%);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  header.head .day{font-size:.87rem;letter-spacing:.4rem;opacity:.75;margin-bottom:.5rem}
+  header.head h1{font-size:1.87rem;margin:0 0 .67rem;font-weight:700;letter-spacing:.06em}
+  header.head .sub{font-size:1rem;opacity:.85;line-height:1.7}
+  .tags{display:flex;gap:.67rem;margin-top:1.07rem;flex-wrap:wrap}
+  .tag{padding:.27rem .93rem;border-radius:1.33rem;font-size:.8rem;background:rgba(244,236,219,.18);border:1px solid rgba(244,236,219,.35)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}
+  .card-head{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}
+  .num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+  .card-title{font-size:1.2rem;font-weight:700;color:var(--gold-deep);flex:1}
+  .exam-level{font-size:.78rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;white-space:nowrap}
+  .lv-ss{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .lv-s{background:var(--blue-bg);color:var(--blue);border:1px solid #b9cde0}
+  .lv-l{background:#f0f0ee;color:#777;border:1px solid #d5d5d0}
+  .card-body{padding:20px 26px}
+  .collapsed .card-body{display:none}
+
+  .sub-h{font-size:1.07rem;font-weight:700;color:var(--gold-deep);margin:1.4rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+  .sub-h::before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px}
+  .sub-h:first-child{margin-top:.2rem}
+
+  .ppt-src{font-size:.76rem;color:#8a7c60;background:#f6f2e7;border:1px solid var(--border);border-radius:.27rem;padding:.05rem .45rem;margin-left:.5rem;font-weight:400;white-space:nowrap}
+
+  .term{font-weight:700;color:var(--gold-deep)}
+  .hl{background:linear-gradient(transparent 60%,#fff3a8 60%);padding:0 .13rem}
+  p{margin:.53rem 0;font-size:.97rem}
+  ol,ul{margin:.53rem 0;padding-left:1.6rem}
+  ol li,ul li{margin:.3rem 0;font-size:.97rem}
+
+  .quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.6rem 0;font-size:.95rem;border-radius:0 .4rem .4rem 0}
+  .box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.87rem 1.1rem;margin:.7rem 0;background:#fffefa;font-size:.94rem}
+
+  .answer{background:var(--green-bg);border:1px solid #bcd6c2;border-left:4px solid var(--green);border-radius:0 .53rem .53rem 0;padding:.93rem 1.1rem;margin:.8rem 0}
+  .answer .a-t{font-weight:700;color:var(--green);margin-bottom:.45rem;font-size:.98rem}
+  .answer p,.answer li{font-size:.94rem}
+
+  .mnem{background:#fff4e0;border:1px dashed var(--gold);border-radius:.4rem;padding:.67rem .93rem;margin:.7rem 0;font-size:.93rem}
+  .mnem .m-t{font-weight:700;color:var(--gold-deep);margin-bottom:.3rem}
+
+  .warn{background:var(--red-bg);border:1px solid var(--red-border);border-left:4px solid var(--red);border-radius:0 .53rem .53rem 0;padding:.8rem 1rem;margin:.7rem 0;font-size:.93rem}
+  .warn .w-t{font-weight:700;color:var(--red);margin-bottom:.3rem}
+
+  .paper{background:#fffdf6;border:1px solid var(--border);border-radius:.5rem;padding:.87rem 1.1rem;margin:.8rem 0;font-size:.93rem}
+  .paper .p-t{font-weight:700;color:var(--red);margin-bottom:.45rem;font-size:.95rem}
+  .paper li{margin:.22rem 0}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0}
+  th{background:var(--gold-bg);padding:.5rem;border:1px solid var(--border);text-align:left}
+  td{padding:.5rem;border:1px solid var(--border);vertical-align:top}
+
+  .chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;font-size:.85rem;color:var(--ink-soft);transition:.2s;user-select:none}
+  .chk:hover{background:#e9dfc7}
+  .chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}
+  .study-bar{display:flex;gap:.6rem;margin:.87rem 0 .4rem;flex-wrap:wrap;align-items:center}
+
+  .ctrl-bar{display:flex;gap:.67rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--gold-deep);border-radius:1.2rem;cursor:pointer;font-size:.87rem;font-family:inherit;transition:.2s}
+  .ctrl-bar button:hover{background:var(--gold);color:#fff}
+
+  .font-ctrl{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}
+  .font-ctrl button{width:2rem;height:2rem;border:none;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:inherit}
+  .font-ctrl button:hover{background:var(--gold);color:#fff}
+  .font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}
+  .font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}
+
+  .prog{background:#fff9eb;border:1px solid var(--border);border-radius:8px;padding:.8rem 1.1rem;margin-bottom:20px;font-size:.9rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .prog .bar{flex:1;min-width:120px;height:8px;background:#eee6d2;border-radius:4px;overflow:hidden}
+  .prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));transition:width .4s}
+
+  .nav-link{display:inline-block;margin:.25rem .4rem .25rem 0;padding:.3rem .8rem;background:#fff;border:1px solid var(--gold);color:var(--gold-deep);border-radius:1.2rem;font-size:.85rem;text-decoration:none}
+  .nav-link:hover{background:var(--gold);color:#fff}
+
+  footer.foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.4rem}
+  @media(max-width:720px){.card-body{padding:1.1rem}header.head h1{font-size:1.47rem}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day19-现实主义下.html" title="外国文学带背 第19天 · 19世纪现实主义（下）">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day20-浪漫主义下.html" title="外国文学带背 第20天 · 19世纪浪漫主义（下）">下一天 →</a>
+</nav>
+
+
+<header class="head">
+  <div class="day">DAY 19 · 外国文学</div>
+  <h1>自然主义 ＋ 浪漫主义（上）</h1>
+  <div class="sub">自然主义 · 自然主义与现实主义的区别 · 莫泊桑艺术特色 · 唯美主义<br>浪漫主义思潮背景与主要特征 · 各国发展概况三浪潮 · 德国三流派 · 海涅 · 湖畔派 · 《抒情歌谣集》<br>主干依据微信群 11 张带背 PPT 逐页整理，辅以唐红梅串讲 ＋ 外国文学史分章刷题 ＋ 西大历年真题原答</div>
+  <div class="tags">
+    <span class="tag">西北大学 MFA</span><span class="tag">外国文学史</span>
+    <span class="tag">第19天</span><span class="tag">⭐⭐⭐ 论述级重点</span><span class="tag">含真题 2014/2016/2017/2023/2025/2026</span>
+  </div>
+</header>
+
+<div class="prog">
+  <span>今日进度</span>
+  <div class="bar"><i id="progBar"></i></div>
+  <span id="progTxt">0 / 0</span>
+</div>
+
+<div class="ctrl-bar">
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.remove('collapsed')})">📖 全部展开</button>
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.add('collapsed')})">📕 全部折叠</button>
+  <button onclick="window.print()">🖨️ 打印 / 导出 PDF</button>
+</div>
+
+<!-- 0 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">★</div>
+    <div class="card-title">今日带背指令 · 两条消息合并</div>
+    <span class="exam-level lv-ss">先看这个</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">① 第19天 自然主义 ➕ 浪漫主义<span class="ppt-src">PPT 第 1–4 页</span></div>
+    <p>1️⃣ <span class="hl">自然主义</span>：定义、核心主张、艺术特点、代表作 —— 共同组成<span class="term">名词解释</span></p>
+    <p>2️⃣ <span class="hl">自然主义和现实主义区别</span> —— 当<span class="term">小简答</span>背，主要论点 ＋ 例子</p>
+    <p>3️⃣ <span class="hl">莫泊桑艺术特色</span> —— 当<span class="term">简答</span>背，<b>刚考过真题</b></p>
+    <p>4️⃣ <span class="hl">唯美主义</span> —— 记<span class="term">名词解释</span></p>
+
+    <div class="sub-h">② 第19天 浪漫主义（上）<span class="ppt-src">PPT 第 5–11 页</span></div>
+    <p>1️⃣ <span class="hl">思潮背景</span> —— 需要记<span class="term">论点</span></p>
+    <p>2️⃣ 重要❗❗ <span class="hl">浪漫主义特征</span> —— 学硕25年刚考过，专硕也要重视，<span class="term">背论述</span></p>
+    <p>3️⃣ <span class="hl">发展概况</span> —— 能够对应每个浪潮、每个国家都有哪些作家作品</p>
+    <p>4️⃣ <span class="hl">德国3个流派</span>熟读了解；背诵<span class="hl">海涅《德国，一个冬天的童话》</span>名词解释；英国背诵<span class="hl">湖畔派</span>名词解释，<span class="hl">《抒情歌谣集》</span>也要知道是什么，防止考名词解释</p>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 三处需要留神</div>
+      一、群指令里写作《德国，一个冬天的<b>神话</b>》，PPT 与教材通行题名均为《德国，一个冬天的<b>童话</b>》（海涅，1844 长篇讽刺诗）—— 答题以「童话」为准。<br>
+      二、群里两条消息都编号「第19天」，而 <code>带背/day19-现实主义下.html</code>（9/14 制作）同为 DAY 19，编号重号；本页按内容另存，未覆盖旧页。<br>
+      三、PPT 第 4 页把<b>柯勒律治</b>列为唯美主义代表作家，与通行说法不符（详见第 4 卡「一处存疑」）。
+    </div>
+  </div>
+</div>
+
+<!-- 1 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">1</div>
+    <div class="card-title">自然主义（名词解释 · 必背）<span class="ppt-src">PPT 第 1 页</span></div>
+    <span class="exam-level lv-ss">★★★ 西大2016名词解释真题</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">PPT 原表（按此背）</div>
+    <p><span class="term">定义</span>　19 世纪后期流行、受到孔德的实证主义、遗传学说和贝尔纳决定论的影响，产生于批判现实主义之中的一个文学思潮和流派。核心主张时「以科学客观态度描绘现实」。</p>
+    <ol>
+      <li><b>擅长描写群众场面</b>，逐渐忽略典型的塑造，只追求人物的气质和精神变态心理；</li>
+      <li><b>强调客观性</b>。作家不是道德家，不作任何价值评判，而是解剖家。左拉提出艺术家只是一名记录员，只需陈述事实，对自然不作任何改变和缩减。</li>
+      <li><b>突出的科学性</b>。机械地从生理角度去表现人，认为人的性格、欲望、行为都受制于生物规律，尤其是遗传规律。</li>
+      <li><b>开始淡化情节</b>，不追求戏剧性的曲折变化，按生活的「本来面目」去反映现实。</li>
+    </ol>
+    <p>左拉、莫泊桑在内六位作家集体发表的<span class="hl">《梅塘之夜》</span>，是自然主义文学的<b>宣言书</b>。</p>
+
+    <div class="mnem">
+      <div class="m-t">🧠 名词解释四件套（按群指令：定义＋核心主张＋艺术特点＋代表作）</div>
+      <b>定义</b>——19 世纪后期起于法国、波及欧美的思潮，由批判现实主义发展而来，是现实主义的极端化表现。<br>
+      <b>核心主张</b>——实证哲学 ＋ 进化论／遗传学／决定论；超越政治道德，用生理学遗传学解释行为与社会；作家不介入、不作评判，冷静客观、照相实录式描写，主张「以科学客观态度描绘现实」。<br>
+      <b>艺术特点</b>——四条：群众场面／忽略典型；强调客观性、作家即记录员；突出的科学性、机械生理角度；淡化情节、按本来面目。<br>
+      <b>代表作</b>——左拉《卢贡—马卡尔家族》、莫泊桑《羊脂球》《项链》；六作家合集《梅塘之夜》为宣言书。
+    </div>
+
+    <div class="answer">
+      <div class="a-t">✅ 真题原答（2016 年西大创意写作 · 文学史名词解释第六题）</div>
+      <p>自然主义是<span class="term">19世纪60年代兴起于法国</span>的文学流派，受到<span class="hl">孔德的实证主义、遗传学说和贝尔纳的决定论</span>的影响，它是<span class="hl">现实主义的一种发展</span>。</p>
+      <p>它将真实和客观性视为文学创作的首要条件，接受了巴尔扎克描写一段历史时期反映整个社会的观点，但<span class="hl">机械地从生理角度去表现人</span>，将不成熟的遗传学观点照搬到小说中。</p>
+      <p>在艺术上，自然主义文学力图<span class="hl">巨细无遗地描绘现实</span>，给人以实录生活和照相式的印象；擅长描写群众场面，逐渐忽略典型的塑造，只追求人物的气质和精神变态心理；开始淡化情节，不追求戏剧性的曲折变化，按生活的「本来面目」去反映现实。代表作家有<span class="term">左拉</span>和<span class="term">莫泊桑</span>。</p>
+    </div>
+
+    <div class="box">
+      <b>两个「宣言书」别搞混</b>　《梅塘之夜》（1880，六作家合集，含莫泊桑《羊脂球》）＝<b>自然主义</b>的宣言书；《抒情歌谣集》1800 年版序言＝<b>浪漫主义</b>诗歌的美学宣言。两处都是高频名词解释。
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n1-a">自然主义定义背熟</span><span class="chk" data-k="n1-b">四条艺术特点默写</span><span class="chk" data-k="n1-c">《梅塘之夜》是宣言书</span></div>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">2</div>
+    <div class="card-title">自然主义 与 现实主义的区别<span class="ppt-src">PPT 第 1–2 页</span></div>
+    <span class="exam-level lv-ss">★★★ 小简答 · 2014 论述原题</span>
+  </div>
+  <div class="card-body">
+    <p>群指令：<span class="hl">当小简答背，主要论点 ＋ 例子</span>。PPT 给的是<b>三条区别</b>，唐红梅串讲另补第四条渊源结论 —— 答题先写三条，有余力再补第四条。</p>
+
+    <div class="sub-h">PPT 三条区别（主干，按此背）</div>
+
+    <p><span class="term">1、各自的文学追求存在差异。</span></p>
+    <p>现实主义文学按照生活<b>本来的面貌</b>予以反映；而自然主义文学却希望<b>按照科学的方法</b>探讨遗传或社会环境对人物性格和行动的<b>潜在的决定性影响</b>。它把人类社会等同于自然界，把人看成生物的一种，常以生物学、遗传学、生理学的理论来解释社会现象和人的行为，<span class="hl">忽视甚至无视人的社会属性</span>。</p>
+
+    <p><span class="term">2、二者的创作方法不同。</span></p>
+    <p>现实主义文学重视<b>典型人物</b>的塑造，在突出人物个性的同时，挖掘人物与时代的关系和人物与同类型人物的共同社会特性，展现人物性格与环境的互动关系；而自然主义文学重视描写处于<b>赤贫状态</b>下人的外在条件（生理），不注意对人物性格和精神层面的刻画。进一步之处在于向社会底层开拓创作题材，从而进一步拓展了文学表现的领域，丰富了人物形象的画廊。</p>
+
+    <p><span class="term">3、在风格和基调上也呈现出差异。</span></p>
+    <p>现实主义文学<b>高扬人道主义</b>，其创作充满了对社会不良习气和制度的批评，也不乏温情和人文关怀；而自然主义文学则突出<b>命运与社会环境对人的决定性影响</b>，弥漫着宿命论思想和悲观情绪。强调文学家的责任是「记录」，而不是作政治的、历史的、道德的结论。重视观察、调查和精确细致的描绘，大大增强了作品的真实感和揭露性，但<b>彻底否定作家的倾向性</b>，使作品缺乏深厚的艺术概括力。</p>
+
+    <div class="answer">
+      <div class="a-t">➕ 唐红梅串讲补第四条（渊源结论）</div>
+      <p>自然主义是<b>现实主义的一种极端化发展</b>，二者并非对立流派：自然主义在题材开拓（社会底层、生理层面）与客观性追求上继承并推进了现实主义，但因机械搬用生理学、遗传学而丢掉了典型化与人道关怀，反而削弱了艺术概括力。答题时可作收尾判断句。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 速记口诀：追／法／调</div>
+      <b>追</b>（文学追求）—— 本来面貌 vs 科学方法决定论<br>
+      <b>法</b>（创作方法）—— 典型塑造 vs 生理外在条件<br>
+      <b>调</b>（风格基调）—— 人道温情 vs 宿命悲观、否定倾向性
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n2-a">三条区别论点默写</span><span class="chk" data-k="n2-b">每条带例子（《羊脂球》／《卢贡—马卡尔家族》）</span><span class="chk" data-k="n2-c">补第四条渊源结论</span></div>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">3</div>
+    <div class="card-title">莫泊桑「世界短篇小说之王」<span class="ppt-src">PPT 第 2–4 页</span></div>
+    <span class="exam-level lv-ss">★★★ 简答 · 2025 真题</span>
+  </div>
+  <div class="card-body">
+
+    <div class="sub-h">一、作品主要内容 · 五类题材（PPT 逐篇列作品名）<span class="ppt-src">PPT 第 2 页</span></div>
+    <ol>
+      <li><b>普法战争</b>：表现法国普通人民的爱国主义激情。<br><span class="term">《羊脂球》《两个朋友》《米龙老爹》</span></li>
+      <li><b>小资产阶级和公务员</b>：暴露他们的爱慕虚荣、势力、庸俗、猥琐。<br><span class="term">《项链》《我的叔叔于勒》《骑马》《散步》《珠宝》</span></li>
+      <li><b>农村生活</b>：表现农村各式人等和多姿多彩的生活。<br><span class="term">《西蒙的爸爸》《穷鬼》《老人》《绳子》</span></li>
+      <li><b>怪诞故事</b>：受到当时文学潮流的影响。<br><span class="term">《奥尔拉》《一个疯子的信》《剥皮的手》《恐惧》</span></li>
+      <li><b>爱情、婚姻和家庭</b>：<br><span class="term">《珍珠小姐》《遗产》《死去的女人》《月光》</span></li>
+    </ol>
+
+    <div class="sub-h">二、莫泊桑作品艺术特点 · 四条<span class="ppt-src">PPT 第 3 页</span></div>
+
+    <p><span class="term">1、题材的丰富性与象征性</span></p>
+    <p>莫泊桑的小说题材广泛，时空跨度广（十九世纪七十年代前后法国的社会生活，城市、农村、边疆、国外等无处不写）、社会阶层覆盖全面（各种职业、多个阶级、阶层，三教九流，无所不包）。他善于从日常生活中提炼具有代表性的片段，结构精巧且富有象征意义。<br>
+    例如，<span class="hl">《羊脂球》</span>以普法战争为背景，将不同阶层的十名旅客置于一辆驿车中，通过两次用餐场景的对比，映射整个社会的虚伪与道德困境，象征性地构建了一个微观法国社会。</p>
+
+    <p><span class="term">2、人物形象鲜明，思想深刻</span></p>
+    <p>莫泊桑尤其擅长塑造社会底层与小人物形象，通过其鲜明的个性和典型的行为，深刻揭示人性与社会现实。<br>
+    如<span class="hl">《我的叔叔于勒》</span>中，菲利普夫妇在发现弟弟于勒落魄后态度骤变，生动刻画了小资产阶级的虚伪与冷酷，折射出资本主义社会的人际关系本质。</p>
+
+    <p><span class="term">3、情节紧凑精炼</span></p>
+    <p>莫泊桑的短篇小说结构严谨、节奏紧凑，善于通过高度浓缩的情节推进叙事，避免冗余。<br>
+    eg. <span class="hl">《项链》</span>全文围绕「借链—失链—赔链—发现真相」展开，六个阶段环环相扣，语言精简而逻辑严密，结尾突转有力，体现其高超的情节控制能力。此外，他常使用「可是」「随后」等转折词自然衔接段落，使叙事流畅而简练。</p>
+
+    <p><span class="term">4、语言简明朴实</span></p>
+    <p>莫泊桑的语言以平易精准、自然有力见长，不依赖华丽辞藻，而注重白描与真实感。他多以第一人称叙述增强代入感，语言清晰流畅，适度融入方言却保持可读性。其作品因语言的纯粹性与感染力，被视为法语文学的典范。</p>
+
+    <div class="answer">
+      <div class="a-t">✅ 2025 真题问法（简答：论述莫泊桑短篇小说的艺术特点）</div>
+      <p>答题按 PPT 四条走：<b>题材的丰富性与象征性 → 人物形象鲜明思想深刻 → 情节紧凑精炼 → 语言简明朴实</b>，每条务必配一个作品例子（《羊脂球》／《我的叔叔于勒》／《项链》／第一人称白描），例子就是分数。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 口诀：题·人·节·语（四字四层）</div>
+      题（题材丰富象征）· 人（人物鲜明深刻）· 节（情节紧凑精炼）· 语（语言简明朴实）
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n3-a">五类题材作品名背全</span><span class="chk" data-k="n3-b">四条艺术特点默写</span><span class="chk" data-k="n3-c">每条配一个例子</span></div>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">4</div>
+    <div class="card-title">唯美主义<span class="ppt-src">PPT 第 4 页</span></div>
+    <span class="exam-level lv-ss">★★★ 名词解释 · 2026 真题</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">PPT 原表（按此背）</div>
+    <p>唯美主义是 <span class="hl">19 世纪</span>兴起的文学艺术流派，唯美主义以<b>康德哲学为基础</b>，主张艺术是<b>超脱一切利害关系的纯粹自由活动</b>、艺术<b>高于一切</b>，强调「<span class="term">为艺术而艺术</span>」，注重文学作品的形式美，同时认为艺术家对待题材的态度应该是冷静、客观的。</p>
+    <p>唯美主义在艺术上开拓了美的领域，扩大了艺术表现范围，对后世现代主义文学产生深刻影响；但其片面强调美的超功利性、过分注重形式而忽略内容等观点，对文学的发展也产生了一定负面影响。代表作家为<b>王尔德</b>、<b>柯勒律治</b>等作家。（郑克鲁 P382）</p>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 一处存疑（PPT 第 4 页）</div>
+      PPT 把<b>柯勒律治</b>列为唯美主义代表作家，这是<b>待核项</b>：柯勒律治（1772–1834）是英国浪漫主义<b>湖畔派</b>诗人、批评家，一般不列入唯美主义。答题建议写 <b>戈蒂埃（《莫班小姐》序言）→ 佩特 → 王尔德（《道连·格雷的画像》）</b> 这条线，更稳。
+    </div>
+
+    <div class="answer">
+      <div class="a-t">✅ 2026 真题原答（名词解释：唯美主义）</div>
+      <p><b>三条主张</b>：① 艺术应脱离现实、超脱功利，「为艺术而艺术」；② 艺术高于生活，形式重于内容，追求感官与形式的纯粹美；③ 作家对题材保持冷静客观，不作道德评判。</p>
+      <p><b>发展脉络</b>：19 世纪 30 年代法国<b>戈蒂埃</b>首倡「为艺术而艺术」→ 英国<b>佩特</b>理论化 → 世纪末<b>王尔德</b>集大成（小说《道连·格雷的画像》、剧本《莎乐美》）。</p>
+    </div>
+
+    <div class="box">
+      <b>「为艺术而艺术」是谁先喊的</b>　一般追溯到法国<b>戈蒂埃</b>（1835 年《莫班小姐》长序），理论源头可上溯康德「无目的的合目的性」；英国唯美主义以<b>佩特</b>《文艺复兴》为理论宣言，<b>王尔德</b>为创作代表。
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n4-a">定义＋「为艺术而艺术」</span><span class="chk" data-k="n4-b">康德哲学基础</span><span class="chk" data-k="n4-c">代表作家（戈蒂埃·佩特·王尔德，非柯勒律治）</span></div>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">5</div>
+    <div class="card-title">浪漫主义思潮背景<span class="ppt-src">PPT 第 5–6 页</span></div>
+    <span class="exam-level lv-s">★★ 记论点</span>
+  </div>
+  <div class="card-body">
+    <p>群指令：<span class="hl">思潮背景，需要记论点</span>。PPT 按<b>政治／文化／思想／文学传统</b>四层展开，每层都有明确论点句。</p>
+
+    <div class="sub-h">1、政治：法国大革命<span class="ppt-src">PPT 第 5 页</span></div>
+    <p>大革命提出的「<b>自由、平等、博爱</b>」口号，以及推翻旧制度的壮举，极大地激发了欧洲一代人的理想主义激情和对个人自由、民族解放的渴望。</p>
+    <p>然而，革命的后续发展 —— 雅各宾派的「恐怖统治」、拿破仑的战争与扩张 —— 让许多从「理想的云端跌入现实的深渊」。这种从希望到幻灭的巨大心理落差，促使人们从对理性建构社会的崇拜，转向对内心情感、传统和民族精神的探索。浪漫主义文学中常见的<b>叛逆英雄、理想幻灭感和对现实的疏离感</b>，都源于此。</p>
+
+    <div class="sub-h">2、文化：自由、平等、博爱<span class="ppt-src">PPT 第 5 页</span></div>
+    <p><b>「自由」的个性化</b>：革命口号中的「自由」从政治层面渗透到个人层面，演变为强调个性解放、情感自由和创作自由。浪漫主义者主张打破一切束缚，尽情抒发个人主观感受。</p>
+    <p><b>「平等」的浪漫化</b>：对平等的要求，使得文学家们将目光投向平民、小人物和被社会边缘化的人（如强盗、叛逆者），并从民间文化（民歌、童话、传说）中汲取灵感。</p>
+    <p><b>「博爱」的延伸</b>：这种博爱精神扩展为对全人类的关怀，以及对自然万物的一种<b>泛神论式</b>的热爱与共鸣。</p>
+
+    <div class="sub-h">3、思想：德国古典哲学、空想社会主义<span class="ppt-src">PPT 第 5 页</span></div>
+    <p>德国古典哲学中强调「<b>自我</b>」设定「<b>非我</b>」，突出人的主观能动性。<b>谢林</b>的自然哲学认为自然是<b>有生命的、可见的精神</b>，这直接助推了浪漫主义「自然观」—— 将自然视为有灵性的、可与之情感交流的对象。</p>
+    <p>空想社会主义对资本主义原始积累的批判和对理想社会的乌托邦构想，迎合了浪漫主义者对现代工业文明的不满和对美好未来的憧憬。浪漫主义文学中<b>对社会黑暗的批判、对田园生活的怀念</b>，与此紧密相关。</p>
+
+    <div class="sub-h">4、文学传统<span class="ppt-src">PPT 第 6 页</span></div>
+    <p><b>对启蒙运动的反拨</b>：启蒙运动推崇的纯粹理性、冰冷逻辑和机械宇宙观，被认为压制了人性中的情感、直觉和想象力。浪漫主义正是作为其反面，高举「<b>情感</b>」对抗「<b>逻辑</b>」。</p>
+    <p><b>对感伤主义的继承与发展</b>：18 世纪中后期的感伤主义文学（如卢梭、斯特恩）已经开启了对内心情感世界的探索，浪漫主义将其发扬光大，变得更加强烈、澎湃和具有叛逆性。</p>
+    <p><b>对中世纪文化的再发现</b>：与启蒙主义视中世纪为「黑暗时代」不同，浪漫主义者重新发掘中世纪民间文学、哥特式建筑、骑士传奇和民族历史，从中寻找激情、神秘感和民族认同的根源。</p>
+    <p><b>文学内部的传承</b>：前浪漫主义诗人（如英国的<b>彭斯、布莱克</b>）早已在创作中流露出浪漫主义的先声。</p>
+
+    <div class="mnem">
+      <div class="m-t">🧠 四层论点速记：政·文·思·传</div>
+      <b>政</b>（法国大革命：希望→幻灭）· <b>文</b>（自由个性化／平等浪漫化／博爱延伸）· <b>思</b>（德国古典哲学「自我设定非我」＋谢林自然哲学＋空想社会主义）· <b>传</b>（反拨启蒙／发展感伤主义／再发现中世纪／彭斯布莱克先声）
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n5-a">四层论点框架</span><span class="chk" data-k="n5-b">政治层「希望→幻灭」逻辑</span><span class="chk" data-k="n5-c">文化层自由·平等·博爱三分</span></div>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">6</div>
+    <div class="card-title">浪漫主义文学的主要特征<span class="ppt-src">PPT 第 6–7 页</span></div>
+    <span class="exam-level lv-ss">★★★ 背论述 · 学硕25年真题</span>
+  </div>
+  <div class="card-body">
+    <div class="warn">
+      <div class="w-t">❗❗ 群内重点提示</div>
+      浪漫主义特征 —— <b>学硕 25 年刚考过，专硕也要重视，背论述</b>。PPT 给的框架是「<b>二重二崇两追求</b>」，四条逐一成段就是完整论述。
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 框架：二重二崇两追求</div>
+      <b>二重</b>——重主观理想的表现、重民间文学<br>
+      <b>二崇</b>——崇尚自然、崇尚想象（推崇想象）<br>
+      两条「追求」——追求强烈的情感抒发、追求强烈的艺术效果
+    </div>
+
+    <div class="sub-h">1、着重表现主观理想，抒发强烈的个人情感<span class="ppt-src">PPT 第 6 页</span></div>
+    <p>强烈的主观色彩，偏爱表现主观思想，注重抒发个人的感受和体验。重主观，轻客观和重自我表现，轻客观模仿，是情感对理性主义的反拨。</p>
+    <div class="quote">费希特（费希特的论断是浪漫派作家遵循的原则）：「从你周围的额一切转动目光，朝向你的内心王国，这是哲学向它的信徒们道出的第一个要求。你身外之物没有什么重要的，你本身是唯一的问题。」</div>
+
+    <div class="sub-h">2、重视民间文学<span class="ppt-src">PPT 第 6 页</span></div>
+    <p>喜欢学习、采用民间文学的题材、语言和表现手法，对贵族文化的否定。</p>
+    <p>拜伦首创的<b>诗体长篇小说</b>，是在诗剧的基础上发展起来的，它视野宽阔，将欧洲各国社会生活融于一炉，这种新形势扩大了诗歌反映社会现实范围。</p>
+
+    <div class="sub-h">3、崇尚自然<span class="ppt-src">PPT 第 6 页</span></div>
+    <p>浪漫主义继承了卢梭「回到自然」的口号和 18 世纪感伤文学「返回自然」的传统，着力歌颂大自然的美丽，追求近代文明所丧失了的自然。</p>
+    <p>崇拜自然的风气是产业革命的反响和对城市工业文明的厌恶。通过抒发对大自然的感受，寄托自己的理想，以自然的「美」否定现实的「丑」。<br>
+    拜伦的《卡尔德·哈罗德游记》就是通过描绘自然风光，与现实英国的冷漠、自私、虚伪相对照。</p>
+
+    <div class="sub-h">4、推崇想象<span class="ppt-src">PPT 第 7 页</span></div>
+    <p>喜用夸张、对比手法，构设奇幻情节，塑造非凡性格，描绘奇景奇观，以追求强烈的艺术效果。</p>
+    <p>华兹华斯在《〈抒情歌谣集〉序言》中谈到，写诗必须具有感受性，「这种能力越敏锐，诗人的直觉范围就越广阔，他也就被越激去观察对象，还须具有『想象和幻想，也就是改变、创造和联想的能力』。」（《西方文论选》）</p>
+
+    <div class="study-bar"><span class="chk" data-k="n6-a">二重二崇两追求框架</span><span class="chk" data-k="n6-b">四条各能展开成段</span><span class="chk" data-k="n6-c">费希特引文＋华兹华斯引文</span></div>
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">7</div>
+    <div class="card-title">浪漫主义文学发展状况 · 三个浪潮<span class="ppt-src">PPT 第 8 页</span></div>
+    <span class="exam-level lv-ss">★★★ 对应浪潮·国家·作家作品</span>
+  </div>
+  <div class="card-body">
+    <p>群指令：<span class="hl">发展概况 —— 能够对应每个浪潮每个国家都有哪些作家作品</span>。PPT 按三个浪潮切分，务必横向背清国别。</p>
+
+    <div class="sub-h">（一）第一个浪潮（18 世纪 90 年代 — 19 世纪初）</div>
+    <ul>
+      <li><b>英国</b>：1798 年，华兹华斯和柯勒律治发表了《抒情歌谣集》，「湖畔派」诗人对自然的歌咏开启了浪漫主义的一代诗风。</li>
+      <li><b>德国</b>：1798 年，诗莱格尔兄弟是德国早期浪漫主义的重要理论家，创办《雅典娜神殿》杂志，发表一系列研究和宣言，理论构成浪漫主义诗歌理论基础。</li>
+      <li><b>法国</b>：先驱是<b>夏多布里昂</b>和<b>斯塔尔夫人</b>。斯塔尔夫人的《德意志论》介绍论述了德国浪漫派的理论主张，其中的神秘主义因素深刻影响了法国浪漫主义文学的创作。</li>
+    </ul>
+
+    <div class="sub-h">（二）第二个浪潮（19 世纪 10—20 年代）</div>
+    <p>第二次发展过程主要集中在英法两国。</p>
+    <ul>
+      <li><b>英国</b>：以「<span class="hl">撒旦派</span>」的代表人物<b>拜伦、雪莱</b>为代表，还有具有唯美倾向的<b>济慈</b>。</li>
+      <li><b>法国</b>：以情调忧郁的<b>拉马丁</b>和哲理深厚的<b>维尼</b>为代表。</li>
+      <li><b>意大利</b>：<b>白尔谢</b>、剧作家<b>曼佐尼</b>。</li>
+      <li><b>德国</b>：<b>霍夫曼、艾尔多兴</b>。</li>
+    </ul>
+
+    <div class="sub-h">（三）第三个浪潮（19 世纪 30 年代及以后）</div>
+    <p>创作主要集中在法国，以<b>雨果</b>为首。</p>
+    <ul>
+      <li><b>法国</b>：雨果的戏剧和小说，<b>缪塞</b>的对话体诗和莎士比亚式的戏剧，<b>大仲马</b>的通俗小说和历史小说，都将浪漫主义推向高峰。</li>
+      <li><b>俄罗斯</b>：以诗歌创作为主。<b>茹科夫斯基</b>是俄罗斯第一个抒情诗人，<b>莱蒙托夫</b>和<b>普希金</b>则代表了俄罗斯浪漫主义文学最高成就。</li>
+      <li><b>美国</b>：<b>爱默生</b>的超验主义、<b>霍桑</b>、<b>麦尔维尔</b>的小说创作，<b>惠特曼</b>的诗歌创作都成为这一时期浪漫主义文学的经典之作。</li>
+    </ul>
+
+    <div class="mnem">
+      <div class="m-t">🧠 浪潮速记</div>
+      一浪（18c90s—19c初）：英《抒情歌谣集》1798／德施莱格尔兄弟·《雅典娜神殿》／法夏多布里昂·斯塔尔夫人<br>
+      二浪（19c10—20s）：英撒旦派拜伦雪莱＋济慈／法拉马丁维尼／意白尔谢曼佐尼／德霍夫曼艾尔多兴<br>
+      三浪（19c30s后）：法雨果为首（缪塞·大仲马）／俄茹科夫斯基·莱蒙托夫·普希金／美爱默生·霍桑·麦尔维尔·惠特曼
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n7-a">三个浪潮时间断代</span><span class="chk" data-k="n7-b">每浪每国作家作品对上号</span><span class="chk" data-k="n7-c">「撒旦派」＝拜伦·雪莱·济慈</span></div>
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">8</div>
+    <div class="card-title">德国三流派 · 浪漫主义思潮发源地<span class="ppt-src">PPT 第 9 页</span></div>
+    <span class="exam-level lv-s">★★ 熟读了解</span>
+  </div>
+  <div class="card-body">
+    <p>群指令：<span class="hl">德国 3 个流派熟读了解</span>。PPT 标题为「浪漫主义文学思潮的发源地 —— 德国」，三派依次为<b>耶拿派、海德堡派、柏林派</b>。</p>
+
+    <div class="sub-h">1、耶拿派</div>
+    <p>德国最早的浪漫主义文学团体。<b>施莱格尔兄弟</b>于 1798 年耶拿创办《<span class="hl">雅典娜神殿</span>》杂志，以此为阵营，探讨文艺、发表创作、反对古典主义。第一次提出了浪漫主义这个名称，阐述浪漫主义的主张：强调想象与情感，强调文学创作的绝对自由，追求宗教的神秘和象征感。代表作有<b>诺瓦利斯</b>《夜颂》、<b>蒂克</b>《民间童话集》等。</p>
+
+    <div class="sub-h">2、海德堡派</div>
+    <p>1805 年以后形成，其代表是<b>布伦塔诺</b>和<b>阿尔尼姆</b>。重视民间文学，海德堡派收集大量民歌和民间故事，收编成集。<b>阿尔尼姆和布伦塔诺</b>收集编写的民歌集《<span class="hl">儿童和奇异号角</span>》，<b>格林兄弟</b>《儿童与家庭童话集》（其中的《灰姑娘》《白雪公主》等成了典范的童话作品。）都是对德国民族文学的重要贡献。</p>
+
+    <div class="sub-h">3、柏林派</div>
+    <p>1809 年后，德国浪漫主义在柏林形成另一个中心，批判性倾向有所增强。<b>霍夫曼</b>的作品有《雄猫穆尔的人生观》《小查克斯》等，其小说对欧美作家产生很大影响。</p>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 译名与书名，答题按 PPT</div>
+      一、流派名 PPT 作「<b>海德堡派</b>」（部分教材作「海德尔堡派」），答题按 PPT。<br>
+      二、民歌集 PPT 作《<b>儿童和奇异号角</b>》（部分译本作《男孩的神奇号角》），同一本书，答题按 PPT 写法即可，若记得两个版本可都提。
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n8-a">三派名称与人物</span><span class="chk" data-k="n8-b">耶拿派＝《雅典娜神殿》1798</span><span class="chk" data-k="n8-c">柏林派＝霍夫曼</span></div>
+  </div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">9</div>
+    <div class="card-title">海涅《德国，一个冬天的童话》<span class="ppt-src">PPT 第 10 页</span></div>
+    <span class="exam-level lv-ss">★★★ 名词解释 · 西大2017真题</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">PPT 原表（按此背）</div>
+    <p><b>海涅</b>，早年是浪漫派诗人，随后转向现实主义。</p>
+    <p>《<b>歌集</b>》1827 年，收录早先零星发表的大部分诗歌，为他奠定了作为杰出的抒情诗人的地位。</p>
+    <p>《<span class="hl">德国，一个冬天的童话</span>》<b>长篇讽刺诗</b>：书写了海涅由巴黎回到德国时的见闻，表达诗人对停滞落后的德国社会、政治、经济和文化生活的评价，对光明和幸福的未来世界的向往，嘲讽普鲁士国反动政权的精神支柱 —— 宗教与教会，抨击红胡子皇帝的梦幻童话，歌颂爱国主义和革命精神。</p>
+    <p>运用交替着模式（朦胧）和漫画的模式（讽喻）的讽刺手法：如诗人对普鲁士「关税同盟」与书报检查制度的讽刺，「过了时的童话人物」红胡子大帝和他的战士在山洞沉睡，百年一醒不知时代变化。</p>
+
+    <div class="box">
+      <b>小注</b>　PPT 称《德国，一个冬天的童话》为「长篇小说」，实为<b>长篇讽刺诗</b>（1844，共 27 章），答题按「长篇诗体讽刺作品／长篇讽刺诗」更稳。
+    </div>
+
+    <div class="answer">
+      <div class="a-t">✅ 2017 真题原答（名词解释：海涅《德国，一个冬天的童话》）</div>
+      <p>内容四方面：① 对停滞落后的德国社会、政治、经济、文化生活的评价；② 对光明和幸福未来的向往；③ 嘲讽普鲁士反动政权的精神支柱——宗教与教会，抨击红胡子皇帝的梦幻童话；④ 歌颂爱国主义和革命精神。</p>
+      <p>艺术上交替使用<b>朦胧模式与漫画式讽喻</b>的讽刺手法，以「过了时的童话人物」红胡子大帝沉睡百年为喻，讽刺德国现实的不觉悟；同时对「关税同盟」与书报检查制度也有讽刺。</p>
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n9-a">《歌集》1827 地位</span><span class="chk" data-k="n9-b">童话内容四方面</span><span class="chk" data-k="n9-c">朦胧＋漫画双重讽刺手法</span></div>
+  </div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">10</div>
+    <div class="card-title">英国浪漫主义 · 湖畔派 ＋《抒情歌谣集》<span class="ppt-src">PPT 第 10–11 页</span></div>
+    <span class="exam-level lv-ss">★★★ 名词解释 · 必背</span>
+  </div>
+  <div class="card-body">
+    <p>群指令：<span class="hl">英国背诵湖畔派名词解释，《抒情歌谣集》也要知道是什么，防止考名词解释</span>。</p>
+
+    <div class="sub-h">一、《抒情歌谣集》—— 两件必记的事实<span class="ppt-src">PPT 第 10 页</span></div>
+    <p>① <b>1798 年</b>，柯勒律治与华兹华斯的《抒情歌谣集》是<b>英国浪漫主义的奠基作</b>；② <b>1800 年</b>，在诗集的序言中他们提出了浪漫主义艺术的要点，成为英国浪漫主义的「<span class="hl">美学宣言</span>」。</p>
+    <div class="box"><b>易混提醒</b>　PPT 原文此处印作「（1879）」，应为 <b>1798</b> 初版、<b>1800</b> 年再版加序 —— 答题务必写 1798／1800，不要写 1879。</div>
+    <p>提问：英国浪漫主义文学宣言是？→ 答：<b>《抒情歌谣集》序言（1800）</b>。</p>
+
+    <div class="sub-h">二、「湖畔派」名词解释（PPT 两段合写）<span class="ppt-src">PPT 第 10–11 页</span></div>
+    <p>英国文学中最早出现的浪漫主义作家被称为「<span class="hl">湖畔派</span>」三诗人，即<b>华兹华斯、柯勒律治和骚塞</b>；他们曾隐匿于英国西北部湖区，由此得名。</p>
+    <p>他们的诗作一般远离社会斗争，讴歌宗法式的农村生活或自然风景，描写奇异神秘的故事和异国风光。常通过缅怀中古时代的「纯朴」来否定丑恶的城市文明。</p>
+    <p><b>代表作</b>：华兹华斯《水仙》《丁登寺》、柯勒律治《古舟子咏》和骚塞《书斋咏怀》。</p>
+
+    <div class="sub-h">三、湖畔派诗歌的两条风格特点<span class="ppt-src">PPT 第 11 页</span></div>
+    <p><span class="term">1、风格清新朴素。</span>湖畔派诗人克服了 18 世纪英诗语言的某种抽象性，使具体的词汇适用于诗歌中，华兹华斯就抛弃了神话的滥调和古典主义的迂回代用语，而寻找明确和传神的字眼来传达叶影的浓淡和光度的效果，他运用语言来替英国的树林、牧场、草地写生，在他笔下的自然风光、田园景色、乡村村姑、少男少女都生动而自然。</p>
+    <p><span class="term">2、湖畔派诗歌充满泛灵主义。</span>由于湖畔派诗人对现实的逃避来自于他们的惶恐，所以他们的诗歌故意泯没现实与幻想的界限，力求用一种神秘莫测的超自然力量来统领世界，他们能给偶然的光和影、月色和夕照赋予特殊的魅力，这种魅力就是大自然的诗意。在他们的诗歌中，一草一木都是跳动的生灵。</p>
+
+    <div class="box">
+      <b>接撒旦派</b>　PPT 第 11 页末即转入「2、撒旦派」：英国浪漫主义第二代以<b>拜伦、雪莱</b>为代表（含唯美倾向的<b>济慈</b>），故「湖畔派 → 撒旦派」是英国浪漫主义的两段式，答题常成对出现。
+    </div>
+
+    <div class="study-bar"><span class="chk" data-k="n10-a">《抒情歌谣集》1798＋1800 序言</span><span class="chk" data-k="n10-b">湖畔派三诗人＋代表作</span><span class="chk" data-k="n10-c">两条风格特点（清新朴素·泛灵主义）</span></div>
+  </div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">11</div>
+    <div class="card-title">真题回顾 ＋ 自测<span class="ppt-src">PPT 第 4 页</span></div>
+    <span class="exam-level lv-ss">★★★ 考前必看</span>
+  </div>
+  <div class="card-body">
+
+    <div class="paper">
+      <div class="p-t">📋 PPT 原页「真题回顾」</div>
+      <ul>
+        <li><b>名词解释</b>：唯美主义</li>
+        <li><b>简答题</b>：论述莫泊桑短篇小说的艺术特点（<b>2025</b>）</li>
+        <li><b>论述题</b>：举例阐述自然主义文学特点与现实主义文学关系（<b>2014</b>）</li>
+      </ul>
+      <p style="margin-top:.6rem"><b>本章重点</b>：自然主义文学特征（与现实主义的区别）、莫泊桑小说</p>
+    </div>
+
+    <div class="sub-h">西大历年真题补全（文学史考研笔记整理）</div>
+    <table>
+      <tr><th>年份</th><th>题型</th><th>题目</th></tr>
+      <tr><td>2014</td><td>论述</td><td>举例阐述自然主义文学特点与现实主义文学的关系</td></tr>
+      <tr><td>2016</td><td>名词解释</td><td>自然主义</td></tr>
+      <tr><td>2017</td><td>名词解释</td><td>海涅《德国，一个冬天的童话》</td></tr>
+      <tr><td>2023</td><td>名词解释</td><td>世纪病</td></tr>
+      <tr><td>2025</td><td>简答/论述</td><td>莫泊桑短篇小说的艺术特点</td></tr>
+      <tr><td>2026</td><td>名词解释</td><td>唯美主义</td></tr>
+    </table>
+
+    <div class="sub-h">自测十问（合上 PPT 逐条过）</div>
+    <ol>
+      <li>自然主义受哪三家学说影响？哪部作品是它的宣言书？</li>
+      <li>自然主义四条艺术特点是什么？（群众场面／客观性／科学性／淡化情节）</li>
+      <li>自然主义与现实主义的区别，PPT 给了哪三条？</li>
+      <li>莫泊桑五类题材各举两部作品名。</li>
+      <li>莫泊桑四条艺术特点 ＋ 各配一个例子。</li>
+      <li>唯美主义的哲学基础、核心口号、三个代表作家。</li>
+      <li>浪漫主义思潮背景的四个层次是什么？</li>
+      <li>浪漫主义主要特征的「二重二崇两追求」指什么？</li>
+      <li>浪漫主义三个浪潮分别以哪国为中心、有哪些作家？</li>
+      <li>德国三流派＋代表作；湖畔派三诗人＋两条风格特点；《抒情歌谣集》的两个年份。</li>
+    </ol>
+
+    <div class="study-bar"><span class="chk" data-k="n11-a">真题回顾三条背下</span><span class="chk" data-k="n11-b">自测十问全过一遍</span></div>
+  </div>
+</div>
+
+<!-- 12 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">↗</div>
+    <div class="card-title">直达原资料</div>
+    <span class="exam-level lv-l">站内跳转</span>
+  </div>
+  <div class="card-body">
+    <p>
+      <a class="nav-link" href="../唐红梅外国文学知识点串讲.html">唐红梅 · 外国文学知识点串讲</a>
+      <a class="nav-link" href="../外国文学史习题_分章刷题.html#d5">分章刷题 · 19世纪浪漫主义（27题）</a>
+      <a class="nav-link" href="../外国文学史习题_分章刷题.html#d7">分章刷题 · 自然主义与其他流派（13题）</a>
+      <a class="nav-link" href="../文学史考研笔记整理_纯文字版.html">文学史考研笔记整理 · 西大真题原答</a>
+    </p>
+    <p style="font-size:.9rem;color:#777">另有同日姊妹页：<a class="nav-link" href="day19-现实主义下.html">day19-现实主义下</a>（9/14 制作，编号同 DAY 19）</p>
+  </div>
+</div>
+
+<footer class="foot">
+  外国文学带背 第19天 · 自然主义 ＋ 浪漫主义（上）<br>
+  主干依据微信群 11 张带背 PPT 逐页整理（自然主义 4 页 ＋ 浪漫主义 7 页），辅以唐红梅串讲、分章刷题、西大历年真题原答<br>
+  待核项：① 柯勒律治列入唯美主义代表 ②《抒情歌谣集》年份 PPT 作 1879（应为 1798/1800）③ 群指令「冬天的神话」应为「童话」
+</footer>
+
+</div>
+
+<div class="font-ctrl">
+  <button onclick="adjustFont(-1)">A-</button>
+  <span class="fs-label" id="fsLabel">15px</span>
+  <button onclick="adjustFont(1)">A+</button>
+  <button class="fs-reset" onclick="resetFont()">重置</button>
+</div>
+
+<script>
+var FS = 15;
+var KEY = 'day19nc_checks';
+
+function adjustFont(d){
+  FS = Math.min(24, Math.max(12, FS + d));
+  document.documentElement.style.setProperty('--fs-base', FS + 'px');
+  document.getElementById('fsLabel').textContent = FS + 'px';
+  try{ localStorage.setItem('day19nc_fs', FS); }catch(e){}
+}
+function resetFont(){ FS = 15; adjustFont(0); }
+
+function loadChecks(){
+  var raw = null;
+  try{ raw = localStorage.getItem(KEY); }catch(e){}
+  var st = raw ? JSON.parse(raw) : {};
+  document.querySelectorAll('.chk').forEach(function(el){
+    var k = el.getAttribute('data-k');
+    if(st[k]) el.classList.add('done');
+    el.addEventListener('click', function(){
+      el.classList.toggle('done');
+      var s = {};
+      document.querySelectorAll('.chk').forEach(function(x){
+        if(x.classList.contains('done')) s[x.getAttribute('data-k')] = 1;
+      });
+      try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){}
+      updateProg();
+    });
+  });
+  updateProg();
+}
+function updateProg(){
+  var all = document.querySelectorAll('.chk').length;
+  var done = document.querySelectorAll('.chk.done').length;
+  var bar = document.getElementById('progBar');
+  var txt = document.getElementById('progTxt');
+  if(bar) bar.style.width = (all ? (done/all*100) : 0) + '%';
+  if(txt) txt.textContent = done + ' / ' + all;
+}
+
+try{
+  var rf = localStorage.getItem('day19nc_fs');
+  if(rf){ FS = parseInt(rf,10) || 15; }
+}catch(e){}
+adjustFont(0);
+
+document.querySelectorAll('.card-head').forEach(function(h){
+  h.parentNode.classList.add('collapsed');
+});
+document.querySelectorAll('.card')[0].classList.remove('collapsed');
+
+loadChecks();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

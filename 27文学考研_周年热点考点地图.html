@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>27文学考研 · 周年热点考点地图</title>
+<style>
+@font-face{
+  font-family:"LXGW WenKai Local";
+  src:url("_shared/fonts/LXGWWenKai-subset.woff2") format("woff2");
+  font-display:swap;
+}
+:root{
+  --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073;
+  --line:#e3dccd; --accent:#9a3b2e; --gold:#c8902a; --green:#3b6b5e;
+  --fs:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--bg);color:var(--ink);font-size:var(--fs);
+  font-family:"LXGW WenKai Local","LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;
+  background-image:radial-gradient(circle at 18% 8%,rgba(200,144,42,.07) 0,transparent 34%),
+                   radial-gradient(circle at 86% 20%,rgba(154,59,46,.055) 0,transparent 38%),
+                   radial-gradient(circle at 55% 92%,rgba(59,107,94,.05) 0,transparent 42%);
+  min-height:100vh;line-height:1.85;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:34px 20px 70px;}
+
+/* ========== 顶部 ========== */
+.hero{text-align:center;position:relative;padding:20px 12px 8px}
+.hero .seal{display:inline-block;width:52px;height:52px;line-height:52px;text-align:center;
+  border:2.5px solid var(--accent);color:var(--accent);border-radius:10px;
+  font-size:20px;font-weight:700;transform:rotate(-6deg);margin-bottom:14px;
+  box-shadow:inset 0 0 0 3px rgba(154,59,46,.12);user-select:none}
+.hero h1{font-size:2.05rem;letter-spacing:5px;font-weight:700}
+.hero .sub{margin-top:10px;color:var(--sub);font-size:.94rem;letter-spacing:2px}
+.hero .rule{width:230px;height:2px;margin:18px auto 0;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* 工具条 */
+.tools{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:20px 0 4px}
+.tools .lab{color:var(--sub);font-size:.82rem;letter-spacing:1px}
+.tbtn{border:1px solid var(--line);background:var(--card);color:var(--sub);
+  border-radius:8px;padding:4px 12px;font-size:.82rem;cursor:pointer;
+  font-family:inherit;transition:.15s}
+.tbtn:hover{border-color:var(--gold);color:var(--ink)}
+.tbtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* 时间轴 */
+.timeline{margin:34px 0 10px;position:relative;padding:6px 0 2px}
+.tl-rail{position:relative;height:2px;background:linear-gradient(90deg,
+  transparent,rgba(154,59,46,.30) 6%,rgba(154,59,46,.30) 94%,transparent);margin:44px 26px 0}
+.tl-nodes{display:flex;justify-content:space-between;gap:4px;margin:-52px 6px 0;position:relative}
+.tl-node{flex:1;text-align:center;text-decoration:none;color:inherit;padding-top:0}
+.tl-node .yr{font-size:1.12rem;font-weight:700;color:var(--accent);letter-spacing:1px}
+.tl-node .dot{width:11px;height:11px;border-radius:50%;background:var(--card);
+  border:2.5px solid var(--gold);margin:8px auto 0;transition:.18s}
+.tl-node .cap{font-size:.74rem;color:var(--sub);margin-top:16px;line-height:1.5;letter-spacing:.5px}
+.tl-node:hover .dot{background:var(--accent);border-color:var(--accent);transform:scale(1.25)}
+.tl-node:hover .cap{color:var(--ink)}
+
+/* ========== 通用块 ========== */
+.sec-title{display:flex;align-items:center;gap:12px;margin:52px 0 18px}
+.sec-title .bar{width:4px;height:22px;background:var(--accent);border-radius:2px}
+.sec-title h2{font-size:1.22rem;letter-spacing:3px;font-weight:700}
+.sec-title .num{color:var(--sub);font-size:.8rem;letter-spacing:1px;margin-left:auto}
+
+.tbl-wrap{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 2px 10px rgba(0,0,0,.045);overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.86rem}
+th{background:rgba(200,144,42,.09);color:var(--ink);font-weight:700;
+  padding:11px 12px;text-align:left;letter-spacing:1px;border-bottom:1px solid var(--line);
+  white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid rgba(227,220,205,.7);vertical-align:top;color:var(--ink)}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(200,144,42,.045)}
+td .yr{color:var(--accent);font-weight:700;white-space:nowrap}
+td .mut{color:var(--sub);font-size:.8rem}
+
+/* ========== 热点卡 ========== */
+.hot{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  margin:26px 0;box-shadow:0 3px 14px rgba(0,0,0,.05);overflow:hidden;position:relative}
+.hot .edge{position:absolute;left:0;top:0;bottom:0;width:6px}
+.hot .hd{display:flex;align-items:flex-start;gap:14px;padding:20px 24px 14px 28px;
+  border-bottom:1px dashed var(--line)}
+.hot .no{width:38px;height:38px;border-radius:10px;flex:none;display:flex;
+  align-items:center;justify-content:center;color:#fff;font-size:1rem;font-weight:700}
+.hot .hdtxt{flex:1;min-width:0}
+.hot .hdtxt h3{font-size:1.16rem;letter-spacing:1.5px;line-height:1.5;font-weight:700}
+.hot .hdtxt .meta{margin-top:5px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{font-size:.73rem;padding:1px 10px;border-radius:999px;letter-spacing:.5px;
+  border:1px solid var(--line);color:var(--sub);background:rgba(247,243,234,.9)}
+.pill.acc{color:var(--accent);border-color:rgba(154,59,46,.35);background:rgba(154,59,46,.06)}
+.pill.gld{color:#8a6413;border-color:rgba(200,144,42,.45);background:rgba(200,144,42,.10)}
+.pill.grn{color:var(--green);border-color:rgba(59,107,94,.38);background:rgba(59,107,94,.08)}
+.mark{flex:none;align-self:flex-start;border:1.5px solid var(--line);background:transparent;
+  color:var(--sub);border-radius:7px;padding:2px 9px;font-size:.76rem;cursor:pointer;
+  font-family:inherit;letter-spacing:1px;transition:.15s;user-select:none}
+.mark:hover{border-color:var(--green);color:var(--green)}
+.mark.on{background:var(--green);border-color:var(--green);color:#fff}
+.hot.done{opacity:.62}
+.hot .bd{padding:6px 24px 22px 28px}
+
+.why{margin:14px 0 4px;padding:10px 14px;border-radius:10px;
+  background:rgba(200,144,42,.075);border-left:3px solid var(--gold);font-size:.88rem;line-height:1.8}
+.why b{color:#8a6413;font-weight:700}
+
+.blk{margin-top:18px}
+.blk .bt{font-size:.86rem;font-weight:700;letter-spacing:2px;color:var(--accent);
+  display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.blk .bt::after{content:"";flex:1;height:1px;background:var(--line)}
+.pts{list-style:none;counter-reset:p}
+.pts li{counter-increment:p;position:relative;padding-left:26px;font-size:.9rem;
+  line-height:1.85;margin-bottom:7px}
+.pts li::before{content:counter(p);position:absolute;left:0;top:.34em;
+  width:17px;height:17px;line-height:17px;text-align:center;font-size:.68rem;
+  background:rgba(154,59,46,.10);color:var(--accent);border-radius:5px;font-weight:700}
+.pts li b{color:var(--accent);font-weight:700}
+.pts li i{font-style:normal;color:var(--sub);font-size:.84rem}
+
+.skel{counter-reset:s;background:rgba(247,243,234,.75);border:1px solid var(--line);
+  border-radius:10px;padding:12px 16px}
+.skel li{counter-increment:s;list-style:none;position:relative;padding-left:52px;
+  font-size:.88rem;line-height:1.85;margin-bottom:6px}
+.skel li:last-child{margin-bottom:0}
+.skel li::before{content:"第"counter(s)"步";position:absolute;left:0;top:.12em;
+  color:var(--gold);font-size:.76rem;font-weight:700;letter-spacing:.5px}
+
+.links{display:flex;flex-direction:column;gap:6px}
+.lk{display:flex;align-items:baseline;gap:10px;font-size:.86rem;line-height:1.7}
+.lk .src{flex:none;font-size:.72rem;color:#fff;border-radius:5px;padding:1px 7px;
+  letter-spacing:.5px;min-width:52px;text-align:center}
+.src.yb{background:var(--green)}
+.src.lf{background:var(--accent)}
+.src.note{background:var(--gold)}
+.lk a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(154,59,46,.30);
+  padding-bottom:1px;transition:.15s}
+.lk a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.lk .t{color:var(--sub);font-size:.8rem}
+
+.gap{margin-top:16px;padding:10px 14px;border-radius:10px;font-size:.84rem;
+  color:#7a3a2e;background:rgba(154,59,46,.05);
+  border:1px dashed rgba(154,59,46,.35);line-height:1.8}
+.gap b{letter-spacing:1px}
+
+.foot{margin-top:52px;padding-top:22px;border-top:1px dashed var(--line);
+  color:var(--sub);font-size:.8rem;line-height:2;text-align:center}
+.foot code{background:rgba(200,144,42,.12);padding:1px 6px;border-radius:4px;color:#7a5c14}
+
+@media (max-width:720px){
+  .hero h1{font-size:1.5rem;letter-spacing:2px}
+  .hot .hd{flex-wrap:wrap;padding:16px 16px 12px 20px}
+  .hot .bd{padding:4px 16px 18px 20px}
+  .tl-nodes{margin:-52px -4px 0}
+  .tl-node .cap{font-size:.66rem}
+  .tl-node .yr{font-size:.86rem}
+}
+@media print{
+  body{background:#fff;background-image:none}
+  .tools,.mark{display:none}
+  .hot{break-inside:avoid;box-shadow:none;page-break-inside:avoid}
+  .hot.done{opacity:1}
+  a{color:var(--ink)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="seal">热<br>点</div>
+    <h1>27 文学考研 · 周年热点考点地图</h1>
+    <div class="sub">六个周年 · 七个年份 · 一条百年线 ｜ 全部挂到本地资料库的章与题</div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="tools">
+    <span class="lab">字号</span>
+    <button class="tbtn" data-fs="15">小</button>
+    <button class="tbtn on" data-fs="16">中</button>
+    <button class="tbtn" data-fs="17.5">大</button>
+    <button class="tbtn" data-fs="19">特大</button>
+    <span class="lab" style="margin-left:16px">已过 <b id="doneCnt">0</b>/6</span>
+  </div>
+
+  <!-- ============ 时间轴 ============ -->
+  <div class="timeline">
+    <div class="tl-rail"></div>
+    <div class="tl-nodes">
+      <a class="tl-node" href="#h3"><div class="yr">1896</div><div class="dot"></div>
+        <div class="cap">茅盾·郁达夫<br>诞辰130年</div></a>
+      <a class="tl-node" href="#h2"><div class="yr">1926</div><div class="dot"></div>
+        <div class="cap">《彷徨》·《诗的格律》<br>新月派成形</div></a>
+      <a class="tl-node" href="#h1"><div class="yr">1936</div><div class="dot"></div>
+        <div class="cap">鲁迅逝世<br>90周年</div></a>
+      <a class="tl-node" href="#h5"><div class="yr">1946</div><div class="dot"></div>
+        <div class="cap">闻一多殉难<br>80周年</div></a>
+      <a class="tl-node" href="#h6"><div class="yr">1956</div><div class="dot"></div>
+        <div class="cap">双百方针<br>百花文学</div></a>
+      <a class="tl-node" href="#h4"><div class="yr">1966</div><div class="dot"></div>
+        <div class="cap">老舍逝世<br>60周年</div></a>
+      <a class="tl-node" href="#h6"><div class="yr">1986</div><div class="dot"></div>
+        <div class="cap">寻根·先锋<br>《随想录》完稿</div></a>
+    </div>
+  </div>
+
+  <!-- ============ 总览表 ============ -->
+  <div class="sec-title">
+    <div class="bar"></div><h2>六个热点，在资料库里落在哪</h2>
+    <span class="num">先看这张表，再决定翻哪一份</span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>年份</th><th>热点</th><th>真正要考的东西</th><th>煜编章节</th><th>李凡题号</th><th>西大真题</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="yr">1936</td>
+          <td>鲁迅逝世 90 周年</td>
+          <td>后期杂文的思想特质；《故事新编》；两个口号论争</td>
+          <td>05 二章、十四章</td>
+          <td>#q21 #q167 #q169</td>
+          <td><span class="mut">2025 简答②故事新编<br>2020 论述②人物形象</span></td>
+        </tr>
+        <tr>
+          <td class="yr">1926</td>
+          <td>《彷徨》出版 100 年</td>
+          <td>《彷徨》与《呐喊》的差别；知识分子题材</td>
+          <td>05 二章</td>
+          <td>#q15 #q16 #q21</td>
+          <td><span class="mut">2024 论述②《伤逝》</span></td>
+        </tr>
+        <tr>
+          <td class="yr">1896</td>
+          <td>茅盾&郁达夫诞辰 130 年</td>
+          <td>社会剖析小说 vs 自叙传抒情；两种小说范式</td>
+          <td>05 八章、三章</td>
+          <td>#q92 #q91 #q47</td>
+          <td><span class="mut">2026 名词②创造社</span></td>
+        </tr>
+        <tr>
+          <td class="yr">1966</td>
+          <td>老舍逝世 60 周年</td>
+          <td>京味；《骆驼祥子》的城市文明病；《茶馆》人像展览式</td>
+          <td>05 九章、06 六章</td>
+          <td>#q107 #q110 #q315</td>
+          <td><span class="mut">样本内无直接命中</span></td>
+        </tr>
+        <tr>
+          <td class="yr">1946</td>
+          <td>闻一多殉难 80 周年</td>
+          <td>三美；新月派格律化；《诗的格律》百年</td>
+          <td>05 四章</td>
+          <td>#q69 #q68 #q67</td>
+          <td><span class="mut">2024 名词④新格律诗三美</span></td>
+        </tr>
+        <tr>
+          <td class="yr">1956</td>
+          <td>双百方针 70 周年</td>
+          <td>百花文学的背景与特征；第四种剧本</td>
+          <td>06 一章、六章</td>
+          <td><span class="mut">题库偏薄</span></td>
+          <td><span class="mut">样本内无直接命中</span></td>
+        </tr>
+        <tr>
+          <td class="yr">1986</td>
+          <td>寻根·先锋·《随想录》</td>
+          <td>寻根的特征与影响；先锋的叙事革命；《随想录》</td>
+          <td>06 十章、十二至十四章</td>
+          <td>#q356 #q358 #q413</td>
+          <td><span class="mut">2025 名词③随想录<br>2025/2026 论述②贾平凹</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ================= 热点一 ================= -->
+  <div class="sec-title" id="h1">
+    <div class="bar"></div><h2>热点一 · 鲁迅逝世 90 周年</h2>
+    <span class="num">1936 · 现代文学的重要转折</span>
+  </div>
+
+  <div class="hot" data-hot="h1">
+    <div class="edge" style="background:var(--accent)"></div>
+    <div class="hd">
+      <div class="no" style="background:var(--accent)">壹</div>
+      <div class="hdtxt">
+        <h3>鲁迅逝世 90 周年 · 1936 是左联后期格局变动的关键年</h3>
+        <div class="meta">
+          <span class="pill acc">1936.10.19</span>
+          <span class="pill gld">杂文</span>
+          <span class="pill gld">故事新编</span>
+          <span class="pill grn">西大 2020 / 2021 / 2025 连考</span>
+        </div>
+      </div>
+      <button class="mark" data-key="h1">未过</button>
+    </div>
+    <div class="bd">
+      <div class="why">
+        <b>为什么这个点必须提前准备：</b>西大在资料库收录的 9 个年份里，对鲁迅的考查密度最高，2020 论述考「鲁迅小说中的人物形象」、2021 论述考「阿Q 人物形象」、2025 简答考「《故事新编》的创新性」，三次都不是冷门偏题，全部落在讲义正章。鲁迅逝世整十周年又是一次提醒命题人「回到鲁迅」的时机。
+      </div>
+
+      <div class="blk">
+        <div class="bt">核心考点</div>
+        <ol class="pts">
+          <li><b>《彷徨》与《呐喊》的分野</b>——1926 年出版，收 1924–1925 年 11 篇；反封建内容与《呐喊》相承，但艺术更成熟，<i>爱恨更深地埋藏在对现实的客观冷静的描写中</i>，重心转向历史变动中挣扎浮沉的知识分子。</li>
+          <li><b>知识分子形象三分法</b>——下层科举受害者（孔乙己、陈士诚）、封建卫道士（高老夫子、四铭）、觉醒后败退者（吕纬甫、魏连殳、子君与涓生）。这是西大 2020 论述的现成骨架。</li>
+          <li><b>两大独特小说模式</b>——「看 / 被看」的二元对立（看客背后还有一个隐含作者在「看」，构成反讽距离）；「离去—归来—再离去」的归乡模式（叙述者在讲他人时也在讲自己，形成复调）。</li>
+          <li><b>后期杂文的思想特质</b>——批判性、否定性、攻击性；「反常规」的多疑思维带来的犀利与刻毒；思维的「个」与「类」；杂文根底上是「诗」的主观性；自由创造的杂文语言（拗体、嬉笑怒骂）。</li>
+          <li><b>《故事新编》</b>——1936 年 1 月出版，古今杂糅、油滑笔法、庄严与荒诞并存。西大 2025 简答原题就是「创新性」，答案落在古今交融 / 文体写法 / 结构三层。</li>
+          <li><b>1936 的两个口号论争</b>——「国防文学」与「民族革命战争的大众文学」之争，本质是民族救亡背景下文学如何服务时代的路线分歧。<i>资料库全库零命中，见下方缺口。</i></li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">答题骨架（论述：鲁迅后期杂文的思想特质）</div>
+        <ol class="skel">
+          <li>定坐标：1927 年后鲁迅重心由小说转向杂文，1936 年去世前完成《且介亭杂文》诸集，杂文成为他「社会批评与文明批评」的主武器。</li>
+          <li>立骨：批判性—否定性—攻击性 / 多疑思维的犀利与刻毒 / 个与类的统一 / 主观性 / 语言创造，五条并列，每条配一例。</li>
+          <li>拉高：杂文不是「骂人文章」，是「立人」理想的反面写法——批判的彻底性来自彼岸关怀。</li>
+          <li>收口：与 1936 年的时代背景相接，说明杂文文体为何在民族危机中被推到极致。</li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">资料库落点</div>
+        <div class="links">
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p0-c1">第二章 鲁迅（一）《呐喊》与《彷徨》</a><span class="t">思想内容 / 文学贡献 / 两大模式</span></div>
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p1-c7">第十四章 散文（二）· 鲁迅杂文与《故事新编》</a><span class="t">杂文五特质 + 故事新编三特点</span></div>
+          <div class="lk"><span class="src yf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q21">#q21 ★★★★★ 以《呐喊》《彷徨》为例谈形式贡献</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q169">#q169 ★★★★★ 鲁迅杂文的思想艺术特质（25 南开）</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q171">#q171 ★★★★ 鲁迅杂文的创作历程</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n68b654b8000000001c008ba6">2025 简答②《故事新编》的创新性</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n68a53fac000000001b034cf4">2020 论述②鲁迅小说中的人物形象</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n68a2950a000000001b034f05">2021 论述②《阿Q正传》中阿Q的人物形象</a></div>
+        </div>
+      </div>
+
+      <div class="gap">
+        <b>缺口（如实标注）：</b>「两个口号」论争在煜编 05/06、李凡现当代 458 题、笔记 220 卡里<strong>全部零命中</strong>（检索词：国防文学 / 民族革命战争的大众文学 / 两个口号）。这不是漏挂，是资料库真的没有。要考只能自己补 200 字：1936 年左联解散 → 周扬等提「国防文学」→ 鲁迅、胡风、冯雪峰提「民族革命战争的大众文学」→ 争论焦点是统一战线中无产阶级领导权与文学独立性。建议补进笔记页，别指望现成材料。
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 热点二 ================= -->
+  <div class="sec-title" id="h2">
+    <div class="bar"></div><h2>热点二 · 1926 回望：五四落潮后的多元探索</h2>
+    <span class="num">《彷徨》出版 · 《诗的格律》发表 · 创造社转向</span>
+  </div>
+
+  <div class="hot" data-hot="h2">
+    <div class="edge" style="background:var(--green)"></div>
+    <div class="hd">
+      <div class="no" style="background:var(--green)">贰</div>
+      <div class="hdtxt">
+        <h3>1926 · 新文学告别五四的狂热，进入沉淀分化</h3>
+        <div class="meta">
+          <span class="pill acc">1926.8 彷徨</span>
+          <span class="pill acc">1926.5 诗的格律</span>
+          <span class="pill grn">西大 2024 名词 / 2024 论述 / 2016 简答</span>
+        </div>
+      </div>
+      <button class="mark" data-key="h2">未过</button>
+    </div>
+    <div class="bd">
+      <div class="why">
+        <b>这一年的分量：</b>1926 年同时发生三件事——《彷徨》出版（小说）、闻一多《诗的格律》发表（诗论）、新月派以《晨报副刊·诗镌》为阵地成形（流派）；创造社则在 1925 年后转向革命文学，1928 年正式倡导。一句话概括：<b>各家分头找路，新文学从「共同的叛逆」变成「各自的主张」</b>。名词解释、简答最爱在这一层出题。
+      </div>
+
+      <div class="blk">
+        <div class="bt">核心考点</div>
+        <ol class="pts">
+          <li><b>《彷徨》的书名含义</b>——1926 年 8 月北新书局出版；鲁迅自题「寂寞新文苑，平安旧战场。两间余一卒，荷戟独彷徨」，正是五四落潮后启蒙者的处境。</li>
+          <li><b>《伤逝》的位置</b>——鲁迅唯一以青年爱情为正面题材的小说，写「五四」个性解放话语的天花板：社会原因 + 性格原因 + 经济原因。西大 2024 论述原题。</li>
+          <li><b>新月派的三个举措</b>——「本质的醇正」「情感的节制」「格律的谨严」；美学原则是「理性节制情感」，把直抒胸臆改为主观情愫的客观对象化。</li>
+          <li><b>创造社前后期分界</b>——以 1925 年为界；前期「为艺术为艺术」、重内心要求与直觉灵感；后期提倡「表同情于无产阶级」的革命文学。西大 2026 名词解释原题就考「创造社」。</li>
+          <li><b>同代并置的四派</b>——人生派（文学研究会「血和泪的文学」）、浪漫派（创造社《女神》）、小诗派（冰心《繁星》《春水》、宗白华《流云》）、早期象征诗派（李金发，暗示与远取譬）。流派辨析是这一年的高频接口。</li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">答题骨架（名词：前期新月诗派 / 新格律诗三美）</div>
+        <ol class="skel">
+          <li>时间与阵地：1926 年《晨报》副刊《诗镌》，闻一多、徐志摩为主将。</li>
+          <li>核心主张：理性节制情感、反对滥情与散文化、讲「和谐」与「均齐」。</li>
+          <li>三美落地：音乐美（音节音尺韵脚）、绘画美（辞藻色彩与视觉形象）、建筑美（节匀行齐）。</li>
+          <li>评价一句：纠正五四白话诗过于松散随意之弊，代表作《死水》《再别康桥》。</li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">资料库落点</div>
+        <div class="links">
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p0-c3">第四章 新诗（一）· 新月诗派与三美</a><span class="t">20 年代新诗七派全在这一章</span></div>
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p1-c0">第七章 文学思潮与运动（二）· 革命文學论争</a><span class="t">创造社转向的制度背景</span></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q67">#q67 ★★★★ 谈谈你对前期新月派诗歌的认识</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q15">#q15 ★★★★ 《伤逝》的思想内容</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q82">#q82 ★★ 三十年代革命文学论争有什么意义</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n68942c5c0000000022022f49">2024 论述②《伤逝》中涓生与子君的爱情</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n690415e1000000000503af0b">2024 名词④新格律诗三美</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n695c67d2000000001a02617a">2026 名词②创造社</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n6909639a000000000402046f">2023 名词②语丝文体</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 热点三 ================= -->
+  <div class="sec-title" id="h3">
+    <div class="bar"></div><h2>热点三 · 茅盾 &amp; 郁达夫诞辰 130 周年</h2>
+    <span class="num">1896 · 20 年代小说的两种范式</span>
+  </div>
+
+  <div class="hot" data-hot="h3">
+    <div class="edge" style="background:var(--gold)"></div>
+    <div class="hd">
+      <div class="no" style="background:var(--gold)">叁</div>
+      <div class="hdtxt">
+        <h3>同生于 1896 年，走了两条相反的路</h3>
+        <div class="meta">
+          <span class="pill acc">1896</span>
+          <span class="pill gld">社会剖析 vs 自叙传</span>
+          <span class="pill grn">西大 2026 名词考了创造社</span>
+        </div>
+      </div>
+      <button class="mark" data-key="h3">未过</button>
+    </div>
+    <div class="bd">
+      <div class="why">
+        <b>为什么这一组好考：</b>两人同年生、同属 20 年代、且恰好代表两个对立面——茅盾站在<b>文学研究会</b>「为人生」的现实主义一侧，用社会科学分析的眼光写时代群体；郁达夫站在<b>创造社</b>「为艺术」的抒情一侧，用自叙传袒露个体内心。这种「同年 + 对立」的结构，出对比式论述题最省力，也最难答偏。
+      </div>
+
+      <div class="blk">
+        <div class="bt">核心考点 · 茅盾一侧</div>
+        <ol class="pts">
+          <li><b>社会剖析小说</b>——以茅盾为首，靠精细观察 + 社会科学思想分析生活，构建历史性的巨大内容、宏伟结构、客观叙述，从典型环境解释并塑造典型人物。<i>关键词：理性分析开拓形象思维</i>。</li>
+          <li><b>题材的时代性与重大性</b>——要求创作与历史事变同步，《蚀》写小资产阶级知识分子心灵历程，《子夜》写民族资本家吴荪甫的悲剧，追求「巨大的思想深度」与「广阔的历史内容」。</li>
+          <li><b>人物形象系列</b>——自觉创作「形象系列」：民族资本家（吴荪甫）与时代新女性（梅行素、孙舞阳）两大系列，跨作品构成某一类型人物性格的发展史。</li>
+          <li><b>蛛网式密集结构</b>——《子夜》追求与纷繁生活相适应的结构；《蚀》以三部曲各各独立又连贯；心理刻画追求社会剖析与心理剖析的统一。</li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">核心考点 · 郁达夫一侧</div>
+        <ol class="pts">
+          <li><b>「零余者」</b>——五四落潮后歧路彷徨的知识青年，受社会挤压而无力把握命运，宁愿穷困也不与黑暗同流，以变态行为示反抗。<i>是自己精神困境的自述</i>。</li>
+          <li><b>自叙传抒情小说四条</b>——侧重自我表现、主观色彩浓、多用第一人称；不重外部事件，以情绪、心境为结构线索；结构散文化与抒情诗化；浪漫主义为主兼采现代主义（梦、潜意识、意识流）。</li>
+          <li><b>感伤的抒情</b>——以感伤抒情为中轴，轻视情节营构，靠心理细腻描摹 + 外在景物衬饰来宣泄；同时指出青年病态的制造者是病态社会。</li>
+          <li><b>两种范式的对照口径</b>：<i>客观 / 主观、群体 / 个体、理性分析 / 情绪流泻、史诗结构 / 散文化结构、时代典型 / 抒情主人公</i>。答题时这五对词成对写，比单讲一家得分高。</li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">资料库落点</div>
+        <div class="links">
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p1-c1">第八章 茅盾 · 社会剖析小说与《子夜》</a></div>
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p0-c2">第三章 小说（一）· 零余者与自叙传抒情小说</a><span class="t">郁达夫全在这一节</span></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q92">#q92 ★★★★★ 茅盾小说的艺术探索表现在哪些方面</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q91">#q91 ★★★★ 社会剖析派小说的总体特征</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q48">#q48 ★★★★ 郁达夫笔下「零余者」形象（26 上外）</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q47">#q47 ★★★★ 郁达夫「自叙传」小说的特点</a></div>
+        </div>
+      </div>
+
+      <div class="gap">
+        <b>缺口（如实标注）：</b>资料库收录的西大真题里<b>没有直接考茅盾的题</b>（收录口径：2016、2017、2020–2026 共 9 个年份，缺 2018、2019），与郁达夫最近的一次是 2026 名词〈创造社〉（他是创造社成员）。这说明茅盾在西大不是必考人物，但「文学研究会 vs 创造社」的对比接口极高频，建议按对比题准备，不要按单个人物死背。
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 热点四 ================= -->
+  <div class="sec-title" id="h4">
+    <div class="bar"></div><h2>热点四 · 老舍逝世 60 周年</h2>
+    <span class="num">1966 · 《骆驼祥子》连载 90 周年</span>
+  </div>
+
+  <div class="hot" data-hot="h4">
+    <div class="edge" style="background:var(--accent)"></div>
+    <div class="hd">
+      <div class="no" style="background:var(--accent)">肆</div>
+      <div class="hdtxt">
+        <h3>京味文学与市民书写 · 从祥子到茶馆</h3>
+        <div class="meta">
+          <span class="pill acc">1966.8.24</span>
+          <span class="pill gld">京味</span>
+          <span class="pill gld">人像展览式</span>
+          <span class="pill grn">李凡五星 3 题</span>
+        </div>
+      </div>
+      <button class="mark" data-key="h4">未过</button>
+    </div>
+    <div class="bd">
+      <div class="why">
+        <b>两个周年叠在一起：</b>老舍 1966 年 8 月 24 日辞世，2026 年满 60 年；《骆驼祥子》1936 年 9 月起在《宇宙风》连载，满 90 年。一个作家 + 一部代表作同时在整十周年上，是最容易被拿来做「作家专章」论述的时机。
+      </div>
+
+      <div class="blk">
+        <div class="bt">核心考点</div>
+        <ol class="pts">
+          <li><b>文化批判视野中的市民世界</b>——老舍用「文化」来分割人的世界，写文化制约下的世态人情。三类市民形象：老派（老马、张大哥、祁老太爷）、新派（漫画式粗俗，鄙夷西方资本主义文明）、正派理想（带传统道德观）。</li>
+          <li><b>《骆驼祥子》的真问题</b>——不是「个人奋斗的失败」这么简单，而是<b>城市文明病与人性关系的探讨</b>：一个纯朴农民与现代城市文明相对立，所产生的道德堕落与心灵腐蚀；揭示文明失范如何引发「人心所藏的污浊与兽性」。</li>
+          <li><b>「京味」三层</b>——取材上市民凡俗生活的场景风致与文化情趣；描写时揭示北京文化心理结构；对北京文化的沉痛批判与现代命运引发的挽歌情调交织，形成复杂审美。</li>
+          <li><b>幽默的「打哈哈」性质</b>——以笑代愤的发泄 + 自我解嘲，使喜剧与悲剧、讽刺与抒情渗透结合；追求生活化、更高视点、表现上的节制与分寸感。</li>
+          <li><b>《茶馆》的艺术构思</b>——反描法（三个时代，主题引而不发，从反面否定中趋向正面）、侧面透露法（小人物集合于茶馆，以小见大）、<b>人像展览式</b>结构（舍弃「一人一事」，三言五语勾出人物轮廓）。<i>注：西大 2024 简答②考过「人像展览式」这个术语，但落在 30 年代新感觉派名下，不是考《茶馆》——术语可迁移，别当成老舍已被考过的证据。</i></li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">资料库落点</div>
+        <div class="links">
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p1-c2">第九章 老舍 · 市民世界 / 骆驼祥子 / 京味与幽默</a></div>
+          <div class="lk"><span class="src yb">煜编06</span><a href="煜编考研06当代.html#p0-c5">第六章 戲劇和電影 · 老舍《茶馆》的艺术成就</a><span class="t">构思 / 结构 / 人物三层</span></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q107">#q107 ★★★★★ 结合作品谈老舍的「京味」（25 华科、26 北师大）</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q110">#q110 ★★★★★ 《骆驼祥子》的思想特征和艺术特色</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q315">#q315 ★★★★★ 论述《茶馆》的艺术特征（25 民大、26 南师大）</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q317">#q317 ★★★★ 老舍剧作的艺术特色</a></div>
+        </div>
+      </div>
+
+      <div class="gap">
+        <b>缺口（如实标注）：</b>资料库收录的 9 个年份里<b>「老舍」零命中</b>（检索整卡文本，含答案部分）。这是重要信号：别把老舍当西大必考人物，按「《茶馆》可作现当代论述素材」的定位准备即可。另：煜编 05 第九章只覆盖小说，<b>《茶馆》与剧作在 06 第六章</b>，跨文件找，别在 05 里翻不到就以为没有。
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 热点五 ================= -->
+  <div class="sec-title" id="h5">
+    <div class="bar"></div><h2>热点五 · 闻一多殉难 80 周年</h2>
+    <span class="num">1946 · 《诗的格律》发表百年</span>
+  </div>
+
+  <div class="hot" data-hot="h5">
+    <div class="edge" style="background:var(--green)"></div>
+    <div class="hd">
+      <div class="no" style="background:var(--green)">伍</div>
+      <div class="hdtxt">
+        <h3>诗歌理想与知识分子的选择</h3>
+        <div class="meta">
+          <span class="pill acc">1946.7.15</span>
+          <span class="pill acc">1926 诗的格律</span>
+          <span class="pill grn">西大 2024 名词④ 直接考了三美</span>
+        </div>
+      </div>
+      <button class="mark" data-key="h5">未过</button>
+    </div>
+    <div class="bd">
+      <div class="why">
+        <b>两个百年凑在一处：</b>《诗的格律》1926 年发表于《晨报副刊·诗镌》，到 2026 年整一百年；闻一多 1946 年 7 月 15 日在昆明被刺，殉难 80 周年。西大 2024 名词解释第四题就是「新格律诗三美」——这条线是<b>已经考过、且还会再考</b>的。
+      </div>
+
+      <div class="blk">
+        <div class="bt">核心考点</div>
+        <ol class="pts">
+          <li><b>三美（必背，按讲义原话写）</b>——音乐美：音节与韵脚的和谐，一行诗中音节、音尺的排列组合要有规律；绘画美：辞藻力求美丽、富有色彩、讲究视觉形象与直观性；建筑美：节与节之间匀称、行与行之间均齐，整体外形有整齐之感。</li>
+          <li><b>理论落点</b>——前期新月诗派以 1926 年《诗镌》为阵地，闻一多、徐志摩提倡新诗格律化，故称「新格律诗派」；主张「理性节制情感」，反对滥情主义与诗的散文化；以「和谐」与「均齐」为最重要审美特征。</li>
+          <li><b>诗学贡献的写法</b>——纠正五四白话新诗过于松散、随意之弊，把「绝端自由」的诗体拉回形式秩序的建立，代表作《死水》。</li>
+          <li><b>知识分子形象的角度</b>——后期放下书斋投身现实抗争，从唯美诗人到民主斗士，是近现代知识分子精神选择的典型缩影。可用于「新诗发展」「知识分子道路」类论述的收口。<i>注意：这一层讲义未展开，见缺口。</i></li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">资料库落点</div>
+        <div class="links">
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p0-c3">第四章 新诗（一）· 新月诗派与三美</a></div>
+          <div class="lk"><span class="src yb">煜编05</span><a href="煜编考研05现代.html#p1-c6">第十三章 新诗（二）· 中国诗歌会与新月余脉</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q69">#q69 ★★★ 闻一多「三美」的诗歌理论主张</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q68">#q68 ★★★ 闻一多诗歌的艺术特色</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q87">#q87 ★★★ 如何评价新月派在三十年代的理论</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n690415e1000000000503af0b">2024 名词④新格律诗三美（现成答案）</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n68eb2635000000000503803d">2016 简答②徐志摩诗歌的艺术特色</a></div>
+        </div>
+      </div>
+
+      <div class="gap">
+        <b>缺口（如实标注）：</b>煜编 05 只在第四章把三美当作新月派主张的一小段处理，<b>没有闻一多专章</b>；他 40 年代的杂文、《最后一次的讲演》、民主运动时期的活动，全库无材料。若题干强调「殉难 80 周年」的纪念色彩，不要硬扯，老老实实按「三美 + 新月派 + 诗学贡献」答，末段一句带过知识分子道路即可。
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 热点六 ================= -->
+  <div class="sec-title" id="h6">
+    <div class="bar"></div><h2>热点六 · 1956 与 1986</h2>
+    <span class="num">当代文学两次思想解放节点</span>
+  </div>
+
+  <div class="hot" data-hot="h6">
+    <div class="edge" style="background:var(--gold)"></div>
+    <div class="hd">
+      <div class="no" style="background:var(--gold)">陆</div>
+      <div class="hdtxt">
+        <h3>两个年份，两次创作空间的拓展</h3>
+        <div class="meta">
+          <span class="pill acc" id="h6b">1956 双百</span>
+          <span class="pill acc">1986 寻根·先锋</span>
+          <span class="pill grn">西大 2025 名词 / 2025 论述 / 2026 论述</span>
+        </div>
+      </div>
+      <button class="mark" data-key="h6">未过</button>
+    </div>
+    <div class="bd">
+      <div class="why">
+        <b>为什么把两个年份并在一起：</b>1956 年双百方针带来「百花文学」，1986 年前后寻根、先锋蓬勃兴起，巴金《随想录》也在这一年完稿。<b>两次都是「创作空间突然被打开」的时刻</b>，答案结构可以共用：背景（政策 / 思潮松动）→ 创作表现 → 代表作家作品 → 局限与文学史意义。
+      </div>
+
+      <div class="blk">
+        <div class="bt">核心考点 · 1956</div>
+        <ol class="pts">
+          <li><b>双百方针</b>——1956 年 5 月 2 日毛泽东在最高国务会议提出「百花齐放，百家争鸣」；陆定一随后作报告：艺术上不同形式风格可自由发展，科学上不同学派可自由争论，是非问题应由自由讨论与实践解决，不应采取简单方法。</li>
+          <li><b>「第四种剧本」</b>——1956 年春出现，是反公式化概念化、尤其双百方针带来思想解放的直接成果。代表作：岳野《同甘共苦》、杨履方《布谷鸟又叫了》、海默《洞箫横吹》、赵寻《还乡记》。<b>两个突破</b>：突破「人性」「人道主义」禁区；突破只准歌颂不准暴露的禁区、大胆干预生活。</li>
+          <li><b>必须说的反面</b>——双百与整风后来事实上变成「引蛇出洞」的阳谋，1957 年反右把文艺问题等同政治问题，百花文学随即被清算。答题写到这一层才完整，别只写「繁荣」。</li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">核心考点 · 1986</div>
+        <ol class="pts">
+          <li><b>寻根文学</b>——1985 年前后兴起，1986 年成潮。特征：把目光投向传统文化、地域文化与民间生存形态，追求民族性与现代性的双重变奏。代表作韩少功《爸爸爸》、阿城《棋王》、王安忆《小鲍庄》、贾平凹商州系列。<i>西大 2025 / 2026 连续两年论述都落在贾平凹，等于把寻根当背景考了。</i></li>
+          <li><b>先锋小说</b>——80 年代中期，马原、残雪、格非、余华、苏童为代表，在叙事革命、语言试验、生存状态三层面激进创新。特征：回避消解意识形态；颠覆传统真实观、放弃对本质的追寻，文本只自我指涉；叙述游戏、平面化、结构散乱破碎、人物符号化、戏拟反讽。</li>
+          <li><b>巴金《随想录》</b>——1978 年底至 <b>1986 年</b>完成，150 篇 42 万字，五集（《随想录》《探索集》《真话集》《病中集》《无题集》），「一部说真话的大书」，用纸笔建起一座个人的「文革」博物馆。西大 2025 名词解释原题。</li>
+          <li><b>同期的思潮底盘</b>——1985 年被称为「方法年 / 观念年」，三论（系统论、信息论、控制论）引入；刘再复「文学主体性」讨论；1988 年「重写文学史」口号。这些是 1986 年创作突破的理论前提，论述开头一句点出来，格局立刻高一层。</li>
+        </ol>
+      </div>
+
+      <div class="blk">
+        <div class="bt">资料库落点</div>
+        <div class="links">
+          <div class="lk"><span class="src yb">煜编06</span><a href="煜编考研06当代.html#p0-c0">第一章 文學體制與文學運動 · 双百方针 / 反右</a></div>
+          <div class="lk"><span class="src yb">煜编06</span><a href="煜编考研06当代.html#p0-c5">第六章 戲劇和電影 · 第四种剧本</a><span class="t">1956 段唯一的创作实例</span></div>
+          <div class="lk"><span class="src yb">煜编06</span><a href="煜编考研06当代.html#p2-c0">第十章 八十年代文學思潮 · 方法年 / 寻根 / 先锋</a></div>
+          <div class="lk"><span class="src yb">煜编06</span><a href="煜编考研06当代.html#p2-c2">第十二章 小說創作（上）· 伤痕 / 反思 / 寻根</a></div>
+          <div class="lk"><span class="src yb">煜编06</span><a href="煜编考研06当代.html#p2-c3">第十三章 小說創作（下）· 现代派 / 先锋小说</a></div>
+          <div class="lk"><span class="src yb">煜编06</span><a href="煜编考研06当代.html#p2-c4">第十四章 散文 · 巴金《随想录》</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q356">#q356 ★★★★ 谈谈寻根文学的特征</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q358">#q358 ★★★★ 文化寻根小说的民族性与现代性（25 北师大）</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q381">#q381 ★★★★ 80–90 年代先锋小说的思想与艺术特征（26 武大）</a></div>
+          <div class="lk"><span class="src lf">李凡</span><a href="李凡1000题_现当代文学史-OCR重建版.html#q413">#q413 ★★★★ 巴金《随想录》的思想内涵</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n68faf7e100000000040149e8">2025 名词③《随想录》</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n6882f901000000002201e9a7">2025 论述②贾平凹《秦腔》的艺术特点</a></div>
+          <div class="lk"><span class="src note">真题</span><a href="文学史考研笔记整理_纯文字版.html#n69d5dbf2000000001f003208">2026 论述②贾平凹长篇小说的审美范式</a></div>
+        </div>
+      </div>
+
+      <div class="gap">
+        <b>缺口（如实标注）：</b>①双百方针在资料库收录的 9 个年份里零命中，李凡题库「十七年」段也偏薄（该段整体题量最少）；②先锋小说在西大样本里同样零命中，但李凡里 2026 武大、北师大等校连考，属「别的学校爱考、西大还没考」的类型，性价比看你自己判断；③《随想录》完成时间两处不一致——煜编 06 作「1986 年 9 月完成」，笔记卡片作「1986 年 8 月」，<b>月份待核</b>，答题写「1986 年完稿」最稳。
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 用法 ============ -->
+  <div class="sec-title">
+    <div class="bar"></div><h2>怎么用这一页</h2>
+    <span class="num">别当资料看，当排产表用</span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>动作</th><th>做什么</th><th>耗时</th></tr></thead>
+      <tbody>
+        <tr><td class="yr">第 1 遍</td><td>只看上面那张总览表 + 每张卡的「核心考点」，六个热点过一遍，判断哪几个是你的盲区</td><td class="mut">20 分钟</td></tr>
+        <tr><td class="yr">第 2 遍</td><td>盲区热点，点「煜编章节」链接读原文，读完点「李凡题号」做题，对答案</td><td class="mut">每个 40 分钟</td></tr>
+        <tr><td class="yr">第 3 遍</td><td>点「西大真题」链接，把已经考过的那几张卡片的答案结构默写一遍（默完再对）</td><td class="mut">每张 15 分钟</td></tr>
+        <tr><td class="yr">收口</td><td>把「缺口」里那三条自己补成笔记：两个口号论争、闻一多后期、双百文学。别的都可以靠资料库，这三条只能自己写</td><td class="mut">60 分钟</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="foot">
+    共 6 个热点 ｜ 挂接煜编 05/06 共 14 处章锚点、李凡现当代 21 个题号、西大真题卡片 11 张<br>
+    「西大真题」指笔记页收录的样本：2016、2017、2020–2026 共 9 个年份（缺 2018、2019）；「零命中」仅代表这 9 年没考，不等于以后不考<br>
+    资料库根目录 <code>27文学考研_周年热点考点地图.html</code> ｜ 整理于 2026-10-20 ｜ 全部链接已逐条校验，坏链 0<br>
+    标注「缺口」处为全库检索零命中（煜编 05/06 + 李凡现当代 458 题 + 笔记 220 卡），是资料库真没有，不是没挂
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var KEY = 'hots27-progress-v1';
+  var FS_KEY = 'hots27-fs-v1';
+
+  // ---- 字号 ----
+  var fsBtns = document.querySelectorAll('.tbtn');
+  function applyFs(v){
+    document.documentElement.style.setProperty('--fs', v + 'px');
+    fsBtns.forEach(function(b){ b.classList.toggle('on', b.dataset.fs === String(v)); });
+    try{ localStorage.setItem(FS_KEY, v); }catch(e){}
+  }
+  fsBtns.forEach(function(b){
+    b.addEventListener('click', function(){ applyFs(Number(b.dataset.fs)); });
+  });
+  try{
+    var savedFs = localStorage.getItem(FS_KEY);
+    if(savedFs) applyFs(Number(savedFs));
+  }catch(e){}
+
+  // ---- 已过勾选 ----
+  var marks = document.querySelectorAll('.mark');
+  var cntEl = document.getElementById('doneCnt');
+  var state = {};
+  try{ state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; }catch(e){ state = {}; }
+
+  function paint(){
+    var n = 0;
+    marks.forEach(function(b){
+      var k = b.dataset.key;
+      var on = !!state[k];
+      b.classList.toggle('on', on);
+      b.textContent = on ? '已过' : '未过';
+      var card = b.closest('.hot');
+      if(card) card.classList.toggle('done', on);
+      if(on) n++;
+    });
+    if(cntEl) cntEl.textContent = n;
+  }
+
+  marks.forEach(function(b){
+    b.addEventListener('click', function(){
+      var k = b.dataset.key;
+      state[k] = !state[k];
+      try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+</body>
+</html>

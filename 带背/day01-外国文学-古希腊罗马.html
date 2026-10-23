@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外国文学带背 第1天 · 古希腊罗马文学（一）神话与荷马史诗</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css">
+<style>
+  :root{
+    --bg:#faf8f3; --panel:#fff; --ink:#2b2b2b; --ink-soft:#555;
+    --gold:#a8854a; --gold-deep:#7d5e2c; --gold-bg:#f4ecdb; --border:#e6dfcc;
+    --highlight:#fff8e6; --red:#a23b3b; --red-bg:#fbeeee; --red-border:#d8b8b8;
+    --blue:#2d4a6e; --blue-bg:#e8eff5; --green:#3d6b4a; --green-bg:#eaf3ec;
+    --fs-base:15px;
+  }
+  *{box-sizing:border-box}
+  html{font-size:var(--fs-base)}
+  body{margin:0;padding:0;font-family:"LXGW WenKai","LXGW WenKai TC","霞鹜文楷","Source Han Serif SC","Noto Serif CJK SC","PingFang SC","Microsoft YaHei",serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 18px 80px}
+
+  header.head{background:linear-gradient(135deg,#2b2b2b 0%,#4a3a20 100%);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  header.head .day{font-size:.87rem;letter-spacing:.4rem;opacity:.75;margin-bottom:.5rem}
+  header.head h1{font-size:1.87rem;margin:0 0 .67rem;font-weight:700;letter-spacing:.06em}
+  header.head .sub{font-size:1rem;opacity:.85;line-height:1.7}
+  .tags{display:flex;gap:.67rem;margin-top:1.07rem;flex-wrap:wrap}
+  .tag{padding:.27rem .93rem;border-radius:1.33rem;font-size:.8rem;background:rgba(244,236,219,.18);border:1px solid rgba(244,236,219,.35)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}
+  .card-head{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}
+  .num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+  .card-title{font-size:1.2rem;font-weight:700;color:var(--gold-deep);flex:1}
+  .exam-level{font-size:.78rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;white-space:nowrap}
+  .lv-ss{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .lv-s{background:var(--blue-bg);color:var(--blue);border:1px solid #b9cde0}
+  .lv-l{background:#f0f0ee;color:#777;border:1px solid #d5d5d0}
+  .card-body{padding:20px 26px}
+  .collapsed .card-body{display:none}
+  .ppt-src{font-size:.76rem;color:#8a7c60;background:#f6f2e7;border:1px solid var(--border);
+    border-radius:.27rem;padding:.05rem .45rem;margin-left:.5rem;font-weight:400;white-space:nowrap}
+
+  .sub-h{font-size:1.07rem;font-weight:700;color:var(--gold-deep);margin:1.4rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+  .sub-h::before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px}
+
+  .term{font-weight:700;color:var(--gold-deep)}
+  .hl{background:linear-gradient(transparent 60%,#fff3a8 60%);padding:0 .13rem}
+  .hl-b{background:linear-gradient(transparent 60%,#ffd9d9 60%);padding:0 .13rem;font-weight:700}
+  p{margin:.53rem 0;font-size:.97rem}
+  ol,ul{margin:.53rem 0;padding-left:1.6rem}
+  ol li,ul li{margin:.3rem 0;font-size:.97rem}
+
+  .quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.6rem 0;font-size:.95rem;border-radius:0 .4rem .4rem 0}
+  .box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.87rem 1.1rem;margin:.7rem 0;background:#fffefa;font-size:.94rem}
+  .note-bar{background:#eef4fa;border:1px solid #c9dcee;border-left:4px solid var(--blue);border-radius:0 .53rem .53rem 0;padding:.6rem .93rem;margin:.5rem 0 .9rem;font-size:.92rem;color:var(--blue)}
+  .tablebox{overflow-x:auto}
+
+  .answer{background:var(--green-bg);border:1px solid #bcd6c2;border-left:4px solid var(--green);border-radius:0 .53rem .53rem 0;padding:.93rem 1.1rem;margin:.8rem 0}
+  .answer .a-t{font-weight:700;color:var(--green);margin-bottom:.45rem;font-size:.98rem}
+  .answer p,.answer li{font-size:.94rem}
+
+  .mnem{background:#fff4e0;border:1px dashed var(--gold);border-radius:.4rem;padding:.67rem .93rem;margin:.7rem 0;font-size:.93rem}
+  .mnem .m-t{font-weight:700;color:var(--gold-deep);margin-bottom:.3rem}
+
+  .warn{background:var(--red-bg);border:1px solid var(--red-border);border-left:4px solid var(--red);border-radius:0 .53rem .53rem 0;padding:.8rem 1rem;margin:.7rem 0;font-size:.93rem}
+  .warn .w-t{font-weight:700;color:var(--red);margin-bottom:.3rem}
+
+  .paper{background:#fffdf6;border:1px solid var(--border);border-radius:.5rem;padding:.87rem 1.1rem;margin:.8rem 0;font-size:.93rem}
+  .paper .p-t{font-weight:700;color:var(--red);margin-bottom:.45rem;font-size:.95rem}
+  .paper li{margin:.22rem 0}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0}
+  th{background:var(--gold-bg);padding:.5rem;border:1px solid var(--border);text-align:left}
+  td{padding:.5rem;border:1px solid var(--border);vertical-align:top}
+
+  .chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;font-size:.85rem;color:var(--ink-soft);transition:.2s;user-select:none}
+  .chk:hover{background:#e9dfc7}
+  .chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}
+  .study-bar{display:flex;gap:.6rem;margin:.87rem 0 .4rem;flex-wrap:wrap;align-items:center}
+
+  .ctrl-bar{display:flex;gap:.67rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--gold-deep);border-radius:1.2rem;cursor:pointer;font-size:.87rem;font-family:inherit;transition:.2s}
+  .ctrl-bar button:hover{background:var(--gold);color:#fff}
+
+  .font-ctrl{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}
+  .font-ctrl button{width:2rem;height:2rem;border:none;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:inherit}
+  .font-ctrl button:hover{background:var(--gold);color:#fff}
+  .font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}
+  .font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}
+
+  .prog{background:#fff9eb;border:1px solid var(--border);border-radius:8px;padding:.8rem 1.1rem;margin-bottom:20px;font-size:.9rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .prog .bar{flex:1;min-width:120px;height:8px;background:#eee6d2;border-radius:4px;overflow:hidden}
+  .prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));transition:width .4s}
+
+  .foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.4rem}
+  @media(max-width:720px){.card-body{padding:1.1rem}header.head h1{font-size:1.47rem}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <span class="day-nav-prev" aria-disabled="true">← 上一天</span>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day02-外国文学-古希腊戏剧.html" title="外国文学带背 第2天 · 古希腊戏剧（悲剧三大家与《俄狄浦斯王》）">下一天 →</a>
+</nav>
+
+<a id="__topNav" href="index.html" style="position:fixed;left:16px;top:14px;z-index:99998;display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:inherit;font-size:13.5px;font-weight:700;color:#fff;background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:9px 16px;border-radius:99px;box-shadow:0 5px 16px rgba(154,59,46,.30);transition:transform .15s,box-shadow .15s;letter-spacing:.5px" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">&#8592; 带背索引</a>
+<header class="head">
+  <div class="day">DAY 1 · 外国文学 · 重点带背</div>
+  <h1>古希腊罗马文学（一）· 神话与荷马史诗</h1>
+  <div class="sub">古希腊文学总述 ·《伊索寓言》名解 · 新喜剧名解 · 古希腊神话名解／主要内容／四大特征／价值影响 · 荷马史诗名解（含「荷马问题」）·《伊利亚特》《奥德赛》情节梗概 · 荷马史诗艺术成就（❗❗最重点）／思想价值／后世影响<br>内容取自「古希腊罗马文学.pdf」带背 PPT 逐张识读（14 张）· 结合库内题库与西大历年真题原答补全</div>
+  <div class="tags">
+    <span class="tag">西北大学 MFA</span><span class="tag">外国文学史</span>
+    <span class="tag">第1天</span><span class="tag">荷马史诗</span><span class="tag">古希腊神话</span>
+  </div>
+</header>
+
+<div class="prog">
+  <span>今日进度</span>
+  <div class="bar"><i id="progBar"></i></div>
+  <span id="progTxt">0 / 0</span>
+</div>
+
+<div class="ctrl-bar">
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.remove('collapsed')})">📖 全部展开</button>
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.add('collapsed')})">📕 全部折叠</button>
+  <button onclick="window.print()">🖨️ 打印 / 导出 PDF</button>
+</div>
+
+<!-- 0 今日带背指令 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">★</div>
+    <div class="card-title">今日带背指令</div>
+    <span class="exam-level lv-ss">先看这个</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">群消息原文 · 条目版</div>
+    <p><span class="term">外国文学带背 第一天 古希腊罗马文学</span></p>
+    <ol>
+      <li>1️⃣ <span class="hl-b">伊索寓言</span>名词解释</li>
+      <li>2️⃣ <span class="hl-b">新喜剧</span>名词解释（尽量背）</li>
+      <li>3️⃣ <span class="hl-b">古希腊神话</span>名词解释</li>
+      <li>4️⃣ 希腊神话的<span class="hl">主要内容</span>（简要背小点）、<span class="hl-b">特征</span>（重点背）、<span class="hl-b">价值影响</span>（重点背）</li>
+      <li>5️⃣ ‼️重点重点重点，<b>先背这个</b>：<span class="hl-b">荷马史诗名词解释</span>、<span class="hl-b">伊利昂记和奥德修记简要故事梗概</span>、<span class="hl-b">荷马史诗艺术特色（最最最重要❗）</span>，思想价值和影响也背一下</li>
+    </ol>
+    <p>学硕务必把荷马史诗这里我提到的背全一些，专硕背关键词➕案例即可。</p>
+
+    <div class="sub-h">群消息原文 · 分块版</div>
+    <div class="box">
+      <p>外国文学带背 第一天 古希腊罗马文学</p>
+      <p>1️⃣伊索寓言名词解释</p>
+      <p>2️⃣新喜剧名词解释尽量背</p>
+      <p>3️⃣古希腊神话名词解释</p>
+      <p>4️⃣希腊神话的主要内容（简要背小点），特征（重点背），价值影响（重点背）</p>
+      <p>5️⃣‼️重点重点重点，先背这个：荷马史诗名词解释、伊利昂记和奥德修记简要故事梗概，荷马史诗艺术特色（最最最重要‼️），思想价值和影响也背一下！</p>
+      <p>学硕务必把荷马史诗这里我提到的背全一些，专硕背关键词➕案例即可</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 优先级怎么排</div>
+      <p>老师标「最最最重要」的只有一处＝<span class="hl-b">荷马史诗艺术特色</span>，这是本页第 11 卡，按论述题规格准备；<span class="hl">荷马史诗名解 ＋ 两部史诗梗概</span>是它的地基（第 8、9、10 卡）；「重点背」的两处是<span class="hl">神话特征</span>（第 6 卡）与<span class="hl">价值影响</span>（第 7 卡）。<br>①伊索寓言名解、②新喜剧名解、③神话名解是<b>三个独立名解</b>，各自成卡，考场上单出一道名解也能写满 200 字。</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 本次待核清单（背之前先看一眼）</div>
+      <ol>
+        <li><b>从「俄底修斯」到「奥德修斯」，同一页里两个译名</b>。PPT 图 10 正文写「奥德修斯的漂流」，小标题又写「忒勒马科斯寻父」「奥德修斯返乡复仇」；<b>本页统一写「奥德修斯（又译俄底修斯）」</b>，第一次出现时两译名并列，后文只用「奥德修斯」。同样地，史诗译名统一为《伊利亚特》（又译《伊利昂纪》）、《奥德赛》（又译《奥德修纪》）——群消息里写作「伊利昂记／奥德修记」是老师手打简写，答题时用通行译名。</li>
+        <li><b>米南德生卒年 PPT 作「前 342—前 292」</b>。通行教材多作「前 342—前 291」，两者相差一年属卒年折算方式不同。<b>建议写「约公元前 342—前 291」，或干脆只写「公元前 4 世纪末至前 3 世纪初」</b>，避免年份被挑。</li>
+        <li><b>《伊索寓言》「公元前 6 世纪上半叶」</b>。PPT 说相传为公元前 6 世纪上半叶一个叫伊索的奴隶所作，现传本为公元前 4—2 世纪整理而成。<b>通行说法即「公元前 6 世纪」，此处与库内资料一致，可直接背。</b></li>
+        <li><b>图 1 顶部那段「萨福／Lesbian／Sapphic」不属于今日提纲</b>。它讲的是抒情诗诗人萨福，老师在提纲里没点名，<b>本页不展开</b>，只作备注：考「萨福」名解时再回头看。</li>
+        <li><b>图 4 顶部串入了一段《美狄亚》剧情（伊阿宋抛妻）</b>，那是 PDF 翻页时带进来的悲剧内容，属于<b>第二天（古希腊戏剧）</b>的范围，本页不采纳，第二天页会正面处理。</li>
+        <li><b>《伊利亚特》行数与卷数</b>：PPT 图 11 作「两部史诗都分成 24 卷，《伊利亚特》15693 行，《奥德赛》12110 行」。<b>数字与通行版本一致，可直接背</b>（记不住就只写「各 24 卷」）。</li>
+        <li>本次图片共 <b>14 张</b>，与聊天记录里 14 条图片消息<b>数量吻合</b>（03:13 七张 ＋ 03:17 七张），无缺页。</li>
+      </ol>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t0">★ 今日指令已读 ＋ 待核七点过目</span>
+    </div>
+  </div>
+</div>
+
+<!-- 1 古希腊文学总述 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">1</div>
+    <div class="card-title">古希腊文学总述（欧洲文学的开端）<span class="ppt-src">PPT 图 2</span></div>
+    <span class="exam-level lv-s">简答 · 背景句</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 今天所有题的「开场第一句」都在这一卡：先给古希腊文学定位，再进具体名解。</div>
+
+    <div class="sub-h">PPT 原文</div>
+    <div class="box">
+      <p>· 古希腊文学是整个<b>欧洲文学乃至西方文学的开端</b>。它在<span class="hl">神话、史诗、抒情诗、悲剧、喜剧、散文、文艺理论</span>等方面取得了令人惊异的成就。</p>
+      <p>· 它始终洋溢一种<span class="hl-b">创造性</span>、充满着一种<span class="hl-b">人本精神和现实精神</span>。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 一句话记法</div>
+      <p>「<span class="hl">开端 + 七种体裁 + 两精神</span>」：七个门类按「神话—史诗—抒情诗—悲剧—喜剧—散文—文艺理论」顺着背，两精神＝人本精神 ＋ 现实精神（这两词可直接挪去做神话、史诗的价值题）。</p>
+    </div>
+
+    <div class="sub-h">古希腊文学分期（按 PPT 页眉的三个时间段串起来）</div>
+    <div class="tablebox"><table>
+      <tr><th>时段</th><th>PPT 原话</th><th>代表</th></tr>
+      <tr><td>公元前 8 世纪以前</td><td>神话与民间口头文学阶段</td><td>希腊神话、《伊索寓言》雏形</td></tr>
+      <tr><td>公元前 8—前 6 世纪</td><td>2、《伊索寓言》：民间流传、以动物生活为题材的寓言故事</td><td>伊索（相传为奴隶）</td></tr>
+      <tr><td>公元前 6—前 4 世纪</td><td>奴隶制发展的全盛时期，史称「<b>古典时期</b>」，雅典成为希腊文化的中心；文学成就：<b>戏剧</b>、散文、文艺理论</td><td>悲剧三大家、阿里斯托芬</td></tr>
+    </table></div>
+    <p class="ppt-src">分期依据：PPT 图 1、图 2 的页眉「二、公元前 8—前 6 世纪」「三、公元前 6 世纪—前 4 世纪」。</p>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t1">1 总述与分期（七体裁 ＋ 两精神 ＋ 古典时期）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 2 伊索寓言 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">2</div>
+    <div class="card-title">《伊索寓言》（名词解释）<span class="ppt-src">PPT 图 1</span></div>
+    <span class="exam-level lv-ss">名解 · 必背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 1 项，三个名解之一。</div>
+
+    <div class="sub-h">PPT 原文</div>
+    <div class="box">
+      <p><span class="term">《伊索寓言》：</span>古希腊民间流传的以<b>动物生活</b>为题材的寓言故事，相传一个叫<b>伊索</b>的奴隶于<span class="hl">公元前 6 世纪上半叶</span>所作，现传版本乃公元前 <b>4—2 世纪</b>古代作家整理而成，其中有故事 <span class="hl-b">120 余则</span>，主要通过<span class="hl">动物言行</span>来进行道德教谕，反映下层平民和奴隶的斗争经验和生活教训。</p>
+      <p>如：「狮子和老鼠」「狐狸和仙鹤」「兔子和乌龟」「披着羊皮的狼」「狐狸和葡萄」等。这些故事对古希腊文学有深刻影响。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 名解四要素（照这个顺序写就不会漏）</div>
+      <p>①<b>定性</b>：古希腊民间流传的动物寓言故事集；②<b>作者与成书</b>：相传为公元前 6 世纪上半叶奴隶伊索所作，今本为公元前 4—2 世纪整理，存 120 余则；③<b>内容与手法</b>：以动物言行作道德教谕，反映下层平民与奴隶的斗争经验、生活教训；④<b>影响</b>：对古希腊文学及后世寓言（拉·封丹、克雷洛夫）影响深远，代表作举「狐狸和葡萄」「农夫与蛇」等。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t2">2 伊索寓言名解</span>
+    </div>
+  </div>
+</div>
+
+<!-- 3 新喜剧 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">3</div>
+    <div class="card-title">新喜剧（名词解释）<span class="ppt-src">PPT 图 2</span></div>
+    <span class="exam-level lv-ss">名解 · 尽量背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 2 项。老师原话是「尽量背」——名解四要素写全就有分。</div>
+
+    <div class="sub-h">PPT 原文</div>
+    <div class="box">
+      <p><span class="term">新喜剧：</span>是指<b>希腊化时期</b>，继<b>阿里斯托芬</b>之后描写<span class="hl-b">家庭日常生活</span>的喜剧，又称「<span class="hl-b">世态喜剧</span>」。它迎合富人口味、回避社会问题，以描写<span class="hl">贵族青年男女的爱情故事和家庭关系</span>为主要内容。代表作家<b>米南德</b>（前 342—前 292），传世作品《恨世者》、《萨摩斯女子》。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 新旧喜剧一句话对照</div>
+      <p><b>旧喜剧</b>（阿里斯托芬）＝政治讽刺、针砭时弊、幻想的、夸张的；<b>新喜剧</b>（米南德）＝世态人情、家庭爱情、回避社会问题、结构程式化（五人角色类型、误会与巧合）。考「新喜剧」时把「希腊化时期 ＋ 米南德 ＋ 家庭爱情 ＋ 世态喜剧」四个词写进去即可。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t3">3 新喜剧名解（米南德 ＋ 两部作品）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 4 古希腊神话 名解 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">4</div>
+    <div class="card-title">古希腊神话（名词解释）<span class="ppt-src">PPT 图 3</span></div>
+    <span class="exam-level lv-ss">名解 · 必背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 3 项。PPT 图 3 直接给了名解的「六要素模板」，按模板填就是标准答案。</div>
+
+    <div class="sub-h">PPT 原文 · 定义层</div>
+    <div class="box">
+      <p>希腊神话<b>源于民间口头文学</b>，散见于希腊各种文献中，它<span class="hl-b">反映了人类的「童年时代」</span>，具有永久的艺术魅力。</p>
+      <p>希腊神话是古希腊人<span class="hl-b">认识世界最原始的思想表达形式</span>，表现了他们对自然、社会、历史的认识。</p>
+    </div>
+
+    <div class="sub-h">PPT 原文 · 按模板串成的完整名解</div>
+    <div class="answer">
+      <div class="a-t">✅ 建议整段背下来（六要素版）</div>
+      <p>古希腊神话是源自于古希腊<b>英雄时期</b>（<span class="hl">时间</span>），取自于民间口头文学，是古希腊人认识世界最原始的思想表达形式，表现了他们对自然、社会、历史的认识，主要包括<span class="hl">神的故事和英雄传说</span>（<span class="hl">内容</span>），反映了人类的「童年时代」，对后世小说、诗歌产生深远影响（<span class="hl">作用</span>），代表神话有<b>天国之战、潘多拉的魔盒</b>等（<span class="hl">代表作品</span>）。</p>
+      <p class="ppt-src">PPT 图 3 底部模板：名词解释 ＝ 时间 ＋ 形成 ＋ 内容 ＋ 艺术特色 ＋ 影响 ＋ 代表作品。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 六要素模板（这一页所有名解通用）</div>
+      <p>①时间 ②形成（来源：民间口头文学）③内容（神的故事 ＋ 英雄传说）④艺术特色（见第 6 卡四特征）⑤影响（后世文学艺术取之不尽的武库）⑥代表作品（神的故事：天国之战、潘多拉的魔盒；英雄传说：赫拉克勒斯、俄狄浦斯、伊阿宋、七将攻忒拜、特洛伊、奥德修斯）。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t4">4 古希腊神话名解（六要素模板）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 5 希腊神话的主要内容 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">5</div>
+    <div class="card-title">希腊神话的主要内容（简要背小点）<span class="ppt-src">PPT 图 3—5</span></div>
+    <span class="exam-level lv-s">简答 · 记住两类</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 4 项前半句：「简要背小点」——只要两个大点 ＋ 各自的小点，不必铺开讲。</div>
+
+    <div class="sub-h">一、神的故事</div>
+    <div class="box">
+      <p>包括<span class="hl">神的产生、谱系、活动与创造、神的改朝换代</span>（开天辟地、万物起源等）。分为<b>前奥林匹斯神系</b>与<b>奥林匹斯神系</b>两大系统。</p>
+      <p><b>1）前奥林匹斯神系</b>：宙斯为王之前，反映<span class="hl-b">杂婚制、母系氏族</span>。</p>
+      <p><b>旧神谱（赫西俄德《神谱》）</b>：记载了天地的起源，最初的宇宙一片混沌，从混沌（chaos）中最先生出了大地（地神盖亚 Gaia）和爱神厄洛斯（Eros），接着在大地底层出现了「黑暗」厄瑞玻斯（Erebus）与「黑夜」尼克斯（Nyx），两者结合生出「光明」与「昼」。大地又生出了「天空」（Uranos）。地神盖亚与她的儿子天神乌拉诺斯（Uranus）结合，生下了十二提坦巨神（泰坦 Titans）及独目巨人、百臂巨人……</p>
+      <p><b>2）奥林匹斯神系</b>：以宙斯为首的十二主神系统，是希腊神话的主体（本卡只记位置，具体神谱不展开）。</p>
+    </div>
+
+    <div class="sub-h">二、英雄传说</div>
+    <div class="box">
+      <p>古希腊神话中的英雄都是<b>人神结合所生的后代</b>，即「<span class="hl-b">半人半神</span>」。他们实际上是<span class="hl">集体力量和智慧的化身</span>，是对现实和历史中的<b>氏族英雄的神化</b>。</p>
+      <p>主要有：<span class="hl">赫拉克勒斯；俄狄浦斯的故事；伊阿宋的故事；七将攻忒拜；特洛伊的故事；奥德修斯的故事</span>等。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 背这一卡的顺序</div>
+      <p>「<span class="hl">两大类</span>（神的故事／英雄传说）→ 神的故事<span class="hl">两系统</span>（前奥林匹斯：杂婚制母系氏族／奥林匹斯：宙斯为首）→ 英雄传说<span class="hl">一个定性</span>（半人半神的氏族英雄神化）＋<span class="hl">六个例</span>（赫拉克勒斯、俄狄浦斯、伊阿宋、七将攻忒拜、特洛伊、奥德修斯）」。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t5">5 神话主要内容（神的故事 ＋ 英雄传说）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 6 神话特征 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">6</div>
+    <div class="card-title">希腊神话的特征（四点 · 重点背）<span class="ppt-src">PPT 图 4—5</span></div>
+    <span class="exam-level lv-ss">简述／论述 · 重点</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 4 项：特征「重点背」。四点可以直接做一道简答，也可以做论述题的骨架。</div>
+
+    <div class="sub-h">1、体系性</div>
+    <div class="box">
+      <p>希腊神话是精神的寄托物，从神的产生以及神的谱系、神的日常活动，从人类的起源到英雄传说，<span class="hl">每个故事都充满了相互联系，并且形成了一个有机的整体</span>。</p>
+      <p>eg. 金苹果——特洛伊战争——奥德赛返乡；普罗米修斯盗火——潘多拉魔盒。</p>
+    </div>
+
+    <div class="sub-h">2、神的权威的相对性</div>
+    <div class="box">
+      <p>一方面，希腊神话中的神<span class="hl">不是本质的创造者</span>，他们没有创造宇宙，所以他们既无权塑造事物本身，也无力在任何想象的程度上与开始就注定的事情进行搏斗，就连宙斯也不能例外；与此同时，他们又有能力惩罚傲慢的凡人，eg. 宙斯无法阻止普罗米修斯的预言，但却能惩罚西绪福斯。</p>
+    </div>
+
+    <div class="sub-h">3、神人同形同性</div>
+    <div class="box">
+      <p>诸神兴趣之所集，并非自然现象，而是<span class="hl">战争、政府、人类美德和繁殖</span>等问题（社会性）。</p>
+      <p>神祇们不仅具有凡人一样的<b>形体</b>，而且也具有凡人的<b>喜怒哀乐和七情六欲</b>。eg. 宙斯的花心、赫拉强烈的嫉妒心、阿弗洛狄忒和阿瑞斯的偷情、特洛伊战争起因——三位女神间的争风吃醋。</p>
+      <p>神并未被抽离世俗人性，而是人性的夸张与放大，这是一种<span class="hl-b">人类自我对人性的肯定</span>，使得整个希腊文明都带有人本主义的色彩，即<b>以人作为衡量一切的尺度和出发点</b>。</p>
+    </div>
+
+    <div class="sub-h">4、哲理性强，思想内涵丰富</div>
+    <div class="box">
+      <p>古希腊神话是古希腊先民劳动积累和生活经验的凝聚，也是早期人类智慧和思考的结晶，许多故事都寓意颇丰。</p>
+      <p>eg. <b>阿波罗的故事</b>：提醒爱的盲目与强求的徒劳，歌颂个人意志的尊严；<b>斯芬克斯之谜</b>：认识自我的永恒命题，谜底「人」强调了德尔菲神谕的核心箴言「<span class="hl-b">认识你自己</span>」，强调自我认知是生存和成长的基础。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 四点口诀</div>
+      <p>「<span class="hl">体、权、同形同性、哲理</span>」＝体系性 → 神权威的相对性 → 神人同形同性 → 哲理性强。<br>每点都按「<b>论点一句话 ＋ 例子</b>」写，例子就是 PPT 里的：金苹果／普罗米修斯与潘多拉、宙斯与西绪福斯、宙斯的花心与赫拉的嫉妒、阿波罗与斯芬克斯之谜。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t6">6 神话四大特征（体系性／权威相对性／同形同性／哲理性）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 7 神话的价值与影响 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">7</div>
+    <div class="card-title">希腊神话的价值与影响（重点背）<span class="ppt-src">PPT 图 5—6</span></div>
+    <span class="exam-level lv-s">简答 · 重点</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 4 项后半句：价值影响「重点背」。PPT 分成「社会生活」与「价值观念」两栏，照两栏写。</div>
+
+    <div class="sub-h">（一）社会生活的镜子</div>
+    <div class="box">
+      <p>反映<b>氏族社会向奴隶社会过渡</b>的社会生活，如：</p>
+      <ul>
+        <li><span class="hl">军事民主制度</span>；</li>
+        <li>奴隶主贵族阶层的初步形成；</li>
+        <li>以<span class="hl-b">男权为中心、一夫一妻制</span>的家庭生活。</li>
+      </ul>
+    </div>
+
+    <div class="sub-h">（二）价值观念</div>
+    <div class="box">
+      <ul>
+        <li>肯定生产劳动；</li>
+        <li><span class="hl-b">热爱生活，追求现世幸福</span>；</li>
+        <li>歌颂英雄，崇尚荣誉；</li>
+        <li><b>命运观、人生观</b>：深知神秘强大命运的存在；明知命运险恶，却不向它屈服，<span class="hl-b">积极进取、勇于抗争</span>。</li>
+      </ul>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 答题收尾句</div>
+      <p>「希腊神话不仅是希腊艺术的<span class="hl-b">武库和土壤</span>，也是后世文学艺术取之不尽的源泉」——这一句放在价值题的结尾，接「社会生活 ＋ 价值观念」两栏，就是完整答案。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t7">7 神话价值影响（社会生活的镜子 ＋ 价值观念）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 8 荷马史诗 名解 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">8</div>
+    <div class="card-title">荷马史诗（名词解释 ＋「荷马问题」）<span class="ppt-src">PPT 图 7</span></div>
+    <span class="exam-level lv-ss">名解 · 必背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 5 项第一件：「先背这个」。荷马史诗是两部史诗的合称，名解要先分开名字再合并定性。</div>
+
+    <div class="sub-h">PPT 原文 · 史诗的定义</div>
+    <div class="box">
+      <p><b>史诗</b>：从广义上来说，史诗指的是以描写具有重大意义的历史事件为中心，<span class="hl">场面广阔、结构宏伟</span>的长篇叙事作品；从狭义上来说，史诗指的是一个民族在<span class="hl-b">童年时期</span>用诗歌体裁记录下来的<b>古代神话和英雄传说</b>。</p>
+    </div>
+
+    <div class="sub-h">PPT 原文 · 荷马史诗</div>
+    <div class="answer">
+      <div class="a-t">✅ 名解可直接用</div>
+      <p><span class="term">《伊利亚特》</span>（又译《伊利昂纪》）和<span class="term">《奥德赛》</span>（又译《奥德修纪》）是古代希腊的两大史诗，相传是由一个名叫<b>荷马</b>的诗人所作，故称荷马史诗。</p>
+    </div>
+
+    <div class="sub-h">「荷马问题」——荷马史诗的形成（了解）</div>
+    <div class="box">
+      <p>历史上究竟有无荷马这个人？这两部史诗真是他写的吗？这些问题在西方学术界争论已久。</p>
+      <p class="ppt-src">PPT 标注「（了解）」，答名解时可一句话带过：史诗原为民间口头创作，公元前 6 世纪雅典僭主庇西特拉图时期编订成文，公元前 3—2 世纪亚历山大里亚学者校订定本，故有「荷马问题」之争。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 名解骨架</div>
+      <p>①<b>合称与作者</b>：《伊利亚特》《奥德赛》两大史诗合称，相传为盲诗人荷马所作；②<b>成书</b>：民间口头创作，公元前 6 世纪编订、公元前 3—2 世纪校订；③<b>内容</b>：特洛伊战争及战后返乡，塑造了阿喀琉斯、奥德修斯等英雄群像；④<b>地位与影响</b>：欧洲文学史上最早的文学巨著，是欧洲叙事诗的典范，为后世提供题材与叙事范式。<br>另加一句广义＋狭义的「史诗」定义，名解就写满了。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t8">8 荷马史诗名解（＋荷马问题）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 9 伊利亚特梗概 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">9</div>
+    <div class="card-title">《伊利亚特》情节梗概 ＋ 阿喀琉斯形象<span class="ppt-src">PPT 图 8—9</span></div>
+    <span class="exam-level lv-ss">梗概 · 必背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 5 项第二件：「伊利昂记和奥德修记简要故事梗概」。梗概要能一口气讲完，不追求细节。</div>
+
+    <div class="sub-h">PPT 原文 · 结构要点</div>
+    <div class="box">
+      <p>· 史诗集中写<b>特洛伊战争第十年</b>中最关键的 <span class="hl-b">51 天</span>中发生的事情，51 天中又重点描写了 <span class="hl-b">4 天</span>的作战场面。</p>
+      <p>· 开端引出情节主线：「<b>阿喀琉斯的愤怒是我的主题</b>」（主帅阿伽门农强夺阿喀琉斯的女俘）。</p>
+    </div>
+
+    <div class="sub-h">PPT 原文 · 故事内容</div>
+    <div class="box">
+      <p>希腊联军统帅<b>阿伽门农</b>和将领<b>阿喀琉斯</b>因为一个女俘起了纷争，阿喀琉斯愤而退出战场。他的退出导致希腊方面连连失败，情况危急。阿喀琉斯的好友<b>帕特罗克洛斯</b>穿上阿喀琉斯的盔甲冲上战场，挽救了希腊军队，但被特洛伊统帅<b>赫克托尔</b>杀死。阿喀琉斯再次愤怒，重返战场为好友报仇，最终杀死了赫克托尔。赫克托尔的父亲、特洛伊老国王<b>普里阿摩斯</b>找到阿喀琉斯，希望他归还儿子的尸体。阿喀琉斯被打动了，将尸体交还老国王，以停战 <b>12 天</b>为赫克托尔举行葬礼。《伊利亚特》就在赫克托尔的盛大葬礼中结束。</p>
+    </div>
+
+    <div class="sub-h">阿喀琉斯的人物形象（PPT 五点）</div>
+    <div class="box">
+      <p>总评：<span class="hl-b">性格多面性与完整性的高度统一</span>。</p>
+      <ol>
+        <li><b>对个人尊严和荣誉的重视与维护</b>：怒责阿伽门农的私心拒绝作战，他的仁慈与残忍源于对个体尊严的极端捍卫；</li>
+        <li><b>忠于朋友</b>：为帕特罗克洛斯报仇，重回战场，同意老国王赎回尸体；</li>
+        <li><b>英勇善战、残忍固执</b>：浴血奋战，对特洛伊人痛下杀手，杀死赫克托耳后拿尸体泄愤；无视母亲的预言提醒他杀死赫克托尔后自己必死；</li>
+        <li><b>傲慢任性</b>：阿伽门农派使者提出丰厚赔偿（包括归还布里塞伊斯、赠城池黄金……）劝他出战，他拒绝和解，宣称「阿伽门农休想说服我」；</li>
+        <li><b>同情弱者</b>：当赫克托尔的父亲普里阿摩斯前来哀求归还儿子尸体时，他被打动，归还尸体，允其安葬；释放特洛伊人，停战 12 天，感叹「战争最苦的是百姓」。</li>
+      </ol>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t9">9 伊利亚特梗概（51 天／4 天）＋ 阿喀琉斯五点</span>
+    </div>
+  </div>
+</div>
+
+<!-- 10 奥德赛梗概 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">10</div>
+    <div class="card-title">《奥德赛》情节梗概<span class="ppt-src">PPT 图 10</span></div>
+    <span class="exam-level lv-ss">梗概 · 必背</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">PPT 原文 · 结构与主线</div>
+    <div class="box">
+      <p>《奥德赛》<b>24 卷</b>，讲述特洛伊战争结束后，希腊战将<b>奥德修斯</b>（又译俄底修斯）经历<b>十年海上漂流</b>和种种奇遇历险，最终返回家乡的故事。它连接《伊利亚特》的剧情，因得罪海神波塞冬而找不到回家的航线，在大海里漂流，凭借机智和勇敢历尽艰难终回家乡，是一部「<span class="hl-b">漂流历险史诗</span>」。</p>
+      <p>着重描写了奥德修斯 10 年海上漂泊中<span class="hl-b">最后 42 天</span>的事情；作品从奥德修斯在海上漂泊的<b>第 10 年</b>开始写起。</p>
+      <ul>
+        <li><b>忒勒马科斯寻父（辅线）</b>：1—4 卷。</li>
+        <li><b>奥德修斯返乡（主线）</b>：5—24 卷。5—12 卷：离开卡吕普索，抵达斯开里亚岛；13—24 卷：返回伊塔克，向求婚者复仇。</li>
+      </ul>
+      <p>两条线索互相映衬，突出情势紧急、扣人心弦。</p>
+    </div>
+
+    <div class="sub-h">PPT 原文 · 三段情节</div>
+    <div class="box">
+      <p><b>1、忒勒马科斯寻父</b>：女神卡吕普索（俄古癸亚岛）；家乡伊塔克，忒勒马科斯寻父；奥德修斯家中的求婚者；「珀涅罗珀的织布」。</p>
+      <p><b>2、奥德修斯的漂泊</b>：卡吕普索送走奥德修斯。被斯开里亚岛上的瑙西卡公主救起，向国王自述十年经历：吃忘忧果；斗独眼巨人；风神岛；日神女儿魔女喀耳刻；游历冥府；海妖塞壬；太阳神岛宰杀神牛；卡吕普索的小岛。</p>
+      <p><b>3、奥德修斯返乡复仇</b>：回到故乡伊塔克，伪装成乞丐向求婚者复仇，与儿子和牧猪人联手杀死求婚者。</p>
+      <p>集中刻画了奥德修斯的个体英雄形象，歌颂英雄的机智，写人与自然的搏斗，表现的是<span class="hl-b">人性的柔巧</span>。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 记数法</div>
+      <p>「<b>10 年漂流 → 只写 42 天 → 从第 10 年写起</b>」，与《伊利亚特》的「<b>10 年战争 → 51 天 → 重点 4 天</b>」正好对仗，两首史诗的「集中浓缩」手法一眼可辨。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t10">10 奥德赛梗概（辅线寻父 ＋ 主线返乡 ＋ 漂流三段）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 11 荷马史诗艺术成就 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">11</div>
+    <div class="card-title">荷马史诗的艺术成就（❗❗最最最重要）<span class="ppt-src">PPT 图 11—14</span></div>
+    <span class="exam-level lv-ss">论述 · 最重点</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 5 项：「荷马史诗艺术特色（最最最重要❗）」。学硕按四点铺满，专硕每点记「关键词 ＋ 一个例子」。</div>
+
+    <div class="sub-h">1、结构宏伟，剪裁得当，布局巧妙</div>
+    <div class="box">
+      <p>两部史诗都分成 <b>24 卷</b>，《伊利亚特》共 <b>15693 行</b>，《奥德赛》共 <b>12110 行</b>。都采用<span class="hl-b">戏剧式的集中浓缩手法</span>，将 10 年故事集中在一个人、一件事、或一段时间内，把众多的人物、丰富的情节浓缩成一个严谨的整体。</p>
+      <p><b>《伊利亚特》</b>：从阿喀琉斯的愤怒写起，到赫克托耳的葬礼结束，10 年战争集中于 <b>51 天</b>，重点写 <b>4 天</b>的战况，全篇又紧密围绕<b>阿喀琉斯的愤怒</b>展开。</p>
+      <p><b>《奥德修纪》</b>：两条线索——家中和海上，但重点写奥德修斯的返乡。10 年漂流压缩到 <b>42 天</b>，具体只写了 <b>5 天</b>。采用<span class="hl-b">从故事中间开始</span>的叙事方法（in medias res）。</p>
+    </div>
+
+    <div class="sub-h">2、人物性格刻画鲜明</div>
+    <div class="box">
+      <p>《荷马史诗》塑造了一系列古代英雄形象，并通过这些英雄形象表现了那个「英雄时代」的<span class="hl">英雄主义理想</span>。在英雄们身上，既集中了部落集体所要求的优良品德，又突出了各人的性格特征。</p>
+      <p>黑格尔曾热情洋溢地写道：关于阿喀琉斯，我们可以说：「这是一个<span class="hl-b">人</span>！高贵的人格的<span class="hl-b">多方面性</span>在这个人身上显出了它的全部丰富性。」荷马所写的其它人物性格也是如此，例如，俄底修斯、阿伽门农、赫克托耳、安德罗玛克，每一个人都是一个整体，本身就是一个世界，每个人都是一个完整的有生气的人，而不是某种孤立的性格特征的寓言式的抽象品。</p>
+    </div>
+
+    <div class="sub-h">3、形象生动的表现手法</div>
+    <div class="box">
+      <p><b>1）侧面烘托：海伦之美</b>。《伊利亚特》中，对海伦不满的长老在见到海伦那刻的集体失语：「难怪特洛伊人和希腊人愿为她苦战多年！她美得如同不朽的女神」。</p>
+      <p><b>2）荷马式比喻</b>。荷马善于用人们喜闻乐见的事物，如动物的动作，来作比喻，构成准确生动、富有想象力的「荷马式比喻」。</p>
+      <ul>
+        <li><b>隐喻</b>：《伊利亚特》赫克托尔死守城门时，将他形容成「战斗的屏障」（喻善战的勇壮）；希腊将领在战场上鼓舞士兵坚守阵地时高喊想想身后的这片土地，它是「羊群的母亲」（喻山地，文明的根基）。</li>
+        <li><b>明喻 · 简单型</b>（结构特征 A 像 B）：eg. 阿喀琉斯「青铜」般的嗓音；奥德修斯的箭像迅疾的鸟；阿喀琉斯的长矛像黑夜的流星……</li>
+        <li><b>明喻 · 复杂型</b>（A 像 B 之后再附加一整段完整内容，修饰解说喻象物 B，再回归 A 的强化）：eg. 阿喀琉斯冲入特洛伊军阵比喻「他扑向敌人，如同山间恶狼突入羊圈，牧人来不及集结猎犬抵抗，羊群惊慌四散——英雄所到之处，特洛伊人溃逃哀嚎」；希腊军溃散「如同海岸鱼群，被巨浪冲上沙滩，在阳光下挣扎喘息，渔人用带刺渔网将它们一网打尽——特洛伊的长矛驱逐他们奔命」。</li>
+        <li><b>3）惯用词语的重复</b>：口诵史诗的一个共同和显著的特点是采用一整套固定或相对固定的饰词、短语和段落。如「军队的统帅」或「兵众的首领」阿伽门农；「足智多谋的」奥德修斯；「头盔闪亮的」「光荣的」「强有力的」赫克托耳；「捷足的」「卓越的」阿喀琉斯；「沉雷远播的」宙斯；「白臂膀的」赫拉。</li>
+      </ul>
+      <p><b>程式化用语的作用</b>：①点出了被修饰者（名词，人或物）的某个或某些特点和属性；②有助于诗人的记忆、吟诵，减轻诗人的劳动强度；③有助于渲染和墨饰史诗凝重、宏伟和肃穆的诗品特征，深化听众对某些内容的印象。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 四点框架（口诀：<span class="hl">结构 ＋ 人物 ＋ 手法 ＋ 语言</span>）</div>
+      <p>①结构宏伟、剪裁得当（集中浓缩：51 天／4 天；42 天／5 天）；②人物性格鲜明（黑格尔评阿喀琉斯「这是一个完整的人」）；③形象生动的表现手法（侧面烘托 ＋ 荷马式比喻：隐喻／简单型明喻／复杂型明喻）；④惯用词语的重复（程式化饰词，三点作用）。<br><b>考场上第 ③ 点最容易写薄</b>，务必带上海伦之美的侧面烘托和「荷马式比喻」三类例子各一个。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t11">11 荷马史诗艺术成就四点（结构／人物／手法／语言）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 12 思想价值 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">12</div>
+    <div class="card-title">《荷马史诗》的思想价值<span class="ppt-src">PPT 图 14</span></div>
+    <span class="exam-level lv-s">简答 · 顺带背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 5 项末尾：「思想价值和影响也背一下」。</div>
+
+    <div class="sub-h">PPT 原文 · 总说</div>
+    <div class="box">
+      <p>荷马史诗是<span class="hl-b">古希腊社会生活的百科全书</span>，以史诗的规模反映了古希腊由<b>氏族社会向奴隶社会过渡时期</b>的社会生活，表现了古希腊人的价值观念。</p>
+    </div>
+
+    <div class="sub-h">（一）社会生活</div>
+    <div class="box">
+      <p>反应氏族社会向奴隶社会过渡的社会生活，如：<span class="hl">军事民主制度</span>；奴隶主贵族阶层的初步形成；以男权为中心、一夫一妻制的家庭生活。</p>
+      <p class="ppt-src">与第 7 卡「神话的价值」共用同一组要点，两处可互相搬用。</p>
+    </div>
+
+    <div class="sub-h">（二）价值观念</div>
+    <div class="box">
+      <ul>
+        <li>肯定生产劳动；</li>
+        <li><span class="hl-b">热爱生活，追求现世幸福</span>；</li>
+        <li>歌颂英雄，崇尚荣誉；</li>
+        <li><b>命运观、人生观</b>：神秘强大命运的存在；明知命运险恶，却不向他屈服，积极进取、勇于抗争。</li>
+      </ul>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t12">12 荷马史诗思想价值（社会生活 ＋ 价值观念）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 13 后世影响 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">13</div>
+    <div class="card-title">《荷马史诗》的后世影响<span class="ppt-src">PPT 图 14</span></div>
+    <span class="exam-level lv-l">了解 · 收尾用</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">（一）创造了戏剧</div>
+    <div class="box">
+      <p>亚里士多德说「荷马史诗不仅创造了史诗，而且创造了戏剧」。荷马史诗的戏剧性手法对后世欧洲戏剧产生了深远的影响：</p>
+      <ol>
+        <li>直接让人物出场，让他们自己说话：诗人在刻画人物时，很少心理描写，多用动作和语言写人物性格（eg. 阿伽门农的出场）；</li>
+        <li>开始就设置悬念：《伊利亚特》第一卷中，阿伽门农抢走了阿喀琉斯的女俘，希腊主帅和主将间产生了尖锐的矛盾；</li>
+        <li>锁闭式的戏剧结构：从危机写起，主题、人物、情节都非常集中，一个情节、一个人物、一个中心，不枝不蔓。</li>
+      </ol>
+    </div>
+
+    <div class="sub-h">（二）是旅程小说的原型</div>
+    <div class="box">
+      <p>《奥德修纪》是旅程小说的原型，是流浪汉小说的先驱。由此形成了欧美小说的一种传统叙述模式的<b>旅程文学</b>：它着重记叙主人公在游历过程当中的所见、所闻、所感，人物总是处于漂泊冒险的旅途当中，道路成为衔接故事的中间媒介；作家也不是静止地描写人物的成长发展，而是动态地记录主人公在旅途当中的经历。由此形成人物的人生之旅和叙述的旅程模式，17 世纪西班牙塞万提斯所作《堂吉诃德》和 18 世纪英国笛福的《鲁滨逊漂流记》都明显地具有旅程模式的特点。</p>
+    </div>
+
+    <div class="sub-h">（三）为后世叙事文学提供了借鉴</div>
+    <div class="box">
+      <p>《奥德赛》两条情节线索并行发展，一是奥德修斯回家，一是帖雷马科寻父，最后两条线索合二为一，到父子合力与求婚人的斗争中。这样一种<b>绳子的结构</b>影响了许多作品，如狄更斯的《匹克威克外传》、罗曼·罗兰的《约翰·克里斯朵夫》等等。</p>
+    </div>
+
+    <div class="sub-h">（四）为后世文学艺术家提供素材</div>
+    <div class="box">
+      <p>古往今来许多文学艺术家都从荷马史诗中提取素材。如埃斯库罗斯、维吉尔、但丁、弥尔顿、歌德等或从史诗中寻找素材，或从中获取灵感，或模仿史诗的形式。如埃斯库罗斯创作的《阿伽门农》，索福克勒斯以特洛伊战争为题材的 3 部作品：《埃阿斯》《菲洛克忒提斯》《埃勒克特拉》。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t13">13 荷马史诗后世影响（戏剧／旅程小说／叙事借鉴／素材）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 14 自测与直达 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">14</div>
+    <div class="card-title">自测 ＋ 直达原资料</div>
+    <span class="exam-level lv-l">收尾</span>
+  </div>
+  <div class="card-body">
+    <div class="box">
+      <ol>
+        <li>古希腊文学在哪些体裁上取得成就？它始终洋溢的两种精神是什么？<span class="ppt-src">→ 卡 1</span></li>
+        <li>《伊索寓言》的成书年代、篇数、内容与手法分别是什么？<span class="ppt-src">→ 卡 2</span></li>
+        <li>新喜剧又称什么？代表作家与两部传世作品是？<span class="ppt-src">→ 卡 3</span></li>
+        <li>希腊神话名解的「六要素」分别对应什么内容？<span class="ppt-src">→ 卡 4</span></li>
+        <li>神的故事分哪两大系统？前奥林匹斯神系反映了什么社会形态？<span class="ppt-src">→ 卡 5</span></li>
+        <li>希腊神话的四大特征是什么？「神人同形同性」的两个层面怎么分？<span class="ppt-src">→ 卡 6</span></li>
+        <li>希腊神话的「价值影响」为什么分「社会生活」与「价值观念」两栏？<span class="ppt-src">→ 卡 7</span></li>
+        <li>「荷马问题」争的是什么？史诗的两个译名分别是什么？<span class="ppt-src">→ 卡 8</span></li>
+        <li>《伊利亚特》的 10 年、51 天、4 天分别指什么？阿喀琉斯的五点性格？<span class="ppt-src">→ 卡 9</span></li>
+        <li>《奥德赛》的辅线与主线各是几卷？「10 年、42 天、5 天」怎么记？<span class="ppt-src">→ 卡 10</span></li>
+        <li>荷马史诗艺术成就的四点分别是什么？「荷马式比喻」有哪三类？<span class="ppt-src">→ 卡 11</span></li>
+        <li>荷马史诗的「思想价值」与神话的「价值影响」有哪些重合点？<span class="ppt-src">→ 卡 12</span></li>
+        <li>为什么说《奥德修纪》是旅程小说的原型？它影响了哪些作品？<span class="ppt-src">→ 卡 13</span></li>
+      </ol>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 今天的三句总结</div>
+      <p>①「<span class="hl">古希腊文学＝欧洲文学的开端，七种体裁 ＋ 人本精神 ＋ 现实精神</span>」；<br>②「<span class="hl">神话＝神的两个系统 ＋ 英雄传说（半人半神），特征记『体、权、同形同性、哲理』</span>」；<br>③「<span class="hl">荷马史诗＝集中浓缩（51 天／42 天）＋ 人物鲜明（黑格尔评阿喀琉斯）＋ 荷马式比喻 ＋ 程式化饰词</span>」。</p>
+    </div>
+
+    <div class="sub-h">直达原资料</div>
+    <div class="box">
+      <ul>
+        <li><a href="../唐红梅外国文学知识点串讲.html">唐红梅外国文学知识点串讲（古希腊神话／荷马史诗）</a></li>
+        <li><a href="../外国文学史习题_分章刷题.html">外国文学史分章刷题（古代文学章 · 希腊神话与史诗）</a></li>
+        <li><a href="../李凡1000题_外国文学史-OCR重建版.html">李凡 1000 题 · 外国文学史 OCR 重建版</a></li>
+        <li><a href="../文学史考研笔记整理_纯文字版.html">文学史考研笔记整理 · 纯文字版（含西大真题原答）</a></li>
+        <li><a href="day02-外国文学-古希腊戏剧.html">→ 第 2 天带背 · 古希腊戏剧（悲剧三大家 ＋ 喜剧）</a></li>
+      </ul>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d1t14">14 自测十三问全部答得出 ＋ 资料链接已收藏</span>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <p>第 1 天带背 · 古希腊罗马文学（一）神话与荷马史诗</p>
+  <p>内容来源：带背 PPT 截图（14 张逐张识读）＋ 库内题库（唐红梅外国文学知识点串讲、外国文学史分章刷题、李凡 1000 题外国文学史）＋ 西大历年真题原答</p>
+  <p>有 7 处「待核」已在指令卡中标出 · 打卡进度保存在本机浏览器</p>
+</div>
+</div>
+<div class="font-ctrl">
+  <button onclick="fsStep(-1)">−</button>
+  <span class="fs-label" id="fsLabel">15px</span>
+  <button onclick="fsStep(1)">＋</button>
+  <button class="fs-reset" onclick="fsReset()">复位</button>
+</div>
+
+<script>
+(function(){
+  var FS_KEY='day01w_fs', CHK_KEY='day01w_checks';
+  var base=15, cur=base;
+  try{ var s=localStorage.getItem(FS_KEY); if(s){ cur=parseFloat(s);} }catch(e){}
+  function apply(){ document.documentElement.style.setProperty('--fs-base',cur+'px');
+    var el=document.getElementById('fsLabel'); if(el){el.textContent=Math.round(cur)+'px';} }
+  window.fsStep=function(d){ cur=Math.min(22,Math.max(12,cur+d)); apply();
+    try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  window.fsReset=function(){ cur=base; apply(); try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  apply();
+
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(CHK_KEY)||'{}'); }catch(e){ saved={}; }
+  var chks=document.querySelectorAll('.chk');
+  chks.forEach(function(c){
+    var k=c.getAttribute('data-k');
+    if(saved[k]) c.classList.add('done');
+    c.addEventListener('click',function(ev){
+      ev.stopPropagation();
+      c.classList.toggle('done');
+      saved[k]=c.classList.contains('done');
+      try{ localStorage.setItem(CHK_KEY,JSON.stringify(saved)); }catch(e){}
+      upd();
+    });
+  });
+  function upd(){
+    var all=document.querySelectorAll('.chk').length;
+    var done=document.querySelectorAll('.chk.done').length;
+    var bar=document.getElementById('progBar'), txt=document.getElementById('progTxt');
+    if(bar) bar.style.width=(all?Math.round(done/all*100):0)+'%';
+    if(txt) txt.textContent=done+' / '+all;
+  }
+  upd();
+})();
+</script>
+
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

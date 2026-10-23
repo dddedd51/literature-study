@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>外国文学带背 第26天 · 后现代（中）</title>
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f3; --panel:#fff; --ink:#2b2b2b; --ink-soft:#555;
+    --gold:#a8854a; --gold-deep:#7d5e2c; --gold-bg:#f4ecdb; --border:#e6dfcc;
+    --highlight:#fff8e6; --red:#a23b3b; --red-bg:#fbeeee; --red-border:#d8b8b8;
+    --blue:#2d4a6e; --blue-bg:#e8eff5; --green:#3d6b4a; --green-bg:#eaf3ec;
+    --fs-base:15px;
+  }
+  *{box-sizing:border-box}
+  html{font-size:var(--fs-base)}
+  body{margin:0;padding:0;font-family:"LXGW WenKai","LXGW WenKai TC","霞鹜文楷","Source Han Serif SC","Noto Serif CJK SC","PingFang SC","Microsoft YaHei",serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 18px 80px}
+
+  header.head{background:linear-gradient(135deg,#2b2b2b 0%,#4a3a20 100%);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  header.head .day{font-size:.87rem;letter-spacing:.4rem;opacity:.75;margin-bottom:.5rem}
+  header.head h1{font-size:1.87rem;margin:0 0 .67rem;font-weight:700;letter-spacing:.06em}
+  header.head .sub{font-size:1rem;opacity:.85;line-height:1.7}
+  .tags{display:flex;gap:.67rem;margin-top:1.07rem;flex-wrap:wrap}
+  .tag{padding:.27rem .93rem;border-radius:1.33rem;font-size:.8rem;background:rgba(244,236,219,.18);border:1px solid rgba(244,236,219,.35)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}
+  .card-head{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}
+  .num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+  .card-title{font-size:1.2rem;font-weight:700;color:var(--gold-deep);flex:1}
+  .exam-level{font-size:.78rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;white-space:nowrap}
+  .lv-ss{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .lv-s{background:var(--blue-bg);color:var(--blue);border:1px solid #b9cde0}
+  .lv-l{background:#f0f0ee;color:#777;border:1px solid #d5d5d0}
+  .card-body{padding:20px 26px}
+  .collapsed .card-body{display:none}
+  .ppt-src{font-size:.76rem;color:#8a7c60;background:#f6f2e7;border:1px solid var(--border);
+    border-radius:.27rem;padding:.05rem .45rem;margin-left:.5rem;font-weight:400;white-space:nowrap}
+
+  .sub-h{font-size:1.07rem;font-weight:700;color:var(--gold-deep);margin:1.4rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+  .sub-h::before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px}
+
+  .term{font-weight:700;color:var(--gold-deep)}
+  .hl{background:linear-gradient(transparent 60%,#fff3a8 60%);padding:0 .13rem}
+  .hl-b{background:linear-gradient(transparent 60%,#ffd9d9 60%);padding:0 .13rem;font-weight:700}
+  p{margin:.53rem 0;font-size:.97rem}
+  ol,ul{margin:.53rem 0;padding-left:1.6rem}
+  ol li,ul li{margin:.3rem 0;font-size:.97rem}
+
+  .quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.6rem 0;font-size:.95rem;border-radius:0 .4rem .4rem 0}
+  .box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.87rem 1.1rem;margin:.7rem 0;background:#fffefa;font-size:.94rem}
+  .note-bar{background:#eef4fa;border:1px solid #c9dcee;border-left:4px solid var(--blue);border-radius:0 .53rem .53rem 0;padding:.6rem .93rem;margin:.5rem 0 .9rem;font-size:.92rem;color:var(--blue)}
+  .tablebox{overflow-x:auto}
+
+  .answer{background:var(--green-bg);border:1px solid #bcd6c2;border-left:4px solid var(--green);border-radius:0 .53rem .53rem 0;padding:.93rem 1.1rem;margin:.8rem 0}
+  .answer .a-t{font-weight:700;color:var(--green);margin-bottom:.45rem;font-size:.98rem}
+  .answer p,.answer li{font-size:.94rem}
+
+  .mnem{background:#fff4e0;border:1px dashed var(--gold);border-radius:.4rem;padding:.67rem .93rem;margin:.7rem 0;font-size:.93rem}
+  .mnem .m-t{font-weight:700;color:var(--gold-deep);margin-bottom:.3rem}
+
+  .warn{background:var(--red-bg);border:1px solid var(--red-border);border-left:4px solid var(--red);border-radius:0 .53rem .53rem 0;padding:.8rem 1rem;margin:.7rem 0;font-size:.93rem}
+  .warn .w-t{font-weight:700;color:var(--red);margin-bottom:.3rem}
+
+  .paper{background:#fffdf6;border:1px solid var(--border);border-radius:.5rem;padding:.87rem 1.1rem;margin:.8rem 0;font-size:.93rem}
+  .paper .p-t{font-weight:700;color:var(--red);margin-bottom:.45rem;font-size:.95rem}
+  .paper li{margin:.22rem 0}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0}
+  th{background:var(--gold-bg);padding:.5rem;border:1px solid var(--border);text-align:left}
+  td{padding:.5rem;border:1px solid var(--border);vertical-align:top}
+
+  .chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;font-size:.85rem;color:var(--ink-soft);transition:.2s;user-select:none}
+  .chk:hover{background:#e9dfc7}
+  .chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}
+  .study-bar{display:flex;gap:.6rem;margin:.87rem 0 .4rem;flex-wrap:wrap;align-items:center}
+
+  .ctrl-bar{display:flex;gap:.67rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--gold-deep);border-radius:1.2rem;cursor:pointer;font-size:.87rem;font-family:inherit;transition:.2s}
+  .ctrl-bar button:hover{background:var(--gold);color:#fff}
+
+  .font-ctrl{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}
+  .font-ctrl button{width:2rem;height:2rem;border:none;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:inherit}
+  .font-ctrl button:hover{background:var(--gold);color:#fff}
+  .font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}
+  .font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}
+
+  .prog{background:#fff9eb;border:1px solid var(--border);border-radius:8px;padding:.8rem 1.1rem;margin-bottom:20px;font-size:.9rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .prog .bar{flex:1;min-width:120px;height:8px;background:#eee6d2;border-radius:4px;overflow:hidden}
+  .prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));transition:width .4s}
+
+  .foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.4rem}
+  @media(max-width:720px){.card-body{padding:1.1rem}header.head h1{font-size:1.47rem}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day25-表现主义与后现代-上.html" title="外国文学带背 第25天 · 表现主义与后现代（上）">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day27-后现代下.html" title="外国文学带背 第27天 · 后现代（下）">下一天 →</a>
+</nav>
+<header class="head">
+  <div class="day">DAY 26 · 外国文学 · 重点带背</div>
+  <h1>后现代（中）</h1>
+  <div class="sub">局外人名解＋梗概＋人物特色 ·《鼠疫》名解 · 荒诞派名解与艺术特色 · 《等待戈多》戈多意象四解＋艺术特色 · 黑色幽默名解与艺术特征 · 垮掉的一代名解 ·《第二十二条军规》故事梗概＋艺术特色 · 新小说派<br>内容取自「二十世纪后现代主义文学」带背 PPT 逐张识读（10 张）· 结合库内题库原答与西大历年真题补全（真题命中 3 题）</div>
+  <div class="tags"><span class="tag">西北大学 MFA</span><span class="tag">外国文学史</span><span class="tag">第26天</span><span class="tag">后现代主义 · 存在主义</span><span class="tag">荒诞派 · 黑色幽默</span></div>
+</header>
+
+<div class="prog">
+  <span>今日进度</span>
+  <div class="bar"><i id="progBar"></i></div>
+  <span id="progTxt">0 / 0</span>
+</div>
+
+<div class="ctrl-bar">
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.remove('collapsed')})">📖 全部展开</button>
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.add('collapsed')})">📕 全部折叠</button>
+  <button onclick="window.print()">🖨️ 打印 / 导出 PDF</button>
+</div>
+
+<!-- 0 今日带背指令 -->
+
+<!-- ===== 卡片 0 · 今日带背指令 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">★</div>
+    <div class="card-title">今日带背指令</div>
+    <span class="exam-level lv-ss">先看这个</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">群消息原文 · 条目版</div>
+    <p><span class="term">外国文学带背 第26天 后现代（中）：</span></p>
+    <ol>
+      <li>1️⃣ <span class="hl-b">局外人、鼠疫名词解释</span>，以及<span class="hl-b">局外人人物特色</span></li>
+      <li>2️⃣ ❗️<span class="hl-b">荒诞派名词解释 ➕ 艺术特色</span></li>
+      <li>3️⃣ <span class="hl-b">等待戈多主题意象 ➕ 艺术特色</span></li>
+      <li>4️⃣ <span class="hl-b">黑色幽默 ➕ 垮掉的一代名词解释</span>，<span class="hl-b">黑色幽默艺术特色</span></li>
+      <li>5️⃣ 重要‼️ <span class="hl-b">第二十二条军规故事梗概 ➕ 艺术特色</span></li>
+    </ol>
+
+    <div class="sub-h">本页结构 · 按背诵优先级排</div>
+    <div class="tablebox">
+      <table>
+        <tr><th style="width:4.5rem">块</th><th>内容</th><th style="width:5.5rem">优先级</th></tr>
+        <tr><td>一</td><td>加缪《局外人》名词解释 · 故事梗概 · 人物特色（双重身份）</td><td><span class="exam-level lv-ss">必背</span></td></tr>
+        <tr><td>二</td><td>加缪《鼠疫》名词解释 · 思想内容 · 里厄医生形象</td><td><span class="exam-level lv-ss">必背</span></td></tr>
+        <tr><td>三</td><td>荒诞派名词解释 · 荒诞派戏剧艺术特征（思想／艺术／体裁三层）</td><td><span class="exam-level lv-ss">❗️必背</span></td></tr>
+        <tr><td>四</td><td>《等待戈多》戈多意象四解 · 艺术特色</td><td><span class="exam-level lv-ss">必背</span></td></tr>
+        <tr><td>五</td><td>黑色幽默名词解释 · 艺术特征（四条）· 术语源流</td><td><span class="exam-level lv-ss">必背</span></td></tr>
+        <tr><td>六</td><td>垮掉的一代名词解释 · 代表人物作品</td><td><span class="exam-level lv-s">背诵</span></td></tr>
+        <tr><td>七</td><td>海勒生平与《第二十二条军规》故事梗概 · 艺术特色</td><td><span class="exam-level lv-ss">重要‼️</span></td></tr>
+        <tr><td>八</td><td>新小说派（本节 PPT 同页，顺带了解）</td><td><span class="exam-level lv-l">了解</span></td></tr>
+        <tr><td>九</td><td>西大真题命中对照 · 待核清单 · 直达资料</td><td><span class="exam-level lv-s">对答案</span></td></tr>
+      </table>
+    </div>
+
+    <div class="note-bar">
+      📌 本页 PPT 只有 10 张，提纲第 5 项要求的「《第二十二条军规》故事梗概」PPT 未给正文（第 10 张止于海勒生平）。该块已用库内原答＋通行梗概补全，并单列「待核」。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 1 · 《局外人》名词解释 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">1</div>
+    <div class="card-title">加缪《局外人》名词解释</div>
+    <span class="exam-level lv-ss">必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 1 张</div>
+
+    <div class="sub-h">名词解释（PPT 原文要点）</div>
+    <p><span class="term">《局外人》</span>：二十世纪法国存在主义作家加缪的代表作。</p>
+    <ol>
+      <li>《局外人》是反映「<span class="hl">荒谬世界荒谬感情</span>」的典型的<span class="hl-b">存在主义作品</span>。局外人莫尔索对一切都表现出一副无所谓的面孔，说了许多无所谓的话，做了许多无所谓的事，萌生了许多无所谓的念头，但他始终处于矛盾之中。</li>
+      <li>莫尔索那些介于「有所谓」和「无所谓」、「局内人」和「局外人」之间的表现，是一种在荒谬世界无可奈何的表现，也是<span class="hl-b">对现实恶势力的揭露</span>。</li>
+      <li>作者以「局外人」为题，<span class="hl-b">正意反说</span>，包含辛辣的讽刺。莫尔索荒谬言行和心理，说明他是<span class="hl-b">消极地对抗荒谬社会的真正的局内人</span>。</li>
+    </ol>
+
+    <div class="answer">
+      <div class="a-t">库内原答 · 可加写</div>
+      <p>《局外人》发表于 1942 年，是加缪的成名作与代表作之一，也是 20 世纪存在主义文学的重要作品。小说以第一人称叙述，写小职员莫尔索在母亲去世、海滩杀人、法庭审判、狱中悟道等一系列事件中，始终以冷漠、超然的态度面对世界与自身命运。作品通过莫尔索「荒谬」的言行与法庭以「在母亲葬礼上没有哭」为由判其死刑的荒诞情节，揭示了世界的非理性与人生的荒诞；同时以莫尔索临刑前对「世界的温柔而冷漠」的敞开，表达了加缪关于「荒诞—反抗—自由」的哲思。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">背诵口诀</div>
+      一句话：<b>「无所谓的人，被有所谓的社会判了死」</b>——三个「无所谓」（面孔／言语／行为）＋ 一个「正意反说」（局外人实为局内人）。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 2 · 《局外人》故事梗概 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">2</div>
+    <div class="card-title">《局外人》故事梗概（两部分）</div>
+    <span class="exam-level lv-s">背诵</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 2、3 张</div>
+
+    <div class="sub-h">第一部分：冷漠与偶然</div>
+    <p>小说开篇便是名句：「今天，妈妈死了。也许是昨天，我搞不清。」主人公<span class="term">默尔索</span>在阿尔及尔的一家养老院参加了母亲的葬礼。在整个过程中，他表现得<span class="hl">异常平静和疏离</span>，没有流露出预期的悲伤。他没有看母亲的遗容，在守灵时抽烟、喝咖啡，第二天甚至与一位刚结识的女同事玛丽去看喜剧电影、发生关系。</p>
+    <p>默尔索回到他单调的生活中。他与邻居雷蒙交往，雷蒙是个皮条客，请他帮忙写信去羞辱和惩罚一个情妇。默尔索无所谓地答应了。之后，他和玛丽去海滩度假，玛丽问他是否爱她、愿不愿意结婚，他都回答「<span class="hl">这毫无意义</span>」，但结不结婚都行。</p>
+    <p>在一个炎热的周末，默尔索、雷蒙和玛丽与一群阿拉伯人（包括雷蒙情妇的兄弟）在海滩相遇，双方发生冲突，雷蒙受了伤。午后，默尔索独自一人又回到海滩，炽热的阳光让他头晕目眩。他再次遇到了那个阿拉伯人，对方掏出了刀子。在一种<span class="hl">生理性的眩晕和冲动</span>下，默尔索扣动了口袋里雷蒙给他的手枪的扳机，打死了那个阿拉伯人。随后，他又对着尸体开了四枪。</p>
+
+    <div class="sub-h">第二部分：审判与定罪</div>
+    <p>默尔索被逮捕入狱。然而，审讯的焦点很快从他「杀人」这一事实，转移到了他「是一个什么样的人」。检察官和法官对他们之前在母亲葬礼上的「冷漠」行为表现出极大的兴趣。</p>
+    <p>在法庭上，证人们纷纷作证：他在母亲的葬礼上没有哭，他第二天就去找女人寻欢作乐……这些行为构建起一个「<span class="hl-b">毫无人性</span>」、「<span class="hl-b">道德沦丧</span>」的冷血怪物的形象。他的杀人行为，被解释为一个<span class="hl-b">灵魂空洞的人必然会犯下的罪行</span>。他对母亲的冷漠，成了他「预谋杀人」的证据。</p>
+    <p>最终，默尔索<span class="hl-b">并非因为杀了人而被判死刑</span>，而是因为「在母亲葬礼上的行为」而被法庭和社会道德在精神上判处了死刑。检察官激昂地宣称：「我控诉这个人怀着一颗杀人犯的心理葬了自己的母亲！」</p>
+    <p>在死囚牢房里，默尔索最初无法接受这荒诞的结局。最终，在与神父进行了一场激烈的、拒绝忏悔和信仰的争吵后，他获得了内心的平静。他第一次向「这个世界的温柔而冷漠」敞开了心扉，并接受了自己即将被处决的命运，甚至希望行刑那天有很多观众来看，用仇恨的呐喊来送他最后一程。</p>
+
+    <div class="box">
+      <p>《局外人》讲述的不仅是一个男人的犯罪故事，更揭示了：</p>
+      <ol>
+        <li>社会如何强迫人们遵守其情感规则；</li>
+        <li>当一个人拒绝表演（如在葬礼上哭），他就会被视为「局外人」并遭到毁灭。</li>
+      </ol>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">梗概骨架</div>
+      <b>上卷</b>：葬礼不哭 → 看喜剧片 → 帮邻居写信 → 海滩枪杀（4 枪）。<br>
+      <b>下卷</b>：审判焦点从「做了什么」变成「是什么人」→ 因「葬礼不哭」被判死 → 狱中与神父争吵 → 平静赴死。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 3 · 局外人：默尔索人物特色 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">3</div>
+    <div class="card-title">局外人：默尔索的三重形象</div>
+    <span class="exam-level lv-ss">❗️必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 4、5 张</div>
+
+    <div class="sub-h">（一）在社会身份上，他规则的「局外人」</div>
+    <p>他因<span class="hl-b">拒绝遵守社会约定俗成的游戏规则</span>而被社会排斥和惩罚。</p>
+    <ul>
+      <li><b>在情感上</b>，他在母亲葬礼上不表演悲伤，守灵时抽烟喝咖啡，第二天与女友约会。</li>
+      <li><b>在言语上</b>，他拒绝说谎，拒绝夸大其词。当被要求表示悔罪时，他坦言自己感到的更多是「烦恼」而非「悔恨」。</li>
+      <li><b>在事业上</b>，他对升职、调往巴黎等他人眼中的机遇感到无所谓，认为「什么样的生活都差不多」。</li>
+      <li><b>在面对司法上</b>，他在审判中不为自己辩护，冷漠地迎合不合理的审理。</li>
+    </ul>
+    <p>他的「罪过」在于<span class="hl-b">不参与社会的虚伪表演，坚持只说自己真实的感受</span>。正如加缪所言：「他之所以被判死刑，就是因为他没有参与游戏。」</p>
+
+    <div class="sub-h">（二）在哲学身份上，他是觉醒的「荒诞人」</div>
+    <p>他是加缪哲学中「<span class="hl-b">荒诞英雄</span>」的化身，是《西绪福斯的神话》中推石上山的<span class="hl-b">西绪福斯的兄弟</span>。</p>
+    <p>因为他意识到荒诞，他清醒地认识到世界的无意义和社会的虚伪。而且他追求绝对真实，他对真实怀有「执着而深沉的激情」，拒绝用谎言来简化生活；他拥抱当下，「义无反顾地生活」，「尽其可能地生活」，相信「地上的火焰抵得上天上的芬芳」。他是一个「靠己之所有而不把希望寄托在己之所无」的「智者」。</p>
+    <p>这造就了他的生活态度——通过「不感兴趣」和「冷漠」（口头禅：「这与我无关」、「我无所谓」）来<span class="hl">对抗荒诞，保持自我的本真</span>。</p>
+
+    <div class="sub-h">（三）他最终是幸福的「本真者」</div>
+    <p>尽管被判处死刑，默尔索却声称自己过去和现在都是幸福的。因为他的幸福并非来自世俗的成功或享乐，而是源于「<span class="hl-b">对本真生活的追求</span>」和「<span class="hl-b">对自由的绝对忠诚</span>」。他选择了不随波逐流，并为此承担了全部后果，从而获得了精神上的自由与平静。</p>
+
+    <div class="mnem">
+      <div class="m-t">三重身份速记</div>
+      <b>规则上的局外人</b>（不表演）→ <b>哲学上的荒诞人</b>（西绪福斯的兄弟）→ <b>终极的本真者</b>（幸福地死）。<br>
+      答题时三段式展开，每段一个身份 ＋ 一处文本证据。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 4 · 《鼠疫》 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">4</div>
+    <div class="card-title">加缪《鼠疫》名词解释</div>
+    <span class="exam-level lv-ss">必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 3 张末</div>
+
+    <div class="sub-h">名词解释（PPT 原文）</div>
+    <p><span class="term">《鼠疫》</span>：二十世纪法国存在主义作家加缪的代表作。</p>
+    <p>小说通过写 40 年代奥兰市爆发了鼠疫，人们的种种疯狂举动，表现了深刻的思想内容：该市<span class="hl-b">影射了法西斯占领下的整个欧洲</span>，也是关于<span class="hl-b">人类在劫难逃的一个寓言</span>，鼠疫是关于人类总体生存境遇的象征表达。</p>
+    <p>小说表达了存在主义的基本思想：<span class="hl">世界是荒诞和不可理喻的，人是孤独无助的</span>。</p>
+    <p>但小说又通过<span class="term">里厄医生</span>的形象，表达出一种抵抗精神，一个英雄的「自由选择」，去实现人的尊严与价值。</p>
+
+    <div class="sub-h">可加写的补充层次</div>
+    <div class="answer">
+      <div class="a-t">答题加分点</div>
+      <ul>
+        <li><b>象征结构</b>：鼠疫＝法西斯／恶／死亡，奥兰城＝被占领的欧洲，封城＝人类的孤立处境。</li>
+        <li><b>人物群像的三种态度</b>：里厄医生（抗争）、塔鲁（志愿者的道德行动）、朗贝尔（从想逃走到留下）、科塔尔（趁乱牟利）——构成对「面对荒诞如何选择」的完整回答。</li>
+        <li><b>与《局外人》对照</b>：《局外人》写个人的荒诞体验（消极对抗），《鼠疫》写群体的荒诞境遇（积极抗争）。这一对照是论述题的常见切口。</li>
+      </ul>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 待核</div>
+      PPT 写「40 年代奥兰市爆发了鼠疫」。通行说法：《鼠疫》<b>发表于 1947 年</b>，故事设定在 1940 年代的奥兰（今阿尔及利亚瓦赫兰）。PPT 表述与通行说法一致，仅年代写法较粗，答题时建议写全「20 世纪 40 年代」。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 5 · 荒诞派名词解释 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">5</div>
+    <div class="card-title">荒诞派名词解释</div>
+    <span class="exam-level lv-ss">❗️必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 3 张</div>
+
+    <div class="sub-h">名词解释（PPT 原文）</div>
+    <p><span class="term">荒诞派戏剧</span>是 20 世纪 50 年代崛起于<span class="hl-b">法国</span>的后现代主义文学流派，后波及欧美各国。</p>
+    <p>得名于英国批评家<span class="term">马丁·艾思林</span>，它在思想上受<span class="hl-b">存在主义哲学</span>影响，有意识地谋求一种「<span class="hl-b">反戏剧</span>」效果，强调世界的荒诞、人生的痛苦和反抗的无意义，具有浓厚的<span class="hl-b">悲观主义和宿命论</span>色彩。</p>
+    <p>艺术上：</p>
+    <ol>
+      <li>荒诞派戏剧完全抛弃了传统戏剧的程式和手法，而主张用<span class="hl">荒诞的手法表现荒诞的存在</span>。</li>
+      <li>人物形象<span class="hl-b">支离破碎</span>，缺乏鲜明的个性，语言混乱好似梦呓。</li>
+      <li>借助各种怪诞、不合逻辑的灯光和场景，使得整个舞台成为<span class="hl-b">荒诞世界的象征性场景</span>。</li>
+    </ol>
+    <p>代表作家作品有：法国的贝克特《等待戈多》和尤奈斯库《秃头歌女》等。</p>
+
+    <div class="paper">
+      <div class="p-t">🎯 西大真题原答 · 2020 年创意写作考研文学史名词解释第六题</div>
+      <p>荒诞派是 20 世纪西方后现代主义文学的重要流派，主要是指戏剧创作。在 50 年代最早出现在法国，之后流行到法国、英国、美国，60 年代统治了西方戏剧领域，成为二次世界大战后西方最有影响力的戏剧流派之一。思想上继承了存在主义的荒诞观念，以表现人生的荒诞为基本主题；艺术上以表现形式的荒诞为基本特色；体裁上形成了悲喜剧因素的荒诞化融合，用喜剧形式表现悲剧内涵，产生了「黑色幽默」式的艺术效果。代表作品有尤奈斯库《秃头歌女》、贝克特《等待戈多》。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">背诵口诀</div>
+      真题答案就是「<b>三上</b>」结构：<b>思想上</b>表现人生荒诞 · <b>艺术上</b>表现形式荒诞 · <b>体裁上</b>悲喜剧荒诞化融合。加时间地点（50 年代法国）＋ 两个代表作，满分。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 6 · 荒诞派戏剧艺术特征 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">6</div>
+    <div class="card-title">荒诞派戏剧艺术特征</div>
+    <span class="exam-level lv-ss">❗️必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 3 张（正反两面）</div>
+
+    <div class="sub-h">1、在思想上，以表现「人生的荒诞」为基本主题</div>
+    <p>荒诞派戏剧着力表现「<span class="hl-b">主观的真实</span>」，即作家对人生荒诞的哲学层面上的认识。一般从两方面表现「人生荒诞」的主题：</p>
+    <ol>
+      <li><b>生存环境的荒诞。</b>主人公生存的世界是物化的，如在尤奈斯库的《椅子》中，<span class="hl">椅子塞满了房间，挤得主人公无立足之地，只好从世界上消失</span>。戏剧传达出不可理喻的环境给人的威胁、压迫，即世界的荒诞可怕。</li>
+      <li><b>生存方式的荒诞。</b>荒诞派戏剧中的主人公，不是「宇宙的精华，万物的灵长」，而是<span class="hl-b">丧失了人的本质、价值的荒唐可悲的生物</span>。《等待戈多》的主人公是肮脏褴褛、低贱猥琐的流浪汉，他们无所作为，在无所事事中度日。戏剧传达出的人生是空虚尴尬、异化失落、孤独隔绝、麻木不仁、幻灭死亡，既荒诞，又可悲。</li>
+    </ol>
+
+    <div class="sub-h">2、在艺术上，以表现「形式的荒诞」为基本特色</div>
+    <ol>
+      <li><b>情节结构的荒诞化。</b>戏剧缺乏符合生活逻辑的情节，没有戏剧冲突，情节发展没有逻辑性和客观真实性。如《等待戈多》是一个「<span class="hl">什么都没有发生</span>」的荒诞的生活片段。</li>
+      <li><b>舞台形象的荒诞化。</b>人物形象多是抽象的、没有个性的、破碎的、「<span class="hl-b">反英雄</span>」的形象。</li>
+      <li><b>台词的荒诞化。</b>台词常常失去意义、逻辑性，人物的对话或是内容空洞、陈词滥调，或是语无伦次、莫名其妙，甚至是无意义的话。剧作家还最大限度地减少台词，剧中常常出现沉默场面。</li>
+    </ol>
+
+    <div class="sub-h">3、在体裁上，偏于悲喜剧因素的荒诞性融合</div>
+    <p>荒诞派戏剧常常用<span class="hl">喜剧的形式表达悲剧的内涵</span>，产生一种「<span class="hl-b">黑色幽默</span>」式的艺术效果。</p>
+
+    <div class="mnem">
+      <div class="m-t">背诵口诀 · 三三制</div>
+      <b>思想层</b>（主题荒诞）：环境荒诞 ＋ 方式荒诞（两个角度）<br>
+      <b>艺术层</b>（形式荒诞）：情节荒 ＋ 形象荒 ＋ 台词荒（三个「荒」）<br>
+      <b>体裁层</b>：喜剧形式 ＋ 悲剧内涵 ＝ 黑色幽默效果<br>
+      关键词连读：<b>「主题—形式—体裁」三层递进</b>，与真题「思想上—艺术上—体裁上」完全同构。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 7 · 戈多的意象 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">7</div>
+    <div class="card-title">《等待戈多》· 戈多的意象（四解）</div>
+    <span class="exam-level lv-ss">必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 4、5 张</div>
+
+    <div class="note-bar">「戈多」的伟大之处在于它的<span class="hl-b">不确定性</span>。它不是一个单一的符号，而是一个开放的、多义的容器，一百个人有一百种等待，因而对「戈多」也就有了一百种不同的见解。</div>
+
+    <div class="sub-h">1、上帝或神性的救赎</div>
+    <p>「戈多」（Godot）的名字与「上帝」（God）高度相似。信使男孩形容戈多留着白胡子，这也是上帝的传统形象。在信仰崩塌的现代世界，人们等待上帝的救赎，但上帝始终沉默、缺席。</p>
+
+    <div class="sub-h">2、死亡</div>
+    <p>戈多被描述为一种最终的「结局」。等待戈多，就像在等待死亡的最终降临。它既令人恐惧，又因其能终结一切痛苦而带有某种诱惑。然而，就连死亡（戈多）也迟迟不来，将人永久地悬置于痛苦的生存状态中。</p>
+
+    <div class="sub-h">3、任何形式的「外部救世主」</div>
+    <p>戈多可以代表任何我们相信能解决我们所有问题、赋予我们生命意义的外部力量：<span class="hl">政治乌托邦、科学进步、一场革命、一个爱人、一笔财富</span>……贝克特讽刺了这种将希望寄托于外部的被动心态。</p>
+
+    <div class="sub-h">4、「意义」本身</div>
+    <p>在最哲学的层面上，戈多就是「<span class="hl-b">意义</span>」的化身。人类本能地追求生命的意义，但在一个本身并无固有目的的宇宙中，这种追求注定是徒劳的。我们永远在等待一个永远不会到来的、清晰的答案。</p>
+
+    <div class="quote">
+      《等待戈多》的伟大在于，它没有给出「戈多是谁？」的答案。正如贝克特自己所说：「<b>如果我知道戈多是谁，我早就在剧中说出来了。</b>」重点不在于戈多是什么，而在于<span class="hl-b">等待的状态本身</span>，「戈多就是我们为了生存而必须相信的某个东西，尽管我们永远无法证实它的存在」。
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">四解速记</div>
+      <b>上帝</b>（Godot≈God）· <b>死亡</b>（终局）· <b>外部救世主</b>（乌托邦／革命／爱人／财富）· <b>意义本身</b>。<br>
+      答题落点：<b>多义性本身就是答案</b>——先列四种解释，再收到「等待的状态」上。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 8 · 《等待戈多》艺术特色 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">8</div>
+    <div class="card-title">《等待戈多》艺术特色</div>
+    <span class="exam-level lv-ss">必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 5 张</div>
+
+    <div class="sub-h">PPT 三条</div>
+    <ol>
+      <li>没有曲折动人的情节，人物的动作被压缩到最低限度。</li>
+      <li>独特的结构形式——<span class="hl-b">循环式结构</span>。</li>
+      <li>人物语言荒诞不经，能真实地表现人物的精神状态和思想情绪。</li>
+    </ol>
+
+    <div class="paper">
+      <div class="p-t">🎯 西大真题原答 · 2022 年创意写作考研文学史简答题第三题</div>
+      <p>《等待戈多》在艺术上表现出明显的反传统戏剧倾向，具有浓郁的荒诞性特征。</p>
+      <p><b>（1）戏剧的情节是荒诞的。</b>戏剧没有开端高潮，也无结局，戈戈、狄狄从何而来，为何要等待戈多，一概不予交代。整个内容情节以人物无聊的小动作，语无伦次的唠叨，含糊不清、支离破碎地讲述小故事和杂耍般的动作来代替。戏剧只展示了两个傍晚，但次日却是个不定数。剧中的狄狄说：「也许有 50 年了。」事实上，他们必定熬过了许许多多个日日夜夜。在长期无望的等待中，两人已「腻烦得要死」，也深切感到等待的可怕、现状的寒心。然而他们已经习惯了，「只要等待」，永远等下去，「直到他来为止！」戈多托小孩捎来口信，说明天要来，却又总也不来。失望的戈戈、狄狄想上吊，却没吊成，老说要走，但始终没付诸行动。一系列杂乱无章、荒诞不经的内容和情节，象征着生活的荒诞、人生的荒诞。</p>
+      <p><b>（2）《等待戈多》的荒诞性也充分地体现在荒诞离奇、循环往复的结构形式上。</b>贝克特为了更充分地表现、更突出地强调人的荒诞无意义的生存状态和精神面貌，打破了传统戏剧所特有的剧情内容发生—发展—高潮—结局的结构模式，而是别出心裁地创造了一种独特的循环结构形式。剧作强调幕与幕内容上的重复，每一幕情景和生活片断的重复，及至场景、时间、地点、出场人物等，如出一辙，使一个没有情节发展和高潮结局的故事，在重叠反复中循环展开。剧中人物还常常做重复循环的动作，如戈戈狄狄总是重复着脱靴子的系列动作，狄狄总是重复着脱帽子的系列动作。总之，循环重复的结构形式是对人类生活本质的一种绵延而又悬而未决的暗喻，暗示了人类苦难的无尽延续，人的毫无出路。可以认为，《等待戈多》正是凭借这种独特的循环结构，才巧妙地折射出人生的痛苦、虚幻和无望，深刻揭示人类在一个荒谬宇宙中的尴尬处境。</p>
+      <p><b>（3）荒诞性融入了人物的塑造，成为描写人物的主要手段。</b>传统戏剧一般都十分重视人物个性的刻画，人物自身有较为具体的社会属性。而在《等待戈多》中，登场的五个人物，都是思维混乱、语言不清、失却理性、丑陋怪异的人。人物身上全然没有了莎士比亚在《哈姆雷特》中所说的，人是「宇宙的精华，万物的灵长」的那种主宰万物的精神。在这几个人物身上，既没有主次之分，也没有什么独特的个性可言。戈戈和狄狄只知胡言乱语，做着一些毫无意义的动作，日复一日地等待着一无所知的戈多，象征着人类生活的单调困窘、痛苦无奈。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">背诵口诀</div>
+      真题三条＝<b>情节荒诞 · 结构循环 · 人物荒诞</b>。PPT 三条＝<b>无情节 · 循环式结构 · 语言荒诞</b>。两套完全对得上，背一套即可，考场上按三条分段展开，每条补一句剧作实例（脱靴子／脱帽子／想上吊没吊成）。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 9 · 黑色幽默名词解释 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">9</div>
+    <div class="card-title">黑色幽默名词解释</div>
+    <span class="exam-level lv-ss">必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 8、9 张</div>
+
+    <div class="sub-h">名词解释（PPT 原文）</div>
+    <p><span class="term">黑色幽默</span>是 20 世纪 6、70 年代兴起于<span class="hl-b">美国</span>的后现代主义文学流派。</p>
+    <p>以美国作家<span class="term">弗里德曼</span>编的一本小说集《黑色幽默》而得名。</p>
+    <p>此派深受存在主义哲学的影响，关注现实，对现实有的荒诞有着痛苦而愤怒的深层体验。在艺术上长于用夸张、反讽的手法揭示社会和人生荒诞乖谬的本质，故意用轻松调侃的态度面对悲剧性事件，获得一种<span class="hl-b">悲喜交融</span>的审美效果。</p>
+    <p>其主人公常常是<span class="hl-b">性格乖僻的反英雄人物</span>，情节<span class="hl-b">非逻辑</span>，整体<span class="hl-b">寓言性</span>。</p>
+    <p>主要有海勒《第二十二条军规》、品钦《万有引力之虹》。</p>
+
+    <div class="sub-h">术语源流（PPT 两张补充页）</div>
+    <div class="box">
+      <ul>
+        <li>「黑色幽默」一词<span class="hl">译自法语</span>，是法国超现实主义者和布勒东和艾吕雅 1937 年论著《黑色幽默》最早使用了这个术语。</li>
+        <li><b>1965 年</b>，[美] 弗里德曼编辑一个选本《黑色幽默》，收集了海勒、品钦等 <b>11 个美国作家和一个法国作家</b>的作品片断。</li>
+        <li><b>1965 年</b>，另一个美国作家<b>尼克伯克</b>在论文《致命一蛰的幽默》中，也把这一类型的作品叫「黑色幽默」。后来，这一提法逐渐为社会接受，成为这一小说潮流的标志。</li>
+      </ul>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">背诵口诀</div>
+      名解六要素：<b>时间</b>（20 世纪 60—70 年代）· <b>地点</b>（美国）· <b>得名</b>（弗里德曼小说集《黑色幽默》）· <b>思想</b>（存在主义，关注现实的荒诞，痛苦而愤怒）· <b>手法</b>（夸张、反讽，用轻松调侃面对悲剧 → 悲喜交融）· <b>代表</b>（海勒《第二十二条军规》、品钦《万有引力之虹》）。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 10 · 黑色幽默艺术特征 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">10</div>
+    <div class="card-title">黑色幽默的艺术特征（四条）</div>
+    <span class="exam-level lv-ss">必背</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 9 张末</div>
+
+    <div class="sub-h">PPT 四条（小标题式，务必记牢）</div>
+    <ol>
+      <li>「黑色幽默」是一种<span class="hl-b">哭笑不得的幽默</span>，是一种用喜剧的形式来表现悲剧的内容的文学方法。</li>
+      <li>「<span class="hl-b">反英雄</span>」式的人物。</li>
+      <li>「<span class="hl-b">反小说</span>」的叙事结构法。</li>
+      <li>小说具有<span class="hl-b">寓言性</span>。</li>
+    </ol>
+
+    <div class="sub-h">四条展开（可直接作答）</div>
+    <div class="answer">
+      <div class="a-t">展开版 · 每条补一句</div>
+      <ol>
+        <li><b>悲喜交融的幽默观。</b>以喜剧形式承载悲剧内容，把痛苦、死亡、荒诞等沉重主题用玩笑、调侃的方式表达，让读者在发笑的同时感到寒意——「笑中带泪」的审美效果。</li>
+        <li><b>反英雄式的人物。</b>主人公多是被环境挤压、无力反抗的小人物或怪人（如尤索林），他们不是传统英雄，而是荒诞世界的受害者和见证人，以退避、疯癫或自嘲来对抗体制。</li>
+        <li><b>反小说的叙事结构。</b>打破线性因果与完整情节，采用碎片化、拼贴、循环、时序颠倒等手法，拒绝「发生—发展—高潮—结局」的传统叙事，结构与内容的荒诞相匹配。</li>
+        <li><b>鲜明的寓言性。</b>个别故事背后指向普遍处境，如《第二十二条军规》的皮亚诺扎岛影射整个官僚—战争机器，，「第二十二条军规」本身成为一个悖论式权力逻辑的寓言符号。</li>
+      </ol>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 待核</div>
+      PPT 两处口径需注意：① 第 8 张写「20 世纪 60 年代美国文坛出现的一种<b>现代主义</b>小说流派」，同页及第 9 张又写「20 世纪 6、70 年代兴起于美国的<b>后现代主义</b>文学流派」——同一页内两种口径不一。② 名解署名「<b>弗里德曼</b>」，术语补充页写「<b>弗里德曼</b>」（即 Bruce Jay Friedman，通行译名「弗里德曼」或「弗里德曼」）。<br>
+      <b>建议答题口径</b>：黑色幽默属<b>后现代主义</b>文学流派（与第9张正文一致），不要写「现代主义」。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 11 · 垮掉的一代名词解释 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">11</div>
+    <div class="card-title">垮掉的一代名词解释</div>
+    <span class="exam-level lv-s">背诵</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 7、8 张</div>
+
+    <div class="sub-h">名词解释（PPT 原文）</div>
+    <p><span class="term">垮掉的一代</span>：在第二次世界大战后出现于<span class="hl-b">美国</span>的后现代主义文学流派，他们是一群松散地结合在一起的年轻人。</p>
+    <p>在思想倾向上，深受欧洲<span class="hl-b">存在主义</span>的影响，他们关心的中心问题是<span class="hl">个人在当代社会中的生存状态</span>，抗议社会对他们的压抑，但往往以<span class="hl-b">颓废、堕落、犯罪</span>来表现他们的「脱俗」，和传统的价值与行为规范抗衡。</p>
+    <p>在艺术上，他们标榜「以全盘否定高雅文化为特点」，追求无节制的自我放纵，作品的结构无拘无束乃至杂乱无章。语言粗糙甚至粗鄙，既表现了对美国社会的反抗，也流露了<span class="hl-b">悲凉、焦虑和迷惘</span>的消极情绪。</p>
+    <p>代表作家及作品主要有金斯堡的诗歌《嚎叫》，凯鲁亚克的小说《在路上》等。</p>
+    <p>「垮掉的一代」虽然包含了大量不健康因素，但通过这些作家可以加深对当代美国社会的理解。它的<span class="hl">粗犷自然风格</span>在当代美国文学中也留下了一定影响。</p>
+
+    <div class="paper">
+      <div class="p-t">🎯 题库原答 · 华南师范大学 2005 年，中国人民大学 2003 年，四川大学 2001 年</div>
+      <p>「垮掉的一代」是第二次世界大战后风行于美国的后现代主义文学流派。该流派是一个松散的文学团体，由一群性格粗犷豪放、自由不羁的男女青年组成。他们受存在主义的影响，关心个人在当代社会的生存状态，以颓废、堕落和犯罪来反抗社会对个体的压抑，反抗传统价值和行为规范。在艺术上，他们否定高雅文化，其作品结构杂乱无章，语言粗鄙有力，既表现了对美国社会的反抗，也流露了悲凉、焦虑和迷惘的消极情绪。金斯堡和凯鲁亚克为代表人物，他们的作品《嚎叫》和《在路上》为垮掉的一代的代表作。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">背诵口诀</div>
+      <b>两代一影响</b>：<b>二战后·美国</b>＋<b>松散青年群体</b>＋<b>存在主义影响</b>；<b>三个行为词</b>：颓废、堕落、犯罪；<b>两部代表作</b>：《嚎叫》《在路上》；<b>一句影响</b>：粗犷自然风格影响当代美国文学。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 12 · 海勒与《第二十二条军规》 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">12</div>
+    <div class="card-title">约瑟夫·海勒 与《第二十二条军规》</div>
+    <span class="exam-level lv-ss">重要‼️</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 10 张</div>
+
+    <div class="sub-h">作者生平（PPT 原文）</div>
+    <p><span class="term">约瑟夫·海勒（1923—1999）</span></p>
+    <p>1923 年 5 月 1 日出生于纽约布鲁克林一个贫苦的俄裔犹太移民家庭。童年时光被大萧条的阴影所笼罩。</p>
+    <p>二战期间（1942—1945），19 岁的海勒加入美国空军，成为一名 <span class="hl-b">B-25 轰炸机的投弹手</span>。他在地中海战区的科西嘉岛执行了 <span class="hl-b">60 次飞行任务</span>。这段九死一生的经历，为他创作《第二十二条军规》提供了最直接、最深刻的素材。与小说主人公尤索林一样，他深切地体会到了战争的荒诞与官僚系统的冷酷。</p>
+    <p>战后，他凭借「退伍军人法案」进入大学学习，先后在纽约大学、哥伦比亚大学和牛津大学深造。他曾在美国大学任教，并在《时代》、《展望》等知名杂志担任广告文案。</p>
+    <p><b>《第二十二条军规》（1953—1961）</b>小说出版之初并未立即引起轰动，但随着越南战争的升级，它因其强烈的<span class="hl-b">反战和反权威精神</span>，迅速成为一代青年的文化圣经。</p>
+
+    <div class="sub-h">故事梗概（PPT 未给正文，据通行梗概整理）</div>
+    <div class="note-bar">⚠️ 提纲第 5 项要求「故事梗概 ➕ 艺术特色」，但 PPT 第 10 张止于海勒生平与出版信息，<b>未给梗概与艺术特色正文</b>。以下据通行文学史梗概整理，与库内原答互相印证。</div>
+
+    <div class="answer">
+      <div class="a-t">梗概 · 四层</div>
+      <p><b>① 情境设定。</b>二战期间，美军一支空军中队驻扎在意大利附近的皮亚诺扎岛。按军规，飞行员飞满 <b>25 次</b>任务即可申请回国。</p>
+      <p><b>② 核心悖论。</b>主人公<b>尤索林</b>飞满 25 次后申请回国，却被告知「第二十二条军规」规定：只有<b>疯子</b>才能被允许停飞。而要证明自己疯了，必须<b>自己提出申请</b>——但一个人若能清醒地为自己申请停飞，就说明他不疯。于是这条军规构成一个<b>无解的循环悖论</b>：它没有明文，却无处不在，任何人都可以被它套住。</p>
+      <p><b>③ 中队群像。</b>中队指挥官<b>卡思卡特上校</b>为求晋升一再提高飞行次数，从 25 次加到 30、40、50、60……尤索林眼看着同伴一个个死去，陷入极度恐惧。周围是一群荒诞的官僚与投机者：用官兵性命做交易、大发战争财的食堂管理员<b>米洛</b>（「人人有份的联合体」）、只讲纪律不问死活的<b>德里德尔将军</b>、以残酷手段维持秩序的<b>谢司科普夫中尉</b>等。</p>
+      <p><b>④ 结局。</b>尤索林最终拒绝再飞，在目睹战友<b>斯诺登</b>的惨死后彻底认清战争的荒诞与体制的暴力。他一度被逼与上级做交易（以回国为条件为其宣传），最终选择<b>当逃兵</b>，逃往中立国瑞典，以保全自己的生命与良知。</p>
+    </div>
+
+    <div class="sub-h">艺术特色</div>
+    <div class="answer">
+      <div class="a-t">四条（可作答）</div>
+      <ol>
+        <li><b>荒诞的黑色幽默。</b>以极度夸张、变形、漫画化和反讽的手法写死亡的惨烈与体制的荒谬，把最恐怖的事写得滑稽可笑——战争惨状与戏谑语调并置，形成「笑中带痛」的黑色幽默效果。</li>
+        <li><b>反英雄的主人公。</b>尤索林不是传统英雄，他怯懦、自私、只求活命，是荒诞世界中清醒的逃避者。他的「怕死」恰恰是对不人道体制最合理的反抗。</li>
+        <li><b>非线性的叙事结构。</b>打破时间顺序，将 40 余个人物的经历打碎重组、反复穿插跳跃，同类事件在不同章节重复出现并逐次补充细节，构成<b>碎片化、循环式</b>的叙事迷宫，与内容的荒诞相匹配。</li>
+        <li><b>强烈的寓言性与悖论逻辑。</b>「第二十二条军规」本身即是全书的核心寓言——一个可以随意解释、永远套住弱者的权力悖论，影射现代官僚机器与整个非理性世界的运作方式。该词后来进入英语日常语汇，成为「无法摆脱的困境」的代名词。</li>
+      </ol>
+    </div>
+
+    <div class="paper">
+      <div class="p-t">🎯 西大真题原答 · 2020 年创意写作考研文学史名词解释第五题</div>
+      <p>当代美国作家海勒的代表作，也是 20 世纪下半叶后现代主义文学中「黑色幽默」流派的经典之作，小说以第二次世界大战为背景，通过对一支驻扎在意大利附近一个名叫皮亚诺扎岛上的美国空军部队内幕生活的描写，揭示了一个非理性、无秩序、梦魇式的荒诞世界。以主人公尤索林等一系列人物的遭遇，展现了战争给人带来的厄运和这个非理性世界造成的苦难。运用夸张、对比、变形、幽默、反讽、漫画化等多种手法，达到黑色幽默的喜剧效果。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">背诵口诀</div>
+      <b>名解落点</b>：海勒代表作 ＋ 黑色幽默经典 ＋ 皮亚诺扎岛空军中队 ＋ 尤索林 ＋ 非理性荒诞世界 ＋ 夸张／反讽／漫画化手法。<br>
+      <b>梗概落点</b>：25 次 → 疯悖论 → 卡思卡特加码 → 米洛发财 → 斯诺登之死 → 逃往瑞典。<br>
+      <b>艺术落点</b>：黑色幽默 ＋ 反英雄 ＋ 非线性碎片结构 ＋ 军规寓言。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 13 · 新小说派 ===== -->
+<div class="card collapsed">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">13</div>
+    <div class="card-title">新小说派（本节同页 · 顺带了解）</div>
+    <span class="exam-level lv-l">了解</span>
+  </div>
+  <div class="card-body">
+    <div class="ppt-src">PPT 第 6、7 张</div>
+
+    <div class="sub-h">名词解释（PPT 原文）</div>
+    <p><span class="term">新小说派</span>：新小说派是 20 世纪 50 年代崛起于<span class="hl-b">法国</span>的后现代主义文学流派，又称「<span class="hl-b">反小说派</span>」或「<span class="hl-b">拒绝派</span>」。</p>
+    <p>该派没有统一纲领和严密组织，作家的创作各有特点，观点上也各有侧重，但都激烈反对传统，要求全面革新小说艺术，贬低文学的思想性，关注小说的艺术形式，为此做出了多方探索。</p>
+    <ul>
+      <li>取消人物的中心地位，主张以「物」来取代人，对「物」作细致的描写，并用<b>摄影机一样的语言</b>加以描绘；</li>
+      <li>打破语法规则的约束，给文本留下空缺以待读者的创造，有明显的<b>形式主义倾向</b>。</li>
+    </ul>
+    <p>代表作家有：<span class="term">罗伯-格里耶</span>。</p>
+
+    <div class="sub-h">新小说基本特征（PPT 三条）</div>
+    <ol>
+      <li><b>不塑造人物及构思情节，只注重对物的客观描绘。</b>罗布·格里耶认为「世界既不是有意义的，也不是荒谬的，它存在着，如此而已。」新小说作品不描写人群和社会，也不给人物名字，用字母代替。人物没有完整的性格和个性特点；情节没有逻辑性；对自然景物、环境描写精确、细致。</li>
+      <li><b>打破了时空观念和文学体裁的界限。</b>新小说大都打破时间和空间的界限，甚至有意地颠倒时间、混淆空间，过去、现在、未来任意交错，并与现实、回忆、联想、幻觉、梦境和潜意识交织掺杂在一起，令人分不清哪些是现实哪些是虚构。</li>
+      <li><b>重视「文字变化」，尝试「文字的历险」。</b>新小说缺乏精炼纯洁的艺术语言，而多用口语、俚语、或语法结构残缺的语句。</li>
+    </ol>
+
+    <div class="sub-h">代表作家作品</div>
+    <p>娜塔莉·萨洛特：《金果》；阿兰·罗伯-格里耶：《窥视者》《橡皮》《嫉妒》。</p>
+
+    <div class="paper">
+      <div class="p-t">🎯 题库原答 · 暨南大学 2005 年，南京师范大学 2003 年</div>
+      <p>新小说是 20 世纪 50 年代兴起于法国的后现代主义文学流派。它是一个松散的文学团体，没有统一的美学纲领。新小说派作家强烈地反对传统，要求全面革新小说艺术；贬低文学的思想性和倾向性，关切小说的技巧和表现手法，并为此进行了多方面的探索，如取消人物的中心地位，颠覆作品结构的完整性与逻辑性，打破语法规则的约束，给文本留下「空缺」，使读者由被动的接受变为主动的创造者与参与者。阿兰·罗伯-格里叶、克洛德·西蒙、娜塔丽·萨洛特等为代表作家。</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 待核</div>
+      PPT 与库内原答对「罗伯-格里耶」的中间字处理不同（PPT 作「罗伯-格里耶」或「罗布·格里耶」，库内作「罗伯-格里叶」），三种写法皆通行。<b>建议统一写「阿兰·罗伯-格里耶」</b>（中文通行译名）。另，新小说派代表作家惯常列三位：罗伯-格里耶、克洛德·西蒙、娜塔丽·萨洛特，PPT 只列了一位，答题时补齐更稳。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 14 · 西大真题命中对照 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">14</div>
+    <div class="card-title">西大真题命中对照</div>
+    <span class="exam-level lv-s">对答案</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">本页内容与西大历年真题的对应关系</div>
+    <div class="tablebox">
+      <table>
+        <tr><th style="width:8.5rem">考点</th><th style="width:9rem">真题出处</th><th>对照要点</th></tr>
+        <tr>
+          <td><b>荒诞派</b></td>
+          <td>2020 年创意写作<br>名解第六题</td>
+          <td>真题答案＝「思想上／艺术上／体裁上」三层，与本页卡片 5、6 完全同构。<b>背真题答案即可覆盖 PPT。</b></td>
+        </tr>
+        <tr>
+          <td><b>《第二十二条军规》</b></td>
+          <td>2020 年创意写作<br>名解第五题</td>
+          <td>真题按「名词解释」体量作答（约 150 字）：定位＋梗概＋手法＋效果。若考「故事梗概＋艺术特色」（如本页提纲），需在真题基础上扩写卡片 12 的四层梗概与四条艺术特色。</td>
+        </tr>
+        <tr>
+          <td><b>《等待戈多》艺术特征</b></td>
+          <td>2022 年创意写作<br>简答第三题</td>
+          <td>真题三条（情节荒诞／结构循环／人物荒诞）与本页卡片 8 一一对应，且与 PPT 三条（无情节／循环结构／语言荒诞）互证。简答题体量按真题三段展开。</td>
+        </tr>
+        <tr>
+          <td><b>垮掉的一代</b></td>
+          <td>华南师大 2005<br>人大 2003<br>川大 2001</td>
+          <td>西大未考过，但他校高频。题库原答与本页 PPT 要点一致，可直接背题库版。</td>
+        </tr>
+        <tr>
+          <td><b>新小说</b></td>
+          <td>暨南 2005<br>南师 2003</td>
+          <td>西大未考过。本页作「了解」级，掌握三特征＋三代表作家即可。</td>
+        </tr>
+        <tr>
+          <td><b>《局外人》《鼠疫》</b></td>
+          <td>西大暂未见原题</td>
+          <td>但加缪是存在主义文学核心作家，与「荒诞」母题强相关。<b>建议按名解体量熟背</b>，并准备「《局外人》与《鼠疫》的荒诞观对照」这一论述角度。</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="sub-h">本页「待核」清单（共 4 处）</div>
+    <div class="warn">
+      <div class="w-t">⚠️ PPT 与通行说法不一致处，已在各卡标注</div>
+      <ol>
+        <li><b>黑色幽默的流派归属</b>——PPT 第 8 张写「现代主义」，第 9 张写「后现代主义」。答题取<b>后现代主义</b>。（卡片 10）</li>
+        <li><b>黑色幽默代表人物译名</b>——PPT 正文作「弗里德曼」，同一份 PPT 另一页亦作「弗里德曼」（Bruce Jay Friedman）。通行译名可写「弗里德曼」。（卡片 10）</li>
+        <li><b>《第二十二条军规》梗概与艺术特色 PPT 缺失</b>——第 10 张止于作者生平，提纲第 5 项要求的两块正文已据通行梗概＋库内原答补全，与 PPT 无冲突。（卡片 12）</li>
+        <li><b>罗伯-格里耶译名</b>——PPT 出现「罗伯-格里耶」「罗布·格里耶」，库内作「罗伯-格里叶」。建议统一「阿兰·罗伯-格里耶」。（卡片 13）</li>
+      </ol>
+    </div>
+
+    <div class="note-bar">
+      ✅ 另核对无误处：《鼠疫》「40 年代奥兰市爆发鼠疫」与通行说法（发表于 1947 年，故事设于 20 世纪 40 年代奥兰）一致；荒诞派「50 年代崛起于法国」「马丁·艾思林命名」与通行说法一致；《等待戈多》作者为贝克特、《秃头歌女》作者为尤奈斯库，PPT 无误。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 卡片 15 · 直达资料 ===== -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">15</div>
+    <div class="card-title">直达资料 · 相关页面</div>
+    <span class="exam-level lv-l">工具</span>
+  </div>
+  <div class="card-body">
+    <p>背完想刷题／查原答，从下面直接跳：</p>
+    <ul>
+      <li><a href="../外国文学史习题_分章刷题.html#d9">外国文学史习题 · 分章刷题（#d9 现代主义和后现代主义文学）</a></li>
+      <li><a href="../文学史考研笔记整理_纯文字版.html">文学史考研笔记整理（西大真题原答全文）</a></li>
+      <li><a href="../唐红梅外国文学知识点串讲.html">唐红梅 · 外国文学知识点串讲</a></li>
+      <li><a href="../李凡1000题_外国文学史-OCR重建版.html">李凡 1000 题 · 外国文学史</a></li>
+      <li><a href="day25-表现主义与后现代-上.html">← 第 25 天：表现主义与后现代（上）</a></li>
+      <li><a href="../百日冲刺计划.html">百日冲刺计划</a></li>
+    </ul>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d26t01">01 四科今日清单已看</span>
+      <span class="chk" data-k="d26t02">02《局外人》名解背下</span>
+      <span class="chk" data-k="d26t03">03《局外人》梗概＋人物特色背下</span>
+      <span class="chk" data-k="d26t04">04《鼠疫》名解背下</span>
+      <span class="chk" data-k="d26t05">05 荒诞派名解背下</span>
+      <span class="chk" data-k="d26t06">06 荒诞派艺术特征背下</span>
+      <span class="chk" data-k="d26t07">07 戈多意象四解记牢</span>
+      <span class="chk" data-k="d26t08">08《等待戈多》艺术特色背下</span>
+      <span class="chk" data-k="d26t09">09 黑色幽默名解＋艺术特征背下</span>
+      <span class="chk" data-k="d26t10">10 垮掉的一代名解背下</span>
+      <span class="chk" data-k="d26t11">11 军规梗概＋艺术特色背下</span>
+      <span class="chk" data-k="d26t12">12 新小说派三特征过一遍</span>
+      <span class="chk" data-k="d26t13">13 真题命中对照看完</span>
+      <span class="chk" data-k="d26t14">14 四处待核已确认</span>
+      <span class="chk" data-k="d26t15">15 直达资料链接已收藏</span>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <p>第 26 天带背 · 后现代（中）</p>
+  <p>内容来源：带背 PPT 截图（10 张逐张识读）＋ 库内题库（文学史考研笔记整理纯文字版、外国文学史分章刷题）＋ 西大历年真题原答（2020 名解第五题、第六题；2022 简答第三题）</p>
+  <p>有 4 处「待核」已在对应卡片中标出 · 打卡进度保存在本机浏览器</p>
+</div>
+</div>
+
+<div class="font-ctrl">
+  <button onclick="fsStep(-1)">−</button>
+  <span class="fs-label" id="fsLabel">15px</span>
+  <button onclick="fsStep(1)">＋</button>
+  <button class="fs-reset" onclick="fsReset()">复位</button>
+</div>
+
+<script>
+(function(){
+  var FS_KEY='day26nc_fs', CHK_KEY='day26nc_checks';
+  var base=15, cur=base;
+  try{ var s=localStorage.getItem(FS_KEY); if(s){ cur=parseFloat(s);} }catch(e){}
+  function apply(){ document.documentElement.style.setProperty('--fs-base',cur+'px');
+    var el=document.getElementById('fsLabel'); if(el){el.textContent=Math.round(cur)+'px';} }
+  window.fsStep=function(d){ cur=Math.min(22,Math.max(12,cur+d)); apply();
+    try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  window.fsReset=function(){ cur=base; apply(); try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  apply();
+
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(CHK_KEY)||'{}'); }catch(e){ saved={}; }
+  var chks=document.querySelectorAll('.chk');
+  chks.forEach(function(c){
+    var k=c.getAttribute('data-k');
+    if(saved[k]) c.classList.add('done');
+    c.addEventListener('click',function(ev){
+      ev.stopPropagation();
+      c.classList.toggle('done');
+      saved[k]=c.classList.contains('done');
+      try{ localStorage.setItem(CHK_KEY,JSON.stringify(saved)); }catch(e){}
+      upd();
+    });
+  });
+  function upd(){
+    var all=document.querySelectorAll('.chk').length;
+    var done=document.querySelectorAll('.chk.done').length;
+    var bar=document.getElementById('progBar'), txt=document.getElementById('progTxt');
+    if(bar) bar.style.width=(all?Math.round(done/all*100):0)+'%';
+    if(txt) txt.textContent=done+' / '+all;
+  }
+  upd();
+})();
+</script>
+
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>创意写作简史三题 · 材料题完整答案（美国·引入背景·中国现状）</title>
+<style>
+@font-face{font-family:"霞鹜文楷";src:url("./_shared/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:swap}
+:root{--bg:#f4f1ea;--bg2:#fffdf8;--ink:#252525;--muted:#6f6a60;--rule:#d8d0c3;--accent:#9d3f2f;--accent2:#1d5b5b;--soft:#eee5d7;--gold:#c8902a;--shadow:0 10px 28px rgba(50,35,20,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"霞鹜文楷","LXGW WenKai","Noto Sans CJK SC","WenQuanYi Micro Hei",sans-serif;line-height:1.78;font-size:var(--fs,16px);
+  background-image:radial-gradient(circle at 16% 8%,rgba(200,144,42,.07) 0,transparent 32%),radial-gradient(circle at 88% 18%,rgba(157,63,47,.06) 0,transparent 36%)}
+main{max-width:1080px;margin:auto;padding:28px 22px 80px}
+
+/* 顶部工具条 */
+.toolbar{position:sticky;top:0;z-index:30;margin:0 -22px 22px;padding:9px 22px;background:rgba(244,241,234,.95);border-bottom:1px solid var(--rule);
+  display:flex;gap:8px;align-items:center;flex-wrap:wrap;backdrop-filter:saturate(160%) blur(6px)}
+.toolbar .tt{font-weight:700;color:var(--accent);font-size:13.5px;margin-right:auto;letter-spacing:1px}
+.btn{border:1px solid var(--rule);background:var(--bg2);color:var(--ink);border-radius:20px;padding:4px 14px;cursor:pointer;font:inherit;font-size:13px;transition:.15s}
+.btn:hover{border-color:var(--accent2);color:var(--accent2);background:#fff}
+
+/* 报头 */
+.masthead{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:24px}
+.eyebrow{font-size:13px;letter-spacing:3px;color:var(--accent);font-weight:700;margin-bottom:8px}
+.masthead h1{margin:0;font-size:30px;letter-spacing:1.5px;line-height:1.4}
+.masthead .sub{margin-top:10px;color:var(--muted);font-size:14px;letter-spacing:.5px}
+.srcbox{background:var(--bg2);border:1px solid var(--rule);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:var(--muted);line-height:1.85;margin-top:16px}
+.srcbox b{color:var(--ink)}
+
+.section{margin:0 0 30px}
+h2.st{font-size:19px;margin:0 0 14px;padding-left:13px;border-left:5px solid var(--accent);letter-spacing:1px}
+h3.sh{font-size:16px;margin:20px 0 10px;color:var(--accent2);letter-spacing:.6px}
+.panel{background:var(--bg2);border:1px solid var(--rule);border-radius:10px;padding:18px 22px;box-shadow:var(--shadow)}
+.panel+.panel{margin-top:14px}
+
+/* 题干框 */
+.qbox{background:#fdf6e9;border:1px solid #e4d3b2;border-left:5px solid var(--gold);border-radius:0 10px 10px 0;padding:15px 20px;margin:0 0 16px}
+.qbox .qn{font-size:12.5px;font-weight:700;color:#8a6a1e;letter-spacing:2px;margin-bottom:6px}
+.qbox .qt{font-size:17px;font-weight:700;letter-spacing:.6px;line-height:1.65}
+.qbox .qm{margin-top:7px;font-size:13px;color:var(--muted)}
+
+/* 骨架表 */
+.tbl{width:100%;border-collapse:collapse;background:var(--bg2);border:1px solid var(--rule);border-radius:10px;overflow:hidden;font-size:14px}
+.tbl th{background:var(--ink);color:#fffdf8;font-weight:700;font-size:13px;letter-spacing:1px;padding:10px 13px;text-align:left;white-space:nowrap}
+.tbl td{padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.72}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tr:nth-child(even) td{background:#fdfbf6}
+.tbl .nm{font-weight:700;color:var(--accent);white-space:nowrap}
+.tbl .k{font-weight:700;color:var(--accent2)}
+
+/* 答案全文 */
+.answer{background:var(--bg2);border:1px solid var(--rule);border-radius:10px;padding:22px 26px;box-shadow:var(--shadow)}
+.answer h4.t{text-align:center;font-size:18.5px;letter-spacing:1px;margin:0 0 4px;line-height:1.6}
+.answer .sub-t{text-align:center;font-size:14.5px;color:var(--muted);margin:0 0 16px;letter-spacing:.5px}
+.answer h5{font-size:15.5px;margin:18px 0 7px;color:var(--accent);letter-spacing:.5px;font-weight:700}
+.answer p{margin:9px 0;text-indent:2em;line-height:1.95;font-size:15px}
+.answer p.noind{text-indent:0}
+mark{background:linear-gradient(transparent 58%,#fff3a8 58%);padding:0 2px;color:inherit}
+.answer .tail{border-top:1px dashed var(--rule);margin-top:16px;padding-top:12px;font-size:12.8px;color:var(--muted);line-height:1.8;text-align:right}
+.wc{display:inline-block;background:var(--soft);border:1px solid var(--rule);border-radius:3px;padding:0 6px;font-weight:700;color:#7a5a16;font-size:12.5px}
+
+/* 提示条 */
+.note{background:#fbf8f0;border:1px solid var(--rule);border-left:3px solid var(--accent2);border-radius:0 7px 7px 0;padding:11px 15px;margin:12px 0;font-size:13.5px;color:#5c5445;line-height:1.85}
+.note b{color:var(--accent2)}
+.warn{background:#fdf1ee;border:1px solid #eccdc3;border-left:3px solid var(--accent);border-radius:0 7px 7px 0;padding:11px 15px;margin:12px 0;font-size:13.5px;color:#7a3a2c;line-height:1.85}
+.warn b{color:var(--accent)}
+
+/* 时间轴 */
+.tl{position:relative;margin:18px 0 6px;padding-left:8px}
+.tl .row{display:flex;gap:14px;padding:9px 0;border-bottom:1px dashed var(--rule);align-items:flex-start}
+.tl .row:last-child{border-bottom:0}
+.tl .y{flex:0 0 84px;font-weight:800;color:var(--accent);font-size:14.5px;letter-spacing:.5px;padding-top:2px}
+.tl .e{font-size:14px;line-height:1.7}
+.tl .e b{color:var(--accent2)}
+
+/* 打卡 */
+.chk{display:inline-flex;align-items:center;gap:7px;cursor:pointer;user-select:none;font-size:13px;color:var(--muted);background:var(--bg2);border:1px solid var(--rule);border-radius:20px;padding:3px 13px;margin-top:14px;transition:.15s}
+.chk .bx{width:15px;height:15px;border:1.5px solid var(--rule);border-radius:4px;display:grid;place-items:center;font-size:11px;color:transparent;background:#fff}
+.chk.on{border-color:var(--accent2);color:var(--accent2);background:#f1f7f6}
+.chk.on .bx{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.prog{display:flex;align-items:center;gap:11px;margin-top:14px;font-size:13px;color:var(--muted)}
+.prog .bar{flex:1;height:7px;background:var(--soft);border-radius:6px;overflow:hidden;max-width:260px}
+.prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--accent));transition:.3s}
+
+a{color:var(--accent2)}
+.links{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.links a{display:inline-block;background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:7px 14px;font-size:13.5px;text-decoration:none;transition:.15s}
+.links a:hover{background:var(--accent2);color:#fffdf8;border-color:var(--accent2)}
+@media print{.toolbar,.chk{display:none}body{background:#fff;font-size:13px}main{padding:0}}
+@media(max-width:760px){.answer{padding:16px 15px}.masthead h1{font-size:23px}main{padding:20px 12px 60px}.toolbar{margin:0 -12px 18px;padding:9px 12px}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a class="btn" href="index.html" style="text-decoration:none">← 返回导航</a>
+  <span class="tt">创意写作简史三题 · 材料题完整答案</span>
+  <button class="btn" id="zi">A-</button>
+  <button class="btn" id="zo">A+</button>
+  <button class="btn" onclick="window.print()">打印 / 存 PDF</button>
+</div>
+<main>
+
+<div class="masthead">
+  <div class="eyebrow">6 4 7 创 意 写 作 基 础</div>
+  <h1>创意写作简史三题 · 材料题完整答案</h1>
+  <div class="sub">美国创意写作的发展特征 ｜ 引入我国的时代背景 ｜ 我国创意写作发展现状</div>
+  <div class="srcbox">
+    <b>素材来源</b>：① 《第一章 创意写作基本理论（修改版）》（陈晓辉，Word）② 《创写理论复习总结》（Word，基于创写理论一/二/三讲义整理）③ 《创意写作复试真题复习总结》《创意写作复试真题背诵版》（Word）④ 27 创意写作 647 暑期模拟二材料。<br>
+    <b>体例</b>：每题先给「骨架速记表」（考场 30 秒回忆用），再给「完整作答」（主标题＋副标题＋小标题，800—1000 字），符合材料题的卷面规范（详见 <a href="材料题答题方式_AI写作与创意写作.html">材料题答题方式页</a>）。<br>
+    <b>注意</b>：本页是<b>跨文档综合版</b>（含 2023 创意写作联盟、2024 「中文创意写作」入列二级学科等章外补充证据）。若以教材为准，请以 <a href="创意写作简史_第二章讲义与三题答案.html">创意写作简史 · 第二章讲义与三题答案</a> 为准——那页直接取自教材第二章原文，三题答案与其「总体特征四条／时代语境四条／现状四条」一一对应。
+  </div>
+</div>
+
+<!-- ============ 题一 ============ -->
+<div class="section">
+  <h2 class="st">题一：美国创意写作发展特征有哪些</h2>
+
+  <div class="qbox">
+    <div class="qn">材 料 题 · 第 一 问</div>
+    <div class="qt">美国创意写作发展特征有哪些？</div>
+    <div class="qm">考查章节：创意写作简史 · 美国部分 ｜ 建议作答 800—1000 字</div>
+  </div>
+
+  <h3 class="sh">▎骨架速记（五条特征）</h3>
+  <table class="tbl">
+    <thead><tr><th style="width:132px">特征</th><th>核心论点</th><th style="width:210px">硬证据（写进答案）</th></tr></thead>
+    <tbody>
+      <tr><td class="nm">一、源起的教育改革性</td><td>创意写作诞生之初是<b>文学教育教学改革的产物</b>，宗旨是与以古典语文学教育为核心的传统教学模式分开，确立「作家可以培养」「写作可以教学」</td><td>1837 爱默生「美国学者」演讲首提概念 → 1880s 高校英语写作课程兴起 → 1897 哈佛首开课程 → 1936 爱荷华设作家工作坊</td></tr>
+      <tr><td class="nm">二、教学的工坊制</td><td>以<b>工坊制（workshop）＋驻校作家制度</b>为核心教学法：过程教学、相互激发、集体创作</td><td>1 名主讲人（作家/学者/文创职业人）＋1—2 名助教＋20 人以内；打草稿→定稿→修改→发表</td></tr>
+      <tr><td class="nm">三、阶段的社会同频性</td><td>与社会历史进程同频共振，<b>三阶段</b>：初期＝文学教育改革；中期＝承担社会改革责任；当代＝为文创产业输血</td><td>中期应对：老兵战争创伤、黑人教育、移民浪潮、女权运动、多元文化、文学类型化、美国梦</td></tr>
+      <tr><td class="nm">四、建制的规模体系化</td><td>规模化、科系化、学位化，最终形成独立研究领域</td><td>1970 年 44 所高校；至 2006 年每年授出近 1000 个学位、超 300 个科系；2016 CWSO 成立</td></tr>
+      <tr><td class="nm">五、功能的产业辐射性</td><td>与文化产业深度<b>联姻</b>，完成文学产业化，并向公共文化与社会服务延伸</td><td>好莱坞、迪士尼；爱荷华大学「国际写作计划」及城市文创项目</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><b>破题提示</b>：题干问「特征」，忌答成「编年史」。正确做法是<b>先立五条特征，再把时间点当证据挂在特征下面</b>——这样答案有骨架，时间点也不会被漏掉。</div>
+
+  <h3 class="sh">▎完整作答</h3>
+  <div class="answer">
+    <h4 class="t">从校园计划到产业母体</h4>
+    <p class="sub-t">——美国创意写作发展的五项基本特征</p>
+
+    <p>美国创意写作历经百余年，已从一项高校教学实验成长为成熟的学科体系。它的发展并非线性累加，而是呈现出五项相互支撑的基本特征。</p>
+
+    <h5>一、源起上的教育改革性</h5>
+    <p>1837 年，爱默生在美国大学生联谊会上作《美国学者》演讲，首次提出与学术研究相对的「创意写作」概念。此后，1880 年代高校英语写作课程兴起，1897 年哈佛大学首次开设「创意写作」课程，1936 年爱荷华大学创立作家工作坊、提供 MFA 学位，正规的创意写作项目自此发端。可见创意写作自诞生起就承载着文学教育教学改革的重任，其目标是与以古典语文学教育为核心的传统模式相分开，确立<mark>「作家可以培养」「写作可以教学」</mark>的核心信念。</p>
+
+    <h5>二、教学上的工坊制与驻校作家制度</h5>
+    <p>爱荷华作家工作坊是美国第一个授予创意写作学位的教研单位，其基本形式为一名主讲人（作家、学者或文创职业人）加一至两名助教，学生控制在二十人以内。工坊制有三条鲜明主张：重视过程教学，把打草稿、定稿、修改、发表视为不可省略的完整链条；重视相互激发，认为灵感并非只是个人天赋，也可以群体性地被激发出来；重视集体创作，既承认个人独创，又强调协作可以共同完成作品。与之配套的驻校作家制度，则保证了创作经验能够直接进入课堂。</p>
+
+    <h5>三、阶段上的社会同频性</h5>
+    <p>美国创意写作的发展可分为三个阶段。初期，它表现为「一项在全国高校内开设的小说、诗歌写作课程的校园计划」和「一个招募小说家、诗人从事该学科教育教学的国家体系」。中期，它承担起社会改革的责任，成功应对了二战前后军人战争创伤、黑人教育、移民浪潮、女权运动、多元文化差异、文学类型化以及美国梦形成等诸多挑战，马克·麦克格尔即将战后老兵的写作热潮视为其真正兴起的契机。当代，它转而承担为现代文创产业输血的功能。</p>
+
+    <h5>四、建制上的规模体系化</h5>
+    <p>美国创意写作的建制化程度极高。1970 年已有四十四所高校提供创意写作学位；据大卫·迈尔斯统计，至该书出版的 2006 年，仅美国每年就授出近一千个创意写作学位，创建了超过三百个创意写作科系，形成包含近二十个子类的本科、硕士、博士培养体系。2016 年创意写作研究组织（CWSO）成立，标志其进入繁荣期，也标志创意写作从教学项目成长为具有自觉学术共同体意识的研究领域。</p>
+
+    <h5>五、功能上的产业辐射性</h5>
+    <p>在发展的中后期，创意写作与文化产业深度联姻，为文学创作、电影工业、文旅产业和社会服务提供了大量优质的文化创意人才。好莱坞、迪士尼乐园等文娱场所与文化行业，爱荷华大学的「国际写作计划」及其城市文创项目，都是文学产业化成功的代表。聂华苓、石黑一雄、哈金，以及获哥伦比亚艺术学院写作最高 MFA 学位的严歌苓等人，其作品被反复改编为影视剧，进一步放大了创意写作的社会影响力。</p>
+
+    <h5>小结</h5>
+    <p>综上，美国创意写作是一条由教育改革起步、经社会运动锤炼、最终与产业共振的路径。它给我们的启示是：创意写作的生命力并不在于文学内部的自我循环，而在于持续回应外部社会的真实需求。</p>
+
+    <div class="tail">全文约 <span class="wc">1220 字</span>（含标点） ｜ 五段式并列结构 ｜ 落笔顺序：源起 → 教学 → 阶段 → 建制 → 功能</div>
+    <div class="chk" data-k="q1"><span class="bx">✓</span>本卡已背完</div>
+  </div>
+</div>
+
+<!-- ============ 题二 ============ -->
+<div class="section">
+  <h2 class="st">题二：创意写作引入我国的时代背景有哪些</h2>
+
+  <div class="qbox">
+    <div class="qn">材 料 题 · 第 二 问</div>
+    <div class="qt">创意写作引入我国的时代背景有哪些？</div>
+    <div class="qm">考查章节：创意写作学科兴起背景 ｜ 建议作答 800—1000 字</div>
+  </div>
+
+  <h3 class="sh">▎骨架速记（四条需要＋一条政策）</h3>
+  <table class="tbl">
+    <thead><tr><th style="width:132px">背景</th><th>核心论点</th><th style="width:210px">硬证据（写进答案）</th></tr></thead>
+    <tbody>
+      <tr><td class="nm">一、文学创作繁荣的需要</td><td>创作活跃，但传统文学教育体系（以语言文学为核心）与社会脱节，需要培养<b>作家型人才</b></td><td>「中文系不培养作家」的困境；葛红兵《创意写作基础理论与训练》</td></tr>
+      <tr><td class="nm">二、文化创意产业发展的需要</td><td>文创产业成为支柱产业，其竞争力在内容与创意，<b>亟需创意型写作人才</b></td><td>美国文创产业占 GDP 约 20%（第二大支柱产业）／我国约 5%，差距巨大</td></tr>
+      <tr><td class="nm">三、新媒体发展的需要</td><td>写作形式与媒介转型，新载体催生新写作需求，要求<b>跨媒介写作能力</b></td><td>短视频、网络文学、自媒体等新载体</td></tr>
+      <tr><td class="nm">四、中文学科自身改革的需要</td><td>传统中文系<b>重理论批评、轻创作实践</b>，培养的是批评者与研究者，需重建创作与研究的平衡</td><td>改革方向：建立创意写作学科</td></tr>
+      <tr><td class="nm">五、国家政策与制度呼应</td><td>文化经济与教育改革两大政策导向为创意写作落地提供了制度环境</td><td>《文化产业振兴规划》；《国家中长期教育改革和发展规划纲要（2010—2020）》</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><b>破题提示</b>：四条需要是主干（文学／产业／媒介／学科），政策一条是加分项。答「背景」务必落到<b>「需求」</b>上——每一段都回答「谁需要它、为什么需要」，否则就成了罗列。</div>
+
+  <h3 class="sh">▎完整作答</h3>
+  <div class="answer">
+    <h4 class="t">需求驱动与学科自救</h4>
+    <p class="sub-t">——创意写作引入我国的四重时代背景</p>
+
+    <p>创意写作于 2009 年正式进入中国内地，并非一次偶然的学科移植，而是文学、产业、媒介、学科四重现实需求叠加推动的结果。</p>
+
+    <h5>一、文学创作繁荣的需要</h5>
+    <p>当代文学创作日趋活跃，但传统文学教育体系以语言文学为核心，存在与社会现实脱节的问题。长期流行的「中文系不培养作家」之说，正暴露了这套体系在人才培养上的空白：它能培养出大批文学研究者，却难以成规模地培养出作家型人才。社会既需要有创作能力的写作者，也需要通过写作教育把普通人的创作潜能释放出来。葛红兵《创意写作基础理论与训练》等著作的出现，以及对白先勇、普利策奖得主等创作型人才的关注，都是这一需求的直接回应。</p>
+
+    <h5>二、文化创意产业发展的需要</h5>
+    <p>文化创意产业在西方已成为支柱性产业，美国的文化创意产业占其 GDP 约 20%，是第二大支柱产业；而我国当时仅占约 5%，差距十分明显。文创产业的核心竞争力在于内容与创意，无论影视、游戏、出版还是文旅，其上游都依赖能够持续产出故事与创意的写作者。市场因此亟需具有创意能力和创意思维的高级写作人才，创意写作便顺理成章地被视为文创产业的人才底座。</p>
+
+    <h5>三、新媒体发展的需要</h5>
+    <p>在互联网媒体时代，写作的形式与媒介同时发生转型。短视频、网络文学、自媒体等新载体催生了大量新的写作需求，写作者面对的已不只是纸面文本，还包括脚本、文案、图文、交互文本等多模态形态。这在客观上要求写作者具备跨媒介写作能力，而传统写作教育难以覆盖这些新的写作形态，创意写作的介入成为必然。</p>
+
+    <h5>四、中文学科自身改革的需要</h5>
+    <p>从学科内部看，传统中文系重理论批评、轻创作实践，产出的是学术论文与批评文章，而非原创文学作品。这种失衡使中文学科在回应社会创作需求时明显乏力。建立创意写作学科，正是为了实现文学创作与理论研究的平衡，把「以教师为中心的讲授式教学」改造为「以学生为中心的互构式教学」，完成中文学科自身的革故鼎新。</p>
+
+    <h5>五、国家政策与制度环境的呼应</h5>
+    <p>创意写作的引入恰与国家政策导向合流。国务院《文化产业振兴规划》大力倡导发展文化产业和创意经济，教育部《国家中长期教育改革和发展规划纲要（2010—2020 年）》号召高校积极探索以创作实践为导向的中文教育改革，实现学科创新与人才培养模式创新。这为创意写作在高校落地提供了制度空间。</p>
+    <p>综上，创意写作的引入是「文学需要作家、产业需要人才、媒介需要新写作、学科需要自救、政策需要创新」五重动因的汇流。其落脚点始终是解决中国的实际问题，这也决定了它必须以中国化为最终归宿。</p>
+
+    <div class="tail">全文约 <span class="wc">1040 字</span>（含标点） ｜ 四条需要＋一条政策 ｜ 每段都落到「谁需要、为什么需要」</div>
+    <div class="chk" data-k="q2"><span class="bx">✓</span>本卡已背完</div>
+  </div>
+</div>
+
+<!-- ============ 题三 ============ -->
+<div class="section">
+  <h2 class="st">题三：谈谈你对我国创意写作发展现状的认识</h2>
+
+  <div class="qbox">
+    <div class="qn">材 料 题 · 第 三 问</div>
+    <div class="qt">谈谈你对我国创意写作发展现状的认识。</div>
+    <div class="qm">考查章节：创意写作中国化 ｜ 建议作答 800—1000 字 ｜ 开放型论述，需表明立场</div>
+  </div>
+
+  <h3 class="sh">▎骨架速记（四层：历程－成绩－问题－际遇）</h3>
+  <table class="tbl">
+    <thead><tr><th style="width:132px">层次</th><th>核心论点</th><th style="width:210px">硬证据（写进答案）</th></tr></thead>
+    <tbody>
+      <tr><td class="nm">一、历程</td><td>十余年走完西方百年路，<b>三个时期</b>：萌生期 → 勃兴期 → 深耕期</td><td>2009 复旦首届 MFA＋上海大学研究中心；2012 西北大学等地方高校；2018 清华「写作与沟通」＋华东师大创意写作研究院</td></tr>
+      <tr><td class="nm">二、成绩</td><td>势头良好：学科深化、实践彰显、<b>身份确立</b>、人才与理论出成果</td><td>2024「中文创意写作」入列中国语言文学二级学科；九校「中国大学创意写作联盟」；复旦培养出张凡、余静如、王侃瑜、伍华星、史玥琦</td></tr>
+      <tr><td class="nm">三、问题</td><td><b>中国化不足</b>：仍处草创与摸索阶段，原创理论／训练体系／课程系统「三缺」，理论建设停留在翻译引进，且「水土不服」</td><td>学界对人大社「创意写作书系」所论内容与技法的诟病；工坊制难落地；案例个体化、缺普适性；中西部发展滞后</td></tr>
+      <tr><td class="nm">四、际遇</td><td>三大方向：理论研究／文学创作／社会服务</td><td>理论：基本理论问题·教育教学法·文学产业化；创作：精英文学·幻想文学·非虚构·辅助性写作；服务：产学研用一体化·反精神贫困·商业化</td></tr>
+    </tbody>
+  </table>
+  <div class="warn"><b>开放题的得分关键</b>：题干说「谈谈你的认识」，「认识」二字要求你<b>有立场</b>。只罗列成绩与问题拿不到高分，必须给出自己的判断——本页作答的落点是「中国化不是复制，而是重新锻造学科内核」。</div>
+
+  <h3 class="sh">▎完整作答</h3>
+  <div class="answer">
+    <h4 class="t">从草创到深耕</h4>
+    <p class="sub-t">——我国创意写作发展现状的双重面相与突围方向</p>
+
+    <p>我国创意写作自 2009 年起步，十余年间走过了西方近百年的部分路程。对它的现状，我的基本认识可以概括为三句话：势头良好，问题明显，际遇可期。</p>
+
+    <h5>一、发展历程：三个时期</h5>
+    <p>2009 年是中国创意写作的元年，复旦大学开始招收第一届创意写作专业学位硕士研究生，上海大学成立文学与创意写作研究中心，标志内地创意写作进入萌生期。2012 年，以西北大学为代表的一批非京沪地方高校创生创意写作本科专业方向，创意写作由少数名校走向更广阔的高校版图，进入勃兴期。2018 年，清华大学宣布全校开设「写作与沟通」必修课，华东师范大学成立创意写作研究院，至此内地名校普遍肯认创意写作学科的合法性，进入深耕期。</p>
+
+    <h5>二、现实成绩：势头良好</h5>
+    <p>其一，学科逐步深化与完善。西方创意写作专业理论与实践文献的翻译引进力度加大，已形成一系列「创意写作」书系，高层次理论研究逐一展开。其二，实践训练持续彰显。创意写作视为生命的写作实践日益多样化、有效化，在学科发展与社会实践中均有体现。其三，学科身份获得确认。2024 年「中文创意写作」正式入列中国语言文学二级学科，北大、北师大、复旦、华东师大、南大、清华、上海交大、同济、人大九校联合成立「中国大学创意写作联盟」，学科合法性已基本确立。其四，人才与理论开始出成果。复旦创意写作专业培养出张凡、余静如、王侃瑜、伍华星、史玥琦等一批 80 后、90 后作家；理论方面除许道军、葛红兵的《创意写作：基础理论与训练》、刘卫东的《创意写作基本理论问题》外，西北大学陈晓辉、雷勇、安晓东等人的《创意写作理论与实践》《创意写作思维》也填补了部分空白。</p>
+
+    <h5>三、突出问题：中国化不足</h5>
+    <p>成绩之外，更须正视的是，国内的创意写作学科从根本上尚处于草创和摸索阶段。中国高校还未形成自己的原创理论、训练体系与课程系统，理论建设基本处于翻译引进阶段，并存在一系列「水土不服」，这从学界对中国人民大学出版社译介的「创意写作书系」所论内容与技法的诟病中可见一斑。具体表现为：教育教学法研究起步较晚，工坊制的成功经验不多、深化不足；教学案例多为个体经验，缺乏普适性；区域发展不均衡，中西部高校明显滞后，「中西部创意写作联盟」的倡议正由此而来。</p>
+
+    <h5>四、未来际遇与我的判断</h5>
+    <p>在我看来，中国化创意写作的际遇存在于三个方向。理论研究上，应聚焦基本理论问题、教育教学法与文学产业化研究，做出中国化的研究方案；文学创作上，可向精英文学、幻想文学、非虚构写作与辅助性写作四类拓展；社会服务上，则应走向产学研用一体化、反精神贫困与商业化，使创意写作成为文化产业的母体和基础工序。</p>
+    <p>因此，我认为我国创意写作正处在从「引进」到「再造」的关键节点。中国化不是简单复制西方经验，而是在中国现实土壤上重新锻造学科内核的过程——只有完成了这一锻造，创意写作才能真正「化」中国，而不是被中国「悬置」。</p>
+
+    <div class="tail">全文约 <span class="wc">1190 字</span>（含标点） ｜ 四层递进 ｜ 末段必须亮出自己的判断</div>
+    <div class="chk" data-k="q3"><span class="bx">✓</span>本卡已背完</div>
+  </div>
+</div>
+
+<!-- ============ 时间轴 ============ -->
+<div class="section">
+  <h2 class="st">附一：两套时间轴（答题挂证据用）</h2>
+  <div class="panel">
+    <h3 class="sh">美国线</h3>
+    <div class="tl">
+      <div class="row"><div class="y">1837</div><div class="e">爱默生作《美国学者》演讲，首次提出与学术研究相对的「创意写作」概念</div></div>
+      <div class="row"><div class="y">1880s</div><div class="e">高校英语写作课程兴起</div></div>
+      <div class="row"><div class="y">1897</div><div class="e">哈佛大学首次开设「创意写作」课程</div></div>
+      <div class="row"><div class="y">1936</div><div class="e"><b>爱荷华大学</b>创立作家工作坊，提供 MFA 学位，正规创意写作项目发端</div></div>
+      <div class="row"><div class="y">二战后</div><div class="e">老兵安置＋文化冷战，大量老兵进入课堂，形成<b>第一波高峰</b>，非虚构写作（回忆录、传记、家族史）承担创伤疗愈功能</div></div>
+      <div class="row"><div class="y">1970</div><div class="e">44 所高校提供创意写作学位</div></div>
+      <div class="row"><div class="y">2006</div><div class="e">大卫·迈尔斯统计：每年授出近 1000 个学位，超 300 个创意写作科系</div></div>
+      <div class="row"><div class="y">2016</div><div class="e">创意写作研究组织 <b>CWSO</b> 成立，进入繁荣期</div></div>
+    </div>
+
+    <h3 class="sh">中国线</h3>
+    <div class="tl">
+      <div class="row"><div class="y">2009</div><div class="e"><b>元年／萌生期</b>：复旦大学招收第一届创意写作 MFA；上海大学成立文学与创意写作研究中心</div></div>
+      <div class="row"><div class="y">2012</div><div class="e"><b>勃兴期</b>：西北大学等非京沪地方高校创生创意写作本科专业方向</div></div>
+      <div class="row"><div class="y">2018</div><div class="e"><b>深耕期</b>：清华大学全校开设「写作与沟通」必修课；华东师范大学成立创意写作研究院</div></div>
+      <div class="row"><div class="y">2023</div><div class="e">北大、北师大、复旦、华东师大、南大、清华、上海交大、同济、人大九校联合成立「中国大学创意写作联盟」</div></div>
+      <div class="row"><div class="y">2024</div><div class="e">「<b>中文创意写作</b>」正式入列中国语言文学二级学科；西北大学陈晓辉、雷勇、安晓东等《创意写作理论与实践》《创意写作思维》出版</div></div>
+    </div>
+    <div class="note"><b>记忆口径</b>：美国线记「<b>爱默生起念 → 哈佛开课 → 爱荷华建制 → 战后高峰 → 规模化 → 学科自觉</b>」六节点；中国线记「<b>09 复旦 → 12 西大 → 18 清华 → 23 联盟 → 24 入册</b>」五节点。数字切记错不得，年份写错比论点平淡失分更重。</div>
+  </div>
+</div>
+
+<!-- ============ 附二 ============ -->
+<div class="section">
+  <h2 class="st">附二：三题通用落笔框架</h2>
+  <div class="panel">
+    <table class="tbl">
+      <thead><tr><th style="width:96px">部位</th><th>写法要求</th><th style="width:300px">本页三题的示范</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">主标题</td><td>概括核心观点，不写「浅谈」「试论」</td><td>从校园计划到产业母体／需求驱动与学科自救／从草创到深耕</td></tr>
+        <tr><td class="nm">副标题</td><td>进一步限定阐释，用「——……」破折号起</td><td>——美国创意写作发展的五项基本特征</td></tr>
+        <tr><td class="nm">开头</td><td>一句话回应题干＋亮出总论点，不铺垫</td><td>「并非偶然的学科移植，而是四重需求叠加推动的结果」</td></tr>
+        <tr><td class="nm">小标题</td><td>「一、」式，冒号＋解释，能独立成句</td><td>一、源起上的教育改革性</td></tr>
+        <tr><td class="nm">正文段落</td><td>先立论点 → 再挂时间／人物／著作 → 最后一句收口</td><td>每段末尾都有一句小结性判断</td></tr>
+        <tr><td class="nm">结尾</td><td>回扣总论点并升华，忌重复开头</td><td>「中国化不是复制，而是重新锻造学科内核」</td></tr>
+        <tr><td class="nm">篇幅</td><td>800—1000 字，写满两页</td><td>本页三题约 1220／1040／1190 字（含标点）。为把证据铺全而上限略超，考场可对着骨架表删掉细节，压回 1000 字内</td></tr>
+      </tbody>
+    </table>
+    <div class="links">
+      <a href="材料题答题方式_AI写作与创意写作.html">材料题答题方式 · AI 写作与创意写作</a>
+      <a href="创意写作_定义与特征_背诵版.html">创意写作的定义与特征 · 背诵版</a>
+      <a href="647创意写作基础_答题评分标准.html">647 创意写作基础 · 答题评分标准</a>
+      <a href="index.html">返回资料库导航</a>
+    </div>
+    <div class="prog">
+      <span>本章打卡</span>
+      <span class="bar"><i id="progBar"></i></span>
+      <span id="progTxt">0 / 3</span>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:28px;line-height:1.9">
+  素材整理自制卡 Word 讲义，年份与数据均按原文档录入；<br>
+  凡原文档未提及的内容一律不补，避免「看着完整、实则失分」。
+</div>
+
+</main>
+
+<script>
+var FS = 16;
+function applyFS(){ document.documentElement.style.setProperty('--fs', FS + 'px'); }
+try{ var s = localStorage.getItem('cw3q_fs'); if(s) FS = parseInt(s,10) || 16; }catch(e){}
+applyFS();
+document.getElementById('zo').onclick = function(){ FS = Math.min(22, FS + 1); applyFS(); try{localStorage.setItem('cw3q_fs', FS);}catch(e){} };
+document.getElementById('zi').onclick = function(){ FS = Math.max(13, FS - 1); applyFS(); try{localStorage.setItem('cw3q_fs', FS);}catch(e){} };
+
+var KEY = 'cw3q_checks';
+function loadChecks(){
+  var d = {};
+  try{ d = JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ d = {}; }
+  var n = 0, total = 0;
+  document.querySelectorAll('.chk').forEach(function(el){
+    total++;
+    if(d[el.getAttribute('data-k')]){ el.classList.add('on'); n++; }
+    el.onclick = function(){
+      el.classList.toggle('on');
+      var dd = {};
+      try{ dd = JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ dd = {}; }
+      dd[el.getAttribute('data-k')] = el.classList.contains('on');
+      try{ localStorage.setItem(KEY, JSON.stringify(dd)); }catch(e){}
+      count();
+    };
+  });
+  function count(){
+    var c = 0;
+    document.querySelectorAll('.chk.on').forEach(function(){ c++; });
+    document.getElementById('progBar').style.width = (total ? (c / total * 100) : 0) + '%';
+    document.getElementById('progTxt').textContent = c + ' / ' + total;
+  }
+  count();
+}
+loadChecks();
+</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>

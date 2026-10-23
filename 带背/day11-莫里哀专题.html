@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第11天带背 · 莫里哀专题</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+:root{--bg:#faf8f3;--panel:#fff;--ink:#2b2b2b;--soft:#5b574f;--gold:#a8854a;--deep:#7d5e2c;--gold-bg:#f4ecdb;--border:#e6dfcc;--highlight:#fff8e6;--zhuan:#2d4a6e;--zhuan-bg:#e8eff5;--red:#7a1f5f;--red-bg:#f7ecf3;--fs-base:15px}
+*{box-sizing:border-box}html{font-size:var(--fs-base);scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em;font-family:"LXGW WenKai","霞鹜文楷","STKaiti","KaiTi","Microsoft YaHei",serif}.wrap{max-width:1080px;margin:auto;padding:24px 18px 80px}.head{background:linear-gradient(135deg,#2b2b2b,#7a1f5f);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:28px;box-shadow:0 6px 18px rgba(0,0,0,.16)}.day{font-size:.87rem;letter-spacing:.35rem;opacity:.75}.head h1{font-size:1.9rem;margin:.35rem 0 .6rem}.sub{font-size:1rem;opacity:.88}.tags{display:flex;gap:.67rem;flex-wrap:wrap;margin-top:1rem}.tag{padding:.25rem .9rem;border-radius:1.3rem;font-size:.8rem;background:rgba(244,236,219,.15);border:1px solid rgba(244,236,219,.32)}.ctrl-bar{display:flex;gap:.67rem;flex-wrap:wrap;margin-bottom:1.2rem}.ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--deep);border-radius:1.2rem;cursor:pointer;font:inherit;font-size:.87rem}.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:26px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}.card.priority{border:2px solid var(--gold)}.card-head{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}.priority .card-head{background:linear-gradient(90deg,#f6dfe8,#f8edcf)}.num{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--deep));color:#fff;font-weight:700;font-size:1.33rem;display:flex;align-items:center;justify-content:center}.card-title{font-size:1.27rem;font-weight:700;color:var(--deep);flex:1}.exam-level{font-size:.8rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;background:var(--zhuan-bg);color:var(--zhuan);border:1px solid #b8d0e0}.exam-level.hot{background:var(--red-bg);color:var(--red);border-color:#e5bfd6}.toggle-hint{font-size:.8rem;color:var(--soft);margin-left:auto}.card-body{padding:22px 26px}.collapsed .card-body{display:none}.note-bar{padding:.67rem .93rem;border-radius:.4rem;font-size:.87rem;margin-bottom:1.2rem;border-left:4px solid var(--zhuan);background:#eef3f8;color:#1f3a5c}.sub-h{font-size:1.07rem;font-weight:700;color:var(--deep);margin:1.47rem 0 .67rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border)}.sub-h:before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px;margin-right:8px;vertical-align:-2px}.def{background:#fff;border:1px solid var(--border);border-radius:.53rem;padding:.93rem 1.07rem;margin:.67rem 0}.def-title{font-weight:700;color:var(--deep);font-size:1rem}.def p{font-size:.93rem;margin:.4rem 0}.box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.93rem 1.2rem;margin:.8rem 0;background:#fffefa;font-size:.93rem}.quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.7rem 0;border-radius:0 .4rem .4rem 0}.quo{display:block;margin:.45em 0;padding:.3em .9em;border-left:3px solid #d8cbb0;background:#f7f2e6;border-radius:0 .35rem .35rem 0;font-size:.9em;color:#4a4034}.story p{margin:.7rem 0}.study-bar{display:flex;gap:.67rem;flex-wrap:wrap;margin:.93rem 0 .4rem;font-size:.87rem}.chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;user-select:none}.chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}.notes{margin-top:.93rem;padding:.93rem;background:#fff9eb;border:1px dashed var(--gold);border-radius:.4rem;min-height:4.67rem;font-size:.87rem;color:#8a7758}.notes:before{content:"📝 背诵笔记";display:block;font-weight:700;color:var(--deep);margin-bottom:.4rem}.notes:empty:after{content:attr(data-placeholder);color:#b5a98e;font-style:italic}.notes:focus{outline:none;box-shadow:0 0 0 2px rgba(168,133,74,.3)}
+.hl{color:var(--red);font-weight:700}.hl-b{background:var(--highlight);padding:0 .2em;border-radius:3px;font-weight:700;color:var(--deep)}
+.font-ctrl{position:fixed;right:18px;bottom:18px;z-index:9;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}.font-ctrl button{width:2rem;height:2rem;border:0;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font:700 1.1rem inherit}.font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}.font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}.foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.67rem}@media(max-width:720px){.card-head{flex-wrap:wrap}.card-title{font-size:1.13rem}.card-body{padding:1.2rem 1.07rem}.head h1{font-size:1.47rem}.font-ctrl{right:10px;bottom:10px}}@media print{.ctrl-bar,.font-ctrl,.notes,.study-bar{display:none}.card{break-inside:avoid;box-shadow:none}.card-body{display:block!important}.wrap{padding:0}.head{color:#000;background:#eee}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body><div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day10-十七世纪古典主义.html" title="第10天带背 · 十七世纪欧洲文学 · 古典主义">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day12-十八世纪启蒙运动.html" title="第12天带背 · 十八世纪欧洲文学（启蒙运动）">下一天 →</a>
+</nav>
+
+<header class="head"><div class="day">Day 11 · 外国文学 · 重点带背</div><h1>学硕 · 专硕 · 第 11 天带背 · 莫里哀专题</h1><div class="sub">生平与创作分期 · 阿巴贡形象（悭吝人）· 达尔杜夫与桃丽娜形象（伪君子）· 艺术特色</div>
+<div class="tags"><span class="tag">阿巴贡</span><span class="tag">吝啬鬼</span><span class="tag">《悭吝人》</span><span class="tag">达尔杜夫</span><span class="tag">桃丽娜</span><span class="tag">《伪君子》</span><span class="tag">艺术特色</span></div></header>
+<div class="ctrl-bar"><button onclick="document.querySelectorAll('.card').forEach(c=>c.classList.remove('collapsed'))">📖 全部展开</button><button onclick="document.querySelectorAll('.card').forEach(c=>c.classList.add('collapsed'))">📕 全部折叠</button><button onclick="window.print()">🖨️ 打印 / 导出 PDF</button></div>
+<div class="font-ctrl"><button onclick="adjustFont(-1)">−</button><span class="fs-label" id="fsLabel">15px</span><button onclick="adjustFont(1)">＋</button><button class="fs-reset" onclick="resetFont()">复位</button></div>
+
+<!-- 1 莫里哀 生平与创作分期 -->
+<section class="card"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">1</div><div class="card-title">莫里哀（Molière，1622—1673）：生平概要与创作分期</div><div class="exam-level">了解 · 铺垫</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="note-bar">🎯 <strong>了解定位：</strong>莫里哀是古典主义喜剧的扛鼎者，"以喜剧写悲剧"。他生前屡遭冷遇（曾被法兰西学士院拒之门外），死后学士院为他立像刻道：<span class="hl">"他的光荣什么也不少，我们的光荣却少了他"</span>。</div>
+<div class="sub-h">创作分期</div>
+<div class="box"><p><b>第一阶段（1645—1658）：创作准备、初步尝试</b>——在外省的 12 年。<br>
+<b>第二阶段（1659—1663）：古典主义喜剧开创期</b>——风俗喜剧：《可笑的女才子》《太太学堂》。<br>
+<b>第三阶段（1664—1669）：喜剧创作成熟期、全盛期</b>——讽刺喜剧：《唐璜》《恨世者》《悭吝人》《伪君子》。<br>
+<b>第四阶段（1669—1673）：为宫廷喜庆活动写戏的幽默喜剧</b>——《贵人迷》（嘲笑汝尔丹先生）、《司卡班的诡计》（写仆人）、《无病呻吟》（亲自主演，咳血而死）。</p></div>
+<div class="quote"><strong>分期口诀：</strong>①外省准备（1645-58）→②开创期风俗喜剧《太太学堂》（59-63）→③全盛期讽刺喜剧《悭吝人》《伪君子》（64-69）→④宫廷幽默喜剧《无病呻吟》（69-73，演员而终）。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 定位·题词</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 四阶段</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 分期口诀</span></div>
+<div class="notes" contenteditable="true" data-placeholder="莫里哀生平创作分期…"></div></div></section>
+
+<!-- 2 阿巴贡 悭吝人 人物形象 -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">2</div><div class="card-title">① 《悭吝人》阿巴贡人物形象</div><div class="exam-level hot">人物形象·重点</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="note-bar">🎯 <strong>《悭吝人》</strong>（讽刺金钱贪欲的喜剧，取材于古罗马普劳图斯的《一坛黄金》）。主要人物：阿巴贡、昂塞末（女艾莉丝嫁给有钱的昂塞末——不必花陪嫁）；儿女：克莱昂特（儿子）、艾莉丝（女儿）；玛丽雅娜、瓦赖尔（管家）。主要冲突：<span class="hl">儿女家人的正常生活与阿巴贡的吝啬</span>。</div>
+<div class="box"><p><strong>阿巴贡的形象＝金钱欲扭曲人性：贪婪吝啬到人格畸变的守财奴、吝啬鬼（"吝啬鬼"的代名词）。</strong>具体从三方面分析，均配原文佐证：</p></div>
+<div class="sub-h">（1）生财之道：贪婪狡猾的高利贷</div>
+<div class="box"><p>阿巴贡是残酷无情、唯利是图的高利贷者。他"利息已经高到不能再高还不知足"，逼借款人接受苛刻条款（把"破铜烂铁照三千法郎收下"，实际连六百法郎都卖不出）。克莱昂特骂他："简直是奸商，杀人不见血的凶手"、"活要人命"——借这笔高利贷供出他贪婪狡猾的致富手段。</p></div>
+<div class="sub-h">（2）守财之法：吝啬、苛刻（四"苛待"）</div>
+<div class="box"><p><b>①苛待儿女：</b>父亲一毛不拔逼得儿女铤而走险（克莱昂特借钱即因此）；他要娶儿子的恋人玛丽雅娜，只因她是穷人家女儿、无需奢华（省嫁妆）；让女儿艾莉丝嫁给有钱的昂塞末，只为不必花陪嫁费。<br>
+<b>②苛待仆人：</b>想尽办法对付仆人胸前油渍和裤子破洞；雅克师傅身兼厨师、车夫二职，为省一个人的工钱。<br>
+<b>③苛待客人：</b>待宴克扣份量，说"八个人吃的足够十个人"，捂厨师嘴嫌菜多。<br>
+<b>④苛待牲畜：</b>马总是挨饿，瘦成"马架子、马影子、马样子"——对生灵毫无怜惜，足见心肠之狠。</p></div>
+<div class="sub-h">（3）人格畸变：金钱凌驾、成为生命意义本身</div>
+<div class="box"><p>钱被偷后，阿巴贡方寸大乱、几近疯狂（"捉贼……还我钱……抓住自己胳膊：啊！是我自己。我神志不清啦……我可怜的钱……没有你，我就活不下去……我死啦"），把全家乃至观众都当贼来怀疑，誓要绞死人再自己绞死。这一系列可笑的歇斯底里，写出金钱已完全主宰、异化了他的灵魂，使他沦为人格畸变的病态形象。</p></div>
+<div class="quote"><strong>阿巴贡速记：</strong>悭吝人阿巴贡＝<b>①生财</b>贪婪高利贷（杀人不见血）＋<b>②守财</b>吝啬苛刻（苛待儿女/仆人/客人/牲畜）＋<b>③人格畸变</b>（钱为生命、失钱魂飞）＝把金钱视为高于一切、被金钱异化的守财奴典型；"吝啬鬼"的代名词。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 地位冲突</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 生财·高利贷</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 守财·四苛待</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 人格畸变</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 速记</span></div>
+<div class="notes" contenteditable="true" data-placeholder="阿巴贡形象：生财/守财/人格畸变…"></div></div></section>
+
+<!-- 3 达尔杜夫 形象 -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">3</div><div class="card-title">② 《伪君子》达尔杜夫（答丢夫）人物形象</div><div class="exam-level hot">人物形象·大论述</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="note-bar">🔥 <strong>《伪君子》（即《答丢夫或曰骗子》）：</strong>思想意义＝<span class="hl">揭露教会的虚伪性、欺骗性</span>。中心矛盾冲突＝<span class="hl">答丢夫（达尔杜夫）的虚伪，以及众人对其不同看法和态度</span>（奥尔贡/柏奈尔太太痴迷崇拜 vs 达米斯/桃丽娜看穿）。</div>
+<div class="box"><p><strong>总纲：答丢夫是类型化人物，其集中突出的性格是"伪善"。</strong>他是职业宗教骗子，其狡诈虚伪足以使他成为封建贵族和天主教会势力的代表。全剧情节就是"撕开他的伪装、暴露出其真面目"的过程。他从五方面伪装：</p></div>
+<div class="sub-h">（基本设定与关系）</div>
+<div class="box"><p>柏奈尔夫（母）、克雷央特（舅）、达米斯（子）、玛丽亚娜（女）、欧米尔（妻）、瓦赖尔（恋人）、桃丽娜（女仆）；职业宗教骗子答丢夫（达尔杜夫）一身以虔诚掩饰贪婪，痴迷者奥尔贡（巴黎富商）。</p></div>
+<div class="box"><p><b>①伪装清心寡欲、虔诚苦修，本质是贪吃贪喝的饕餮之徒。</b>人前吹牛撒谎、装腔作势，常谈鬃毛紧身衣和鞭子，仿佛整日苦修；背地里一人可吃六人食量（晚上吃"两只竹鸡外带半条羊腿"，晨起又喝"四大口葡萄酒"），贪吃贪睡，长成"又胖又肥、红光满面、嘴唇发紫"。</p>
+<p><b>②伪装无心财物，实际觊觎奥尔贡全部财产。</b>奥尔贡送他钱，他假意推辞（"太多啦，一半都嫌多"），当面把钱散给穷人；"有人来看我，就说我把募来的钱分给囚犯去了"。他不争小利为谋大财：挑唆奥尔贡赶走唯一继承人达米斯，当财产继承权到手即心安理得——"一切都是上帝的旨意，应当遵从"，搬出"恐产业落到坏人手中、要替上帝增光"来掩饰野心。</p>
+<p><b>③伪装道貌岸然，骨子里却色胆包天。</b>见桃丽娜佯装拿出丝绢"盖上你的胸脯"，说"败坏人心，引起有罪的思想"；转头却向欧米尔吐露淫心，以"赞美造物主的完美"包裹垂涎。（道貌岸然的外表与好色的本真相映衬。）</p>
+<p><b>④伪装仁慈善良，实质狡猾贪婪、心毒手狠。</b>如在祷告时"捉住跳蚤因生气弄死"竟自责"不应该"——借极端矫情的善良标榜苦行；事败后则反咬、告发，欲置恩人于死地（"维护圣上利益的正当威力之下，任何感恩的心思也不存在"）。</p>
+<p><b>⑤伪装虔诚信士、信奉宗教，实际上上帝只是他谋财纵欲的工具。</b>以"秉承上帝旨意"谋夺家财、包装对欧米尔的淫欲；当欧米尔以"不得罪上天"拒绝，他立刻把上帝"一脚踹开"（"您大可不必畏缩不前"），神学外衣随用随弃。</p></div>
+<div class="quote"><strong>达尔杜夫形象的意义：</strong>一个被物质欲望和虚伪道德双重扭曲的人物，概括了当时宗教界和贵族（伪善的封建教会势力）的伪善实质；答丢夫成了<span class="hl-b">超越国界和时间的"伪君子"的代名词</span>。（莫里哀借其在奥尔贡家中"引祸入门"的家变，讥讽宗教骗子的祸害与执迷者的愚蠢。）</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 总纲·伪善</span><span class="chk" onclick="this.classList.toggle('done')">⭕ ①贪吃饕餮</span><span class="chk" onclick="this.classList.toggle('done')">⭕ ②觊觎财产</span><span class="chk" onclick="this.classList.toggle('done')">⭕ ③色胆包天</span><span class="chk" onclick="this.classList.toggle('done')">⭕ ④⑤假仁慈·上帝工具</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 形象意义</span></div>
+<div class="notes" contenteditable="true" data-placeholder="达尔杜夫形象：伪善五点 + 宗教骗子意义…"></div></div></section>
+
+<!-- 4 桃丽娜 形象 -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">4</div><div class="card-title">③ 《伪君子》桃丽娜人物形象</div><div class="exam-level hot">人物形象·重点</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="note-bar">🎯 <strong>桃丽娜是《伪君子》（其实也是莫里哀喜剧）中最生动的正面人物形象。</strong>她身为女仆，却勇敢机智、聪明灵活、目光敏锐，被置于反封建、反宗教的重要位置。</div>
+<div class="box"><p><b>（1）目光敏锐：</b>最早认识到达尔杜弗的伪善本质并予以痛斥揭露。第一幕：全家争论达尔杜弗为人时，唯桃丽娜一针见血——面对奥尔贡只关心"达尔杜弗呢"，她以"他好极了，又胖又肥，红光满面""一个人吃了两只鹌鹑，还有半条切成细末的羊腿"等反语，揭穿其假修行、真饕餮的嘴脸（与奥尔贡"可怜的人！"的痴迷赞叹形成鲜明对照）。</p>
+<p><b>（2）勇敢机智：</b>敢于反对奥尔贡的封建专制作风，具有<span class="hl-b">民主平等意识</span>。她与奥尔贡论战、帮助年轻人争取婚姻自由——当奥尔贡硬要把女儿玛丽亚娜嫁给达尔杜弗（第二幕第二场），桃丽娜直言"把这样一朵鲜花插在牛粪上"，并回敬主人的专制："您虽然是我的主人，可是对不起，道理总是道理。您被他迷糊涂了，我们旁观者清。"第二幕第三场她又鼓励软弱的小姐玛丽亚娜反抗父亲（"爱情需要决心""难道因为他古怪，就非得葬送您的一生吗"），体现其善良与胆识。</p>
+<p><b>形象意义：</b>莫里哀把女仆桃丽娜塑造为超越剧中其他人物的正面形象，赞扬她所体现的下层人物的优秀品质，反映了莫里哀的<span class="hl-b">民主主义思想</span>。</p></div>
+<div class="quote"><strong>桃丽娜速记：</strong>最生动的正面女仆＝<b>目光敏锐</b>（最早识破达尔杜弗·反语揭伪）＋<b>勇敢机智</b>（抗封建专制·助婚自·民主平等"我们旁观者清"）＝下层人物优秀品德的化身＋反映莫里哀民主主义思想。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 定位正面形象</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 目光敏锐</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 勇敢机智·民主</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 意义</span></div>
+<div class="notes" contenteditable="true" data-placeholder="桃丽娜形象：目光敏锐/勇敢机智/民主平等…"></div></div></section>
+
+<!-- 5 艺术特色 -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">5</div><div class="card-title">《伪君子》艺术特色（重点）</div><div class="exam-level hot">论述·艺术特色</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="note-bar">🔥 <strong>艺术特色四点重点背：①独特艺术结构与精巧构思 ②夸张与对比（强烈讽刺） ③遵守法则、大胆创新 ④重复手法调节喜剧氛围。</strong></div>
+<div class="box"><p><strong>1）独特的艺术结构与精巧构思。</strong>第三幕第二场这个中心人物（答丢夫）才正式上场——作者"用了两幕的戏去铺垫"，尽量强化关于答丢夫的悬念：</p>
+<p>①<span class="hl-b">"开场"即围绕答丢夫的"家庭争吵"</span>：既交代了剧中人物的关系；又从侧面间接刻画了答丢夫的所作所为，为其正式出场做铺垫；还可见奥尔贡母子对答丢夫迷恋之深，更见出答丢夫伪善功力。歌德赞之为<span class="hl-b">"现存最伟大最好的开场"</span>。<br>
+②人物出场：<span class="hl-b">一段对话、一个动作即完成性格的主要线索</span>（莫里哀："我不让观众有一分一秒的犹疑，观众根据我送他的标记，立即认清他的面目……"）。答丢夫一出场即叫仆从"收起苦衣和鞭子""把钱分给囚犯"，借手绢"盖上胸脯"以显道貌岸然——伪善本色立现。<br>
+③刻画伪君子的笔墨极为简练：全剧31场，答丢夫只现身三幕间少量场次；如此形象鲜明的人物所费笔墨之少，在莫里哀剧作中独一无二，世界戏剧史上也属罕见。</p></div>
+<div class="box"><p><strong>2）通过夸张和对比，造成强烈讽刺。</strong>答丢夫"内外对比"（言语与行为、伪装与本质）；答丢夫之"伪"与奥尔贡之"愚"相互对照——答丢夫越是虚伪夸张，奥尔贡越是痴迷疯狂。对比产生荒谬，造成强烈的戏剧效果与讽刺力量。如奥尔贡对妻子病情漠然、只追问"答丢夫呢"，答丢夫的饕餮豪饮与太太的病弱形成反差。</p></div>
+<div class="box"><p><strong>3）遵守法则，大胆创新。</strong>①既符合古典主义"三一律"；②又不墨守成规、大胆创新：</p>
+<p>A. <span class="hl-b">插入悲剧因素</span>（婚姻悲剧、家庭破裂、生死危机），在喜剧中融入严肃庄重的主题；<br>
+B. <span class="hl-b">吸收民间闹剧和风俗戏剧手法</span>——民间闹剧以夸张的肢体动作、滑稽场面和简单笑料为特点（如第四幕第五场"桌下藏人"：奥尔贡躲在桌下亲见达尔杜弗勾引自己妻子，台上的欧米尔不断咳嗽提醒、台下的奥尔贡强忍怒火、台上色欲熏心的答丢夫毫无察觉，让观众在爆笑中看到伪君子真面目被当场揭穿）；风俗戏剧则侧重描绘讽刺特定社会阶层（资产阶级）的风俗习惯与缺点（如开篇柏奈尔夫人对全家的指责、桃丽娜与奥尔贡关于婚姻的辩论）。</p></div>
+<div class="box"><p><strong>4）重复手法调节喜剧氛围。</strong>莫里哀使用的重复并非简单重复，而是"<span class="hl-b">变化的重复"或"镜像重复</span>"，通过在（不）同情境下重现相似语言、动作或情景，产生强烈对比与讽刺，并有效控制戏剧节奏和氛围：<br>
+· <b>语言重复：</b>奥尔贡与桃丽娜同说"可怜的人！"相互映照——初为同情"苦修的"答丢夫，后见其勾引妻子、认清真面目时的"可怜的人"则满含悔恨；<br>
+· <b>动作重复：</b>第三幕先是答丢夫下跪（向欧米尔求爱），后是奥尔贡下跪（向答丢夫哀求）；<br>
+· <b>情景重复：</b>答丢夫分别两次面对欧米尔与奥尔贡"露出真相"。</p></div>
+<div class="quote"><strong>艺术特色速记（四点）：</strong>①独特结构（中心人物延宕出场两幕铺垫·歌德赞开场·笔墨极省）＋②夸张与对比（内外对比·伪vs愚·制造荒谬讽刺）＋③守律而入新（合三一律＋插悲剧因素＋民间闹剧"桌下藏人"与风俗剧）＋④变化的重复/镜像重复（语言"可怜的人"·动作下跪·情景再现）→喜剧性与讽刺的统一。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 结构构思</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 夸张对比</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 遵守法则大胆创新</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 重复手法</span></div>
+<div class="notes" contenteditable="true" data-placeholder="《伪君子》艺术特色四点…"></div></div></section>
+
+<!-- 6 收尾 -->
+<section class="card"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">6</div><div class="card-title">今日记忆锦囊 · 贯通收尾</div><div class="exam-level">收尾</div><span class="toggle-hint">点击展开 ▾</span></div><div class="card-body"><div class="box"><p><strong>一条线串起全部考点：</strong></p><p>· <b>莫里哀</b>＝古典主义喜剧大师，四阶段（准备→开创《太太学堂》→全盛《悭吝人》《伪君子》→宫廷《无病呻吟》）。<br>
+· <b>阿巴贡（悭吝人）</b>=高利贷贪婪（生财）＋吝啬苛刻（苛待子女仆客畜）＋人格畸变＝被金钱异化的守财奴、"吝啬鬼"代名词。<br>
+· <b>达尔杜夫（伪君子）</b>=类型化"伪善"宗教骗子：贪吃/觊觎财/好色/假仁慈/上帝作工具——"伪君子"的代名词。<br>
+· <b>桃丽娜</b>=最生动正面女仆：目光敏锐识伪＋勇敢机智抗封建专制（民主平等）＋善良＝下层智慧＋莫里哀民主主义。<br>
+· <b>艺术特色</b>=结构构思（延宕出场）+夸张对比+守律创新（悲剧+闹剧“桌下藏人”+风俗）+重复手法。</p></div>
+<div class="quote"><strong>贯通一句：</strong>莫里哀以古典主义喜剧的成熟笔法，一层层剥开阿巴贡的金钱异化、达尔杜夫的宗教伪善，并以小小的女仆桃丽娜寄寓反封建的民主理想——他让人"在笑声中照见丑陋"，其"夸张对比、守律善创、以喜写悲"的艺术，把古典主义喜剧推向最高峰，也留给后世"说不尽的莫里哀"。</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 一条线</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 贯通一句</span></div>
+<div class="notes" contenteditable="true" data-placeholder="今日复盘与个人补充…"></div></div></section>
+
+<footer class="foot">第11天 · 莫里哀专题<br>建议顺序：莫里哀分期 → 阿巴贡形象 → 达尔杜夫形象 → 桃丽娜形象 → 艺术特色(重点) → 收尾锦囊</footer>
+</div><script>(function(){var base=15;window.adjustFont=function(step){base=Math.max(13,Math.min(32,base+step));document.documentElement.style.setProperty('--fs-base',base+'px');document.getElementById('fsLabel').textContent=base+'px'};window.resetFont=function(){base=15;document.documentElement.style.setProperty('--fs-base','15px');document.getElementById('fsLabel').textContent='15px'}})();</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body></html>

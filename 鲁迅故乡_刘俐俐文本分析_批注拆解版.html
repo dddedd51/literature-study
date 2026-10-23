@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>故乡 · 刘俐俐文本分析 | 批注拆解版（重点：统领段写法）</title>
+<style>
+@font-face{font-family:"霞鹜文楷";src:url("./_shared/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:swap}
+:root{--bg:#f4f1ea;--bg2:#fffdf8;--ink:#252525;--muted:#6f6a60;--rule:#d8d0c3;--accent:#9d3f2f;--accent2:#1d5b5b;--soft:#eee5d7;--gold:#c8902a;--green:#3b6b5e;--shadow:0 10px 28px rgba(50,35,20,.08)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"霞鹜文楷","LXGW WenKai","Noto Sans CJK SC","WenQuanYi Micro Hei",sans-serif;line-height:1.85;font-size:16.5px}
+.topbar{position:sticky;top:0;z-index:60;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:rgba(244,241,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:9px 18px}
+.brand{font-size:14.5px;font-weight:700}
+.brand i{color:var(--accent);font-style:normal}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.tools button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--bg2);color:var(--ink);padding:6px 11px;border-radius:5px;cursor:pointer}
+.tools button:hover{border-color:var(--accent);color:var(--accent)}
+.tools button.on{background:var(--accent);color:var(--bg2);border-color:var(--accent)}
+.wrap{max-width:1250px;margin:auto;display:grid;grid-template-columns:206px minmax(0,1fr);gap:36px;padding:26px 22px 90px}
+.side{position:sticky;top:62px;align-self:start;max-height:calc(100vh - 88px);overflow:auto;font-size:13.5px}
+.side h4{margin:0 0 9px;font-size:11.5px;letter-spacing:.14em;color:var(--accent);font-weight:700}
+.side a{display:block;padding:5px 9px;border-radius:5px;color:#5b5348;text-decoration:none;border-left:2px solid transparent}
+.side a:hover{background:var(--soft);color:var(--ink);border-left-color:var(--accent)}
+.side a.sub{padding-left:20px;font-size:12.8px;color:var(--muted)}
+main{min-width:0}
+.masthead{border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:22px}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:700}
+h1{font-size:clamp(25px,3.4vw,38px);line-height:1.22;margin:10px 0 0}
+h1 small{display:block;font-size:15.5px;font-weight:400;color:var(--muted);margin-top:10px;line-height:1.7}
+.meta{font-size:13px;color:var(--muted);margin-top:12px}
+section{margin-top:46px;scroll-margin-top:66px}
+h2.sec{display:flex;align-items:center;gap:11px;font-size:21px;margin:0 0 16px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+h2.sec .n{display:grid;place-items:center;min-width:26px;height:26px;border-radius:6px;background:var(--accent2);color:var(--bg2);font-size:13px;padding:0 6px}
+h2.sec .n.star{background:var(--gold)}
+h2.sec em{font-style:normal;font-size:13px;color:var(--muted);font-weight:400}
+h3{font-size:17.5px;margin:26px 0 10px;color:var(--accent2)}
+h3.tight{margin-top:18px}
+h4{font-size:15.5px;margin:18px 0 8px}
+.panel{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:20px 22px;box-shadow:var(--shadow)}
+.panel+.panel{margin-top:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+ul.clean{margin:8px 0;padding-left:22px}
+ul.clean li{margin:5px 0}
+.hint{font-size:13px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;padding:10px 13px;background:var(--bg2);border:1px dashed var(--rule);border-radius:6px;font-size:12.8px;color:#5b5348;margin-bottom:16px}
+.legend i{font-style:normal}
+.opening{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;box-shadow:var(--shadow)}
+.lead{margin:0}
+.lead .lay{display:block;padding:9px 12px 9px 14px;margin:9px 0;border-left:4px solid var(--rule);border-radius:0 6px 6px 0;transition:background .15s}
+.lead .lay[data-lay="1"]{border-left-color:#7a8fa6}
+.lead .lay[data-lay="2"]{border-left-color:var(--gold)}
+.lead .lay[data-lay="3"]{border-left-color:var(--accent)}
+.lead .lay.hi{background:#f7efe0}
+.lb{display:inline-block;font-size:11.5px;font-weight:700;color:var(--bg2);background:#7a8fa6;border-radius:3px;padding:0 6px;margin-right:8px}
+.lead .lay[data-lay="2"] .lb{background:var(--gold)}
+.lead .lay[data-lay="3"] .lb{background:var(--accent)}
+em.ul{font-style:normal;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+em.mark{font-style:normal;background:#ffe9a8;padding:.5px 2px;border-radius:2px}
+.note{border-radius:0 7px 7px 0;padding:11px 15px;margin:12px 0;font-size:14.5px;border-left:4px solid var(--accent);background:#f9ece7}
+.note .tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--bg2);background:var(--accent);border-radius:3px;padding:0 6px;margin-right:7px}
+.note.n-green{border-left-color:var(--green);background:#eef3ef}
+.note.n-green .tag{background:var(--green)}
+.note.n-gold{border-left-color:var(--gold);background:#fbf3e3}
+.note.n-gold .tag{background:var(--gold)}
+.note.n-blue{border-left-color:var(--accent2);background:#eaf1f1}
+.note.n-blue .tag{background:var(--accent2)}
+.ann{color:var(--accent);font-size:14px}
+sup{font-size:11px;color:var(--accent2)}
+.slot{display:inline-block;background:#ffe9a8;border-bottom:1.5px dashed #b98a1e;border-radius:3px;padding:0 3px;cursor:pointer;transition:background .15s}
+.slot:hover{background:#ffd766}
+.slot.changed{background:#cfe6df;border-bottom-color:var(--green)}
+body.hide-slots .slot{background:transparent;border-bottom:0;cursor:inherit}
+body.hide-slots .slot.changed{background:#f0eae0;border-bottom:1px dotted var(--rule)}
+.slot-pop{position:fixed;z-index:99;width:min(330px,86vw);max-height:270px;overflow:auto;background:#fff;border:1px solid var(--rule);border-radius:8px;box-shadow:0 16px 34px rgba(40,28,14,.22);padding:10px}
+.slot-pop .pop-h{font-size:11.5px;color:var(--muted);margin-bottom:7px;letter-spacing:.04em}
+.slot-pop button{display:block;width:100%;text-align:left;font:inherit;font-size:13.5px;background:#faf7f1;border:1px solid transparent;border-radius:6px;padding:6px 9px;margin-bottom:5px;cursor:pointer}
+.slot-pop button:hover{background:var(--soft);border-color:var(--rule)}
+.slot-pop button.cur{background:var(--accent);color:#fff}
+body.hide-notes .note,body.hide-notes .ann{display:none}
+.card{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;box-shadow:var(--shadow)}
+.card h4{margin:0 0 8px;color:var(--accent2)}
+.card.l1{border-top:4px solid #7a8fa6}
+.card.l2{border-top:4px solid var(--gold)}
+.card.l3{border-top:4px solid var(--accent)}
+.card .mrow{font-size:13.8px;margin:6px 0}
+.card .mrow b{color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chips span{font-size:12.5px;background:var(--soft);border:1px solid var(--rule);border-radius:99px;padding:3px 10px;color:#5b5348}
+.formula{font-size:15.5px;font-weight:700;color:var(--accent);background:#fbf3e3;border:1px dashed var(--gold);border-radius:6px;padding:12px 14px;margin:12px 0;line-height:1.9}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}
+.flow .step{flex:1;min-width:170px;background:var(--bg2);border:1px solid var(--rule);border-top:4px solid var(--accent2);border-radius:8px;padding:12px 14px;font-size:13.5px}
+.flow .step b{display:block;color:var(--accent2);font-size:14.5px;margin-bottom:4px}
+.flow .arw{color:var(--gold);font-weight:700}
+.table-wrap{overflow:auto;border:1px solid var(--rule);border-radius:8px;background:var(--bg2)}
+table{width:100%;border-collapse:collapse;min-width:620px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top;font-size:14px}
+th{font-size:12.5px;color:var(--accent);background:#faf7f1}
+tr:last-child td{border-bottom:0}
+td.b{font-weight:700;color:var(--accent2)}
+.badge{font-size:11.5px;border-radius:99px;padding:2px 8px;background:var(--soft);color:#5b5348;display:inline-block;white-space:nowrap}
+.badge.keep{background:#f9ece7;color:var(--accent)}
+.badge.eat{background:#eef3ef;color:var(--green)}
+.badge.skip{background:#ececec;color:#777}
+.reader{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:26px 30px;box-shadow:var(--shadow)}
+.reader .p{margin:15px 0;text-indent:2em}
+.reader h3{margin-top:32px;padding-top:15px;border-top:1px dashed var(--rule);color:var(--ink);font-size:18px}
+.reader h3.first{margin-top:0;border-top:0;padding-top:0}
+.ptag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--bg2);background:var(--accent2);border-radius:3px;padding:1px 7px;margin-right:8px;text-indent:0}
+.tcard{background:var(--bg2);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:8px;padding:15px 18px;box-shadow:var(--shadow);margin-bottom:12px}
+.tcard h4{margin:0 0 6px;color:var(--accent2);font-size:16px}
+.tcard .quote{font-size:15px;color:#3a342c;background:#faf7f1;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;margin:8px 0}
+.tcard .use{font-size:13.8px;color:#4a453d}
+.tcard .use b{color:var(--accent)}
+.practice{background:#fffdf8;border:1px solid var(--rule);border-radius:8px;padding:20px;box-shadow:var(--shadow)}
+#practiceBox{border:1px dashed var(--gold);border-radius:7px;padding:16px 18px;min-height:180px;font-size:16px;line-height:2.15;background:#fffefb}
+#practiceBox:focus{outline:2px solid var(--accent2);outline-offset:2px}
+.qbtns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.qbtns button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--bg2);padding:6px 12px;border-radius:5px;cursor:pointer}
+.qbtns button:hover{border-color:var(--accent);color:var(--accent)}
+details{background:var(--bg2);border:1px solid var(--rule);border-radius:7px;padding:10px 14px;margin:9px 0}
+details summary{cursor:pointer;font-weight:700;color:var(--accent2);font-size:14.5px}
+details p{font-size:14px;margin:9px 0 2px}
+.notes-list{font-size:13.8px;color:#4a453d;padding-left:26px}
+.notes-list li{margin:6px 0}
+footer{margin-top:50px;border-top:1px solid var(--rule);padding-top:18px;font-size:13px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%);background:var(--ink);color:#fffdf8;padding:9px 18px;border-radius:99px;font-size:13.5px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200}
+.toast.on{opacity:.94}
+.blank{display:inline-block;min-width:52px;border-bottom:1.5px solid #b98a1e;text-align:center;line-height:1.5}@media(max-width:980px){.wrap{grid-template-columns:1fr;gap:0;padding:18px 15px 70px}.side{position:static;max-height:none;border:1px solid var(--rule);border-radius:8px;background:var(--bg2);padding:12px 14px;margin-bottom:22px}.grid3,.grid2{grid-template-columns:1fr}.reader{padding:18px 16px}.flow{flex-direction:column;align-items:stretch}.flow .arw{text-align:center}}
+@media print{body{background:#fff}.topbar,.side,.qbtns,.slot-pop{display:none!important}.wrap{display:block;max-width:none;padding:0}.panel,.card,.reader,.tcard,.opening{box-shadow:none}.note{break-inside:avoid}h2.sec{break-after:avoid}}
+.cmp{display:grid;grid-template-columns:1.32fr 1fr;align-items:start;gap:20px;padding:18px 0;border-top:1px dashed var(--rule)}
+.cmp:first-of-type{border-top:0}
+.cmp.only-note{grid-template-columns:1fr}
+.cmp.only-note .note-col{border-left:0;padding-left:0}
+.blk-h{grid-column:1/-1;display:flex;align-items:baseline;gap:9px;font-size:12.5px;color:var(--muted);margin-bottom:-6px}
+.blk-h b{font-size:12px;background:var(--accent2);color:#fffdf8;border-radius:4px;padding:1px 8px;font-weight:700;white-space:nowrap}
+.src{background:#fffefb;border:1px solid var(--rule);border-radius:7px;padding:14px 18px}
+.src .p{margin:10px 0;text-indent:2em}
+.src .p:first-child{margin-top:0}
+.src .p:last-child{margin-bottom:0}
+.note-col{border-left:3px solid var(--soft);padding-left:16px}
+.note-col .note:last-child{margin-bottom:0}
+.anchor{display:inline-block;font-size:11.5px;color:#8a6b2a;background:#fbf3e3;border:1px solid #ecd9a8;border-radius:3px;padding:0 6px;margin-right:6px;font-weight:700}
+h3.part-h{scroll-margin-top:80px;margin:38px 0 6px;font-size:20px;color:var(--ink);padding-bottom:8px;border-bottom:2px solid var(--soft)}
+h3.part-h:first-of-type{margin-top:24px}
+body.mode-src .cmp{grid-template-columns:1fr;gap:0}body.mode-src .cmp.only-note{display:none}
+body.mode-src .note-col{display:none}
+body.mode-src .src{background:transparent;border:0;box-shadow:none;padding:0}
+body.mode-src .src .p{font-size:17.5px;line-height:2}
+body.mode-src .blk-h{display:none}
+body.mode-note .cmp{grid-template-columns:1fr}
+body.mode-note .src{display:none}
+.readmode{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.readmode button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--bg2);padding:6px 12px;border-radius:5px;cursor:pointer}
+.readmode button:hover{border-color:var(--accent2);color:var(--accent2)}
+.readmode button.on{background:var(--accent2);color:#fffdf8;border-color:var(--accent2)}</style>
+</head><body>
+<div class="topbar">
+  <div class="brand">鲁迅《故乡》· 刘俐俐文本分析 · <i>批注拆解版</i></div>
+  <div class="tools">
+    <button id="btnNote" type="button">批注：显示</button>
+    <button id="btnSlot" type="button" class="on">可替换词：高亮</button>
+    <button id="fsDown" type="button">A−</button>
+    <button id="fsUp" type="button">A＋</button>
+    <button id="btnPrint" type="button">打印 / 存 PDF</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <aside class="side">
+    <h4>目 录</h4>
+    <a href="#intro">导读 · 怎么用</a>
+    <a href="#opening">★ 统领段写法精讲</a>
+    <a href="#opening-formula" class="sub">三层次公式</a>
+    <a href="#opening-replace" class="sub">可替换词库</a>
+    <a href="#title">★ 一级标题公式</a>
+    <a href="#skeleton">全篇骨架 Part1–7</a>
+    <a href="#text">原文 + 批注（对照阅读）</a>
+    <a href="#text-1" class="sub">一、内聚焦叙述</a>
+    <a href="#text-2" class="sub">二、故乡与返乡</a>
+    <a href="#theory">理论背诵卡</a>
+    <a href="#checklist">学姐划的 5 条重点</a>
+    <a href="#practice">套模板练习</a>
+    <a href="#quiz">自测 3 问</a>
+    <a href="#notes">注释与来源</a>
+  </aside>
+
+  <main>
+    <header class="masthead">
+      <div class="eyebrow">中国现代经典短篇小说文本分析 · 第一篇</div>
+      <h1>永远的故乡与鲁迅的返乡之路
+        <small>——鲁迅《故乡》的文本分析　｜　原文 + 批注拆解　｜　重点：第一段（统领段）怎么写</small>
+      </h1>
+      <div class="meta">刘俐俐《中国现代经典短篇小说文本分析》，原书页码 p1–p7　·　本文档为本地自用整理，含学姐批注与可替换模板标注</div>
+    </header>
+
+    <section id="intro">
+      <h2 class="sec"><span class="n">导</span>导读 · 这份东西怎么用</h2>
+      <div class="panel">
+        <p style="margin-top:0">这是一篇<b>可以直接“偷骨架”的范文</b>。刘老师这段第一人称内聚焦的分析，真正值钱的不是她用了多少理论，而是她把理论“摆”在了什么位置、用什么话把它们串起来的。所以本页的顺序是：<b>先看统领段 → 再看整篇骨架 → 最后背理论</b>。</p>
+        <ul class="clean">
+          <li><b>① 先看「统领段写法精讲」</b>：第一段分三个层次，每一层都有固定句式，<span class="slot" data-group="cut">括号里的词都能换成你自己的理论词或主题词</span>（本页黄色的地方点一下就能换）。这是整页最该背下来的东西。</li>
+          <li><b>② 再扫「Part1–7 骨架」</b>：看懂一篇文学评论＝理论阶段 → 结合文本论述与感悟 → 总结，心里有框，写的时候不会散。</li>
+          <li><b>③ 最后背「理论卡」</b>：热奈特、布斯、申丹、罗兰·巴特、钱理群，考场上直接摆出来，兜底得分。</li>
+        </ul>
+        <p class="hint" style="margin-bottom:0">小操作：右上角可「隐藏批注」只看原文、可「关掉可替换词高亮」、可调字号；Ctrl+P 直接打印或存 PDF。红色字＝学姐批注，金色下划线＝学姐划的“可背／可食用”处，黄色＝模板里可替换的槽位。</p>
+      </div>
+    </section>
+    <section id="opening">
+      <h2 class="sec"><span class="n star">★</span>重点一：统领段（第一段）是怎么写出来的 <em>——提出问题、设置问答、引出后文</em></h2>
+      <p>文学评论的第一段不承担论证任务，它只干一件事：让阅卷老师在第一眼就知道<b>「你要用什么方法，解决什么问题」</b>，并且觉得你有文学素养。刘老师这段话一共三句、三个层次：先<b>比</b>（把本篇放进作家作品的坐标系）、再<b>问</b>（把要研究的现象变成悬念）、最后<b>亮牌</b>（交代切入点、方法、要解决的问题）。全篇的路，就这么铺好了。</p>
+
+      <h3>① 原文（分层标色，鼠标移到下面卡片会同步高亮）</h3>
+      <div class="opening">
+        <p class="lead">
+          <span class="lay" data-lay="1"><b class="lb">层次一</b>鲁迅的短篇小说《故乡》，虽然不如《狂人日记》、《阿Q正传》那样振聋发聩，但是，它是如同《在酒楼上》、《孤独者》等一样是<em class="ul">“最富有鲁迅气氛”</em><sup>[1]</sup>的小说。</span>
+          <span class="lay" data-lay="2"><b class="lb">层次二</b>“最富有鲁迅气氛”有很丰富的含义，<em class="ul">具体到《故乡》</em>，<em class="ul">为什么其韵味历久而弥新，被历代读者反复阅读？其久远的艺术魅力是如何形成的？</em></span>
+          <span class="lay" data-lay="3"><b class="lb">层次三</b><em class="ul">本文试图从</em><span class="slot" data-group="cut">作品的艺术构成等似乎属于形式的因素</span><em class="ul">入手进行分析，看看</em><span class="slot" data-group="obj">《故乡》的“鲁迅气氛”以及宽阔的阐释空间</span><em class="ul">是在怎样的艺术构成中诞生的。</em></span>
+        </p>
+      </div>
+      <p class="hint">注：等级一/二/三是学姐在原文上做的分层，不是刘老师自己标的。原文只有一个自然段，一气呵成。</p>
+
+      <h3>② 三个层次分别在干什么</h3>
+      <div class="grid3">
+        <div class="card l1" data-lay="1">
+          <h4>层次一 · 比较定位</h4>
+          <div class="mrow"><b>写法：</b>用作家自己的其他作品当参照系，先让一步（“虽然不如《狂人日记》《阿Q正传》那样振聋发聩”），再抬一手（“但是，它是如同《在酒楼上》《孤独者》等一样‘最富有鲁迅气氛’的小说”）。</div>
+          <div class="mrow"><b>为什么有效：</b>一开口就调出四部作品，阅卷老师立刻判定你<b>文学素养极高</b>，给第一眼好印象。也让“《故乡》到底好在哪”变成一个悬而未决的问题。</div>
+          <div class="mrow"><b>可复制句式：</b>×××的《___》，虽然不如《___》那样___，但是，它是如同《___》《___》等一样“___”的小说。</div>
+        </div>
+        <div class="card l2" data-lay="2">
+          <h4>层次二 · 追问锚定</h4>
+          <div class="mrow"><b>写法：</b>先用<em class="mark">具体到……</em>把话题从“鲁迅的小说”收窄到“这一篇”，然后连抛<b>两个问句</b>：“为什么其韵味历久而弥新，被历代读者反复阅读？其久远的艺术魅力是如何形成的？”</div>
+          <div class="mrow"><b>为什么有效：</b>这两个问句问的都是<b>“为什么好、魅力怎么来的”</b>，不是“写了什么”。悬念一立，层次三“本文试图……”就顺理成章地接上了。</div>
+          <div class="mrow"><b>可复制句式：</b>“___”有很丰富的含义，具体到《___》，为什么其___历久而弥新？其___是如何形成的？</div>
+        </div>
+        <div class="card l3" data-lay="3">
+          <h4>层次三 · 亮牌（重中之重）</h4>
+          <div class="mrow"><b>写法：</b>一句话交代三件事——<b>切入点</b>（作品的艺术构成等似乎属于形式的因素）、<b>方法</b>（分析法）、<b>要解决的问题</b>（“鲁迅气氛”以及宽阔的阐释空间是在怎样的艺术构成中诞生的）。</div>
+          <div class="mrow"><b>为什么有效：</b>这是统领段的落点。读者（阅卷老师）读完就知道这篇文章“要干嘛”，后面所有段落都成了对这一句的兑现。</div>
+          <div class="mrow"><b>可复制句式：</b>本文试图从___入手进行分析，看看___是在怎样的___中诞生的。</div>
+        </div>
+      </div>
+
+      <h3 id="opening-formula" class="tight">③ 三个层次串成一条公式</h3>
+      <div class="flow">
+        <div class="step"><b>① 比较定位</b>拿作家其他作品作参照，用“不如……但是如同……”把本篇拎出来。<span class="hint">（秀素养，给人第一印象）</span></div>
+        <div class="arw">→</div>
+        <div class="step"><b>② 追问</b>“具体到本篇”，连抛两个问句，把要解释的现象变成悬念。<span class="hint">（制造张力，引出下文）</span></div>
+        <div class="arw">→</div>
+        <div class="step"><b>③ 亮牌</b>“本文试图从（切入角度）入手，看看（研究对象）是在怎样的（机制）中诞生的。”<span class="hint">（切入点＋方法＋问题）</span></div>
+      </div>
+      <div class="formula">统领段公式 ＝ 比较定位 ＋ 追问（具体到本篇＋两个问句） ＋ 亮牌（本文试图从【切入角度】入手，看看【待解释的现象】是在怎样的【机制】中诞生的）</div>
+      <div class="note n-green"><span class="tag">学姐 · 注</span>统领段的目的，是告诉阅卷老师「<b>我在用什么样的方法去解决什么样的问题</b>」。只要把握这个逻辑，你的统领段就不会写偏。例如刘老师就是在统领段告诉大家：要用分析“作品的艺术构成”的方法，去解决“为什么作品会有‘鲁迅气氛’”这个问题。统领段就是第一印象，你要怎么写才能让阅卷老师对你“一见钟情”？这是需要考虑的问题。</div>
+
+      <h3 id="opening-replace">④ 可替换词库（括号里能换成你自己的理论词 / 主题词）</h3>
+      <p>下面两个槽位是整段里唯一需要“填”的地方。点页面上黄色的方框，会弹出候选词，点一下就替换；换了词方框会变绿，随时可以换回原词。原文用的是“<b>艺术构成</b>”和“<b>鲁迅气氛／宽阔的阐释空间</b>”，你练习时按自己的题目换即可。</p>
+      <div class="grid2">
+        <div class="card">
+          <h4>槽位 ①：切入点 / 研究方法（＝从哪儿入手）</h4>
+          <div class="hint">位置：“本文试图从 <span class="slot" data-group="cut">作品的艺术构成等似乎属于形式的因素</span> 入手进行分析”</div>
+          <div class="chips"><span>人物塑造</span><span>叙事视角（人称 · 聚焦）</span><span>结构与情节模式</span><span>意象与隐喻系统</span><span>语言与修辞</span><span>时空设置与场景</span><span>文体特征与语调</span><span>自由间接引语</span><span>细节与重复</span><span>抒情方式</span></div>
+          <div class="mrow"><b>选词标准：</b>必须是“<b>可以拿来做分析的形式要素</b>”，不要写成“思想内容”“主题意义”——那样的切口没法“入手分析”。</div>
+        </div>
+        <div class="card">
+          <h4>槽位 ②：要解释的现象（＝文章要解决的问题）</h4>
+          <div class="hint">位置：“看看 <span class="slot" data-group="obj">《故乡》的“鲁迅气氛”以及宽阔的阐释空间</span> 是在怎样的艺术构成中诞生的”</div>
+          <div class="chips"><span>氛围</span><span>意蕴</span><span>典型人物</span><span>艺术魅力</span><span>张力</span><span>诗意</span><span>悲剧感</span><span>反讽效果</span><span>阐释空间</span><span>情感基调</span><span>叙事效果</span></div>
+          <div class="mrow"><b>选词标准：</b>应该是层次二那两个问句问的那个东西（“韵味”“魅力”“氛围”），<b>前后要指同一个东西</b>，不然就断链了。</div>
+        </div>
+      </div>
+      <div class="qbtns"><button id="slotReset" type="button">把页面上的槽位全部还原成原文</button></div>
+
+      <h3>⑤ 换词示范（自拟，仅供对照，非原文）</h3>
+      <div class="panel" style="font-size:15.5px">
+        <p style="margin-top:0"><b>示范 A·换成“人物”与“典型人物”</b><br>鲁迅的短篇小说《祝福》，虽然不如《狂人日记》那样振聋发聩，但是，它是如同《故乡》《孔乙己》一样“最见鲁迅笔力”的小说。“最见鲁迅笔力”有很丰富的含义，具体到《祝福》，为什么其韵味历久而弥新，被历代读者反复阅读？其久远的艺术魅力是如何形成的？本文试图从<b>祥林嫂形象被反复重述的书写方式</b>入手进行分析，看看<b>一个被“吃掉”的典型人物及其悲剧力量</b>是在怎样的艺术构成中诞生的。</p>
+        <p><b>示范 B·换成“叙事”与“限知／落差”</b><br>……具体到《故乡》，为什么其韵味历久而弥新？其久远的艺术魅力是如何形成的？本文试图从<b>第一人称内聚焦的叙述方式</b>入手进行分析，看看<b>“我”与闰土之间的情感落差</b>是在怎样的艺术构成中诞生的。</p>
+        <p style="margin-bottom:0"><b>示范 C·换成“结构”与“抒情氛围”</b><br>……本文试图从<b>回忆与现实双线并置的结构</b>入手进行分析，看看<b>小说绵长的抒情氛围</b>是在怎样的艺术构成中诞生的。</p>
+      </div>
+      <div class="note"><span class="tag">敲重点</span>层次一“比较”的对象，最好选<b>同一个作家</b>的其他作品（刘老师全程用鲁迅自己的作品），这样既显素养，又不会跑题；选其他作家的作品也可以，但要说清可比性。</div>
+    </section>
+    <section id="title">
+      <h2 class="sec"><span class="n star">★</span>重点二：一级标题怎么写 <em>——公式：理论 ＋ 作用</em></h2>
+      <p>刘老师的第一个小标题是：<b>一　第一人称的内聚焦叙述所构成的宽阔时空对话</b>。把它拆开看，是一条能直接套用的公式：</p>
+      <div class="formula">标题 ＝ <span style="color:#1d5b5b">（理论）</span>所构成的<span style="color:#9d3f2f">（作用 / 效果）</span><br>“第一人称的内聚焦叙述”是<span style="color:#1d5b5b">理论</span>　·　“宽阔时空对话”是这篇文章要论证的<span style="color:#9d3f2f">作用</span></div>
+      <div class="note"><span class="tag">学姐 · 注</span>这个标题可以理解为：<b>用“第一人称内聚焦”这个理论，去论证文章“构成了宽阔的时空对话”</b>。所以你可以模仿这种题目的思路，即：<b>题目 ＝ 理论 ＋ 作用</b>。</div>
+      <div class="grid2">
+        <div class="card">
+          <h4>前半截：理论（名词化的术语）</h4>
+          <div class="chips"><span>第一人称内聚焦叙述</span><span>限知视角</span><span>自由间接引语</span><span>叙述干预</span><span>双线并置结构</span><span>意象的反复</span><span>场景复现</span><span>反讽语调</span><span>时空压缩</span><span>母题重复</span></div>
+        </div>
+        <div class="card">
+          <h4>后半截：作用 / 效果</h4>
+          <div class="chips"><span>宽阔时空对话</span><span>悲悯张力</span><span>抒情氛围</span><span>悲剧性</span><span>诗意空间</span><span>反讽效果</span><span>疏离感</span><span>阐释空间</span><span>情感落差</span><span>真相的延迟显现</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h4 style="margin-top:0">仿写示范（自拟）</h4>
+        <ul class="clean" style="margin-bottom:0">
+          <li>限知视角所构成的<b>真相延迟</b></li>
+          <li>意象复现所构成的<b>抒情节奏</b></li>
+          <li>自由间接引语所构成的<b>暧昧立场</b></li>
+          <li>双线并置所构成的<b>时空落差</b></li>
+        </ul>
+      </div>
+      <div class="note n-green"><span class="tag">提示</span>标题里出现两个核心词，正文就必须把这两个词各自论证一遍：<b>理论词</b>靠背，<b>作用词</b>靠结合文本分析。标题和结尾段要能对得上（下一节 Part7 会讲怎么“回扣”）。</div>
+    </section>
+
+    <section id="skeleton">
+      <h2 class="sec"><span class="n">骨</span>全篇骨架：Part1–7 到底在干什么</h2>
+      <p>学姐把这部分拆成了 7 段，并且给了一句总结：<b>Part1–2 只做一件事——不停地摆理论；Part3–7 只做一件事——结合文本论证这个理论是如何构成那个作用的。</b>看懂了这一点，这一章你就已经拿下了。</p>
+      <div class="flow">
+        <div class="step"><b>Part 1–2　理论阶段</b>摆人称理论 → 摆聚焦理论</div>
+        <div class="arw">→</div>
+        <div class="step"><b>Part 3–6　结合文本论述 + 感悟</b>两个“我” → 两条线索 → 两个时空的对话</div>
+        <div class="arw">→</div>
+        <div class="step"><b>Part 7　总结阶段</b>用罗兰·巴尔特收束论证，并过渡到下一个大标题</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th style="width:76px">段</th><th>这一段的动作</th><th>挂的理论 / 文本</th><th style="width:132px">能不能“吃”</th></tr></thead>
+          <tbody>
+            <tr><td class="b">Part1</td><td>摆出<b>人称理论</b>：先说这篇是第一人称，再引两段理论说明“第一人称本身值得考察”</td><td>热奈特（第一人称＝有意识的美学抉择）＋ 布斯（说出一个故事是第一人称，并没有告诉我们什么重要的东西）</td><td><span class="badge keep">一字不落背</span></td></tr>
+            <tr><td class="b">Part2</td><td>摆出<b>聚焦理论</b>：内聚焦＝限知，“我”成了一个取景框</td><td>热奈特：第一人称动词的两种情况；内聚焦定义（谭君强转述）</td><td><span class="badge eat">理解着写即可</span></td></tr>
+            <tr><td class="b">Part3</td><td>用理论说出<b>“两个我”</b>：一个过去的我、一个现在的我，于是展开时空对话</td><td>申丹：第一人称回顾性叙述中两种眼光交替作用</td><td><span class="badge keep">背理论 · 会用</span></td></tr>
+            <tr><td class="b">Part4</td><td><b>回忆主体</b>的线索：以叙述为主、自由间接引语、叙述者的干预（括号注、“狗气杀”）</td><td>叙述干预的层级与形式</td><td><span class="badge skip">没有可食用部分，可不看</span></td></tr>
+            <tr><td class="b">Part5</td><td><b>体验主体</b>的线索：以描写和现场感为主</td><td>直接引语的作用</td><td><span class="badge eat">只记“直接引语＝现场感”</span></td></tr>
+            <tr><td class="b">Part6</td><td>两个时空的<b>对话</b> → 引到个人生命感悟（这是你露脸的地方）</td><td>无（靠文本细读＋个人感悟）</td><td><span class="badge eat">最出彩 · 重点学</span></td></tr>
+            <tr><td class="b">Part7</td><td><b>总结＋回扣＋过渡</b>：用罗兰·巴尔特的三层说收束，再把前面的理论摆一遍，最后引出第二个大标题</td><td>罗兰·巴尔特：功能层／行动层／叙述层</td><td><span class="badge keep">理论只记划线部分</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid2" style="margin-top:16px">
+        <div class="note n-gold" style="margin:0"><span class="tag">中场休息</span>很多同学到这里已经晕了，甚至产生了弃读的想法。但这本书作为文学理论考试参考书的目的，并不是让大家一字不落诵读，而是<b>学习它的论述结构，以及背诵记忆其中提到的理论</b>——它其实已经替我们把现成的理论整理好了。</div>
+        <div class="note n-red" style="margin:0"><span class="tag">可迁移</span>当你领悟到 Part3–7 只是在论证“这个理论如何构成那个作用”时，你完全可以<b>换一个作用词</b>，用自己的话论证。比如题目叫「失落的故乡——由第一人称内聚焦叙述所建构的归乡之路」，逻辑就是：故乡之所以会“失落”，是因为归乡之路中现实与想象的落差；落差靠什么表现出来？靠第一人称内聚焦——它是必然的美学选择，因为内聚焦产生限知效果，自然造成理想与现实的差异……想好逻辑，再用“理论＋论证”写下来。</div>
+      </div>
+      <div class="formula">文学评论 ＝ <span style="color:#1d5b5b">理论分析（兜底得分）</span> ＋ <span style="color:#9d3f2f">生命感悟（脱颖而出）</span><br><span style="font-size:13.5px;font-weight:400;color:#6f6a60">理论靠背诵记忆，生命感悟靠平日文学素养的积累。Part6 就是生命感悟的部分，刘老师那几句写得多有生命力。</span></div>
+      <div class="panel">
+        <h4 style="margin-top:0">万能过渡句（刘老师用它把文章推进下一层）</h4>
+        <p style="margin-bottom:6px">“<em class="ul">如果我们的艺术分析就此止步，那还是肤浅的</em>，‘宽阔时空对话’仅是最一般的概括，对话的内涵究竟是什么？不同作品的内涵各有不同，我们下面就探究《故乡》在‘宽阔时空对话’中所容纳的‘故乡与返乡’的故事模式以及意义。”</p>
+        <p class="hint" style="margin-bottom:0">模板：<b>如果我们的艺术分析就此止步，那还是肤浅的，“___”仅是最一般的概括，___究竟是什么？……我们下面就探究……</b>　—— 先贬一下自己刚写完的结论，再往下挖一层，顺手就把下一个大标题引出来了。这种衔接体现层次，而且非常自然。</p>
+      </div>
+    </section>
+        <section id="text">
+      <h2 class="sec"><span class="n">文</span>原文 ＋ 批注（对照精读）<em>——左栏读原文，右栏看批注</em></h2>
+      <div class="readmode">
+        <span class="hint">阅读模式：</span>
+        <button type="button" data-mode="cmp" class="on">对照：原文＋批注</button>
+        <button type="button" data-mode="src">只看原文（连续通读）</button>
+        <button type="button" data-mode="note">只看批注</button>
+      </div>
+      <div class="legend">
+        <span><i style="text-decoration:underline;text-decoration-color:#c8902a;text-decoration-thickness:2px">金色下划线</i>＝学姐划的“可背／可食用”处</span>
+        <span><i>“挂在……后”</i>＝这条批注对应原文的哪一句</span>
+        <span><i>红色／绿色／黄色底</i>＝批注的三种语气：要点 / 说明 / 板块提示</span>
+      </div>
+
+      <h3 class="part-h" id="text-1">一　第一人称的内聚焦叙述所构成的宽阔时空对话</h3>
+
+      <div class="cmp only-note">
+        <div class="blk-h"><b>标题</b><span>一级标题本身也在传递方法：理论＋作用</span></div>
+        <div class="src">
+          <p class="p" style="text-indent:0"><b>一　第一人称的内聚焦叙述所构成的宽阔时空对话</b></p>
+        </div>
+        <div class="note-col">
+          <div class="note n-blue"><span class="tag">标题批注</span>这个标题可以理解为：<b>用“第一人称内聚焦”这个理论，去论证文章“构成了宽阔的时空对话”</b>。可以模仿这种思路，即：<b>题目 ＝ 理论 ＋ 作用</b>。</div>
+          <div class="note n-blue"><span class="tag">结构批注</span>本部分分为 7 部分：<b>Part1—Part2 理论阶段；Part3—Part6 结合文本论述以及感悟阶段；Part7 总结阶段。</b>先看 Part1–Part2：Part1 摆出“人称理论”，Part2 摆出“聚焦理论”。</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part1</b><span>摆出“人称理论”</span></div>
+        <div class="src">
+          <p class="p">让我们首先运用叙事学来分析。《故乡》是以第一人称来叙述自己返乡路途和感情经历的写法极为古典的作品。在确定叙述人称后，我想提出叙事学理论对第一人称叙述的两段表述。其一，热奈特在《叙事话语 新叙事话语》中指出：“<em class="ul">第一人称叙事是有意识的美学抉择的结果，而不是直抒胸臆，表白心曲的自传的标记。</em>”<sup>[2]</sup>第二，经典叙事理论家布斯（Wayne Booth）所说：“<em class="ul">说出一个故事是以第一人称来讲述的，并没有告诉我们什么重要的东西。</em>”<sup>[3]</sup>第一段话提醒我们，第一人称叙事的优秀文学作品，是作家艺术匠心的表征，绝非可以随便等同于作家自传，应该作为艺术品来看待。第二段话提醒我们，即便同是第一人称叙事作品，在叙述者与聚焦点、叙述的功能、叙述者的干预等方面，也会因作家的不同、具体文本的不同而具有不同的特点，只有对作品进行深入具体分析才能揭示出其魅力和特色。这两点提醒可作为我们分析《故乡》第一人称叙事的原则。</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">挂在“让我们首先运用叙事学来分析”后</span>一上来就摆明方法：要用“叙事学”进行分析。</div>
+          <div class="note"><span class="anchor">挂在“写法极为古典的作品”后</span>因为要用“第一人称内聚焦”，所以这里先说出了文章用了第一人称。</div>
+          <div class="note"><span class="anchor">挂在“我想提出叙事学理论对第一人称叙述的两段表述”后</span>提醒你：这一段都是在论述第一人称。</div>
+          <div class="note"><span class="anchor">挂在两条引文之后</span>敲重点！这两个理论都是关于第一人称的，需要全部一字不落记住！入股不亏！</div>
+          <div class="note"><span class="anchor">挂在“只有对作品进行深入具体分析才能揭示出其魅力和特色”后</span>这里是在论述上述两条理论的<b>作用</b>，即：① 第一人称是作家的一种美学选择，绝非偶然，因此值得我们来考察；② 说出一个故事是第一人称，并没有告诉我们什么重要的东西，所以还要考虑它内聚焦还是外聚焦——<b>这样就非常自然地过渡到了下面 Part2 的热奈特叙事理论</b>。</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part2</b><span>摆出“聚焦理论”</span></div>
+        <div class="src">
+          <p class="p">《故乡》用“我”来叙述，采用的是内聚焦的叙述模式。在第一人称叙事和第三人称叙事中都可以出现内聚焦叙事。热奈特认为：“<em class="ul">叙事作品中出现第一人称动词可以有两种不同的情况，语法对二者不加区别，叙述分析则应分辨清楚：一是叙述者把自己称作叙述者，比如，维吉尔写道：‘Arma virumque cano’（拉丁文：我歌唱战斗和武士……——译注）；一是叙述者和故事中的一个人物同为人。</em>”<sup>[4]</sup>第一人称叙事显然属于第二种情况。第一人称内聚焦叙事，就是属于这种情况。“<em class="ul">在内聚焦中，叙述焦点与一个人物重合，于是他变成一切感觉，包括把他当做对象的感觉的虚构‘主体’；叙事可以把这个人物的感觉和想法全部告诉我们。当然，实际上，他从不这样做，或者拒绝提供无直接关系的信息，或者故意扣留某个有直接关系的信息（省叙），原则上叙事不应讲任何别的事。</em>”<sup>[5]</sup>具体到《故乡》的内聚焦，是指叙述始终执著于“我”在返乡途中的所见所闻和所感。“我”似乎是个取景框，一切外在的事件都是由“我”这个取景框过滤后进入叙述视野的。对于这个文本内聚焦可以做如下细致分析。</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">挂在热奈特“聚焦”那段引文后</span>热奈特关于“<b>聚焦</b>”的理论，这么一大段话其实就是在说一个事：<b>第一人称内聚焦会造成限知叙事</b>。这里内容非常多，全部记忆有困难，直接记忆带横线的，不用一字不落，理解着写出来即可。</div>
+          <div class="note"><span class="anchor">挂在“对于这个文本内聚焦可以做如下细致分析”后</span>用“<b>具体到……</b>”来把理论与文本结合，用“<b>可以做如下细致分析</b>”引出 Part3。</div>
+        </div>
+      </div>
+
+      <div class="cmp only-note">
+        <div class="note-col">
+          <div class="note n-gold"><span class="tag">中场休息</span>好了，到 Part2 这里我们可以先中场休息。很多同学到这里已经晕了，甚至产生了弃读的想法。但是学姐想说：这本书作为文学理论考试参考书的目的，并不是让大家一字不落诵读，而是要<b>学习它的论述结构，以及背诵记忆其中提到的理论</b>，因为这本书作为文学评论书籍，它其实已经给我们整理好了现成理论。</div>
+          <div class="note n-gold"><span class="tag">中场休息 · 小结</span>我们会发现，<b>Part1＋Part2 只做了一件事：不停地在摆理论</b>——Part1 摆的是人称理论，Part2 摆的是聚焦理论。那么后面的 Part3、Part4 一直到 Part7 在做什么呢？还记不记得我们的题目“第一人称内聚焦理论所构成的宽阔时空对话”？对呀！<b>所以 Part3–7 就是在结合文本论证：第一人称内聚焦理论是如何构成宽阔时空对话的。</b>当你领悟到这一点时，其实已经完全可以不看下半部分了——道理已经明白：我可以让“第一人称内聚焦”有别的作用，然后用我自己的话论证出来即可。比如，我的题目是「失落的故乡——由第一人称内聚焦叙述所建构的归乡之路」，那么逻辑就是：故乡之所以会“失落”，是因为归乡之路中现实与想象的落差；落差借由什么表现出来？借由第一人称内聚焦叙事——第一人称并非偶然，是必然的美学选择，因为第一人称内聚焦可以让故事产生限知效果，自然造成了理想与现实的差异……想好逻辑后，用“<b>理论＋论证</b>”的方式去论证即可。所以这里的总结就是：<b>先摆理论，再结合文本论述</b>。当然由于刘老师这本书专业程度很高，她的理论摆得很全很多，我们在写的时候只要用一小部分就可以了。</div>
+          <div class="note n-gold"><span class="tag">继续</span>但是由于 Part3–7 还有许多可食用的理论和思路，我们还需要继续分析，坚持！回来继续——<b>Part3–Part6 在论述为什么是“宽阔时空对话”</b>，先来一个段落概括：<b>Part3</b> 用申丹的叙述理论说出，因为有两个“我”（一个过去的我、一个现在的我），所以过去的我与现在的我展开了一种时空对话；<b>Part4–Part5</b> 用直接引语和间接引语来论述“宽阔时空感”的原因——直接引语更有现场感，间接引语会有时代感，两相交错产生时空感；<b>Part6</b> 属于个人生命感悟抒发部分，也是体现分析者个性的部分，接前面“两个我”的观点——因为来自不同时空的“两个我”进行交流，所以……</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part3</b><span>两个“我” → 时空对话</span></div>
+        <div class="src">
+          <p class="p">返乡的实际路途经历和因触景生情而产生的回忆，是并行的过程。于是夹杂在返乡之旅中的其实是两个第一人称。申丹在《叙述学与小说文体学研究》中说：“<em class="ul">在第一人称回顾性叙述中（无论‘我’是主人公还是旁观者），通常有两种眼光在交替作用：一为叙述者‘我’追忆往事的眼光，另一为被追忆的‘我’正在经历事件时的眼光。这两种眼光可体现出‘我’在不同时期对事件的不同看法或对事件的不同认识程度，它们之间的对比常常是成熟与幼稚、了解事情的真相与被蒙在鼓里之间的对比。</em>”<sup>[6]</sup>确实，在《故乡》中，“我”既是少年时代与闰土一起玩耍的“我”，也是现在回乡变卖老屋带着母亲离乡的“我”。少年的“我”的心理，凭借描绘那段与闰土有关联的生活展开。回忆主体是现在正在返乡的“我”，两个“我”交叉展开自己的视野和叙述自己的感受，或者可以理解为，在表面似乎一条线索的叙述中，其实交叉着回忆和体验两条线索。</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">挂在“其实是两个第一人称”后</span>因为《故乡》是回忆型文章，其中有两个“我”：一个是现在归乡的“我”，一个是小时候和闰土玩的“我”，所以是两个第一人称。</div>
+          <div class="note"><span class="anchor">挂在申丹引文后</span>理论，背过。看到第一人称回忆型文章就可以用。</div>
+          <div class="note"><span class="anchor">挂在“其实交叉着回忆和体验两条线索”后</span>此为结合理论进行论述，一眼带过，能用你自己的话结合理论说出来就可以。</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part4</b><span>回忆主体的线索</span></div>
+        <div class="src">
+          <p class="p">回忆主体的叙述线索中，突出的外在标志是以叙述为主，即便描写人物对话，也以自由间接引语为主，场面描写中虽然也时有直接引语，但是总是粗线条的，比如豆腐西施到“我”家，与“我”的对话。这条线索以叙述为主，使叙述者进行干预变得方便起来。干预的程度是有所区别的，可以是一般的说明和描述，也可以解释叙事成分的意义，进行价值判断等。从干预的形式来说，可以在故事层面，也可以在话语层面，还可以介于话语和故事层面之间。在回忆主体层面，叙述者“我”时有干预，比如，“我家只有一个忙月（我们这里给人做工的分三种：整年给一定人家做工的叫长年；……），忙不过来，他便对父亲说，可以叫他的儿子闰土来管祭器的”。这括号中的内容就是话语干预形式，但是内容又与故事密切相关。再如，对于“狗气杀”的介绍，也属于这种类型的干预。读者仔细品味这些干预，可以体会到回忆主体的感伤情调和抒情特征。</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">整段批注</span>没有可食用部分，<b>可不看</b>。</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part5</b><span>体验主体的线索</span></div>
+        <div class="src">
+          <p class="p">在体验主体的叙述线索中，以描写和现场感为主。比如回忆当年和闰土的结识、玩耍，对于闰土的话总是用直接引语的方式，容易形成现场感，在叙述的同时也刻画了闰土形象。少年闰土的形象主要是在体验主体“我”的视野中完成的。</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">挂在“容易形成现场感”后</span>这一部分<b>只记“直接引语的作用”</b>即可。</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part6</b><span>两个时空的对话 → 生命感悟（最出彩）</span></div>
+        <div class="src">
+          <p class="p">两个叙述主体所叙述出来的生活场景以及涵义，来自两个时间空间的人，自然会有差异，以致形成两个时空的对话。我非常珍视这个差异和对话。感受、理解、情怀，以及体验主体的幼稚、天真、希望等都是我们发现意义的源头所在。在我看来，这是从形式分析向对于作品丰富意义的发现自然转换的关键之处，也是发现叙述症候之处。比如，在体验主体的视野中，他热爱少年闰土，而且向往闰土的生活。“啊！闰土的心里有无穷无尽的希奇的事，都是我往常的朋友所不知道的。他们不知道一些事，闰土在海边时，他们都和我一样只看见院子里高墙上的四角的天空。”少年的闰土和少年的“我”相比，闰土显然更有趣味，生活也更为丰富，“我于是日日盼望新年，新年到，闰土也就到了。好容易到了年末，有一日，母亲告诉我，闰土来了，我便飞跑的去看”。这是当年那个“我”。而回忆主体即现在的“我”呢？感到闰土和“我”分明有了等级的差别和隔膜……。冷峻代替了当年对于生活的盼望，沉重替换了热情。世界在两个“我”眼中如此不同。现在的“我”“冒了严寒，回到相隔二千余里，别了二十余年的故乡去。时候既然是深冬，渐近故乡时，天气又隐晦了，冷风吹进船舱中，呜呜地响，从篷隙向外一望，……没有一些活气。我的心禁不住悲凉起来了”。当年的“我”所见则是“深蓝的天空中挂着一轮金黄的圆月，下面是海边的沙地，都种着一望无际的碧绿的西瓜，其间有一个十一二岁的少年，……”</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">挂在“两个叙述主体”后</span>两个主体是指“现在的我”和“过去的我”。</div>
+          <div class="note"><span class="anchor">整段批注</span>之前说过：<b>文学评论 ＝ 理论分析 ＋ 生命感悟</b>。理论分析（如 Part1、Part2 的理论）能帮你<b>兜底得分</b>；生命感悟能让你的文章<b>更出彩，在一众文学评论中脱颖而出</b>。理论分析靠背诵记忆理论，而生命感悟则靠平日文学素养的积累。<b>Part6 就属于生命感悟部分</b>——看它写“冷峻代替了当年对于生活的盼望，沉重替换了热情”“世界在两个‘我’眼中如此不同”，多有生命力。</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part7</b><span>用罗兰·巴尔特收束论证，并过渡到下一个大标题</span></div>
+        <div class="src">
+          <p class="p">罗兰·巴尔特在《叙事作品结构分析导论》中将叙事作品分为三个描述层：“<em class="ul">一、‘功能’层（功能一词用普罗普和布雷蒙著作中所指的含义）；二、‘行动’层（行动一词用格雷马斯把人物作为行动者来论述时所指的含义）；三、‘叙述’层（大体相当于托多罗夫所说的‘话语层’）。</em>”我们以上的分析，就是在叙述层展开的，但是，正如罗兰·巴尔特所强调的：“<em class="ul">这三层是按逐步结合的方式互相连接起来的：一种功能只有当它在一个行动者的全部行动中占有地位时才具有意义，行动者的全部行动也由于被叙述并成为话语的一部分才获得最后的意义，而话语则有自己的代码。</em>”<sup>[7]</sup>《故乡》的<em class="ul">第一人称内聚焦叙述</em>，以及<em class="ul">体验主体和回忆主体两个叙述主体的构成</em>，具有特殊的艺术效应，即形成“宽阔时空对话”，我们在阅读中产生的诸如思乡、乡愁、凄凉、落寞等诸般感受，就是来自这个对话的效应。如果我们的艺术分析就此止步，那还是肤浅的，“宽阔时空对话”仅是最一般的概括，对话的内涵究竟是什么？不同作品的内涵各有不同，我们下面就探究《故乡》在“宽阔时空对话”中所容纳的“故乡与返乡”的故事模式以及意义。</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">挂在罗兰·巴尔特引文后</span>理论需背诵，<b>只记划线部分</b>。后一句“这三层是按逐步结合的方式……”可以跳过不看。</div>
+          <div class="note"><span class="anchor">挂在“我们以上的分析，就是在叙述层展开的”后</span>用罗兰·巴尔特的理论<b>收束论证</b>：把自己刚才做的分析归到“叙述层”上。</div>
+          <div class="note"><span class="anchor">挂在结尾段</span>非常重要！在这个结尾里，“<b>第一人称内聚焦叙述</b>”“<b>体验主体和回忆主体两个叙述主体的构成</b>”分别对应了前面的 <b>Part1–Part2</b> 和 <b>Part3–Part6</b>。也就是说，<b>无论你前面写成什么样，结尾段一定要再把你前面论证过的理论摆出来</b>，让老师知道你这是一篇完整的论述。</div>
+          <div class="note n-green"><span class="anchor">挂在“如果我们的艺术分析就此止步……”后</span>划线部分用“<b>如果我们的艺术分析就此止步，那还是肤浅的……我们下面就探究……</b>”引出了第二个大标题“‘故乡与返乡’的故事模式以及意义空间”。这种衔接<b>体现层次，而且非常自然</b>，大家可以学起来。</div>
+        </div>
+      </div>
+
+      <div class="cmp only-note">
+        <div class="note-col">
+          <div class="note n-gold"><span class="tag">学姐总结</span>从上述篇目中，你需要学习到的知识有：
+            <ol style="margin:8px 0 0;padding-left:22px">
+              <li>统领段的写法（见「重点一」）</li>
+              <li>一级标题的写法：理论 ＋ 作用（见「重点二」）</li>
+              <li>具体的论证结构：<b>理论 ＋ 结合文本分析 ＋ 个人生命感悟</b></li>
+              <li>热奈特、布斯、罗兰·巴尔特、申丹等的理论，背诵记忆。</li>
+              <li>结尾段应该包含哪些内容，怎么过渡到下一段？</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="part-h" id="text-2">二　“故乡与返乡”的故事模式以及意义空间</h3>
+
+      <div class="cmp only-note">
+        <div class="note-col">
+          <div class="note n-green"><span class="tag">板块批注</span>（二）“文艺学”角度切入。第二个大标题实际上是在讲<b>包含“返乡模式”的小说的一种独特的分析思路</b>。因为不够通用，大家只需要知道这种模式就可以了，不再浪费过多时间进行分析；不过里面有一些写法可以借鉴。依旧是分为 Part1 与 Part2：<b>Part1“故乡与返乡”的故事模式；Part2“故乡与返乡”的意义空间。</b></div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part1</b><span>“故乡与返乡”的故事模式</span></div>
+        <div class="src">
+          <p class="p">“故乡与返乡”是中外作家喜欢运用的故事模式。从文艺学的角度分析，可以作如下理解。</p>
+          <p class="p">第一，故乡作为一个确切的地方，总是与指认它的人有关系。故乡是某一人的故乡。而返乡，则是属于故乡的那个游子回归故乡的行程，他的回归既有外在的路途经历，也有返乡的所见所闻所感，所以，故乡和返乡是互相联系在一起，互相作用的。故事可以在外在的路途经历层面展开，也可以是所见所闻所感于回忆层面展开。所以，这是一个悠久的、非常适合讲述的故事模式。一些研究中国现当代文学的学者，在对作家作品研究中发现，“尽管描摹原乡题材的作者背景、年岁有异，怀抱亦自不同，但他们的作品却共享不少叙述抒情的模式：或缅怀故里风物的淳朴固陋，或感叹现代文明的功利世俗，或追忆童年往事的灿烂多姿……”<sup>[8]</sup>或许可以说，这个故事模式，最适合各种叙述方式在其中纵横驰骋。</p>
+          <p class="p">第二，故乡，在叙事性作品中，因为总是属于特定人物的，所以具有时间和空间两个维度。对于返乡人来说，时间流逝了许多，返乡人经历过在外的生活，所以故乡的空间与外面的空间形成了比较。故乡的空间在返乡人心中已经发生了变化。时空变化最适合容纳故事和丰富感受。时间流逝有故事可讲，空间的对比更是抒发各种复杂感受的最好场所。比如荷马史诗《奥德赛》。《奥德赛》是漫长的返乡故事，当奥德赛结束在外漫长的十年漂游返回故里时，他的家发生了翻天覆地的变化：他的妻子珀涅罗珀一直在等待他，但岛上的许多贵族公子料想奥德赛不可能再回来，都向珀涅罗珀求婚，死赖在宫里大吃大喝，他的儿子忒勒马科斯也已经长大成人……时光流逝了，家也已经不是原来的家……。王德威说：“原乡作品的叙述过程以及‘乡愁’的形成，都隐含时间介入的要素。今昔的对比，传统与现代的冲突，往事‘不堪’回首的凄怆……”，都体现了时间消磨的力量。<sup>[9]</sup></p>
+          <p class="p">第三，返乡必然具有目的，这也是这个模式适合生发故事的机制所在。返乡的目的也可以理解为是寻找的某种东西。这暗合了结构主义叙事理论所认为的，一个叙事性文本就是一个陈述句的展开，而民间故事的基本形式就是“追寻”，也是追寻过程的展开。目的是追寻的另一表述。作家赋予返乡不同的目的，以便寄托自己的思考，或者说，不同的目的，恰是意义生成的关键。比如瑞士剧作家迪伦马特（1921—）的《贵妇还乡》，依据返乡的故事模式，讲述的是有钱可以做到一切，甚至可以买到公道的故事。王德威有专门的论文《原乡神话的追逐者——沈从文、宋泽莱、莫言、李永平》，所研究的作家既有现代的，也有当代的，时间跨度很大，从地域和意识形态来说，也有很大的差异。在我看来，他将沈从文、宋泽莱、莫言、李永平这些作家的作品放在一起来研究，本身就表明各个作家所描写的原乡题材具有作家自己不同的目的，故事中的主人公也有不同的目的，从而形成各自不同的原乡小说。中国学者已经系统地总结过中国现代作家在“故乡和返乡”模式中的书写，比如陈平原的论文《论“乡土文学”》<sup>[10]</sup>。这些都可旁证我的这个观点。</p>
+          <p class="p">以上从一般理论的角度论述和概括“故乡与返乡”故事模式的宽阔讲述空间与便利，以及产生意义的多种可能性，恰恰是为了探索鲁迅为何与其他作家不同，在同样的“故乡与返乡”故事模式中开掘出了独属于鲁迅的意义空间。</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">挂在“可以作如下理解”后</span>以下“第一”“第二”“第三”是对“故乡与返乡”故事模式的理解。里面有一些例子（《奥德赛》《贵妇还乡》、王德威的论文、陈平原的论文），<b>了解一下即可</b>。</div>
+          <div class="note"><span class="anchor">写法可借鉴</span>这一部分先“抬”出去讲一个大而通用的模式，再“收”回来讲鲁迅的独特——<b>“以上……恰恰是为了探索鲁迅为何与其他作家不同”</b>。先给共性的框架，再指出本篇的特殊，这样你的观点才有落点。</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>Part2</b><span>“故乡与返乡”的意义空间</span></div>
+        <div class="src">
+          <p class="p">寻找儿时和少年的梦想、重温田园浪漫，显然不是《故乡》的主旨；借描绘故乡破败来抒发自己对时局的不满和感叹当然是《故乡》叙述语境的题中应有之义，但是也并不是终极性的目的；揭示故乡人的劣根，比如杨二嫂的尖刻与狭隘，闰土的麻木等，也不是《故乡》所主要追求的；<em class="ul">那么，借助于“故乡与返乡”故事模式，鲁迅寻找的是什么呢？在我看来，以上所说是小说虚构的客体世界自然显示出来的最一般的初级意义，并非鲁迅所执意的终极意义。在这些意义之上还有更为深刻的形而上意义，那恰是鲁迅之为鲁迅的所在。</em>下文我将在与鲁迅其他作品的联系性分析中表述我的看法。</p>
+          <p class="p"><b>其一，对于生命轮回的感受与悲剧性的幻灭感。</b>叙述者非常考究地使用“飞出了”、“飞跑”等词语，值得注意。“我到了自家的房外，我的母亲早已迎出来了，接着便飞出了八岁的侄儿宏儿。”回忆当年与闰土见面的情形，则有“我于是日日盼望新年，新年到，闰土也就到了。好容易到了年末，有一日，母亲告诉我，闰土来了，我便飞跑的去看……”。“飞出了”和“飞跑”，同一个“飞”字，时光流逝了几十年。两代人惊人地相似，少年闰土“见人很怕羞……”，与闰土带来的第五个孩子水生“没有见过世面，躲躲闪闪……”也惊人地相似；当年“可惜正月过去了，闰土须回家里去，我急得大哭，他也躲到厨房里，哭着不肯出门，但终于被他父亲带走了”。叙述者叙述道，已经离开家了，宏儿还在说，“‘可是，水生约我到他家玩去咧……’他睁着大的黑眼睛，痴痴的想”。生命不是在轮回吗？返乡让“我”有了感受轮回的机会和可能。轮回有让人感到安慰、温暖的一面，宏儿和水生，和当年“我”与闰土一样；这是生命的魅力。可是如果说轮回让人感到安慰、温暖，那么，今天的“我”与闰土的隔膜，闰土生活的沉重，是否会成为宏儿和水生的明天呢？那是怎样让人痛心的事情啊！以此看来，生命轮回最终导向的是悲剧般的幻灭感。这个思考，已经超出“故乡和返乡”的形而下层面的故事性，具有了形而上意味，而且与其他一些思考互相关联。比如，与“我们现在怎样做父亲”的问题的关联。如果依据鲁迅在《我们现在怎样做父亲》里的思路：改变现实，从父亲开始，“没有法，便只能先从觉醒的人开手，各自解放了自己的孩子。自己背着因袭的重担，肩住了黑暗的闸门，放他们到宽阔光明的地方去；此后幸福的度日，合理的做人”<sup>[11]</sup>，那么，“我”究竟是希望轮回还是相反呢？</p>
+          <p class="p"><b>其二，对于“希望”的思考。</b>由两代人相似的经历，由生命的轮回，由对于闰土的同情和善良的祝愿，终将导致思考“希望”问题，这在《故乡》中顺理成章。有所谓“希望”这个东西吗？“希望”究竟是什么？每个人的“希望”相同吗？这些依赖于故事又超越于故事的思考，已经具有形而上的性质了。与前述的生命轮回的感受与悲剧性的幻灭感一样，“希望”也是具有辐射性的命题，比如，与鲁迅思考的进化论问题就具有关联。“希望”寄托在何处？可以说，“希望”贯穿在鲁迅的全部创作中，不过是在《故乡》中，“希望”依据“我”和闰土的故事又一次被提出来而已。</p>
+        </div>
+        <div class="note-col">
+          <div class="note"><span class="anchor">挂在“显然不是……也不是……也不是……”后</span>“……不是主旨……不是主旨……不是主旨，那么主旨是什么呢？”<b>这样的写法很聪明</b>，因为这恰恰意味着：<b>你知道关于故乡的很多主旨；不仅如此，你还有新的看法。</b>另外，划横线的写法也可以模仿借鉴——<b>先排除三个常见答案，再给出自己的答案</b>，文章立刻显得有想法。</div>
+          <div class="note"><span class="anchor">挂在“其一 / 其二”后</span>其一说的是“<b>轮回</b>”，其二说的是“<b>希望</b>”，都是从文本细节里长出来的<b>形而上追问</b>。这两段是全文最像“你自己的文章”的部分——考试时写不出刘老师那么厚的学理，但这两段的写法完全可以照搬：<b>抓一个反复出现的词（“飞”）→ 指出两代人的相似 → 追问一句“那么……”</b>。</div>
+        </div>
+      </div>
+
+      <div class="cmp">
+        <div class="blk-h"><b>总结段</b><span>全文的收尾：把艺术价值推到“顶点”</span></div>
+        <div class="src">
+          <p class="p">在我看来，不同的叙事性文学作品，其文学性表现的层次各个不同，有的作品在意象和隐喻层面，文学性就得到了比较充分的挥发，有的作品在客体世界层面文学性就基本全部得到实现了（如在写实性的、以情节取胜的作品中），而有的叙事性文学作品，读者即便读懂了故事全部情节，认识了人物之间的相互关系，似乎依然没有真正抵达作品的真谛；即文学性依然没有得到彻底实现。只有真正体现出形而上性质的东西，文学性才能在其中得到最大限度的实现；或者说，其艺术价值才真正被揭示出来了。鲁迅大部分小说属于最后一种。在“故乡和返乡”故事模式中蕴涵的生命轮回和“希望”的形而上意味，确实是文本的艺术价值所在，但还不是艺术价值展示的顶点。顶点在形而上意味之中，即如钱理群教授所概括的鲁迅“自我辩驳的性质”。这是鲁迅之为鲁迅的独特之处。钱理群教授认为鲁迅气质和精神的精髓就是“自我辩驳的性质”。他说：“这是反映了鲁迅‘多疑’思维的特点的。他的‘多疑’首先是指向自我的，如日本学者木山英雄先生所言，鲁迅有一种‘内攻性冲动’，对自己拥有的全部观念、情感、选择，都要加以‘多疑’的审视。……都有一种坚守中的质疑。但他也绝不因为这种质疑而趋向另一极端的绝对肯定，他总是在同时观照、构想两个（或更多）不同方向的观念、命题或形象，不断地进行质疑、诘难，在肯定与否定之间不断往复，在旋进中将思考引向深入与复杂化。”<sup>[12]</sup>确实，真理是在对话的过程中存在的。对话可以是两个人或者多个人，也可以是一个人分裂为两个人或者多个人。鲁迅是善于自我分裂为两个人或者多个人的。这个现象在《故乡》中又一次得到印证。究竟是轮回好呢？还是彻底的改变好呢？究竟持有“希望”好呢？还是放弃“希望”好？在辨析中鲁迅孤独地前行。至此，我们大致勾勒出了《故乡》的艺术价值所在。鲁迅在前行，我们的分析亦然。</p>
+        </div>
+        <div class="note-col">
+          <div class="note n-green"><span class="anchor">整段批注</span>总结段值得学的地方有三：① <b>由具体到抽象</b>——先分“文学性表现的不同层次”，再说鲁迅属于最后一种，最后落到“形而上意味的顶点”；② <b>借名家的话收口</b>——用钱理群的“自我辩驳的性质”给自己的分析加一个更高的落点；③ <b>用问句作结</b>——“究竟是轮回好呢？还是彻底的改变好呢？”把结论留成一个开放的对峙，正好呼应了“自我辩驳”。</div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:18px">
+        <h4 style="margin-top:0" id="notes">注释（原书 p7）</h4>
+        <ol class="notes-list">
+          <li>曹聚仁：《与周启明先生》，转引自钱理群《鲁迅作品十五讲》，北京大学出版社，2003 年版，第 60 页。</li>
+          <li>〔法〕热拉尔·热奈特：《叙事话语 新叙事话语》，第 174 页。</li>
+          <li>〔美〕W. C. 布斯：《小说修辞学》，华明、胡晓苏译，北京大学出版社，1987 年版，第 168—169 页。</li>
+          <li>〔法〕热拉尔·热奈特：《叙事话语 新叙事话语》，第 171 页。</li>
+          <li>谭君强：《叙述的力量：鲁迅小说叙事研究》，云南大学出版社，2000 年版，第 47 页。</li>
+          <li>申丹：《叙述学与小说文体学研究》，北京大学出版社，2004 年版，第 238 页。</li>
+          <li>《马克思主义文艺理论研究》编辑部编选：《美学文艺学方法论》（下），文化艺术出版社，1985 年版，第 537—538 页。</li>
+          <li>王德威：《想象中国的方法》，三联书店，1998 年版，第 225 页。</li>
+          <li>同上书，第 226 页。</li>
+          <li>收入《在东西方文化碰撞中》，浙江文艺出版社，1987 年版。</li>
+          <li>《鲁迅全集》（第一卷），人民文学出版社，1981 年版，第 129—140 页。</li>
+          <li>钱理群：《鲁迅作品十五讲》，北京大学出版社，2003 年版，第 75 页。</li>
+        </ol>
+      </div>
+    </section>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.readmode button');
+  Array.prototype.forEach.call(btns,function(b){
+    b.onclick=function(){
+      document.body.classList.remove('mode-src','mode-note');
+      if(b.dataset.mode!=='cmp')document.body.classList.add('mode-'+b.dataset.mode);
+      Array.prototype.forEach.call(btns,function(x){x.classList.toggle('on',x===b);});
+    };
+  });
+})();
+</script>
+<section id="theory">
+      <h2 class="sec"><span class="n">卡</span>理论背诵卡 <em>——考场上直接摆出来的那几句</em></h2>
+      <p>下面每张卡三行：<b>原话（该背的）</b>／<b>一句话理解</b>／<b>用在哪</b>。带 ⭐ 的是学姐点名“一字不落背”的。</p>
+
+      <div class="tcard">
+        <h4>① 热奈特 · 人称理论　<span class="badge keep">⭐ 一字不落背</span></h4>
+        <div class="quote">“第一人称叙事是有意识的美学抉择的结果，而不是直抒胸臆，表白心曲的自传的标记。”</div>
+        <div class="use"><b>一句话理解：</b>用第一人称写小说，是作家挑过的，是艺术，不是自传。</div>
+        <div class="use"><b>用在哪：</b>任何第一人称小说分析的<b>开头第一枪</b>——先证明“人称形式本身值得分析”，再往下谈聚焦、限知、不可靠叙述。</div>
+      </div>
+
+      <div class="tcard">
+        <h4>② 布斯 · 人称理论　<span class="badge keep">⭐ 一字不落背</span></h4>
+        <div class="quote">“说出一个故事是以第一人称来讲述的，并没有告诉我们什么重要的东西。”</div>
+        <div class="use"><b>一句话理解：</b>光说“这是第一人称”等于什么都没说，关键要看它怎么聚焦、怎么叙述。</div>
+        <div class="use"><b>用在哪：</b>承上启下的一句——正是为了过渡到“内聚焦还是外聚焦”的理论（Part2）。</div>
+      </div>
+
+      <div class="tcard">
+        <h4>③ 热奈特 · 聚焦理论　<span class="badge eat">只记划线／理解着写</span></h4>
+        <div class="quote">“叙事作品中出现第一人称动词可以有两种不同的情况，语法对二者不加区别，叙述分析则应分辨清楚：一是叙述者把自己称作叙述者……；一是叙述者和故事中的一个人物同为人。”　“在内聚焦中，叙述焦点与一个人物重合，于是他变成一切感觉……叙事可以把这个人物的感觉和想法全部告诉我们。当然，实际上，他从不这样做……”</div>
+        <div class="use"><b>一句话理解：</b>第一人称内聚焦 ＝ <b>限知叙事</b>；叙述者可以知道人物的全部感觉和想法，但也可以拒绝提供、故意扣留信息（省叙）。</div>
+        <div class="use"><b>用在哪：</b>凡是“我知道的有限，所以真相被延迟／被遮蔽”的分析，都从这里起步。《故乡》里“我”就是个取景框，一切外在事件都被这个框过滤后才进入叙述视野。</div>
+      </div>
+
+      <div class="tcard">
+        <h4>④ 申丹 · 回顾性叙述的两种眼光　<span class="badge keep">背理论 · 见了回忆型就写</span></h4>
+        <div class="quote">“在第一人称回顾性叙述中（无论‘我’是主人公还是旁观者），通常有两种眼光在交替作用：一为叙述者‘我’追忆往事的眼光，另一为被追忆的‘我’正在经历事件时的眼光。……它们之间的对比常常是成熟与幼稚、了解事情的真相与被蒙在鼓里之间的对比。”</div>
+        <div class="use"><b>一句话理解：</b>第一人称回忆型文章里有两个“我”——过去的我与现在的我，两副眼光一交错，就产生了时空感与落差。</div>
+        <div class="use"><b>用在哪：</b>《故乡》《祝福》《从百草园到三味书屋》一类回忆型第一人称文本，这条理论几乎可以无脑上。</div>
+      </div>
+
+      <div class="tcard">
+        <h4>⑤ 罗兰·巴尔特 · 三个描述层　<span class="badge keep">只记划线部分</span></h4>
+        <div class="quote">“一、‘功能’层（功能一词用普罗普和布雷蒙著作中所指的含义）；二、‘行动’层（行动一词用格雷马斯把人物作为行动者来论述时所指的含义）；三、‘叙述’层（大体相当于托多罗夫所说的‘话语层’）。”</div>
+        <div class="use"><b>一句话理解：</b>叙事作品可以分成功能／行动／叙述三层，三层逐步结合，共同生成意义。</div>
+        <div class="use"><b>用在哪：</b><b>收束论证</b>。“我们以上的分析，就是在‘叙述’层展开的……”——用一句权威理论把全文的分析归位，然后顺势转到下一层。</div>
+      </div>
+
+      <div class="tcard">
+        <h4>⑥ 钱理群 · 鲁迅“自我辩驳的性质”　<span class="badge keep">升华 + 收尾</span></h4>
+        <div class="quote">“他的‘多疑’首先是指向自我的……他总是在同时观照、构想两个（或更多）不同方向的观念、命题或形象，不断地进行质疑、诘难，在肯定与否定之间不断往复，在旋进中将思考引向深入与复杂化。”</div>
+        <div class="use"><b>一句话理解：</b>鲁迅不站在任何一边，他同时构想正反两个命题，让它们互相辩驳。</div>
+        <div class="use"><b>用在哪：</b>把文本分析提升到“艺术价值的顶点”。注意：这句是<b>引别人的权威观点</b>来兜住自己的结论，比自己下断语稳得多。</div>
+      </div>
+
+      <div class="tcard">
+        <h4>⑦ 王德威 · 原乡与时间（备用）</h4>
+        <div class="quote">“原乡作品的叙述过程以及‘乡愁’的形成，都隐含时间介入的要素。”</div>
+        <div class="use"><b>用在哪：</b>写“故乡／返乡”题材（沈从文、莫言、鲁迅）时的通用句，用来解释“时空落差＝乡愁的来源”。</div>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <h2 class="sec"><span class="n">单</span>学姐划的 5 条重点 <em>——每写完一篇，对着打勾</em></h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th style="width:36px">#</th><th style="width:210px">要学会的东西</th><th>自检问题</th><th style="width:92px">看哪里</th></tr></thead>
+          <tbody>
+            <tr><td class="b">1</td><td>统领段的写法</td><td>第一段有没有“比较定位 → 追问 → 亮牌”三件套？最后一句话有没有交代<b>切入点、方法、要解决的问题</b>？</td><td><a href="#opening">重点一</a></td></tr>
+            <tr><td class="b">2</td><td>一级标题的写法（理论＋作用）</td><td>标题是不是“（某个理论）所构成的（某个效果）”？正文有没有分别兑现这两个词？</td><td><a href="#title">重点二</a></td></tr>
+            <tr><td class="b">3</td><td>论证结构：理论 ＋ 结合文本 ＋ 个人生命感悟</td><td>有没有摆理论？有没有回到原文具体句子？有没有一句属于你自己的感受（Part6 那种）？</td><td><a href="#skeleton">骨架表</a></td></tr>
+            <tr><td class="b">4</td><td>热奈特、布斯、罗兰·巴尔特、申丹的理论，背诵记忆</td><td>能不能不看资料默写出四条引文？</td><td><a href="#theory">理论卡</a></td></tr>
+            <tr><td class="b">5</td><td>结尾段包含什么、怎么过渡到下一段</td><td>结尾有没有回扣前面用过的理论词？有没有用“如果……就此止步，那还是肤浅的”推进一层？</td><td><a href="#text-1">Part7</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="practice">
+      <h2 class="sec"><span class="n">练</span>套模板练习 <em>——把刘老师的骨架换成你自己的题目</em></h2>
+      <p>下面这段就是统领段的骨架，把空格填上（可以直接在框里打字，内容会自动存在本地浏览器里，不会丢）。填完对照下面的自评清单看一眼。</p>
+      <div class="practice">
+        <div id="practiceBox" contenteditable="true" spellcheck="false"><p style="text-indent:2em;margin:0">鲁迅的短篇小说《<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>》，虽然不如《<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>》、《<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>》那样振聋发聩，但是，它是如同《<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>》、《<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>》等一样是“最富有<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>”的小说。“最富有<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>”有很丰富的含义，<b>具体到《<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>》</b>，<u>为什么其<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>历久而弥新，被历代读者反复阅读？其<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>是如何形成的？</u><b>本文试图从<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>入手进行分析，看看《<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>》的“<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>”以及<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>是在怎样的艺术构成中诞生的。</b></p></div>
+        <div class="qbtns">
+          <button id="copyEx" type="button">复制我写的</button>
+          <button id="clearEx" type="button">清空重写</button>
+          <span class="hint" id="saveTip" style="align-self:center"></span>
+        </div>
+      </div>
+      <div class="grid2" style="margin-top:14px">
+        <div class="panel">
+          <h4 style="margin-top:0">自评清单（4 问）</h4>
+          <ul class="clean" style="margin-bottom:0">
+            <li>第一句有没有<b>跟同一作家的其他作品比</b>？（比较定位）</li>
+            <li>有没有用“<b>具体到《___》</b>”把话题收窄到这一篇？</li>
+            <li>中间那两个问句问的是<b>“为什么好／魅力怎么来的”</b>，还是只问了“写了什么”？</li>
+            <li>最后一句有没有同时给出<b>切入点、方法、要解决的问题</b>？把“本文试图从……入手，看看……是在怎样的……中诞生的”念一遍，通不通？</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4 style="margin-top:0">换到哪里去？</h4>
+          <p style="margin-top:0" class="hint">这个骨架可以搬到任何一篇“作家作品分析”上：把《故乡》换成你的文本，把“鲁迅气氛”换成你要解释的那个现象（氛围／意蕴／人物魅力／叙事效果），把“艺术构成”换成你的切入角度（叙事／人物／结构／意象／语言）。</p>
+          <p class="hint" style="margin-bottom:0">练到能不看模板默写，第一段这 5 分就稳了。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <h2 class="sec"><span class="n">测</span>自测 3 问 <em>——先想，再点开</em></h2>
+      <details><summary>1. 统领段（第一段）的三个层次分别干什么？为什么层次三是“重中之重”？</summary><p>层次一<b>比较定位</b>：拿作家其他作品当参照，把本篇拎出来，给阅卷老师第一眼好印象；层次二<b>追问</b>：用“具体到……”收窄话题，再连抛两个问句，把“韵味／魅力”变成待解释的悬念；层次三<b>亮牌</b>：一句话交代<b>切入点、方法、要解决的问题</b>。层次三是重中之重，因为它是统领段的落点——读者读完就知道这篇要干嘛，后面所有段落都是对这一句的兑现。</p></details>
+      <details><summary>2. 一级标题的公式是什么？举一个自己换过词的例子。</summary><p>公式：<b>标题 ＝ （理论）所构成的（作用）</b>。例：第一人称的内聚焦叙述（理论）所构成的宽阔时空对话（作用）。换词示范：限知视角所构成的真相延迟／意象复现所构成的抒情节奏。写的时候，理论词靠背，作用词靠结合文本论证。</p></details>
+      <details><summary>3. 结尾段为什么要把前面用过的理论再摆一遍？靠哪句话推进到下一层？</summary><p>因为结尾要“回扣”：把“第一人称内聚焦叙述”（对应 Part1–2）和“体验主体／回忆主体两个叙述主体的构成”（对应 Part3–6）再摆一次，老师才知道这是一篇<b>完整的论述</b>而不是散论。推进用这句：<b>“如果我们的艺术分析就此止步，那还是肤浅的，‘___’仅是最一般的概括，___的内涵究竟是什么？……我们下面就探究……”</b>——先贬一下刚写完的结论，再往下挖一层，顺手引出下一个大标题。</p></details>
+    </section>
+
+    <footer>
+      <p style="margin:0 0 6px">本地自用整理 · 原文摘自刘俐俐《中国现代经典短篇小说文本分析》第一篇《永远的故乡与鲁迅的返乡之路——鲁迅〈故乡〉的文本分析》（原书 p1–p7）；红色批注为学姐的拆解笔记，本页按功能重新编排。</p>
+      <p style="margin:0">本页不联网依赖：字体取本地 <code>_shared/fonts/LXGWWenKai-Regular.ttf</code>。可替换词槽位、批注开关、字号、练习框的填写都保存在你自己的浏览器本地。</p>
+    </footer>
+  </main>
+</div>
+
+<div id="pop" class="slot-pop" hidden></div>
+<div id="toast" class="toast"></div>
+
+<script>
+(function(){
+  var KEY='liu-guxiang-notes-v1';
+  var fs=localStorage.getItem(KEY+'-fs')||16.5;
+  document.documentElement.style.fontSize=fs+'px';
+  function toast(t){var el=document.getElementById('toast');el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('on')},1600);}
+  document.getElementById('fsUp').onclick=function(){var n=Math.min(23,parseFloat(document.documentElement.style.fontSize)+0.8);document.documentElement.style.fontSize=n+'px';localStorage.setItem(KEY+'-fs',n);};
+  document.getElementById('fsDown').onclick=function(){var n=Math.max(13,parseFloat(document.documentElement.style.fontSize)-0.8);document.documentElement.style.fontSize=n+'px';localStorage.setItem(KEY+'-fs',n);};
+  document.getElementById('btnPrint').onclick=function(){window.print();};
+
+  var bNote=document.getElementById('btnNote');
+  function paintNote(){var hide=document.body.classList.contains('hide-notes');bNote.textContent='批注：'+(hide?'隐藏':'显示');bNote.classList.toggle('on',!hide);}
+  bNote.onclick=function(){document.body.classList.toggle('hide-notes');paintNote();};
+  paintNote();
+
+  var bSlot=document.getElementById('btnSlot');
+  bSlot.onclick=function(){document.body.classList.toggle('hide-slots');bSlot.classList.toggle('on',!document.body.classList.contains('hide-slots'));};
+
+  var OPT={
+    cut:['作品的艺术构成等似乎属于形式的因素','人物形象的塑造方式','第一人称的内聚焦叙述','结构与情节模式','意象与隐喻系统','语言与修辞方式','时空设置与场景','文体特征与语调','叙事视角与聚焦','细节与场景的呈现','抒情方式与情感基调'],
+    obj:['《故乡》的“鲁迅气氛”以及宽阔的阐释空间','“鲁迅气氛”','宽阔的阐释空间','艺术的魅力','悲剧性的张力','抒情的诗意','反讽的效果','主题的深层意蕴','典型人物的魅力','限知带来的真实感']
+  };
+  var pop=document.getElementById('pop'), curSlot=null;
+  function closePop(){pop.hidden=true;pop.innerHTML='';curSlot=null;}
+  function openPop(s){
+    curSlot=s;pop.innerHTML='';
+    var h=document.createElement('div');h.className='pop-h';h.textContent='点一下替换（原词也可选回）';pop.appendChild(h);
+    (OPT[s.dataset.group]||[s.dataset.orig]).forEach(function(w){
+      var b=document.createElement('button');b.type='button';b.textContent=w;
+      if(w===s.dataset.orig)b.className='cur';
+      b.onclick=function(){s.textContent=w;s.classList.toggle('changed',w!==s.dataset.orig);closePop();};
+      pop.appendChild(b);
+    });
+    pop.hidden=false;
+    var r=s.getBoundingClientRect(), w=pop.offsetWidth, hh=pop.offsetHeight;
+    var left=Math.min(Math.max(10,r.left-8),window.innerWidth-w-10);
+    var top=r.bottom+6;
+    if(top+hh>window.innerHeight-10) top=Math.max(10,r.top-hh-6);
+    pop.style.left=left+'px';pop.style.top=top+'px';
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.slot'),function(s){
+    s.dataset.orig=s.textContent.trim();s.tabIndex=0;
+    s.addEventListener('click',function(e){e.stopPropagation();if(curSlot===s){closePop();return;}openPop(s);});
+    s.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openPop(s);}});
+  });
+  document.addEventListener('click',function(){if(curSlot)closePop();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop();});
+  window.addEventListener('scroll',function(){if(curSlot)closePop();},{passive:true});
+  var rs=document.getElementById('slotReset');
+  if(rs)rs.onclick=function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.slot'),function(s){s.textContent=s.dataset.orig;s.classList.remove('changed');});
+    toast('已还原为原文用词');
+  };
+
+  Array.prototype.forEach.call(document.querySelectorAll('.card[data-lay]'),function(c){
+    c.addEventListener('mouseenter',function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.lead .lay[data-lay="'+c.dataset.lay+'"]'),function(l){l.classList.add('hi');});
+    });
+    c.addEventListener('mouseleave',function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.lead .lay'),function(l){l.classList.remove('hi');});
+    });
+  });
+
+  var box=document.getElementById('practiceBox'), tip=document.getElementById('saveTip');
+  var TPL=box.innerHTML;
+  var saved=localStorage.getItem(KEY+'-ex');
+  if(saved){box.innerHTML=saved;tip.textContent='已恢复上次填写';}
+  var t=null;
+  box.addEventListener('input',function(){
+    localStorage.setItem(KEY+'-ex',box.innerHTML);
+    tip.textContent='已保存…';clearTimeout(t);t=setTimeout(function(){tip.textContent='已自动保存到本地';},900);
+  });
+  document.getElementById('copyEx').onclick=function(){
+    var txt=box.innerText;
+    function done(){toast('已复制，去你的笔记里粘贴吧');}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback();});}else{fallback();}
+    function fallback(){
+      var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');done();}catch(err){toast('复制失败，请手动选中复制');}
+      document.body.removeChild(ta);
+    }
+  };
+  document.getElementById('clearEx').onclick=function(){
+    if(confirm('清空练习框，恢复成空白模板？')){
+      box.innerHTML=TPL;localStorage.removeItem(KEY+'-ex');tip.textContent='';toast('已清空');
+    }
+  };
+})();
+</script>
+</body>
+</html>

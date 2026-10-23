@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第17天带背 · 复盘第12–16天 + 论述题答题方法</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+:root{--bg:#faf8f3;--panel:#fff;--ink:#2b2b2b;--soft:#5b574f;--gold:#a8854a;--deep:#7d5e2c;--gold-bg:#f4ecdb;--border:#e6dfcc;--highlight:#fff3d6;--zhuan:#2d4a6e;--zhuan-bg:#e8eff5;--red:#7a1f5f;--red-bg:#f7ecf3;--green:#2f5d3a;--green-bg:#e9f2e9;--fs-base:15px}
+*{box-sizing:border-box}html{font-size:var(--fs-base);scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em;font-family:"LXGW WenKai","霞鹜文楷","STKaiti","KaiTi","Microsoft YaHei",serif}.wrap{max-width:1080px;margin:auto;padding:24px 18px 80px}.head{background:linear-gradient(135deg,#2b2b2b,#4a3b6b);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:28px;box-shadow:0 6px 18px rgba(0,0,0,.16)}.day{font-size:.87rem;letter-spacing:.35rem;opacity:.75}.head h1{font-size:1.9rem;margin:.35rem 0 .6rem}.sub{font-size:1rem;opacity:.88}.tags{display:flex;gap:.67rem;flex-wrap:wrap;margin-top:1rem}.tag{padding:.25rem .9rem;border-radius:1.3rem;font-size:.8rem;background:rgba(244,236,219,.15);border:1px solid rgba(244,236,219,.32)}.ctrl-bar{display:flex;gap:.67rem;flex-wrap:wrap;margin-bottom:1.2rem}.ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--deep);border-radius:1.2rem;cursor:pointer;font:inherit;font-size:.87rem}.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:26px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}.card.priority{border:2px solid var(--gold)}.card.review{border:2px solid #7f9c6b}.card-head{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}.priority .card-head{background:linear-gradient(90deg,#f3e2e6,#f8edcf)}.review .card-head{background:linear-gradient(90deg,#e6f0e0,#f8edcf);border-bottom-color:#7f9c6b}.num{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--deep));color:#fff;font-weight:700;font-size:1.33rem;display:flex;align-items:center;justify-content:center}.review .num{background:linear-gradient(135deg,#7f9c6b,#3f6030)}.card-title{font-size:1.27rem;font-weight:700;color:var(--deep);flex:1}.exam-level{font-size:.8rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;background:var(--zhuan-bg);color:var(--zhuan);border:1px solid #b8d0e0;white-space:nowrap}.exam-level.hot{background:var(--red-bg);color:var(--red);border-color:#e5bfd6}.toggle-hint{font-size:.78rem;color:#a08f6b;white-space:nowrap}.card-body{padding:1.47rem 1.67rem}.card.collapsed .card-body{display:none}.card.collapsed .toggle-hint{opacity:.4}
+.sub-h{font-size:1.11rem;font-weight:700;color:var(--deep);margin:1.27rem 0 .6rem;padding:.35rem 0 .35rem .67rem;border-left:4px solid var(--gold);background:linear-gradient(90deg,var(--gold-bg),#fff);border-radius:0 5px 5px 0}.sub-h:first-child{margin-top:0}.sub-h.g{border-left-color:#7f9c6b;background:linear-gradient(90deg,#e9f2e9,#fff);color:var(--green)}.box{background:#fffdf7;border:1px solid var(--border);border-left:5px solid var(--gold);border-radius:6px;padding:.85rem 1.05rem;margin:.66rem 0}.box p{margin:.35rem 0}.def{background:var(--zhuan-bg);border:1px solid #c7d6e4;border-left:5px solid var(--zhuan);border-radius:6px;padding:.9rem 1.1rem;margin:.8rem 0}.def-title{font-weight:700;color:var(--zhuan);margin-bottom:.4rem;font-size:1.03rem}.def p{margin:.32rem 0}.quote{background:var(--highlight);border-left:5px solid var(--gold);border-radius:6px;padding:.8rem 1.05rem;margin:.8rem 0}.note-bar{background:#f2f6ee;border-radius:6px;padding:.7rem .95rem;margin-bottom:.7rem;font-size:.93rem;color:#3b5c33}.tablebox{overflow-x:auto}.hl{color:var(--red);font-weight:700}.hl-b{background:var(--gold-bg);padding:0 .22em;border-radius:3px;font-weight:700;color:var(--deep)}.star{color:#ff6b35;font-weight:700}
+/* 论述题专用样式 */
+.q-card{background:linear-gradient(135deg,#fdf8ee,#fff9f0);border:2px solid var(--gold);border-radius:8px;padding:1rem 1.15rem;margin:1.1rem 0}.q-label{display:inline-block;background:var(--red);color:#fff;font-size:.75rem;padding:.15rem .6rem;border-radius:1rem;margin-right:.5rem;vertical-align:middle}.q-text{font-weight:700;color:#5a3d1f;font-size:1.03rem}
+.model{background:var(--green-bg);border:1px solid #b6d0b0;border-left:5px solid var(--green);border-radius:6px;padding:.9rem 1.1rem;margin:.7rem 0}.model-title{font-weight:700;color:var(--green);margin-bottom:.4rem}.step{background:#fff;border:1px solid #cfe0c9;border-radius:6px;padding:.6rem .85rem;margin:.5rem 0}.step b{color:var(--green)}
+table.cmp{width:100%;border-collapse:collapse;margin:.7rem 0;font-size:.9rem}table.cmp th,table.cmp td{border:1px solid var(--border);padding:.53rem .62rem;vertical-align:top;text-align:left}table.cmp thead th{background:var(--gold-bg);color:var(--deep);font-weight:700}table.cmp tbody th{background:#fdfaf3;color:var(--deep);width:7.5rem;white-space:nowrap}.study-bar{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem;padding-top:.8rem;border-top:1px dashed var(--border)}.chk{cursor:pointer;background:#f6f2e7;border:1px dashed #b9a97f;color:#8a7b5a;border-radius:1.1rem;padding:.24rem .8rem;font-size:.8rem;user-select:none;transition:.15s}.chk.done{background:#e4efe0;border-color:#7fa877;color:#38632f;text-decoration:line-through}.notes{min-height:3.1rem;border:1px dashed #cfc2a0;border-radius:6px;margin-top:.9rem;padding:.6rem .75rem;font-size:.88rem;color:#6b6353;background:#fefcf6}.notes:empty::before{content:attr(data-placeholder);color:#bfb39a}.foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.67rem}.font-ctrl{position:fixed;right:18px;bottom:18px;z-index:9;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}.font-ctrl button{width:2rem;height:2rem;border:0;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font:700 1.1rem inherit}.font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}.font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}@media(max-width:720px){.card-head{flex-wrap:wrap}.card-title{font-size:1.12rem}.card-body{padding:1.1rem 1rem}.head h1{font-size:1.47rem}.font-ctrl{right:10px;bottom:10px}}
+@media print{.ctrl-bar,.font-ctrl,.study-bar,.notes{display:none}.card{break-inside:avoid;box-shadow:none}.card-body{display:block!important}.wrap{padding:0}.head{color:#000;background:#eee}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body><div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day15-16-十九世纪现实主义上续.html" title="第15、16天带背 · 十九世纪现实主义文学（上·续）">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day18-十九世纪现实主义下.html" title="第18天带背 · 十九世纪现实主义文学（下）">下一天 →</a>
+</nav>
+
+<header class="head"><div class="day">Day 17 · 外国文学 · 复盘 + 方法</div><h1>学硕 · 专硕 · 第 17 天带背 · 复盘第 12–16 天 + 论述题答题方法</h1><div class="sub">十八世纪启蒙文学 + 十九世纪现实主义文学｜知识串网 · 高频考点 · 易混辨析 · 论述题审题与答题模板</div>
+<div class="tags"><span class="tag">复盘</span><span class="tag">启蒙运动</span><span class="tag">狂飙突进</span><span class="tag">浮士德</span><span class="tag">现实主义</span><span class="tag">红与黑</span><span class="tag">人间喜剧</span><span class="tag">苔丝</span><span class="tag">论述题方法</span><span class="tag">答题模板</span></div></header>
+<div class="ctrl-bar"><button onclick="document.querySelectorAll('.card').forEach(c=>c.classList.remove('collapsed'))">📖 全部展开</button><button onclick="document.querySelectorAll('.card').forEach(c=>c.classList.add('collapsed'))">📕 全部折叠</button><button onclick="window.print()">🖨️ 打印 / 导出 PDF</button></div>
+<div class="font-ctrl"><button onclick="adjustFont(-1)">−</button><span class="fs-label" id="fsLabel">15px</span><button onclick="adjustFont(1)">＋</button><button class="fs-reset" onclick="resetFont()">复位</button></div>
+
+<!-- ============ 第一部分：复盘 ============ -->
+<section class="card review"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">1</div><div class="card-title">🗺️ 复盘总图：一张网络串起第 12–16 天全部内容</div><div class="exam-level">复盘·脉络</div><span class="toggle-hint" style="margin-left:auto">点击展开 ▾</span></div><div class="card-body">
+<div class="note-bar">🎯 <strong>复盘的正确方式：</strong>不是重读一遍，而是<span class="hl-b">合上书，先默写"骨架"（时代→国家→作家→作品→考点）</span>，再对照本页查漏。骨架立住了，论述题才有话说。</div>
+
+<div class="sub-h">（一）时间轴与总脉络</div>
+<div class="tablebox"><table class="cmp"><thead><tr><th style="width:6.5rem">阶段</th><th style="width:8.5rem">对应天数</th><th>核心内容与关键词</th></tr></thead><tbody>
+<tr><th>18 世纪<br>启蒙文学</th><td>Day 12<br>Day 13</td><td><span class="hl-b">Day12 总论＋英法</span>：启蒙运动（理性、反封建反教会、第三等级登场）→ 英国现实主义小说四大家（笛福·斯威夫特·菲尔丁·理查生）＋感伤主义＋哥特小说 → 法国哲理小说四大家（孟德斯鸠·伏尔泰·狄德罗·卢梭）＋洛可可/巴洛克<br><span class="hl-b">Day13 德国</span>：分裂民族的文学 → 狂飙突进运动 → 莱辛 → 歌德（《维特》《浮士德》）→ 席勒 → 魏玛古典主义</td></tr>
+<tr><th>19 世纪<br>现实主义</th><td>Day 14<br>Day 15–16</td><td><span class="hl-b">Day14 总论＋法国前期</span>：现实主义（背景·思想特征·艺术特征·发展脉络）→ 司汤达《红与黑》→ 巴尔扎克《人间喜剧》两大名解<br><span class="hl-b">Day15–16 法国后期＋英国</span>：《高老头》→ 福楼拜/小仲马/都德 → 狄更斯《双城记》/萨克雷《名利场》/勃朗特/盖斯凯尔 → 哈代《苔丝》</td></tr>
+</tbody></table></div>
+
+<div class="sub-h">（二）两条主线的"性质对照"（最容易出论述题）</div>
+<div class="tablebox"><table class="cmp"><thead><tr><th style="width:6rem">维度</th><th>18 世纪启蒙文学</th><th>19 世纪现实主义</th></tr></thead><tbody>
+<tr><th>思想基础</th><td>理性主义（"理性的法庭"）、天赋人权、社会契约、进步信念</td><td>自然科学方法论（进化论·实证主义）＋<span class="hl">环境决定论</span>；对启蒙"理性王国"的幻灭</td></tr>
+<tr><th>批判对象</th><td>封建专制、天主教会、等级特权（<span class="hl-b">为革命造舆论</span>）</td><td>资本主义社会的金钱关系、道德虚伪、法律不公（<span class="hl-b">对现实的冷静解剖</span>）</td></tr>
+<tr><th>主人公</th><td>第三等级／平民（鲁滨逊·汤姆·琼斯·维特）</td><td>普通人、小人物、野心家、被侮辱被损害者（于连·高老头·苔丝）</td></tr>
+<tr><th>主要体裁</th><td>哲理小说·书信体·市民悲剧·哲理诗剧</td><td><span class="hl-b">长篇小说</span>（叙事文学成熟繁荣，报刊连载）</td></tr>
+<tr><th>艺术方法</th><td>哲理化·论辩化·讽刺夸张·人物观念化（"传声筒"）</td><td><span class="hl-b">客观真实·细节描写·典型环境中的典型性格</span></td></tr>
+<tr><th>情感基调</th><td>乐观战斗、说理启蒙（末期出现感伤与哥特的反拨）</td><td>冷静剖析、批判与悲悯（内倾／外倾两种倾向）</td></tr>
+</tbody></table></div>
+<div class="quote"><strong>一句串起：</strong>18 世纪把<span class="hl-b">理性</span>请上王座，用它批判封建、为革命开路；19 世纪却发现"理性的王国"不过是<span class="hl-b">金钱的王国</span>，于是掉转笔锋，用<span class="hl-b">冷静的观察与典型的塑造</span>去解剖这个新世界——<span class="hl">从"应该怎样"到"实际怎样"，这就是两百年间欧洲文学最深的一次转身。</span></div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 时间轴默写</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 两条主线对照</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 一句话串起</span></div>
+<div class="notes" contenteditable="true" data-placeholder="默写骨架：时代→国家→作家→作品…"></div></div></section>
+
+<!-- 2 ===== 高频考点清单 ===== -->
+<section class="card review"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">2</div><div class="card-title">⭐ 高频考点清单：名词解释 / 简答 / 论述 分级盘点</div><div class="exam-level">复盘·考点</div><span class="toggle-hint" style="margin-left:auto">点击展开 ▾</span></div><div class="card-body">
+<div class="note-bar">🎯 <strong>用法：</strong>先自测——能说出几条？说不出就回对应天的 HTML 补。星号越多越可能考大题。</div>
+
+<div class="sub-h">（一）名词解释（必背 · 逐个过一遍）</div>
+<div class="tablebox"><table class="cmp"><thead><tr><th style="width:6.5rem">来源</th><th>名词</th></tr></thead><tbody>
+<tr><th>Day12</th><td>启蒙运动 · 哲理小说 · 感伤主义 · 哥特式小说 · <span class="hl-b">洛可可</span> · <span class="hl-b">巴洛克</span></td></tr>
+<tr><th>Day13</th><td><span class="hl-b">狂飙突进运动</span> · <span class="hl-b">魏玛古典主义（古典时期）</span> · 《拉奥孔》《汉堡剧评》（可作简答）</td></tr>
+<tr><th>Day14</th><td><span class="hl-b">现实主义（批判现实主义）</span> · <span class="hl-b">《人间喜剧》</span> · <span class="hl-b">人物再现法</span></td></tr>
+<tr><th>Day15–16</th><td><span class="hl-b">《茶花女》</span> · <span class="hl-b">《小东西》</span> · <span class="hl-b">《名利场》</span> · <span class="hl-b">威塞克斯小说</span> · 宪章派文学 · 巴黎公社文学</td></tr>
+</tbody></table></div>
+
+<div class="sub-h">（二）简答／论述高频（按"可出题性"排序）</div>
+<div class="box"><p><span class="star">★★★</span> <b>最可能出论述：</b><br>
+· <b>现实主义文学的思想特征与艺术特征</b>（Day14 总论，几乎必考）<br>
+· <b>于连人物形象及其典型意义</b>（Day14，重点大题）<br>
+· <b>《红与黑》题名含义／叙事艺术</b>（Day14）<br>
+· <b>苔丝悲剧的原因</b>（Day15–16，标注"考过真题"）<br>
+· <b>《高老头》的思想内容与艺术成就</b>（Day15–16）<br>
+· <b>《浮士德》人物形象（浮士德＋梅菲斯特）与"浮士德难题"</b>（Day13）<br>
+· <b>《浮士德》五个悲剧的象征意义／艺术特色</b>（Day13）<br>
+· <b>英法德三国启蒙文学异同</b>（Day12）<br>
+<span class="star">★★</span> <b>可能出简答：</b>《双城记》的人道主义思想 · 艾玛悲剧原因 · 哈代笔下三类人物 · 《少年维特之烦恼》人物形象与影响 · 狂飙突进运动的意义 · 《人间喜剧》的思想内容 · 《包法利夫人》的主题<br>
+<span class="star">★</span> <b>可能出名解：</b>见上表全部；另注意《鲁滨逊漂流记》人物三层、《格列佛游记》四国讽刺、《老实人》"种咱们的园地要紧"、《波斯人信札》他者视角——常作简答小点。</p></div>
+
+<div class="sub-h">（三）易混辨析（选择题／简答陷阱）</div>
+<div class="tablebox"><table class="cmp"><thead><tr><th style="width:8rem">易混对</th><th>辨析要点</th></tr></thead><tbody>
+<tr><th>感伤主义 vs<br>哥特小说</th><td>同源于对理性的反拨、同归于浪漫主义。感伤＝<span class="hl">向内·柔软·眼泪·自然</span>（斯特恩《感伤旅行》）；哥特＝<span class="hl">向外·阴森·古堡·恐惧</span>（华尔浦尔《奥特朗托堡》）</td></tr>
+<tr><th>巴洛克 vs<br>洛可可</th><td>巴洛克＝<span class="hl">17 世纪的重</span>（教堂·王权·激情·明暗对比·宏大）；洛可可＝<span class="hl">18 世纪的轻</span>（沙龙·艳情·贝壳纹·粉彩·纤巧）。皆贵族趣味</td></tr>
+<tr><th>狂飙突进 vs<br>魏玛古典</th><td>狂飙＝<span class="hl">情感·叛逆·反抗·民族</span>（青年歌德席勒）；古典＝<span class="hl">和谐·宁静·人性完美·以美育代替革命</span>（成熟歌德席勒）。一热一冷，同源于德国现实之落后</td></tr>
+<tr><th>《人间喜剧》vs<br>《高老头》</th><td>《人间喜剧》＝<span class="hl">90 多部小说总集</span>（风俗/哲学/分析三大研究＋人物再现法）；《高老头》＝其中<span class="hl">最重要的一块基石</span>（单部作品）</td></tr>
+<tr><th>人物再现法 vs<br>分类整理</th><td>二者都是巴尔扎克"把《人间喜剧》连成有机整体"的方法：<span class="hl">分类整理</span>＝按题材分三大研究；<span class="hl">人物再现</span>＝同一人物在多部小说中反复出现</td></tr>
+<tr><th>内倾 vs 外倾</th><td>现实主义两种倾向：<span class="hl">内倾</span>＝司汤达·托尔斯泰·陀思妥耶夫斯基（内心世界真实性）；<span class="hl">外倾</span>＝巴尔扎克·狄更斯（外部社会形态）。常兼而有之</td></tr>
+<tr><th>"红"与"黑"</th><td>红＝<span class="hl">拿破仑时期士兵红军装</span>（革命·力量·资产阶级）；黑＝<span class="hl">教士黑道袍</span>（教会·复辟专制）。另呼应圣水之红、于连黑头颅意象</td></tr>
+<tr><th>于连 vs 拉斯蒂涅</th><td>都是"青年野心家"典型，但：于连<span class="hl">有平民反抗意识，最终以死决绝反抗</span>（司汤达）；拉斯蒂涅<span class="hl">贵族子弟资产阶级化，彻底堕入野心</span>（巴尔扎克）</td></tr>
+</tbody></table></div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 名解全过</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 论述高频排序</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 易混八对</span></div>
+<div class="notes" contenteditable="true" data-placeholder="我的知识漏洞清单…"></div></div></section>
+
+<!-- ============ 第二部分：论述题方法 ============ -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">3</div><div class="card-title">✍️ 论述题答题方法总纲：五步法 + 三种题型模板</div><div class="exam-level hot">方法·核心</div><span class="toggle-hint" style="margin-left:auto">点击展开 ▾</span></div><div class="card-body">
+<div class="note-bar">🎯 <strong>一句话认知：</strong>论述题不是"把背过的东西倒出来"，而是<span class="hl-b">用一条论点线，把散落的考点串成一篇有逻辑的小论文</span>。阅卷看三样：<span class="hl">观点是否明确、层次是否清晰、论据是否扎实</span>。</div>
+
+<div class="sub-h g">（一）第一步：审题——判断这道题"在问什么"</div>
+<div class="box"><p><b>① 抓题干的关键词（题型信号）：</b><br>
+· 看到"<span class="hl-b">试论述／分析</span>"→ 要<b>论点＋论据</b>，可自选角度但必须有立场；<br>
+· 看到"<span class="hl-b">简析／简述</span>"→ 要点式罗列＋简短说明即可，不必展开成长文；<br>
+· 看到"<span class="hl-b">为什么／原因</span>"→ 必须<b>分层归因</b>（社会/时代·思想/教育·性格/个人·艺术/形式）；<br>
+· 看到"<span class="hl-b">如何理解</span>"→ 先解释命题内涵，再举例论证，最后评价；<br>
+· 看到"<span class="hl-b">比较／异同</span>"→ 必须<b>先分后合</b>：逐项对比 → 归纳共性 → 说明差异根源。</p>
+<p><b>② 划定"答题边界"：</b>题目限定的作品/人物/角度一定要扣死。如"<span class="hl">结合作品论述于连形象</span>"，就必须有情节例证，不能只讲抽象性格。</p>
+<p><b>③ 回忆"母题归属"：</b>这道题属于哪一类？（人物形象类／思想内容类／艺术特征类／思潮总论类／比较类）——题型决定结构。</p></div>
+
+<div class="sub-h g">（二）第二步：搭骨架——论述题的"总—分—总"结构</div>
+<div class="model"><div class="model-title">通用五段式骨架（推荐）</div>
+<div class="step"><b>① 总起（点题＋亮观点）：</b>用 2–4 句交代作品的地位、时代背景，<span class="hl-b">直接给出你的核心论点</span>。例："于连是法国波旁王朝复辟时期具有平民反抗意识的个人奋斗者的典型，其形象凝聚了整整一代青年的时代悲剧。"</div>
+<div class="step"><b>② 分论点一：</b>论点句（分句概括）＋ 具体作品例证 ＋ 简要分析。<span class="hl">每段首句就是论点</span>，让阅卷人一眼看到层次。</div>
+<div class="step"><b>③ 分论点二：</b>同上。分论点之间要有<span class="hl-b">递进或并列</span>的逻辑（如：是什么→为什么→怎么样；或 思想→艺术）。</div>
+<div class="step"><b>④ 分论点三（及以上）：</b>视分值而定，一般 3–4 个分论点最稳。</div>
+<div class="step"><b>⑤ 总收（升华＋评价）：</b>回扣论点，指出其文学史意义／局限，可适当联系前后文学思潮。<span class="hl-b">不要只重复开头</span>。</div></div>
+<div class="tip" style="background:#fff4e0;border:1px dashed var(--gold);border-radius:6px;padding:.6rem .9rem;margin:.6rem 0;font-size:.92rem;color:#7a5a1f">💡 <b>字数与分值匹配：</b>论述题（15–25 分）一般 800–1200 字；简答（8–10 分）300–500 字。分论点数量≈分值÷5。</div>
+
+<div class="sub-h g">（三）第三步：填血肉——论据从哪来</div>
+<div class="box"><p><b>四类论据，按优先级排：</b><br>
+<b>① 作品情节细节</b>（最有力）——如论证于连的反抗意识，举"拒绝父亲让他去市长家当家教，怒道'叫我当奴仆！'"；论证苔丝悲剧，举"老马撞死→认亲→遭亚雷"的因果链。<br>
+<b>② 人物性格的具体层次</b>——如拉斯蒂涅"贵族子弟资产阶级化的典型＋青年野心家的典型"双层定位。<br>
+<b>③ 权威评价与原话</b>——恩格斯评《阴谋与爱情》"德国第一部有政治倾向的政治戏剧"；马克思称《拉摩的侄儿》为"辩证法的杰作"；巴尔扎克自命"法国社会的书记"。<br>
+<b>④ 文学史定位与比较</b>——"现实主义第一部杰作"（《红与黑》）、《人间喜剧》＝"19 世纪上半期法国社会百科全书"。</p></div>
+<div class="quote"><strong>切记：</strong>论据要<span class="hl-b">"一例一析"</span>——举完例子必须说明它证明了什么，不能只堆例子不说理，也不能只讲道理不举例子。<span class="hl">观点＋例证＋分析＝完整的一段。</span></div>
+
+<div class="sub-h g">（四）三种高频题型的专属模板</div>
+<div class="def"><div class="def-title">模板 A｜人物形象类（如"分析于连／苔丝／浮士德形象"）</div>
+<p><b>结构：</b>总定位（一句话定性）→ ①身份与出身（阶级·时代定位）→ ②性格的主要特征（2–3 层，每层配例证）→ ③性格的矛盾性／发展性（往往是最能出彩的部分）→ ④典型意义（个人与时代的关系）→ 总收（为什么要塑造这个形象／文学史价值）。<br>
+<b>要点：</b>务必写出"<span class="hl-b">典型</span>"二字——<span class="hl">"XX 是××时期具有××意识的××的典型"</span>，这是人物形象题的标准答法。</p></div>
+<div class="def"><div class="def-title">模板 B｜思想内容类（如"分析《浮士德》／《高老头》的思想内容"）</div>
+<p><b>结构：</b>总起（作品性质与地位）→ 按<span class="hl-b">由小到大</span>或<span class="hl-b">由现象到本质</span>排列分论点：①对××社会的批判／揭露 → ②对××理想的肯定／歌颂 → ③对人性／人生的哲理探索 → ④局限与矛盾 → 总收（思想价值与时代意义）。<br>
+<b>要点：</b>常用"<span class="hl">一方面……另一方面</span>""<span class="hl">既……又……</span>"来体现辩证性（如《双城记》既肯定革命正义性又反对暴力）。</p></div>
+<div class="def"><div class="def-title">模板 C｜艺术特征类（如"论述《浮士德》／现实主义的艺术特色"）</div>
+<p><b>结构：</b>总起（总括艺术成就）→ 逐条列特征：①（总的方法，如"现实主义与浪漫主义相结合"）→ ②（人物塑造手法）→ ③（象征／细节／心理等具体手法）→ ④（语言与文体）→ ⑤（结构形式）→ 总收（艺术贡献与影响）。<br>
+<b>要点：</b>每条特征必须<span class="hl-b">配作品例证</span>（如"象征手法——海伦象征古典美、欧福良象征拜伦式激情"），否则成了空谈。</p></div>
+<div class="sub-h g">（五）论述题常见失分点（避坑清单）</div>
+<div class="box"><p>❌ <b>只罗列不论证：</b>把考点一条条抄上去，没有论点统领——阅卷只给基础分。<br>
+❌ <b>没有例证：</b>通篇抽象概括，不举作品情节——显得没读过原著。<br>
+❌ <b>层次混乱：</b>想到哪写到哪，思想、艺术、人物混在一起——必须先分类再落笔。<br>
+❌ <b>审题偏差：</b>问"题名原因"却大谈人物形象——扣题是第一位。<br>
+❌ <b>头重脚轻：</b>开头铺垫过长，正文单薄——总起控制在 2–4 句。<br>
+❌ <b>忽略局限：</b>只唱赞歌不指局限（如巴尔扎克的政治保守、狄更斯反对暴力革命）——<span class="hl-b">辩证评价是加分项</span>。</p></div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 五步法</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 五段式骨架</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 四类论据</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 三模板</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 避坑六条</span></div>
+<div class="notes" contenteditable="true" data-placeholder="我的答题方法笔记…"></div></div></section>
+
+<!-- 4 ===== 自拟论述题 + 完整考场答案 ===== -->
+<section class="card priority"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">4</div><div class="card-title">📝 实战演练：9 道典型论述题 · 完整考场答案（对标《李凡 1000 题》）</div><div class="exam-level hot">实战·背答案</div><span class="toggle-hint" style="margin-left:auto">点击展开 ▾</span></div><div class="card-body">
+<div class="note-bar">🎯 <strong>用法建议：</strong>这些是<span class="hl-b">可直接背诵／默写的成文答案</span>——先遮住答案自己写，再逐段对照，重点抄写自己没想到的<span class="hl">例证与评价句</span>。每题标了【题型】【字数】【必答点】。考场答案不必与本文完全一致，<span class="hl-b">结构与例证到位即可</span>。</div>
+
+<!-- ============== 实战1 ============== -->
+<div class="sub-h">【实战 1】现实主义总论（★★★ 最高频）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">试论述 19 世纪现实主义文学的思想特征与艺术特征。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1400 字 · 字数随分值增减）</div>
+<p>19 世纪现实主义文学（又称"批判现实主义"）是继浪漫主义之后兴起的欧洲文学主潮，它在 30 年代前后登上文坛，至 60 年代达到鼎盛，成为整个 19 世纪欧洲文学的<span class="hl-b">主潮与最高成就</span>。它以<span class="hl-b">真实地反映生活、冷静地解剖社会、塑造典型环境中的典型人物</span>为核心，上承古典"摹仿说"、文艺复兴"镜子说"与 18 世纪现实主义小说的传统，又是对浪漫主义"沉溺于主观幻想、抽象抗议和空洞追求"的反拨与深化。其思想特征与艺术特征大致可从以下方面把握。</p>
+
+<p><b>一、思想特征</b></p>
+<p><b>（一）把文学作为分析和研究社会的工具。</b>现实主义作家普遍把文学当作认识社会、研究社会的工具，突出文学的历史价值与认识价值。巴尔扎克在《人间喜剧》序言中自命为"法国社会的书记"："法国社会将要作历史家，我只能当它的书记：编制恶习和德行的清单，搜集情欲的主要事实，刻画性格，选择几个性质相同的性格揉合在一起……"正因如此，<span class="hl-b">《人间喜剧》被称为"19 世纪上半期法国社会的百科全书"，狄更斯的作品被称为英国社会历史的百科全书，托尔斯泰的作品则被誉为俄国农奴制改革前后社会的百科全书</span>。这种自觉的"书记"意识，正是现实主义区别于浪漫主义的根本标志。</p>
+<p><b>（二）以人道主义思想为武器。</b>现实主义作家以人道主义作为揭露、批判资本主义罪恶的思想基础：他们深刻揭露社会的黑暗与不公，同情下层人民的苦难，提倡社会改良、调和阶级矛盾，以求达到"改造社会"的目的。巴尔扎克对高老头父爱悲剧的悲悯、狄更斯对"小人物"命运的关注、哈代对苔丝不幸的深切同情，都体现着人道主义的光辉。但应注意，<span class="hl">他们大多只暴露黑暗而不主张革命</span>，如狄更斯虽肯定大革命的必然性，却反对暴力与群众运动，主张以"永恒的仁爱、宽恕"感化人心——这既是其人道主义的可贵处，也是其改良主义的局限。</p>
+<p><b>（三）描写普通人的生活，表现普通人的命运。</b>现实主义反对浪漫主义逃避现实、偏爱历史题材与异域情调以寄托主观理想的做法，也抛弃了古典主义专写伟大人物、重大事件的离奇俗套，<span class="hl-b">有意识地描写下层人民与日常生活的习俗</span>。果戈理提出"为小人物呼吁"的创作口号；司汤达笔下的于连是"20 万个于连之一"；巴尔扎克所写的正是可以在"20 个乡村哭泣"的普通人物。第三等级与"小人物"真正成为文学的主人公。</p>
+
+<p><b>二、艺术特征</b></p>
+<p><b>（一）强调客观真实地反映生活。</b>现实主义作家主张"<span class="hl-b">按照生活本来的样子去反映生活</span>"，全方位地表现社会现实，把当代生活特别是城市生活作为描写的主要对象，力图通过客观真实的生活画面反映现实生活的本质。同时，他们<span class="hl">反对在作品中显示"自我"</span>，主张让作者的思想与情感在具体的情节描写与人物塑造中自然而然地流露出来。福楼拜说："艺术家不应该在作品中露面，就像上帝在世界上一样，到处存在又到处不见"；司汤达则提出"文艺应像一面镜子"。</p>
+<p><b>（二）注重细节描写。</b>现实主义通过细节描写增强形象的具体性、再现社会生活的真实面貌，这些细节包括社会生活细节、人物活动细节、物质经济细节。写肖像时，不仅写人的眼目，也描写他们的脸上皱纹、鼻子的宽窄、眼睛的大小、耳轮的形态、穿衣的式样，甚至钮扣的质地、腰带的色调、衣上的油污、领带的别针，从而极大地增强了立体感与真实感。</p>
+<p><b>（三）具有内倾性和外倾性两种倾向。</b>由于各自审美心理机制与艺术思维方式的差异，作家在真实地反映生活时，对内部世界与外部世界的艺术把握有所侧重：<span class="hl-b">司汤达、托尔斯泰、陀思妥耶夫斯基等作家侧重表现内心世界的真实性（内倾）；巴尔扎克、狄更斯等作家侧重表现外部社会形态（外倾）</span>。这两种倾向在不同作家的创作中常兼而有之、并非互相对立，如托尔斯泰就在以内倾性为主导的基础上融合了外倾性特征。</p>
+<p><b>（四）重视人与社会环境的关系，塑造典型环境中的典型性格。</b>现实主义主张将人物性格放在特定的历史时代、社会环境和斗争情势中加以刻画，突出时代、环境对人物性格的制约作用。巴尔扎克笔下的拉斯蒂涅由纯朴外省青年堕落为野心家，正是一步步被巴黎的"金钱社会"教育出来的；托尔斯泰《安娜·卡列尼娜》等作品则深刻反映了俄国农奴制改革后社会关系的巨变。<span class="hl-b">"典型环境中的典型人物"是现实主义最高的艺术原则</span>。</p>
+<p><b>（五）以叙事文学为主，小说创作特别是长篇小说走向成熟与繁荣。</b>这一方面是继承了 18 世纪现实主义小说的传统，另一方面是因为长篇小说更适合于表现 19 世纪广阔而复杂的社会生活。与此相应，出现了期刊分期连载、报刊分期连载等新的发表方式，使作家能够及时反映社会、也扩大了作品的读者面。</p>
+
+<p><b>三、小结</b></p>
+<p>综上，19 世纪现实主义文学以人道主义为思想武器、以客观真实为艺术准则，通过"典型环境中的典型人物"这一核心方法，把 19 世纪欧美的社会面貌完整地保存于文学之中，其认识价值与批判力度至今仍是"文学介入现实"的典范；而部分作家的人道改良立场与宿命观念，则构成了它的时代局限。</p></div>
+
+<!-- ============== 实战2 ============== -->
+<div class="sub-h">【实战 2】于连形象（★★★）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">结合作品论述《红与黑》中于连的人物形象及其典型意义。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1500 字）</div>
+<p>《红与黑》是司汤达创作的高峰，也是<span class="hl-b">现实主义的第一部杰作</span>。小说以于连的遭遇为线索，以维立叶尔市、贝尚松神学院和巴黎木尔侯爵府为活动舞台，形象地展示了法国波旁王朝复辟时期的社会图景。主人公于连，正是这一时代<span class="hl-b">具有平民反抗意识的个人奋斗者的典型</span>。<span class="hl">"红"是拿破仑时期士兵的红军装，"黑"是教士的黑道袍</span>——书名的两种颜色，恰恰浓缩了于连一生只能在"军功"与"教会"之间挣扎求存的道路困境。</p>
+
+<p><b>一、出身与时代：被堵死的两条路</b></p>
+<p>于连出身低下，是维立叶尔市郊锯木厂主老索黑尔的儿子。他身体文弱、不堪体力劳动，因而备受父兄歧视；但他聪颖过人、记忆力惊人，受启蒙思想影响很深，渴望凭自己的才华建功立业。然而他生活的时代，却是封建贵族与教会联合复辟的时代："红"的道路——像拿破仑时代那样"一个卑微的穷少尉靠战功也能成为世界主人"——已被彻底堵死；留给他的只有"黑"的道路，即披上道袍、借教会阶梯向上爬。于连曾紧握拿破仑的画像，以这位平民英雄为榜样，怒斥父亲让他去市长家当家庭教师的安排："叫我当奴仆！我宁可去锯木厂干苦力，也不愿失去与上层社会平起平坐的尊严。"<span class="hl">这一声怒吼，正宣告了他强烈的平民自尊意识。</span></p>
+
+<p><b>二、性格的主要特征</b></p>
+<p><b>（一）强烈的自我意识与个人野心。</b>受启蒙思想影响，于连形成了强烈的自我意识，并由此产生出平等观念、反抗意识与个人野心。他不甘居于人下，渴望像拿破仑那样凭借个人能力征服世界。为实现这一理想，他不得不采取伪装和投机的手段——把征服贵族妇女当作向上爬的途径，进入神学院后又很快学会伪装谦卑、暂时同流合污。他对自我社会地位的敏感，也决定了其个人反抗的动摇性。</p>
+<p><b>（二）自信与自卑的双重性格。</b>于连一方面勇敢真诚、敏感自尊，另一方面又自卑怯懦、不乏虚伪投机心理。深夜他会勇敢地告诉自己要去握德瑞那夫人的手（这勇敢的举动其实正出于自卑驱动的自尊心）；而当德瑞那先生像待仆人一样轻蔑地给他赏钱时，他的自卑瞬间转化为强烈自尊，愤恨地拒绝赏钱，甚至不惜放弃前程也要辞职。<span class="hl-b">这种"自尊—自卑"的剧烈摆动，是于连性格中最动人、也最真实的层次。</span></p>
+
+<p><b>三、性格的发展：从反抗到妥协，再回到反抗</b></p>
+<p>于连的性格不是静止的，而是随着环境变化不断发展的，经历了<span class="hl-b">从反抗到妥协再到反抗</span>的曲折过程。在维立叶尔，他以平民的骄傲对抗市长的傲慢；在贝尚松神学院，他想保持真诚却处处碰壁，为求生存学会了虚伪；到了巴黎木尔侯爵府，他的个人野心几乎完全实现——学会了上流社会的礼仪，赢得了玛特尔小姐的爱情，即将成为贵族。然而就在此时，德瑞那夫人的一封告密信毁掉了一切，于连在激愤中赶回维立叶尔，在教堂里向正在祈祷的德瑞那夫人开枪，因此被捕入狱。<br>
+<span class="hl-b">正是在狱中，于连完成了性格的最终升华。</span>认识到自身悲剧的必然性与社会性之后，他的平民意识再度增强。在法庭上，他不肯向贵族阶级乞求宽恕，反而发表了激烈的演说，痛斥阶级的不平与社会的虚伪；他拒绝了玛特尔小姐的营救，坦然赴死。<span class="hl-b">通过选择死亡，于连最后表示了自己对社会的彻底绝望与决绝反抗。</span>他的死，不是失败者的溃逃，而是平民青年对复辟社会最后、也是最有力的一次控诉。</p>
+
+<p><b>四、典型意义</b></p>
+<p>于连形象的意义，首先是<span class="hl-b">个人奋斗与时代悲剧的交织</span>。他"是 20 万个于连之一"——在复辟时期，无数像他这样有才华、有抱负的平民青年，都被森严的等级制度排挤在社会的门外，他们的"奋斗"从一开始就注定失败。于连的悲剧，不是个人品质的悲剧，而是时代的悲剧、制度的悲剧。<br>
+其次是<span class="hl-b">对社会的深刻批判</span>。小说通过于连的经历，广泛揭露了复辟时期法国社会的黑暗：教会的虚伪、贵族的傲慢、资产阶级的唯利是图，以及整个社会对平民的压制与排斥。于连的每一个"胜利"都伴随着人格的扭曲，这本身就是对社会最有力的控诉。<br>
+再次是<span class="hl-b">人性的深刻探索</span>。于连身上既有善良真诚、自尊正直的一面，又有虚伪野心、不择手段的一面，写出了一个真实的人在社会挤压下的复杂与挣扎。司汤达在此基础上运用高超的心理分析，深入人物内心，展示了"自尊与自卑""野心与真诚"的激烈交战，使他成为现实主义人物典型的典范。</p>
+
+<p><b>五、小结</b></p>
+<p>总之，于连是司汤达对复辟时期社会现实进行深刻解剖的产物。这一形象既凝聚着作者本人对社会的不平与愤懑，也概括了一代平民青年的共同命运，因而具有超越时代的认识价值与艺术感染力。</p></div>
+
+<!-- ============== 实战3 ============== -->
+<div class="sub-h">【实战 3】苔丝悲剧（★★★ 真题）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">试分析《德伯家的苔丝》中苔丝悲剧的原因。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1300 字）</div>
+<p>《德伯家的苔丝》是哈代"威塞克斯小说"的代表作，副标题为"<span class="hl-b">一个纯洁的女人</span>"。小说通过苔丝这个美丽、纯洁、勤劳善良的农村姑娘的悲惨遭遇，揭露批判了资产阶级道德法律的虚伪残酷。苔丝是<span class="hl-b">资本主义社会的专制和暴力的牺牲品</span>，其悲剧是由时代、性格、命运三重因素合力铸成的。</p>
+
+<p><b>一、时代悲剧：社会是悲剧的总根源</b></p>
+<p>苔丝的悲剧首先是时代的悲剧。<span class="hl-b">资本主义的发展，破坏了英国农村自给自足的自然经济</span>，小农破产、无以为生。苔丝一家正是这种社会变革中的牺牲者：父亲得知自家原是古老的德伯维尔家族后裔，便梦想攀附"本家"，而正是这场痴心妄想的"认亲"，把苔丝推入了深渊——她被派去亚雷家当养鸡女工，从此遭遇强暴，命运彻底改写。可以说，<span class="hl">苔丝去亚雷家认亲、打工，都是为生计所迫</span>。</p>
+<p>在这一悲剧中，两个男性人物分别代表着两种社会力量：<span class="hl-b">亚雷代表这个时代包括法律宗教的邪恶社会力量，是制造苔丝悲剧的元凶</span>——他凭借金钱与地位肆无忌惮地糟蹋苔丝，事后又以虚伪的"皈依"为名再次纠缠，最终死于苔丝刀下；<span class="hl-b">克莱代表这个时代的世俗道德力量，在一定程度上毁灭了苔丝的生活信念，即便悔悟也于事无补，所以是"追加凶手"</span>——他虽有自由思想、鄙弃门第之见，但骨子里仍摆脱不了对"失贞"的世俗偏见，新婚之夜听完苔丝的坦白后便弃她而去，使苔丝在绝望中重新落入亚雷之手。正是这两种力量的合围，把苔丝逼上了绝路。</p>
+
+<p><b>二、性格悲剧：自身局限削弱了反抗力量</b></p>
+<p>苔丝的悲剧也有其性格因素。<br>
+<b>其一，苔丝很迷信。</b>被玫瑰花刺扎了一下，她就认为是不祥之兆；向克莱坦白过去的信被插在地毯下面，她便认为是命运的暗示，认为"这是上天不让我说"。迷信神秘力量，使苔丝丧失主观意志，放弃对自己命运的主宰。<br>
+<b>其二，苔丝作茧自缚。</b>她以世俗观念自我衡量，把自己被强暴的遭遇看成"罪"，自愿背负沉重的十字架和良心债，默认命运的不公正。这种自我归罪的心理，极大地削弱了她的自主性与反抗力量，使她一再退让、一再牺牲——从屈从于亚雷，到为了家庭做亚雷的情妇。<span class="hl-b">苔丝的"纯洁"与世人的"道德"之间的错位，正是她悲剧性格的核心。</span></p>
+
+<p><b>三、命运悲剧：哈代的宿命观念</b></p>
+<p>哈代是一个具有浓厚宿命观念的作家，他认为冥冥之中有一种更为强大的异己力量主宰着芸芸众生，使人劫数难逃。这种观念在小说中表现为：<span class="hl-b">他赋予作品情节中的偶然事件以逻辑因素，往往使一系列的偶发性事件具有因果联系，从而导致必然结局</span>。具体如：发现家世→父亲醉酒→苔丝代父赶车→老马撞死→苔丝认亲→遭遇亚雷→外出打工→遭遇克莱→与克莱结婚→被弃→与亚雷同居→克莱归来→杀死亚雷→被判死刑。这一连串看似偶然的事件，环环相扣、层层递进，最终把人推向毁灭。<span class="hl">人物的存在被锁定其中，在劫难逃，从而体现了宿命的力量。</span></p>
+
+<p><b>四、小结</b></p>
+<p>综上，苔丝的悲剧是时代、性格、命运三重因素共同作用的结果：<span class="hl-b">时代悲剧是社会根源，性格悲剧是内在依据，命运悲剧则体现着哈代的哲学观念</span>。三者层层叠加，使苔丝形象具有极强的控诉力量。哈代借此深刻揭露了资产阶级道德与法律的虚伪残酷，对不幸者寄予深切同情；同时也应看到，浓重的宿命论色彩在一定程度上削弱了作品的社会批判力度，这构成了哈代思想的时代局限。</p></div>
+
+<!-- ============== 实战4 ============== -->
+<div class="sub-h">【实战 4】《高老头》思想内容与艺术（★★★）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">试论述《高老头》的思想内容与艺术成就。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1500 字）</div>
+<p>《人间喜剧》是一座宏伟的艺术大厦，而《高老头》是其中<span class="hl-b">"最重要的一块基石"</span>——它既是主要思想的奠基，又是主要人物（拉斯蒂涅、伏脱冷、鲍赛昂夫人等等）的登场舞台。小说以 1819 年末至 1820 年初复辟时期的巴黎为背景，以贫民区的伏盖公寓和上流社会的沙龙为舞台，以高老头惨死和拉斯蒂涅的堕落为中心情节，真实展示了复辟时期巴黎的社会生活。</p>
+
+<p><b>一、思想内容</b></p>
+<p><b>（一）通过高老头的惨死，揭露了资本主义社会人与人之间赤裸裸的金钱关系。</b>高老头本是靠大革命时期投机致富的面粉商，他对两个女儿的爱近乎狂热：为让她们攀上高门，他给每人 80 万法郎的陪嫁，自己却搬到伏盖公寓最便宜的房间，从年付 1200 法郎的套房一路搬到每月 45 法郎的阁楼，最后连金银器皿、衣物都变卖殆尽。而两个女儿——雷斯多伯爵夫人与纽沁根太太——只有在缺钱时才想起父亲，钱到手便转身离去，甚至拒绝见他最后一面。<span class="hl-b">高老头临终前的哀号"钱能买到一切，买到女儿"，是对金钱社会最沉痛的控诉。</span>父女亲情在金钱面前荡然无存，作品由此深刻揭示了金钱对人性的腐蚀与摧毁。</p>
+<p><b>（二）显示了复辟时期贵族被资产阶级取代的历史过程。</b>小说中，鲍赛昂子爵府曾是巴黎贵族社会的顶点，鲍赛昂夫人是所有贵族妇女中最煊赫的一位。然而就是这样一位贵妇，最终却因情人阿瞿达侯爵为了娶一个资产阶级暴发户的千金而抛弃她，被迫隐退到乡下去。<span class="hl-b">鲍赛昂夫人的隐退，象征着贵族阶级在金钱与暴发户逼攻下的彻底衰亡</span>，形象地展示了资产阶级取代贵族这一不可阻挡的历史趋势。</p>
+<p><b>（三）通过拉斯蒂涅的堕落，反映了青年野心家的成长过程。</b>拉斯蒂涅是外省破落贵族子弟，初到巴黎时还是个单纯、有良知的青年。但他接受了三重"社会教育"：<span class="hl-b">鲍赛昂夫人的训导</span>——"你越没有心肝，越高升得快"；<span class="hl-b">伏脱冷的开导</span>——"要弄大钱，就该大刀阔斧地干"；以及<span class="hl-b">高老头的死</span>这一最残酷的直观一课。他目睹鲍赛昂被迫退隐、高老头被女儿抛弃而死，终于完成性格蜕变。小说结尾，他在埋葬高老头后，向着巴黎发出挑战："现在咱们来拼一拼吧！"<span class="hl">这一句宣告了一个野心家的诞生。</span></p>
+
+<p><b>二、艺术成就</b></p>
+<p><b>（一）精细的环境描写。</b>巴尔扎克极其重视环境对人物的制约作用。小说开篇即以大量篇幅细致描写伏盖公寓：公寓的街道、外墙、气味、餐厅的布局、乃至各房间的租金等级，都写得历历在目。这座公寓本身就是一个缩小的社会——四楼住着米旭诺、高老头和拉斯蒂涅，三楼住着波阿莱和伏脱冷，二楼住着伏盖太太、古的太太和维多莉·泰伊番小姐。<span class="hl-b">这种精细的环境描写不是装饰，而是人物性格的根据与社会关系的物化。</span></p>
+<p><b>（二）典型的性格刻画。</b>小说成功塑造了一组典型人物：<span class="hl-b">拉斯蒂涅</span>——贵族子弟"资产阶级化"的典型、复辟时期青年野心家的典型；<span class="hl-b">伏脱冷</span>——苦役犯，"野心家的另一种"，尚未得势的资产阶级掠夺者的典型，他既是金钱社会罪恶的制造者，又是罪恶的揭发者；<span class="hl-b">高老头</span>——具有浓厚封建宗法观念的商业资产者的典型，其父爱被金钱异化、扭曲至变态；<span class="hl-b">鲍赛昂夫人</span>——王政复辟时期在暴发户逼攻下走向衰亡的贵族妇女典型，她虽看清了金钱是这个世界唯一的主宰，但立场顽固、坚持贵族气节，不肯向资产阶级低头投降。这四个人物各具代表性，共同构成了复辟时期巴黎社会的完整图景。</p>
+<p><b>（三）严谨的情节结构。</b>小说采用四条情节线索，以"金钱轴心"统一全篇：<br>
+· <b>主线</b>：拉斯蒂涅的性格蜕变（<span class="hl-b">青年人的灵魂</span>）＋高老头的人生悲剧（<span class="hl-b">家庭关系</span>）；<br>
+· <b>副线</b>：鲍赛昂夫人的情场失意与隐退（<span class="hl-b">爱情</span>）＋伏脱冷的暴露与被捕（<span class="hl-b">友谊</span>）。<br>
+四条线索互相对照、互相补充，共同烘托出"金钱主宰一切"的主题。</p>
+
+<p><b>三、小结</b></p>
+<p>总之，《高老头》以"金钱"为轴心，把人物、场景、情节熔为一体，既深刻揭示了金钱社会的罪恶与贵族阶级的衰亡，又成功塑造了一批经典的人物典型，标志着巴尔扎克现实主义艺术的成熟，也为其后《人间喜剧》诸作的展开奠定了坚实的基础。</p></div>
+
+<!-- ============== 实战5 ============== -->
+<div class="sub-h">【实战 5】浮士德形象与难题（★★★）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">试论述《浮士德》中浮士德形象的双重象征意义及"浮士德难题"。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1500 字）</div>
+<p>诗剧《浮士德》是歌德毕生心血的结晶，创作历时约六十年（1770—1831）。全剧以浮士德的思想发展为贯穿线索，通过"两个赌赛、五个悲剧"展示了一部欧洲近代人的精神探索史。<span class="hl-b">浮士德是一个象征性的艺术形象</span>，其象征意义具有双重性。</p>
+
+<p><b>一、"资产阶级上升时期欧洲先进知识分子"的艺术象征</b></p>
+<p>浮士德形象的第一重象征，是他对文艺复兴至 19 世纪初近三百年欧洲新兴资产阶级的精神发展历程作了深刻的回顾与总结。这一历程具体表现为三个层面：<br>
+<b>（一）对知识的追求。</b>剧作开篇，老学究浮士德在书斋中皓首穷经大半生，遍览哲学、法学、医学、神学，却深感"什么也不懂"，甚至想以自杀求解脱。这正是对中世纪经院哲学和中世纪知识体系的否定，象征着近代人摆脱思想禁锢的艰难起步。<br>
+<b>（二）对现实与理想的矛盾探索。</b>在梅菲斯特的引领下，浮士德走出书斋，先后经历了爱情、政治、艺术、事业四个阶段的探索，每一次都以悲剧告终。这种"不断追求、不断失败、又不断重新开始"的过程，正是资产阶级上升时期不断探索、不断超越的写照。<br>
+<b>（三）进取与超越精神。</b>浮士德从不满足于既得，总在向更高的目标冲击。他的探索之路，其实是一个自我实现与精神飞升的过程——从主观感受的"小世界"（爱情）走向客观实践的"大世界"（济世、艺术、造陆）。<span class="hl-b">浮士德的形象，正是对欧洲新兴资产阶级三百年精神历程的艺术概括。</span></p>
+
+<p><b>二、"人"的象征形象：深刻辩证法与灵肉冲突</b></p>
+<p>浮士德形象的第二重象征，是作为"人"的象征——歌德以深刻的辩证法揭示了浮士德人格中的两种矛盾冲突，即<span class="hl-b">灵与肉、善与恶</span>。浮士德曾解剖自己的内心，留下那段著名的独白：<br>
+<span class="hl-b">"有两种精神居住在我的心胸，／一个想要同别一个分离！／一个沉溺在迷离的爱欲之中，／执拗地固执着这个尘世，／别一个猛烈地要离去凡尘，／向那崇高的灵的境界飞驰。"</span><br>
+这段独白是理解浮士德形象的钥匙。"灵"与"肉"、情欲与理性的矛盾在他身上交织：<span class="hl">在内表现为浮士德的内心冲突，在外则表现为浮士德与梅菲斯特的对立与结伴</span>。梅菲斯特并非外在于浮士德的纯粹恶势力，他实际上是浮士德"肉"的一面、"欲望"一面的外化；浮士德与梅菲斯特的结伴同行，正象征着人的精神追求与感官欲望不可分割的纠缠。</p>
+
+<p><b>三、"浮士德难题"</b></p>
+<p>由上述矛盾，歌德提出了著名的"<span class="hl-b">浮士德难题</span>"：<br>
+· <b>欲望的自由发展 ⟷ 道德的控制约束；</b><br>
+· <b>个人幸福 ⟷ 个人灵魂（及社会的完善）。</b><br>
+这一灵与肉的根本矛盾，是歌德对欧洲中世纪以来（乃至近代）人类思想冲突的高度概括。人既渴望无限地满足自己的欲望、追求个人的幸福与自我实现，又受到道德、信仰与社会责任的约束；二者难以兼得，构成人类生存的根本困境。</p>
+
+<p><b>四、浮士德精神的归宿</b></p>
+<p>值得注意的是，浮士德虽在实践层面以悲剧结束了人生探索——他双目失明，把魔鬼为他掘坟的声音误听成移山填海的号子，在"你真美啊，请停留一下！"的赞叹中倒下——但从精神层面看，<span class="hl-b">他的失败恰恰反衬了其精神的超越性</span>。因为他喊出那句话时，所向往的并非个人享乐，而是"为千万人开辟自由生活的领土"的理想王国。正因如此，上帝与魔鬼的赌赛以魔鬼的失败告终：天使们抢走浮士德的灵魂，高唱<span class="hl-b">"凡是自强不息者，到头我辈均能救"</span>。<br>
+这正体现了歌德的辩证态度：他抗拒漫无边际探索中衍生的悲观主义与享乐主义，坚信<span class="hl-b">自强不息、希望永存</span>——人虽屡屡失败，但只要不断追求、不断向上，就终将获得拯救。</p>
+
+<p><b>五、小结</b></p>
+<p>综上，浮士德既是欧洲先进知识分子的象征，也是"人"本身的象征；其形象所包含的灵肉冲突与"浮士德难题"，深刻概括了人类精神发展的根本矛盾。歌德通过这一形象，反映了西方进步知识分子的奋斗历程，肯定了"浮士德精神"，使这部诗剧成为德国文学乃至世界文学的不朽经典。</p></div>
+
+<!-- ============== 实战6 ============== -->
+<div class="sub-h">【实战 6】英法德启蒙异同（★★）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">试比较英、法、德三国启蒙文学的异同，并说明差异的根源。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1300 字）</div>
+<p>18 世纪是"启蒙的世纪"。启蒙文学是启蒙运动在文学领域的直接产物，它高举理性的旗帜，以第三等级为主人公，把文学当作传播启蒙思想、批判封建专制的工具。然而，由于各国政治经济发展程度与资产阶级力量强弱不同，英、法、德三国的启蒙文学呈现出<span class="hl-b">"温和—革命—抽象"</span>三种不同面貌。</p>
+
+<p><b>一、三国启蒙文学的分述</b></p>
+<p><b>（一）英国：最温和，以现实主义小说为载体。</b>英国是最早发生启蒙运动的国家，也是资产阶级革命最早完成的国家。1688 年"光荣革命"后，资产阶级已与贵族分享政权，社会矛盾相对缓和，因此启蒙运动<span class="hl-b">以道德劝善、改良风俗为主，不主张推翻现有制度</span>。其文学成就主要表现为现实主义小说：笛福《鲁滨逊漂流记》塑造了欧洲文学史上第一个正面资产阶级形象；斯威夫特《格列佛游记》以小人国、大人国、飞岛国、慧骃国四国游记展开辛辣的讽刺；菲尔丁《汤姆·琼斯》以乡村—路上—伦敦的结构展示社会全景，自称"散文体喜剧史诗"；理查生《帕米拉》以书信体写"美德有报"，开心理写实之先。此外还有感伤主义（斯特恩《感伤旅行》）与哥特式小说（华尔浦尔《奥特朗托堡》）两条支流。</p>
+<p><b>（二）法国：最彻底，以哲理小说为载体。</b>法国的封建专制最为顽固，阶级矛盾最为尖锐，因此启蒙运动<span class="hl-b">最彻底、最富战斗性与革命性，直接为 1789 年大革命作了思想准备</span>。法国启蒙作家创造了"哲理小说"这一新型体裁——以虚构的故事演绎哲学与政治主张，情节荒诞离奇、人物多为观念的化身。孟德斯鸠《波斯人信札》以"两个波斯人看巴黎"的他者视角，成为第一部启蒙哲理小说；伏尔泰《老实人》以"一切皆善"的乐观主义教师邦葛罗斯的荒诞遭遇，系统驳斥了莱布尼茨式的乐观主义，最终得出"种咱们的园地要紧"的结论；狄德罗《拉摩的侄儿》以对话体塑造了一个"清醒的堕落者"的分裂人格，被马克思称为"辩证法的杰作"；卢梭《新爱洛漪丝》以书信体写平民与贵族的爱情悲剧，成为感伤主义的典型，《忏悔录》则是欧洲第一部公开自我暴露的自传。<span class="hl-b">此外，法国启蒙还提出了"三权分立"（孟德斯鸠）、"主权在民"（卢梭）、"严肃喜剧"（狄德罗）等系统的政治与美学主张。</span></p>
+<p><b>（三）德国：最抽象，以哲学与市民悲剧为载体。</b>德国政治经济落后、邦国割据，资产阶级软弱无力，因而反封建斗争<span class="hl-b">只能在精神领域进行，具有明显的抽象性与妥协性，回避直接的政治行动</span>。德国启蒙的特点是通过建立统一的民族文化与民族戏剧以促进民族统一，因而带有更强的民族性。莱辛是德国民族文学的真正奠基者，其《拉奥孔》论画与诗的界限，《汉堡剧评》主张学习莎士比亚、反对模仿法国古典主义、强调戏剧的教育作用，剧作《爱米丽亚·迦洛蒂》被称为德国市民悲剧的代表。1770 年代兴起狂飙突进运动，赫尔德是主要理论家，青年歌德与席勒是代表作家，歌德《少年维特之烦恼》与席勒《阴谋与爱情》是其重要实绩。此后歌德的《浮士德》与席勒的《美育书简》则代表了德国文学的最高成就。</p>
+
+<p><b>二、三国的共同点</b></p>
+<p>①都高举理性的旗帜，批判封建专制与天主教会，把"理性"当作衡量一切的尺度；②都以第三等级和平民为主人公，面向平民读者；③都把文学当作启蒙教育与社会批判的工具，具有鲜明的政治倾向性；④都推动了本国民族文学的成熟与定型。</p>
+
+<p><b>三、差异的根源</b></p>
+<p>三国启蒙文学之所以呈现不同面貌，根本原因在于<span class="hl-b">各国资本主义发展程度与资产阶级力量强弱的不同</span>：<br>
+· 英国资产阶级已掌握政权、与贵族妥协，故启蒙<span class="hl">温和</span>，文学转向道德劝善与写实小说；<br>
+· 法国封建专制最顽固、阶级矛盾最尖锐，故启蒙<span class="hl">激进</span>，文学成为革命的舆论武器，哲理小说与政论色彩突出；<br>
+· 德国割据落后、资产阶级软弱，故启蒙<span class="hl">抽象妥协</span>，革命只在哲学与文学的精神领域展开，思辨性、理想性极强。</p>
+
+<p><b>四、小结</b></p>
+<p>英、法、德三国启蒙文学的异同充分说明：<span class="hl-b">文学是社会的镜子</span>。同一场思想运动，在不同的社会土壤上会结出不同的果实。三国启蒙文学共同构成了 18 世纪欧洲文学的整体格局，也为 19 世纪浪漫主义与现实主义的兴起准备了条件。</p></div>
+
+<!-- ============== 实战7 ============== -->
+<div class="sub-h">【实战 7】《红与黑》题名含义（★★）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">试论述《红与黑》书名的含义。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1000 字）</div>
+<p>《红与黑》是司汤达的代表作，也是现实主义的第一部杰作。其书名的含义历来为研究者所重视，须从多个层面加以理解。</p>
+
+<p><b>一、书名的演变与副标题</b></p>
+<p>小说原取名《于连》，后改为《诱惑与忏悔》，最后才定为《红与黑》。同时，作者为小说加上了副标题"<span class="hl-b">一八三〇年纪事</span>"，明确点出了作品所要反映的时代——1830 年七月革命前后的法国社会。这一改动说明，司汤达的着眼点已从个人故事上升为时代画卷。</p>
+
+<p><b>二、象征复辟时期两大对立阵营与两种思想的斗争</b></p>
+<p>这是书名最核心的含义：<br>
+· <span class="hl-b">"红"指拿破仑时期士兵的红军装</span>——它象征着革命、力量与资产阶级上升时期的光荣，也象征着那个"卑微的穷少尉靠战功也能成为世界主人"的时代；<br>
+· <span class="hl-b">"黑"指教士的黑道袍</span>——它象征着教会势力与复辟时期的专制统治，也象征着那条以宗教为阶梯、混迹上层的黑暗仕途。<br>
+在波旁王朝复辟时期，"红"与"黑"正是当时青年所面对的两条对立出路，也是当时法国社会两大阵营、两种思想激烈斗争的缩影。</p>
+
+<p><b>三、呼应小说的色彩意象</b></p>
+<p>书名还与小说中的具体意象相呼应：<br>
+· <b>红色意象</b>——于连去德瑞那家当家庭教师之前，曾在教堂看到溅在地上的圣水的颜色；后来他又在原先坐过的地方枪杀德瑞那夫人，看到了鲜血的红色。红，既是他野心起步时的记忆，也是他命运终结时的颜色。<br>
+· <b>黑色意象</b>——玛特尔小姐每年手捧于连的黑色头颅送往墓地；小说中还有关于猎人踢翻蚂蚁窝时碰出火光的黑色思考。<br>
+<span class="hl">这些色彩意象使书名获得了具体可感的艺术支撑。</span></p>
+
+<p><b>四、隐喻于连人生道路的选择</b></p>
+<p>从人物命运看，"红"与"黑"更隐喻着于连"之"字形的人生道路选择：<br>
+作为一个有抱负、有才华的贫民青年，于连最初曾想走"红"的道路——像拿破仑那样凭军功跻身上层；但在复辟时期，这条道路已被彻底堵死，贫民子弟"三十而立功于战场、跃升将军"的梦想根本无法实现。与此同时，于连又目睹了神职人员的荣耀与权势，于是萌发了披上道袍、跻身上层的念头，并身体力行地为之奋斗——这就是"黑"的道路。<br>
+<span class="hl-b">然而于连的本质是真诚、善良的</span>，所以他没有一直堕落下去。在经历了入狱、审判、面对死亡等一系列"风雨"之后，他终于悬崖勒马，拒绝了玛特尔小姐的营救，在法庭上痛斥贵族阶级，坦然赴死——<span class="hl-b">回到了最初的"红"上来</span>。可以说，于连的一生，正是从"红"到"黑"、再回到"红"的曲折历程，而他的死，正是对"黑"的最终否定。</p>
+
+<p><b>五、小结</b></p>
+<p>综上，《红与黑》的书名以两种颜色浓缩了复辟时期平民青年的道路困境：它既是两大阵营、两种思想的象征，又呼应着小说的色彩意象，更隐喻着主人公的人生选择与最终归宿。理解这一书名，是把握全书主题与于连形象的一把钥匙。</p></div>
+
+<!-- ============== 实战8 ============== -->
+<div class="sub-h">【实战 8】《双城记》人道主义（★★）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">试论述《双城记》中人道主义思想的具体体现。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1300 字）</div>
+<p>《双城记》是狄更斯后期创作的代表作，以法国大革命为背景，以巴黎和伦敦作为故事的发生地。小说是一部历史小说，但处理的却是现实问题。狄更斯通过三类人物的塑造，具体而充分地表达了他的人道主义思想。</p>
+
+<p><b>一、背景与主题</b></p>
+<p>小说探讨了法国大革命爆发的原因，肯定了大革命的正义性——贵族阶级的残暴统治必然招致革命的爆发。但作者虽然肯定了大革命的<span class="hl-b">必然性和正义性</span>，却<span class="hl-b">反对革命暴力和大规模的群众运动</span>；他极力宣扬的，是<span class="hl-b">个人的道德修养和道德感化</span>。这一基本立场，决定了小说人道主义思想的具体表现方式。</p>
+
+<p><b>二、人道主义的具体体现（三类人物）</b></p>
+<p><b>（一）冷酷残忍的剥削者——厄弗里蒙地侯爵。</b>他是封建统治阶级里的典型代表，在他身上有着封建统治阶级所有的残酷属性：冷酷、残暴、荒淫无道。他碾死农民的孩子犹如碾死一条狗；他奸淫农家妇女；他陷害告发他的医生——厄弗里蒙地侯爵残暴得像是魔鬼的化身，没有一丝的人道主义精神。<span class="hl-b">狄更斯充分表现了自己对封建统治阶级的憎恨</span>，让反面人物获得自己应有的惩罚。读者们在看到统治阶级的残暴与冷漠之后，自然而然地产生同情、愤怒的情感，进而与狄更斯反暴力压迫、渴求仁爱的人道主义精神产生共鸣。</p>
+<p><b>（二）丧失善良的复仇者——苔瑞丝（后来的得伐石太太）。</b>她是以德报怨的复仇者典型，是有着凄惨身世、被压迫的劳苦大众中的一员。苔瑞丝身世凄苦，与厄弗里蒙地侯爵更有着不共戴天的仇恨：<span class="hl-b">姐姐被蹂躏致死，姐夫被劳役致死，父亲被活活气死，哥哥复仇被杀死</span>。在大革命之前，苔瑞丝的形象是智勇双全、深得民心的；然而大革命之时她却成为了一个嗜血恶魔，丧失了正义与善良。此时作者狄更斯本人对她的态度也从先前的同情变成了否定——<span class="hl-b">这充分说明作者对"以暴制暴"行为的不赞同</span>，也呼应了狄更斯善良博爱的人道主义理想。</p>
+<p><b>（三）仁慈宽厚的博爱者——马内特、代尔那、卡尔顿等人。</b>马内特医生为了女儿的幸福，甘愿接受仇人的后代为自己的女婿；代尔那出身贵族却不与父辈同流合污，善良正直的他甚至放弃了财产、和家族脱离了关系。马内特、代尔那等的形象充分彰显了狄更斯的人道主义精神，契合了狄更斯的观点：<span class="hl-b">永恒的仁爱、宽恕才是使世界美好的一剂良药</span>。<br>
+其中，<b>卡尔顿</b>的塑造尤为动人。他是《双城记》中最重要的爱情主线中的重要人物，深爱着露西，但清楚自己身上的懒散陋习不能带给她幸福而选择退出；并且看到了与自己<span class="hl-b">长相相似却与自己形成鲜明对比</span>的代尔那，送上自己真挚的祝福。在露西婚后，他依旧对马内特医生家予以关注，甚至最后献出自己的生命——顶替代尔那走上了断头台。卡尔顿身上为爱情而流露出的奉献精神，是人道主义精神的另一种体现：面对爱情，他并没有得到过什么，也不求露西回报什么，仅仅是奉献出自己的一切。<span class="hl">这种利他的人物形象，赞扬了人性之中善良无私的一面，同样是一种可贵的人道主义精神。</span></p>
+
+<p><b>三、小结与局限</b></p>
+<p>综上，《双城记》以"复活"与"牺牲"为双线，通过剥削者、复仇者、博爱者三类人物的对照，集中表达了狄更斯"仁爱、宽恕、道德感化"的人道主义理想。其可贵处在于：它既同情被压迫者、控诉封建暴政，又对革命中的暴力与复仇保持反思，体现了深切的人道关怀。<br>
+但也应看到，<span class="hl-b">狄更斯以道德感化代替社会革命，反对暴力与群众运动，这构成了他改良主义的局限</span>。在阶级矛盾尖锐的时代，仅靠个人的道德修养并不能真正解决社会问题，这正是作品思想上的时代印记。</p></div>
+
+<!-- ============== 实战9 ============== -->
+<div class="sub-h">【实战 9】哈代笔下人物类型（★★）</div>
+<div class="q-card"><span class="q-label">论述题</span><span class="q-text">试论述哈代笔下人物的类型特点（以苔丝为例）。</span></div>
+<div class="model"><div class="model-title">【参考答案】（约 1200 字）</div>
+<p>哈代是 19 世纪后期英国杰出的现实主义小说家、诗人。他的小说有一个反复出现的<span class="hl-b">自然激情模式</span>，其笔下人物具有明显的类型特点，可分为<span class="hl-b">灵性、肉性、灵肉性</span>三类。这三类人物共同构成了哈代小说的人物谱系，也体现了他对人性深层矛盾的探索。</p>
+
+<p><b>一、灵肉统一者：完美的女性形象（以苔丝为代表）</b></p>
+<p>这类人物是哈代笔下最动人、也最富理想色彩的形象：美丽、纯洁、善良、自尊、坚韧而具有反抗精神。她们是<span class="hl-b">灵与肉二元统一的形象</span>——是理性与情欲、神性与兽性、伦理道德与原始本能的合一。哈代所用的字眼是"灵魂的形体化"（soul incarnate），incarnate 有"实体化""具体化""肉化"等含义。<br>
+以苔丝为例，哈代对其灵性与肉性均有精彩描写。<b>灵性描写：</b>"那时候苔丝的面目成了克莱注视的中心，……她的容颜飘渺幽淡，使她显得仿佛只是一个游荡的幽灵。"<b>肉性描写：</b>"她的脸睡得红红的，眼皮也朦胧地覆在瞳人上面。她的本性，往四面流溢，向身外喷放。就在这种时候，一个女人的灵魂，才更具有肉感，最空灵的美显示出肉味，性的表情流露在外面。"<br>
+<span class="hl-b">苔丝的灵与肉冲突，正是其悲剧的内在根源</span>：她的"灵性"使她倾慕、热恋克莱，使她鄙视、仇恨亚雷并最终杀死他，也使她为了家庭忍辱负重、自我牺牲；而她的"肉性"又使她向邪恶世俗妥协，演绎出一系列悲剧。<span class="hl">苔丝的人生，就是无法挣脱灵肉冲突的悲剧人生。</span></p>
+
+<p><b>二、肉性人物（flesh）：没有道德与信念的享乐者</b></p>
+<p>这类人物追求声色享受，没有道德，没有信念，充满肉欲、轻浮放荡，"肉感显露在形体外面"。哈代对他们的描写往往带有明显的贬抑色彩。<br>
+<b>对艾拉白拉的肉性描写：</b>"她是一个好看的黑眼睛的姑娘，但不是真正的漂亮。尽管她的皮肤有些粗糙，但在稍远的地方是能够看得过去的。她有一个丰满高凸的胸脯，厚嘴唇，整齐的牙齿和一张交趾鸡蛋似的鲜艳的脸庞。她是一个完全的、茁实的母兽——不多也不少。"（《无名的裘德》）<br>
+<b>亚雷的放荡：</b>"他差不多是黑脸膛，两片厚嘴唇"，"眼睛滴溜溜转"，"脸上的曲线表现一团色欲之气"。一见到苔丝，就起了淫欲之心："哈，我真活该呀，多么妙的事！哈，哈，哈！多么肥嫩的一个大妞儿！"（《德伯家的苔丝》）<br>
+<b>其他如：</b>韦狄——"他的脖子又圆又光，好像圆柱。他那身材的下半部，轻浮而不沉着"，"他的举动里那种温雅，很有些特别，好像是一种用讽刺方式表现出来的调戏妇女的勾当"（《还乡》）；露赛妲卖弄风情——"姿态充满放纵"，"她扬起一只手臂撑住她的额头，有些像提香名画里的姿势"（《卡斯特桥市长》）。</p>
+
+<p><b>三、灵性人物：为理想与世俗所困者</b></p>
+<p>这类人物倾向精神与理想，但往往又为世俗观念所累。以克莱为例：他出身牧师家庭，却拒绝继承父业、不愿做牧师，宁愿到乡下去学农，思想不可谓不自由；然而他骨子里仍摆脱不了世俗道德观念——当苔丝在新婚之夜向他坦白过去时，他虽口称"我爱你"，却终究无法接受一个"失贞"的女人，选择了出走巴西。<span class="hl-b">正是这种"思想的自由"与"道德的因袭"之间的撕裂，使克莱成为毁灭苔丝的"追加凶手"。</span></p>
+
+<p><b>四、类型划分的意义</b></p>
+<p>哈代以"灵—肉—灵肉"的框架来塑造人物，其意义有三：<br>
+①<span class="hl-b">深化了对人性的探索</span>——他不满足于善恶二分，而是揭示出人身上理性与本能、神性与兽性的永恒拉扯；<br>
+②<span class="hl-b">为悲剧提供了内在依据</span>——苔丝的悲剧不仅是社会的，也是其自身灵肉冲突的必然结果；<br>
+③<span class="hl-b">体现了哈代的哲学观念</span>——在冥冥中主宰一切的异己力量面前，人无论是倾向灵还是沉溺肉，都难以摆脱悲剧的宿命。</p>
+
+<p><b>五、小结</b></p>
+<p>总之，哈代笔下"灵性、肉性、灵肉性"三类人物的设置，既是他对人性复杂性的深刻把握，也是其小说"自然激情模式"的艺术表现。通过以苔丝为代表的灵肉统一者形象，哈代把社会批判与人性探索完美结合，使《德伯家的苔丝》成为英国现实主义文学的经典之作。</p></div>
+
+<div class="quote"><strong>练完自检：</strong>①是否能在不看答案的情况下，说出每题的<span class="hl-b">分论点标题</span>？②每个分论点下的<span class="hl-b">作品例证</span>是否记得住？③是否写到了"典型""必然性""局限"这类<span class="hl-b">给分关键词</span>？④篇幅是否与分值匹配（论述题一般 800–1500 字）？</div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战1 现实主义特征</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战2 于连</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战3 苔丝</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战4 高老头</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战5 浮士德</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战6 三国异同</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战7 题名</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战8 双城记</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 实战9 哈代人物</span></div>
+<div class="notes" contenteditable="true" data-placeholder="默写：分论点标题 + 例证关键词…"></div></div></section>
+
+<!-- 5 ===== 收尾 ===== -->
+<section class="card"><div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')"><div class="num">5</div><div class="card-title">💡 复盘锦囊 · 通用答题万能句 + 明日预告</div><div class="exam-level">收尾</div><span class="toggle-hint" style="margin-left:auto">点击展开 ▾</span></div><div class="card-body">
+<div class="box"><p><strong>一、可套用的"万能起句"：</strong><br>
+· 定位式：<span class="hl-b">"《××》是××（国）×世纪××主义文学的××（奠基作／代表作／第一部杰作）"</span>；<br>
+· 定性式：<span class="hl-b">"×××是××时期具有××意识的××的典型"</span>；<br>
+· 转折式：<span class="hl-b">"作品一方面……另一方面……"</span>（体现辩证，常用于思想内容题）；<br>
+· 收束式：<span class="hl-b">"这一形象／作品不仅……而且……，具有××的文学史意义，但也不免带有××的局限"</span>。</p></div>
+<div class="box"><p><strong>二、复盘三层法（今晚就做）：</strong><br>
+<b>第一层·骨架：</b>合书默写"时间轴＋国家＋作家＋代表作"，能默出即为过关。<br>
+<b>第二层·血肉：</b>对着第 2 张卡片的考点清单自测，<span class="hl">答不出的立刻回原天 HTML 复习</span>。<br>
+<b>第三层·输出：</b>挑 2 道★题（如于连形象、苔丝悲剧）<span class="hl-b">完整写一遍</span>，比读十遍有效。</p></div>
+<div class="quote"><strong>贯通一句：</strong>第 12–16 天走过了欧洲文学从"理性高扬"到"冷静解剖"的两百年：启蒙作家把文学当作照亮黑暗的火把，现实主义作家把文学当作记录社会的镜子。而论述题要做的，正是<span class="hl-b">用一条论点线把这两百年串起来</span>——观点在前，例证在中，评价在后，层次分明，便是高分。</div>
+<div class="box"><p><strong>⏭ 预告衔接：</strong>下一讲将进入<b>俄国批判现实主义</b>（托尔斯泰《安娜·卡列尼娜》《复活》、陀思妥耶夫斯基《罪与罚》、契诃夫）以及 19 世纪其他国别文学。届时请把"现实主义艺术特征五条"与俄国作家的"心灵辩证法""复调小说"对照记忆。</p></div>
+<div class="study-bar"><span class="chk" onclick="this.classList.toggle('done')">⭕ 万能句</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 复盘三层法</span><span class="chk" onclick="this.classList.toggle('done')">⭕ 写2道完整题</span></div>
+<div class="notes" contenteditable="true" data-placeholder="今晚复盘计划 / 明日待补…"></div></div></section>
+
+<footer class="foot">第17天 · 复盘第12–16天（十八世纪启蒙文学 + 十九世纪现实主义）+ 论述题答题方法<br>建议顺序：复盘总图 → 高频考点清单 → 方法总纲（五步法/三模板）→ 9 道实战演练 → 复盘锦囊</footer>
+</div><script>(function(){var base=15;window.adjustFont=function(step){base=Math.max(13,Math.min(32,base+step));document.documentElement.style.setProperty('--fs-base',base+'px');document.getElementById('fsLabel').textContent=base+'px'};window.resetFont=function(){base=15;document.documentElement.style.setProperty('--fs-base','15px');document.getElementById('fsLabel').textContent='15px'}})();</script>
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body></html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文学史资料 · 学习导航</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+  :root{
+    --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073;
+    --line:#e3dccd; --accent:#9a3b2e; --gold:#c8902a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);
+    font-family:"LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;
+    background-image:radial-gradient(circle at 18% 12%,rgba(200,144,42,.07) 0,transparent 34%),
+                     radial-gradient(circle at 85% 22%,rgba(154,59,46,.06) 0,transparent 38%),
+                     radial-gradient(circle at 60% 88%,rgba(59,107,94,.06) 0,transparent 40%);
+    min-height:100vh;}
+  .wrap{max-width:1060px;margin:0 auto;padding:36px 20px 60px;}
+
+  /* 顶部横幅 */
+  .hero{text-align:center;padding:34px 20px 26px;position:relative;}
+  .hero .seal{display:inline-block;width:52px;height:52px;line-height:52px;text-align:center;
+    border:2.5px solid var(--accent);color:var(--accent);border-radius:10px;
+    font-size:20px;font-weight:700;transform:rotate(-6deg);margin-bottom:14px;
+    box-shadow:inset 0 0 0 3px rgba(154,59,46,.12);user-select:none;}
+  .hero h1{font-size:34px;letter-spacing:4px;font-weight:700;color:var(--ink);}
+  .hero .sub{margin-top:10px;color:var(--sub);font-size:15px;letter-spacing:2px;}
+  .hero .rule{width:220px;height:2px;margin:18px auto 0;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+
+  /* 统计条 */
+  .stats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:26px 0 8px;}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:10px 22px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+  .stat b{display:block;font-size:22px;color:var(--accent);line-height:1.3;}
+  .stat span{font-size:13px;color:var(--sub);letter-spacing:1px;}
+
+  /* 卡片网格 */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:22px;}
+  .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:block;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .18s ease,box-shadow .18s ease;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.10);}
+  .card .edge{position:absolute;left:0;top:0;bottom:0;width:6px;}
+  .card .body{padding:18px 20px 16px 24px;}
+  .card .top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .card .no{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+    font-size:15px;font-weight:700;color:#fff;flex:none;}
+  .card .name{font-size:19px;font-weight:700;letter-spacing:1px;line-height:1.35;}
+  .card .tags{display:flex;gap:6px;margin:8px 0 10px;flex-wrap:wrap;}
+  .card .tag{font-size:12px;padding:2px 10px;border-radius:999px;letter-spacing:1px;}
+  .card .desc{font-size:13.5px;color:var(--sub);line-height:1.7;min-height:44px;}
+  .card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px;
+    padding-top:12px;border-top:1px dashed var(--line);}
+  .card .cnt{font-size:13px;color:var(--sub);}
+  .card .cnt b{color:var(--ink);font-size:16px;margin-right:2px;}
+  .card .go{font-size:14px;font-weight:700;letter-spacing:1px;display:inline-flex;align-items:center;gap:4px;transition:gap .15s;}
+  .card:hover .go{gap:8px;}
+
+  /* 底部说明 */
+  .footnote{text-align:center;color:var(--sub);font-size:13px;margin-top:34px;line-height:1.9;}
+
+  @media (max-width:640px){
+    .hero h1{font-size:26px;letter-spacing:2px;}
+    .card .name{font-size:17px;}
+    .card .desc{min-height:0;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="seal">文<br>学</div>
+    <h1>文学史资料 · 学习导航</h1>
+    <div class="sub">西北大学创意写作 MFA · 备考资料库</div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>16</b><span>份资料</span></div>
+    <div class="stat"><b>2188</b><span>道题</span></div>
+    <div class="stat"><b>100</b><span>天冲刺</span></div>
+    <div class="stat"><b>2</b><span>种题型</span></div>
+  </div>
+
+  <div class="grid" style="margin-top:14px;">
+
+    <!-- daily-question (auto-added) : 全局占满一排强调卡 -->
+    <a class="card" href="每日一题.html" style="grid-column:1 / -1;display:flex;align-items:stretch;background:linear-gradient(120deg,#fffdf8 55%,#f4ecdf);">
+      <div class="edge" style="background:linear-gradient(180deg,#9a3b2e,#c8902a,#3a5a8a,#3b6b5e,#6b5a8a);"></div>
+      <div class="body" style="display:flex;gap:18px;align-items:center;">
+        <div class="no" style="background:#9a3b2e;width:52px;height:52px;font-size:22px;flex:none;">每</div>
+        <div style="flex:1;">
+          <div class="name">每日一题 · 按日定量抽取复习</div>
+          <div class="tags">
+            <span class="tag">同一天固定同一组</span>
+            <span class="tag" style="color:#3a5a8a;">古代 / 现当代 / 外国</span>
+            <span class="tag">科目配额可调</span>
+            <span class="tag" style="color:#9a3b2e;">默认只抽四星及以上</span>
+            <span class="tag">真题答案点开即看</span>
+          </div>
+          <div class="desc">想学就开一组，随你设定每天古代、现当代、外国各抽几题：点击卡片作答，再点开对照解析，日积月累覆盖全题库。同一天回来仍是一样的一组，方便按天推进与回看。</div>
+        </div>
+        <div style="align-self:center;color:#9a3b2e;font-weight:700;white-space:nowrap;">开始今日 →</div>
+      </div>
+    </a>
+<!-- /daily-question -->
+
+    <!-- plan-card (auto-added) -->
+    <a class="card" href="百日冲刺计划.html" style="grid-column:1 / -1;display:flex;align-items:stretch;background:linear-gradient(120deg,#fff8ec 50%,#f6e9d6);">
+      <div class="edge" style="background:linear-gradient(180deg,#9a3b2e,#c8902a);"></div>
+      <div class="body" style="display:flex;gap:18px;align-items:center;">
+        <div class="no" style="background:#9a3b2e;width:52px;height:52px;font-size:22px;flex:none;">百</div>
+        <div style="flex:1;">
+          <div class="name">百日冲刺计划 · 每天勾一下就算完成</div>
+          <div class="tags">
+            <span class="tag">100 天倒计时</span>
+            <span class="tag" style="color:#3b6b5e;">题号精确到章到题</span>
+            <span class="tag" style="color:#6b5a8a;">一键跳题库</span>
+            <span class="tag">进度自动统计</span>
+          </div>
+          <div class="desc">把李凡 1273 题、分章刷题 915 题、煜编 120 章、唐红梅 64 讲、853 卡片和创写理论全部摊到 100 天里。每天打开就是当天的清单，点方块就打勾，自动记进度、算连续天数；每条任务都能直接跳进对应题库的那道题。</div>
+        </div>
+        <div style="align-self:center;color:#9a3b2e;font-weight:700;white-space:nowrap;">开始打卡 →</div>
+      </div>
+    </a>
+<!-- /plan-card -->
+
+    <!-- hulu-card (auto-added) -->
+    <a class="card" href="葫芦背书法.html" style="grid-column:1 / -1;display:flex;align-items:stretch;background:linear-gradient(120deg,#f4f8f5 50%,#e8f0ea);">
+      <div class="edge" style="background:linear-gradient(180deg,#3b6b5e,#c8902a);"></div>
+      <div class="body" style="display:flex;gap:18px;align-items:center;">
+        <div class="no" style="background:#3b6b5e;width:52px;height:52px;font-size:22px;flex:none;">葫</div>
+        <div style="flex:1;">
+          <div class="name">葫芦背书法 · 连背不回头，当场复述 80% 就过</div>
+          <div class="tags">
+            <span class="tag" style="color:#9a3b2e;">前四轮连背</span>
+            <span class="tag" style="color:#3b6b5e;">后四轮滚动</span>
+            <span class="tag">75 天铺到考前</span>
+            <span class="tag" style="color:#6b5a8a;">一键跳题库第 N 题</span>
+          </div>
+          <div class="desc">按「葫芦背书法（新版）」把 647 背诵拆成可执行的遍数：李凡三册＝一本「书」的三条线，八遍连背加滚动，D-75 铺满至 12 月 25 日。每天打开就是当天该背的题号范围，点方块打勾；不当天复习、不第二天复习，靠从头刷遍数实现宏观复习。</div>
+        </div>
+        <div style="align-self:center;color:#3b6b5e;font-weight:700;white-space:nowrap;">开始背诵 →</div>
+      </div>
+    </a>
+<!-- /hulu-card -->
+
+    <!-- pomodoro-card (auto-added) -->
+    <!-- /pomodoro-card -->
+
+    <!-- politics-card (auto-added) -->
+    <a class="card" href="政治_马原政经_真题选择题讲义.html">
+      <div class="edge" style="background:#9a3b2e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#9a3b2e;">政</div>
+          <div class="name">政治<br>马原·政经真题</div>
+        </div>
+        <div class="tags">
+          <span class="tag" style="background:#fbeceb;color:#a8443a;">2022—2024 原卷</span>
+          <span class="tag">19 道政经选择题</span>
+        </div>
+        <div class="desc">从三年政治真题原卷扫描件里逐题挑出政治经济学选择题，点开即见答案、考点定位与干扰项拆解。附考点地图与考前速查表。</div>
+        <div class="foot">
+          <div class="cnt"><b>12</b> 题讲解</div>
+          <div class="go" style="color:#9a3b2e;">进入讲义 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /politics-card -->
+
+    <a class="card" href="李凡1000题_古代文学史-OCR重建版.html">
+      <div class="edge" style="background:#3b6b5e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#3b6b5e;">壹</div>
+          <div class="name">古代文学史<br>李凡 1000 题</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#e3efe9;color:#2c5a4d;">OCR 题库</span></div>
+        <div class="desc">先秦至近代文学史重点全覆盖，点击题目展开/收起答案，适合系统背诵。</div>
+        <div class="foot">
+          <div class="cnt"><b>483</b> 题</div>
+          <div class="go" style="color:#3b6b5e;">进入练习 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="李凡1000题_现当代文学史-OCR重建版.html">
+      <div class="edge" style="background:#3a5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#3a5a8a;">贰</div>
+          <div class="name">现当代文学史<br>李凡 1000 题</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#e3eaf3;color:#2c4a6e;">OCR 题库</span></div>
+        <div class="desc">现当代文学重点全覆盖，答题后对照详解，强化记忆与考点梳理。</div>
+        <div class="foot">
+          <div class="cnt"><b>458</b> 题</div>
+          <div class="go" style="color:#3a5a8a;">进入练习 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="李凡1000题_外国文学史-OCR重建版.html">
+      <div class="edge" style="background:#9a3b2e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#9a3b2e;">叁</div>
+          <div class="name">外国文学史<br>李凡 1000 题</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#f3e5e2;color:#7a2f25;">OCR 题库</span></div>
+        <div class="desc">古代至 20 世纪欧美文学，含亚非文学，考点覆盖完整。</div>
+        <div class="foot">
+          <div class="cnt"><b>332</b> 题</div>
+          <div class="go" style="color:#9a3b2e;">进入练习 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="李凡1000题_文学理论-OCR重建版.html">
+      <div class="edge" style="background:#8a6a1f;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#8a6a1f;">肆</div>
+          <div class="name">文学理论<br>李凡 1000 题</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#f0e8d5;color:#6b4f1d;">OCR 题库</span></div>
+        <div class="desc">马工程 + 童庆炳两大体系，含答题框架、李凡关键词与李凡说批注。</div>
+        <div class="foot">
+          <div class="cnt"><b>298</b> 题</div>
+          <div class="go" style="color:#8a6a1f;">进入练习 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="中国文学史习题_分章刷题.html">
+      <div class="edge" style="background:#4a7a4a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#4a7a4a;">肆</div>
+          <div class="name">中国文学史<br>分章刷题</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#e6efe4;color:#3a5e3a;">分章刷题</span><span class="tag" style="background:#e6efe4;color:#3a5e3a;">9 章</span></div>
+        <div class="desc">先秦 → 秦汉 → 魏晋南北朝 → 隋唐五代 → 两宋辽金 → 元明 → 清 → 近代，按朝代逐章精刷。</div>
+        <div class="foot">
+          <div class="cnt"><b>633</b> 题</div>
+          <div class="go" style="color:#4a7a4a;">进入刷题 →</div>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="外国文学史习题_分章刷题.html">
+      <div class="edge" style="background:#6b5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#6b5a8a;">伍</div>
+          <div class="name">外国文学史<br>分章刷题</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#ebe6f2;color:#4f4268;">分章刷题</span><span class="tag" style="background:#ebe6f2;color:#4f4268;">11 章</span></div>
+        <div class="desc">古代 → 中世纪 → 文艺复兴 → 17/18 世纪 → 19 世纪流派 → 20 世纪 → 现代主义与亚非文学。</div>
+        <div class="foot">
+          <div class="cnt"><b>282</b> 题</div>
+          <div class="go" style="color:#6b5a8a;">进入刷题 →</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- mindmap-nav (auto-added) -->
+    <a class="card" href="思维导图/index.html" style="display:flex;align-items:stretch;">
+      <div class="edge" style="background:linear-gradient(180deg,#9a3b2e,#c8902a,#3b6b5e,#6b5a8a);"></div>
+      <div class="body" style="display:flex;gap:16px;align-items:center;">
+        <div class="no" style="background:#9a3b2e;width:44px;height:44px;font-size:20px;">图</div>
+        <div style="flex:1;">
+          <div class="name">思维导图 · 知识框架全图</div>
+          <div class="tags"><span class="tag">3 科 34 图</span><span class="tag">可交互</span><span class="tag">点击节点直达刷题</span><span class="tag">离线可用</span></div>
+          <div class="desc">古代 / 现当代 / 外国三册交互导图：折叠展开、缩放拖拽，点击带下划线的节点直接跳到对应章节题目。</div>
+        </div>
+        <div style="align-self:center;color:#9a3b2e;font-weight:700;white-space:nowrap;">进入导图 →</div>
+      </div>
+    </a>
+<!-- /mindmap-nav -->
+
+    <!-- lecture-card (auto-added) -->
+    <a class="card" href="唐红梅外国文学知识点串讲.html">
+      <div class="edge" style="background:#3b6b5e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#3b6b5e;">讲</div>
+          <div class="name">唐红梅《外国文学史<br>辅导与习题集》知识点串讲</div>
+        </div>
+        <div class="tags"><span class="tag">11 章 64 讲</span><span class="tag">★高频/☆重点标注</span><span class="tag">可搜索</span><span class="tag">郑版/朱版对照</span></div>
+        <div class="desc">古代至亚非 11 章知识点逐条串讲：★高频考点、☆重要知识点、郑版/朱版课后题对照一应俱全，每章直达对应刷题。</div>
+        <div class="foot">
+          <div class="cnt"><b>64</b> 讲 · <b>12.9</b> 万字</div>
+          <div class="go" style="color:#3b6b5e;">进入串讲 →</div>
+        </div>
+      </div>
+    </a>
+<!-- /lecture-card -->
+
+    <!-- yubian-card (auto-added) -->
+    <a class="card" href="煜编文学考研资料.html">
+      <div class="edge" style="background:#5a4a1f;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#5a4a1f;">煜</div>
+          <div class="name">煜编（落煜）文学<br>考研资料汇编 · 六卷</div>
+        </div>
+        <div class="tags"><span class="tag">先秦秦汉→当代</span><span class="tag">120 章 · 30 万字</span><span class="tag">名词解释条目</span><span class="tag">可搜索</span></div>
+        <div class="desc">落煜编：古代四卷（先秦秦汉、魏晋隋唐、宋元、明清近代）+ 现当代两卷，按朝代顺序逐编逐章复习，配套古代/现当代刷题直达。</div>
+        <div class="foot">
+          <div class="cnt"><b>6</b> 卷 · <b>120</b> 章</div>
+          <div class="go" style="color:#5a4a1f;">进入总览 →</div>
+        </div>
+      </div>
+    </a>
+<!-- /yubian-card -->
+
+    <a class="card" href="853评论写作备考卡.html">
+      <div class="edge" style="background:#b07a2a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#b07a2a;">陆</div>
+          <div class="name">853 评论写作<br>双问备考卡</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#f5ecda;color:#7a5a16;">背诵卡片</span><span class="tag" style="background:#f5ecda;color:#7a5a16;">可搜索</span></div>
+        <div class="desc">评论①理论说明＋评论②文本拆解：9 大理论来源卡、整篇模板与 2025/2026 真题完整示范。</div>
+        <div class="foot">
+          <div class="cnt"><b>28</b> 张卡</div>
+          <div class="go" style="color:#b07a2a;">进入复习 →</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- evidence-cards (auto-added) -->
+    <a class="card" href="答题例证卡.html">
+      <div class="edge" style="background:#3b6b5e;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#3b6b5e;">例</div>
+          <div class="name">答题例证卡<br>论点→例证→分析</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#e4efe9;color:#2f5a4e;">54 张卡</span><span class="tag" style="background:#e4efe9;color:#2f5a4e;">可搜索</span></div>
+        <div class="desc">举不出例子就抄这一句：每张卡先给论点，再给具体例证，最后用一句话把例子钉在论点上，可直接背。另附 12 个核心文本的“一例多用”角度清单。</div>
+        <div class="foot">
+          <div class="cnt"><b>54</b> 张卡 ＋ 12 万能例证</div>
+          <div class="go" style="color:#3b6b5e;">进入复习 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- creative-writing-fictioncard (auto-added) -->
+    <a class="card" href="创意写作_定义与特征_背诵版.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#8a5a2b;">创</div>
+          <div class="name">创意写作<br>定义与特征 · 背诵版</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#f4ece0;color:#6e4a20;">853 创意写作</span><span class="tag" style="background:#f4ece0;color:#6e4a20;">背诵笔记</span><span class="tag" style="background:#f4ece0;color:#6e4a20;">可搜索</span></div>
+        <div class="desc">概念辨析、定义展开（创造性/思维训练/分体写作/批评实践）、六项特征、学科边界与答题模板必备素材，解答定义与特征考题的标准答案库。</div>
+        <div class="foot">
+          <div class="cnt"><b>10</b> 部分 · 近三年真题覆盖</div>
+          <div class="go" style="color:#8a5a2b;">进入背诵 →</div>
+        </div>
+      </div>
+    </a>
+<!-- /creative-writing-fictioncard -->
+
+    <!-- score-647-card (auto-added) -->
+    <a class="card" href="647创意写作基础_答题评分标准.html">
+      <div class="edge" style="background:#1d5b5b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#1d5b5b;">647</div>
+          <div class="name">647 创意写作基础<br>答题评分标准</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#e4efef;color:#155050;">评分标准</span><span class="tag" style="background:#e4efef;color:#155050;">字数自检</span></div>
+        <div class="desc">名词解释 200 字／简答 500 字／论述 600—700 字／材料题 800—1000 字：四题型的分值、采分点、答题骨架与扣分红线，附实时字数自检器。</div>
+        <div class="foot">
+          <div class="cnt"><b>4</b> 题型标准</div>
+          <div class="go" style="color:#1d5b5b;">查看标准 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /score-647-card -->
+
+    <!-- material-q-card (auto-added) -->
+    <a class="card" href="材料题答题方式_AI写作与创意写作.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#8a5a2b;">材料</div>
+          <div class="name">材料题答题方式<br>AI 写作与创意写作</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#f4ece0;color:#6e4a20;">直播听记</span><span class="tag" style="background:#f4ece0;color:#6e4a20;">五步落笔法</span><span class="tag" style="background:#f4ece0;color:#6e4a20;">含全文范例</span></div>
+        <div class="desc">标题主副配、开头「……之问与……之问」句式、三段式正文（现状挑战→倒逼机制→人机共创）、结尾升华＋展望，附 950 字参考全文与 17 项考场自查清单。</div>
+        <div class="foot">
+          <div class="cnt"><b>8</b> 节 · 含参考全文</div>
+          <div class="go" style="color:#8a5a2b;">进入查看 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /material-q-card -->
+
+    <!-- cw-history-3q-card (auto-added) -->
+    <a class="card" href="创意写作简史三题_材料题完整答案.html">
+      <div class="edge" style="background:#7a3a2c;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#7a3a2c;">三题</div>
+          <div class="name">创意写作简史三题<br>材料题完整答案</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#f7e7e2;color:#7a3a2c;">简史必考</span><span class="tag" style="background:#f7e7e2;color:#7a3a2c;">完整成文</span><span class="tag" style="background:#f7e7e2;color:#7a3a2c;">含骨架表</span></div>
+        <div class="desc">美国创意写作五项发展特征／引入我国的四重时代背景／我国发展现状的四层认识。每题「骨架速记表＋800—1000 字完整成文」，附美中两套时间轴与通用落笔框架。</div>
+        <div class="foot">
+          <div class="cnt"><b>3</b> 题 · 均可直接背诵</div>
+          <div class="go" style="color:#7a3a2c;">查看答案 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /cw-history-3q-card -->
+
+    <!-- cw-ch2-lecture-card (auto-added) -->
+    <a class="card" href="创意写作简史_第二章讲义与三题答案.html">
+      <div class="edge" style="background:#1f5f5b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#1f5f5f;">教材</div>
+          <div class="name">创意写作简史<br>第二章讲义 ＋三题答案</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#e4f2f0;color:#1f5f5b;">教材原文</span><span class="tag" style="background:#e4f2f0;color:#1f5f5b;">四条特征</span><span class="tag" style="background:#e4f2f0;color:#1f5f5b;">OCR 漏文已补</span><span class="tag" style="background:#f8e6e0;color:#9d3f2f;">分期辨析</span></div>
+        <div class="desc">20 页扫描件全文提取并逐页对图校对。英语国家发展概略（美／英／澳／新／加时间轴）＋总体特征<b>四条</b>与启示四条＋中国时代语境四条、发展年表与现状四条，附章末三题教材口径完整作答与关键数字速记。<b>美国线已按教材分层标注</b>：1880s 高校英语写作课＝「先声」，1936 年爱荷华 MFA＝「真正发端」，两者别混。</div>
+        <div class="foot">
+          <div class="cnt"><b>3</b> 节 · 3 篇成文</div>
+          <div class="go" style="color:#1f5f5b;">进入背诵 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /cw-ch2-lecture-card -->
+
+    <!-- cw-ch3-methodology-card (auto-added) -->
+    <a class="card" href="创意写作方法论_第三章_背诵版.html">
+      <div class="edge" style="background:#8a5a2b;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#8a5a2b;">方法</div>
+          <div class="name">创意写作方法论<br>第三章 · 背诵版</div>
+        </div>
+        <div class="tags"><span class="tag" style="background:#f4ece0;color:#6e4a20;">853 创意写作</span><span class="tag" style="background:#f4ece0;color:#6e4a20;">研究法·教学法·学习法</span><span class="tag" style="background:#f4ece0;color:#6e4a20;">含课堂时间戳</span></div>
+        <div class="desc">研究法（普遍性＋独立性三表现＋「向一切不可能挑战」＋交叉研究三方向）、教学法（讲授式／研讨会式／工坊制对比，工坊制来源·理论·组织·独特性）、学习法（四力养成、要点三递进、写作障碍四类型）。附两道重点题答题骨架、口诀速记与考前 10 分钟速览，全部按讲义原文整理并标注录音时间戳。</div>
+        <div class="foot">
+          <div class="cnt"><b>5</b> 节 · 含重点题骨架</div>
+          <div class="go" style="color:#8a5a2b;">进入背诵 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /cw-ch3-methodology-card -->
+
+    
+    <!-- xhs-notes-card -->
+    <a class="card" href="文学史考研笔记整理_纯文字版.html">
+      <div class="edge" style="background:#6b5a8a;"></div>
+      <div class="body">
+        <div class="top">
+          <div class="no" style="background:#6b5a8a;">110</div>
+          <div class="name">文学史考研笔记整理<br>每日一本 ＋ 100 道真题</div>
+        </div>
+        <div class="tags">
+          <span class="tag" style="background:#ece8f5;color:#4b3f75;">110 篇</span>
+          <span class="tag" style="background:#ece8f5;color:#4b3f75;">11.3 万字</span>
+          <span class="tag" style="background:#ece8f5;color:#4b3f75;">纯文字 · 无配图</span>
+          <span class="tag" style="background:#ece8f5;color:#4b3f75;">全文检索</span>
+        </div>
+        <div class="desc">「文学史每日一本」9 篇 ＋「讲解 100 道文学史考研真题」101 篇，正文经版面还原提取、保留标题层级。顶部可按系列切换，支持按书名／考点／题目／正文关键词全文检索，每篇附原帖链接。</div>
+        <div class="foot">
+          <div class="cnt"><b>110</b> 篇 · 11.3 万字</div>
+          <div class="go" style="color:#6b5a8a;">进入速览 →</div>
+        </div>
+      </div>
+    </a>
+    <!-- /xhs-notes-card -->
+
+    <!-- daibei-card (auto-added) -->
+    <a class="card" href="带背/index.html" style="grid-column:1 / -1;display:flex;align-items:stretch;background:linear-gradient(120deg,#eef7f2 52%,#dff0e7);">
+      <div class="edge" style="background:linear-gradient(180deg,#3b6b5e,#c8902a,#9a3b2e,#6b5a8a);"></div>
+      <div class="body" style="display:flex;gap:18px;align-items:center;">
+        <div class="no" style="background:linear-gradient(135deg,#3b6b5e,#2c5a4d);width:52px;height:52px;font-size:22px;flex:none;">背</div>
+        <div style="flex:1;">
+          <div class="name">外国文学带背 · 逐日索引</div>
+          <div class="tags">
+            <span class="tag" style="background:#e3efe9;color:#2c5a4d;">10 份带背页</span>
+            <span class="tag" style="background:#e3efe9;color:#2c5a4d;">第 19—28 天</span>
+            <span class="tag" style="background:#e3efe9;color:#2c5a4d;">206 个打卡点</span>
+            <span class="tag" style="background:#f7e6e2;color:#9a3b2e;">❗重点标记</span>
+            <span class="tag" style="background:#e3efe9;color:#2c5a4d;">西大真题已并入</span>
+          </div>
+          <div class="desc">微信群「外国文学带背」每日提纲整理成页：以老师的 PPT 为骨架逐张识读，再并入分章刷题、唐红梅串讲与西大历年真题原答。老师的 ❗／❗❗ 已转成卡片等级，真题命中处单列「真题回顾」「真题原答」区块，每页带打卡清单与字号缩放。</div>
+        </div>
+        <div style="align-self:center;color:#3b6b5e;font-weight:700;white-space:nowrap;">进入带背 →</div>
+      </div>
+    </a>
+    <!-- /daibei-card -->
+
+  </div>
+
+  <div class="footnote">
+    点击卡片即可进入对应资料 · 每个页面顶栏都有「← 返回导航」按钮，随时可以回来切换<br>
+    资料目录：C:\Users\xtt20\Downloads\文学史资料
+  </div>
+
+</div>
+</body>
+</html>

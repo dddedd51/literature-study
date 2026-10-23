@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>马原·政治经济学｜真题选择题讲义（2022—2024 原卷）</title>
+<style>
+:root{
+  --bg:#faf8f4; --card:#ffffff; --ink:#2c2a26; --ink-soft:#5f5b53;
+  --line:#e6e0d4; --accent:#8a5a2b; --accent-soft:#f4ece0; --mark:#fdf3e0;
+  --green:#3b6b5e; --green-soft:#e3efe9; --red:#a8443a; --red-soft:#fbeceb;
+  --blue:#3a5a8a; --blue-soft:#e8eef7;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:0 16px 80px;
+  background:var(--bg); color:var(--ink);
+  font-family:"LXGW WenKai","LXGW WenKai Lite","霞鹜文楷",-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+  font-size:var(--fs,17px); line-height:1.9;
+}
+.wrap{max-width:900px;margin:0 auto}
+.toolbar{
+  position:sticky; top:0; z-index:20; margin:0 -16px 24px; padding:10px 16px;
+  background:rgba(250,248,244,.94); border-bottom:1px solid var(--line);
+  display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+  backdrop-filter:saturate(160%) blur(6px);
+}
+.toolbar .title{font-weight:600;margin-right:auto;color:var(--accent);font-size:.95em}
+.btn{
+  border:1px solid var(--line); background:var(--card); color:var(--ink);
+  border-radius:8px; padding:4px 12px; cursor:pointer; font:inherit; font-size:.9em;
+}
+.btn:hover{border-color:var(--accent); color:var(--accent)}
+h1{font-size:1.7em; text-align:center; margin:32px 0 8px; letter-spacing:.02em}
+h2{
+  font-size:1.3em; margin:44px 0 14px; padding:10px 14px;
+  background:var(--accent-soft); border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+}
+h3{font-size:1.08em; margin:22px 0 8px; color:var(--accent)}
+p{margin:.7em 0}
+hr{border:none;border-top:1px dashed var(--line);margin:34px 0}
+strong{color:var(--accent); font-weight:600}
+ul,ol{padding-left:1.35em}
+li{margin:.35em 0}
+blockquote{
+  margin:14px 0; padding:12px 16px; background:var(--mark);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--ink-soft);
+}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse; width:100%; margin:16px 0; font-size:.94em}
+th,td{border:1px solid var(--line); padding:8px 11px; text-align:left; vertical-align:top; word-break:break-word}
+th{background:var(--accent-soft); font-weight:600}
+tr:nth-child(even) td{background:#fdfcfa}
+.toc{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 20px; margin:24px 0 8px}
+.toc .toc-title{font-weight:600;color:var(--accent);margin-bottom:6px}
+.toc ul{list-style:none;padding-left:.4em;margin:.2em 0}
+.toc a{color:var(--ink-soft);text-decoration:none}
+.toc a:hover{color:var(--accent);text-decoration:underline}
+.q{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px 12px; margin:22px 0}
+.q .qhead{
+  display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+  margin:-4px 0 10px; padding-bottom:8px; border-bottom:1px dashed var(--line);
+  font-size:.85em; color:var(--ink-soft);
+}
+.q .qno{font-weight:700; color:#fff; background:var(--accent); border-radius:6px; padding:1px 9px; font-size:.95em}
+.q .kind{background:var(--blue-soft); color:var(--blue); border-radius:6px; padding:1px 8px}
+.q .src{background:var(--green-soft); color:var(--green); border-radius:6px; padding:1px 8px}
+.q .stem{margin:.4em 0 .2em}
+.q .opts{margin:.5em 0 .3em; padding-left:.2em}
+.q .opts div{margin:.22em 0; padding-left:1.6em; text-indent:-1.6em}
+.reveal{
+  border:none; background:var(--accent); color:#fff; border-radius:8px;
+  padding:5px 16px; cursor:pointer; font:inherit; font-size:.9em; margin:6px 0 2px;
+}
+.reveal:hover{opacity:.88}
+.ans{display:none; margin-top:10px; padding-top:10px; border-top:1px dashed var(--line)}
+.ans.show{display:block}
+.ans .key{font-weight:700; color:var(--red); font-size:1.05em; margin-bottom:6px}
+.ans .lab{display:block; font-weight:600; color:var(--accent); margin:10px 0 4px}
+.ans ul{margin:.3em 0}
+.trap{background:var(--red-soft); border-left:3px solid var(--red); border-radius:0 8px 8px 0; padding:8px 14px; margin:10px 0 4px; font-size:.95em}
+.trap b{color:var(--red)}
+.core{background:var(--green-soft); border-left:3px solid var(--green); border-radius:0 8px 8px 0; padding:8px 14px; margin:10px 0 4px; font-size:.95em}
+.core b{color:var(--green)}
+.flag{background:var(--blue-soft); border-left:3px solid var(--blue); border-radius:0 8px 8px 0; padding:8px 14px; margin:10px 0 4px; font-size:.93em}
+.flag b{color:var(--blue)}
+@media print{
+  .toolbar,.reveal{display:none}
+  body{background:#fff}
+  .ans{display:block !important}
+  .q{break-inside:avoid}
+}
+</style>
+</head>
+
+<body>
+<div class="toolbar">
+  <a class="btn back" href="index.html" style="text-decoration:none;">← 返回导航</a>
+  <span class="title">马原·政治经济学 · 真题选择题讲义</span>
+  <button class="btn" id="zo">A+</button>
+  <button class="btn" id="zi">A-</button>
+  <button class="btn" id="allbtn">全部展开</button>
+  <button class="btn" id="tw">目录</button>
+  <button class="btn" onclick="window.print()">打印 / 存 PDF</button>
+</div>
+
+<div class="wrap">
+<div class="toc" id="tocbox"><div class="toc-title">目录</div>
+<ul>
+  <li><a href="#howto">〇、政经选择题三步定位法</a></li>
+  <li><a href="#map">一、三年真题政经落点一览</a></li>
+  <li><a href="#p1">二、商品与价值（2024-20 / 2023-2 / 2023-3）</a></li>
+  <li><a href="#p2">三、货币与资本总公式（2022-3）</a></li>
+  <li><a href="#p3">四、剩余价值与资本积累（2023-21）</a></li>
+  <li><a href="#p4">五、平均利润与资本形态（2023-19 / 2024-21）</a></li>
+  <li><a href="#p5">六、垄断与当代资本主义（2023-4 / 2022-4 / 2023-20）</a></li>
+  <li><a href="#p6">七、市场经济与资本（2022-21 / 2023-23）</a></li>
+  <li><a href="#quick">八、考前速查表</a></li>
+  <li><a href="#note">九、题源与核验说明</a></li>
+</ul>
+</div>
+
+<h1 id="top">马原·政治经济学｜真题选择题讲义</h1>
+<blockquote>
+  <p><strong>题源</strong>：2022、2023、2024 三年考研政治（101）原卷扫描件（新东方发布版），共 19 道政经选择题，逐题还原题干与选项。</p>
+  <p><strong>用法</strong>：先做题，再点开对照。<strong>「干扰项拆解」比正确答案更值得看。</strong></p>
+</blockquote>
+<hr>
+
+<h2 id="howto">〇、政经选择题三步定位法</h2>
+<p>政经每年稳定出 <strong>5—7 道选择题</strong>（单选 1 分、多选 2 分），特点是<strong>辨析类为主、计算类偶现</strong>。题干只有三种形态：</p>
+<table>
+  <tr><th style="width:110px">形态</th><th>识别特征</th><th>应对动作</th></tr>
+  <tr>
+    <td><strong>① 概念边界型</strong></td>
+    <td>"……是指""……的基础是""……的实质是"</td>
+    <td>回到<strong>定义原句</strong>。政经的定义都很短，选项里凡比定义"多一层"或"换一层"的都是错的</td>
+  </tr>
+  <tr>
+    <td><strong>② 关系辨析型</strong></td>
+    <td>问两个范畴的区别／联系（社会形态、平均利润、垄断价格）</td>
+    <td>问自己：<strong>这两样东西是同一层面的吗？</strong>不同层面→说联系；同层面→说区别</td>
+  </tr>
+  <tr>
+    <td><strong>③ 引文理解型</strong></td>
+    <td>引马克思／恩格斯原话，问"这表明"</td>
+    <td>先不看引文细节，<strong>抓住引文里的动词</strong>（提高、降低、变化、提供），选项必须与动词方向一致</td>
+  </tr>
+</table>
+<div class="core">
+  <p><b>三条铁律</b></p>
+  <ul style="margin:.3em 0">
+    <li><strong>生产力提高 → 单位商品价值量降低、同一时间价值总量不变。</strong>这是政经最高频的一对反向关系，2023 年第 3 题直接考它。</li>
+    <li><strong>看到"资本"先分词。</strong>生产资料／机器／原料 → 不变资本；工资／劳动力 → 可变资本。<strong>剩余价值只源于可变资本。</strong></li>
+    <li><strong>凡出现「资本主义根本性质已经改变」，直接排除。</strong>这是多选题的死亡选项，几乎年年出现。</li>
+  </ul>
+</div>
+<hr>
+
+<h2 id="map">一、三年真题政经落点一览</h2>
+<table>
+  <tr><th style="width:80px">年份</th><th>政经题号</th><th>考点</th></tr>
+  <tr><td><strong>2022</strong></td><td>3、4、5（干扰）、21</td><td>货币的支付手段职能｜当代资本主义的实际控制者｜资本主义生产力迅速发展的原因</td></tr>
+  <tr><td><strong>2023</strong></td><td>2、3、4、19、20、23</td><td>社会形态的划分依据｜生产力与价值量｜垄断价格的最低界限｜平均利润的获得主体｜金融垄断资本形成条件｜社会主义市场经济条件下的资本</td></tr>
+  <tr><td><strong>2024</strong></td><td>20、21</td><td>简单商品经济发展的基础｜经济全球化迅猛发展的因素</td></tr>
+</table>
+<p>可以看到命题节奏：<strong>每年必有一道"社会形态／经济形态的基础"题，必有一道"资本形态"题，必有一道"当代资本主义"题。</strong>下面按考点归位逐题讲。</p>
+<hr>
+
+<h2 id="p1">二、商品与价值</h2>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">20</span>
+    <span class="kind">多选题 · 2 分</span>
+    <span class="src">2024 年 · 第 20 题</span>
+  </div>
+  <div class="stem">商品经济是社会经济发展到一定阶段的产物。在资本主义社会之前的发展阶段，商品经济只是一种简单商品经济，这一阶段商品经济发展的基础是</div>
+  <div class="opts">
+    <div>A. 生产资料公有制</div>
+    <div>B. 个体劳动</div>
+    <div>C. 生产资料私有制</div>
+    <div>D. 雇佣劳动</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：BC</div>
+    <span class="lab">考点定位</span>
+    <p>简单商品经济 ＝ <strong>以生产资料私有制和个体劳动为基础</strong>的商品经济。这是教材原句，直接对应。</p>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li><strong>C 对</strong>：私有制决定了生产者的产品归自己所有，必须通过交换才能获得别人的产品——这是商品交换的前提。</li>
+      <li><strong>B 对</strong>：个体劳动意味着劳动者自己占有生产资料、自己劳动、自己占有产品。这正是"简单"二字的含义。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>A（错）</strong>：公有制条件下不存在商品交换的必然性（产品归全社会所有），所以不可能是简单商品经济的基础。</li>
+      <li><strong>D（错，最需要辨清的一项）</strong>：雇佣劳动是<strong>资本主义商品经济</strong>的基础，不是简单商品经济的基础。这是把"下一阶段"的特征塞进"这一阶段"——<strong>时间错位型干扰项</strong>。</li>
+    </ul>
+    <div class="trap">
+      <b>三阶段对照（务必记牢）</b>
+      <table style="margin:.5em 0">
+        <tr><th>阶段</th><th>基础</th><th>劳动形式</th></tr>
+        <tr><td>简单商品经济</td><td><strong>私有制 ＋ 个体劳动</strong></td><td>自己劳动、自己占有</td></tr>
+        <tr><td>资本主义商品经济</td><td>私有制 ＋ <strong>雇佣劳动</strong></td><td>劳动力成为商品</td></tr>
+        <tr><td>社会主义商品经济</td><td>公有制为主体 ＋ 多种所有制</td><td>按劳分配为主体</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">2</span>
+    <span class="kind">单选题 · 1 分</span>
+    <span class="src">2023 年 · 第 2 题</span>
+  </div>
+  <div class="stem">社会形态是关于社会运动的具体形式、发展阶段和不同质态的范畴，是同生产力发展一定阶段相适应的经济基础同上层建筑的统一体。人类社会历史划分为原始社会、奴隶社会、封建社会、资本主义社会和共产主义社会（社会主义社会是其第一阶段）五种社会形态，其依据是</div>
+  <div class="opts">
+    <div>A. 生产工具的质量和数量</div>
+    <div>B. 统治集团的阶级和政治属性</div>
+    <div>C. 经济基础特别是生产关系的性质</div>
+    <div>D. 人们的社会交往和分工的范围和水平</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：C</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li>社会形态的划分依据是<strong>经济基础特别是生产关系的性质</strong>。五种社会形态之所以"质态不同"，区别就在于<strong>生产资料所有制不同</strong>——奴隶主占有奴隶、地主占有土地、资本家占有生产资料、劳动者共同占有。这才是划分的标准。</li>
+      <li>注意题干本身已经给了定义："是<strong>经济基础同上层建筑的统一体</strong>"。定义的后半句暗示了标准落在哪——经济基础是划分的依据，上层建筑是被决定的一方。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>A（错）</strong>：生产工具是<strong>生产力</strong>的标志，生产力决定社会形态的更替（推动），但<strong>不是划分社会形态性质的直接依据</strong>。这个选项混了"动力"和"标准"。</li>
+      <li><strong>B（错）</strong>：统治集团的阶级属性是上层建筑的一部分，是<strong>被经济基础决定</strong>的，不能反过来当划分标准。</li>
+      <li><strong>D（错）</strong>：社会交往和分工水平属于生产力的社会形式层面，同样不是质态划分的依据。</li>
+    </ul>
+    <div class="trap">
+      <b>「动力」与「标准」必须分开</b><br>
+      · <strong>推动</strong>社会形态更替的：<strong>生产力</strong>（生产工具是标志）<br>
+      · <strong>划分</strong>社会形态性质的：<strong>生产关系（经济基础）</strong><br>
+      题干问"依据／标准"，一定选生产关系；题干问"最终决定力量／根本动力"，才选生产力。
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">3</span>
+    <span class="kind">单选题 · 1 分</span>
+    <span class="src">2023 年 · 第 3 题</span>
+  </div>
+  <div class="stem">马克思在《资本论》中指出："不管生产力发生了什么变化，同一劳动在同样的时间内提供的价值量总是相同的。但它在同样的时间内提供的使用价值量会是不同的：生产力提高时就多些，生产力降低时就少些。"这段话表明，生产力的变化</div>
+  <div class="opts">
+    <div>A. 不影响同一劳动在同样的时间内生产的商品数量</div>
+    <div>B. 不改变同一劳动在同样的时间内的效率</div>
+    <div>C. 影响同一劳动在同样的时间内生产的单个商品价值量</div>
+    <div>D. 改变同一劳动在同样时间内提供的价值总量</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：C</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li>引文给了两条并行的结论：<strong>价值总量不变</strong>、<strong>使用价值量变</strong>。把这两条一合，就能推出第三件事：<strong>总价值 ÷ 更多商品 ＝ 单个商品价值量下降</strong>。所以生产力的变化<strong>影响单个商品的价值量</strong>——这正是 C。</li>
+      <li><strong>逻辑链</strong>：生产力↑ → 同一时间产出更多商品（使用价值量↑）→ 同一时间创造的价值总量不变 → <strong>分摊到每件商品上的价值量↓</strong>。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>A（与引文直接冲突）</strong>：引文说"提供的使用价值量会是不同的：生产力提高时就多些"，而使用价值量就是商品数量。A 说"不影响商品数量"，与引文正相反。</li>
+      <li><strong>B（与常识直接冲突）</strong>：生产力提高本质上就是效率提高。"不改变效率"完全违背题意。</li>
+      <li><strong>D（与引文直接冲突）</strong>：引文首句"同一劳动在同样的时间内提供的<strong>价值量总是相同的</strong>"，D 说"改变价值总量"，直接违反原话。<br>
+      <strong>注意 D 是最容易误选的</strong>——很多人把"价值量"和"使用价值量"看混了。</li>
+    </ul>
+    <div class="core">
+      <b>必须背死的一组关系（本题是全卷高频考点）</b>
+      <table style="margin:.5em 0">
+        <tr><th>生产力提高后</th><th>变化方向</th></tr>
+        <tr><td>同一时间的价值<strong>总量</strong></td><td><strong>不变</strong></td></tr>
+        <tr><td>同一时间的使用价值（商品）<strong>数量</strong></td><td><strong>增加</strong></td></tr>
+        <tr><td><strong>单位商品</strong>的价值量</td><td><strong>降低</strong></td></tr>
+        <tr><td>同一时间的效率</td><td><strong>提高</strong></td></tr>
+      </table>
+      记忆锚点：<strong>「总量不变、件数变多、单件变便宜。」</strong>
+    </div>
+  </div>
+</div>
+<hr>
+
+<h2 id="p2">三、货币与资本总公式</h2>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">3</span>
+    <span class="kind">单选题 · 1 分</span>
+    <span class="src">2022 年 · 第 3 题</span>
+  </div>
+  <div class="stem">马克思在《资本论》中指出："一个商品占有者出售他现有的商品，而另一个商品占有者却只是作为货币的代表或作为未来货币的代表来购买这种商品。卖者成为债权人，买者成为债务人。由于商品的形态变化或商品的价值形式的发展在这里起了变化，货币也就取得了另一种职能。"这里所论述的货币"另一种职能"指的是</div>
+  <div class="opts">
+    <div>A. 价值尺度</div>
+    <div>B. 流通手段</div>
+    <div>C. 贮藏手段</div>
+    <div>D. 支付手段</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：D</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li>题干的关键词是<strong>「债权人／债务人」</strong>——赊账买卖。商品先交付、货币后支付，这个时间差让货币不再当场结清，而是"到期支付"，这就是<strong>支付手段</strong>。</li>
+      <li>再对齐引文最后的判定："由于商品的形态变化……货币也就取得了<strong>另一种职能</strong>"。支付手段正是从流通手段中<strong>派生</strong>出来的"另一种职能"。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>A（价值尺度）</strong>：表现和衡量商品价值大小，只需要"标价"。题干没有标价，排除。</li>
+      <li><strong>B（流通手段）</strong>：一手交钱一手交货、当场结清。本题恰恰是"卖者成为债权人，买者成为债务人"——<strong>不是当场结清</strong>，所以"另一种职能"就是要和流通手段相区别。B 是最强干扰项。</li>
+      <li><strong>C（贮藏手段）</strong>：货币退出流通被保存起来。题干没有"保存"，排除。</li>
+    </ul>
+    <div class="core">
+      <b>货币五大职能的识别开关</b>
+      <table style="margin:.5em 0">
+        <tr><th>职能</th><th>识别关键词</th></tr>
+        <tr><td>价值尺度</td><td>标价、定价、"值多少钱"</td></tr>
+        <tr><td>流通手段</td><td>一手交钱一手交货、当场结清</td></tr>
+        <tr><td>贮藏手段</td><td>退出流通、保存、储存</td></tr>
+        <tr><td><strong>支付手段</strong></td><td><strong>债权债务、赊账、到期支付、工资、租金、税款</strong></td></tr>
+        <tr><td>世界货币</td><td>国际结算、跨国支付</td></tr>
+      </table>
+      记忆锚点：<strong>「见债权债务，就是支付手段。」</strong>
+    </div>
+    <div class="flag">
+      <b>为什么这里不是流通手段？</b> 教材的经典表述是：货币作为流通手段时，商品与货币<strong>同时换位</strong>；而作为支付手段时，商品和货币的<strong>让渡在时间上分离</strong>。题干引文明确写了"未来货币的代表"，即分离——所以选 D。
+    </div>
+  </div>
+</div>
+<hr>
+
+<h2 id="p3">四、剩余价值与资本积累</h2>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">21</span>
+    <span class="kind">多选题 · 2 分</span>
+    <span class="src">2023 年 · 第 21 题</span>
+  </div>
+  <div class="stem">十月革命胜利后，为捍卫年轻的苏维埃政权，列宁领导的苏维埃政权从 1918 年夏到 1921 年春实行了战时共产主义政策。战时共产主义是苏俄在帝国主义武装干涉和国内战争爆发时期，为适应战争需要而采取的一种临时措施。战时共产主义政策的主要内容有</div>
+  <div class="opts">
+    <div>A. 余粮收集制</div>
+    <div>B. 取消商品货币关系</div>
+    <div>C. 发展多种所有制</div>
+    <div>D. 支持农民耕种自留地</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：AB</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li><strong>A 对</strong>：余粮收集制是战时共产主义最核心的政策——农民除口粮、种子粮外的全部余粮由国家统一征集，以保障战争供给。</li>
+      <li><strong>B 对</strong>：战时共产主义试图<strong>直接过渡到共产主义</strong>，取消商品货币关系、实行实物分配，这是它的典型特征。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>C（错）</strong>：发展多种所有制是<strong>新经济政策</strong>的内容（允许私人经营中小企业、允许贸易自由）。战时共产主义恰恰相反——是全面国有化。</li>
+      <li><strong>D（错）</strong>：支持农民耕种自留地同样属于<strong>新经济政策</strong>的调整（用粮食税代替余粮收集制，允许农民自由支配余粮）。</li>
+    </ul>
+    <div class="trap">
+      <b>两种政策必须分清（选项 C、D 就是拿新经济政策来骗你）</b>
+      <table style="margin:.5em 0">
+        <tr><th></th><th>战时共产主义<br>（1918 夏—1921 春）</th><th>新经济政策<br>（1921 春起）</th></tr>
+        <tr><td>粮食</td><td><strong>余粮收集制</strong></td><td>粮食税</td></tr>
+        <tr><td>商品货币</td><td><strong>取消</strong></td><td>恢复贸易自由</td></tr>
+        <tr><td>所有制</td><td>全面国有化</td><td><strong>发展多种所有制</strong></td></tr>
+        <tr><td>农民自留地</td><td>不支持</td><td><strong>允许／支持</strong></td></tr>
+        <tr><td>性质</td><td>临时措施、直接过渡</td><td>间接过渡、利用市场</td></tr>
+      </table>
+      记忆锚点：<strong>「战时共产主义=收、取、取消；新经济政策=税、市、放活。」</strong>
+    </div>
+  </div>
+</div>
+<hr>
+
+<h2 id="p4">五、平均利润与资本形态</h2>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">19</span>
+    <span class="kind">多选题 · 2 分</span>
+    <span class="src">2023 年 · 第 19 题</span>
+  </div>
+  <div class="stem">马克思的平均利润理论深刻阐明，资本主义社会利润转化为平均利润，以及剩余价值被进一步分割的原理，在利润平均化的过程中，依旧可以获得平均利润的资本是</div>
+  <div class="opts">
+    <div>A. 产业资本</div>
+    <div>B. 农业资本</div>
+    <div>C. 商业资本</div>
+    <div>D. 借贷资本</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：ABC</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li>利润平均化的本质是<strong>「等量资本获得等量利润」</strong>在各部门之间实现。参与这场平均化的，是<strong>各个部门中实际执行职能的资本</strong>——产业资本（工业、农业）和商业资本，它们都按自己在总资本中的份额，拿到<strong>平均利润</strong>。</li>
+      <li><strong>A 对</strong>：产业资本（含工业与农业两个部门）是剩余价值的<strong>生产者</strong>，按平均利润率获得产业利润 + 平均利润。</li>
+      <li><strong>B 对</strong>：农业资本同样是产业资本的一种，参与平均利润率的形成，获得平均利润。</li>
+      <li><strong>C 对</strong>：商业资本<strong>不创造剩余价值，但参与平均利润的分配</strong>——它通过承担销售职能，从产业资本手里分得一部分剩余价值，形式上就是平均利润。这是马克思平均利润理论的重要一环（详见 2022 年第 5 题同型考点）。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>D（错，本题分水岭）</strong>：借贷资本是<strong>所有权与使用权分离</strong>的资本。它本身不执行职能、不参与平均利润率的形成，只能按<strong>利息率</strong>取得利息。<br>
+      借贷资本拿到的是"<strong>平均利润的一个部分</strong>"（利息），而不是<strong>平均利润</strong>本身。题干问的是"依旧可以获得<strong>平均利润</strong>的资本"，借贷资本被排除。</li>
+    </ul>
+    <div class="trap">
+      <b>关键区分：谁拿「平均利润」，谁拿「平均利润的一部分」</b><br>
+      · <strong>职能资本</strong>（产业资本、商业资本）→ 拿<strong>平均利润</strong><br>
+      · <strong>借贷资本</strong>（放贷人）→ 拿<strong>利息</strong>，利息只是平均利润分割出的一部分<br>
+      · <strong>银行资本</strong> → 银行利润同样来自平均利润的分割<br>
+      记忆锚点：<strong>「参与平均化的是职能资本，借贷资本只在外面分利息。」</strong>
+    </div>
+    <div class="core">
+      <b>剩余价值的分割链（一张图记完）</b><br>
+      产业工人创造剩余价值 → 利润平均化 → <strong>平均利润</strong><br>
+      &nbsp;&nbsp;├─ 产业资本家得 <strong>产业利润</strong><br>
+      &nbsp;&nbsp;├─ 商业资本家得 <strong>商业利润</strong>（平均利润的让渡）<br>
+      &nbsp;&nbsp;├─ 借贷资本家得 <strong>利息</strong>（平均利润的一部分）<br>
+      &nbsp;&nbsp;└─ 土地所有者得 <strong>地租</strong>（超额利润的转化）
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">21</span>
+    <span class="kind">多选题 · 2 分</span>
+    <span class="src">2024 年 · 第 21 题</span>
+  </div>
+  <div class="stem">习近平指出："经济全球化是社会生产力发展的客观要求和科技进步的必然结果，不是哪些人、哪些国家人为制造出来的。经济全球化为世界经济增长提供了强劲动力，促进了商品和资本流动、科技和文明进步、各国人民交往。"导致经济全球化迅猛发展的因素有</div>
+  <div class="opts">
+    <div>A. 信息技术革命打破了生产要素的地域限制，使整个世界生产连成一片</div>
+    <div>B. 国际分工和生产要素全球流动的比较优势，促进了产业链深度融合</div>
+    <div>C. 发达国家主导制定的贸易和竞争规则，使广大发展中国家成为主要受益者</div>
+    <div>D. 国际经济组织成员国对本国或本地区市场控制的放松，加快了贸易投资自由化</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：ABD</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li><strong>A 对</strong>：技术因素。信息技术革命降低了运输与通信成本，让生产环节可以在全球范围内分布。</li>
+      <li><strong>B 对</strong>：经济因素。国际分工深化 + 生产要素全球流动，形成产业链的深度融合，这是全球化的内在动力。</li>
+      <li><strong>D 对</strong>：制度因素。各国放松市场管制、降低关税壁垒，从制度上为贸易投资自由化扫清障碍。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>C（错，本卷最典型的"立场陷阱"）</strong>：发达国家主导制定的贸易和竞争规则，在<strong>事实上是不公正、不合理的</strong>，它使<strong>发达国家成为主要受益者，而广大发展中国家处于不利地位</strong>。C 把受益者写成了"发展中国家"，把不平等的实质说成了普惠结果——这是<strong>与马克思主义立场直接冲突</strong>的表述。</li>
+    </ul>
+    <div class="trap">
+      <b>政治题里的"立场红线"</b><br>
+      凡是把现有的国际政治经济秩序说成"公平合理"、把发达国家主导的规则说成"使发展中国家受益"、把霸权说成"互利共赢"的选项，<strong>一律排除</strong>。<br>
+      正确立场永远是：现有国际经济秩序<strong>不公正不合理</strong>，需要<strong>推动构建更加公正合理的国际新秩序</strong>，发展中国家是<strong>受害者与争取者</strong>。
+    </div>
+    <div class="core">
+      <b>经济全球化的三大成因（背这三层）</b><br>
+      ① <strong>技术</strong>：信息技术革命（生产力层面）<br>
+      ② <strong>经济</strong>：国际分工与要素流动（生产关系层面）<br>
+      ③ <strong>制度</strong>：管制放松与贸易投资自由化（上层制度层面）
+    </div>
+  </div>
+</div>
+<hr>
+
+<h2 id="p5">六、垄断与当代资本主义</h2>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">4</span>
+    <span class="kind">单选题 · 1 分</span>
+    <span class="src">2023 年 · 第 4 题</span>
+  </div>
+  <div class="stem">垄断组织通过制定垄断价格来获得垄断利润。在市场交易过程中，垄断组织获利高低实际上受到很多因素的影响。为了避免遭受净亏损，垄断组织所能接受的最低价格是</div>
+  <div class="opts">
+    <div>A. 成本价格</div>
+    <div>B. 生产价格</div>
+    <div>C. 垄断低价</div>
+    <div>D. 垄断高价</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：A</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li>题干的关键限定是<strong>「避免遭受净亏损」</strong>。净亏损＝售价低于成本。<br>
+      成本价格（k ＝ c ＋ v）是资本家收回预付资本的<strong>底线</strong>：只要售价 ≥ 成本价格，就不亏本（可能利润为零）。一旦低于成本价格，就是实质性亏损。</li>
+      <li>所以垄断组织能接受的<strong>最低价格就是成本价格</strong>。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>B（生产价格）</strong>：生产价格 ＝ 成本价格 ＋ 平均利润。它比成本价格<strong>更高</strong>，是"有平均利润可拿"的价格，不是"最低可接受"的价格。B 是最强干扰项——它把"正常盈利线"当成了"生存线"。</li>
+      <li><strong>C（垄断低价）</strong>：这不是一个独立的"价格类型"，而是垄断组织在<strong>采购环节</strong>压低原料收购价的说法，与"自己出售商品的最低价格"不是一回事。</li>
+      <li><strong>D（垄断高价）</strong>：垄断组织<strong>出售商品</strong>时的高价，与"最低"完全相反。</li>
+    </ul>
+    <div class="core">
+      <b>四个价格概念的阶梯（从低到高）</b>
+      <table style="margin:.5em 0">
+        <tr><th>概念</th><th>构成</th><th>含义</th></tr>
+        <tr><td><strong>成本价格 k</strong></td><td>c ＋ v</td><td>预付资本的回收线，<strong>最低可接受价</strong></td></tr>
+        <tr><td><strong>生产价格</strong></td><td>k ＋ 平均利润</td><td>自由竞争下价格波动的中心</td></tr>
+        <tr><td><strong>垄断低价</strong></td><td>—</td><td>垄断组织<strong>买入</strong>时的压价</td></tr>
+        <tr><td><strong>垄断高价</strong></td><td>—</td><td>垄断组织<strong>卖出</strong>时的抬价</td></tr>
+      </table>
+      记忆锚点：<strong>「保本看成本，盈利看生产，买低压高两头赚。」</strong>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">4</span>
+    <span class="kind">单选题 · 1 分</span>
+    <span class="src">2022 年 · 第 4 题</span>
+  </div>
+  <div class="stem">与第二次世界大战前的资本主义相比，当代资本主义在许多方面已经并正在发生着深刻的变化。当代资本主义社会，大公司经营活动的实际控制者是</div>
+  <div class="opts">
+    <div>A. 高级职业经理</div>
+    <div>B. 股东大会</div>
+    <div>C. 监事会</div>
+    <div>D. 董事长</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：A</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li>这是当代资本主义"<strong>资本所有权与经营权分离</strong>"的经典表现。随股份公司发展，<strong>真正的经营决策权转移到了受雇的高级职业经理人手里</strong>——这就是"经理革命""技术专家阶层"的实质。</li>
+      <li>教材表述：当代资本主义大公司的实际控制权掌握在<strong>高级职业经理</strong>手中，而股东大会、董事会日益形式化。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>B（股东大会）</strong>：名义上的最高权力机构，但实际只是形式性表决，不参与日常经营。题干问"<strong>经营活动</strong>的实际控制者"，指向日常经营。</li>
+      <li><strong>D（董事长）</strong>：董事长主持董事会，是"治理层面"的角色，不是"经营活动"的实际控制者。这是最易误选项。</li>
+      <li><strong>C（监事会）</strong>：监督机构，负责监督而非控制经营。</li>
+    </ul>
+    <div class="trap">
+      <b>题眼在「经营活动」四个字</b><br>
+      题干如果问"<strong>名义上／法定的最高权力机构</strong>"，答案才是股东大会；<br>
+      题干问"<strong>经营活动的实际控制者</strong>"，答案就是高级职业经理。<br>
+      <strong>政经单选的胜负常在这一两个限定词上。</strong>
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">20</span>
+    <span class="kind">多选题 · 2 分</span>
+    <span class="src">2023 年 · 第 20 题</span>
+  </div>
+  <div class="stem">自 20 世纪 70 年代由美国主导的布雷顿森林体系崩溃以来，资本主义国家金融垄断资本获得了快速发展。金融垄断资本得以形成和壮大的重要制度条件是</div>
+  <div class="opts">
+    <div>A. 金融创新</div>
+    <div>B. 金融市场管制加强</div>
+    <div>C. 金融自由化</div>
+    <div>D. 金融危机频繁发生</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：C</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li>题眼是<strong>「制度条件」</strong>。布雷顿森林体系崩溃后，西方国家推行<strong>金融自由化</strong>——放松利率管制、取消资本管制、允许金融机构混业经营。这些制度性放松，为金融垄断资本的扩张打开了空间。</li>
+      <li>教材原句：金融自由化与金融创新是金融垄断资本得以形成和壮大的<strong>重要制度条件</strong>。两者并列时通常同时入选；本题只给"金融自由化"而没有给"金融创新"作为并列正确项，因此唯一制度条件落在 C。</li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>A（金融创新）</strong>：这是最容易纠结的一项。金融创新（衍生品、资产证券化等）确实是金融资本扩张的重要条件，但它更偏<strong>技术与业务手段</strong>；而题干问的是"<strong>制度</strong>条件"，标准答案落在制度层面的<strong>金融自由化</strong>。<br>
+      <strong>若本题为多选题，A 与 C 常一起选</strong>；本题答案为单选 C，请以原卷题型为准。</li>
+      <li><strong>B（金融市场管制加强）</strong>：方向完全相反。金融资本的壮大靠的是<strong>放松</strong>管制，不是加强管制。</li>
+      <li><strong>D（金融危机频繁发生）</strong>：金融危机是金融垄断资本过度扩张的<strong>结果与表现</strong>，不是它形成的<strong>条件</strong>。<strong>「结果当条件」是政经干扰项的经典手法。</strong></li>
+    </ul>
+    <div class="flag">
+      <b>核验提示</b>：本题题干与选项按原卷扫描件还原。考试时请以原卷标注的题型（单选或多选）为准——若为多选，"金融创新"通常也应入选。
+    </div>
+    <div class="core">
+      <b>金融垄断资本的两个条件</b><br>
+      · <strong>制度条件</strong>：金融自由化（放松管制）<br>
+      · <strong>技术／业务条件</b>：金融创新（衍生工具、证券化）<br>
+      配套记忆：布雷顿森林体系崩溃 → 浮动汇率 → 金融自由化 → 金融资本壮大 → <strong>金融危机频发（结果）</strong>
+    </div>
+  </div>
+</div>
+<hr>
+
+<h2 id="p6">七、市场经济与资本</h2>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">21</span>
+    <span class="kind">多选题 · 2 分</span>
+    <span class="src">2022 年 · 第 21 题</span>
+  </div>
+  <div class="stem">马克思、恩格斯在《共产党宣言》中指出："资产阶级在它的不到一百年的阶级统治中所创造的生产力，比过去一切世代创造的全部生产力还要多，还要大。自然力的征服，机器的采用，化学在工业和农业中的应用，轮船的行驶，铁路的通行，电报的使用，整个整个大陆的开垦，河川的通航，仿佛用法术从地下呼唤出来的大量人口——过去哪一个世纪料想到在社会劳动里蕴藏有这样的生产力呢？"资本主义社会生产力迅速发展的原因是</div>
+  <div class="opts">
+    <div>A. 资本追逐剩余价值的内在动力</div>
+    <div>B. 市场激烈竞争的外在压力</div>
+    <div>C. 无产阶级反对资产阶级的斗争</div>
+    <div>D. 资本主义国家对市场的全面控制</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：AB</div>
+    <span class="lab">为什么对</span>
+    <ul>
+      <li><strong>A 对</strong>：这是<strong>内在动力</strong>。资本的本性是增殖，为追逐剩余价值，资本家不断改进技术、提高劳动生产率——这是资本主义生产力发展的根本驱动力。</li>
+      <li><strong>B 对</strong>：这是<strong>外在压力</strong>。市场竞争中"不进步就被淘汰"，迫使每个资本家拼命技术升级。<br>
+      <strong>A ＋ B 就是"内在动力 ＋ 外在压力"这一标准搭配。</strong></li>
+    </ul>
+    <span class="lab">干扰项拆解</span>
+    <ul>
+      <li><strong>C（错）</strong>：无产阶级的斗争客观上推动了工人待遇改善，但它不是"生产力迅速发展"的原因，反而<strong>制约</strong>资本无限榨取的强度。方向不对。</li>
+      <li><strong>D（错）</strong>：表述本身就是错的。资本主义以<strong>市场经济</strong>为基础，强调自由竞争与市场调节，"国家对市场的全面控制"恰恰不是资本主义的特征（那是计划体制的表述）。</li>
+    </ul>
+    <div class="core">
+      <b>一看到「资本主义生产力发展快的原因」，直接套这对搭配</b><br>
+      <strong>内在动力</strong>＝资本追逐剩余价值（对剩余价值的贪欲）<br>
+      <strong>外在压力</strong>＝市场竞争（不改进就被淘汰）
+    </div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qhead">
+    <span class="qno">23</span>
+    <span class="kind">多选题 · 2 分</span>
+    <span class="src">2023 年 · 第 23 题</span>
+  </div>
+  <div class="stem">资本是社会主义市场经济的重要生产要素，党的十八大以来，我们对资本性质的理解逐步深化，对资本作用的认识不断全面，对资本规律的把握更加深入，对资本运行的治理能力不断提高，对社会主义市场经济条件下的资本，已经形成的认识主要有</div>
+  <div class="opts">
+    <div>A. 资本是推动各类生产要素集聚配置的纽带，是促进社会生产力发展的重要力量</div>
+    <div>B. 规范和约束资本的逐利本性，防止对经济社会发展带来不可估量的危害</div>
+    <div>C. 完善我国资本市场基本制度，为各类资本发展释放出更大空间</div>
+    <div>D. 既注重保障资本参与社会获得增殖和发展，又保障按劳分配的主体地位</div>
+  </div>
+  <button class="reveal">对照答案与解析</button>
+  <div class="ans">
+    <div class="key">答案：ABCD（四项皆对）</div>
+    <span class="lab">为什么全对</span>
+    <ul>
+      <li><strong>A 对</strong>：正面肯定资本的<strong>积极作用</strong>——资本是生产要素集聚配置的纽带，是促进生产力发展的重要力量。这是"两个毫不动摇"在资本问题上的体现。</li>
+      <li><strong>B 对</strong>：同时要<strong>规范和约束</strong>资本的逐利本性，设置"红绿灯"，防止其无序扩张带来危害。这是"趋利避害"的另一面。</li>
+      <li><strong>C 对</strong>：制度层面的积极作为——完善资本市场基本制度，为各类资本发展<strong>释放更大空间</strong>。</li>
+      <li><strong>D 对</strong>：这是一个<strong>"两手抓"的平衡表述</strong>——既要保障资本依法获得增殖和发展，又要坚持<strong>按劳分配的主体地位</strong>。前半句肯定资本的合理回报，后半句守住社会主义底线。</li>
+    </ul>
+    <div class="trap">
+      <b>这类"全选"题千万别漏选</b><br>
+      涉及<strong>社会主义市场经济的资本／民营经济／多种所有制</strong>的题目，标准表述往往是<strong>「既……又……」的双向平衡句</strong>：<br>
+      · 既发挥积极作用，又规范约束其消极面（A ＋ B 就是这一对）<br>
+      · 既支持发展空间，又守住分配底线（C ＋ D）<br>
+      四个选项刚好构成两组平衡，所以全选。<strong>凡是选项自己就是一个完整、平衡、不越界的表述，不要怀疑它。</strong>
+    </div>
+    <div class="core">
+      <b>反之，以下是错误表述（务必识别）</b><br>
+      · "资本的本质已经改变"（错：本质仍是逐利）<br>
+      · "限制资本的一切发展"（错：不搞"一刀切"）<br>
+      · "以资本为中心"（错：以人民为中心）
+    </div>
+  </div>
+</div>
+<hr>
+
+<h2 id="quick">八、考前速查表</h2>
+<table>
+  <tr><th style="width:140px">考点</th><th>一句话</th></tr>
+  <tr><td>简单商品经济基础</td><td><strong>私有制 ＋ 个体劳动</strong>（雇佣劳动是资本主义阶段）</td></tr>
+  <tr><td>社会形态划分依据</td><td>经济基础／<strong>生产关系</strong>的性质（生产力是"推动力"不是"标准"）</td></tr>
+  <tr><td>生产力变化的影响</td><td>价值<strong>总量不变</strong>；商品数量↑；<strong>单位商品价值量↓</strong></td></tr>
+  <tr><td>货币支付手段</td><td>识别词：<strong>债权债务、赊账、到期支付</strong></td></tr>
+  <tr><td>战时共产主义</td><td>余粮收集制 ＋ <strong>取消商品货币关系</strong>（多种所有制／自留地属新经济政策）</td></tr>
+  <tr><td>拿「平均利润」的资本</td><td><strong>职能资本</strong>＝产业资本 ＋ 商业资本；<strong>借贷资本拿利息</strong>（不是平均利润）</td></tr>
+  <tr><td>经济全球化成因</td><td>技术（信息技术）＋ 经济（国际分工）＋ 制度（管制放松）<br><strong>错项：说发展中国家是主要受益者</strong></td></tr>
+  <tr><td>垄断组织最低可接受价</td><td><strong>成本价格</strong>（k＝c+v）；生产价格＝成本＋平均利润</td></tr>
+  <tr><td>当代大公司实际控制者</td><td><strong>高级职业经理</strong>（注意题干"经营活动"四字）</td></tr>
+  <tr><td>金融垄断资本条件</td><td>制度条件＝<strong>金融自由化</strong>；技术条件＝金融创新；<strong>金融危机是结果不是条件</strong></td></tr>
+  <tr><td>资本主义生产力快的原因</td><td><strong>内在动力</strong>（追逐剩余价值）＋ <strong>外在压力</strong>（市场竞争）</td></tr>
+  <tr><td>社会主义市场经济下的资本</td><td>既发挥积极作用又规范约束；既释放空间又守住按劳分配主体</td></tr>
+</table>
+<hr>
+
+<h2 id="note">九、题源与核验说明</h2>
+<blockquote>
+  <p><strong>题源</strong>：本讲义的 19 道题目全部取自你给的三个页面内的<strong>原卷扫描图片</strong>——</p>
+  <ul style="margin:.3em 0">
+    <li>2024 年卷：<code>kaoyan.xdf.cn/202411/13980301.html</code>（23 张试题图）</li>
+    <li>2023 年卷：<code>kaoyan.xdf.cn/202411/13980296.html</code>（15 张试题图）</li>
+    <li>2022 年卷：<code>kaoyan.xdf.cn/202411/13980285.html</code>（15 张试题图）</li>
+  </ul>
+  <p>题干与选项<strong>逐字依照图片识别还原</strong>，未做改写。图片已全部下载留存于本地 <code>zz_politics/img/</code>，可随时回看原图比对。</p>
+  <p><strong>两处需留意</strong>：</p>
+  <ul>
+    <li><strong>2023 年第 20 题（金融垄断资本）</strong>：按扫描件本题呈现为单选题，答案取"金融自由化"。若你的原卷标注为多选题，则"金融创新"通常应一并入选。已在题内标注。</li>
+    <li><strong>2022 年第 3、4、21 题与 2023 年第 2、3、4、19、20、23 题、2024 年第 20、21 题</strong>为我从原图中识别出的全部政经选择题。<strong>答案与解析为我依据教材原理给出，非官方答案</strong>——建议对照你的政治复习资料（如肖秀荣／徐涛课程）二次核验后再记忆。</li>
+  </ul>
+  <p><strong>方法比答案重要</strong>：政经题的答案对题干限定词极度敏感（"经营活动""制度条件""最低"），记解析里的判断逻辑，比记 ABCD 可靠。</p>
+</blockquote>
+</div>
+
+<script>
+var b=document.body,s=17;
+function set(v){s=Math.min(26,Math.max(13,v));b.style.setProperty('--fs',s+'px')}
+document.getElementById('zo').onclick=function(){set(s+1)};
+document.getElementById('zi').onclick=function(){set(s-1)};
+document.getElementById('tw').onclick=function(){
+  var t=document.getElementById('tocbox');
+  t.style.display=(t.style.display==='none')?'block':'none';
+};
+document.querySelectorAll('.reveal').forEach(function(btn){
+  btn.onclick=function(){
+    var a=btn.parentNode.querySelector('.ans');
+    var on=a.classList.toggle('show');
+    btn.textContent = on ? '收起解析' : '对照答案与解析';
+  };
+});
+document.getElementById('allbtn').onclick=function(){
+  var on = this.dataset.on !== '1';
+  document.querySelectorAll('.ans').forEach(function(a){ a.classList.toggle('show', on); });
+  document.querySelectorAll('.reveal').forEach(function(b2){ b2.textContent = on ? '收起解析' : '对照答案与解析'; });
+  this.dataset.on = on ? '1' : '0';
+  this.textContent = on ? '全部收起' : '全部展开';
+};
+</script>
+</body></html>

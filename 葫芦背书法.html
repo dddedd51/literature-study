@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>葫芦背书法 · 每日打卡</title>
+<style>
+@font-face{font-family:"霞鹜文楷";src:url("./_shared/fonts/LXGWWenKai-Regular.ttf") format("truetype");font-display:swap}
+:root{
+  --bg:#f7f3ea; --card:#fffdf8; --ink:#2b2620; --sub:#8a8073; --line:#e3dccd;
+  --accent:#9a3b2e; --gold:#c8902a; --soft:#f3ede1;
+  --ok:#3b6b5e; --warn:#c8902a; --lian:#9a3b2e; --roll:#3b6b5e; --sprint:#6b5a8a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);
+  font-family:"霞鹜文楷","LXGW WenKai",KaiTi,"楷体",STKaiti,serif;
+  background-image:radial-gradient(circle at 15% 8%,rgba(200,144,42,.07) 0,transparent 32%),
+                   radial-gradient(circle at 88% 20%,rgba(154,59,46,.06) 0,transparent 36%),
+                   radial-gradient(circle at 55% 92%,rgba(59,107,94,.05) 0,transparent 40%);
+  min-height:100vh;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px 80px;}
+
+.topbar{position:sticky;top:0;z-index:30;background:rgba(247,243,234,.94);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  padding:9px 18px;margin:0 -18px 16px;}
+.topbar a{color:var(--accent);text-decoration:none;font-weight:700;font-size:14px;
+  border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 11px;}
+.topbar a:hover{border-color:var(--accent)}
+.topbar .tt{font-weight:700;font-size:15px;letter-spacing:1px;margin-right:auto}
+.topbar .dday{font-size:14px;color:var(--sub)}
+.topbar .dday b{font-size:20px;color:var(--accent);font-variant-numeric:tabular-nums}
+.mini{height:6px;width:120px;background:var(--soft);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.mini i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--accent));transition:width .4s}
+
+.hero{display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;
+  padding:22px 8px 8px;text-align:center}
+.ring{position:relative;width:132px;height:132px;flex:none}
+.ring svg{width:132px;height:132px;display:block}
+.ring .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .num b{font-size:34px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:800}
+.ring .num span{font-size:11.5px;color:var(--sub);letter-spacing:2px;margin-top:3px}
+.htxt h1{font-size:29px;letter-spacing:4px;font-weight:800}
+.htxt .sub{color:var(--sub);font-size:13.5px;letter-spacing:1px;margin-top:7px}
+.htxt .exam{margin-top:10px;font-size:13px;color:var(--sub)}
+.htxt .exam b{color:var(--ink)}
+
+.stats{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:18px 0 20px}
+.stat{flex:1 1 130px;max-width:200px;background:var(--card);border:1px solid var(--line);border-radius:13px;
+  padding:11px 14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stat b{display:block;font-size:23px;color:var(--accent);line-height:1.25;font-variant-numeric:tabular-nums}
+.stat b.ok{color:var(--ok)}
+.stat span{font-size:12px;color:var(--sub);letter-spacing:1px}
+
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 4px 18px rgba(0,0,0,.055);overflow:hidden}
+.daybar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  padding:12px 16px;background:linear-gradient(120deg,#fffdf8,#f7efe2);border-bottom:1px solid var(--line)}
+.daybar .dcol{display:flex;align-items:center;gap:8px}
+.daybar button{font-family:inherit;font-size:13.5px;cursor:pointer;color:var(--ink);border:1px solid var(--line);
+  background:#fff;border-radius:99px;padding:7px 13px;transition:all .13s}
+.daybar button:hover{border-color:var(--gold);transform:translateY(-1px)}
+.daybar .arw{border:none;background:transparent;color:var(--sub);font-size:18px;padding:6px 4px}
+.daybar .arw:hover{color:var(--accent);transform:none}
+#todayBtn{border-color:transparent;background:var(--gold);color:#fff;font-weight:700}
+#todayBtn:hover{background:#b87d1e}
+.dmid{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.15}
+.dmid .dtxt{font-size:19px;font-weight:800;letter-spacing:1px}
+.dmid .dtxt em{font-style:normal;color:var(--accent);font-size:23px;margin-left:6px;font-variant-numeric:tabular-nums}
+.dmid .dtag{font-size:11.5px;color:var(--sub);background:var(--bg);border:1px solid var(--line);
+  border-radius:99px;padding:2px 10px}
+.dsum{padding:11px 18px 4px;font-size:13px;color:var(--sub);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.dsum .hint{color:var(--accent);font-weight:700}
+.dsum .ph{cursor:pointer;font-weight:700}
+
+.tasks{padding:6px 14px 14px}
+.task{display:flex;gap:13px;align-items:flex-start;background:#fffefb;border:1px solid var(--line);
+  border-left:5px solid var(--sub);border-radius:13px;padding:13px 15px;margin:10px 0;
+  cursor:pointer;transition:all .16s ease}
+.task:hover{box-shadow:0 4px 14px rgba(0,0,0,.07);transform:translateY(-1px)}
+.task.done{background:#f4f8f5;border-color:#cfe0d6}
+.task.done .tname{text-decoration:line-through;color:var(--sub)}
+.task.done .tdetail{opacity:.62}
+.chk{flex:none;width:23px;height:23px;border-radius:7px;border:2px solid var(--line);background:#fff;
+  display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .16s}
+.chk i{font-style:normal;font-size:14px;color:#fff;opacity:0;transform:scale(.5);transition:all .16s;line-height:1}
+.task.done .chk{background:var(--ok);border-color:var(--ok)}
+.task.done .chk i{opacity:1;transform:scale(1)}
+.tmain{flex:1;min-width:0}
+.trow{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.badge{width:24px;height:24px;border-radius:7px;color:#fff;font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex:none}
+.tname{font-weight:700;font-size:16px}
+.tmin{margin-left:auto;font-size:12px;color:var(--sub);background:var(--bg);border:1px solid var(--line);
+  border-radius:99px;padding:2px 9px;white-space:nowrap}
+.tdetail{font-size:13.5px;color:#5d564c;line-height:1.85;margin-top:7px;word-break:break-word}
+.tjump{margin-top:9px;display:flex;gap:8px;flex-wrap:wrap}
+.tjump a{font-size:12.5px;color:var(--accent);text-decoration:none;border:1px solid var(--line);
+  background:var(--card);border-radius:99px;padding:3px 11px;transition:all .13s}
+.tjump a:hover{border-color:var(--accent);background:#fdf6f4}
+.dayfoot{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:0 18px 18px}
+.dayfoot .prog{flex:1;min-width:150px}
+.dayfoot .bar{height:9px;background:var(--soft);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.dayfoot .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ok),#5f9c86);transition:width .35s}
+.dayfoot .lbl{font-size:12.5px;color:var(--sub);margin-bottom:5px}
+.dayfoot button{font-family:inherit;font-size:13px;cursor:pointer;border-radius:99px;padding:8px 16px;
+  border:1px solid var(--line);background:#fff;color:var(--ink)}
+.dayfoot button:hover{border-color:var(--gold);color:#8a6a1e}
+#allDone{border-color:transparent;background:linear-gradient(120deg,var(--ok),#4c8a72);color:#fff;font-weight:700}
+#allDone:hover{color:#fff;opacity:.92}
+.dnote{margin:0 18px 16px;padding:9px 13px;font-size:12.5px;color:var(--sub);line-height:1.8;
+  background:var(--bg);border:1px dashed var(--line);border-radius:10px}
+
+h2.sec{font-size:18px;letter-spacing:2px;margin:32px 0 14px;padding-left:12px;position:relative}
+h2.sec::before{content:'';position:absolute;left:0;top:3px;bottom:3px;width:5px;border-radius:3px;
+  background:linear-gradient(180deg,var(--gold),var(--accent))}
+h2.sec small{font-size:12px;color:var(--sub);letter-spacing:0;font-weight:400;margin-left:8px}
+
+/* 方法卡 */
+.rule{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);
+  border-radius:14px;padding:16px 20px;box-shadow:0 2px 9px rgba(0,0,0,.04)}
+.rule ol{margin:8px 0 0 20px;font-size:13.5px;line-height:2.05;color:#4d473f}
+.rule ol li b{color:var(--accent)}
+.rule .kv{display:flex;gap:26px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--sub)}
+.rule .kv b{color:var(--ink)}
+
+/* 轮次表 */
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 9px rgba(0,0,0,.04)}
+.tbl table{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{background:var(--soft);font-weight:700;font-size:13px;text-align:left;padding:10px 14px;color:#5d564c}
+.tbl td{padding:9px 14px;border-top:1px solid var(--line);color:#4d473f}
+.tbl td b{color:var(--ink)}
+.tbl tr:hover td{background:#fdfaf3}
+.pill{display:inline-block;font-size:11.5px;border-radius:99px;padding:1px 9px;color:#fff;font-weight:700}
+.pill.lian{background:var(--lian)} .pill.roll{background:var(--roll)} .pill.sprint{background:var(--sprint)}
+
+/* 全部计划 */
+.allwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 3px 14px rgba(0,0,0,.045)}
+.allhead{display:flex;align-items:center;gap:10px;padding:13px 17px;cursor:pointer;
+  background:linear-gradient(120deg,#fffdf8,#f7efe2);border-bottom:1px solid var(--line)}
+.allhead .ttl{font-weight:700;font-size:15.5px}
+.allhead .cnt{font-size:12.5px;color:var(--sub);margin-left:auto}
+.allhead .car{color:var(--sub);transition:transform .2s}
+.allwrap.open .allhead .car{transform:rotate(90deg)}
+.allbody{display:none;max-height:620px;overflow:auto;padding:8px 10px 14px}
+.allwrap.open .allbody{display:block}
+.grp{font-size:12.5px;color:var(--gold);letter-spacing:1px;font-weight:700;
+  padding:11px 8px 5px;border-bottom:1px dashed var(--line);margin-bottom:4px}
+.row{display:flex;gap:9px;align-items:center;padding:6px 8px;border-radius:9px;font-size:13px;cursor:pointer}
+.row:hover{background:#fbf7ee}
+.row.cur{background:#f6ecdc}
+.row .dd{width:54px;flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;font-size:12.5px}
+.row .dt{width:96px;flex:none;color:var(--sub);font-size:12.5px}
+.row .st{width:16px;flex:none;text-align:center;font-size:13px}
+.row .sm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#4d473f}
+.row .ph{flex:none;font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:99px;padding:1px 8px}
+.row.full .st{color:var(--ok)} .row.part .st{color:var(--gold)} .row.none .st{color:#c9c0b1}
+
+.footnote{text-align:center;color:var(--sub);font-size:12.5px;margin-top:34px;line-height:2}
+@media (max-width:640px){
+  .htxt h1{font-size:22px;letter-spacing:2px}
+  .ring{width:104px;height:104px}.ring svg{width:104px;height:104px}
+  .ring .num b{font-size:27px}
+  .row .dt{width:74px;font-size:11.5px}
+  .hero{gap:16px}
+}
+
+/* 带背联动区 */
+.rlead{font-size:13.5px;line-height:2.05;color:#4d473f;margin-bottom:12px}
+.rlead b{color:var(--accent)}
+.dblines{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:11px;margin:14px 0 4px}
+.dbline{background:#fffefb;border:1px solid var(--line);border-left:5px solid var(--sub);
+  border-radius:12px;padding:11px 14px;position:relative}
+.dbline.done{border-left-color:var(--ok);background:#f6faf7}
+.dbline.part{border-left-color:var(--gold);background:#fffcf4}
+.dbline .bn{font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:7px}
+.dbline .bn em{font-style:normal;font-size:11px;font-weight:700;border-radius:99px;padding:1px 8px;color:#fff}
+.dbline.done .bn em{background:var(--ok)}
+.dbline.part .bn em{background:var(--gold)}
+.dbline .bd{font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:6px}
+.dbline .bgo{display:inline-block;margin-top:8px;font-size:12px;color:var(--accent);
+  text-decoration:none;border:1px solid var(--line);background:var(--card);
+  border-radius:99px;padding:3px 12px;font-weight:700}
+.dbline .bgo:hover{border-color:var(--accent);background:#fdf6f4}
+.dbrule{margin:16px 0 0 20px;font-size:13.5px;line-height:2.05;color:#4d473f}
+.dbrule li b{color:var(--accent)}
+.dbrule li.no b{color:#8a3a2e}
+.dbfoot{margin-top:13px;padding:10px 13px;font-size:12.5px;color:var(--sub);line-height:1.85;
+  background:var(--bg);border:1px dashed var(--line);border-radius:10px}
+.dbfoot b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <a href="index.html">← 返回导航</a>
+  <span class="tt">葫芦背书法 · 每日打卡</span>
+  <div class="mini"><i id="miniBar"></i></div>
+  <span class="dday">D-<b id="tbD">--</b></span>
+</div>
+
+<div class="hero">
+  <div class="ring">
+    <svg viewBox="0 0 132 132">
+      <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#c8902a"/><stop offset="1" stop-color="#9a3b2e"/></linearGradient></defs>
+      <circle cx="66" cy="66" r="57" fill="none" stroke="#ece4d5" stroke-width="9"/>
+      <circle id="ringArc" cx="66" cy="66" r="57" fill="none" stroke="url(#rg)" stroke-width="9"
+        stroke-linecap="round" transform="rotate(-90 66 66)" stroke-dasharray="358" stroke-dashoffset="0"/>
+    </svg>
+    <div class="num"><b id="ringD">--</b><span>天后开考</span></div>
+  </div>
+  <div class="htxt">
+    <h1>葫芦背书法</h1>
+    <div class="sub">连背不回头 · 当场复述 80% 即过 · 靠刷遍数复习</div>
+    <div class="exam">考试日 <b id="examTxt">—</b></div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b id="sTotal">0%</b><span>总进度</span></div>
+  <div class="stat"><b id="sDays" class="ok">0</b><span>全勤天数</span></div>
+  <div class="stat"><b id="sStreak" class="ok">0</b><span>连续打卡</span></div>
+  <div class="stat"><b id="sRound">—</b><span>当前遍数</span></div>
+  <div class="stat"><b id="sLeft">0</b><span>剩余天数</span></div>
+</div>
+
+<h2 class="sec">今日清单<small>点一下方块＝完成，数据只存在本机浏览器</small></h2>
+<div class="panel">
+  <div class="daybar">
+    <div class="dcol"><button class="arw" id="prevDay" type="button">◀</button></div>
+    <div class="dmid">
+      <span class="dtxt">第 <em id="dNo">--</em> 天</span>
+      <span class="dtag" id="dDate">—</span>
+    </div>
+    <div class="dcol">
+      <button id="todayBtn" type="button">回到今天</button>
+      <button class="arw" id="nextDay" type="button">▶</button>
+    </div>
+  </div>
+  <div class="dsum" id="dSum"></div>
+  <div class="tasks" id="tasks"></div>
+  <div class="dayfoot">
+    <div class="prog">
+      <div class="lbl" id="progLbl">今日完成 0 / 0</div>
+      <div class="bar"><i id="progBar"></i></div>
+    </div>
+    <button id="allDone" type="button">今日全部完成 ✓</button>
+    <button id="clrDay" type="button">清空今日</button>
+  </div>
+  <div class="dnote" id="dNote"></div>
+</div>
+
+<h2 class="sec">方法内核<small>这六条不能改，改了就不是葫芦法</small></h2>
+<div class="rule">
+  <ol>
+    <li><b>前四轮：一本连背四遍</b>，从头背到尾，中间不回头复习。</li>
+    <li><b>后四轮：一本只背一遍就换下一本</b>，滚完一轮再来一轮。</li>
+    <li><b>全程不单独复习</b>——当天不复习、第二天不复习，靠"从头再来一遍"实现宏观复习。</li>
+    <li><b>「会背」= 当场盖住答案复述 80%</b>，即跳过。不想短期遗忘，只看考试那天能不能写出来。</li>
+    <li><b>唯一进度指标 = 同一本书背完所需天数在缩短</b>。天数在缩，就是正反馈。</li>
+    <li><b>不默写、不画思维导图、不死记硬背</b>。心里能复述就必然能写出来；框架背够多遍自然会有。</li>
+  </ol>
+  <div class="kv">
+    <span>书单口径：<b>李凡三册＝一本「书」的三条线</b>，每天各推一段</span>
+    <span>政治 / 英语<b>照常学，不受影响</b></span>
+    <span>每天专业课<b>约 5.5h</b></span>
+  </div>
+</div>
+
+<!-- hulu-daibei -->
+<h2 class="sec">带背怎么接进来<small>带背 ＝ 葫芦法的第 1 遍，不是额外一件事</small></h2>
+<div class="rule">
+  <div class="rlead">
+    带背页覆盖的范围（<b>古代文学 / 外国文学 / 现当代文学</b>）正好就是主书三条线的范围——同一批内容、两种讲法。
+    所以别把「带背」和「葫芦」叠成两件事：带背<b>就是主书第 1 遍的现成材料</b>，背完它，那天的主书份额就算完成了。
+  </div>
+
+  <div class="dblines">
+    <div class="dbline done">
+      <div class="bn">外国文学<em>已走完</em></div>
+      <div class="bd">第 1—29 天（古希腊罗马 → 亚非文学）· 27 页<br>带背已完整，可直接当第 1 遍用</div>
+      <a class="bgo" href="带背/index.html" target="_blank">↗ 打开带背索引</a>
+    </div>
+    <div class="dbline part">
+      <div class="bn">古代文学<em>只到魏晋</em></div>
+      <div class="bd">第 1—10 天（先秦 → 魏晋）· 含复盘/问答<br>唐宋以后还没出，跟着带背走</div>
+      <a class="bgo" href="带背/index.html" target="_blank">↗ 打开带背索引</a>
+    </div>
+    <div class="dbline part">
+      <div class="bn">现当代文学<em>两条子线</em></div>
+      <div class="bd">现代 第 1—23 天 ＋ 当代 第 1—11 天<br>共 34 页，逐日推进</div>
+      <a class="bgo" href="带背/index.html" target="_blank">↗ 打开带背索引</a>
+    </div>
+  </div>
+
+  <ol class="dbrule">
+    <li><b>带背当天 ＝ 那天的主书任务。</b>背完带背，今天的主书份额就算完成，<b>不要再额外刷李凡题</b>。</li>
+    <li><b>带背页的 ⭕ 圆圈就是复述清单。</b>「提纲 1 通读」「风雅颂六个名解」这些点，盖住内容复述 80% 再点掉。</li>
+    <li class="no"><b>绝不叠加。</b>带背 1.5h ＋ 葫芦 5.5h ＝ 7h 全给专业课，英语政治就没了。一天只有一份专业课时间。</li>
+    <li><b>第 2 遍起才刷李凡题号。</b>带背是「纲」（重点＋真题标注），李凡 1273 题是「目」（全量）。纲先走，目后刷。</li>
+  </ol>
+
+  <div class="dbfoot">
+    <b>为什么带背能当第 1 遍用：</b>带背页的 ⭕ 圆圈只存在于当次浏览（刷新就清空），
+    这正好合葫芦法「每遍都重新过一遍」的用法——第 1 遍用它建印象，第 2 遍再打开重新勾。
+    葫芦页的勾是<b>跨天记录</b>（今天做没做），带背页的圈是<b>当场标记</b>（这个点过没过），两者不重复、不冲突。
+  </div>
+</div>
+<!-- /hulu-daibei -->
+
+<h2 class="sec">轮次安排<small>D-75 现实修正版</small></h2>
+<div class="tbl">
+<table>
+<thead><tr><th>轮次</th><th>天数</th><th>每天推进</th><th>起止</th><th>阶段</th></tr></thead>
+<tbody id="roundBody"></tbody>
+</table>
+</div>
+
+<h2 class="sec">全部 75 天<small>点任意一行跳到那天</small></h2>
+<div class="allwrap" id="allWrap">
+  <div class="allhead" id="allHead">
+    <span class="ttl">展开 / 收起全部计划</span>
+    <span class="cnt" id="allCnt"></span>
+    <span class="car">▶</span>
+  </div>
+  <div class="allbody" id="allBody"></div>
+</div>
+
+<div class="footnote">
+  排产：葫芦背书法 v2 引擎 · 主书 8 遍 + 冲刺速刷，75 天铺满至考前<br>
+  打卡记录保存在本机浏览器，与《百日冲刺计划》各自独立、互不干扰
+</div>
+
+</div>
+
+<script>
+var DATA = {"start":"2026-10-12","exam":"2026-12-26","days":75,"plan":[{"d":"2026-10-12","r":1,"ph":"连背","i":1,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":40,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":38,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":27,"total":332}]},{"d":"2026-10-13","r":1,"ph":"连背","i":2,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":41,"hi":80,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":39,"hi":76,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":28,"hi":55,"total":332}]},{"d":"2026-10-14","r":1,"ph":"连背","i":3,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":81,"hi":120,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":77,"hi":114,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":56,"hi":83,"total":332}]},{"d":"2026-10-15","r":1,"ph":"连背","i":4,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":121,"hi":161,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":115,"hi":152,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":84,"hi":110,"total":332}]},{"d":"2026-10-16","r":1,"ph":"连背","i":5,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":162,"hi":201,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":153,"hi":190,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":111,"hi":138,"total":332}]},{"d":"2026-10-17","r":1,"ph":"连背","i":6,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":202,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":191,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":139,"hi":166,"total":332}]},{"d":"2026-10-18","r":1,"ph":"连背","i":7,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":281,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":267,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":193,"total":332}]},{"d":"2026-10-19","r":1,"ph":"连背","i":8,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":282,"hi":322,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":268,"hi":305,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":194,"hi":221,"total":332}]},{"d":"2026-10-20","r":1,"ph":"连背","i":9,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":323,"hi":362,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":306,"hi":343,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":222,"hi":249,"total":332}]},{"d":"2026-10-21","r":1,"ph":"连背","i":10,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":363,"hi":402,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":344,"hi":381,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":250,"hi":276,"total":332}]},{"d":"2026-10-22","r":1,"ph":"连背","i":11,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":403,"hi":442,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":382,"hi":419,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":277,"hi":304,"total":332}]},{"d":"2026-10-23","r":1,"ph":"连背","i":12,"n":12,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":443,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":420,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":305,"hi":332,"total":332}]},{"d":"2026-10-24","r":2,"ph":"连背","i":1,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":53,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":50,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":36,"total":332}]},{"d":"2026-10-25","r":2,"ph":"连背","i":2,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":54,"hi":107,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":51,"hi":101,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":37,"hi":73,"total":332}]},{"d":"2026-10-26","r":2,"ph":"连背","i":3,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":108,"hi":161,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":102,"hi":152,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":74,"hi":110,"total":332}]},{"d":"2026-10-27","r":2,"ph":"连背","i":4,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":162,"hi":214,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":153,"hi":203,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":111,"hi":147,"total":332}]},{"d":"2026-10-28","r":2,"ph":"连背","i":5,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":215,"hi":268,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":204,"hi":254,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":148,"hi":184,"total":332}]},{"d":"2026-10-29","r":2,"ph":"连背","i":6,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":269,"hi":322,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":255,"hi":305,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":185,"hi":221,"total":332}]},{"d":"2026-10-30","r":2,"ph":"连背","i":7,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":323,"hi":375,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":306,"hi":356,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":222,"hi":258,"total":332}]},{"d":"2026-10-31","r":2,"ph":"连背","i":8,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":376,"hi":429,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":357,"hi":407,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":259,"hi":295,"total":332}]},{"d":"2026-11-01","r":2,"ph":"连背","i":9,"n":9,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":430,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":408,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":296,"hi":332,"total":332}]},{"d":"2026-11-02","r":3,"ph":"连背","i":1,"n":7,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":69,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":65,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":47,"total":332}]},{"d":"2026-11-03","r":3,"ph":"连背","i":2,"n":7,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":70,"hi":138,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":66,"hi":130,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":48,"hi":94,"total":332}]},{"d":"2026-11-04","r":3,"ph":"连背","i":3,"n":7,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":139,"hi":207,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":131,"hi":196,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":95,"hi":142,"total":332}]},{"d":"2026-11-05","r":3,"ph":"连背","i":4,"n":7,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":208,"hi":276,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":197,"hi":261,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":143,"hi":189,"total":332}]},{"d":"2026-11-06","r":3,"ph":"连背","i":5,"n":7,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":277,"hi":345,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":262,"hi":327,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":190,"hi":237,"total":332}]},{"d":"2026-11-07","r":3,"ph":"连背","i":6,"n":7,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":346,"hi":414,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":328,"hi":392,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":238,"hi":284,"total":332}]},{"d":"2026-11-08","r":3,"ph":"连背","i":7,"n":7,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":415,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":393,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":285,"hi":332,"total":332}]},{"d":"2026-11-09","r":4,"ph":"连背","i":1,"n":5,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":96,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":91,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":66,"total":332}]},{"d":"2026-11-10","r":4,"ph":"连背","i":2,"n":5,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":97,"hi":193,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":92,"hi":183,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":67,"hi":132,"total":332}]},{"d":"2026-11-11","r":4,"ph":"连背","i":3,"n":5,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":194,"hi":289,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":184,"hi":274,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":133,"hi":199,"total":332}]},{"d":"2026-11-12","r":4,"ph":"连背","i":4,"n":5,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":290,"hi":386,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":275,"hi":366,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":200,"hi":265,"total":332}]},{"d":"2026-11-13","r":4,"ph":"连背","i":5,"n":5,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":387,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":367,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":266,"hi":332,"total":332}]},{"d":"2026-11-14","r":5,"ph":"滚动","i":1,"n":4,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":120,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":114,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":83,"total":332},{"id":"yubian","name":"煜编 120 章 · 名解（第 1 遍）","unit":"章","lo":1,"hi":10,"total":120}]},{"d":"2026-11-15","r":5,"ph":"滚动","i":2,"n":4,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":121,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":115,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":84,"hi":166,"total":332},{"id":"tang","name":"唐红梅 64 讲（第 1 遍）","unit":"讲","lo":1,"hi":5,"total":64}]},{"d":"2026-11-16","r":5,"ph":"滚动","i":3,"n":4,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":362,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":343,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":249,"total":332},{"id":"lilun","name":"853 理论卡（第 1 遍）","unit":"卡","lo":1,"hi":4,"total":28}]},{"d":"2026-11-17","r":5,"ph":"滚动","i":4,"n":4,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":363,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":344,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":250,"hi":332,"total":332},{"id":"chuangxie","name":"创写理论背诵版（第 1 遍）","unit":"块","lo":1,"hi":2,"total":10}]},{"d":"2026-11-18","r":6,"ph":"滚动","i":1,"n":3,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":161,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":152,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":110,"total":332},{"id":"yantou","name":"答题例证卡（第 1 遍）","unit":"张","lo":1,"hi":3,"total":34}]},{"d":"2026-11-19","r":6,"ph":"滚动","i":2,"n":3,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":162,"hi":322,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":153,"hi":305,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":111,"hi":221,"total":332},{"id":"yubian","name":"煜编 120 章 · 名解（第 2 遍）","unit":"章","lo":1,"hi":13,"total":120}]},{"d":"2026-11-20","r":6,"ph":"滚动","i":3,"n":3,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":323,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":306,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":222,"hi":332,"total":332},{"id":"tang","name":"唐红梅 64 讲（第 2 遍）","unit":"讲","lo":1,"hi":8,"total":64}]},{"d":"2026-11-21","r":7,"ph":"滚动","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332},{"id":"lilun","name":"853 理论卡（第 2 遍）","unit":"卡","lo":1,"hi":5,"total":28}]},{"d":"2026-11-22","r":7,"ph":"滚动","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332},{"id":"chuangxie","name":"创写理论背诵版（第 2 遍）","unit":"块","lo":1,"hi":2,"total":10}]},{"d":"2026-11-23","r":8,"ph":"滚动","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332},{"id":"yantou","name":"答题例证卡（第 2 遍）","unit":"张","lo":1,"hi":4,"total":34}]},{"d":"2026-11-24","r":8,"ph":"滚动","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332},{"id":"yubian","name":"煜编 120 章 · 名解（第 3 遍）","unit":"章","lo":1,"hi":17,"total":120}]},{"d":"2026-11-25","r":9,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332},{"id":"tang","name":"唐红梅 64 讲（第 3 遍）","unit":"讲","lo":1,"hi":64,"total":64}]},{"d":"2026-11-26","r":9,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332},{"id":"lilun","name":"853 理论卡（第 3 遍）","unit":"卡","lo":1,"hi":28,"total":28}]},{"d":"2026-11-27","r":10,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332},{"id":"chuangxie","name":"创写理论背诵版（第 3 遍）","unit":"块","lo":1,"hi":10,"total":10}]},{"d":"2026-11-28","r":10,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332},{"id":"yantou","name":"答题例证卡（第 3 遍）","unit":"张","lo":1,"hi":34,"total":34}]},{"d":"2026-11-29","r":11,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332},{"id":"yubian","name":"煜编 120 章 · 名解（第 4 遍）","unit":"章","lo":1,"hi":120,"total":120}]},{"d":"2026-11-30","r":11,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332},{"id":"tang","name":"唐红梅 64 讲（第 4 遍）","unit":"讲","lo":1,"hi":64,"total":64}]},{"d":"2026-12-01","r":12,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332},{"id":"lilun","name":"853 理论卡（第 4 遍）","unit":"卡","lo":1,"hi":28,"total":28}]},{"d":"2026-12-02","r":12,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332},{"id":"chuangxie","name":"创写理论背诵版（第 4 遍）","unit":"块","lo":1,"hi":10,"total":10}]},{"d":"2026-12-03","r":13,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332},{"id":"yantou","name":"答题例证卡（第 4 遍）","unit":"张","lo":1,"hi":34,"total":34}]},{"d":"2026-12-04","r":13,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-05","r":14,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-06","r":14,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-07","r":15,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-08","r":15,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-09","r":16,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-10","r":16,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-11","r":17,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-12","r":17,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-13","r":18,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-14","r":18,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-15","r":19,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-16","r":19,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-17","r":20,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-18","r":20,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-19","r":21,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-20","r":21,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-21","r":22,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-22","r":22,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-23","r":23,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]},{"d":"2026-12-24","r":23,"ph":"冲刺速刷","i":2,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":242,"hi":483,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":230,"hi":458,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":167,"hi":332,"total":332}]},{"d":"2026-12-25","r":24,"ph":"冲刺速刷","i":1,"n":2,"ls":[{"id":"gudai","name":"古代文学史","unit":"题","lo":1,"hi":241,"total":483},{"id":"xiandang","name":"现当代文学史","unit":"题","lo":1,"hi":229,"total":458},{"id":"waiguo","name":"外国文学史","unit":"题","lo":1,"hi":166,"total":332}]}],"pages":{"gudai":"李凡1000题_古代文学史-OCR重建版.html","xiandang":"李凡1000题_现当代文学史-OCR重建版.html","waiguo":"李凡1000题_外国文学史-OCR重建版.html"},"subpages":{"yubian":"煜编文学考研资料.html","tang":"唐红梅外国文学知识点串讲.html","lilun":"853评论写作备考卡.html","chuangxie":"创意写作_定义与特征_背诵版.html","yantou":"答题例证卡.html"}};
+(function(){
+  var DAY_MS = 86400000;
+  var KEY = 'hulu_v1';
+  var WD = ['周日','周一','周二','周三','周四','周五','周六'];
+  var PH_COLOR = {'连背':'lian','滚动':'roll','冲刺速刷':'sprint'};
+  var LABEL = {
+    gudai:'古', xiandang:'现', waiguo:'外',
+    yubian:'煜', tang:'唐', lilun:'评', chuangxie:'创', yantou:'例'
+  };
+  var NAME = {
+    gudai:'古代文学史', xiandang:'现当代文学史', waiguo:'外国文学史',
+    yubian:'煜编 120 章', tang:'唐红梅 64 讲', lilun:'853 理论卡',
+    chuangxie:'创写理论背诵版', yantou:'答题例证卡'
+  };
+
+  function parseD(s){ var p=s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function midnight(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  function fmtDate(d){ return (d.getMonth()+1)+'月'+d.getDate()+'日'; }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  var store = load();
+  function load(){
+    var s = {checks:{}};
+    try{ var raw = localStorage.getItem(KEY); if(raw){ var o=JSON.parse(raw);
+      if(o && o.checks) s.checks=o.checks; } }catch(e){}
+    return s;
+  }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){} }
+
+  var byD = {};
+  DATA.plan.forEach(function(p){ byD[p.d] = p; });
+  var DATES = DATA.plan.map(function(p){ return p.d; });
+
+  var exam = parseD(DATA.exam);
+  function dayOfDate(d){ return Math.round((exam.getTime() - midnight(d).getTime())/DAY_MS); }
+  var todayD = dayOfDate(new Date());
+
+  var viewD = null, allOpen = false;
+
+  function currentOf(ds){
+    for(var i=0;i<DATES.length;i++){ if(DATES[i]===ds) return i; }
+    return -1;
+  }
+
+  function jumpLink(lid, lo){
+    var page = DATA.pages[lid] || DATA.subpages[lid];
+    if(!page) return '';
+    var h = (lid==='gudai'||lid==='xiandang'||lid==='waiguo') ? '#q'+lo : '';
+    return page + '?from=plan&d=' + viewD + h;
+  }
+
+  function renderDay(){
+    var idx = currentOf(viewD);
+    var p = byD[viewD];
+    if(!p) return;
+    var date = parseD(p.d);
+    document.getElementById('dNo').textContent = idx+1;
+    document.getElementById('dDate').textContent =
+      date.getFullYear()+' 年 '+fmtDate(date)+' '+WD[date.getDay()] +
+      (viewD === DATA.plan[Math.max(0,Math.min(DATA.plan.length-1, dayIndexToday()))].d ? ' · 今天' : '');
+
+    var cks = store.checks[viewD] || {};
+    var doneN = 0;
+    p.ls.forEach(function(L){ if(cks[L.id]) doneN++; });
+
+    document.getElementById('dSum').innerHTML =
+      '<span class="pill '+PH_COLOR[p.ph]+'">'+p.ph+'</span>'+
+      '<span>第 '+p.r+' 遍 · 第 '+p.i+'/'+p.n+' 天</span>'+
+      '<span class="hint">完成 '+doneN+'/'+p.ls.length+'</span>';
+
+    document.getElementById('tasks').innerHTML = p.ls.map(function(L){
+      var done = !!cks[L.id];
+      var link = jumpLink(L.id, L.lo);
+      var detail = L.unit+' '+L.lo+'–'+L.hi+' / 共 '+L.total;
+      var extra = (p.ph==='冲刺速刷') ? '　快刷，只求想起，别停' : '';
+      return '<div class="task'+(done?' done':'')+'" data-k="'+L.id+'">'+
+        '<div class="chk"><i>✓</i></div><div class="tmain">'+
+        '<div class="trow"><span class="badge" style="background:'+(L.id==='gudai'?'#3b6b5e':L.id==='xiandang'?'#9a3b2e':L.id==='waiguo'?'#6b5a8a':'#c8902a')+'">'+
+        (LABEL[L.id]||'·')+'</span><span class="tname">'+esc(L.name)+'</span>'+
+        '<span class="tmin">约 '+Math.round(330/p.ls.length)+'min</span></div>'+
+        '<div class="tdetail">'+esc(detail+extra)+'</div>'+
+        (link?'<div class="tjump"><a href="'+link+'" target="_blank">↗ 直达'+(L.hi-L.lo+1)+L.unit.replace('题','题')+'</a></div>':'')+
+        '</div></div>';
+    }).join('');
+
+    var pct = p.ls.length ? Math.round(doneN/p.ls.length*100) : 0;
+    document.getElementById('progLbl').textContent = '今日完成 '+doneN+' / '+p.ls.length+'（'+pct+'%）';
+    document.getElementById('progBar').style.width = pct+'%';
+    document.getElementById('dNote').innerHTML = noteOf(p);
+    document.getElementById('sRound').textContent = '第'+p.r+'遍';
+    renderAll(true);
+  }
+
+  function dayIndexToday(){
+    for(var i=0;i<DATES.length;i++){ if(DATES[i] >= new Date().toISOString().slice(0,10)) return i; }
+    return DATES.length-1;
+  }
+
+  function noteOf(p){
+    if(p.ph==='连背')
+      return '连背期：<b>从头往下背，不回头复习</b>。每题盖住答案，能当场复述 80% 就过，卡住的画圈、下一遍再说。';
+    if(p.ph==='滚动')
+      return '滚动期：<b>这一本背完就走，不连第二遍</b>。速度优先，能复述 80% 即过。旁挂的副书整本过一遍。';
+    return '冲刺速刷：两天一轮过全科，<b>只求「想得起来」</b>，想不起来的直接翻答案，不纠缠。';
+  }
+
+  function summaryOf(p){
+    return p.ls.map(function(L){ return L.name+' '+L.lo+'-'+L.hi; }).join(' ｜ ');
+  }
+  function stateOf(p){
+    var cks = store.checks[p.d] || {}, n = 0;
+    p.ls.forEach(function(L){ if(cks[L.id]) n++; });
+    if(n===0) return ['none','·'];
+    if(n===p.ls.length) return ['full','✓'];
+    return ['part','◐'];
+  }
+  function renderAll(keepOpen){
+    var b = document.getElementById('allBody');
+    if(allOpen || keepOpen){
+      var html = '', lastPh = '';
+      DATA.plan.forEach(function(p, i){
+        var st = stateOf(p);
+        if(p.ph !== lastPh){
+          lastPh = p.ph;
+          html += '<div class="grp">'+p.ph+(p.ph==='连背'?'（第 1–4 遍）':p.ph==='滚动'?'（第 5–8 遍）':'（第 9 遍起）')+'</div>';
+        }
+        var dt = parseD(p.d);
+        html += '<div class="row '+st[0]+(p.d===viewD?' cur':'')+'" data-d="'+p.d+'">'+
+          '<span class="dd">第 '+(i+1)+' 天</span>'+
+          '<span class="dt">'+(dt.getMonth()+1)+'/'+dt.getDate()+' '+WD[dt.getDay()]+'</span>'+
+          '<span class="st">'+st[1]+'</span>'+
+          '<span class="sm">'+esc(summaryOf(p))+'</span>'+
+          '<span class="ph">第'+p.r+'遍</span></div>';
+      });
+      b.innerHTML = html;
+    }
+  }
+
+  function stats(){
+    var total=0, done=0, fullDay=0, partDay=0;
+    DATA.plan.forEach(function(p){
+      var cks = store.checks[p.d] || {}, n=0;
+      p.ls.forEach(function(L){ if(cks[L.id]) n++; });
+      total += p.ls.length; done += n;
+      if(n === p.ls.length) fullDay++; else if(n>0) partDay++;
+    });
+    var cur = 0;
+    var end = Math.max(0, Math.min(DATA.plan.length-1, dayIndexToday()));
+    for(var i=end-1; i>=0; i--){
+      var cks = store.checks[DATA.plan[i].d] || {}, n=0;
+      DATA.plan[i].ls.forEach(function(L){ if(cks[L.id]) n++; });
+      if(n === DATA.plan[i].ls.length) cur++; else break;
+    }
+    var curDay = DATA.plan[end];
+    var cksT = store.checks[curDay.d] || {}, nT=0;
+    curDay.ls.forEach(function(L){ if(cksT[L.id]) nT++; });
+    if(nT === curDay.ls.length) cur++;
+
+    document.getElementById('sTotal').textContent = Math.round(done/total*100)+'%';
+    document.getElementById('sDays').textContent = fullDay;
+    document.getElementById('sStreak').textContent = cur;
+    var left = Math.max(0, (exam - new Date())/DAY_MS);
+    document.getElementById('sLeft').textContent = Math.ceil(left);
+    document.getElementById('miniBar').style.width = Math.round(done/total*100)+'%';
+    document.getElementById('tbD').textContent = Math.ceil(left);
+    document.getElementById('ringD').textContent = Math.ceil(left);
+    document.getElementById('ringArc').setAttribute('stroke-dashoffset',
+      String(358 * (1 - Math.min(1, Math.max(0, left/75)))));
+    document.getElementById('allCnt').textContent = fullDay+' 天全勤 · '+partDay+' 天部分完成';
+  }
+
+  // 轮次表
+  (function renderRounds(){
+    var groups = [];
+    DATA.plan.forEach(function(p){
+      if(!groups.length || groups[groups.length-1].r !== p.r)
+        groups.push({r:p.r, ph:p.ph, days:1, first:p.d, last:p.d});
+      else { groups[groups.length-1].days++; groups[groups.length-1].last = p.d; }
+    });
+    document.getElementById('roundBody').innerHTML = groups.map(function(g){
+      var per = Math.ceil(483/g.days);
+      var cls = PH_COLOR[g.ph];
+      return '<tr><td><b>第 '+g.r+' 遍</b></td><td>'+g.days+' 天</td>'+
+        '<td>约 '+per+' 题/册</td><td>'+g.first+' → '+g.last+'</td>'+
+        '<td><span class="pill '+cls+'">'+g.ph+'</span></td></tr>';
+    }).join('');
+  })();
+
+  // 交互
+  document.getElementById('tasks').addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if(a) return;
+    var el = e.target.closest && e.target.closest('.task');
+    if(!el) return;
+    var k = el.getAttribute('data-k');
+    if(!store.checks[viewD]) store.checks[viewD] = {};
+    if(store.checks[viewD][k]) delete store.checks[viewD][k];
+    else store.checks[viewD][k] = 1;
+    save(); renderDay(); stats();
+  });
+  document.getElementById('allDone').onclick = function(){
+    var p = byD[viewD]; if(!p) return;
+    if(!store.checks[viewD]) store.checks[viewD] = {};
+    p.ls.forEach(function(L){ store.checks[viewD][L.id] = 1; });
+    save(); renderDay(); stats();
+  };
+  document.getElementById('clrDay').onclick = function(){
+    delete store.checks[viewD]; save(); renderDay(); stats();
+  };
+  document.getElementById('prevDay').onclick = function(){
+    var i = currentOf(viewD); if(i>0){ viewD = DATES[i-1]; renderDay(); } };
+  document.getElementById('nextDay').onclick = function(){
+    var i = currentOf(viewD); if(i<DATES.length-1){ viewD = DATES[i+1]; renderDay(); } };
+  document.getElementById('todayBtn').onclick = function(){
+    viewD = DATES[Math.max(0, Math.min(DATES.length-1, dayIndexToday()))]; renderDay(); };
+  document.getElementById('allHead').onclick = function(){
+    allOpen = !allOpen;
+    document.getElementById('allWrap').classList.toggle('open', allOpen);
+    renderAll(false);
+  };
+  document.getElementById('allBody').addEventListener('click', function(e){
+    var r = e.target.closest && e.target.closest('.row'); if(!r) return;
+    viewD = r.getAttribute('data-d'); renderDay();
+    document.querySelector('.panel').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  // 启动
+  var fromQ = (location.search||'').match(/[?&]d=(\d+)/);
+  viewD = DATES[Math.max(0, Math.min(DATES.length-1, dayIndexToday()))];
+  if(fromQ){ var n = parseInt(fromQ[1],10); if(byD[n]) viewD = n; }
+  else if(todayD >= 0 && todayD <= DATA.days){ /* ok */ }
+  document.getElementById('examTxt').textContent =
+    exam.getFullYear()+' 年 '+(exam.getMonth()+1)+' 月 '+exam.getDate()+' 日';
+  renderDay(); stats();
+})();
+</script>
+</body>
+</html>

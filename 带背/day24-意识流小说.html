@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外国文学带背 第24天 · 意识流小说</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.7.0/style.css">
+<style>
+  :root{
+    --bg:#faf8f3; --panel:#fff; --ink:#2b2b2b; --ink-soft:#555;
+    --gold:#a8854a; --gold-deep:#7d5e2c; --gold-bg:#f4ecdb; --border:#e6dfcc;
+    --highlight:#fff8e6; --red:#a23b3b; --red-bg:#fbeeee; --red-border:#d8b8b8;
+    --blue:#2d4a6e; --blue-bg:#e8eff5; --green:#3d6b4a; --green-bg:#eaf3ec;
+    --fs-base:15px;
+  }
+  *{box-sizing:border-box}
+  html{font-size:var(--fs-base)}
+  body{margin:0;padding:0;font-family:"LXGW WenKai","LXGW WenKai TC","霞鹜文楷","Source Han Serif SC","Noto Serif CJK SC","PingFang SC","Microsoft YaHei",serif;
+    background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 18px 80px}
+
+  header.head{background:linear-gradient(135deg,#2b2b2b 0%,#4a3a20 100%);color:#f4ecdb;padding:32px 28px;border-radius:10px;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  header.head .day{font-size:.87rem;letter-spacing:.4rem;opacity:.75;margin-bottom:.5rem}
+  header.head h1{font-size:1.87rem;margin:0 0 .67rem;font-weight:700;letter-spacing:.06em}
+  header.head .sub{font-size:1rem;opacity:.85;line-height:1.7}
+  .tags{display:flex;gap:.67rem;margin-top:1.07rem;flex-wrap:wrap}
+  .tag{padding:.27rem .93rem;border-radius:1.33rem;font-size:.8rem;background:rgba(244,236,219,.18);border:1px solid rgba(244,236,219,.35)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(120,100,60,.06)}
+  .card-head{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--gold-bg);border-bottom:2px solid var(--gold);cursor:pointer}
+  .num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+  .card-title{font-size:1.2rem;font-weight:700;color:var(--gold-deep);flex:1}
+  .exam-level{font-size:.78rem;padding:.2rem .67rem;border-radius:.93rem;font-weight:600;white-space:nowrap}
+  .lv-ss{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .lv-s{background:var(--blue-bg);color:var(--blue);border:1px solid #b9cde0}
+  .lv-l{background:#f0f0ee;color:#777;border:1px solid #d5d5d0}
+  .card-body{padding:20px 26px}
+  .collapsed .card-body{display:none}
+  .ppt-src{font-size:.76rem;color:#8a7c60;background:#f6f2e7;border:1px solid var(--border);
+    border-radius:.27rem;padding:.05rem .45rem;margin-left:.5rem;font-weight:400;white-space:nowrap}
+
+  .sub-h{font-size:1.07rem;font-weight:700;color:var(--gold-deep);margin:1.4rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+  .sub-h::before{content:"";display:inline-block;width:4px;height:1.07rem;background:var(--gold);border-radius:2px}
+
+  .term{font-weight:700;color:var(--gold-deep)}
+  .hl{background:linear-gradient(transparent 60%,#fff3a8 60%);padding:0 .13rem}
+  .hl-b{background:linear-gradient(transparent 60%,#ffd9d9 60%);padding:0 .13rem;font-weight:700}
+  p{margin:.53rem 0;font-size:.97rem}
+  ol,ul{margin:.53rem 0;padding-left:1.6rem}
+  ol li,ul li{margin:.3rem 0;font-size:.97rem}
+
+  .quote{background:var(--highlight);border-left:3px solid var(--gold);padding:.67rem .93rem;margin:.6rem 0;font-size:.95rem;border-radius:0 .4rem .4rem 0}
+  .box{border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 .53rem .53rem 0;padding:.87rem 1.1rem;margin:.7rem 0;background:#fffefa;font-size:.94rem}
+  .note-bar{background:#eef4fa;border:1px solid #c9dcee;border-left:4px solid var(--blue);border-radius:0 .53rem .53rem 0;padding:.6rem .93rem;margin:.5rem 0 .9rem;font-size:.92rem;color:var(--blue)}
+  .tablebox{overflow-x:auto}
+
+  .answer{background:var(--green-bg);border:1px solid #bcd6c2;border-left:4px solid var(--green);border-radius:0 .53rem .53rem 0;padding:.93rem 1.1rem;margin:.8rem 0}
+  .answer .a-t{font-weight:700;color:var(--green);margin-bottom:.45rem;font-size:.98rem}
+  .answer p,.answer li{font-size:.94rem}
+
+  .mnem{background:#fff4e0;border:1px dashed var(--gold);border-radius:.4rem;padding:.67rem .93rem;margin:.7rem 0;font-size:.93rem}
+  .mnem .m-t{font-weight:700;color:var(--gold-deep);margin-bottom:.3rem}
+
+  .warn{background:var(--red-bg);border:1px solid var(--red-border);border-left:4px solid var(--red);border-radius:0 .53rem .53rem 0;padding:.8rem 1rem;margin:.7rem 0;font-size:.93rem}
+  .warn .w-t{font-weight:700;color:var(--red);margin-bottom:.3rem}
+
+  .paper{background:#fffdf6;border:1px solid var(--border);border-radius:.5rem;padding:.87rem 1.1rem;margin:.8rem 0;font-size:.93rem}
+  .paper .p-t{font-weight:700;color:var(--red);margin-bottom:.45rem;font-size:.95rem}
+  .paper li{margin:.22rem 0}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0}
+  th{background:var(--gold-bg);padding:.5rem;border:1px solid var(--border);text-align:left}
+  td{padding:.5rem;border:1px solid var(--border);vertical-align:top}
+
+  .chk{display:inline-flex;align-items:center;gap:.27rem;cursor:pointer;padding:.2rem .67rem;border-radius:.93rem;background:#f3eee0;font-size:.85rem;color:var(--ink-soft);transition:.2s;user-select:none}
+  .chk:hover{background:#e9dfc7}
+  .chk.done{background:#c9d8b6;color:#3a4d24;text-decoration:line-through}
+  .study-bar{display:flex;gap:.6rem;margin:.87rem 0 .4rem;flex-wrap:wrap;align-items:center}
+
+  .ctrl-bar{display:flex;gap:.67rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .ctrl-bar button{padding:.4rem .93rem;background:var(--gold-bg);border:1px solid var(--gold);color:var(--gold-deep);border-radius:1.2rem;cursor:pointer;font-size:.87rem;font-family:inherit;transition:.2s}
+  .ctrl-bar button:hover{background:var(--gold);color:#fff}
+
+  .font-ctrl{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;align-items:center;gap:.4rem;background:rgba(43,43,43,.92);color:#f4ecdb;padding:.4rem .6rem;border-radius:2rem;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.85rem}
+  .font-ctrl button{width:2rem;height:2rem;border:none;border-radius:50%;background:rgba(244,236,219,.18);color:#f4ecdb;cursor:pointer;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:inherit}
+  .font-ctrl button:hover{background:var(--gold);color:#fff}
+  .font-ctrl .fs-label{min-width:3.2rem;text-align:center;font-size:.78rem}
+  .font-ctrl .fs-reset{width:auto;padding:0 .6rem;border-radius:1rem;font-size:.78rem}
+
+  .prog{background:#fff9eb;border:1px solid var(--border);border-radius:8px;padding:.8rem 1.1rem;margin-bottom:20px;font-size:.9rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .prog .bar{flex:1;min-width:120px;height:8px;background:#eee6d2;border-radius:4px;overflow:hidden}
+  .prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));transition:width .4s}
+
+  .foot{text-align:center;padding:2rem .67rem;color:#998b6f;font-size:.8rem;border-top:1px dashed var(--border);margin-top:2.4rem}
+  @media(max-width:720px){.card-body{padding:1.1rem}header.head h1{font-size:1.47rem}}
+</style>
+<link rel="stylesheet" href="day-nav.css">
+<script src="day-nav.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<nav class="day-nav" aria-label="带背逐日切换">
+  <a class="day-nav-prev" rel="prev" href="day23-俄苏与现代主义.html" title="外国文学带背 第23天 · 俄苏文学与现代主义文学">← 上一天</a>
+  <a href="index.html">带背索引</a>
+  <a class="day-nav-next" rel="next" href="day25-表现主义与后现代-上.html" title="外国文学带背 第25天 · 表现主义与后现代（上）">下一天 →</a>
+</nav>
+
+<header class="head">
+  <div class="day">DAY 24 · 外国文学 · 重点带背</div>
+  <h1>意识流小说</h1>
+  <div class="sub">意识流小说名词解释 · 基本特征（四点，重点）· 普鲁斯特《追忆似水年华》· 乔伊斯《都柏林人》《尤利西斯》· 尤利西斯与奥德赛的对应关系（真题）· 《尤利西斯》艺术特色 · 福克纳《喧哗与骚动》名词解释／艺术特色／叙事结构<br>内容取自「二十世纪现代主义文学（下）」带背 PPT 逐张识读（十一张）· 结合库内题库与西大历年真题原答补全</div>
+  <div class="tags">
+    <span class="tag">西北大学 MFA</span><span class="tag">外国文学史</span>
+    <span class="tag">第24天</span><span class="tag">尤利西斯对应关系</span><span class="tag">含真题原答</span>
+  </div>
+</header>
+
+<div class="prog">
+  <span>今日进度</span>
+  <div class="bar"><i id="progBar"></i></div>
+  <span id="progTxt">0 / 0</span>
+</div>
+
+<div class="ctrl-bar">
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.remove('collapsed')})">📖 全部展开</button>
+  <button onclick="document.querySelectorAll('.card').forEach(function(c){c.classList.add('collapsed')})">📕 全部折叠</button>
+  <button onclick="window.print()">🖨️ 打印 / 导出 PDF</button>
+</div>
+
+<!-- 0 今日带背指令 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">★</div>
+    <div class="card-title">今日带背指令</div>
+    <span class="exam-level lv-ss">先看这个</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-h">群消息原文 · 条目版</div>
+    <p><span class="term">外国文学带背 第24天 带背内容：</span></p>
+    <ol>
+      <li>1️⃣ <span class="hl-b">意识流小说名词解释</span></li>
+      <li>2️⃣ <span class="hl">《追忆似水年华》《都柏林人》《尤利西斯》这几本小说名词解释</span></li>
+      <li>3️⃣ <span class="hl-b">❗️曾考过真题：尤利西斯和奥德赛对应、尤利西斯艺术特征</span></li>
+      <li>4️⃣ <span class="hl-b">《喧哗与骚动》名词解释、艺术特色、叙事结构</span></li>
+      <li>5️⃣ <span class="hl-b">❗️意识流小说基本特征</span></li>
+    </ol>
+
+    <div class="sub-h">群消息原文 · 分块版</div>
+    <div class="box">
+      <p>外国文学带背 第24天 带背内容：</p>
+      <p>1️⃣意识流小说名词解释</p>
+      <p>2️⃣追忆似水年华、都柏林人、尤利西斯这几本小说名词解释</p>
+      <p>3️⃣❗️曾考过真题：尤利西斯和奥德赛对应、尤利西斯艺术特征</p>
+      <p>4️⃣喧哗与骚动名词解释艺术特色叙事结构</p>
+      <p>5️⃣❗️意识流小说基本特征</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 优先级怎么排</div>
+      <p>老师标 ❗️ 的两处＝<span class="hl">③尤利西斯与奥德赛对应关系 ＋ 《尤利西斯》艺术特色</span>（<b>已考过真题</b>，按简答／论述规格准备）、<span class="hl">⑤意识流小说基本特征</span>（四点，可直接做论述题骨架）。<br>①意识流小说名解、④《喧哗与骚动》三件套是<b>高频必背</b>，不能只记标题；②三本小说名解是本页第 5、6、7 卡。</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 本次待核清单（背之前先看一眼）</div>
+      <ol>
+        <li><b>《尤利西斯》时间跨度，PPT 与库内原答不一致</b>。PPT 图 5 写「1904 年 6 月 16 日早晨 8 点到<b>第二天凌晨 2 点 45 分</b>，将近 19 个小时」；唐红梅串讲与 2025 年西大真题原答都写「<b>18 个小时</b>」。<b>建议答题写「十八个小时」</b>（西大真题原答口径），两个数字不写在同一句里。</li>
+        <li><b>《喧哗与骚动》里「女儿」还是「女仆」，PPT 本身自相矛盾</b>。图 11 括号内注「康普生家三兄弟与<b>女仆</b>的意识」；而同页正文又写「围绕<b>核心事件『凯蒂的堕落』</b>展开」——凯蒂是康普生家的<b>女儿</b>。通行说法（2020 年西大论述题原答）为「<b>四个人物…都是以凯蒂的堕落为焦点复合而成</b>」。<b>答题写「凯蒂的堕落」</b>，不要抄「女仆」二字。</li>
+        <li><b>《都柏林人》讲了「15 篇」，但 PPT 图 4 正文又说「15 篇小说分童年、青年、壮年三个」——「壮年」应为「成年」</b>。通行三段划分为「<b>童年、青年、成年（公共生活）</b>」，另加末篇《死者》作尾声。本页按「童年／青年／成年」写。</li>
+        <li><b>《追忆似水年华》卷数与字数以 PPT 为准</b>（图 3：「共七部 15 卷，约 250 万字」）。另需注意 PPT 说「普鲁斯特写作主要以<b>『时间』为中心主题</b>」，通行说法是<b>「以『时间』和『回忆』为中心」</b>，做题时把「回忆」补上更稳。</li>
+        <li><b>《尤利西斯》的荷马史诗译名，本页三处口径统一为「《奥德赛》」</b>（群提纲、PPT 图 5／6／7 均作《奥德赛》）。库内分章刷题用《奥德修纪》/《奥德修记》，唐红梅串讲也用《奥德修纪》——<b>同一本书的两个译名，答题时跟着题目走，两道题内别混用</b>。</li>
+        <li><b>人物译名「布鲁姆」与「布卢姆」并存</b>。PPT 图 5／6 作<b>布卢姆</b>，图 8 艺术特色里作<b>布鲁姆</b>；西大 2020 真题原答作<b>布卢姆</b>、唐红梅串讲也作<b>布卢姆</b>。本页统一按<b>布卢姆</b>（真题口径），引 PPT 原文处保留原样并标注。</li>
+        <li>本次图片共 <b>11 张</b>，与聊天记录里 11 条图片消息<b>数量吻合</b>，无缺页；PPT 各页之间衔接自然（图 1–2 为意识流概述与基本特征，图 3–8 为普鲁斯特／乔伊斯，图 9–11 为福克纳）。</li>
+      </ol>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t0">★ 今日指令已读 ＋ 待核七点过目</span>
+    </div>
+  </div>
+</div>
+
+<!-- 1 意识流小说 名词解释 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">1</div>
+    <div class="card-title">意识流小说（名词解释）<span class="ppt-src">PPT 图 1</span></div>
+    <span class="exam-level lv-ss">名解 · 必背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 1 项。同时也是 2016 年西大真题原题（名词解释第五题），卡片最后附真题原答，两版合起来背。</div>
+
+    <div class="sub-h">PPT 原文</div>
+    <div class="box">
+      <p><span class="term">意识流小说：</span>是 <b>1915 年—1940 年间</b>盛行于欧美，后来对文学艺术产生了广泛影响的一个<b>现代主义文学流派</b>。</p>
+      <p>它主张<span class="hl">直接表现个人的意识流动，尤其是表现潜意识的活动</span>，人的意识流动遵循的是「<span class="hl-b">心理时间</span>」，而非物理时间，成为一种「<b>最纯粹的自我表现形式</b>」，形成了意识流文学。西方现代哲学和心理学的发展和成就，为意识流小说家的探索和创新提供了理论基础。</p>
+      <p>代表作家作品有：<span class="hl">普鲁斯特的《追忆似水年华》、乔伊斯的《尤利西斯》、福克纳的《喧哗与骚动》</span>。这些作品采用不受时间和空间限制的自由联想和内心独白的表现手法，对其他文学流派很有影响。</p>
+    </div>
+
+    <div class="sub-h">库内补｜2016 年西大真题原答（名词解释第五题）</div>
+    <div class="answer">
+      <div class="a-t">✅ 真题原答 · 建议整段背下来</div>
+      <p>「意识流」概念原属心理学范畴，最早提出的是美国心理学家威廉·詹姆斯。他在《心理学原理》中指出：「<b>意识并不是片断的连接，而是流动的。用一条『河』，或者一股『流水』的比喻来表达它是最自然的了。</b>」这为意识流文学表现潜意识内容提供了理论基础。</p>
+      <p>意识流小说是 20 世纪 20、30 年代流行于英、法、美等国的一种现代主义文学流派，不重视描摹客观世界，而着力于表现人的内心真实，特别是着力于表现人的意识流程，从而打破了传统小说的叙事模式和结构方法，用<b>心理逻辑</b>去组织故事。在创作技巧上，意识流小说大量运用<b>内心独白、自由联想和象征暗示</b>的手法，语言、文体和标点等方面都有很大的创新。代表作有爱尔兰乔伊斯的《尤利西斯》、法国普鲁斯特的《追忆似水年华》、美国福克纳的《喧哗与骚动》、英国伍尔夫的《到灯塔去》等。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 名解四要素（照这个顺序写就不会漏）</div>
+      <p>①<b>定性</b>：20 世纪上半期现代主义文学流派，1915—1940（或写 20、30 年代）盛行于欧美；②<b>主张</b>：向内转，写内心真实与意识流程，用「心理时间」不用物理时间；③<b>手法</b>：内心独白、自由联想、象征暗示；④<b>代表作</b>：乔伊斯《尤利西斯》、普鲁斯特《追忆似水年华》、福克纳《喧哗与骚动》、伍尔夫《到灯塔去》。<br><span class="hl-b">「威廉·詹姆斯《心理学原理》＋弗洛伊德潜意识」是这道题的加分句</span>，能写就写。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t1">1 意识流小说名解（PPT ＋ 真题原答）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 2 基本特征 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">2</div>
+    <div class="card-title">意识流小说的基本特征（四点）<span class="ppt-src">PPT 图 2 ＋ 图 11</span></div>
+    <span class="exam-level lv-ss">❗️论述题骨架</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 5 项，老师标 ❗️。PPT 两头都讲了这个题：图 2 给出四点标题（简版），图 11 又把四点逐条展开（详版）——<b>两部分合起来就是一份完整的论述题答案</b>。第四点「构建多层次的意识结构」的三种形式，也是 2020 年西大论述题原答的第四点，务必背熟。</div>
+
+    <div class="sub-h">（一）以内心真实为表现核心</div>
+    <div class="box">
+      <p>意识流作家主张文学应<b>超越外部客观现实，直指人物的内心世界</b>。他们致力于表现主观感受、印象及意识（尤其是<b>潜意识</b>）的流动过程，热衷于刻画<span class="hl">异化人性、变态心理与扭曲性格</span>。</p>
+      <p>例：普鲁斯特《追忆似水年华》中<b>马赛尔</b>的病态敏感；乔伊斯《尤利西斯》中<b>布鲁姆</b>的猥琐心理；福克纳《喧哗与骚动》中<b>班吉</b>的白痴意识与<b>杰生</b>的金钱异化。</p>
+      <p class="ppt-src" style="display:inline-block;margin-top:.3rem">库内补充·2020 年西大论述题原答：意识流思潮以近代哲学心理学为基础——威廉·詹姆斯《心理学原理》（1890）首提「意识流」；弗洛伊德论述意识三层次（意识、前意识、潜意识），认为「潜意识是精神的实质」，为意识流文学提供了理论基础。</p>
+    </div>
+
+    <div class="sub-h">（二）采用跳跃无序的自由联想</div>
+    <div class="box">
+      <p>「自由联想」是意识流创作的<b>基本思维模式</b>。它不受形式逻辑约束，打破时空秩序，让<b>过去、现在、未来自由交错</b>，使理性意识与潜意识、下意识念头随意闪现。</p>
+      <p>通过意识的跳跃无序，人物的内心世界得以更丰富、更真实地呈现，其生活经历与精神历程也在<b>穿插重叠</b>中获得空间性的自由表达。</p>
+    </div>
+
+    <div class="sub-h">（三）依赖絮语不止的内心独白</div>
+    <div class="box">
+      <p>「内心独白」是意识流文学的<b>标志性手法</b>。它不看重思维的结果，而是<b>真实呈现意识本身的流动过程</b>——从朦胧的梦呓、破碎的断想到清醒的理智，相互渗透，连成整体，表现出<b>不受逻辑思维限制</b>的特征。</p>
+      <p>例：普鲁斯特《追忆似水年华》全书即以「我」的内心独白为线索串连，其中的<span class="hl-b">「小玛德莱娜点心」</span>片断是意识流的典范。</p>
+    </div>
+
+    <div class="sub-h">（四）构建多层次的意识结构</div>
+    <div class="box">
+      <p>意识流在作品中的具体结构可分为<b>三种形式</b>：</p>
+      <ol>
+        <li><b>单一式</b>：以单个人物的意识活动为中心，成单线或辐射状展开联想。如伍尔夫《墙上的斑点》。</li>
+        <li><b>交叉式</b>：同时描写多个人物的意识流动，形成多线索交叉。如乔伊斯《尤利西斯》中<b>三位主人公的平行意识流</b>，共同映衬出现代人的精神困境。</li>
+        <li><b>复合式</b>：不同人物围绕<b>同一焦点</b>展开意识流动，形成「<span class="hl-b">异床同梦</span>」的立体效果。如福克纳《喧哗与骚动》中，康普生家三兄弟与仆人的意识均围绕核心事件「<b>凯蒂的堕落</b>」展开，从不同角度复合呈现，使事件与人物心理愈发清晰深刻。</li>
+      </ol>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 四点口诀 ＋ 三种结构</div>
+      <p>四点：「<span class="hl">内心真实 · 自由联想 · 内心独白 · 多层结构</span>」。<br>三种结构配三部作品：「<span class="hl">单一伍尔夫《墙上的斑点》 · 交叉乔伊斯《尤利西斯》 · 复合福克纳《喧哗与骚动》</span>」——这三个例子一定要能对上号，几乎是必考的点名搭配。</p>
+    </div>
+
+    <div class="paper">
+      <div class="p-t">📜 真题指向 · 2020 年西大论述题第三题（意识流小说特征）</div>
+      <p>西大 2020 年论述题第三题考的正是<b>这四点</b>，评分要点与本卡（一）（二）（三）（四）四节标题一一对应，原答文字比 PPT 更完整，答题时可直接照本卡第四节里的 2020 原答表述写。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t2">2 基本特征四点 ＋ 三种意识结构</span>
+    </div>
+  </div>
+</div>
+
+<!-- 3 追忆似水年华 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">3</div>
+    <div class="card-title">普鲁斯特《追忆似水年华》（名词解释）<span class="ppt-src">PPT 图 3</span></div>
+    <span class="exam-level lv-ss">名解 · 必背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 2 项。作家生卒、卷数字数是名解的开头句，务必记准。</div>
+
+    <div class="sub-h">作家小传</div>
+    <div class="box">
+      <p><b>[法] 马塞尔·普鲁斯特（1871—1922）</b>，法国意识流小说作家。代表作《追忆似水年华》。</p>
+    </div>
+
+    <div class="sub-h">作品名词解释 · PPT 原文</div>
+    <div class="box">
+      <p><span class="term">《追忆似水年华》：</span>法国意识流作家普鲁斯特代表作，<b>共七部 15 卷，约 250 万字</b>，是作者的倾心之力作。</p>
+      <p>这是一部<b>蕴藉着深厚的思想内涵、有着多重交叉主题</b>的艺术作品。小说从叙述者<b>马赛尔在病榻上的不寐之夜</b>开始叙起，展示了 19 世纪末至 20 世纪初法国上流社会的生活图景与历史变迁，真实描写社会生活、世态人情，并深入探索人的内心奥秘，是<b>一份自我的心灵成长史诗</b>。</p>
+      <p>作家以「<span class="hl">时间</span>」为中心主题，采用<b>倒叙</b>、<b>插叙</b>、<b>夹叙夹议</b>、<b>预示</b>、<b>悬念</b>、<b>场景描绘</b>、<b>故事套故事</b>、<b>仿作和对比</b>等高超的叙事技巧，收放自如地重组了<b>巨大的时空</b>；在刻画人物时多采用<b>反复关照</b>的方法，对人的意识与无意识描摹细腻深刻，以絮絮重复、相互关联的长句表现<b>纷然杂陈乃至自相矛盾</b>的心理状态。该作品对后世影响深远。</p>
+    </div>
+
+    <div class="sub-h">情节梗概 · PPT 原文</div>
+    <div class="box">
+      <p>小说以<b>第一人称</b>描写，叙述者马赛尔患有重度失眠症，经常处于半睡半醒的状态，年幼时的体弱多病，敏感异常。小说开头主人公回忆起童年时在<b>贡布雷</b>的生活片段。一个夏天晚上，邻居斯万先生，没有斯万夫人奥黛特陪同，来看望叙述者的父母。叙述者睡前等不到母亲的亲抚，心里非常难受。</p>
+      <p>一年冬天，他把<b>玛德莱娜小蛋糕</b>浸泡在茶水中吃，这味道使他想起他童年时在莱奥妮姨妈家里。在贡布雷家，有两条步行小道，一条通往斯万家，称为<b>斯万家之路</b>；另一条通往盖尔芒特府邸，称为<b>盖尔芒特家之路</b>。斯万先生在剧院里结识了交际花奥黛特·德·克雷西，事实上是一名高级妓女，一开始他不喜欢她，后来逐渐爱上了她。</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️ 两处注意</div>
+      <ol>
+        <li>PPT 只提「以『<b>时间</b>』为中心主题」，通行说法是「以『<b>时间</b>』和『<b>回忆</b>』为中心」——做题时把「回忆」补上更稳。</li>
+        <li>「<b>玛德莱娜小蛋糕</b>」（本页按 PPT 写法）与「<b>小玛德莱娜点心</b>」（2020 年西大真题原答、唐红梅串讲写法）是同一物、同一译名的两种写法，都能得分；同一份卷子里保持一致即可。</li>
+      </ol>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 名解压缩版（考场上写这一版够用）</div>
+      <p>「《追忆似水年华》是<b>法国意识流作家普鲁斯特</b>的代表作，共七部 15 卷、约 250 万字，以第一人称叙述马赛尔的回忆，从病榻不寐之夜写起，展现 19 世纪末 20 世纪初法国上流社会图景。以『时间』为中心主题，用倒叙、插叙、场景描绘等技巧重组时空，以絮絮重复的长句表现人物纷然杂陈的心理，是一部<b>自我心灵成长史诗</b>，也是意识流小说的典范。」</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t3">3 《追忆似水年华》名解 ＋ 情节梗概</span>
+    </div>
+  </div>
+</div>
+
+<!-- 4 都柏林人 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">4</div>
+    <div class="card-title">乔伊斯《都柏林人》（名词解释）<span class="ppt-src">PPT 图 4</span></div>
+    <span class="exam-level lv-ss">名解 · 必背</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 2 项。这道名解的核心词是「<span class="hl-b">瘫痪</span>」（Paralysis）——只要把这个词写出来，答案就立住了。</div>
+
+    <div class="sub-h">作品名词解释 · PPT 原文</div>
+    <div class="box">
+      <p><span class="term">《都柏林人》</span>（<i>Dubliners</i>）：<b>爱尔兰</b>意识流作家<b>乔伊斯</b>所作，由 <b>15 篇</b>描写都柏林市民生活的短篇小说组成。</p>
+      <p>15 篇小说分<b>童年、青年、成年</b>三个人生阶段，以及成人社会生活的不同侧面，大跨度、多方位揭示了都柏林人「<span class="hl-b">瘫痪</span>」的精神状态，即<b>失去激情；失去改变自身命运的冲动和能力，浑浑噩噩，麻木疲软</b>的精神状态。</p>
+    </div>
+
+    <div class="sub-h">库内补｜PPT 图 4 后半段逐句整理</div>
+    <div class="box">
+      <p>《都柏林人》强调了一个共同的主题，即 19 世纪末 20 世纪初弥漫于整个爱尔兰社会的<b>麻木不仁、死气沉沉</b>的精神状态。</p>
+      <p>这种精神状态被乔伊斯定义为「<span class="hl-b">瘫痪</span>」（Paralysis），精神瘫痪这一主题在乔伊斯的作品集中表现在<b>宗教瘫痪、政治瘫痪、情感瘫痪、心理瘫痪</b>4 个方面。</p>
+      <p>《都柏林人》中的情感瘫痪，主要表现在<b>爱情的幻灭、婚姻的禁锢以及交流的障碍</b>。爱尔兰人的精神瘫痪在《都柏林人》中得到了最直接和最具体的体现，一个个真实、生动的故事，深入到人物灵魂和心理状态的最细微深处，其实地再现了爱尔兰人及现代人精神世界的瘫痪状态。</p>
+      <p>《都柏林人》的主角，是<b>都柏林这座无名的、巨大的城市</b>。乔伊斯以这座城市为「舞台」，把《死者》中主人公「<b>爱尔兰瘫痪的中心</b>」显露无遗，他不愿解释他们见到的「瘫痪」的存在，他把自己本身正在消逝的一个都柏林的世界写进去：这里的人尚未去世的，这些死者一度在这儿养育了爱，活过了的世界，正在消逝，而自我解放始终难以企及，这个都柏林是麻木、瘫痪了的「都柏林人」的安身之地，抓住了它的主人，抓住了这个时代中现实的人们。</p>
+      <p class="ppt-src" style="display:inline-block;margin-top:.3rem">注：上段末句 PPT 原文表述略显含糊，本页按可见文字原样保留，答题时写「乔伊斯以都柏林为『瘫痪』的中心意象，表现现代人精神世界的麻痹状态」即可。</p>
+      <p>在同样的底色上，《<b>一个青年艺术家的肖像</b>》集中描绘了一个<b>忧郁敏感</b>、在浓郁的宗教氛围中成长起来、具有艺术家气质的青年形象——<b>斯蒂芬·迪达勒斯</b>，最终他决定挣脱爱尔兰社会与宗教的束缚，<b>流亡欧洲以追求艺术使命</b>。</p>
+      <p>通过青年之口，乔伊斯表达了自己对宗教、艺术和人生的观点。后来，这个青年继续成长，走进了意识流宏篇《尤利西斯》之中。</p>
+    </div>
+
+    <div class="warn">
+      <div class="w-t">⚠️「三阶段」口径</div>
+      <p>PPT 写「分童年、青年、<b>壮年</b>三个人生阶段」，通行划分为「<b>童年、青年、成年（公共生活）</b>」，另以末篇《死者》作全书的总结与高潮。<b>本页按「童年、青年、成年」写</b>，若老师课上就讲「壮年」，按 PPT 写也不算错，但「成年」更通用。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 名解压缩版</div>
+      <p>「《都柏林人》是<b>爱尔兰作家乔伊斯</b>的短篇小说集，由 15 篇写都柏林市民生活的小说组成，分童年、青年、成年三个成长阶段，多方位揭示都柏林人『<b>瘫痪</b>』的精神状态——失去激情、失去改变命运的冲动与能力、浑浑噩噩、麻木疲软。这种瘫痪体现在宗教、政治、情感、心理四个方面，是 19 世纪末 20 世纪初爱尔兰社会精神危机的写照，也是乔伊斯意识流创作的起点。」</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t4">4 《都柏林人》名解 ＋「瘫痪」四方面</span>
+    </div>
+  </div>
+</div>
+
+<!-- 5 尤利西斯 名解 内容 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">5</div>
+    <div class="card-title">乔伊斯《尤利西斯》：内容与三个人物<span class="ppt-src">PPT 图 5</span></div>
+    <span class="exam-level lv-ss">名解 ＋ 内容</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 2 项。人物三名的性格对照是本卡重点，第 6 卡（对应关系）要靠这三个人的名字撑起来。本页人物名统一按真题口径写作<b>布卢姆</b>、<b>斯蒂芬</b>、<b>玛莉恩（莫莉）</b>。</div>
+
+    <div class="sub-h">作品定位 · PPT 原文</div>
+    <div class="box">
+      <p>长篇小说《尤利西斯》是<b>爱尔兰著名现代派小说家乔伊斯</b>的代表作，题目来源于古希腊神话中的英雄<b>奥德修斯</b>（<i>Odysseus</i>，拉丁名为<b>尤利西斯</b>），作品共分三部分<b>十八章</b>。</p>
+      <p>小说以时间顺序为序，描述了三位<b>普通都柏林人</b>在 1904 年 6 月 16 日从早上 8 点到<span class="hl-b">第二天凌晨 2 点 45 分</span>之间在都柏林的种种经历。</p>
+    </div>
+    <div class="warn">
+      <div class="w-t">⚠️ 这个时间跨度要改成「18 个小时」</div>
+      <p>上面是 PPT 原话（「将近 19 个小时」）。<b>唐红梅串讲与 2025 年西大真题原答都写「18 个小时」</b>。<b>答题写「十八个小时」</b>，这是西大真题原答的口径，也更简洁。</p>
+    </div>
+
+    <div class="sub-h">三个人物 · PPT 原文</div>
+    <div class="box">
+      <p><b>① 斯蒂芬·迪达勒斯</b>。故事发生在都柏林市郊的一座圆形炮塔里。一个是名叫<b>斯蒂芬·迪达勒斯</b>的青年教师，也住在这一所校舍里，他是一位弱的历史教师和诗人。斯蒂芬的母亲在临终时曾请他<b>跪下祈祷</b>，但他出于对宗教的反抗，没有听从母亲的祈求，母亲死后，他为此事<b>悔恨终身</b>，始终沉浸在懊丧之中。后来，因家道中落，斯蒂芬几乎与领着妹妹们艰难度日的父亲断绝了关系，他离家出走，以教书为生。</p>
+      <p><b>② 利奥波德·布卢姆</b>。他是一位<b>广告推销员</b>，匈牙利犹太人。布卢姆常常串街走巷，终日奔忙，却总是劳而无获。<span class="hl">布卢姆的幼子夭折使他在精神上受到无法弥补的创伤，而布卢姆的妻子对他不忠使他羞愧难当。</span></p>
+      <p><b>③ 布卢姆的妻子玛莉恩（莫莉）</b>。她是位典型的<b>肉欲主义</b>代表，由于布卢姆性功能衰退，她不甘寂寞，常常招蜂引蝶，这一切均使布卢姆蒙受着难言的羞辱和精神折磨。</p>
+      <p>1904 年 6 月 16 日清晨，斯蒂芬上完了一节历史课后，从校长那儿得到了<b>三英镑二先令</b>的报酬，来到海边漫步，面对翻滚的海浪，他思绪万千，人世的沧桑、大自然的奥妙、时空的永恒、艺术的魅力在他的意识中开始了漫无边际的涌动。他因对母亲有过情欲的爱恋而觉得对不起父亲，他抱着负罪的感觉渴望在精神上重新得到一位父亲。</p>
+    </div>
+
+    <div class="sub-h">库内补｜布卢姆的一天（PPT 图 5 后半段）</div>
+    <div class="box">
+      <p>同一日的早上八点钟，在<b>埃克尔德街</b>某所房子里，广告推销员布卢姆正在为自己和妻子<b>莫莉</b>准备早餐。这时，送信人给莫莉送来一封信，内容大致是一名叫做<b>波伊兰</b>的青年演员定在下午四点钟来看她。布卢姆怀有黯然的心情走出了家门。</p>
+      <p>布卢姆到邮局取了一封写信给他的女友的信，在僻静的地方烧了它。而后，布卢姆走进一家浴室，在那里他获得了异常的满足，同时内心充满了愉快得发昏的喜悦。在布卢姆去墓地途中，他看到了妻子的新欢波伊兰正坐在马车上向相反方向驶去。于是，他痛苦地闪现了一系列念头：死亡、埋葬、以尸体为食物的一只鼹鼠、一座座新的潮湿的墓穴……</p>
+      <p>随后，布卢姆到《弗里曼日报》社去送去了一个广告图案，又去了一家医院探望因难产而住院的一位太太。在这里布卢姆遇见了<b>斯蒂芬</b>。二人一见如故，斯蒂芬便要把自己的新认识介绍给了斯蒂芬。他们去了妓院。在那里斯蒂芬酗酒大醉，布卢姆精心照料他。他们于凌晨再度相聚，在附近看到斯蒂芬身上最重要的东西，布卢姆在斯蒂芬的身上找到了自己失去的儿子。</p>
+      <p>斯蒂芬在一家酒馆里唱了一首<b>《爱情的酸涩》</b>，向来自爱尔兰的姑娘的斯蒂芬，讲述了他妹妹米莉的事。在那小酒店里，布卢姆被一副若无其事的表情，在酒馆里坐了 30 分钟；酒馆里的气氛使他联想到妻子与情人的作爱，勃然动怒，与情敌势不两立，在恍惚中又回想起和布卢姆初次恋爱的时光。</p>
+      <p class="ppt-src" style="display:inline-block;margin-top:.3rem">注：本段 PPT 原文表述较为零乱、人称交错，疑为讲稿压缩所致，本页按可见文字原样保留。答题不必复述细节，只写「布卢姆在一天中经历了葬礼、报馆、医院、妓院等场景，其间与斯蒂芬相遇并给予照料，最终在斯蒂芬身上找到了精神上的儿子」即可。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 三个人物一句话</div>
+      <p><span class="hl">斯蒂芬＝失去母亲、渴望精神父亲的儿子；布卢姆＝丧子、被背叛、四处漂泊的庸人父亲；莫莉＝肉欲主义的妻子</span>。<br>这三个人物的性格定位直接决定第 6 卡「对应关系」的答题方向——<b>神话里的英雄，在现代变成了庸人</b>。</p>
+    </div>
+
+    <div class="sub-h">📜 2025 年西大真题原答 · 《尤利西斯》名解（名词解释第二题）</div>
+    <div class="answer">
+      <div class="a-t">✅ 真题原答 · 建议整段背下来</div>
+      <p>《尤利西斯》是爱尔兰作家乔伊斯的代表作，也是 20 世纪上半叶现代主义文学流派中意识流的经典作之一。在<b>人物、情节、结构乃至语言</b>等方面都与《奥德赛》相对应。讲述了 1904 年 6 月 16 日早晨 8 点到第二天凌晨 2 点 45 分将近 <b>19 个小时</b>中 3 个都柏林人的生活。运用<b>自由联想、内心独白、时空颠倒</b>的手法，高度浓缩的时间、空间和人物形象表现西方现代社会中人的<b>孤独绝望、精神崩溃、无可救药</b>。是意识流小说的<b>开山之作，也是集大成之作</b>。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t5">5 《尤利西斯》内容 ＋ 三个人物 ＋ 2025 名解原答</span>
+    </div>
+  </div>
+</div>
+
+<!-- 6 尤利西斯与奥德赛对应关系 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">6</div>
+    <div class="card-title">《尤利西斯》与《奥德赛》的对应关系<span class="ppt-src">PPT 图 6 ＋ 图 7</span></div>
+    <span class="exam-level lv-ss">❗️真题 · 简答／论述</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 3 项，老师标 ❗️「<b>曾考过真题</b>」。分四层：结构对应 → 人物对应 → 情节与细节对应 → 主题对应。<b>其中「人物对应」是必背中的必背</b>，三层人物对照写不出来这题就塌了。</div>
+
+    <div class="sub-h">总起 · PPT 原文</div>
+    <div class="box">
+      <p>《尤利西斯》这部小说在<b>框架结构、故事情节和主要人物</b>上都同荷马史诗《奥德赛》形成了一种巧妙的对应关系。「尤利西斯」是希腊英雄「<b>奥德修斯</b>」的罗马名字，所以古希腊神话英雄的故事以及体现的精神，就成了这部小说开拓深层次主题的<b>文化背景</b>。</p>
+    </div>
+
+    <div class="sub-h">1、结构对应</div>
+    <div class="box">
+      <p>《奥德赛》全诗 <b>24 卷</b>，分为<b>三部分</b>；《尤利西斯》全书 <b>18 章</b>，分<b>三部</b>，与《奥德赛》的三部分严格对应。</p>
+      <ul>
+        <li>第一部分 对应 《奥德赛》中<b>奥德修斯儿子帖雷马科出海寻父</b>的经历；</li>
+        <li>第二部分 对应 <b>奥德修斯十年归程中的漂泊</b>；</li>
+        <li>最后一部分 对应 <b>奥德修斯一家的团聚</b>。</li>
+      </ul>
+    </div>
+
+    <div class="sub-h">2、人物对应（背诵重点）</div>
+    <div class="tablebox">
+      <table>
+        <tr><th>《尤利西斯》</th><th>《奥德赛》</th><th>对应与反差</th></tr>
+        <tr>
+          <td><b>利奥波德·布卢姆</b>（广告推销员）</td>
+          <td><b>奥德修斯</b></td>
+          <td>奥德修斯是智勇双全的英雄，历尽波折终于与家人团聚；<b>布卢姆是平凡的犹太广告推销员、现代都市的漂泊者</b>。他是被社会边缘化的异乡人（因犹太人身份），性格温和甚至有些懦弱。他的「漂泊」是在都柏林街的日常奔波；他的「家」是精神上的蹩脚与和解，他面对的是<b>名存实亡的家庭</b>。</td>
+        </tr>
+        <tr>
+          <td><b>斯蒂芬·迪达勒斯</b>（青年教师）</td>
+          <td><b>帖雷马科</b></td>
+          <td>帖雷马科是外出寻父、机智英勇的王子；<b>斯蒂芬是忧郁、敏感、精神空虚的青年</b>。他与母亲有情感纠葛，与父亲关系疏离。找到的既不是血缘上也不是精神上的父亲。</td>
+        </tr>
+        <tr>
+          <td><b>莫莉</b>（布卢姆之妻）</td>
+          <td><b>潘奈洛佩</b></td>
+          <td>潘奈洛佩是忠贞的典范，通过织布计等侍夫归来；<b>莫莉是肉欲、生命力与背叛的象征</b>。她是一名女高音歌手，在当天下午与演出经纪人博伊兰幽会。<b>小说以她洋洋洒洒、没有标点的长篇内心独白结束</b>，却以对布卢姆的肯定作结，展现了一种复杂而真实的现代意义上的回归与救赎。</td>
+        </tr>
+      </table>
+    </div>
+    <p class="ppt-src" style="display:inline-block;margin-top:.3rem">古人伟大，而今人卑琐，神话结构就有了一种<b>对比作用</b>：精神瘫痪，文明失落。</p>
+
+    <div class="sub-h">3、情节与细节对应</div>
+    <div class="box">
+      <ul>
+        <li>将神话冒险转化为<b>平庸甚至粗俗</b>的现代生活场景。</li>
+        <li>布卢姆在一家食品店里，听着两位女招待和酒吧的音乐声，内心被对莫莉的嫉妒和欲望所折磨。对影星爱娃女妖的歌声该拨水面触礁。</li>
+        <li>布卢姆参加一个朋友的葬礼，在墓园中沉思生与死，对应奥德修斯前往冥府问询先知。</li>
+        <li>布卢姆的土豆对应奥德修斯的保护符；斯蒂芬的拐杖对应忒勒马科斯的长矛。</li>
+      </ul>
+    </div>
+
+    <div class="sub-h">4、主题对应</div>
+    <div class="box">
+      <p><b>（1）</b>通过对比《奥德赛》伟大英雄及英雄品质的对比，《尤利西斯》突出了<b>现代人及其精神的猥琐虚无和平庸</b>，在神话与现实英雄和反英雄的对比中，表现了西方社会道德沉沦和精神瘫痪的现实，揭示了现代西方文明面临的困境。</p>
+      <p><b>（2）</b>乔伊斯以现代手法对荷马的《奥德赛》进行了现代阐述，旨在揭示<b>人类自古至今漂泊不定的精神状态</b>，说明「<span class="hl-b">回家</span>」是人类永恒的愿望，同时表现了现代人寻求精神的完善和归宿的痛苦过程。</p>
+    </div>
+
+    <div class="sub-h">📜 2025 年西大真题原答 · 对应关系（名词解释第二题）</div>
+    <div class="answer">
+      <div class="a-t">✅ 真题原答 · 建议整段背下来</div>
+      <p>《尤利西斯》这部小说在框架结构、故事情节和主要人物上都同荷马史诗《奥德赛》形成了一种巧妙的对应关系。「尤利西斯」是希腊英雄「奥德修斯」的罗马名字，所以，古希腊神话英雄的故事以及体现的精神，就成了这部小说开拓深层次主题的文化背景。</p>
+      <ol>
+        <li>小说共 <b>18 章</b>，分为三部，对应了《奥德赛》的情节和结构框架。第一部分对应《奥德赛》中奥德修斯儿子<b>帖雷马科出海寻父</b>的经历，第二部分对应<b>奥德修斯十年归程中的漂泊</b>，最后一部分对应<b>奥德修斯一家的团聚</b>。</li>
+        <li>《尤利西斯》中的儿子<b>斯蒂芬</b>与古希腊史诗中的儿子<b>帖雷马科</b>对应。两者都寻找父亲并获得成功，但是，帖雷马科忠于母亲，机智英勇，<b>斯蒂芬却背叛母亲，精神空虚，找到的既不是血缘上也不是精神上的父亲</b>。布卢姆与奥德修斯对应，两人都是父亲，都四处漂泊、饱经挫折。但是，奥德修斯是一名英雄，历经波折，终于与家人团聚，而布卢姆则是一个碌碌无为的庸人，面对的是名存实亡的家庭。玛莉恩与潘奈洛佩对应，二者都是妻子。但是潘奈洛佩忠贞机智，而玛莉恩不安于室，过着寻欢作乐的生活。</li>
+      </ol>
+      <p><b>主题关系：</b>（1）《尤利西斯》与《奥德赛》在主题上形成鲜明的对比。通过与《奥德赛》中的伟大英雄及其英雄品质的对应进而对比，《尤利西斯》突出了<b>现代人及其精神的卑微、虚无和平庸</b>，在神话与现实、英雄和反英雄的对比中，表现了西方社会道德沉沦和精神瘫痪的现实，揭示了现代西方文明面临的困境。（2）乔伊斯以现代手法对荷马的《奥德赛》进行了现代阐述，旨在揭示<b>人类自古至今漂泊不定的精神状态</b>，说明「回家」是人类永恒的期望，同时表现了现代人寻求精神的完善和归宿的痛苦过程。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 三组对照，一背就记住</div>
+      <p><span class="hl">布卢姆＝奥德修斯（父亲）· 斯蒂芬＝帖雷马科（儿子）· 莫莉＝潘奈洛佩（妻子）</span>。<br>口诀：「<span class="hl-b">英雄 → 庸人，王子 → 空虚青年，贞妻 → 肉欲女人</span>」——三降一格，正好是「<b>反英雄</b>」。答题最后一句一定要落到「<b>神话结构的对比作用</b>」上，这是这道题的分水岭。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t6">6 对应关系四层 ＋ 三组人物对照 ＋ 真题原答</span>
+    </div>
+  </div>
+</div>
+
+<!-- 7 尤利西斯艺术特色 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">7</div>
+    <div class="card-title">《尤利西斯》艺术特色（五点）<span class="ppt-src">PPT 图 8</span></div>
+    <span class="exam-level lv-ss">❗️真题 · 简答／论述</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 3 项，老师标 ❗️「<b>曾考过真题</b>」。五点必须写全，每题标题后面都要能举一个例子。</div>
+
+    <div class="sub-h">PPT 原文 · 艺术特色五点</div>
+    <div class="box">
+      <p style="color:var(--gold-deep);font-weight:700">20 世纪意识流小说大师乔伊斯创作的《尤利西斯》，被称为是「<b>意识流</b>」的百科全书，它的发表标志着作者意识流技巧的成熟和完善。它有如下特征：</p>
+      <ol>
+        <li><b>作者采用荷马史诗《奥德赛》情节平行的结构</b>，反衬现代西方人的<b>卑微、苍白、渺小、精神瘫痪</b>。</li>
+        <li><b>作者抛弃了单向型意识流手法而将其发展为交错型意识流。</b>作品中三股意识流互相交织，在亲情和家庭的焦点上汇合，构成一幅多彩的画面，折射出都柏林社会的生活场景，表现出他们各自不同的思想感情。</li>
+        <li><b>富有个性的内心独白。</b>布卢姆的独白是<b>务实、具体、充满感官细节</b>，莫莉的独白则是如潮水般汹涌、充满了感性、身体的、情感的流动，在最后一章，她的独白完全没有标点。</li>
+        <li><b>作品还运用平行类比和象征的手法。</b>他以荷马史诗《奥德赛》作为本小说总体结构的框架，并且把两部史诗融为一体；天空中的云彩，象征着人类的种种罪恶；布卢姆的「土豆」。</li>
+        <li><b>语言实验与创新。</b>运用多种语言，打破传统的语法和句法的束缚，独创词汇，文体多变。</li>
+      </ol>
+    </div>
+
+    <div class="sub-h">库内补｜唐红梅串讲版（答题可用，更书面）</div>
+    <div class="box">
+      <p><b>第一，采用了荷马史诗《奥德修纪》的故事框架</b>，为小说主题的开掘提供了深广的文化空间。小说以《奥德修纪》的结构为依托，分为三部，并以史诗的故事、人物、主题作为小说深层次主题展开的文化背景。</p>
+      <p><b>第二，拓展了意识流表现方法。</b>小说以三个人物的意识流程为表现对象，而且描写了玛莉恩凌晨两点似睡未睡、要醒没醒时的意识活动，大量运用<b>内心独白、自由联想、蒙太奇、梦境与幻觉</b>，揭示了人物内心最隐蔽、最深层的心理活动，表现了现代人难以言传的心灵痛苦。</p>
+      <p><b>第三，语言上进行大胆的创新实验</b>，创作了一种<b>新的意识流语体</b>。为了追踪人物隐蔽的意识流程，小说在语言上进行了大胆的创新实验，将内心独白、自由间接引语以及传统的叙事描写紧密地结合在一起，使用高度省略和语法、句法结构不完整的句子，将各种文体乃至异国文字编织在一起，形成了其独具风格的语言艺术。</p>
+    </div>
+
+    <div class="sub-h">原文展示 · 体会什么是意识流<span class="ppt-src">PPT 图 8</span></div>
+    <div class="quote">
+      <p>「下一个窗口是亨利—詹姆斯们的。没什么意思。那边的蛋糕店。盘子里盛的牛肚不好消化。瞧瞧那奶油。……茶壶。猫在舔牛奶。它不会饿。」</p>
+      <p style="margin-top:.6rem">「……于是我说好吧 好吧 随便哪个地方吧 好吧 于是他给了我他吻遍了我的全身 他像个山野里的野人一样 疯狂地吻我 我的心怦怦直跳 好吧 好吧 好吧……」</p>
+    </div>
+    <div class="box">
+      <p>可再补充，意识流小说、意识流技巧的短语更自由，<b>想象象征着记忆碎片和语言结构故事</b>，不受时间和空间限制的自由联想和内心单独的变现手法。主张直接表现个人的意识流动，尤其是表现潜意识的活动，人的意识流动遵循的是「<b>心理时间</b>」，而非物理时间。</p>
+      <p>答题过程中，<b>例子可以多，卷面上显得更专业</b>。</p>
+      <p class="ppt-src" style="display:inline-block;margin-top:.3rem">注：上面第一句 PPT 原文表述破碎（疑为讲稿压缩），本页按可见文字原样保留，<b>不作为答题文字使用</b>，只作理解意识流「自由联想、不受时空限制、心理时间」之参考。原文展示的两段引文可作例子记诵。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 五点口诀</div>
+      <p>「<span class="hl">平行结构 · 交错意识流 · 个性独白 · 平行类比与象征 · 语言实验</span>」。<br>背的时候一定要给每点配一个画面：①《奥德赛》框架 ②三股意识流汇于家庭焦点 ③布卢姆的务实 vs 莫莉的无标点独白 ④云彩象征罪恶、土豆当护符 ⑤多语种、破语法、独创词汇。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t7">7 《尤利西斯》艺术特色五点 ＋ 原文展示</span>
+    </div>
+  </div>
+</div>
+
+<!-- 8 喧哗与骚动 名解 内容 艺术特色 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">8</div>
+    <div class="card-title">福克纳《喧哗与骚动》：名解 ＋ 内容 ＋ 艺术特色<span class="ppt-src">PPT 图 9</span></div>
+    <span class="exam-level lv-ss">名解 ＋ 艺术特色</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 4 项的前两件（名词解释、艺术特色）。名字取自莎士比亚《麦克白》，这一句题记要能背。</div>
+
+    <div class="sub-h">题记 · 名解的漂亮开头<span class="ppt-src">PPT 图 9</span></div>
+    <div class="quote">
+      <p>熄灭吧，熄灭吧，短暂的烛火！<br>人生不过是一个行走的影子，<br>一个在舞台上<br>指手画脚的拙劣的伶人，登场<br>片刻，就在无声无息中悄然退下。<br>它是一个愚人所讲的故事，充满着喧哗与骚动，<br>却找不到一点意义。</p>
+      <p style="text-align:right;font-size:.88rem;color:var(--ink-soft)">——莎士比亚《麦克白》</p>
+    </div>
+
+    <div class="sub-h">作品名词解释 · PPT 原文</div>
+    <div class="box">
+      <p><span class="term">《喧哗与骚动》</span>（<i>The Sound and the Fury</i>）：是美国作家<b>威廉·福克纳</b>创作的长篇小说，创作于 <b>1929 年</b>。</p>
+      <p>该小说讲述的是南方<b>没落地主康普生一家的家族悲剧</b>。老康普生游手好闲、嗜酒贪杯，其妻自私冷酷、怨天尤人。<b>长子昆丁</b>绝望地抱住南方所谓的旧传统不放，因妹妹<b>凯蒂</b>风流成性、有辱南方淑女身份而恨疚交加，<b>竟至溺水自杀</b>。<b>次子杰生</b>冷酷贪婪，<b>三子班吉</b>则是个白痴，三十三岁时只有三岁小儿的智能。全文通过这三个儿子的内心独白，围绕<b>凯蒂</b>的堕落展开，最后则由黑人女佣<b>迪尔西</b>对前三部分的「<b>有限视角</b>」做一补充。</p>
+    </div>
+
+    <div class="sub-h">艺术特色 · PPT 原文（四点）</div>
+    <div class="box">
+      <ol>
+        <li>小说构思巧妙，<b>由四部分组成</b>，各部分叙述者不同，<b>有意打乱叙述者出场顺序，形成了「对位式结构」</b>（叙事结构）。</li>
+        <li>纯熟地<b>运用意识流手法</b>，体现出白痴、精神崩溃者、偏执狂与虐待狂不同的心理状态和语言特色，深入到人物的内心世界。</li>
+        <li>采用「<b>神话模式</b>」，为作品增添了<b>反讽色彩与深邃的寓意</b>。</li>
+        <li>在语言方面，将<b>南方方言融入叙述体散文</b>语言中，生动形象。</li>
+      </ol>
+      <p>该小说成为备受推崇的<b>美国南方文学杰作</b>与广受好评的<b>现代文学经典</b>。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 名解压缩版</div>
+      <p>「《喧哗与骚动》是<b>美国作家福克纳</b> 1929 年创作的长篇小说，书名取自莎士比亚《麦克白》。小说写南方没落地主<b>康普生一家</b>的家族悲剧：长子昆丁因妹妹凯蒂失贞而自杀，次子杰生冷酷贪婪，三子班吉是白痴，最后由黑人女佣迪尔西补充叙述。全书由<b>四个部分、四个叙述者</b>构成对位式结构，大量运用<b>意识流</b>与<b>神话模式</b>，是意识流小说与现代文学经典。」</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t8">8 《喧哗与骚动》名解 ＋ 内容 ＋ 艺术特色四点</span>
+    </div>
+  </div>
+</div>
+
+<!-- 9 喧哗与骚动 叙事结构 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">9</div>
+    <div class="card-title">《喧哗与骚动》叙事结构（四个叙述者）<span class="ppt-src">PPT 图 10</span></div>
+    <span class="exam-level lv-ss">❗️结构与人物对应</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 群提纲第 4 项的最后一件。这一卡最容易被考「为什么这样安排顺序」——答案就是「<b>混乱程度递减、由内向外</b>」。</div>
+
+    <div class="sub-h">PPT 原文</div>
+    <div class="box">
+      <p>书中几部分皆采用<b>第一人称「我」</b>的叙事方法。三兄弟的意识流活动各有特色，不仅能够体现<b>白痴、精神崩溃者、偏执狂与虐待狂</b>不同的心理状态和语言特色，更能揭示人物的内心世界，探索他们的意识与潜意识动机，借此<b>塑造人物性格</b>。</p>
+      <p>小说的<b>第一部分由康普生家的白痴班吉</b>来叙述，其<b>混乱程度不言而喻</b>；<br>
+      <b>第二部分由精神紧张但颇有学问的昆丁</b>来叙述，其内容较前一部分明白易懂；<br>
+      <b>第三部分的叙述者杰生是个利欲熏心、利令智昏的恶棍</b>，他毕竟不是一个精神病患者，因此，他的内心独白不但条理清楚，而且大都合乎逻辑。</p>
+      <p>小说的<b>最后一部分由作者本人叙述</b>，其内容已从混乱无序的精神世界转向了<b>外部的客观世界</b>，其主要人物已不再是康普生家的三个儿子，而是<b>他家的黑人女佣迪尔西</b>。作者以迪尔西<b>冷静和敏锐</b>的目光来观察周围的世界，向读者揭示了康普生家族几十年的变迁和杰弗逊镇的社会生活。</p>
+    </div>
+
+    <div class="sub-h">四部分速记表</div>
+    <div class="tablebox">
+      <table>
+        <tr><th>部分</th><th>叙述者</th><th>人物状态</th><th>叙述特点</th></tr>
+        <tr><td>第一部分</td><td><b>班吉</b>（三子）</td><td>白痴（33 岁只有 3 岁智力）</td><td>混乱程度最高，时空随意跳接</td></tr>
+        <tr><td>第二部分</td><td><b>昆丁</b>（长子）</td><td>精神紧张、颇有学问、精神濒临崩溃</td><td>较前明白易懂，理性与绝望交织</td></tr>
+        <tr><td>第三部分</td><td><b>杰生</b>（次子）</td><td>利欲熏心、利令智昏的恶棍</td><td>条理清楚、合乎逻辑（非精神病患者）</td></tr>
+        <tr><td>第四部分</td><td><b>作者本人</b>（第三人称）</td><td>转向外部客观世界，主角为黑人女佣<b>迪尔西</b></td><td>冷静敏锐的视角，交代家族几十年变迁</td></tr>
+      </table>
+    </div>
+
+    <div class="sub-h">📜 2026 年西大真题原答 · 简答题第二题（三个艺术特色）</div>
+    <div class="answer">
+      <div class="a-t">✅ 真题原答 · 与 PPT 互补，按此写更完整</div>
+      <p><b>（1）作品采用了多角度的叙述方式。</b>在前三章里，福克纳让康普生家的三兄弟各自以第一人称的方式讲述了自己的情感、思维，而后再从第三人称的全知全能的角度出发，以迪尔西为主线，按时间顺序补充情节，叙述故事。作品运用了四个叙述者从各自不同的角度讲述了康普生家族的兴衰史，<b>多角度叙述使作品更加丰满、多义</b>，在人物形象、故事发展的多重可能性背后，读者参与创作有了更大的实现空间。</p>
+      <p><b>（2）意识流手法的运用。</b>人的内心世界是神秘莫测、瞬息万变的，《喧哗与骚动》在表现这方面内容时显示出了高超的技巧。在前三章里，作者着力表现人物的内心真实，展示人的感受、情绪、联想等种种意识流动的痕迹，尤其是对人物的<b>异化人性、病态心理、扭曲性格</b>予以了充分的展示。班吉的基于精神疾患产生的<b>混沌、错乱的痴呆型意识流</b>、精神濒临崩溃的昆丁自杀前产生的<b>理性色彩与绝望情绪交织的情意型意识流</b>、满怀功利心的杰生<b>冷静又偏执的理性意识流</b>，以立体交叉的复合方式呈现出来，多层次、多角度的意识彼此映衬、相互交融，使作品具备了无穷的张力。</p>
+      <p><b>（3）神话原型的运用。</b>福克纳是一个善于运用神话原型的作家，《喧哗与骚动》是他运用神话的一个范例。他以<b>基督受难周</b>的事件为原型，为小说安排了一个对应的神话结构，使小说具有了超越时空的意义。小说中 1928 年的三个日期，正是那一年的<b>基督受难日、复活节前和复活节</b>，昆丁自杀的 1910 年 6 月 2 日则是<b>圣体节的第八天</b>。因此，康普生家的历史便与基督受难的历史产生了关联，增添了作品寓意的普遍性和深刻性。<b>夏娃的堕落引发了人类的灾难，凯蒂的堕落则导致了康普生家的覆亡</b>；亚当夏娃偷食禁果的故事与昆丁和凯蒂的爱是对应的；小昆丁私奔出逃的情景与耶稣复活的场面是相似的……这些神话原型的运用更有利于表现南方社会的历史命运和人类的精神危机，并将作品主题升华到探讨人类命运的高度，使作品从平凡、浅近走向了超越与永恒。</p>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 记住「乱度递减」四个字</div>
+      <p><span class="hl">班吉（最乱）→ 昆丁（半乱）→ 杰生（清楚）→ 作者／迪尔西（客观）</span>。<br>这个顺序不是随便排的：<b>由内向外、由混乱到有序，最后用迪尔西清醒的目光把整个家族史收束成一部「南方社会的编年史」</b>。答题时点出这个用意，分就上去了。</p>
+    </div>
+
+    <div class="sub-h">思考问题<span class="ppt-src">PPT 图 10</span></div>
+    <div class="box">
+      <ol>
+        <li>《喧哗与骚动》结构特点？</li>
+        <li>《喧哗与骚动》的叙事时间？</li>
+        <li>《喧哗与骚动》怎么样体现了意识流小说的特色？</li>
+      </ol>
+      <p class="ppt-src" style="display:inline-block;margin-top:.3rem">这三问 PPT 未给答案，可用本卡「四部分速记表」＋ 2026 真题原答第（2）点合并作答，也可直接看末卡「自测题」。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t9">9 叙事结构四部分 ＋ 2026 真题原答 ＋ 三问</span>
+    </div>
+  </div>
+</div>
+
+<!-- 10 真题回顾 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">10</div>
+    <div class="card-title">西大历年真题回顾（本主题）</div>
+    <span class="exam-level lv-s">命题规律</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 下面每一条都出自《文学史考研笔记整理》里的西大真题原答，年份与题号可查。<b>同一个知识点反复考名词解释＋论述，说明它是西大的稳定考点。</b></div>
+
+    <div class="tablebox">
+      <table>
+        <tr><th>年份</th><th>题型 · 题号</th><th>考点</th></tr>
+        <tr><td>2026</td><td>简答题 第二题</td><td>《喧哗与骚动》的艺术特色（多角度叙述 ／ 意识流手法 ／ 神话原型）</td></tr>
+        <tr><td>2025</td><td>名词解释 第二题</td><td>《尤利西斯》（含与《奥德赛》的对应关系）</td></tr>
+        <tr><td>2022</td><td>论述题 第二题</td><td>20 世纪现代主义文学的思想特征与艺术特征</td></tr>
+        <tr><td>2020</td><td>论述题 第三题</td><td>意识流小说的基本特征（四点，即本页第 2 卡）</td></tr>
+        <tr><td>2016</td><td>名词解释 第五题</td><td>意识流（即本页第 1 卡的真题原答）</td></tr>
+      </table>
+    </div>
+
+    <div class="sub-h">📜 2022 年论述题原答节选 · 现代主义文学的思想特征与艺术特征</div>
+    <div class="answer">
+      <div class="a-t">✅ 真题原答节选 · 与意识流部分衔接用</div>
+      <p><b>思想特征：</b>（一）<b>强烈的文化批判倾向</b>。19 世纪末 20 世纪初，世界的混乱、战争的恐怖、社会道德的衰落，使人们深感失望与不安，作为西方精神支柱的传统文化观念开始崩溃。尼采提出的「上帝死了」「一切价值重估」等口号，深深影响了 20 世纪现代主义作家。（二）<b>表现异化主题</b>。20 世纪高度发展的西方现代文明使人处于严重的异化之中，异化主题主要从<b>自然与个人、社会与个人、个人与个人、个人与自我</b>四个方面表现出来。</p>
+      <p><b>艺术特征：</b>（三）<b>主观性和内倾性特征</b>。现代主义作家视客观实体为非真实，认为心灵世界才是唯一真实的世界，如意识流小说家往往把人的意识流动状态作为客观现实生活加以描写。（四）<b>运用象征隐喻的神话模式</b>，追求艺术的深度模式。如艾略特《荒原》用古代繁殖神性能力丧失造成的土地荒芜建构象征体「荒原」。（五）<b>提倡「以丑为美」「反向诗学」</b>，大量描写丑的事物。（六）<b>热衷艺术技巧的革新与实验</b>，大量采用自由联想、时空倒错、内心独白、意识流以及顿悟、象征、隐喻、暗示等表现手法，追求「有意味的形式」。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t10">10 真题回顾五条 ＋ 2022 论述原答节选</span>
+    </div>
+  </div>
+</div>
+
+<!-- 11 自测题 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">11</div>
+    <div class="card-title">合上书自测（十问）</div>
+    <span class="exam-level lv-ss">自测</span>
+  </div>
+  <div class="card-body">
+    <div class="note-bar">🎯 十问都能答出来，今天的带背才算过。答不出的回到对应卡片再背一遍。</div>
+    <div class="box">
+      <ol>
+        <li>意识流小说兴起的时间范围是？「意识流」这个概念最早由谁提出、出自哪本书？<span class="ppt-src">→ 卡 1</span></li>
+        <li>意识流小说为什么能表现潜意识？哲学心理学基础是哪两个人？<span class="ppt-src">→ 卡 1</span></li>
+        <li>意识流小说的<b>四个基本特征</b>分别是什么？<span class="ppt-src">→ 卡 2</span></li>
+        <li>意识结构的<b>三种形式</b>分别对应哪三部作品？<span class="ppt-src">→ 卡 2</span></li>
+        <li>乔伊斯为什么把《都柏林人》的主题定为「瘫痪」？它表现在哪四个方面？<span class="ppt-src">→ 卡 4</span></li>
+        <li>《追忆似水年华》共几卷、约多少字？以什么为中心主题？<span class="ppt-src">→ 卡 3</span></li>
+        <li>《尤利西斯》三组人物分别与《奥德赛》中哪些人物对应？反差在哪？<span class="ppt-src">→ 卡 6</span></li>
+        <li>《尤利西斯》的<b>艺术特色</b>有哪五点？<span class="ppt-src">→ 卡 7</span></li>
+        <li>《喧哗与骚动》四个部分的叙述者分别是谁？为什么按这个顺序排？<span class="ppt-src">→ 卡 9</span></li>
+        <li>《喧哗与骚动》的「神话模式」具体指什么（对照哪几个日期）？<span class="ppt-src">→ 卡 9</span></li>
+      </ol>
+    </div>
+
+    <div class="mnem">
+      <div class="m-t">🧠 今天的三句总结</div>
+      <p>①「<span class="hl">意识流＝向内转 ＋ 心理时间 ＋ 自由联想 ＋ 内心独白，四种结构单一／交叉／复合</span>」；<br>②「<span class="hl">尤利西斯＝三组人物对照《奥德赛》，英雄变庸人，神话结构作反衬</span>」；<br>③「<span class="hl">喧哗与骚动＝四个叙述者乱度递减，以凯蒂的堕落为焦点复合呈现，叠一层基督受难周的神话原型</span>」。</p>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t11">11 自测十问全部答得出</span>
+    </div>
+  </div>
+</div>
+
+<!-- 12 直达原资料 -->
+<div class="card">
+  <div class="card-head" onclick="this.parentNode.classList.toggle('collapsed')">
+    <div class="num">12</div>
+    <div class="card-title">直达原资料</div>
+    <span class="exam-level lv-l">查证用</span>
+  </div>
+  <div class="card-body">
+    <div class="box">
+      <ul>
+        <li><a href="../外国文学史习题_分章刷题.html#d9">外国文学史分章刷题 · 现代主义后现代主义章（含《尤利西斯》与《奥德赛》对应关系参考答案）</a></li>
+        <li><a href="../文学史考研笔记整理_纯文字版.html">文学史考研笔记整理 · 纯文字版（含全部西大真题原答）</a></li>
+        <li><a href="../唐红梅外国文学知识点串讲.html">唐红梅外国文学知识点串讲（意识流小说 / 乔伊斯 / 尤利西斯艺术特色）</a></li>
+        <li><a href="../李凡1000题_外国文学史-OCR重建版.html">李凡 1000 题 · 外国文学史 OCR 重建版</a></li>
+        <li><a href="day23-俄苏与现代主义.html">← 第 23 天带背 · 俄苏文学与现代主义文学（现代主义流派总述在此页）</a></li>
+      </ul>
+    </div>
+
+    <div class="study-bar">
+      <span class="chk" data-k="d24t12">12 直达资料链接已收藏</span>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <p>第 24 天带背 · 意识流小说</p>
+  <p>内容来源：带背 PPT 截图（11 张逐张识读）＋ 库内题库（外国文学史分章刷题、唐红梅外国文学知识点串讲、李凡 1000 题外国文学史）＋ 西大历年真题原答</p>
+  <p>有 7 处「待核」已在指令卡中标出 · 打卡进度保存在本机浏览器</p>
+</div>
+</div>
+
+<div class="font-ctrl">
+  <button onclick="fsStep(-1)">−</button>
+  <span class="fs-label" id="fsLabel">15px</span>
+  <button onclick="fsStep(1)">＋</button>
+  <button class="fs-reset" onclick="fsReset()">复位</button>
+</div>
+
+<script>
+(function(){
+  var FS_KEY='day24_fs', CHK_KEY='day24_checks';
+  var base=15, cur=base;
+  try{ var s=localStorage.getItem(FS_KEY); if(s){ cur=parseFloat(s);} }catch(e){}
+  function apply(){ document.documentElement.style.setProperty('--fs-base',cur+'px');
+    var el=document.getElementById('fsLabel'); if(el){el.textContent=Math.round(cur)+'px';} }
+  window.fsStep=function(d){ cur=Math.min(22,Math.max(12,cur+d)); apply();
+    try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  window.fsReset=function(){ cur=base; apply(); try{localStorage.setItem(FS_KEY,cur);}catch(e){} };
+  apply();
+
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(CHK_KEY)||'{}'); }catch(e){ saved={}; }
+  var chks=document.querySelectorAll('.chk');
+  chks.forEach(function(c){
+    var k=c.getAttribute('data-k');
+    if(saved[k]) c.classList.add('done');
+    c.addEventListener('click',function(ev){
+      ev.stopPropagation();
+      c.classList.toggle('done');
+      saved[k]=c.classList.contains('done');
+      try{ localStorage.setItem(CHK_KEY,JSON.stringify(saved)); }catch(e){}
+      upd();
+    });
+  });
+  function upd(){
+    var all=document.querySelectorAll('.chk').length;
+    var done=document.querySelectorAll('.chk.done').length;
+    var bar=document.getElementById('progBar'), txt=document.getElementById('progTxt');
+    if(bar) bar.style.width=(all?Math.round(done/all*100):0)+'%';
+    if(txt) txt.textContent=done+' / '+all;
+  }
+  upd();
+})();
+</script>
+
+<!-- back-to-plan-patch --><script>
+/* 返回计划：从《百日冲刺计划》跳来的页面右下角会出现返回按钮 */
+(function(){
+  var qs = location.search || '';
+  if(!/[?&]from=plan/.test(qs)) return;
+  var m = qs.match(/[?&]d=(\d+)/);
+  var href = '../百日冲刺计划.html' + (m ? '?d=' + m[1] : '');
+
+  function go(){
+    if(window.opener && !window.opener.closed){
+      try{ window.opener.focus(); }catch(e){}
+      try{ window.close(); }catch(e){}
+      if(window.closed) return;          /* 关掉了：原来那个标签就停在出发那天 */
+    }
+    location.href = href;                /* 关不掉就本标签跳回去 */
+  }
+
+  function draw(){
+    if(document.getElementById('__backPlan')) return;
+    var st = document.createElement('style');
+    st.textContent =
+      '#__backPlan{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:inherit;'+
+      'font-size:14px;font-weight:700;line-height:1;color:#fff;cursor:pointer;border:none;'+
+      'background:linear-gradient(120deg,#9a3b2e,#c8902a);padding:12px 18px;border-radius:99px;'+
+      'box-shadow:0 6px 20px rgba(154,59,46,.34);letter-spacing:1px;'+
+      'transition:transform .15s,box-shadow .15s}'+
+      '#__backPlan:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,59,46,.44)}'+
+      '#__backPlan:active{transform:translateY(0)}'+
+      '#__backPlan small{font-weight:400;opacity:.86;font-size:12px}'+
+      '@media print{#__backPlan{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = '__backPlan'; b.type = 'button';
+    b.innerHTML = '\u2190 返回计划' + (m ? ' <small>D-' + m[1] + '</small>' : '');
+    b.onclick = go;
+    document.body.appendChild(b);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', draw);
+  else draw();
+})();
+</script>
+</body>
+</html>
