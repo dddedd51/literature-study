@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>创意写作理论与实践 · 思维导图带背（13 天）</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+:root{--bg:#f7f3ea;--card:#fffdf8;--ink:#2b2620;--sub:#8a8073;--line:#e3dccd;--accent:#9a3b2e;--gold:#c8902a;--green:#3b6b5e;--zhuan:#2d4a6e;--fs-base:15px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:var(--fs-base)}
+body{background:var(--bg);color:var(--ink);font-family:"LXGW WenKai","霞鹜文楷",KaiTi,"楷体",STKaiti,serif;line-height:1.8;min-height:100vh;
+background-image:radial-gradient(circle at 18% 12%,rgba(200,144,42,.07) 0,transparent 34%),radial-gradient(circle at 85% 22%,rgba(154,59,46,.06) 0,transparent 38%),radial-gradient(circle at 60% 88%,rgba(59,107,94,.06) 0,transparent 40%)}
+.wrap{max-width:1060px;margin:0 auto;padding:36px 20px 80px}
+.hero{text-align:center;padding:22px 20px 20px}
+.hero .seal{display:inline-block;width:52px;height:52px;line-height:52px;text-align:center;border:2.5px solid var(--accent);color:var(--accent);border-radius:10px;font-size:20px;font-weight:700;transform:rotate(-6deg);margin-bottom:14px;box-shadow:inset 0 0 0 3px rgba(154,59,46,.12);user-select:none}
+.hero h1{font-size:32px;letter-spacing:3px;font-weight:700}
+.hero .sub{margin-top:10px;color:var(--sub);font-size:15px;letter-spacing:1px}
+.hero .rule{width:220px;height:2px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.backlink{text-align:center;margin-bottom:24px}
+.backlink a{display:inline-block;padding:7px 18px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--sub);text-decoration:none;font-size:14px;transition:.2s;margin:4px}
+.backlink a:hover{border-color:var(--gold);color:var(--accent)}
+.stats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:8px 0 24px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 22px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stat b{display:block;font-size:22px;color:var(--accent);line-height:1.3}
+.stat span{font-size:13px;color:var(--sub);letter-spacing:1px}
+.sect{font-size:17px;font-weight:700;letter-spacing:2px;margin:34px 0 6px;padding-left:12px;border-left:4px solid var(--gold)}
+.sect-hint{font-size:13px;color:var(--sub);margin:0 0 14px 16px;letter-spacing:.5px}
+.frame{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:10px;box-shadow:0 2px 10px rgba(120,100,60,.05)}
+.frame h3{font-size:16px;color:var(--zhuan);margin-bottom:10px;letter-spacing:1px}
+.frame .line{font-size:14px;line-height:2.1;color:var(--ink)}
+.frame .line b{color:var(--accent)}
+.frame .line em{font-style:normal;color:var(--sub);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.day{display:flex;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.035)}
+.day:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(154,59,46,.13);border-color:#d8c9a8}
+.edge{width:6px;flex:0 0 6px;background:var(--accent)}
+.body{padding:14px 16px;flex:1}
+.top{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.no{font-size:13px;font-weight:700;color:#fff;background:var(--accent);border-radius:6px;padding:1px 8px;letter-spacing:1px}
+.name{font-size:16px;font-weight:700;line-height:1.4}
+.dtags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.dtag{font-size:12px;color:var(--zhuan);background:#eef3f7;border:1px solid #d6e2ec;border-radius:20px;padding:1px 9px}
+.dtag.hot{color:var(--accent);background:#f9eeec;border-color:#eccfc8}
+.desc{font-size:13px;color:var(--sub);line-height:1.85}
+.foot-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);font-size:12px;color:var(--sub)}
+.go{color:var(--accent);font-weight:700}
+.tip{background:#fffdf7;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin:18px 0;font-size:14px;line-height:1.9}
+.tip b{color:var(--accent)}
+.pagefoot{text-align:center;padding:26px 10px 0;color:#998b6f;font-size:13px;border-top:1px dashed var(--line);margin-top:34px;line-height:1.9}
+@media(max-width:640px){.hero h1{font-size:24px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><div class="wrap">
+
+<div class="hero">
+  <div class="seal">创</div>
+  <h1>创意写作理论与实践 · 思维导图带背</h1>
+  <div class="sub">以教材四张思维导图为骨架 · 以本地资料库内容为血肉 · 每天 30 分钟</div>
+  <div class="rule"></div>
+</div>
+
+<div class="backlink">
+  <a href="../index.html">← 文学史带背索引</a>
+  <a href="../../index.html">资料库首页</a>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>13</b><span>天 · 每日 30 分钟</span></div>
+  <div class="stat"><b>4</b><span>章 · 四张导图</span></div>
+  <div class="stat"><b>84</b><span>张卡片</span></div>
+  <div class="stat"><b>约 6.5</b><span>小时走完一轮</span></div>
+</div>
+
+<div class="sect">框架总览 · 四张思维导图的结构</div>
+<div class="sect-hint">带背的每一天都挂在这四棵树的某一支上；页面顶部「导图位置」就是当天的坐标</div>
+
+<div class="frame">
+  <h3>第一章 · 创意写作基本理论（D1—D5）</h3>
+  <div class="line">
+    <b>含义</b>　定义（一切创造性思维训练、分体写作和批评实践的总称）｜起源（1837 爱默生）｜<b>要点四支</b>：创造性 · 思维训练 · 分体写作 · 批评实践<br>
+    <b>特征（6）</b>　实践性（根砥）· 创意性（命脉）· 商业性 · 理论性 · 跨学科性 · 开放性／生长性<br>
+    <b>版图</b>　知识探索 · 文体写作 · 社会实践　<em>总纲：研究、教学、创作、服务</em><br>
+    <b>边界</b>　与文艺学 · 与现当代文学 · 与传统写作学 · 与现实的关系<br>
+    <b>际遇</b>　理论研究 · 文学创作 · 社会服务
+  </div>
+</div>
+
+<div class="frame">
+  <h3>第二章 · 创意写作简史（D6—D9）</h3>
+  <div class="line">
+    <b>美国线</b>　起源 1837 → 高校回音 1880s → 中学定名 1920s → 学科制度化 1936 → 战后繁荣 1945 后<br>
+    <b>其它英语国家</b>　英国 · 澳大利亚 · 新西兰 · 加拿大 · 扩散（爱尔兰／巴西／日本／菲律宾）<br>
+    <b>总体特征（4）</b>　完整体系 · 成就突出 · 互动性强 · <b>确立了核心命题</b><br>
+    <b>启示（4）</b>　多个维度面向 · 教育维度是基本维度 · 突出实践性 · 跨领域增长<br>
+    <b>中国线</b>　时代语境四条（为什么要中国化）｜萌生期 → 勃兴期 → 深耕期｜现状四条
+  </div>
+</div>
+
+<div class="frame">
+  <h3>第三章 · 创意写作方法论（D10—D12）</h3>
+  <div class="line">
+    <b>概述</b>　人文科学综合研究法 → 三法家族：研究法 · 教学法 · 学习法　<em>「大体须有，定体则无」</em><br>
+    <b>研究法</b>　普遍性（史论＋批评）｜独异性三表现（创作论／前瞻性／交叉融合）｜三重关系<br>
+    <b>教学法</b>　讲授式 · 研讨会式 · <b>工坊制</b>（核心表征）→ 混杂式<br>
+    <b>学习法</b>　四力（创·专·意·整）｜三递进：克服写作障碍 → 自我发掘 → 创造性智慧
+  </div>
+</div>
+
+<div class="frame">
+  <h3>汇总 · 647 真题落点（D13）</h3>
+  <div class="line">
+    近三年反复命中：<b>创意写作的特点</b>（10 分）· <b>创意写作思维／思维规律</b>（20 分）· <b>工坊制</b>（40 分材料题）<br>
+    <em>另有：非虚构写作（名解／简答／材料三年三考）、作家入住高校的意义（2023 材料）、美国创写发展史（2025 简答）</em>
+  </div>
+</div>
+
+<div class="tip">
+<b>怎么用这套东西：</b>每天点开一页，先看顶部的「30 分钟怎么用」，按时间分配走；页面里的勾选可以打勾，笔记框可以直接写。第二天开始前，先口头答一遍前一天的「闭卷自测」——答不出就回翻，不要往前赶。
+</div>
+
+<div class="sect">13 天 · 逐日目录</div>
+<div class="sect-hint">按章推进，一天一块；每页含框架定位、核心背诵卡片、闭卷自测</div>
+<div class="grid">
+
+<a class="day" href="day01-含义概念起点定义.html">
+  <div class="edge"></div>
+  <div class="body">
+    <div class="top"><div class="no">D1</div><div class="name">含义（一）：概念、起点、定义</div></div>
+    <div class="dtags"><span class="dtag hot">学科起点</span><span class="dtag">1837 爱默生</span><span class="dtag">四种定义</span></div>
+    <div class="desc">译名之争（创造 vs 创意）· 与古人无关的两条禁止 · 爱默生 1837 名解 · 兴起背景四因 · 牛津／汪正龙／葛红兵／陈晓辉四种定义</div>
+    <div class="foot-row"><span>5 卡 · 11 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day02-含义分体四要点.html">
+  <div class="edge" style="background:#8a6d3b"></div>
+  <div class="body">
+    <div class="top"><div class="no">D2</div><div class="name">含义（二）：定义的四个要点</div></div>
+    <div class="dtags"><span class="dtag hot">有中生有</span><span class="dtag">五种训练法</span><span class="dtag">三路径</span></div>
+    <div class="desc">创造性（两种曲解＋伯格森）· 思维训练（五内容 × 五方法，2021 论述的落点）· 分体写作三路径 · 批评实践三题域</div>
+    <div class="foot-row"><span>6 卡 · 14 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day03-特征六项.html">
+  <div class="edge" style="background:#3b6b5e"></div>
+  <div class="body">
+    <div class="top"><div class="no">D3</div><div class="name">特征六项 · 实创商理跨开</div></div>
+    <div class="dtags"><span class="dtag hot">六字口诀</span><span class="dtag">麦克格尔</span><span class="dtag">2023 简答</span></div>
+    <div class="desc">实践性（根砥，二战老兵源起）· 创意性（命脉，咖啡沙龙）· 商业性 · 理论性（本尼特与罗伊尔）· 跨学科性 · 开放性／生长性</div>
+    <div class="foot-row"><span>6 卡 · 12 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day04-版图三板块.html">
+  <div class="edge" style="background:#7d5e2c"></div>
+  <div class="body">
+    <div class="top"><div class="no">D4</div><div class="name">版图三板块</div></div>
+    <div class="dtags"><span class="dtag">知识探索</span><span class="dtag">文体写作</span><span class="dtag hot">社会实践</span></div>
+    <div class="desc">知识探索四支 · 文体写作三路径细目 · 社会实践三类（商业性／教改性／公益性）· 「版图」一词的两层用意 · 空手默画全图</div>
+    <div class="foot-row"><span>7 卡 · 11 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day05-边界四关系.html">
+  <div class="edge" style="background:#2d4a6e"></div>
+  <div class="body">
+    <div class="top"><div class="no">D5</div><div class="name">边界：与四者的关系</div></div>
+    <div class="dtags"><span class="dtag hot">三重区分</span><span class="dtag">写作学四期</span><span class="dtag">作家可以培养</span></div>
+    <div class="desc">与文艺学（两差异）· 与现当代文学（金句：研究结束处正是创作开始处）· 与传统写作学（四期＋根本分歧＋教学模式对照）· 与现实的关系与双引擎 · 学科际遇</div>
+    <div class="foot-row"><span>7 卡 · 15 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day06-美国线先声与发端.html">
+  <div class="edge" style="background:#9a3b2e"></div>
+  <div class="body">
+    <div class="top"><div class="no">D6</div><div class="name">美国线 · 词源、先声、发端</div></div>
+    <div class="dtags"><span class="dtag hot">五个必辨年份</span><span class="dtag">1880s 哈佛</span><span class="dtag hot">1936 MFA</span></div>
+    <div class="desc">三层起点辨析（1837 词源／1880s 先声／1936 发端）· 哈佛三人物 · 1920s 中学定名 · 战后两大契机 · AWP 1967 · 四十四所 1970 · CWSO 2016</div>
+    <div class="foot-row"><span>7 卡 · 12 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day07-英澳新加国别线.html">
+  <div class="edge" style="background:#8a6d3b"></div>
+  <div class="body">
+    <div class="top"><div class="no">D7</div><div class="name">英、澳、新、加 · 国别线</div></div>
+    <div class="dtags"><span class="dtag">东安格利亚</span><span class="dtag">哈珀四类型</span><span class="dtag">AAWP</span></div>
+    <div class="desc">英国 1970 硕／1987 博／NAWE · 哈珀四类型 · 澳大利亚 1981 墨尔本、1996 AAWP、1999 一百四十二项 · 新西兰 1975 · 加拿大 1965 伯尼 · 扩散四国 · 横向比较表</div>
+    <div class="foot-row"><span>7 卡 · 13 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day08-总体特征与启示.html">
+  <div class="edge" style="background:#3b6b5e"></div>
+  <div class="body">
+    <div class="top"><div class="no">D8</div><div class="name">总体特征四条 · 启示四条</div></div>
+    <div class="dtags"><span class="dtag hot">第四条特征</span><span class="dtag">良性文学生态</span><span class="dtag">三重困境</span></div>
+    <div class="desc">完整体系／成就突出／互动性强／确立了核心命题（第四条最易漏）· 工坊沿革六节点 · 启示四条（先声性、跨领域增长）· 三重困境</div>
+    <div class="foot-row"><span>6 卡 · 11 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day09-中国语境与年表.html">
+  <div class="edge" style="background:#7d5e2c"></div>
+  <div class="body">
+    <div class="top"><div class="no">D9</div><div class="name">中国线 · 语境、历程、现状</div></div>
+    <div class="dtags"><span class="dtag hot">四重语境</span><span class="dtag">2009 元年</span><span class="dtag">五位一体</span></div>
+    <div class="desc">为什么要中国化（传统写作学／作协系统／文化创新使命／文学教育革新）· 三地前史 · 萌生—勃兴—深耕三段 · 内地年表六行 · 现状四条与总判断</div>
+    <div class="foot-row"><span>6 卡 · 13 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day10-方法论概述与研究法.html">
+  <div class="edge" style="background:#2d4a6e"></div>
+  <div class="body">
+    <div class="top"><div class="no">D10</div><div class="name">方法论概述 · 研究法</div></div>
+    <div class="dtags"><span class="dtag">三法家族</span><span class="dtag hot">独异性三表现</span><span class="dtag">像作家一样阅读</span></div>
+    <div class="desc">人文科学综合研究法 · 三法地位与三重特征 · 金句「文无定法，法而无法」· 研究法普遍性 · 独异性三表现 · 三重关系 · 交叉研究三方向</div>
+    <div class="foot-row"><span>6 卡 · 14 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day11-教学法与工坊制.html">
+  <div class="edge" style="background:#9a3b2e"></div>
+  <div class="body">
+    <div class="top"><div class="no">D11</div><div class="name">教学法 · 三模式与工坊制</div></div>
+    <div class="dtags"><span class="dtag hot">工坊制</span><span class="dtag">1＋1~2＋20</span><span class="dtag">三点独特性</span></div>
+    <div class="desc">讲授式／研讨会式／工坊制对照 · 工坊四理论 · 组织方式与三类主讲人 · 独特性三点（过程·激发·集体）· 人类经验的交流 · 混杂式</div>
+    <div class="foot-row"><span>7 卡 · 16 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day12-学习法与三递进.html">
+  <div class="edge" style="background:#8a6d3b"></div>
+  <div class="body">
+    <div class="top"><div class="no">D12</div><div class="name">学习法 · 四力与三递进</div></div>
+    <div class="dtags"><span class="dtag">创·专·意·整</span><span class="dtag hot">写作障碍四类型</span><span class="dtag">三条路径</span></div>
+    <div class="desc">四力长期养成 · 学习内容四条（布兰德两句）· 三递进不可换序 · 写作障碍名解与心习知技 · 自我发掘三条路径（赫弗伦）· 创造性智慧（赖声川／柏格森）</div>
+    <div class="foot-row"><span>7 卡 · 14 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+<a class="day" href="day13-真题与答题模板.html">
+  <div class="edge" style="background:#3b6b5e"></div>
+  <div class="body">
+    <div class="top"><div class="no">D13</div><div class="name">真题清单 · 答题模板</div></div>
+    <div class="dtags"><span class="dtag hot">材料题五步法</span><span class="dtag">思维规律模板</span><span class="dtag">自查清单</span></div>
+    <div class="desc">2020—2025 真题反推三个核心 · 思维规律 20 分六段骨架 · 工坊制与作家入住高校两个材料题模板 · 五步落笔法与两条必须守住 · 考场自查清单 · 三轮滚动复习</div>
+    <div class="foot-row"><span>7 卡 · 11 打卡点</span><span class="go">进入 →</span></div>
+  </div>
+</a>
+
+</div>
+
+<div class="pagefoot">
+框架来源：《创意写作理论与实践》四张章节思维导图（PDF 原图）<br>
+内容来源：本地资料库「创意写作_定义与特征_背诵版」「创意写作简史_第二章讲义与三题答案」「创意写作方法论_第三章_背诵版」「材料题答题方式_AI写作与创意写作」「创意写作简史三题_材料题完整答案」<br>
+凡教材未提及的内容一律不补写；年份、分值与院校信息以最新简章为准
+</div>
+
+</div>
+</body>
+</html>
