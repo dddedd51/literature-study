@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>专硕冲刺五十天 · 考点作战图 ｜ 西北大学创意写作 647 / 853</title>
+<style>
+@font-face{
+  font-family:"LXGW";
+  src:url("_shared/fonts/LXGWWenKai-subset.woff2") format("woff2"),
+      url("_shared/fonts/LXGWWenKai-Regular.ttf") format("truetype");
+  font-display:swap;
+}
+:root{
+  --paper:#f7f2e5;
+  --paper-2:#fbf7ec;
+  --card:#fffdf6;
+  --ink:#1e1b16;
+  --ink-2:#4a443a;
+  --ink-3:#7c7264;
+  --gold:#a8802a;
+  --gold-soft:#e8dcc0;
+  --zhe:#9c4a2f;
+  --zhe-soft:#f0dcd2;
+  --green:#5f7150;
+  --green-soft:#e2e8d8;
+  --blue:#3f5a72;
+  --blue-soft:#dde5ec;
+  --line:#ddd2b8;
+  --shadow:0 1px 2px rgba(60,45,20,.06),0 8px 24px -12px rgba(60,45,20,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"LXGW","LXGW WenKai","霞鹜文楷","Kaiti SC",KaiTi,"STKaiti",
+    "Songti SC","Source Han Serif SC",serif;
+  font-size:17px;line-height:1.92;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 18% 12%,rgba(168,128,42,.055),transparent 42%),
+                   radial-gradient(circle at 82% 78%,rgba(156,74,47,.045),transparent 46%);
+  background-attachment:fixed;
+}
+/* 顶部进度 */
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--zhe));z-index:99;transition:width .12s linear}
+
+/* 布局 */
+.wrap{display:grid;grid-template-columns:246px minmax(0,1fr);gap:0;max-width:1500px;margin:0 auto}
+nav{
+  position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;
+  padding:26px 14px 40px 22px;border-right:1px solid var(--line);
+  font-size:14.2px;line-height:1.62;
+}
+nav::-webkit-scrollbar{width:5px}
+nav::-webkit-scrollbar-thumb{background:var(--gold-soft);border-radius:3px}
+nav .navtitle{font-size:12px;letter-spacing:.22em;color:var(--gold);margin:0 0 12px;font-weight:400}
+nav a{display:block;color:var(--ink-2);text-decoration:none;padding:4px 8px 4px 10px;border-left:2px solid transparent;border-radius:0 3px 3px 0;transition:.15s}
+nav a:hover{background:#f1ead6;color:var(--zhe)}
+nav a.on{color:var(--zhe);border-left-color:var(--zhe);background:#f4ecda;font-weight:700}
+nav a.sub{font-size:13.2px;padding-left:22px;color:var(--ink-3)}
+nav .grp{margin:14px 0 4px;font-size:12.5px;color:var(--ink-3);letter-spacing:.08em;border-top:1px dotted var(--line);padding-top:12px}
+
+main{padding:52px 56px 120px;min-width:0}
+
+/* 封面 */
+header.top{margin:0 0 46px;padding-bottom:30px;border-bottom:2px solid var(--ink);position:relative}
+header.top::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--ink);opacity:.35}
+.kicker{font-size:13px;letter-spacing:.34em;color:var(--zhe);margin:0 0 14px}
+h1{font-size:41px;line-height:1.28;margin:0 0 16px;font-weight:700;letter-spacing:.01em}
+h1 small{display:block;font-size:16.5px;font-weight:400;color:var(--ink-3);letter-spacing:.06em;margin-top:12px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pill{border:1px solid var(--line);background:var(--card);padding:3px 12px;border-radius:2px;font-size:13.4px;color:var(--ink-2)}
+.pill b{color:var(--zhe)}
+
+/* 章节 */
+section{margin:0 0 62px;scroll-margin-top:18px}
+h2{font-size:27px;margin:0 0 8px;padding-left:16px;border-left:5px solid var(--gold);line-height:1.4}
+h2 .no{display:inline-block;font-size:13.2px;letter-spacing:.14em;color:#8a6a1e;background:var(--gold-soft);
+  border:1px solid #d9c79b;padding:1px 9px;border-radius:2px;vertical-align:4px;margin-right:12px;font-weight:400}
+.lede{color:var(--ink-2);font-size:16px;margin:6px 0 26px;padding:14px 18px;background:var(--paper-2);border-left:2px solid var(--gold-soft);border-radius:0 3px 3px 0}
+h3{font-size:20.5px;margin:38px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3 .tag{font-size:12px;letter-spacing:.14em;color:var(--ink-3);margin-left:10px;font-weight:400}
+h4{font-size:17.4px;margin:24px 0 8px;color:var(--ink);font-weight:700}
+h4::before{content:"◆";color:var(--gold);font-size:11px;margin-right:8px;vertical-align:2px}
+
+/* 卡片/块 */
+.card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:18px 22px;margin:14px 0;box-shadow:var(--shadow)}
+.card.tight{padding:12px 18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:1100px){.grid2,.grid3{grid-template-columns:1fr}}
+
+/* 徽章 A B C D */
+.badge{display:inline-block;font-size:11.6px;letter-spacing:.1em;padding:1px 7px;border-radius:2px;margin-right:7px;vertical-align:2px;font-weight:700}
+.A{background:var(--zhe);color:#fff}
+.B{background:var(--gold);color:#fff}
+.C{background:var(--green);color:#fff}
+.D{background:#8a8a86;color:#fff}
+.yr{display:inline-block;font-size:12px;color:var(--blue);background:var(--blue-soft);border-radius:2px;padding:1px 6px;margin-left:6px;letter-spacing:.02em}
+
+/* 表格 */
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:#f1e9d5;font-weight:700;font-size:14.2px;letter-spacing:.03em}
+td.c,th.c{text-align:center}
+tbody tr:nth-child(even){background:#fdfaf1}
+table.small{font-size:14px}
+table.small th,table.small td{padding:6px 9px}
+
+/* 列表 */
+ul,ol{padding-left:1.5em;margin:10px 0}
+li{margin:5px 0}
+ul.tick{list-style:none;padding-left:1.3em}
+ul.tick>li::before{content:"·";color:var(--gold);font-weight:700;display:inline-block;width:1em;margin-left:-1em;font-size:20px;line-height:1;vertical-align:-2px}
+ol.steps{counter-reset:s;list-style:none;padding-left:0}
+ol.steps>li{counter-increment:s;position:relative;padding-left:38px;margin:12px 0}
+ol.steps>li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;font-size:12.5px;color:var(--gold);letter-spacing:.06em;border-bottom:1px solid var(--gold-soft);width:26px;text-align:center}
+
+/* 引用/提示 */
+.note{border-left:3px solid var(--zhe);background:var(--zhe-soft);padding:12px 16px;margin:16px 0;border-radius:0 3px 3px 0;font-size:15.6px}
+.note b{color:var(--zhe)}
+.tip{border-left:3px solid var(--green);background:var(--green-soft);padding:12px 16px;margin:16px 0;border-radius:0 3px 3px 0;font-size:15.6px}
+.warn{border-left:3px solid var(--gold);background:#f7efd8;padding:12px 16px;margin:16px 0;border-radius:0 3px 3px 0;font-size:15.6px}
+.q{font-size:15.6px;color:var(--ink-2);background:var(--paper-2);border:1px dashed var(--line);padding:10px 14px;margin:10px 0;border-radius:3px}
+.q::before{content:"题";font-size:11.5px;color:#fff;background:var(--ink-3);padding:1px 5px;border-radius:2px;margin-right:9px;vertical-align:2px}
+
+/* 折叠 */
+details{margin:12px 0;border:1px solid var(--line);border-radius:3px;background:var(--card);box-shadow:var(--shadow)}
+details>summary{cursor:pointer;padding:11px 16px;font-weight:700;font-size:16px;list-style:none;display:flex;align-items:baseline;gap:8px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸";color:var(--gold);font-size:13px;transition:.15s}
+details[open]>summary::before{content:"▾"}
+details>summary:hover{background:#f8f3e4}
+details .body{padding:4px 20px 18px;border-top:1px solid var(--line)}
+
+/* 骨架小表 */
+.frame{display:grid;gap:0;border:1px solid var(--line);margin:12px 0;background:var(--card)}
+.frame .row{display:grid;grid-template-columns:104px 1fr;border-bottom:1px solid var(--line)}
+.frame .row:last-child{border-bottom:0}
+.frame .k{background:#f2ebd8;padding:8px 12px;font-size:14px;font-weight:700;color:var(--ink-2);border-right:1px solid var(--line)}
+.frame .v{padding:8px 14px;font-size:15.2px}
+
+hr.sep{border:0;border-top:1px dotted var(--line);margin:34px 0}
+.foot{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);font-size:13.6px;color:var(--ink-3);line-height:1.9}
+
+/* 正文内链接 */
+main a{color:var(--zhe);text-decoration:none;border-bottom:1px solid var(--gold-soft);transition:.15s}
+main a:hover{color:#7d3419;border-bottom-color:var(--zhe);background:#faf0e6}
+
+/* 打印 */
+@media print{
+  nav,#bar{display:none}
+  .wrap{display:block}
+  main{padding:0}
+  body{background:#fff;font-size:12pt}
+  details{border:0;box-shadow:none}
+  details>summary{background:#f2ebd8}
+  section{page-break-inside:auto}
+  h2{page-break-after:avoid}
+}
+@media(max-width:860px){
+  .wrap{display:block}
+  nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+  main{padding:26px 20px 80px}
+  h1{font-size:30px}
+  h2{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div class="wrap">
+<nav>
+  <p class="navtitle">冲 刺 五 十 天</p>
+  <a href="#s0">使用说明</a>
+  <div class="grp">壹 · 命题解剖</div>
+  <a href="#s1">1 十年题型变迁</a>
+  <a href="#s2">2 论述题的三分天下</a>
+  <a href="#s3">3 材料题的固定靶心</a>
+  <a href="#s4">4 名解的四个抽屉</a>
+  <div class="grp">贰 · 分级清单</div>
+  <a href="#s5">5 A 级大点（12 个）</a>
+  <a href="#s6">6 B 级中坚（20 个）</a>
+  <a href="#s7">7 C 级名解池</a>
+  <a href="#s8">8 D 级放弃清单</a>
+  <div class="grp">叁 · 大点按题准备</div>
+  <a href="#s9">9 鲁迅：五年五考</a>
+  <a href="#s10">10 贾平凹：连考两年</a>
+  <a href="#s11">11 杜甫与古代诗学</a>
+  <a href="#s12">12 外国现代主义群</a>
+  <a href="#s13">13 演变类专题</a>
+  <a href="#s14">14 十九世纪个人与女性</a>
+  <a href="#s15">15 创意写作理论</a>
+  <div class="grp">肆 · 连线与成面</div>
+  <a href="#s16">16 三线连法示范</a>
+  <a href="#s17">17 对比题库</a>
+  <div class="grp">伍 · 追问「为什么」</div>
+  <a href="#s18">18 西大版为什么</a>
+  <div class="grp">陆 · 853 专项</div>
+  <a href="#s19">19 理论自报卡</a>
+  <a href="#s20">20 评论：汪曾祺三考</a>
+  <a href="#s21">21 创作：八年题眼</a>
+  <div class="grp">柒 · 执行</div>
+  <a href="#s22">22 五十天日程</a>
+  <a href="#s23">23 每日一题清单</a>
+  <a href="#s24">24 资料库对照表</a>
+</nav>
+
+<main>
+<header class="top">
+  <p class="kicker">西 北 大 学 · 戏 剧 与 影 视（创 意 写 作）</p>
+  <h1>冲刺五十天 · 考点作战图
+    <small>647 创意写作基础 ／ 853 文学评论与创作 ｜ 以 2016–2026 十一年专硕真题为坐标</small>
+  </h1>
+  <div class="meta">
+    <span class="pill">距初试 <b id="days">—</b> 天</span>
+    <span class="pill">真题样本 <b>11</b> 年</span>
+    <span class="pill">647 满分 <b>150</b></span>
+    <span class="pill">853 满分 <b>150</b></span>
+    <span class="pill">A 级大点 <b>12</b> 个</span>
+  </div>
+</header>
+
+<!-- ============ 使用说明 ============ -->
+<section id="s0">
+<h2><span class="no">零</span>这份东西怎么用</h2>
+
+<div class="lede">
+它把三样东西压成了一张图：<b>阿牛的「抓点—连线—成面—追问为什么」四步法</b>、<b>你资料库里已有的文学史底子</b>、
+以及<b>十一年专硕真题的真实出题数据</b>。所有分级都不是我拍脑袋定的，每一条后面挂着年份和题型，你可以自己核。
+</div>
+
+<div class="grid2">
+<div class="card">
+<h4>它的三个判断</h4>
+<ul class="tick">
+<li><b>论述题是三分天下</b>：古代 1 题 + 现当代 1 题 + 外国 1 题，六年没破过例。所以 60 分其实是三科各 20 分，每科备四个大点就够。</li>
+<li><b>材料题是固定靶心</b>：2023 年才出现，四年四考，四次全打在创意写作理论上。</li>
+<li><b>名解只在四个抽屉里抽</b>：古代专书、现代社团文体、外国流派术语、创写新概念。</li>
+</ul>
+</div>
+<div class="card">
+<h4>它的三条禁忌</h4>
+<ul class="tick">
+<li><b>不要再扩面。</b>D 级清单在第 8 节，明写着「不许看」。三月该干的事，现在干就是亏。</li>
+<li><b>不要只背不写。</b>第 23 节有 24 道自测题，一天一道，手写或口述，写不出来的才是你要补的。</li>
+<li><b>不要在名解上纠缠「万一」。</b>每个 5 分，四题 20 分，性价比低于论述题的一根毛。</li>
+</ul>
+</div>
+</div>
+
+<div class="warn">
+<b>关于「题型代码」的一处必要说明：</b>2016、2017 两年的卷子是「648 文学基础 + 855 文学鉴赏与批评」，
+适用专业写的是「广播电视（创意写作）」；2020 年后才是「647 + 853」。
+但命题人、题库、文学史口径是同一套，<b>考点完全可通约</b>，所以这两年照收，只是统计时我单独标了年份，你可以按权重打折看。
+</div>
+</section>
+
+<!-- ============ 壹 · 命题解剖 ============ -->
+<section id="s1">
+<h2><span class="no">壹 · 一</span>十年题型变迁：先看清靶子长什么样</h2>
+
+<p class="lede">不看这张表就开始背书，等于蒙着眼射箭。西大这十一年的卷子改过三次结构，
+每一次改动都在告诉你「他们想筛什么样的人」。</p>
+
+<h3>647 创意写作基础 · 结构演变</h3>
+<table>
+<thead><tr><th class="c" style="width:78px">年份</th><th>题型与分值</th><th class="c" style="width:100px">名解</th><th class="c" style="width:100px">材料题</th></tr></thead>
+<tbody>
+<tr><td class="c">2016<span class="yr">648</span></td><td>填空 20×1 ／ 名解 6×5 ／ 简答 4×10 ／ 论述 2×30</td><td class="c">30</td><td class="c">无</td></tr>
+<tr><td class="c">2017<span class="yr">648</span></td><td>填空 20×1 ／ 名解 6×5 ／ 简答 4×10 ／ 论述 3×20</td><td class="c">30</td><td class="c">无</td></tr>
+<tr><td class="c">2020</td><td>填空 10×2 ／ 名解 6×5 ／ 简答 4×10 ／ 论述 3×20</td><td class="c">30</td><td class="c">无</td></tr>
+<tr><td class="c">2021</td><td>填空 10×2 ／ 名解 6×5 ／ 简答 4×10 ／ 论述 3×20</td><td class="c">30</td><td class="c">无</td></tr>
+<tr><td class="c">2022</td><td>填空 10×2 ／ 简答 4×10 ／ 论述 3×20（本卷名解应为 20 分，原件缺页，<b>待核</b>）</td><td class="c">20?</td><td class="c">无</td></tr>
+<tr><td class="c">2023</td><td><b>名解 4×5 ／ 简答 3×10 ／ 论述 3×20 ／ 材料 40</b></td><td class="c">20</td><td class="c">40</td></tr>
+<tr><td class="c">2024</td><td>名解 4×5 ／ 简答 3×10 ／ 论述 3×20 ／ 材料 40</td><td class="c">20</td><td class="c">40</td></tr>
+<tr><td class="c">2025</td><td>名解 4×5 ／ 简答 3×10 ／ 论述 3×20 ／ 材料 40</td><td class="c">20</td><td class="c">40</td></tr>
+<tr><td class="c">2026</td><td>名解 4×5 ／ 简答 3×10 ／ 论述 3×20 ／ 材料 40</td><td class="c">20</td><td class="c">40</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>三次结构改动，读出的三句话：</b><br>
+① <b>填空题在 2023 年被砍掉了</b>（20 分）。这意味着「零碎记忆」不再有分，纯靠背作家作品的性价比断了。别再默写填空题了。<br>
+② <b>材料分析题从 2023 年开始，40 分，一年没停</b>。这 40 分是全卷最值钱的单项，比两个论述题加起来还多。<br>
+③ <b>论述题从 3×20 = 60 分，占比 40%，纹丝不动</b>。<b>2023 年之后的新卷结构，只考四个题型：名解、简答、论述、材料。</b>你的全部准备力气，应该按 20 : 30 : 60 : 40 这个配比去分。
+</div>
+
+<h3>853 文学评论与创作 · 结构演变</h3>
+<table class="small">
+<thead><tr><th class="c" style="width:78px">年份</th><th style="width:150px">第一部分</th><th style="width:190px">评论对象</th><th>创作题</th></tr></thead>
+<tbody>
+<tr><td class="c">2016<span class="yr">855</span></td><td>诗鉴赏 60</td><td>何三坡《灰喜鹊》<br>＋二选一批评（铁凝／白小易）100</td><td>—（本卷无创作题）</td></tr>
+<tr><td class="c">2017<span class="yr">855</span></td><td>诗鉴赏 60</td><td>希姆博尔斯卡《创作的欢乐》<br>＋二选一批评（海明威／汪曾祺《陈小手》）90</td><td>—</td></tr>
+<tr><td class="c">2020</td><td>诗鉴赏 40</td><td>张枣《镜中》＋巴贝尔《进入波兰》50</td><td>以「家庭」为主题写舞台剧 60</td></tr>
+<tr><td class="c">2021</td><td><b>论述 20</b></td><td>北岛《一束》50</td><td>含「火车·便利店·厨房」三场景小说 80</td></tr>
+<tr><td class="c">2022</td><td>论述 20</td><td>王家新《一个劈木柴过冬的人》50</td><td>动物视角短篇 80</td></tr>
+<tr><td class="c">2023</td><td>论述 20</td><td>川端康成《相片》50</td><td>独幕剧（末班车／地铁站）80</td></tr>
+<tr><td class="c">2024</td><td>论述 20</td><td>汪曾祺《职业》50</td><td>续写《玩偶之家》娜拉出走 80</td></tr>
+<tr><td class="c">2025</td><td><b>自报理论 20</b></td><td>海明威《白象似的群山》50</td><td>写一个同时具有相反性格的人 80</td></tr>
+<tr><td class="c">2026</td><td><b>自报理论 20</b></td><td>汪曾祺《百蝶图》50</td><td>续写「一家人开车旅行，车停了……」80</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>853 的关键变化，只有一句话：</b>第一部分从「出一道题让你谈观点」（2021–2024：创写思维规律／亚里士多德／弗洛伊德／钟嵘），
+变成了「<b>先交出你要用的理论，说明它的来源和内涵，再写评论</b>」（2025、2026 连考两年）。<br>
+这话的潜台词是：<b>他们要看你是「有方法的批评者」，还是「凭感觉的读后感」</b>。你必须在考前锁定 1–2 个能自报家门的理论（第 19 节给了两张卡），
+上考场第一段就把流派、代表人物、核心命题、关键术语写清楚，20 分稳拿。
+</div>
+</section>
+
+<section id="s2">
+<h2><span class="no">壹 · 二</span>论述题的三分天下：最重要的一个发现</h2>
+
+<p class="lede">把六年论述题（18 道）按学科一栏一栏排开，规律清楚得有点残酷：
+<b>每年三道论述，古代一道、现当代一道、外国一道，从没乱过。</b></p>
+
+<table>
+<thead><tr><th class="c" style="width:76px">年份</th><th>古代文学（1 题）</th><th>中国现当代（1 题）</th><th>外国文学（1 题）</th></tr></thead>
+<tbody>
+<tr><td class="c">2020</td><td>杜甫诗歌的<b>后世影响</b></td><td>鲁迅小说的<b>人物形象</b></td><td><b>意识流小说</b>的艺术特征</td></tr>
+<tr><td class="c">2021</td><td>《红楼梦》的<b>叙事特征</b></td><td>《阿Q正传》的<b>阿Q形象</b></td><td><b>海明威</b>小说的创作风格</td></tr>
+<tr><td class="c">2022</td><td>与唐诗相比，<b>宋诗</b>的艺术特色</td><td><b>左联</b>的文学活动</td><td><b>西方现代主义</b>文学的基本特征</td></tr>
+<tr><td class="c">2023</td><td><b>上古神话</b>的思维特征及影响</td><td><b>郭沫若历史剧</b>的共同主题</td><td>《德伯家的苔丝》<b>苔丝悲剧根源</b></td></tr>
+<tr><td class="c">2024</td><td>古代小说的<b>叙事视角</b></td><td>鲁迅《伤逝》<b>涓生与子君的爱情</b></td><td>《百年孤独》的<b>艺术特点</b></td></tr>
+<tr><td class="c">2025</td><td><b>白蛇传</b>的演变</td><td><b>贾平凹《秦腔》</b>的艺术特点</td><td><b>莫泊桑</b>短篇小说的艺术特点</td></tr>
+<tr><td class="c">2026</td><td><b>《西厢记》</b>的故事演变</td><td><b>贾平凹长篇小说</b>的审美范式</td><td><b>《浮士德》</b>的思想内容与艺术特征</td></tr>
+</tbody>
+</table>
+
+<div class="tip">
+<b>这条规律直接决定你的分配方案：</b><br>
+60 分的论述题 = 三科各 20 分。也就是说，<b>每科你只需要 3–4 个「能撑起 20 分」的大点</b>，
+而不是把整本文学史背下来。三科 × 4 = <b>12 个大点</b>，这就是第 5 节那份 A 级清单的由来。<br>
+阿牛说「每科大概十来个 A 级大点」，套到西大的卷面上，就是每科 4 个 —— 这个数字是可以算出来的，不用猜。
+</div>
+
+<h4>顺带看出的三个次规律</h4>
+<ol class="steps">
+<li><b>「演变」成了新宠。</b>2025 白蛇传、2026 西厢记，连着两年考「一个故事怎么长成现在这样」。
+2027 极可能续考同类：<b>《琵琶记》的演变、《长生殿》与《长恨歌》、梁祝故事、孟姜女故事、牛郎织女</b>。这类题有一张通用答题纸（第 13 节）。</li>
+<li><b>贾平凹连庄。</b>2025《秦腔》、2026「长篇小说审美范式」—— 两年同一作家，在西大这种出题风格里很罕见。
+但它不是偶然：陕西是西大的地皮，贾平凹是西大的招牌（详见第 10 节）。</li>
+<li><b>外国那 20 分，现代主义占了一半。</b>意识流、现代主义总特征、马尔克斯、福克纳、
+《尤利西斯》、《等待戈多》、荒诞派——七个年份里现代主义相关出现 9 次。这是斜率最高的一块地。</li>
+</ol>
+</section>
+
+<section id="s3">
+<h2><span class="no">壹 · 三</span>材料题的固定靶心：四年四考，全打创意写作</h2>
+
+<p class="lede">2023 年新设的 40 分材料题，是这份卷子里<b>唯一可以 100% 押中方向</b>的题。
+它不考文学史，只考创意写作学科自身。</p>
+
+<table>
+<thead><tr><th class="c" style="width:76px">年份</th><th style="width:230px">材料</th><th>设问</th><th class="c" style="width:150px">切口</th></tr></thead>
+<tbody>
+<tr><td class="c">2023</td><td>《庄子·天道》轮扁斫轮 ＋《庄子·外物》得鱼忘筌</td><td>结合材料谈谈创意写作中「言」与「意」的关系</td><td>写作的<b>可传与不可传</b></td></tr>
+<tr><td class="c">2024</td><td>诗人保罗关于「工坊制」的叙述</td><td>分析创意写作<b>工坊制教学</b>的特点</td><td>创写的<b>教学制度</b></td></tr>
+<tr><td class="c">2025</td><td>梁鸿《中国在梁庄·前言》（引海登·怀特论「事实」的虚构性）</td><td>谈谈<b>非虚构写作</b>中「真实」与「虚构」的关系</td><td>创写的<b>文体伦理</b></td></tr>
+<tr><td class="c">2026</td><td>1988 北师大／鲁院作家研究生班回忆 ＋「创意写作专业不是为了培养庞大的学者化作家」</td><td>谈谈<b>创意写作与传统写作学</b>的关系</td><td>创写的<b>学科身份</b></td></tr>
+</tbody>
+</table>
+
+<div class="card">
+<h4>四年的切口，其实是一条线</h4>
+<p style="margin:6px 0">可传／不可传 → 教什么、怎么教 → 写真实时能不能虚构 → 它和传统写作学是什么关系。</p>
+<p style="margin:6px 0">换个说法：<b>他们连续四年在问同一个问题——「创意写作到底是不是一门学问，凭什么是」。</b>
+每一年的材料只是换了个侧面来戳这个学科合法性焦虑。</p>
+</div>
+
+<h4>2027 最可能的五个切口（按概率排）</h4>
+<ol class="steps">
+<li><b>AI 写作与创意写作。</b>你的资料库里已经有「材料题答题方式_AI写作与创意写作.html」，方向是对的。
+关键词：作者性、独创性、提示词是不是写作、人机协作中的「意图」、写作的可教性被技术倒逼。</li>
+<li><b>创意写作的「中国化」／本土化。</b>西方工坊制搬到中国为什么不灵，中国传统的「诗话、评点、家法传授」算不算另一种工坊。</li>
+<li><b>「作家能不能教」。</b>天赋论 vs 可教论，这几乎是材料题的常青树，2024 的工坊制其实已经踩到边了。</li>
+<li><b>创意写作与文学批评的关系。</b>评论者要不要会写，写作者要不要会评。</li>
+<li><b>阅读与写作的关系。</b>「读得多就会写」这句常识，正好是「为什么」类问题的好靶子。</li>
+</ol>
+
+<div class="warn">
+<b>40 分材料题的答题骨架（背这个，不要背答案）：</b><br>
+① <b>破题</b>：一句话点出材料在问什么学科问题（别复述材料）。<br>
+② <b>溯源</b>：这个概念从哪来（爱荷华／休斯敦／哥谭工坊？庄子？海登·怀特？），给出处和人名。<br>
+③ <b>分层</b>：分 3 个小层次，每层一个判断句当小标题，下面用一句材料 ＋ 一个作品例子撑。<br>
+④ <b>转折</b>：主动提出这个说法的边界或反例（阅卷人最爱看这个）。<br>
+⑤ <b>落地</b>：回到「所以我写小说时会怎么做」，一句话收。
+</div>
+</section>
+
+<section id="s4">
+<h2><span class="no">壹 · 四</span>名解的四个抽屉：它其实很可预测</h2>
+
+<p class="lede">四年新卷（2023–2026）16 个名解，加上 2020／2021 的 12 个，共 28 个。
+按来源一归类，会发现出题人只在<b>四个抽屉</b>里伸手。</p>
+
+<div class="grid2">
+<div class="card tight">
+<h4>抽屉一 · 古代专书与专名</h4>
+<p style="font-size:15px;margin:4px 0">四声猿、昭明文选、西昆体、樊宗师、玉台新咏、秋兴八首、临川四梦、江西诗派、海上花列传</p>
+<p style="font-size:14.4px;color:var(--ink-3);margin:6px 0 0">特点：<b>越偏越好</b>。樊宗师、玉台新咏这种「教材一笔带过」的，正是 5 分题的甜区。</p>
+</div>
+<div class="card tight">
+<h4>抽屉二 · 现代社团、文体、概念</h4>
+<p style="font-size:15px;margin:4px 0">人的文学、语丝文体、创造社、第三代诗人、朦胧诗、新格律诗三美、随想录、繁漪</p>
+<p style="font-size:14.4px;color:var(--ink-3);margin:6px 0 0">特点：<b>「人的文学」2020、2024 考了两次</b>，是十一年里唯一重复的名解 —— 西大的心头好。</p>
+</div>
+<div class="card tight">
+<h4>抽屉三 · 外国流派与术语</h4>
+<p style="font-size:15px;margin:4px 0">荒诞派、意识流、自然主义、唯美主义、世纪病、尤利西斯、第二十二条军规、源氏物语、雪国、醒世姻缘传</p>
+<p style="font-size:14.4px;color:var(--ink-3);margin:6px 0 0">特点：<b>术语＋代表作＋一句特征</b>就够，别展开成简答。</p>
+</div>
+<div class="card tight">
+<h4>抽屉四 · 创意写作新概念</h4>
+<p style="font-size:15px;margin:4px 0">创意写作学、创意思维、非虚构写作、生产性写作</p>
+<p style="font-size:14.4px;color:var(--ink-3);margin:6px 0 0">特点：<b>每年必有一个</b>，而且越来越「生」。2026 的「生产性写作」就是典型 —— 你得知道它跟「消费性写作」相对。</p>
+</div>
+</div>
+
+<div class="note">
+<b>由此可推 2027 的四题配置：</b>古代专书 1 ＋ 现代社团文体 1 ＋ 外国流派 1 ＋ 创写新概念 1。<br>
+所以你只要准备四个抽屉里各 6–8 个候选（第 7 节给了清单），覆盖概率就极高。<b>名解是最不该花时间、也最容易拿满的一块。</b>
+</div>
+
+<div class="tip">
+<b>名解的四点公式（每题 300 字上限，不超过 4 分钟）：</b><br>
+<b>是什么</b>（一句定性＋时代／国别）→ <b>代表作</b>（2–3 个具体名字）→ <b>特点</b>（2–3 个关键词）→ <b>意义／影响</b>（一句，落到文学史位置）。<br>
+四点钟缺一点扣一点，四点齐就是满分档。别写第五点，别再举例。
+</div>
+</section>
+
+<!-- ============ 贰 · 分级清单 ============ -->
+<section id="s5">
+<h2><span class="no">贰 · 五</span>A 级大点：12 个，撑起 60 分论述与 40 分材料</h2>
+
+<p class="lede">A 级的标准只有一条：<b>它单独出现过一次 20 分以上的论述，或反复出现在简答里</b>。
+总共 12 个主点（古代 4 ／现当代 4 ／外国 4），另加 4 个备胎。每一个都按「论述题规格」准备：
+有观点、有脉络、有作品细节、能连三条线。</p>
+
+<h3>古代文学 · 4 个</h3>
+<table>
+<thead><tr><th class="c" style="width:56px">编号</th><th style="width:190px">大点</th><th style="width:220px">真题落点</th><th>20 分要怎么撑</th></tr></thead>
+<tbody>
+<tr><td class="c"><span class="badge A">A1</span></td><td><b>杜甫</b>：沉郁顿挫、诗史、后世影响</td><td>2016 论述 30 ／2020 论述 20 ／2021 简答 10<span class="yr">三考</span></td><td>艺术成就四条 ＋ 唐冷宋热的「为什么」＋ 对李商隐／黄庭坚／文天祥的连线</td></tr>
+<tr><td class="c"><span class="badge A">A2</span></td><td><b>古代小说的叙事</b>：史传传统、视角、话本、世情</td><td>2021 论述《红楼梦》叙事／2024 论述古代小说叙事视角／2023 简答《蒋兴哥》叙事／2022 简答才子佳人叙事<span class="yr">四考</span></td><td>一条线从唐传奇→话本→章回→世情，四个叙事技术名词（限知／全知／预叙／楔子）＋ 三个作品细节</td></tr>
+<tr><td class="c"><span class="badge A">A3</span></td><td><b>戏曲与「故事演变」</b>：西厢记、白蛇传、赵氏孤儿、桃花扇</td><td>2026 论述《西厢记》演变／2025 论述白蛇传演变／2016 简答《桃花扇》／2023 简答《关汉卿》<span class="yr">四考</span></td><td>一张「演变四段式」答题纸（本事→文人改写→体制变化→主题位移），任何故事都能套</td></tr>
+<tr><td class="c"><span class="badge A">A4</span></td><td><b>诗体转型</b>：唐诗→宋诗、以诗为词、悼亡与送别</td><td>2022 论述宋诗特色／2017 论述苏轼「以诗为词」／2024 简答元稹悼亡／2026 简答唐代送别诗<span class="yr">四考</span></td><td>抓手是「唐型／宋型」这组对立，配苏轼、元稹、王维三个作品细节</td></tr>
+</tbody>
+</table>
+
+<h3>中国现当代 · 4 个</h3>
+<table>
+<thead><tr><th class="c" style="width:56px">编号</th><th style="width:190px">大点</th><th style="width:220px">真题落点</th><th>20 分要怎么撑</th></tr></thead>
+<tbody>
+<tr><td class="c"><span class="badge A">A5</span></td><td><b>鲁迅</b>：小说人物、阿Q、伤逝、故事新编、朝花夕拾</td><td>2020 论述小说人物／2021 论述阿Q／2024 论述伤逝／2025 简答故事新编／2026 简答朝花夕拾<span class="yr">五考 · 最高频</span></td><td>一条「立人—启蒙—反思启蒙」的主线，四个文本各贡献一个不可替代的形象</td></tr>
+<tr><td class="c"><span class="badge A">A6</span></td><td><b>贾平凹</b>：秦腔、长篇小说审美范式</td><td>2025 论述《秦腔》／2026 论述长篇小说审美范式<span class="yr">连考两年</span></td><td>「商州—乡土—现代性」三段式，配《秦腔》的细节密度与《废都》《山本》的对照</td></tr>
+<tr><td class="c"><span class="badge A">A7</span></td><td><b>左翼—革命文学</b>：左联、创造社、革命加恋爱、《创业史》</td><td>2022 论述左联／2026 名解创造社／2022 简答《创业史》三股力量／2023 简答《关汉卿》<span class="yr">四考</span></td><td>1927 之后「个人如何走向集体」这条总线索，前面挂丁玲，后面挂柳青</td></tr>
+<tr><td class="c"><span class="badge A">A8</span></td><td><b>新诗潮</b>：朦胧诗、第三代、三个崛起</td><td>2021 名解朦胧诗／2017 简答朦胧诗特征／2020 名解第三代诗人／2022 填空三个崛起<span class="yr">四考</span></td><td>「崛起—争论—分化」三段，北岛／顾城／韩东各一个文本细节</td></tr>
+</tbody>
+</table>
+
+<h3>外国文学 · 4 个</h3>
+<table>
+<thead><tr><th class="c" style="width:56px">编号</th><th style="width:190px">大点</th><th style="width:220px">真题落点</th><th>20 分要怎么撑</th></tr></thead>
+<tbody>
+<tr><td class="c"><span class="badge A">A9</span></td><td><b>现代主义总论 ＋ 意识流</b></td><td>2022 论述现代主义基本特征／2020 论述意识流／2025 名解《尤利西斯》<span class="yr">三考</span></td><td>「非理性—内向化—形式实验」三根柱子，乔伊斯／伍尔夫／普鲁斯特各一个手法</td></tr>
+<tr><td class="c"><span class="badge A">A10</span></td><td><b>荒诞派 ＋《等待戈多》</b></td><td>2020 名解荒诞派／2022 简答《等待戈多》艺术特色／2024 学硕论述「等待」意蕴<span class="yr">三考</span></td><td>「反戏剧」五条 ＋ 等待的哲学出处（西西弗斯／存在主义），别只写「荒诞」两个字</td></tr>
+<tr><td class="c"><span class="badge A">A11</span></td><td><b>魔幻现实主义 ＋《百年孤独》／福克纳</b></td><td>2024 论述《百年孤独》／2026 简答《喧哗与骚动》／2025 论述莫泊桑（短篇技术对照）<span class="yr">三考</span></td><td>「神奇现实」＋「时间循环」＋「家族结构」三件套，配福克纳的多角度叙事做上下游</td></tr>
+<tr><td class="c"><span class="badge A">A12</span></td><td><b>十九世纪现实主义：个人奋斗与女性悲剧</b></td><td>2023 论述苔丝／2023 简答于连／2022 填空包法利／2016 简答卡列宁／2021 填空苔丝<span class="yr">五考</span></td><td>「社会—性格—毁灭」三段链条，四个女性／个人形象横向打通（详见第 14 节）</td></tr>
+</tbody>
+</table>
+
+<h3>备胎 · 4 个（主点写腻了才换）</h3>
+<div class="grid2">
+<div class="card tight"><span class="badge A">A′1</span><b>《浮士德》与歌德</b><br><span style="font-size:14.6px;color:var(--ink-2)">2026 论述刚考过，2027 大概率不考，但它是「启蒙—浪漫」这条线的锚点，写外国总论时能用上。</span></div>
+<div class="card tight"><span class="badge A">A′2</span><b>文艺复兴与人文主义</b><br><span style="font-size:14.6px;color:var(--ink-2)">2024 简答文艺复兴原因／2020 简答钟楼怪人／2017 论述美丑对照／2016 论述堂吉诃德。考法稳定在「原因＋对照原则」。</span></div>
+<div class="card tight"><span class="badge A">A′3</span><b>五四「人的文学」传统</b><br><span style="font-size:14.6px;color:var(--ink-2)">2020＋2024 名解「人的文学」，是唯一重复名解。往上是周作人，往下是郁达夫、丁玲（阿牛原示范题）。</span></div>
+<div class="card tight"><span class="badge A">A′4</span><b>上古神话与《诗经》</b><br><span style="font-size:14.6px;color:var(--ink-2)">2023 论述神话思维／2025 简答《陈风·月出》。属于「中国文学起点」题，答题靠思维特征四条。</span></div>
+</div>
+
+<div class="note">
+<b>数一下：12 个主点 × 每个约 1200 字的准备量 = 14400 字。</b>五十天，一天 300 字，四十八天写完。
+这就是你的全部工作量。剩下的时间用来练题和回炉，不用再扩。
+</div>
+</section>
+
+<section id="s6">
+<h2><span class="no">贰 · 六</span>B 级中坚：20 个，撑起 30 分简答</h2>
+
+<p class="lede">B 级的标准是：<b>在简答里出现过，但没独立撑过论述</b>。简答题每年 3 道、每题 10 分，
+结构极稳定：<b>一篇具体作品 ＋ 一个人物形象 ＋ 一个文体／思潮</b>。按这个结构备，比按朝代备有效得多。</p>
+
+<table class="small">
+<thead><tr><th class="c" style="width:50px">№</th><th style="width:150px">考点</th><th class="c" style="width:84px">年份</th><th>一句话抓手（能背就能写）</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>《诗经·陈风·月出》</td><td class="c">2025 简答</td><td>月下美人的原型，影响《洛神赋》《春江花月夜》的月意象与「望月怀人」母题</td></tr>
+<tr><td class="c">2</td><td>元稹悼亡诗</td><td class="c">2024 简答</td><td>「曾经沧海」「贫贱夫妻百事哀」；私人情感进入诗史，与潘岳并称</td></tr>
+<tr><td class="c">3</td><td>唐代送别诗</td><td class="c">2026 简答</td><td>四式：以景结情（王维）、以酒壮行（王翰）、以理宽解（高适）、以泪直写（柳永前身）</td></tr>
+<tr><td class="c">4</td><td>《古诗十九首》</td><td class="c">2017 简答／2020 填空</td><td>「五言之冠冕」；游子思妇＋生命短促；浅语深情，钟嵘「惊心动魄」</td></tr>
+<tr><td class="c">5</td><td>诚斋体</td><td class="c">2017 简答</td><td>杨万里：活法、谐趣、即目成吟，「小荷才露尖尖角」</td></tr>
+<tr><td class="c">6</td><td>《庄子》寓言类型</td><td class="c">2022 简答／2023 材料</td><td>三型：喻理型（鲲鹏）、讽刺型（儒以诗礼发冢）、体道型（轮扁／庖丁）</td></tr>
+<tr><td class="c">7</td><td>才子佳人小说</td><td class="c">2022 简答</td><td>「一见钟情—小人拨乱—及第团圆」三段式，与《红楼梦》的反写构成对照</td></tr>
+<tr><td class="c">8</td><td>《蒋兴哥重会珍珠衫》</td><td class="c">2023 简答</td><td>「三言」中少有的宽恕叙事；珍珠衫作贯穿道具；商人伦理的松动</td></tr>
+<tr><td class="c">9</td><td>田汉《关汉卿》</td><td class="c">2023 简答</td><td>「为民请命」的知识分子形象；戏中戏结构；铜豌豆精神</td></tr>
+<tr><td class="c">10</td><td>郭沫若历史剧</td><td class="c">2023 论述（降级备）</td><td>「失事求似」；《屈原》雷电颂；以古讽今的抗战语境</td></tr>
+<tr><td class="c">11</td><td>《雷雨》与繁漪</td><td class="c">2020 简答／2021 名解</td><td>「自然法则」＝郁热、雷雨、逼仄空间构成的情欲牢笼；繁漪是最「雷雨」的性格</td></tr>
+<tr><td class="c">12</td><td>《上海屋檐下》</td><td class="c">2024 简答</td><td>横断面结构；五户人家共用一个弄堂；梅雨季的象征</td></tr>
+<tr><td class="c">13</td><td>《创业史》三股力量</td><td class="c">2022 简答</td><td>梁生宝（合作化）／郭世富（富裕中农）／姚士杰（富农），梁三老汉在中间摇摆</td></tr>
+<tr><td class="c">14</td><td>莫言《红高粱》</td><td class="c">2021 简答</td><td>「我爷爷我奶奶」的民间史诗；红高粱／墨水河的色彩象征；野性生命力</td></tr>
+<tr><td class="c">15</td><td>非虚构写作</td><td class="c">2020 简答／2023 名解／2025 材料</td><td>真实事件＋文学笔法＋作者在场；与报告文学、特稿的分界</td></tr>
+<tr><td class="c">16</td><td>美国创意写作史</td><td class="c">2025 简答</td><td>爱荷华 1936 → 战后 GI Bill → 工坊制 → 2000 年代进入中国</td></tr>
+<tr><td class="c">17</td><td>《一千零一夜》</td><td class="c">2021 简答</td><td>框架结构（山鲁佐德讲故事）、连环包孕、东方想象、民间口语体</td></tr>
+<tr><td class="c">18</td><td>圣经文学</td><td class="c">2016 简答</td><td>希伯来精神＋希腊精神的对举；U 形结构（弗莱）；对西方文学的母题库意义</td></tr>
+<tr><td class="c">19</td><td>欧洲文艺复兴的原因</td><td class="c">2024 简答</td><td>经济（城市／商业）＋古典文献（拜占庭流亡学者）＋印刷术＋教会危机</td></tr>
+<tr><td class="c">20</td><td>海涅《德国，一个冬天的童话》</td><td class="c">2017 简答</td><td>旅行叙事＋政治讽刺＋浪漫抒情三合一；「冬天」＝德国的停滞</td></tr>
+</tbody>
+</table>
+
+<div class="tip">
+<b>B 级的正确用法：不要单独背，挂在 A 级下面背。</b><br>
+「元稹悼亡诗」挂在 A4（诗体转型）下，「《创业史》三股力量」挂在 A7（左翼）下，
+「才子佳人小说」挂在 A2（小说叙事）下。这样一篇 A 级骨架里天然带着三四个 B 级，
+简答考到就是顺手写，论述考到就是细节弹药。这就是阿牛说的「连成面」。
+</div>
+</section>
+
+<section id="s7">
+<h2><span class="no">贰 · 七</span>C 级名解池：四个抽屉，各备八个</h2>
+
+<p class="lede">名解每题 5 分、四题 20 分。清单式准备，一个 300 字，写完就算完，<b>不许展开成简答</b>。
+下面标「✓」的是已经考过的（考过还会再考，尤其跨抽屉循环）。</p>
+
+<div class="grid2">
+<div class="card">
+<h4>抽屉一 · 古代专书与专名</h4>
+<ul class="tick" style="columns:2;column-gap:18px;font-size:15px">
+<li>昭明文选 ✓</li><li>玉台新咏 ✓</li><li>四声猿 ✓</li><li>西昆体 ✓</li>
+<li>临川四梦 ✓</li><li>江西诗派 ✓</li><li>樊宗师 ✓</li><li>秋兴八首 ✓</li>
+<li>海上花列传 ✓</li><li>醒世姻缘传 ✓</li>
+<li><b>待押：</b>《花间集》《沧浪诗话》《剪灯新话》《梼杌闲评》《阅微草堂笔记》</li>
+</ul>
+</div>
+<div class="card">
+<h4>抽屉二 · 现代社团·文体·概念</h4>
+<ul class="tick" style="columns:2;column-gap:18px;font-size:15px">
+<li>人的文学 ✓✓</li><li>创造社 ✓</li><li>语丝文体 ✓</li><li>新格律诗三美 ✓</li>
+<li>朦胧诗 ✓</li><li>第三代诗人 ✓</li><li>随想录 ✓</li><li>繁漪 ✓</li>
+<li><b>待押：</b>学衡派、新月派、《现代》杂志、九叶诗派、寻根文学、新写实小说、潜在写作、白洋淀诗群</li>
+</ul>
+</div>
+<div class="card">
+<h4>抽屉三 · 外国流派与术语</h4>
+<ul class="tick" style="columns:2;column-gap:18px;font-size:15px">
+<li>荒诞派 ✓</li><li>意识流 ✓</li><li>自然主义 ✓</li><li>唯美主义 ✓</li>
+<li>世纪病 ✓</li><li>尤利西斯 ✓</li><li>第二十二条军规 ✓</li><li>源氏物语 ✓</li>
+<li>雪国 ✓</li><li>清教徒文学 ✓</li><li>普罗米修斯 ✓</li><li>艾略特 ✓</li>
+<li><b>待押：</b>表现主义、黑色幽默、垮掉的一代、新小说、魔幻现实主义、《间隔》、骑士文学</li>
+</ul>
+</div>
+<div class="card">
+<h4>抽屉四 · 创意写作新概念</h4>
+<ul class="tick" style="font-size:15px">
+<li>创意写作学 ✓</li><li>创意思维 ✓</li><li>非虚构写作 ✓</li><li>生产性写作 ✓</li>
+<li><b>待押：</b>工坊制（workshop）、写作障碍、自由写作（freewriting）、
+潜文本、故事核心（premise）、人物弧光、创意阅读、作家驻校制</li>
+</ul>
+</div>
+</div>
+
+<div class="warn">
+<b>注意抽屉四的走势：一年比一年「生」。</b>2021「创意写作学」是最基础的定义，2025「创意思维」开始偏方法，
+2026「生产性写作」已经是学科内部的细分概念了。<b>2027 很可能考「工坊制」或「自由写作」的正式定义</b>——
+这两个词在 2024 材料题里都露过脸，只是没让你写名解。
+</div>
+</section>
+
+<section id="s8">
+<h2><span class="no">贰 · 八</span>D 级放弃清单：五十天里，这些一个字都别看</h2>
+
+<p class="lede">敢放弃比会抓点更难。下面每一行都有理由，不是「不重要」，是<b>「投入产出比在这五十天里是负的」</b>。</p>
+
+<table>
+<thead><tr><th style="width:200px">放弃项</th><th>理由</th></tr></thead>
+<tbody>
+<tr><td><b>填空题专项</b></td><td>2023 年起这个题型已经取消。<b>不要再去背作家—作品对照表</b>，那 20 分在卷面上消失了。</td></tr>
+<tr><td><b>文学理论流派全景</b></td><td>853 只要 1–2 个能自报家门的理论（第 19 节）。新批评、叙事学、精神分析、接受美学之外，其余不必涉。</td></tr>
+<tr><td><b>古代文论原著细读</b></td><td>《文心雕龙》《沧浪诗话》只在名解层面出现，不会让你通篇论述。</td></tr>
+<tr><td><b>少数民族文学／港台文学／儿童文学</b></td><td>十一年零出现。西大不考。</td></tr>
+<tr><td><b>比较文学学科理论</b></td><td>2016 之后彻底消失。</td></tr>
+<tr><td><b>西方马克思主义细节</b></td><td>只在 2022 学硕「马克思主义文学价值论」露过脸，专硕没考过。</td></tr>
+<tr><td><b>外国文学上古部分</b>（两河流域、古埃及）</td><td>只有「印度两大史诗」填空过（2020）。知道《摩诃婆罗多》《罗摩衍那》两个名字就够。</td></tr>
+<tr><td><b>现当代作家年谱、生平八卦</b></td><td>西大的题从不考生平，只考文本与文学史位置。</td></tr>
+<tr><td><b>「万一考了」的边角料</b></td><td>阿牛原话：有那么多「一万」的知识你不学，纠结「万一」干什么。</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>把放弃的时间省下来干什么：</b>每天多写一道 30 分钟的论述（第 23 节有题库）。
+<b>写出来的东西才是分，看过的东西不是。</b>
+</div>
+</section>
+
+<!-- ============ 叁 · 大点按题准备 ============ -->
+<section id="s9">
+<h2><span class="no">叁 · 九</span>A5 鲁迅：连续五年，年年有份</h2>
+
+<p class="lede">2020 到 2026 这七年里，鲁迅出现五次，而且是<b>五种完全不同的问法</b>：
+人物群像、单个形象、爱情悲剧、文体创新、散文艺术。这不是运气，这是命题结构 ——
+鲁迅在他们眼里不是一个作家，是「中国现代文学」这个学科的入口。</p>
+
+<div class="q"><b>2020 论述</b> 论述鲁迅小说中的人物形象 ｜ <b>2021 论述</b> 论述《阿Q正传》中阿Q的人物形象 ｜ <b>2024 论述</b> 论述《伤逝》中涓生和子君的爱情 ｜ <b>2025 简答</b> 简析《故事新编》的创新性 ｜ <b>2026 简答</b> 简析《朝花夕拾》的艺术特色</div>
+
+<h3>先把人物谱系搭出来（这是最可能再考的一题）</h3>
+<div class="frame">
+<div class="row"><div class="k">农民</div><div class="v"><b>阿Q</b>（精神胜利法：儿子打老子／忘却／自轻自贱）·<b>闰土</b>（从「迅哥儿」到「老爷」，一层可悲的厚障壁）·<b>祥林嫂</b>（被鲁镇、被礼教、被「我」共同吃掉）</div></div>
+<div class="row"><div class="k">知识分子</div><div class="v"><b>狂人</b>（觉醒者，最后「赴某地候补」——回到原点）·<b>孔乙己</b>（旧文人的尊严与溃败）·<b>涓生</b>（新式知识分子，会讲娜拉却养不起爱人）·<b>吕纬甫／魏连殳</b>（孤独者，被生活磨平或反噬）</div></div>
+<div class="row"><div class="k">女性</div><div class="v"><b>祥林嫂</b>（被卖的寡妇）·<b>子君</b>（「我是我自己的」→ 被父亲领回）·<b>爱姑</b>（《离婚》，敢闹但被七大人一声吓退）</div></div>
+<div class="row"><div class="k">一根总线</div><div class="v"><b>「立人」</b>——《文化偏至论》「首在立人，人立而后凡事举」。所有人物都是「人未被立起来」的不同形态：麻木的、挣扎的、觉醒后又落回去的。</div></div>
+</div>
+
+<div class="tip">
+<b>论述题的高级写法：不要一个人一个人往下排。</b>按<b>「觉醒的三级台阶」</b>往上走 ——
+麻木而不自知（阿Q、闰土）→ 觉醒而无路（狂人、子君）→ 觉醒后反噬（魏连殳）。
+三级台阶写出来，20 分里至少 16 分。排排坐写四个人物，最多 12 分。
+</div>
+
+<h3>四个文体点，应对简答（各 200 字就够）</h3>
+<table class="small">
+<thead><tr><th style="width:150px">文本</th><th>技术关键词</th><th>一句话点睛</th></tr></thead>
+<tbody>
+<tr><td><b>《狂人日记》</b></td><td>文言小序 ＋ 白话日记</td><td>序言说「然已早愈，赴某地候补矣」——白话的觉醒被文言的秩序收编，双重反讽</td></tr>
+<tr><td><b>《阿Q正传》</b></td><td>戏仿史传体 ＋ 全知反讽</td><td>「正传」本是史书体例，用来写一个无姓无名的人，体例本身就是讽刺</td></tr>
+<tr><td><b>《伤逝》</b></td><td>手记体 ＋ 男性第一人称</td><td>涓生的「忏悔」是自我辩护，子君始终没有自己的声音，悲剧在叙述层就完成了</td></tr>
+<tr><td><b>《故事新编》</b></td><td>古今杂糅（「油滑」）</td><td>女娲腿上「古衣冠的小丈夫」、大禹时代说「OK」——把神话拉回现实的荒诞</td></tr>
+<tr><td><b>《朝花夕拾》</b></td><td>回忆散文 ＋ 闲话风</td><td>《从百草园到三味书屋》《藤野先生》：温情的童年叙事里始终压着一层批判的冷</td></tr>
+</tbody>
+</table>
+
+<h3>三线连线（阿牛法则：前后左右各一条）</h3>
+<div class="frame">
+<div class="row"><div class="k">前（承接）</div><div class="v">晚清谴责小说（《官场现形记》《二十年目睹之怪现状》）的暴露传统 → 鲁迅把它从「揭官场」转向「揭国民性」；外来资源：果戈里《狂人日记》、尼采「重估一切价值」、安特莱夫式的阴冷</div></div>
+<div class="row"><div class="k">左右（同代）</div><div class="v">郁达夫（向内写自我）、叶圣陶（写教育界）、废名（写田园）——<b>只有鲁迅同时向外看结构、向内看灵魂</b></div></div>
+<div class="row"><div class="k">后（影响）</div><div class="v">沈从文用「优美人性」反写国民性 → 萧红《呼兰河传》接住「看客」主题 → 余华《活着》把国民性转成生存哲学 → 莫言接住「民间」</div></div>
+</div>
+
+<div class="warn">
+<b>「为什么」层（写进论述的结尾，是加分点）：</b>为什么鲁迅笔下几乎没有英雄？<br>
+因为他要写的是「沉默的国民的魂灵」（《俄文译本〈阿Q正传〉序》）。一旦立起英雄，读者就会把问题归给「某几个坏人」，
+而他要指认的是<b>结构</b>——礼教、看客、等级，这些没有面孔的东西。所以他的小说里只有「被吃的人」和「围观吃人的人」。
+</div>
+
+<h4>资料库对照</h4>
+<p style="font-size:15px">《煜编考研05现代》第四章 ／ 《李凡1000题_现当代文学史》鲁迅专题 ／ 《鲁迅故乡_刘俐俐文本分析_批注拆解版》（叙事学分析的现成范本，正好给 853 用）</p>
+</section>
+
+<section id="s10">
+<h2><span class="no">叁 · 十</span>A6 贾平凹，以及现当代另两条支线</h2>
+
+<p class="lede">贾平凹连考两年，是这份卷子里最「不合常理」也最可解释的一处。
+把它和 A7 左翼、A8 新诗潮放在一起看，你会明白西大现当代的出题口味：
+<b>要么考陕西，要么考「个人怎么走到集体里去」。</b></p>
+
+<div class="q"><b>2025 论述</b> 论述贾平凹《秦腔》的艺术特点 ｜ <b>2026 论述</b> 论述贾平凹长篇小说的审美范式</div>
+
+<h3>A6 贾平凹：为什么是连考两年</h3>
+<div class="note">
+<b>第一层原因（地皮）：</b>陕西作家群是西北大学现当代学科的「地方知识」。柳青—路遥—陈忠实—贾平凹这条谱系，
+在陕西的任何一所高校都是必讲章节，命题人讲了一辈子，出题时手边就是它。<br>
+<b>第二层原因（学科）：</b>贾平凹是「新时期文学」里少数几个完成了<b>长篇小说文体实验</b>的作家。
+考他，等于同时考了乡土书写、文体创新、方言叙事、知识分子心态四件事，一道题覆盖四个知识点，出题效率最高。<br>
+<b>第三层原因（时机）：</b>2025 考具体作品《秦腔》，2026 考整体范式 —— 这是典型的「先点后面」两步走。
+<b>2027 若续考，最可能转向对照（贾平凹 vs 路遥／陈忠实）或《废都》《山本》单论。</b>
+</div>
+
+<h4>《秦腔》的四个技术点（2025 那题的骨架）</h4>
+<ol class="steps">
+<li><b>视角：疯子引生。</b>一个被阉割的、半疯的叙述者。他既在村里（能听到一切），又不被村里当人（所以什么都敢看）。
+这个视角解决了「如何既贴地又越界」的老问题。</li>
+<li><b>结构：密实的流年式书写。</b>没有主线情节，靠婚丧嫁娶、鸡零狗碎的日常堆叠推进。
+作者自己说这是「为故乡树一块碑」——碑的写法就是密密刻满，不留空白。</li>
+<li><b>声音：秦腔作为象征。</b>秦腔在小说里不是背景音乐，是<b>正在死去的地方精神</b>。夏天智的痴迷、秦腔剧团的散伙、
+流行歌曲的入侵，构成一条完整的衰落线。</li>
+<li><b>语言：方言主语 ＋ 白描。</b>「瓷」「谝」「咥」这类词直接入文，不加注，靠上下文磨出意思。
+与《白鹿原》的「雅言化方言」路线正相反。</li>
+</ol>
+
+<h4>「长篇小说审美范式」怎么答（2026 那题的骨架）</h4>
+<div class="frame">
+<div class="row"><div class="k">一 · 乡土挽歌</div><div class="v">写的是「乡土中国如何消失」，不是「乡土多么美好」。祭奠姿态，不是怀旧姿态。</div></div>
+<div class="row"><div class="k">二 · 混沌叙事</div><div class="v">反情节、反高潮，用密度代替结构。《古炉》《山本》都是这个路子。</div></div>
+<div class="row"><div class="k">三 · 文体杂糅</div><div class="v">方志、戏曲、笔记、书信、批注随手掺入，《秦腔》里有唱词，《山本》里有博物志。</div></div>
+<div class="row"><div class="k">四 · 文人性的自我审判</div><div class="v">《废都》的庄之蝶是作家写作家的堕落，这一层让他的乡土书写不至于变成田园牧歌。</div></div>
+</div>
+
+<div class="tip">
+<b>陕西谱系对照表（考场上一分钟能默出来，就是 20 分的骨架）：</b><br>
+柳青《创业史》＝ <b>政治史诗</b>（集体化的正当性）→ 路遥《平凡的世界》＝ <b>个人奋斗史诗</b>（改革初期的 upward）→
+陈忠实《白鹿原》＝ <b>家族史／民族秘史</b>（儒家文化的地基）→ 贾平凹＝ <b>乡土挽歌</b>（这一切都散了之后）。
+四步走完，就是一部当代陕西文学史。
+</div>
+
+<h3>A7 左翼—革命文学：一条「个人走向集体」的线</h3>
+<div class="q"><b>2022 论述</b> 论述左联的文学活动 ｜ <b>2026 名解</b> 创造社 ｜ <b>2022 简答</b> 《创业史》中代表资本主义的三股力量 ｜ <b>2023 简答</b> 田汉《关汉卿》</div>
+<div class="frame">
+<div class="row"><div class="k">起点</div><div class="v">1927 之后，五四的「个人」被时代判了缓刑。创造社、太阳社提倡「革命文学」，1928 年「革命文学论争」。</div></div>
+<div class="row"><div class="k">组织</div><div class="v">1930 左联成立（上海）。五件事：办刊物（《北斗》《萌芽》）、译介马克思主义文论、提倡大众化、培养青年作家、与「自由人」「第三种人」论战。</div></div>
+<div class="row"><div class="k">样板</div><div class="v">丁玲《韦护》《水》→ 1931 年「左转」完成；《太阳照在桑干河上》把心理描写带进土改叙事。</div></div>
+<div class="row"><div class="k">延续</div><div class="v">延安文艺座谈会（1942）→ 柳青《创业史》：梁生宝／郭世富／姚士杰三股力量，梁三老汉在中间摇摆 —— <b>「中间人物」正是这条线最真实的产物</b>。</div></div>
+</div>
+<div class="note">
+<b>这条线和 A′3（人的文学）是一根绳的两头：</b>周作人提出「人的文学」（1918）→ 郁达夫写「个人的病」（1921）→
+丁玲写「个人的出路」（1928）→ 丁玲转向集体（1931）→ 柳青写集体（1959）。
+<b>「自我抒情小说如何终结、个人如何走向集体」，是现当代最漂亮的一条长线，能通吃名解、简答、论述三种题型。</b>
+</div>
+
+<h3>A8 新诗潮：朦胧诗与第三代</h3>
+<div class="q"><b>2021 名解</b> 朦胧诗 ｜ <b>2017 简答</b> 朦胧诗的艺术特征 ｜ <b>2020 名解</b> 第三代诗人 ｜ <b>2022 填空</b> 「三个崛起」</div>
+<ul class="tick">
+<li><b>三个崛起</b>：谢冕《在新的崛起面前》、孙绍振《新的美学原则在崛起》、徐敬亚《崛起的诗群》——1980 年前后的三篇辩护文章，是朦胧诗「被命名—被争论—被承认」的完整证据链。</li>
+<li><b>朦胧诗特征四条</b>：意象化与多义性（北岛《回答》）、主观化抒情主体（顾城「我是一个任性的孩子」）、
+对既有美学的反叛（拒绝«放声歌唱»式直白）、人道主义底色（「卑鄙是卑鄙者的通行证」）。</li>
+<li><b>第三代（新生代）</b>：1986 年「现代诗群体大展」，反朦胧诗的「崇高」与「英雄腔」，走向口语、日常、解构。
+韩东《有关大雁塔》——把杨炼《大雁塔》的历史抒情，削成「有关大雁塔／我们又能知道些什么」。</li>
+<li><b>853 可能用到</b>：北岛《一束》就出现在 2021 年的鉴赏题里。<b>把诗读懂，等于同时准备了名解和评论。</b></li>
+</ul>
+
+<h4>资料库对照</h4>
+<p style="font-size:15px">《煜编考研06当代》新时期文学章 ／ 《李凡1000题_现当代文学史》诗歌专题 ／
+《带背/day17-复盘与论述题答题方法》 ／ 《27文学考研_周年热点考点地图》（查周年：鲁迅逝世 90 周年等）</p>
+</section>
+
+<section id="s11">
+<h2><span class="no">叁 · 十一</span>A1 杜甫，与古代那块「诗体转型」的地</h2>
+
+<p class="lede">杜甫是西大古代组最稳定的一个人名：2016 考艺术成就（30 分）、2020 考后世影响（20 分）、
+2021 考沉郁顿挫（10 分）。<b>三次问法不同，但底子是同一套东西。</b>把它备成一块，三题通吃。</p>
+
+<div class="q"><b>2016 论述</b> 试论杜甫诗歌的艺术成就 ｜ <b>2020 论述</b> 论述杜甫诗歌的后世影响 ｜ <b>2021 简答</b> 杜诗沉郁顿挫体现在哪些方面</div>
+
+<h3>杜甫的三层结构（背这三层，任何问法都能拆）</h3>
+<div class="frame">
+<div class="row"><div class="k">第一层 · 内容</div><div class="v"><b>诗史</b>：以《北征》《三吏》《三别》记录安史之乱，个人经历与时代灾难同构。关键词：<b>「以时事入诗」</b>，把史笔搬进诗里。</div></div>
+<div class="row"><div class="k">第二层 · 风格</div><div class="v"><b>沉郁顿挫</b>：沉郁＝情感的厚重积压（身世之悲＋家国之痛），顿挫＝表达的盘旋往复（不是一泻千里，是一压一放）。<b>《登高》《秋兴八首》</b>是标本：八句皆对、层层加压，到最后「潦倒新停浊酒杯」才松开。</div></div>
+<div class="row"><div class="k">第三层 · 技术</div><div class="v"><b>集大成</b>：① 众体兼备（五古、七律、新题乐府）② 「语不惊人死不休」的字句锤炼 ③ 以文为诗、以议论为诗 ④ 组诗结构（《秋兴八首》八首一体）</div></div>
+</div>
+
+<h3>「后世影响」这题怎么写才不空</h3>
+<p>不要泛泛说「影响深远」。<b>按「三条接受线」写，每条给一个人名一个具体点：</b></p>
+<ol class="steps">
+<li><b>诗艺线</b>：中唐韩愈学其「以文为诗」的奇崛 → 宋代黄庭坚与江西诗派学其句法与用典（「点铁成金」「夺胎换骨」都自称出自杜）→ 明代李东阳、清代沈德潜奉为诗学正宗。</li>
+<li><b>精神线</b>：文天祥《集杜诗》—— 国破之际用杜甫的诗句重组自己的痛；陆游「中原北望气如山」的家国句式，源头在杜。</li>
+<li><b>人格线</b>：宋代「诗圣」的封号不是文学判断，是<b>道德判断</b>。「一饭未尝忘君」的形象恰好赶上理学兴起的需要（详见下方「为什么」）。</li>
+</ol>
+
+<div class="warn">
+<b>「为什么」加分点（阿牛第四步的经典题，直接可用）：为什么杜甫在唐代不受推崇，宋代地位才陡然升高？</b><br>
+① <b>审美错位</b>：盛唐崇尚「声律与风骨兼备」的雅正之美，杜甫沉郁顿挫、以文为诗、好发议论，与当时的审美期待不合。<br>
+② <b>名声被遮蔽</b>：他生前以「献赋」得名（《三大礼赋》），时人视其为辞赋之士，诗名反而不显。现存十余种唐人选唐诗，仅晚唐韦庄《又玄集》选了杜诗七首。<br>
+③ <b>传播受限</b>：诗作仅在小圈子流转，去世后文集「仅流行于江汉」。<br>
+④ <b>宋代给了它全部条件</b>：苏轼首倡「集大成」说，从艺术上赋予典范意义；<b>决定性的是理学兴起</b>——
+宋人需要一位符合儒家伦理的人格典范，杜甫「流落饥寒，终身不用，一饭未尝忘君」的形象，把道德实践与诗歌艺术融为一体。
+于是「诗圣」从文学判断升格为文化信仰，杜诗被尊为「诗中六经」。<br>
+⑤ <b>最后一句收</b>：杜甫在唐代的「不合时宜」，到宋代恰恰变成了「恰逢其时」。
+</div>
+
+<h3>A4 诗体转型：唐诗→宋诗／以诗为词</h3>
+<div class="q"><b>2022 论述</b> 与唐诗相比，宋诗的艺术特色是什么 ｜ <b>2017 论述</b> 论述苏轼「以诗为词」的内涵 ｜ <b>2024 简答</b> 元稹悼亡诗的艺术特点 ｜ <b>2026 简答</b> 唐代送别诗的写作特色</div>
+
+<table class="small">
+<thead><tr><th style="width:110px">命题</th><th>答题骨架</th></tr></thead>
+<tbody>
+<tr><td><b>宋诗特色</b><br>（vs 唐诗）</td><td>四组对立：<b>唐诗主情／宋诗主理</b>（「以议论为诗」）·<b>唐诗尚韵／宋诗尚意</b>（「以文字为诗、以才学为诗」）·
+<b>唐诗浑成／宋诗精巧</b>（拗句、险韵、次韵）·<b>唐诗自然／宋诗日常</b>（写茶、写砚、写虱子）。<br>
+代表人物各一句：苏轼（理趣）、黄庭坚（句法）、陆游（日常爱国）、杨万里（活法）。<b>结尾点一句「宋诗非唐诗之衰，是唐诗之别」。</b></td></tr>
+<tr><td><b>以诗为词</b></td><td>三层：① <b>题材扩大</b>——词从樽前花间走向悼亡（《江城子》）、怀古（《念奴娇》）、田园（《浣溪沙》）。
+② <b>手法移植</b>——用诗的句法、典故、议论入词。③ <b>风格解放</b>——「自是一家」，豪放与清旷并存，打破「词为艳科」。<br>
+争议面一定要写：李清照《词论》讥其「句读不葺之诗」，<b>「词别是一家」vs「自是一家」是这道题的高分点</b>。</td></tr>
+<tr><td><b>元稹悼亡诗</b></td><td>三首《遣悲怀》＋《离思》。特点：① 以<b>日常琐事</b>写深情（「针线犹存未忍开」「泥他沽酒拔金钗」）② 用<b>对比</b>造痛（昔日贫贱相守／今日富贵独享）③ <b>议论入诗</b>但仍动人（「贫贱夫妻百事哀」）。<br>
+文学史位置：与潘岳并称「潘元」，把私人悼亡写成公共母题，下接苏轼《江城子》、纳兰性德。</td></tr>
+<tr><td><b>唐代送别诗</b></td><td>四式：<b>以景结情</b>（王维「劝君更尽一杯酒，西出阳关无故人」）·<b>以壮语破悲</b>（王勃「海内存知己」、高适「莫愁前路无知己」）·
+<b>以想象代送</b>（李白「我寄愁心与明月」）·<b>以时空压缩</b>（柳永式的「今宵酒醒何处」，宋人承之）。<br>
+为什么唐代送别诗特别多：科举游宦、边塞从军、交通与驿馆制度 —— 一句「制度性迁徙催生了制度性抒情」是加分句。</td></tr>
+</tbody>
+</table>
+
+<h4>资料库对照</h4>
+<p style="font-size:15px">《煜编考研02魏晋隋唐》杜甫章、中晚唐章 ／ 《煜编考研03宋元》宋诗与苏轼章 ／
+《李凡1000题_古代文学史》唐诗宋诗专题 ／ 《带背/day18-古代文学-李白与杜甫》 ／ 《带背/day23-古代文学-北宋前期词与诗文革新》</p>
+</section>
+
+<section id="s12">
+<h2><span class="no">叁 · 十二</span>A9–A11 外国现代主义群：七年九考的一块地</h2>
+
+<p class="lede">外国那 20 分，七年里有九年份落在<b>二十世纪现代主义</b>上：
+意识流（2020 论述）、现代主义总特征（2022 论述）、荒诞派（2020 名解）、
+《等待戈多》（2022 简答）、《尤利西斯》（2025 名解）、《百年孤独》（2024 论述）、
+《喧哗与骚动》（2026 简答）。<b>这是整张卷子斜率最高的一块，必须按「一个体系」来备，而不是按作家来备。</b></p>
+
+<h3>A9 现代主义总论：三根柱子，撑起任何一道总论题</h3>
+<div class="frame">
+<div class="row"><div class="k">柱子一 · 非理性</div><div class="v">思想底子：叔本华（意志）、尼采（重估）、柏格森（绵延）、弗洛伊德（潜意识）。
+文学后果：<b>写「意识」而不是写「思想」</b>，写本能、幻觉、性、暴力。</div></div>
+<div class="row"><div class="k">柱子二 · 内向化</div><div class="v">从「写社会的人」转到「写人的内部」。外部世界被压扁成意识的背景板，<b>时间被心理化</b>（柏格森的「心理时间」）。</div></div>
+<div class="row"><div class="k">柱子三 · 形式实验</div><div class="v">打破线性叙事、全知叙述、因果情节：多角度（福克纳）、并置（《荒原》）、自由联想（伍尔夫）、
+神话结构（乔伊斯《尤利西斯》对应《奥德赛》）。</div></div>
+</div>
+
+<h4>意识流（2020 那题）的答题顺序</h4>
+<ol class="steps">
+<li><b>定义</b>：不是「意识像水流」，而是<b>直接呈现人物意识未经整理的原生状态</b>——跳跃、重复、不合逻辑、感官与记忆混在一起。术语来自詹姆斯《心理学原理》。</li>
+<li><b>三个技术</b>：自由联想（无过渡地跳）／内心独白（有第一人称，但不必有听者）／<b>蒙太奇与并置</b>（把不同时空的片段硬接）。</li>
+<li><b>三个标本</b>：乔伊斯《尤利西斯》（布卢姆一天，第十八章无标点）／伍尔夫《达洛维夫人》（一天串一生）／
+普鲁斯特《追忆似水年华》（一块玛德莱娜点心撬开整座记忆）。</li>
+<li><b>一句话升华</b>：意识流不是「写得更细」，是<b>把「真实」的定义从外部事件改成了内部流动</b>。</li>
+</ol>
+
+<h3>A10 荒诞派与《等待戈多》</h3>
+<div class="q"><b>2020 名解</b> 荒诞派 ｜ <b>2022 简答</b> 简析《等待戈多》的艺术特色 ｜ <b>2024 学硕论述</b> 《等待戈多》中的「等待」意蕴</div>
+<ul class="tick">
+<li><b>荒诞的哲学出处</b>：加缪《西西弗斯神话》——「人渴望意义，世界沉默不语」，两者的裂缝就是荒诞。尤奈斯库《秃头歌女》、贝克特《等待戈多》、品特、阿达莫夫。</li>
+<li><b>「反戏剧」五条</b>：没有传统情节（什么都没发生，演两遍）／没有性格（人物是符号，连记忆都不可靠）／
+语言失效（对话是回避而不是交流）／<b>循环结构</b>（两幕几乎重复）／悲喜剧混合（小丑式的插科打诨）。</li>
+<li><b>「等待」的三层意蕴</b>（这题若考论述，按这三层写）：① <b>等待的对象永不到场</b>——戈多是谁不重要，重要的是「等」；
+② <b>等待是人的存在方式</b>——在无意义中自我维持（对应西西弗斯推石头）；③ <b>等待中的相互依赖</b>——弗拉季米尔与爱斯特拉冈的争吵与和好，
+是荒诞里唯一的人性温度。最后点一句「所以它不是绝望的戏，是<b>在绝望里坚持</b>的戏」。</li>
+</ul>
+
+<h3>A11 魔幻现实主义与《百年孤独》／福克纳</h3>
+<div class="frame">
+<div class="row"><div class="k">魔幻四件套</div><div class="v">① <b>神奇现实</b>（把奇迹当日常写：美人儿蕾梅黛丝升天，家里人只关心床单）② <b>时间循环</b>（家族同名、事件重复、预言与结局咬合）
+③ <b>家族结构</b>（用谱系承载历史）④ <b>政治寓言</b>（马孔多＝拉美，香蕉公司＝殖民资本）</div></div>
+<div class="row"><div class="k">叙事技术</div><div class="v">「多年以后，面对行刑队……」——<b>把未来的时点提前说出</b>，制造宿命感；全知叙述者用平静语气报告骇人事件（<b>零度情感</b>）。</div></div>
+<div class="row"><div class="k">上游 · 福克纳</div><div class="v">《喧哗与骚动》：<b>四个叙述者</b>（白痴班吉／自杀的昆丁／刻薄的杰生／全知的迪尔西），
+时间在同一天里反复折叠。<b>马尔克斯承认自己「抄」了福克纳的写法</b>——这句话本身就是一条漂亮的连线。</div></div>
+<div class="row"><div class="k">下游</div><div class="v">莫言《红高粱》（2021 简答）、韩少功《爸爸爸》、陈忠实《白鹿原》的魔幻段落 —— <b>中国新时期文学的「寻根」几乎都从这里借过火</b>。</div></div>
+</div>
+
+<div class="note">
+<b>这题若能连上中国，就是 20 分里的 18 分：</b>「拉美魔幻现实主义在 1980 年代进入中国，
+不是一次风格引进，而是一次<b>方法论解放</b>——它证明「本土的民间信仰与地方经验」可以是现代主义的形式，而不只是被启蒙的落后对象。
+寻根文学（韩少功、阿城）与莫言的民间叙事，都是在这条启示下长出来的。」
+</div>
+
+<h4>资料库对照</h4>
+<p style="font-size:15px">《唐红梅外国文学知识点串讲》二十世纪章 ／ 《李凡1000题_外国文学史》现代主义专题 ／
+《带背/day23-俄苏与现代主义》《带背/day24-意识流小说》《带背/day25-表现主义与后现代-上》</p>
+</section>
+
+<section id="s13">
+<h2><span class="no">叁 · 十三</span>A2 + A3 演变类：古代那块最肥的地（考了八次）</h2>
+
+<p class="lede">古代四道论述里，有两道给的是「<b>一个东西怎么长成现在这样</b>」——
+2025 白蛇传的演变、2026《西厢记》的故事演变。再加上 2024「古代小说的叙事视角」、
+2021「《红楼梦》的叙事特征」，你会发现古代组的兴奋点非常集中：<b>叙事与演变。</b></p>
+
+<h3>A3 「故事演变」通用答题纸（任何故事都能套）</h3>
+<div class="card">
+<p style="margin:4px 0"><b>四段式：本事 → 文人改写 → 体制变化 → 主题位移。</b>这四步是骨架，换故事只换材料，不动结构。</p>
+</div>
+
+<table class="small">
+<thead><tr><th style="width:86px">段位</th><th style="width:170px">《西厢记》（2026）</th><th style="width:170px">白蛇传（2025）</th><th>通用问法</th></tr></thead>
+<tbody>
+<tr><td><b>① 本事</b></td><td>元稹《莺莺传》（会真记）：张生始乱终弃，还骂莺莺是「尤物」「妖孽」——<b>一个为男性开脱的悲剧</b></td><td>唐《白蛇记》、宋话本《西湖三塔记》：白蛇是纯粹的害人妖</td><td>这个故事最早是什么形态？谁讲的？为谁讲的？</td></tr>
+<tr><td><b>② 改写</b></td><td>董解元《西厢记诸宫调》（金）：<b>改成大团圆</b>，张生成了有情有义的志诚种，红娘成为主角之一</td><td>明冯梦龙《白娘子永镇雷峰塔》：白蛇有了人情，但结局仍是镇压</td><td>谁第一次动了结局？为什么动？</td></tr>
+<tr><td><b>③ 体制</b></td><td>王实甫《西厢记》（元杂剧）：<b>五本二十一折</b>，打破一本四折的惯例；旦本末本交替，主唱权分给多人</td><td>清方成培《雷峰塔传奇》：<b>戏曲体制</b>带来「合钵」「断桥」「祭塔」等场次；白娘子彻底成为正面形象</td><td>换载体（传奇→诸宫调→杂剧→传奇→电影）带来了什么新手段？</td></tr>
+<tr><td><b>④ 主题</b></td><td>从「女人是祸水」到「愿天下有情的都成了眷属」——<b>爱情获得了正当性</b></td><td>从「妖害人」到「人害妖」——<b>批判对象反转了</b>，法海成了反派</td><td>价值判断挪了哪一步？这一步对应什么时代观念？</td></tr>
+</tbody>
+</table>
+
+<div class="tip">
+<b>收尾句（两个故事通用，背一句就够）：</b>「故事的演变史，不是同一个故事的重复，
+而是<b>每一代人把自己的伦理焦虑投进去、再重新缝合的过程</b>。所以考演变，考的从来不是版本学，
+是一个民族如何一次次重新安排「谁有罪、谁可怜、什么值得团圆」。」
+</div>
+
+<h3>A2 古代小说的叙事：一条线 ＋ 四个技术词</h3>
+<div class="q"><b>2021 论述</b> 论述《红楼梦》的叙事特征 ｜ <b>2024 论述</b> 结合具体作品分析古代小说的叙事视角 ｜ <b>2023 简答</b> 《蒋兴哥重会珍珠衫》内容与叙事特点 ｜ <b>2022 简答</b> 才子佳人小说的叙事特点</div>
+
+<div class="frame">
+<div class="row"><div class="k">一条线</div><div class="v">史传（《史记》的纪传体与「太史公曰」）→ 志怪志人（六朝，短制、实录口吻）→ 唐传奇（<b>有意为小说</b>，始有意构幻）→
+宋元话本（<b>说话人视角</b>：「看官听说」「话分两头」）→ 章回（分回标目、全知说书人）→ 世情（《金瓶梅》《红楼梦》，视角内化）</div></div>
+<div class="row"><div class="k">技术① 视角</div><div class="v">《红楼梦》用<b>「石头」限知 ＋ 全知说书人</b>的双层结构：石头只记它所见，但叙述者又什么都知道。这造成「知情程度」的层次感。</div></div>
+<div class="row"><div class="k">技术② 预叙</div><div class="v">第五回太虚幻境判词＝把结局提前交底。中国小说惯用预叙（话本的「欲知后事如何」也是），<b>与西方悬疑式的延宕正相反</b>。</div></div>
+<div class="row"><div class="k">技术③ 楔子</div><div class="v">「甄士隐梦幻识通灵」既是引子又是总纲：<b>真事隐／假语存</b>，一开篇就把「真假」设成结构问题。</div></div>
+<div class="row"><div class="k">技术④ 视角越界</div><div class="v">《蒋兴哥重会珍珠衫》里，叙述者同时知道王三巧与陈大郎两边的心思——<b>话本全知视角的典型</b>；
+而《红楼梦》写黛玉进府，全部限制在她的眼睛里，这是从全知到限知的一次跃迁。</div></div>
+</div>
+
+<div class="warn">
+<b>「为什么」加分点：为什么中国古代小说长期以全知说书人为主，直到《红楼梦》才出现成熟的限知？</b><br>
+① <b>发生学</b>：话本源于「说话」这门表演艺术，说书人必须在场，全知是它的先天体质。<br>
+② <b>功能</b>：说书人要随时评论、警示、收束，全知视角是道德训诫的载体。<br>
+③ <b>转变条件</b>：文人独立创作（不再靠书场）、印刷阅读（可反复细读、可承受复杂结构）、
+以及世情题材本身要求「贴身写心理」。<b>三个条件在《红楼梦》这里同时到齐了。</b>
+</div>
+
+<h4>资料库对照</h4>
+<p style="font-size:15px">《煜编考研04明清近代》小说与戏曲章 ／ 《李凡1000题_古代文学史》明清小说专题 ／
+《带背/day21-古代文学-唐传奇与唐五代词》《带背/day26-古代文学-西厢记与元代中》 ／
+《鲁迅故乡_刘俐俐文本分析_批注拆解版》（叙事学分析的现成范本）</p>
+</section>
+
+<section id="s14">
+<h2><span class="no">叁 · 十四</span>A12 十九世纪：个人奋斗与女性悲剧（五年五考）</h2>
+
+<p class="lede">这是外国组的第二条主线，考法极其稳定：<b>给一个人物，问你他／她的悲剧根源</b>。
+2023 苔丝（论述）、2023 于连（简答）、2022 包法利（填空）、2016 卡列宁（简答）、2021 苔丝（填空）。
+一条链子四个形象，横向打通就是 20 分。</p>
+
+<table>
+<thead><tr><th style="width:110px">形象</th><th style="width:150px">作品／作者</th><th>一句话内核</th><th style="width:150px">悲剧的类型</th></tr></thead>
+<tbody>
+<tr><td><b>于连</b></td><td>《红与黑》司汤达<br><span class="yr">2023 简答</span></td><td>木匠的儿子，靠才华与伪装向上爬。「红」是军功，「黑」是教会——两条上升通道都属于别人</td><td><b>阶层</b>：个人能力与出身制度的错位</td></tr>
+<tr><td><b>苔丝</b></td><td>《德伯家的苔丝》哈代<br><span class="yr">2023 论述 · 2021 填空</span></td><td>被侮辱者反被审判。亚雷毁了她的身体，安玑毁了她的精神</td><td><b>道德</b>：双重标准（男性的过去被宽恕，女性的过去被定罪）</td></tr>
+<tr><td><b>爱玛</b></td><td>《包法利夫人》福楼拜<br><span class="yr">2022 填空</span></td><td>被浪漫小说喂大的欲望，撞上外省生活的平庸。借贷、通奸、破产、服毒</td><td><b>想象</b>：文学教养与现实的落差</td></tr>
+<tr><td><b>安娜</b></td><td>《安娜·卡列尼娜》托尔斯泰<br><span class="yr">2016 简答·卡列宁</span></td><td>为了真实的爱，放弃儿子、身份、社交圈。最后发现爱情本身也会耗光</td><td><b>制度</b>：婚姻、名誉、母职三重合围</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>通吃的答题模型：「社会—性格—毁灭」三段链条。</b><br>
+① <b>社会</b>：这个时代的哪条规则在挤压她／他（阶层壁垒／性别双标／婚姻制度／外省平庸）。<br>
+② <b>性格</b>：她／他的哪一点让挤压变成致命（于连的野心与自尊、苔丝的纯真与顺从、爱玛的幻想、安娜的诚实）。<br>
+③ <b>毁灭</b>：毁灭的方式如何反过来揭示规则（于连在法庭上放弃求生、苔丝杀死亚雷、爱玛服毒、安娜卧轨）。<br>
+<b>写到这里再加一句：「所以十九世纪现实主义的深刻，不在于它同情受难者，而在于它让读者看见，
+受难者自己也在用那套规则审判自己。」</b>
+</div>
+
+<h3>莫泊桑这一题（2025 论述）单独准备</h3>
+<ul class="tick">
+<li><b>师承</b>：福楼拜的弟子，继承了「客观冷峻、不介入」的叙述姿态（「作家不该在作品里露面」）。</li>
+<li><b>题材</b>：诺曼底乡下、小职员、妓女、战争——<b>被历史遗忘的中下层</b>。</li>
+<li><b>技术四点</b>：① 情节的经济性（《项链》一个借还动作撑起十年）② 转折的残酷（结尾一句话把前面全部推翻）
+③ 冷静的白描与细节选择（《羊脂球》里那篮食物）④ 不动声色的讽刺（不说「虚伪」，只让体面人分食完食物后转身离开）。</li>
+<li><b>连线</b>：上接福楼拜（客观叙事）、下启契诃夫（淡化情节）与欧·亨利（反转）；中国现代短篇（鲁迅、汪曾祺）都受过这一路的影响。</li>
+</ul>
+
+<h4>资料库对照</h4>
+<p style="font-size:15px">《唐红梅外国文学知识点串讲》十九世纪章 ／ 19世纪现实主义文学_下_复习笔记.md ／
+《李凡1000题_外国文学史》现实主义专题 ／ 《带背/day14-十九世纪现实主义上》《带背/day18-十九世纪现实主义下》</p>
+</section>
+
+<section id="s15">
+<h2><span class="no">叁 · 十五</span>创意写作理论：40 分材料题 ＋ 5 分名解，全在这一节</h2>
+
+<p class="lede">这是整份卷子里<b>唯一「复习了就等于拿分」</b>的部分：范围封闭、切口可预测、答案有骨架。
+2023 到 2026 四年 160 分，全打在这里。你却可能还没系统整理过它。</p>
+
+<h3>五个必须张口就来的基础概念</h3>
+<table>
+<thead><tr><th style="width:130px">概念</th><th>必须说清的三件事</th></tr></thead>
+<tbody>
+<tr><td><b>创意写作</b><br><span class="yr">2021 名解·简答</span></td><td>① <b>定义</b>：以创造性思维为核心、以作品产出为导向、可教可学的写作活动（区别于以阐释为主的「写作学」）。
+② <b>特点</b>：创造性（原创性）、实践性（写出来才算）、过程性（工坊反馈）、个体性（不可完全标准化）。
+③ <b>学科位置</b>：诞生于美国 1930 年代爱荷华，2009 年后进入中国高校（复旦、上大、人大），西大设「戏剧与影视（创意写作）」方向。</td></tr>
+<tr><td><b>工坊制</b><br><span class="yr">2024 材料</span></td><td>① <b>形式</b>：小班、围坐、交稿—朗读—同伴点评—修改，教师是「主持人」不是「评判者」。
+② <b>内核</b>：<b>把写作从「天赋」转为「可讨论的技术」</b>；反馈先于评价；修改是常规而非失败。
+③ <b>争议</b>：容易同质化、容易变成社交仪式、对天才型写作者可能无效。</td></tr>
+<tr><td><b>非虚构写作</b><br><span class="yr">2020 简答 · 2023 名解 · 2025 材料</span></td><td>① <b>定义</b>：以真实事件／人物为基础，用文学技法呈现的写作（报告文学、特稿、纪实、传记）。
+② <b>特征</b>：真实性的契约（不能编）、作者的在场（「我」是方法）、文学性的叙述（场景、对话、结构）。
+③ <b>与虚构的边界</b>：<b>细节可以想象，事实不能虚构</b>——这就是 2025 那道 40 分题的正解入口。</td></tr>
+<tr><td><b>创意思维</b><br><span class="yr">2025 名解</span></td><td>① 发散思维（求多）＋ 收敛思维（求优）② 联想与移植（远距离连接）③ 逆向与变形（打破默认设定）。<br>
+一句话：「创意思维不是灵感的等待，是<b>可训练的联结能力</b>。」</td></tr>
+<tr><td><b>生产性写作</b><br><span class="yr">2026 名解</span></td><td>相对「消费性写作」（读后感、应试作文、文案）而言：<b>以产出可流通作品为目的、进入生产—反馈—发表链条的写作</b>。
+关键词：作品意识、读者预设、修改循环、可发表性。</td></tr>
+</tbody>
+</table>
+
+<h3>2025 那道 40 分：非虚构的「真实」与「虚构」</h3>
+<div class="frame">
+<div class="row"><div class="k">第一层</div><div class="v"><b>事实层面不能虚构。</b>人名、时间、地点、事件结果，必须可核。这是非虚构的<b>伦理契约</b>，破了就变成「伪非虚构」。</div></div>
+<div class="row"><div class="k">第二层</div><div class="v"><b>但「事实」本身是被叙述建构的。</b>梁鸿引海登·怀特：历史学家所述的事实，已被其意识形态与文化观念筛过一遍。
+所以「选择写什么」就是第一次虚构。</div></div>
+<div class="row"><div class="k">第三层</div><div class="v"><b>技法层面必须虚构。</b>场景重建、对话复原、心理推测——没有这些，文本会退化成年表。
+关键区别：<b>虚构的是叙述方式，不是事件真值。</b></div></div>
+<div class="row"><div class="k">收尾</div><div class="v">「所以非虚构的真实，是一种<b>被方法约束的诚实</b>：把自己的先验观念亮出来（梁鸿就是这么做的），
+让读者能看见你是站在哪里看这件事的。承认视角，比假装没有视角更真实。」</div></div>
+</div>
+
+<h3>2026 那道 40 分：创意写作与传统写作学的关系</h3>
+<ul class="tick">
+<li><b>不是取代，是分工。</b>传统写作学（《文心雕龙》—叶圣陶—现代「基础写作」）重在<b>规范与修养</b>：文从字顺、文体体式、立意谋篇；
+创意写作重在<b>产出与生成</b>：怎么开始写、怎么改、怎么找到自己的声音。</li>
+<li><b>三处根本差异</b>：① 目标不同（写对／写出）② 方法不同（讲授—模仿／工坊—反馈）③ 评价不同（合不合体式／作品有没有效力）。</li>
+<li><b>一处共同底子</b>：都承认「技术可以被谈论」。传统写作学的「法度」和工坊制的「技术清单」，其实是同一种信念的两副面孔。</li>
+<li><b>材料二的潜台词</b>：「不培养庞大的学者化作家」——<b>创写要的是能写的人，不是能讲的人</b>。
+这一句正好可以反驳「创写就是文学理论换了个名字」。收尾可用：「创意写作与传统写作学的关系，
+不是新学科推翻旧学科，而是<b>把『写作』从知识对象重新变成实践现场</b>。」</li>
+</ul>
+
+<div class="tip">
+<b>这一节的正确复利：</b>它同时喂三处 —— 647 的材料题 40 分、647 的名解 5 分、853 的创作题 80 分的「方法论自觉」。
+<b>每天花 20 分钟，把这节过三遍，是五十天里回报率最高的动作。</b>
+</div>
+
+<h4>资料库对照</h4>
+<p style="font-size:15px">《创意写作_定义与特征_背诵版》 ／ 《创意写作简史_第二章讲义与三题答案》 ／
+《创意写作方法论_第三章_背诵版》 ／ 《创意写作简史三题_材料题完整答案》 ／
+《材料题答题方式_AI写作与创意写作》（2027 头号预测方向，务必看）</p>
+</section>
+
+<!-- ============ 肆 · 连线与成面 ============ -->
+<section id="s16">
+<h2><span class="no">肆 · 十六</span>三线连法：把「一个作家」变成「一条文学史」</h2>
+
+<p class="lede">阿牛用丁玲做的那个示范，是这套方法论的样板间。我把它拆成可复制的五步，
+你照着往 12 个 A 级上套，每个大约 40 分钟，能连出三到五条线。<b>连过线的知识点，论述题能写到 20 分；没连过的，只能写到 12 分。</b></p>
+
+<h3>样板间：丁玲（原示范的结构复盘）</h3>
+<div class="frame">
+<div class="row"><div class="k">① 定位</div><div class="v">《莎菲女士的日记》（1928）卡在第一个十年末、第二个十年初，<b>是连接前后的关键节点</b>——位置比内容先定。</div></div>
+<div class="row"><div class="k">② 前</div><div class="v">接续郁达夫《沉沦》开创的自我抒情传统，但不同：<b>没有自怨自艾、感伤缠绵</b>。
+莎菲肺病、独居、贫困，却在精神上俯视所有人——在「灵与肉」之间，她抬高了「灵」。</div></div>
+<div class="row"><div class="k">③ 左右</div><div class="v">同为女性自我抒情：庐隐《海滨故人》用「幻灭」解决痛苦（典型的五四方式）；
+冯沅君《卷葹》用母女纠葛与家庭和解处理女性解放（现实与文本里都行不通）。</div></div>
+<div class="row"><div class="k">④ 后</div><div class="v">1930《韦护》＝「革命加恋爱」，恋爱最终被革命压倒，<b>「个人」开始萎缩</b>；
+1931《水》日记体换成社会写实，个人换成集体——<b>左转完成</b>。</div></div>
+<div class="row"><div class="k">⑤ 收束</div><div class="v">于是丁玲不再是一个干巴巴的知识点，而是四条线索的交汇：
+「自我抒情小说如何终结」「个人如何走向集体」「个性解放到群像写作」「文学革命到革命文学」。</div></div>
+</div>
+
+<div class="note">
+<b>看清这个样板间的三个技术动作：</b><br>
+① <b>用作品定位，不用评价定位。</b>「1928 年，第一与第二个十年之间」——位置是坐标，坐标才能连线。<br>
+② <b>对比要落在「同一件事的不同处理」上。</b>不是「庐隐和丁玲不一样」，是「同样是没出路，庐隐用幻灭解决，丁玲用自主解决」。<br>
+③ <b>结尾必须升维。</b>把作家翻译成「文学史问题」——这才是 20 分和 12 分的分界。
+</div>
+
+<h3>五步操作法（拿一张 A4，40 分钟做完一个点）</h3>
+<ol class="steps">
+<li><b>写坐标</b>：这个点在第几阶段？它前后各挨着谁？（不许写评价词，只写年份与位置）</li>
+<li><b>写三条线</b>：前（承接谁／外来资源是什么）／左右（同代谁在做同一件事但做法不同）／后（影响了谁／被谁反写）。</li>
+<li><b>每条线配一个具体文本细节</b>：一句原文、一个场景、一个手法名。没有细节的线是空线。</li>
+<li><b>写一个「为什么」</b>：为什么它在这个时间点出现？为什么是这种形式而不是那种？（外部／内部各一条）</li>
+<li><b>写一句升维句</b>：把作家名字删掉，这句话还成立吗？成立，就说明你连成线了。</li>
+</ol>
+
+<h3>十二个 A 级的连线清单（可直接抄进你的 A4）</h3>
+<table class="small">
+<thead><tr><th style="width:110px">A 级</th><th>最值得连的三条线</th></tr></thead>
+<tbody>
+<tr><td><b>鲁迅</b></td><td>前：晚清谴责小说／果戈里 → 左右：郁达夫·叶圣陶·废名 → 后：沈从文·萧红·余华·莫言</td></tr>
+<tr><td><b>贾平凹</b></td><td>前：柳青·路遥 → 左右：陈忠实·莫言 → 后：新一代陕西作家／乡土非虚构（梁鸿）</td></tr>
+<tr><td><b>左翼</b></td><td>前：五四「人的文学」 → 左右：新月派·第三种人论战 → 后：延安文艺座谈会·《创业史》</td></tr>
+<tr><td><b>新诗潮</b></td><td>前：郭沫若·何其芳的直白抒情 → 左右：归来者诗群（艾青《归来的歌》） → 后：第三代·口语诗·海子</td></tr>
+<tr><td><b>杜甫</b></td><td>前：《诗经》·汉乐府的现实精神 → 左右：李白（仙／圣） → 后：韩愈·黄庭坚·文天祥·陆游</td></tr>
+<tr><td><b>古代小说叙事</b></td><td>前：史传·志怪 → 左右：话本（说书人） → 后：章回·世情·近代谴责小说</td></tr>
+<tr><td><b>戏曲演变</b></td><td>前：唐传奇本事 → 左右：诸宫调·杂剧·传奇三体制 → 后：地方戏·电影改编（《白蛇传》《青蛇》）</td></tr>
+<tr><td><b>诗体转型</b></td><td>前：盛唐气象 → 左右：中唐韩孟·元白 → 后：宋诗（苏黄）·江西诗派·清诗宗宋</td></tr>
+<tr><td><b>现代主义</b></td><td>前：象征主义（波德莱尔·马拉美） → 左右：未来主义·表现主义·超现实 → 后：后现代·中国寻根</td></tr>
+<tr><td><b>荒诞派</b></td><td>前：存在主义（萨特·加缪） → 左右：布莱希特叙事剧（反幻觉） → 后：品特·中国先锋戏剧（《恋爱的犀牛》式荒诞）</td></tr>
+<tr><td><b>魔幻现实</b></td><td>前：福克纳·卡夫卡 → 左右：博尔赫斯（迷宫） → 后：莫言·韩少功·《白鹿原》</td></tr>
+<tr><td><b>十九世纪个人</b></td><td>前：浪漫主义的「自我」 → 左右：巴尔扎克（社会全景）vs 司汤达（个人内心） → 后：自然主义·现代主义的「反英雄」</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="s17">
+<h2><span class="no">肆 · 十七</span>对比意识：三种织法，十二组现成题</h2>
+
+<p class="lede">线连好之后要成面。成面只有两种织法：<b>专题</b>（把同一根线上的编在一起）和<b>对比</b>（把两根线并起来看差异）。
+对比是西大最爱用的设问形式 —— 2022「与唐诗相比，宋诗……」就是一道标准的对比题。</p>
+
+<h3>织法一 · 点对点（同一个位置上的两个人）</h3>
+<div class="grid2">
+<div class="card tight"><b>李白 vs 杜甫</b><br><span style="font-size:14.6px;color:var(--ink-2)">仙与圣／想象与写实／出世与入世／天成与锤炼。落点：为什么同代两大诗人会被后世分成两条诗学路线。</span></div>
+<div class="card tight"><b>鲁迅 vs 沈从文</b><br><span style="font-size:14.6px;color:var(--ink-2)">国民性批判 vs 人性赞美／揭丑 vs 造美。落点：乡土书写的两种伦理姿态。</span></div>
+<div class="card tight"><b>杨炼《大雁塔》 vs 韩东《有关大雁塔》</b><br><span style="font-size:14.6px;color:var(--ink-2)">历史抒情 vs 消解崇高。落点：朦胧诗与第三代的分界线，一组诗就能讲清一个诗潮的更替。</span></div>
+<div class="card tight"><b>《雷雨》 vs 《上海屋檐下》</b><br><span style="font-size:14.6px;color:var(--ink-2)">封闭家庭的爆裂 vs 横断面的日常。落点：曹禺的古典式 vs 夏衍的散文化。</span></div>
+<div class="card tight"><b>汪曾祺 vs 莫泊桑</b><br><span style="font-size:14.6px;color:var(--ink-2)">无事的抒情 vs 有事的转折。落点：短篇小说的两种动力（气氛／事件），853 评论可直接用。</span></div>
+<div class="card tight"><b>《祝福》 vs 《伤逝》</b><br><span style="font-size:14.6px;color:var(--ink-2)">旧女性被礼教吃 vs 新女性被话语吃。落点：鲁迅笔下女性的两种绝境。</span></div>
+</div>
+
+<h3>织法二 · 线对线（两种传统／两个流派）</h3>
+<table class="small">
+<thead><tr><th style="width:230px">对比题</th><th>落点（写这三句就够）</th></tr></thead>
+<tbody>
+<tr><td><b>欧洲现实主义 vs 五四现实主义</b></td><td>① 发生语境：工业资本主义的成熟 vs 半殖民地的救亡 ② 功能：解剖社会 vs 启蒙国民
+③ 结局：批判的完成 vs 常被「出路」收编（「问题小说」的通病）</td></tr>
+<tr><td><b>左翼城市书写 vs 新感觉派城市书写</b></td><td>① 左翼写城市的<b>阶级</b>（茅盾《子夜》：交易所、工厂） ② 新感觉派写城市的<b>感官</b>（穆时英：霓虹、舞厅、速度）
+③ 一句话：一个把城市当结构，一个把城市当神经</td></tr>
+<tr><td><b>朦胧诗 vs 第三代诗</b></td><td>崇高／反崇高 · 意象／口语 · 代言（「我们」）／个人（「我」）· 1980 前／1986 后</td></tr>
+<tr><td><b>唐传奇 vs 宋话本</b></td><td>文人书面／市井口头 · 有意构幻／实录世情 · 单篇／分回 · 抒情收束／悬念勾连</td></tr>
+<tr><td><b>元杂剧 vs 明清传奇</b></td><td>四折一楔子／长篇多出 · 一人主唱／众角皆唱 · 本色／文采 · 勾栏／家班</td></tr>
+</tbody>
+</table>
+
+<h3>织法三 · 专题对专题（最高级，也最容易拿高分）</h3>
+<ul class="tick">
+<li><b>「乡土文学」专题</b>：鲁迅《故乡》立标杆（归乡结构＋感伤＋国民性批判）→ 王鲁彦（民俗的残酷真实）、许杰（乡土凋敝）→
+沈从文（诗化、文化气质）→ 赵树理（评书体＋农民立场）→ 80 年代寻根（韩少功）与新历史小说（《白鹿原》）。</li>
+<li><b>「农民形象流变」专题</b>（阿牛原例，可直接用）：阿Q（被启蒙的麻木灵魂）→ 老通宝（敬畏自然的旧式农民／茅盾笔下的「中间人物」）→
+多多头（敢于斗争的「农村新人」）→ 梁三老汉（两条道路之间摇摆）→ 陈奂生（带着精神重负进城）。</li>
+<li><b>「知识分子还乡」专题</b>（2023 学硕考过，专硕也随时可考）：鲁迅《故乡》《祝福》→ 柔石《二月》→
+王蒙《组织部新来的青年人》→ 贾平凹《高老庄》。<b>三个共同点：归来的期待、目睹的破败、离开的必然。</b></li>
+<li><b>「女性出走」专题</b>：娜拉（易卜生）→ 子君（鲁迅：出走后怎样）→ 莎菲（丁玲：要自主）→ 白流苏（张爱玲：出走变成交易）。</li>
+</ul>
+</section>
+
+<!-- ============ 伍 · 为什么 ============ -->
+<section id="s18">
+<h2><span class="no">伍 · 十八</span>追问「为什么」：把 60 分写出层次的那一层</h2>
+
+<p class="lede">「是什么」大家都会写，「为什么」才分人。西大近年的题已经在往这个方向走：
+2022「与唐诗相比，宋诗……」（隐含为什么变）、2026「创意写作与传统写作学的关系」（隐含为什么需要它）。
+你不需要每道题都追问，<b>但每道论述的结尾都该有一句「为什么」。</b></p>
+
+<h3>通用答题框架：外部三条 ＋ 内部三条</h3>
+<div class="grid2">
+<div class="card">
+<h4>外部（为什么在这个时代发生）</h4>
+<ul class="tick">
+<li><b>政治</b>：政策、战争、制度（科举、出版审查、文艺座谈会）</li>
+<li><b>历史社会</b>：城市化、阶层流动、人口迁徙</li>
+<li><b>哲学思潮</b>：理学、启蒙、存在主义、后现代</li>
+<li><b>媒介技术</b>：报刊、印刷、连载、电影、网络——<b>最容易被忽略、也最容易得分的一条</b></li>
+</ul>
+</div>
+<div class="card">
+<h4>内部（为什么是这个形式）</h4>
+<ul class="tick">
+<li><b>传统资源</b>：史传、诗话、话本、民间形式</li>
+<li><b>外来资源</b>：译介、留学、流派输入</li>
+<li><b>语言条件</b>：白话是否成熟、方言能不能入文</li>
+<li><b>技术储备</b>：能不能驾驭长篇、有没有成熟的长篇结构范式</li>
+</ul>
+</div>
+</div>
+
+<h3>西大版「为什么」题库（八个，每个都能当论述的结尾，也能当材料题的开头）</h3>
+<table>
+<thead><tr><th style="width:250px">问题</th><th>答题要点（每条两三句，别展开）</th></tr></thead>
+<tbody>
+<tr><td><b>为什么第一个十年的小说以短篇为主？</b><br><span class="yr">阿牛原例 · 迁移必用</span></td><td>① <b>媒介</b>：报刊是主要载体，长篇需连载数月，短篇能在一期内完整呈现；稿费制度使写作职业化，短篇的快产快发更契合节奏。
+② <b>创作主体</b>：多为青年，生活经验与驾驭长篇的能力都受限。③ <b>外来资源</b>：外国短篇译介提供了直接范本，短篇是新文学「拿来」最便捷的形式。
+④ <b>功能</b>：第一个十年主题是启蒙，需要「战斗」的文体。⑤ <b>语言</b>：白话尚在实验期，没有长篇的技术储备；而中国传统本有大量连缀短篇（《儒林外史》《聊斋》）。</td></tr>
+<tr><td><b>为什么贾平凹会被连考两年？</b></td><td>见第 10 节三层原因（地皮／学科效率／先点后面）。考场上可写成「命题的地方性与学科性」。</td></tr>
+<tr><td><b>为什么材料题四年都打在创意写作理论上？</b></td><td>① 学科合法性焦虑：创写进入中国高校不足二十年，必须不断自我论证。② 出题效率：一道题同时考理论素养与写作经验。
+③ 人才筛选：他们要的是「能反思自己写作的人」，这正是创写区别于中文系其他方向的地方。</td></tr>
+<tr><td><b>为什么 853 从「谈观点」改成「先交理论」？</b></td><td>① 反套路：模板化评论泛滥，逼你先亮方法。② 对接研究生训练：文学批评的第一步是选理论、交代立场。
+③ 区分度：20 分理论自报能一眼看出谁真读过书。</td></tr>
+<tr><td><b>为什么「演变类」题连着考两年？</b></td><td>① 它天然是「脉络题」，最符合「文学史」这门课的本性。② 它无法靠背单个作品应付，能筛出真读材料的人。
+③ 它与当下 IP 改编、经典重述的热度呼应。</td></tr>
+<tr><td><b>为什么鲁迅几乎每年都考？</b></td><td>① 他是现代文学的起点，考他等于考学科的成立。② 他的文本天然多义，能年年出新题而答案不重复。
+③ 他有足够多的「可考面」：小说、散文、散文诗、杂文、学术著作。</td></tr>
+<tr><td><b>为什么杜甫唐冷宋热？</b></td><td>见第 11 节五条（审美错位／名声遮蔽／传播受限／理学需要／外患处境）。</td></tr>
+<tr><td><b>为什么汪曾祺在 853 里被三次选为评论对象？</b></td><td>① 篇幅短、情节淡、意蕴厚——<b>最适合 800 字评论</b>，不愁没话说也不容易写成复述。
+② 他同时可被多种理论切开（叙事学、新批评、文化研究、抒情传统）。③ 「淡」正好考你能不能从「无事」里读出「有事」。</td></tr>
+</tbody>
+</table>
+
+<div class="warn">
+<b>注意：这一节不是让你背答案，是让你背「追问的习惯」。</b>
+考场上遇到没准备的题，先问自己三个为什么：为什么是这个时候？为什么是这个形式？为什么是他而不是别人？
+三问答完，一道 20 分论述的骨架就有了。
+</div>
+</section>
+
+<!-- ============ 陆 · 853 专项 ============ -->
+<section id="s19">
+<h2><span class="no">陆 · 十九</span>理论自报卡：853 第一部分那 20 分</h2>
+
+<p class="lede">2025、2026 连续两年要求「说明你使用的文学理论的来源和内涵」。这 20 分最好拿，
+因为它是<b>考前就能写完的</b>——你只需要两张卡，背到能默写。</p>
+
+<div class="grid2">
+<div class="card" style="border-top:3px solid var(--zhe)">
+<h4>卡一 · 叙事学（首选，覆盖面最广）</h4>
+<div class="frame" style="margin:10px 0">
+<div class="row"><div class="k">来源</div><div class="v">结构主义语言学（索绪尔）→ 俄国形式主义（普罗普《民间故事形态学》）→ 法国结构主义叙事学（1966《交流》杂志「叙事作品结构分析」专号）。</div></div>
+<div class="row"><div class="k">代表</div><div class="v">热奈特《叙事话语》、托多罗夫、格雷马斯、查特曼；中国：申丹《叙述学与小说文体学研究》。</div></div>
+<div class="row"><div class="k">核心命题</div><div class="v">叙事作品可以被拆成有限的<b>结构单位</b>与<b>叙述机制</b>；「讲什么」（故事 story）与「怎么讲」（话语 discourse）必须分开。</div></div>
+<div class="row"><div class="k">关键术语</div><div class="v">视角／聚焦（零聚焦·内聚焦·外聚焦）·叙述者（可靠／不可靠、同故事／异故事）·时序（倒叙·预叙）·时距（场景·概述·省略·停顿）·频率</div></div>
+<div class="row"><div class="k">适用</div><div class="v">几乎任何小说。<b>汪曾祺最适合用「时距与省略」</b>：他的淡，是大量「省略」与「停顿」造成的。</div></div>
+</div>
+</div>
+
+<div class="card" style="border-top:3px solid var(--gold)">
+<h4>卡二 · 新批评（备选，短文本最好用）</h4>
+<div class="frame" style="margin:10px 0">
+<div class="row"><div class="k">来源</div><div class="v">1920–40 年代英美，兰色姆《新批评》、艾略特、瑞恰慈《文学批评原理》；布鲁克斯《精致的瓮》。</div></div>
+<div class="row"><div class="k">核心命题</div><div class="v"><b>文本自足</b>：作品是一个独立有机体，意义在文本内部，不在作者生平或读者反应（反对「意图谬误」与「感受谬误」）。</div></div>
+<div class="row"><div class="k">关键术语</div><div class="v">细读（close reading）·张力（tension，泰特）·悖论（paradox）·反讽（irony，布鲁克斯）·含混（ambiguity，燕卜荪）</div></div>
+<div class="row"><div class="k">适用</div><div class="v">短篇、单首诗。<b>汪曾祺《百蝶图》结尾「她为什么有如此恶毒的感情，连她自己也莫名其妙」</b>——典型的反讽与含混。</div></div>
+</div>
+</div>
+</div>
+
+<h3>20 分的标准写法（240–300 字，四句话完事）</h3>
+<ol class="steps">
+<li><b>报流派与出处</b>：「本文采用叙事学方法，它源自 1960 年代法国结构主义……」</li>
+<li><b>说核心命题</b>：「其基本主张是把叙事拆分为故事与话语两个层面，关注『怎么讲』而非『讲什么』。」</li>
+<li><b>点名要用的术语</b>：「具体到本文，我将使用『聚焦』与『时距』两个概念。」</li>
+<li><b>说明为什么选它</b>：「之所以选它，是因为这篇小说的意义不在情节，而在叙述者如何分配信息与时间。」</li>
+</ol>
+
+<div class="note">
+<b>千万不要犯的两个错：</b>① 只写流派名不写内涵（等于自报家门却说不出家在哪）；
+② 写了一堆理论却和后面的评论脱节（<b>阅卷人最恨这个</b>）。<b>理论卡和评论必须共用同一批术语。</b>
+</div>
+</section>
+
+<section id="s20">
+<h2><span class="no">陆 · 二十</span>评论那 50 分：汪曾祺被选了三次</h2>
+
+<p class="lede">2017《陈小手》、2024《职业》、2026《百蝶图》——十一年里汪曾祺三次成为 853 的评论对象，
+比任何一个作家都多。这不是巧合，是因为他的小说<b>刚好卡在「800 字评论」这个体裁最舒服的位置上</b>：
+篇幅短、情节淡、意蕴厚、结尾一记闷棍。</p>
+
+<h3>三次的题目，其实是同一道</h3>
+<table class="small">
+<thead><tr><th style="width:150px">文本</th><th style="width:120px">年份</th><th>「闷棍」在哪里</th></tr></thead>
+<tbody>
+<tr><td>《陈小手》</td><td>2017（二选一）</td><td>团长刚给了二十块大洋、说「难为你了」，转身一枪把他打下马——「我的女人，怎么能让他摸来摸去」</td></tr>
+<tr><td>《职业》</td><td>2024</td><td>卖糕饼的孩子从没玩耍过，某天换上新衣，走过空巷，忽然喊了一声「捏着鼻子吹洋号」——童真漏出来一秒钟</td></tr>
+<tr><td>《百蝶图》</td><td>2026</td><td>母亲越看绣品越有气，坚决不许儿子娶小玉：「她为什么有如此恶毒的感情，连她自己也莫名其妙」</td></tr>
+</tbody>
+</table>
+
+<div class="tip">
+<b>三篇的共同结构，就是你的评论骨架：</b><br>
+① <b>大量风俗与手艺的铺陈</b>（绒花、绣活、吆喝、接生）——看似闲笔，实为「世界的常态」。<br>
+② <b>一个不按常理出场的转折</b>——一句话、一个动作，把常态撕开。<br>
+③ <b>作者绝不解释</b>——留白，让读者自己去补那个「为什么」。<br>
+所以汪曾祺写的不是「人事的悲剧」，是<b>「常态里潜伏的恶意与温柔」</b>。这句话可以直接当评论的标题句。
+</div>
+
+<h3>800 字评论的六段结构（按这个写，稳定在 40 分以上）</h3>
+<ol class="steps">
+<li><b>定位（80 字）</b>：这是一篇什么小说（散文化小说／风俗画小说），写的是什么事，一句话概括。<b>不要复述情节。</b></li>
+<li><b>提出判断（60 字）</b>：一句话亮出你的核心观点，最好带一个反差（「这篇小说写的是善意如何被习俗处死」）。</li>
+<li><b>证据一 · 叙事层（150 字）</b>：视角、叙述者口吻、时距（哪些地方详写、哪些地方一句带过）。</li>
+<li><b>证据二 · 语言层（150 字）</b>：短句、白描、方言、拟声词、不加评论的冷笔。</li>
+<li><b>证据三 · 结构层（150 字）</b>：那个转折点如何布置、前面的哪些细节是伏笔。</li>
+<li><b>升维（150 字）</b>：这篇小说因此指向了什么（人性的复杂、习俗的暴力、民间的温情与残酷并存），
+并可一句带出它在文学史上的位置（承接鲁迅的「看客」、开启 80 年代后的「风俗小说」）。</li>
+</ol>
+
+<div class="warn">
+<b>备考动作：考前把这三篇各写一遍，每篇 45 分钟。</b>三篇写完，你会发现第四篇（无论是谁）也能写——
+因为你练的不是这三篇，是「散文化小说怎么评」这套动作。<b>853 的评论题，从来不考你读没读过，考你会不会切。</b>
+</div>
+</section>
+
+<section id="s21">
+<h2><span class="no">陆 · 二十一</span>创作那 80 分：八年的题眼，与六个可复用母题</h2>
+
+<p class="lede">853 的 80 分创作，是很多人忽略的一块，但它值 80 分，比评论还多 30 分。
+好消息是：<b>八年的题目其实是同一个要求——给你一个限制，看你还能不能写出人来。</b></p>
+
+<table>
+<thead><tr><th class="c" style="width:76px">年份</th><th style="width:330px">题目</th><th>限制类型</th></tr></thead>
+<tbody>
+<tr><td class="c">2020</td><td>以「家庭」为主题创作一部舞台剧（60 分）</td><td><b>主题</b> ＋ 文体（戏剧）</td></tr>
+<tr><td class="c">2021</td><td>两千字短篇小说，须包含「火车、便利店、厨房」三个场景</td><td><b>场景</b>（三个必须出现）</td></tr>
+<tr><td class="c">2022</td><td>以动物视角写一篇短篇小说，不少于 2000 字</td><td><b>视角</b></td></tr>
+<tr><td class="c">2023</td><td>独幕剧，以「末班车、地铁站」为情景，不少于 2000 字</td><td><b>文体 ＋ 场景</b></td></tr>
+<tr><td class="c">2024</td><td>续写《玩偶之家》娜拉出走之后（小说，2000 字）</td><td><b>续写经典</b></td></tr>
+<tr><td class="c">2025</td><td>塑造一个同时具有相反性格的人物，2000 字小说</td><td><b>人物</b>（性格矛盾）</td></tr>
+<tr><td class="c">2026</td><td>「一家人开车去旅行，车上有爸爸、妈妈、孩子和一只狗，突然，车停了……」续写小说，2000 字</td><td><b>给定开头</b></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>看出规律了吗：一年给「文体」，一年给「装置」。</b><br>
+2020 舞台剧 → 2021 三场景 → 2022 视角 → 2023 独幕剧 → 2024 续写 → 2025 性格 → 2026 开头。<br>
+<b>2027 若轮回，最可能回到「文体」（戏剧／独幕剧）或「视角」（儿童视角／死者视角／物件视角）。</b>
+两个都要准备一稿，考场上改细节就能用。
+</div>
+
+<h3>六个可复用母题（提前想好，考场上只做改装）</h3>
+<div class="grid2">
+<div class="card tight"><b>① 一次没走成的离开</b><br><span style="font-size:14.6px;color:var(--ink-2)">火车／末班车／地铁站／厨房都能装。人在站台上做出的决定，比在客厅里做的更真实。</span></div>
+<div class="card tight"><b>② 一件传下来的手艺</b><br><span style="font-size:14.6px;color:var(--ink-2)">绣、木工、修表、做面。手艺是「时间可见」的载体，天然带代际冲突。</span></div>
+<div class="card tight"><b>③ 一个不体面的秘密</b><br><span style="font-size:14.6px;color:var(--ink-2)">全家人都在维护的谎言。适合「相反性格」题：维护谎言的动机本身是爱。</span></div>
+<div class="card tight"><b>④ 一次家庭旅行</b><br><span style="font-size:14.6px;color:var(--ink-2)">封闭空间＋无法退出，是制造冲突最省力的装置（2026 已经用了，机制可保留）。</span></div>
+<div class="card tight"><b>⑤ 一个不说话的人</b><br><span style="font-size:14.6px;color:var(--ink-2)">失语者／失聪者／外国人／小孩／动物。视角题和性格题都能用。</span></div>
+<div class="card tight"><b>⑥ 一件要处理掉的旧物</b><br><span style="font-size:14.6px;color:var(--ink-2)">房子、遗物、一条狗。处理动作＝情节引擎，物的历史＝背景信息。</span></div>
+</div>
+
+<h3>2000 字的写作节奏（考场 50 分钟）</h3>
+<table class="small">
+<thead><tr><th class="c" style="width:80px">用时</th><th class="c" style="width:100px">字数</th><th>做什么</th></tr></thead>
+<tbody>
+<tr><td class="c">0–5 分</td><td class="c">0</td><td>定人物、定核心冲突、定结尾那一下。三行提纲，不写细节。</td></tr>
+<tr><td class="c">5–15 分</td><td class="c">500</td><td><b>开场就要有画面</b>：一个动作、一句对话、一个具体的物件。禁止背景介绍开头。</td></tr>
+<tr><td class="c">15–35 分</td><td class="c">1200</td><td>加压两次：第一次小冲突、第二次让关系失衡。中间插一个「闲笔」（气味、声音、天气），让世界有厚度。</td></tr>
+<tr><td class="c">35–45 分</td><td class="c">300</td><td>转折。不要解释，只写动作和一句对话。</td></tr>
+<tr><td class="c">45–50 分</td><td class="c">100</td><td>收尾。留一个未闭合的细节（门没关、水还在响），<b>不要总结升华</b>。</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- ============ 柒 · 执行 ============ -->
+<section id="s22">
+<h2><span class="no">柒 · 二十二</span>五十天日程：三段推进</h2>
+
+<p class="lede">从 10 月 30 日到 12 月 18 日，正好五十天。三段：
+<b>打点（21 天）→ 成面（17 天）→ 回炉（12 天）</b>。每天专业课时间按 4 小时算，其余留给公共课。</p>
+
+<h3>第一段 · 打点 10.30 – 11.19（21 天）</h3>
+<p style="font-size:15.4px;color:var(--ink-2);margin:4px 0 10px">目标：12 个 A 级全部写出 1200 字骨架 ＋ 三线。每天一个点，写完不回头。<b>这一段只做加法，不做复习。</b></p>
+<table class="small">
+<thead><tr><th class="c" style="width:130px">日期</th><th>任务</th><th class="c" style="width:110px">产出</th></tr></thead>
+<tbody>
+<tr><td class="c">10.30–10.31</td><td>建立作战文件：12 张 A4（每张一个大点），写好表头与前／左右／后三栏</td><td class="c">12 张空表</td></tr>
+<tr><td class="c">11.01–11.03</td><td><b>A5 鲁迅</b>（人物谱系＋六个文本技术点＋三线）</td><td class="c">1200 字</td></tr>
+<tr><td class="c">11.04–11.05</td><td><b>A6 贾平凹</b>（秦腔四技术＋范式四条＋陕西谱系）</td><td class="c">1200 字</td></tr>
+<tr><td class="c">11.06–11.07</td><td><b>A7 左翼</b>（左联五事＋丁玲转向＋创业史三股力量）</td><td class="c">1000 字</td></tr>
+<tr><td class="c">11.08</td><td><b>A8 新诗潮</b>（三个崛起＋朦胧诗四特征＋第三代）</td><td class="c">800 字</td></tr>
+<tr><td class="c">11.09–11.10</td><td><b>A1 杜甫</b>（三层结构＋三条接受线＋唐冷宋热五条）</td><td class="c">1200 字</td></tr>
+<tr><td class="c">11.11–11.12</td><td><b>A4 诗体转型</b>（宋诗四组对立＋以诗为词＋悼亡＋送别）</td><td class="c">1000 字</td></tr>
+<tr><td class="c">11.13–11.14</td><td><b>A2 小说叙事</b>（一条线＋四技术＋红楼梦）</td><td class="c">1200 字</td></tr>
+<tr><td class="c">11.15–11.16</td><td><b>A3 戏曲演变</b>（四段式答题纸＋西厢记＋白蛇传）</td><td class="c">1200 字</td></tr>
+<tr><td class="c">11.17–11.18</td><td><b>A9 + A10</b> 现代主义总论 ＋ 荒诞派等待戈多</td><td class="c">1200 字</td></tr>
+<tr><td class="c">11.19</td><td><b>A11 + A12</b> 魔幻现实／福克纳 ＋ 十九世纪个人与女性</td><td class="c">1200 字</td></tr>
+</tbody>
+</table>
+
+<h3>第二段 · 成面 11.20 – 12.06（17 天）</h3>
+<p style="font-size:15.4px;color:var(--ink-2);margin:4px 0 10px">目标：把点织成面，同时把 853 的两张理论卡和创作稿备好。<b>这一段开始输出，不再输入。</b></p>
+<table class="small">
+<thead><tr><th class="c" style="width:130px">日期</th><th>任务</th><th class="c" style="width:130px">检验方式</th></tr></thead>
+<tbody>
+<tr><td class="c">11.20–11.22</td><td>专题①：乡土文学（鲁迅→沈从文→赵树理→寻根）<br>专题②：农民形象流变（阿Q→老通宝→多多头→梁三老汉→陈奂生）</td><td class="c">各写 800 字</td></tr>
+<tr><td class="c">11.23–11.24</td><td>专题③：女性出走（娜拉→子君→莎菲→白流苏）<br>专题④：知识分子还乡</td><td class="c">各写 800 字</td></tr>
+<tr><td class="c">11.25–11.26</td><td>对比①：唐诗 vs 宋诗｜对比②：欧洲现实主义 vs 五四现实主义</td><td class="c">各写 1000 字</td></tr>
+<tr><td class="c">11.27–11.28</td><td>对比③：左翼城市 vs 新感觉派｜对比④：朦胧诗 vs 第三代</td><td class="c">各写 1000 字</td></tr>
+<tr><td class="c">11.29</td><td><b>853 理论卡</b>：叙事学卡默写一遍 ＋ 新批评卡默写一遍</td><td class="c">默写不出＝重背</td></tr>
+<tr><td class="c">11.30–12.01</td><td><b>853 评论</b>：写《职业》＋《百蝶图》各一篇（800 字，45 分钟限时）</td><td class="c">对照六段结构自评</td></tr>
+<tr><td class="c">12.02–12.03</td><td><b>853 创作</b>：准备两稿母题 —— 戏剧一稿（独幕剧）＋ 视角一稿（动物／儿童）</td><td class="c">各 2000 字</td></tr>
+<tr><td class="c">12.04</td><td><b>第一次全真模考</b>：647 三小时，用 2023 年真题，闭卷</td><td class="c">批改＋统计失分</td></tr>
+<tr><td class="c">12.05</td><td>模考复盘：哪一题写不满？哪个 A 级没撑起来？<b>只补这一天暴露的洞。</b></td><td class="c">补丁清单</td></tr>
+<tr><td class="c">12.06</td><td><b>材料题专项</b>：五个预测切口各写一段 300 字的「破题句」</td><td class="c">5×300 字</td></tr>
+</tbody>
+</table>
+
+<h3>第三段 · 回炉 12.07 – 12.18（12 天）</h3>
+<p style="font-size:15.4px;color:var(--ink-2);margin:4px 0 10px">目标：把写过的变成能默出来的，把默不出的砍掉。<b>这一段只做减法。</b></p>
+<table class="small">
+<thead><tr><th class="c" style="width:130px">日期</th><th>任务</th></tr></thead>
+<tbody>
+<tr><td class="c">12.07–12.09</td><td>12 张 A4 逐张过：<b>遮住内容，只看标题，口头讲 3 分钟</b>。讲不出的那张，重写一遍提纲（不重写全文）</td></tr>
+<tr><td class="c">12.10–12.11</td><td>名解池过两遍：四个抽屉各抽 4 个，写在纸上，每个 4 分钟</td></tr>
+<tr><td class="c">12.12</td><td><b>第二次全真模考</b>：647 ＋ 853，一天做完，模拟真实体力消耗</td></tr>
+<tr><td class="c">12.13</td><td>模考复盘 ＋ 853 理论卡最后一次默写</td></tr>
+<tr><td class="c">12.14–12.16</td><td>只看三样东西：<b>12 张 A4 的标题层</b>、<b>名解池</b>、<b>材料题五切口</b>。不看新内容，一个字都不看</td></tr>
+<tr><td class="c">12.17</td><td>853 创作：把两个母题在纸上各写一遍开头 300 字（热身，不写全文）</td></tr>
+<tr><td class="c">12.18</td><td>什么都不做。检查准考证、身份证、笔。早睡</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>每天固定的三个小动作（不占额外时间）：</b><br>
+① 早上 10 分钟：默一个名解（抽屉轮着来）。<br>
+② 中午 15 分钟：读一节资料库里的「带背」，只读不记。<br>
+③ 睡前 5 分钟：把今天写的 A4 标题念一遍。<br>
+<b>五十天 × 30 分钟 = 25 小时，正好是一部文学史的重点量。</b>
+</div>
+</section>
+
+<section id="s23">
+<h2><span class="no">柒 · 二十三</span>每日一题：24 道自测题（真题变形）</h2>
+
+<p class="lede">阿牛说「题是写出来的，不是背出来的」。下面 24 道题全部由真题变形而来：
+<b>不是重考原题，是换角度问同一个知识点</b>。一天一道，手写或口述录音，30 分钟为限。</p>
+
+<h3>论述级（20 分／30 分钟，12 道）</h3>
+<table class="small">
+<thead><tr><th class="c" style="width:44px">№</th><th>题目</th><th class="c" style="width:110px">对应 A 级</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>鲁迅笔下为什么几乎没有「英雄」？结合具体人物论述。</td><td class="c">A5</td></tr>
+<tr><td class="c">2</td><td>以《伤逝》为例，谈鲁迅对「新式爱情」的怀疑。</td><td class="c">A5</td></tr>
+<tr><td class="c">3</td><td>论贾平凹小说中「声音」的作用（秦腔、方言、吆喝）。</td><td class="c">A6</td></tr>
+<tr><td class="c">4</td><td>比较柳青、路遥、贾平凹笔下的农民形象。</td><td class="c">A6／A7</td></tr>
+<tr><td class="c">5</td><td>论述「个人如何走向集体」在 1927–1949 年文学中的展开。</td><td class="c">A7</td></tr>
+<tr><td class="c">6</td><td>论杜甫「诗史」之称的成立条件与限度。</td><td class="c">A1</td></tr>
+<tr><td class="c">7</td><td>从「以文为诗」看唐宋诗转型的深层原因。</td><td class="c">A1／A4</td></tr>
+<tr><td class="c">8</td><td>论《红楼梦》的「限知」是如何实现的。</td><td class="c">A2</td></tr>
+<tr><td class="c">9</td><td>以《长生殿》或《桃花扇》为例，论「故事演变」中的伦理位移。</td><td class="c">A3</td></tr>
+<tr><td class="c">10</td><td>论现代主义文学的「时间」观念及其形式后果。</td><td class="c">A9</td></tr>
+<tr><td class="c">11</td><td>为什么《等待戈多》「什么都没发生」却能成立？</td><td class="c">A10</td></tr>
+<tr><td class="c">12</td><td>从苔丝到爱玛：十九世纪小说中女性的「毁灭方式」有何不同？</td><td class="c">A12</td></tr>
+</tbody>
+</table>
+
+<h3>简答级（10 分／12 分钟，8 道）</h3>
+<div class="grid2">
+<div class="card tight" style="font-size:15px">
+<ol style="margin:4px 0 0">
+<li>简析《故事新编》的「油滑」到底是优点还是缺点。</li>
+<li>简析朦胧诗的「代言」性质及其困境。</li>
+<li>简析元稹悼亡诗为何比潘岳更动人。</li>
+<li>简析唐代送别诗中「以壮语破悲」一路的心理机制。</li>
+</ol>
+</div>
+<div class="card tight" style="font-size:15px">
+<ol start="5" style="margin:4px 0 0">
+<li>简析《喧哗与骚动》四个叙述者的功能分工。</li>
+<li>简析非虚构写作与报告文学的区别。</li>
+<li>简析工坊制在美国兴起的社会条件。</li>
+<li>简析「生产性写作」与「消费性写作」的分界。</li>
+</ol>
+</div>
+</div>
+
+<h3>材料／综合级（40 分／40 分钟，4 道）</h3>
+<ol class="steps">
+<li>给一段关于「AI 辅助写作」的材料，谈创意写作中的<b>作者性</b>问题。</li>
+<li>给一段关于「作家能否被教出来」的争论材料，谈<b>创写的可教性</b>。</li>
+<li>给一段《文心雕龙·神思》的材料，谈<b>传统写作学与创意写作的接点</b>。</li>
+<li>给一段「非虚构写作者介入事件」的材料，谈<b>在场与中立</b>的伦理冲突。</li>
+</ol>
+
+<div class="warn">
+<b>练习铁律（照阿牛的原话改的）：</b>卡住的时候不许停，<b>必须先把论述写完</b>，
+写完再回去查资料补。任何补充都发生在完成之后。<b>中途停下查资料的练习，等于没练。</b>
+</div>
+</section>
+
+<section id="s24">
+<h2><span class="no">柒 · 二十四</span>资料库对照表：每个大点去哪找料</h2>
+
+<p class="lede">你资料库里已经有 30 多个文件，不用再找新资料。
+下表把本图每一节和已有文件对上，<b>缺料的时候直接点开对应那一个，不要漫游。</b></p>
+
+<table>
+<thead><tr><th style="width:220px">本图章节</th><th>资料库对应文件</th></tr></thead>
+<tbody>
+<tr><td>古代 · 全部（A1 A2 A3 A4）</td><td><a href="煜编考研01先秦秦汉.html">煜编考研01先秦秦汉</a> ／ <a href="煜编考研02魏晋隋唐.html">02魏晋隋唐</a> ／
+<a href="煜编考研03宋元.html">03宋元</a> ／ <a href="煜编考研04明清近代.html">04明清近代</a> ／
+<a href="李凡1000题_古代文学史-OCR重建版.html">李凡1000题·古代文学史</a></td></tr>
+<tr><td>现当代 · 全部（A5–A8）</td><td><a href="煜编考研05现代.html">煜编考研05现代</a> ／ <a href="煜编考研06当代.html">06当代</a> ／
+<a href="李凡1000题_现当代文学史-OCR重建版.html">李凡1000题·现当代文学史</a></td></tr>
+<tr><td>外国 · 全部（A9–A12）</td><td><a href="唐红梅外国文学知识点串讲.html">唐红梅外国文学知识点串讲</a> ／
+<a href="李凡1000题_外国文学史-OCR重建版.html">李凡1000题·外国文学史</a> ／ <a href="19世纪现实主义文学_下_复习笔记.md">19世纪现实主义文学·下</a></td></tr>
+<tr><td>第 15 节 · 创意写作理论</td><td><a href="创意写作_定义与特征_背诵版.html">创意写作·定义与特征</a> ／
+<a href="创意写作简史_第二章讲义与三题答案.html">创意写作简史·第二章</a> ／
+<a href="创意写作方法论_第三章_背诵版.html">创意写作方法论·第三章</a> ／
+<a href="创意写作简史三题_材料题完整答案.html">简史三题·材料题答案</a> ／
+<a href="材料题答题方式_AI写作与创意写作.html">材料题·AI 写作与创意写作</a></td></tr>
+<tr><td>第 19–21 节 · 853 专项</td><td><a href="853评论写作备考卡.html">853 评论写作备考卡</a> ／
+<a href="647创意写作基础_答题评分标准.html">647 答题评分标准</a> ／
+<a href="答题例证卡.html">答题例证卡</a> ／
+<a href="鲁迅故乡_刘俐俐文本分析_批注拆解版.html">鲁迅《故乡》文本分析（叙事学范本）</a></td></tr>
+<tr><td>第 2、18 节 · 命题趋势与为什么</td><td><a href="27文学考研_周年热点考点地图.html">27 文学考研·周年热点考点地图</a> ／
+<a href="62天冲刺作战图.html">62 天冲刺作战图</a> ／ <a href="百日冲刺计划.html">百日冲刺计划</a></td></tr>
+<tr><td>每日带背（配第 22 节日程）</td><td><a href="带背/day01-古代文学-先秦.html">带背 day01 起</a> ／
+<a href="带背/day17-复盘与论述题答题方法.html">day17 论述题答题方法</a> ／
+<a href="带背/day24-意识流小说.html">day24 意识流</a> ／ <a href="带背/day26-古代文学-西厢记与元代中.html">day26 西厢记</a></td></tr>
+<tr><td>背诵方法</td><td><a href="葫芦背书法.html">葫芦背书法</a> ／ 番茄钟计时法 ／ <a href="每日一题.html">每日一题</a></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>最后一句：</b>五十天足够发生一次质变，但前提是每天都有<b>写出来的东西</b>。
+看一百遍「鲁迅笔下没有英雄」，不如自己写一遍「鲁迅笔下为什么没有英雄」。<br>
+<b>这份图的作用到此为止 —— 剩下的靠你的笔。</b>
+</div>
+
+<div class="foot">
+<p><b>制作说明</b>　真题来源：2016、2017、2020–2026 年西北大学创意写作方向招生考试试题（专硕为主，2016／2017 为 648＋855 卷，
+2020 年后为 647＋853 卷）。全部题目经文档解析后逐题核对，其中 2022 年卷缺失一道填空题（原文缺页），已在表中标「待核」；
+2017 年卷填空题的手写答案属考生笔迹，未计入统计。</p>
+<p>分级标准：A 级＝独立撑过 20 分以上论述或反复出现于简答；B 级＝简答／名解出现但未独立撑论述；
+C 级＝只在名解层面出现；D 级＝十一年未出现或题型已取消。</p>
+<p>本页为本地文件，未推送、未提交。字体使用目录内 <code>_shared/fonts/</code> 的霞鹜文楷，离线可看。</p>
+</div>
+</section>
+</main>
+</div>
+<script>
+/* 顶部进度条 */
+var bar=document.getElementById('bar');
+function onScroll(){
+  var h=document.documentElement;
+  var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+  bar.style.width=(p*100)+'%';
+}
+document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* 倒计时 */
+(function(){
+  var exam=new Date(2026,11,19,8,30,0); // 2026-12-19 08:30 首场
+  var now=new Date();
+  var d=Math.ceil((exam-now)/86400000);
+  var el=document.getElementById('days');
+  if(el) el.textContent=(d>0?d:0);
+})();
+
+/* 目录高亮 */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var map={};
+  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var secs=[].slice.call(document.querySelectorAll('section[id]'));
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){l.classList.remove('on');});
+        var a=map[e.target.id];
+        if(a){a.classList.add('on');}
+      }
+    });
+  },{rootMargin:'-15% 0px -70% 0px'});
+  secs.forEach(function(s){io.observe(s);});
+})();
+</script>
+</body>
+</html>
